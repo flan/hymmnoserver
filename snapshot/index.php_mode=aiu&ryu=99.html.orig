@@ -1,0 +1,1718 @@
+	<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+		function popUp(url) {
+
+		sealWin=window.open(url,"helpwin",'toolbar=no,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=530,height=400');
+
+		sealWin.focus();
+
+		self.name = "mainWin"; }
+
+// -->
+
+</SCRIPT>
+
+<link rel="stylesheet" href="salburg.css">
+
+		<a href="/hymmnoserver/index.php"><img src="title.jpg" border=0></a><br>
+
+		<table cellspacing=0 bordercolor="black">
+
+		<form method="post" action="/hymmnoserver/index.php">
+
+		<td bgcolor="black" width=150>
+
+		<font color=white class=fonts3><center><b>単語、ヒュ文検索</b></font>
+
+		</td>
+
+		<td bgcolor="black" width=240>
+
+		<input type="text" name="s_word" value="" size="40">
+
+		</td>
+
+		<td bgcolor="black" width=121>
+
+		<input type="submit" name="s_type" value="ヒュ→和検索">
+
+		</td>
+
+		<td bgcolor="black" width=121>
+
+		<input type="submit" name="s_type" value="和→ヒュ検索">
+
+		</td>
+
+		<input type="hidden" name="mode" value="search">
+
+		</form>
+
+		</table>
+
+			<table cellspacing=2 bordercolor="black">
+
+			<td bgcolor="#bbccdd" align=center width=316 class=fonts2><b>
+
+			<a href="/hymmnoserver/index.php_mode=abc&ryu=99">アルファベット順リスト</a><br>
+
+			</b></td>
+
+			<td bgcolor="#bbccdd" align=center width=316 class=fonts2><b>
+
+			<a href="/hymmnoserver/index.php_mode=aiu&ryu=99">日本語順リスト</a><br>
+
+			</b></td>
+
+			</table>
+
+			<hr>
+
+			<font class=fonts3 color="#110044">
+
+	<table>
+
+	<form method="get" action="/hymmnoserver/index.php">
+
+	<td>
+
+	<input type="hidden" name="mode" value="aiu">
+
+	<input type="hidden" name="abc_word" value="0">
+
+	<select name="ryu">
+
+	<option value="99" SELECTED>全ての流派</option>
+
+	<option value="0" >中央正純律（共通語）</option><option value="1" >クルトシエール律（Ⅰ紀前古代語）</option><option value="2" >クラスタ律（クラスタ地方語）</option><option value="3" >アルファ律（オリジンスペル：EOLIA属）</option><option value="4" >古メタファルス律（Ⅰ紀神聖語）</option><option value="5" >新約パスタリエ（パスタリア成語）</option>
+
+	</select><br></td><td><input type="submit" value="絞り込み"></td></form></table><font class=title1 color=red>あ</font> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=1&ryu=99">か</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=2&ryu=99">さ</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=3&ryu=99">た</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=4&ryu=99">な</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=5&ryu=99">は</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=6&ryu=99">ま</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=7&ryu=99">や</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=8&ryu=99">ら</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=9&ryu=99">わ</a> / <a href="/hymmnoserver/index.php_mode=aiu&abc_word=99&ryu=99">ALL</a></font><hr>
+
+	<font color=red class=fonts4><b>61個の単語が検出されました。</b><br>「ヒュムノス単語」をクリックすると、詳細ウインドウが表示されます。</font><br><br>
+
+	<table bordercolor="#110044">
+
+	<td bgcolor="#110044" nowrap width=100>
+
+	<font color="white" class=fonts3><b>ヒュムノス単語</b></font></td>
+
+	<td bgcolor="#110044" nowrap width=170>
+
+	<font color="white" class=fonts3><b>意味</b></font></td>
+
+	<td bgcolor="#110044" nowrap width=150>
+
+	<font color="white" class=fonts3><b>発音</b></font></td>
+
+	<td bgcolor="#110044" nowrap width=200>
+
+	<font color="white" class=fonts3><b>流派</b></font></td>
+
+	<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/1.html')">
+
+		<font color="#110044" class=fonts3><b>1</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/1.html')">
+
+		<font color="#110044" class=fonts3><b>1</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/1.html')">
+
+		<font color="#110044" class=fonts3><b>ノイ／イ（二進法）</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/accrroad.html')">
+
+		<font color="#110044" class=fonts3><b>accrroad</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/accrroad.html')">
+
+		<font color="#110044" class=fonts3><b>あげる　与える</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/accrroad.html')">
+
+		<font color="#110044" class=fonts3><b>アクロード</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/alroetsue.html')">
+
+		<font color="#110044" class=fonts3><b>alroetsue</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/alroetsue.html')">
+
+		<font color="#110044" class=fonts3><b>贖いの、償いの</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/alroetsue.html')">
+
+		<font color="#110044" class=fonts3><b>アゥロエットューエ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ammue.html')">
+
+		<font color="#110044" class=fonts3><b>ammue</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ammue.html')">
+
+		<font color="#110044" class=fonts3><b>音、（音の）波動</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ammue.html')">
+
+		<font color="#110044" class=fonts3><b>アミュ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/brinch.html')">
+
+		<font color="#110044" class=fonts3><b>brinch</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/brinch.html')">
+
+		<font color="#110044" class=fonts3><b>枝</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/brinch.html')">
+
+		<font color="#110044" class=fonts3><b>ブリンク</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/chyet.html')">
+
+		<font color="#110044" class=fonts3><b>chyet</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/chyet.html')">
+
+		<font color="#110044" class=fonts3><b>選ばれた、特別</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/chyet.html')">
+
+		<font color="#110044" class=fonts3><b>シェッ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/denera.html')">
+
+		<font color="#110044" class=fonts3><b>denera</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/denera.html')">
+
+		<font color="#110044" class=fonts3><b>悪しきもの</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/denera.html')">
+
+		<font color="#110044" class=fonts3><b>デネラ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/didalia.html')">
+
+		<font color="#110044" class=fonts3><b>didalia</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/didalia.html')">
+
+		<font color="#110044" class=fonts3><b>大きい</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/didalia.html')">
+
+		<font color="#110044" class=fonts3><b>ダイダリア</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ee.html')">
+
+		<font color="#110044" class=fonts3><b>ee</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ee.html')">
+
+		<font color="#110044" class=fonts3><b>偉大なる、讃える</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ee.html')">
+
+		<font color="#110044" class=fonts3><b>ィエエ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ene.html')">
+
+		<font color="#110044" class=fonts3><b>ene</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ene.html')">
+
+		<font color="#110044" class=fonts3><b>思う、感慨深くなる</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ene.html')">
+
+		<font color="#110044" class=fonts3><b>エヌ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/enesse.html')">
+
+		<font color="#110044" class=fonts3><b>enesse</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/enesse.html')">
+
+		<font color="#110044" class=fonts3><b>想い</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/enesse.html')">
+
+		<font color="#110044" class=fonts3><b>エネッセ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/enne.html')">
+
+		<font color="#110044" class=fonts3><b>enne</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/enne.html')">
+
+		<font color="#110044" class=fonts3><b>祈り、願い（いい意味）</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/enne.html')">
+
+		<font color="#110044" class=fonts3><b>エニェ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/erra.html')">
+
+		<font color="#110044" class=fonts3><b>erra</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/erra.html')">
+
+		<font color="#110044" class=fonts3><b>永遠にこのままでいたい</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/erra.html')">
+
+		<font color="#110044" class=fonts3><b>エーラ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/et.html')">
+
+		<font color="#110044" class=fonts3><b>et</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/et.html')">
+
+		<font color="#110044" class=fonts3><b>大きい</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/et.html')">
+
+		<font color="#110044" class=fonts3><b>エ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffccff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/eterne.html')">
+
+		<font color="#110044" class=fonts3><b>eterne</b></font></a></td>
+
+		<td bgcolor="#ffccff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/eterne.html')">
+
+		<font color="#110044" class=fonts3><b>永遠、永久</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/eterne.html')">
+
+		<font color="#110044" class=fonts3><b>エテールネ</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>アルファ律（オリジンスペル：EOLIA属）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/fandel.html')">
+
+		<font color="#110044" class=fonts3><b>fandel</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/fandel.html')">
+
+		<font color="#110044" class=fonts3><b>数多の、幾多の</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/fandel.html')">
+
+		<font color="#110044" class=fonts3><b>ファンデル</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/flare.html')">
+
+		<font color="#110044" class=fonts3><b>flare</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/flare.html')">
+
+		<font color="#110044" class=fonts3><b>浮かぶ　浮く</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/flare.html')">
+
+		<font color="#110044" class=fonts3><b>フラレ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/forlindel.html')">
+
+		<font color="#110044" class=fonts3><b>forlindel</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/forlindel.html')">
+
+		<font color="#110044" class=fonts3><b>村長の一族</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/forlindel.html')">
+
+		<font color="#110044" class=fonts3><b>フォーリンデル</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/govaz.html')">
+
+		<font color="#110044" class=fonts3><b>govaz</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/govaz.html')">
+
+		<font color="#110044" class=fonts3><b>許嫁</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/govaz.html')">
+
+		<font color="#110044" class=fonts3><b>ゴーヴァズ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/guatrz.html')">
+
+		<font color="#110044" class=fonts3><b>guatrz</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/guatrz.html')">
+
+		<font color="#110044" class=fonts3><b>怒り、憎悪</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/guatrz.html')">
+
+		<font color="#110044" class=fonts3><b>ゴーッ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/gyas.html')">
+
+		<font color="#110044" class=fonts3><b>gyas</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/gyas.html')">
+
+		<font color="#110044" class=fonts3><b>悪霊、悪い成分</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/gyas.html')">
+
+		<font color="#110044" class=fonts3><b>ギャス</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/harmon.html')">
+
+		<font color="#110044" class=fonts3><b>harmon</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/harmon.html')">
+
+		<font color="#110044" class=fonts3><b>（多数で）合わせて～する</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/harmon.html')">
+
+		<font color="#110044" class=fonts3><b>ハーモン</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/hartes.html')">
+
+		<font color="#110044" class=fonts3><b>hartes</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/hartes.html')">
+
+		<font color="#110044" class=fonts3><b>愛する</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/hartes.html')">
+
+		<font color="#110044" class=fonts3><b>ハーテス</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/harton.html')">
+
+		<font color="#110044" class=fonts3><b>harton</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/harton.html')">
+
+		<font color="#110044" class=fonts3><b>愛</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/harton.html')">
+
+		<font color="#110044" class=fonts3><b>ハートン</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/hymme.html')">
+
+		<font color="#110044" class=fonts3><b>hymme</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/hymme.html')">
+
+		<font color="#110044" class=fonts3><b>謳う、奏でる、共鳴する</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/hymme.html')">
+
+		<font color="#110044" class=fonts3><b>ヒュム</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/hymmnos.html')">
+
+		<font color="#110044" class=fonts3><b>hymmnos</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/hymmnos.html')">
+
+		<font color="#110044" class=fonts3><b>詩、ヒュムノス</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/hymmnos.html')">
+
+		<font color="#110044" class=fonts3><b>ヒュムノス</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/i.html')">
+
+		<font color="#110044" class=fonts3><b>i</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/i.html')">
+
+		<font color="#110044" class=fonts3><b>焦り</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/i.html')">
+
+		<font color="#110044" class=fonts3><b>イ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/iem.html')">
+
+		<font color="#110044" class=fonts3><b>iem</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/iem.html')">
+
+		<font color="#110044" class=fonts3><b>今</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/iem.html')">
+
+		<font color="#110044" class=fonts3><b>イェム</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/infel.html')">
+
+		<font color="#110044" class=fonts3><b>infel</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/infel.html')">
+
+		<font color="#110044" class=fonts3><b>愛</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/infel.html')">
+
+		<font color="#110044" class=fonts3><b>インフェル</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/irs.html')">
+
+		<font color="#110044" class=fonts3><b>irs</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/irs.html')">
+
+		<font color="#110044" class=fonts3><b>いる、存在する</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/irs.html')">
+
+		<font color="#110044" class=fonts3><b>イルス</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/jam.html')">
+
+		<font color="#110044" class=fonts3><b>jam</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/jam.html')">
+
+		<font color="#110044" class=fonts3><b>一緒に（副詞）</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/jam.html')">
+
+		<font color="#110044" class=fonts3><b>ジャム</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/jambea.html')">
+
+		<font color="#110044" class=fonts3><b>jambea</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/jambea.html')">
+
+		<font color="#110044" class=fonts3><b>足</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/jambea.html')">
+
+		<font color="#110044" class=fonts3><b>ジャンベァ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/koora.html')">
+
+		<font color="#110044" class=fonts3><b>koora</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/koora.html')">
+
+		<font color="#110044" class=fonts3><b>小川</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/koora.html')">
+
+		<font color="#110044" class=fonts3><b>コーラ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ks.html')">
+
+		<font color="#110044" class=fonts3><b>ks</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ks.html')">
+
+		<font color="#110044" class=fonts3><b>暗示を掛ける</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ks.html')">
+
+		<font color="#110044" class=fonts3><b>ケス</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/lurrea.html')">
+
+		<font color="#110044" class=fonts3><b>lurrea</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/lurrea.html')">
+
+		<font color="#110044" class=fonts3><b>慄く</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/lurrea.html')">
+
+		<font color="#110044" class=fonts3><b>ルーッレア</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/manaf.html')">
+
+		<font color="#110044" class=fonts3><b>manaf</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/manaf.html')">
+
+		<font color="#110044" class=fonts3><b>命、生命</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/manaf.html')">
+
+		<font color="#110044" class=fonts3><b>マナフ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/melenas.html')">
+
+		<font color="#110044" class=fonts3><b>melenas</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/melenas.html')">
+
+		<font color="#110044" class=fonts3><b>愛してる、大好きです</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/melenas.html')">
+
+		<font color="#110044" class=fonts3><b>メレナス</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/murfan.html')">
+
+		<font color="#110044" class=fonts3><b>murfan</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/murfan.html')">
+
+		<font color="#110044" class=fonts3><b>想う</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/murfan.html')">
+
+		<font color="#110044" class=fonts3><b>ムルファン</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/murfanare.html')">
+
+		<font color="#110044" class=fonts3><b>murfanare</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/murfanare.html')">
+
+		<font color="#110044" class=fonts3><b>想い</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/murfanare.html')">
+
+		<font color="#110044" class=fonts3><b>ムルファナーレ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/near.html')">
+
+		<font color="#110044" class=fonts3><b>near</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/near.html')">
+
+		<font color="#110044" class=fonts3><b>命、生命</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/near.html')">
+
+		<font color="#110044" class=fonts3><b>ニェァー</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/nepo.html')">
+
+		<font color="#110044" class=fonts3><b>nepo</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/nepo.html')">
+
+		<font color="#110044" class=fonts3><b>潤う</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/nepo.html')">
+
+		<font color="#110044" class=fonts3><b>ネポ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/nha.html')">
+
+		<font color="#110044" class=fonts3><b>nha</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/nha.html')">
+
+		<font color="#110044" class=fonts3><b>入れる、召喚する</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/nha.html')">
+
+		<font color="#110044" class=fonts3><b>ニャ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffccff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>ousye</b></font></a></td>
+
+		<td bgcolor="#ffccff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>襲い掛かる、降りかかる</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>オウシェ</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>アルファ律（オリジンスペル：EOLIA属）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffccff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>ousye</b></font></a></td>
+
+		<td bgcolor="#ffccff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>襲い掛かる、降りかかる</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ousye.html')">
+
+		<font color="#110044" class=fonts3><b>オウシェ</b></font></A></td>
+
+		<td bgcolor="#ffccff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>アルファ律（オリジンスペル：EOLIA属）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/papana.html')">
+
+		<font color="#110044" class=fonts3><b>papana</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/papana.html')">
+
+		<font color="#110044" class=fonts3><b>雨</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/papana.html')">
+
+		<font color="#110044" class=fonts3><b>パパナ</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/phyue.html')">
+
+		<font color="#110044" class=fonts3><b>phyue</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/phyue.html')">
+
+		<font color="#110044" class=fonts3><b>おめでとう</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/phyue.html')">
+
+		<font color="#110044" class=fonts3><b>ヒュゥ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/pomb.html')">
+
+		<font color="#110044" class=fonts3><b>pomb</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/pomb.html')">
+
+		<font color="#110044" class=fonts3><b>生む、産み出す</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/pomb.html')">
+
+		<font color="#110044" class=fonts3><b>ポム</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceecc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/ptrapile.html')">
+
+		<font color="#110044" class=fonts3><b>ptrapile</b></font></a></td>
+
+		<td bgcolor="#cceecc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/ptrapile.html')">
+
+		<font color="#110044" class=fonts3><b>秋</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/ptrapile.html')">
+
+		<font color="#110044" class=fonts3><b>プトラピル</b></font></A></td>
+
+		<td bgcolor="#cceecc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>クルトシエール律（Ⅰ紀前古代語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/rasse.html')">
+
+		<font color="#110044" class=fonts3><b>rasse</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/rasse.html')">
+
+		<font color="#110044" class=fonts3><b>エールを送る</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/rasse.html')">
+
+		<font color="#110044" class=fonts3><b>ラッセー</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/sarla.html')">
+
+		<font color="#110044" class=fonts3><b>sarla</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/sarla.html')">
+
+		<font color="#110044" class=fonts3><b>詩</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/sarla.html')">
+
+		<font color="#110044" class=fonts3><b>サルラ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#cceeff" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/sonwe.html')">
+
+		<font color="#110044" class=fonts3><b>sonwe</b></font></a></td>
+
+		<td bgcolor="#cceeff" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/sonwe.html')">
+
+		<font color="#110044" class=fonts3><b>歌う</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/sonwe.html')">
+
+		<font color="#110044" class=fonts3><b>ソンウェ</b></font></A></td>
+
+		<td bgcolor="#cceeff" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>古メタファルス律（Ⅰ紀神聖語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/urr.html')">
+
+		<font color="#110044" class=fonts3><b>urr</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/urr.html')">
+
+		<font color="#110044" class=fonts3><b>(見えなかったものが)顕れる、体現(する)、具現化(する)</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/urr.html')">
+
+		<font color="#110044" class=fonts3><b>ウル</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/walaka.html')">
+
+		<font color="#110044" class=fonts3><b>walaka</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/walaka.html')">
+
+		<font color="#110044" class=fonts3><b>歩く</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/walaka.html')">
+
+		<font color="#110044" class=fonts3><b>ワラカ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yatse.html')">
+
+		<font color="#110044" class=fonts3><b>yatse</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yatse.html')">
+
+		<font color="#110044" class=fonts3><b>（肯定的な感情を）与える</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yatse.html')">
+
+		<font color="#110044" class=fonts3><b>ヤッセ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yea.html')">
+
+		<font color="#110044" class=fonts3><b>yea</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yea.html')">
+
+		<font color="#110044" class=fonts3><b>嬉しい</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yea.html')">
+
+		<font color="#110044" class=fonts3><b>イェア</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yor.html')">
+
+		<font color="#110044" class=fonts3><b>yor</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yor.html')">
+
+		<font color="#110044" class=fonts3><b>あなた</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yor.html')">
+
+		<font color="#110044" class=fonts3><b>ヨア</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yora.html')">
+
+		<font color="#110044" class=fonts3><b>yora</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yora.html')">
+
+		<font color="#110044" class=fonts3><b>あなたたち</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yora.html')">
+
+		<font color="#110044" class=fonts3><b>ヨラ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yorr.html')">
+
+		<font color="#110044" class=fonts3><b>yorr</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yorr.html')">
+
+		<font color="#110044" class=fonts3><b>あなた（主語定義）</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yorr.html')">
+
+		<font color="#110044" class=fonts3><b>ヨ[ルル]</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yorra.html')">
+
+		<font color="#110044" class=fonts3><b>yorra</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yorra.html')">
+
+		<font color="#110044" class=fonts3><b>あなたたち（主語定義）</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yorra.html')">
+
+		<font color="#110044" class=fonts3><b>ヨ[ルル]ラ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/yos.html')">
+
+		<font color="#110044" class=fonts3><b>yos</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/yos.html')">
+
+		<font color="#110044" class=fonts3><b>貴方が、貴方の</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/yos.html')">
+
+		<font color="#110044" class=fonts3><b>ヨス</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		<td bgcolor="#ffcccc" nowrap width=100>
+
+		<a href="JavaScript:popUp('./words/zash.html')">
+
+		<font color="#110044" class=fonts3><b>zash</b></font></a></td>
+
+		<td bgcolor="#ffcccc" nowrap width=170>
+
+		<a href="JavaScript:popUp('./words/zash.html')">
+
+		<font color="#110044" class=fonts3><b>痛い、苦痛</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=150>
+
+		<a href="JavaScript:popUp('./words/zash.html')">
+
+		<font color="#110044" class=fonts3><b>ザッシュ</b></font></A></td>
+
+		<td bgcolor="#ffcccc" nowrap width=200>
+
+		<a href="/hymmnoserver/index.php_mode=help2">
+
+		<font color="#110044" class=fonts1><b>中央正純律（共通語）</b></font></a></td>
+
+		<tr>
+
+		</table>
+
+<table>
+
+<td width=634 bgcolor="#001144">
+
+<font class=fonts2><b>
+
+　　<a href="/hymmnoserver/index.php"><font color=white>【トップへ戻る】</font></a><br>
+
+</b></font>
+
+</td>
+
+</table>
+
+<font class=fonts1 color="#002244"><i>Hymmnos and <a href="http://game.salburg.com/hymmnoserver/index.php">HYMMNOSERVER</a> were created by Akira Tsuchiya. (Ver1.1/Rev.20060318)</i><br>English translation provided by Blastomayo. See our <a href="legal.html">stance on fan-produced translations</a>.</font><br>
+
