@@ -28,17 +28,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="center">
-			<table style="border-width: 0px; cell-spacing: 2px;">
-				<tr>
-					<td class="header-links" style="width: 316px;">
-						<a href="/hymmnoserver/index.php?mode=abc&amp;page=0">List by Roman characters</a>
-					</td>
-					<td class="header-links" style="width: 316px;">
-						<a href="/hymmnoserver/index.php?mode=aiu&amp;page=0">List by Japanese characters</a>
-					</td>
-				</tr>
-			</table>
+		<td align="center" class="header-links">
+			<a href="/hymmnoserver/browse.php?page=a">Browse words in Roman order</a>
 		</td>
 	</tr>
 </table>
