@@ -5,11 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Main</title>
-<?php include 'common/resources.xml'; ?>
+		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
-<?php include 'common/header.xml'; ?>
-		
+		<?php include 'common/header.xml'; ?>
 		<table style="width: 640px;" class="text-basic">
 			<tr>
 				<td align="left" valign="top" style="width: 450px;">
@@ -68,10 +67,10 @@
 						<tr>
 							<td class="titlecell" style="text-align: center; style=width: 184px;">
 								<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none;">
-									<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font"/>
+									<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
 									<span style="color: #FFFFFF; font-weight: bold; margin-top: -10px;">
 										<span style="font-size: 10pt;">Download the [Hymmnos]</span><br/>
-										<span style="font-size: 9pt;">TrueType Font</span>
+										<span style="font-size: 9pt;">TrueType Font (v1.1)</span>
 									</span>
 								</a>
 							</td>
@@ -82,15 +81,30 @@
 					<table cellspacing="0">
 						<tr>
 							<td style="width: 184px;" class="titlecell">
+								⠕ Updates
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 184px;" class="infocell">
+								<ul class="basic-inline" style="font-weight: bold; font-size: 3.2mm; line-height: 3.5mm;">
+									<li>Server content updated to match Japanese v2.0 (31/12/2008)</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<td style="width: 184px;" class="titlecell">
 								⠕ Hymmnos Information
 							</td>
 						</tr>
 						<tr>
 							<td style="width: 184px;" class="infocell">
 								<ul class="basic-inline" style="font-weight: bold; font-size: 3.2mm; line-height: 3.5mm;">
-									<li><a href="/hymmnoserver/help-summary.php">Summary</a></li>
-									<li><a href="/hymmnoserver/help-overview.php">起源とその流派</a></li>
-									<li><a href="/hymmnoserver/help-grammar.php">Grammar</a></li>
+									<li><a href="/hymmnoserver/introduction.php">Introduction</a></li>
+									<li><a href="/hymmnoserver/summary.php">Hymmnos Types</a></li>
+									<li><a href="/hymmnoserver/overview.php">起源とその流派</a></li>
+									<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
+									<li><a href="/hymmnoserver/grammar.php">Grammar (Idioms)</a></li>
+									<li><a href="/hymmnoserver/grammar2.php">Grammar (New Testament)</a></li>
 								</ul>
 							</td>
 						</tr>
@@ -101,7 +115,7 @@
 						</tr>
 						<tr>
 							<td style="width: 184px; text-align: center;" class="infocell">
-								<a href="http://game.salburg.com/hymmnoserver/index.php">
+								<a href="http://game.salburg.com/hymmnoserver/">
 									<img src="/hymmnoserver/images/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
 								</a>
 							</td>
@@ -110,7 +124,6 @@
 				</td>
 			</tr>
 		</table>
-
-<?php include 'common/footer.xml'; ?> 
+		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>

@@ -5,10 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Word - ChronicleKey</title>
-<?php include 'common/resources.xml'; ?>
+		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
-		<div style="width: 640px;">
 		<table style="width: 640px; border-width: 0px;">
 			<tr>
 				<td class="word-header">
@@ -65,7 +64,6 @@
 				</td>
 			</tr>
 		</table>
-		
-<?php include 'common/footer-word.xml'; ?> 
+		<?php include 'common/footer-word.xml'; ?> 
 	</body>
 </html>

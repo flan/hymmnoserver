@@ -1,48 +1,45 @@
-		<div style="width: 640px;">
-		
-		<table class="header">
-			<tr>
-				<td class="header" align="center">
-					<a href="/hymmnoserver/index.php"><img src="/hymmnoserver/images/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/></a>
-				</td>
-			</tr>
-			<tr>
-				<td class="header">
-					<form method="post" action="/hymmnoserver/index.php">
-						<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px;">
-							<tr>
-								<td class="header" style="width: 150px;">
-									Hymmnos search
-									<input type="hidden" name="mode" value="search"/>
-								</td>
-								<td class="header" style="width: 240px;">
-									<input type="text" name="s_word" value="" size="30"/>
-								</td>
-								<td class="header" style="width: 122px;">
-									<input type="submit" name="s_type" value="Hymmnos to Harmony"/>
-								</td>
-								<td class="header" style="width: 122px;">
-									<input type="submit" name="s_type" value="Harmony to Hymmnos"/>
-								</td>
-							</tr>
-						</table>
-					</form>
-				</td>
-			</tr>
-			<tr>
-				<td align="center">
-					<table style="border-width: 0px; cell-spacing: 2px;">
-						<tr>
-							<td class="header-links" style="width: 316px;">
-								<a href="/hymmnoserver/index.php?mode=abc&amp;page=0">List by Roman characters</a>
-							</td>
-							<td class="header-links" style="width: 316px;">
-								<a href="/hymmnoserver/index.php?mode=aiu&amp;page=0">List by Japanese characters</a>
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-		<hr/>
-		
+<table class="header">
+	<tr>
+		<td class="header" align="center">
+			<a href="/hymmnoserver/index.php"><img src="/hymmnoserver/images/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/></a>
+		</td>
+	</tr>
+	<tr>
+		<td class="header">
+			<form method="post" action="/hymmnoserver/index.php">
+				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px;">
+					<tr>
+						<td class="header" style="width: 150px;">
+							Hymmnos search
+							<input type="hidden" name="mode" value="search"/>
+						</td>
+						<td class="header" style="width: 240px;">
+							<input type="text" name="s_word" value="" size="30"/>
+						</td>
+						<td class="header" style="width: 122px;">
+							<input type="submit" name="s_type" value="Hymmnos to Harmony"/>
+						</td>
+						<td class="header" style="width: 122px;">
+							<input type="submit" name="s_type" value="Harmony to Hymmnos"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<table style="border-width: 0px; cell-spacing: 2px;">
+				<tr>
+					<td class="header-links" style="width: 316px;">
+						<a href="/hymmnoserver/index.php?mode=abc&amp;page=0">List by Roman characters</a>
+					</td>
+					<td class="header-links" style="width: 316px;">
+						<a href="/hymmnoserver/index.php?mode=aiu&amp;page=0">List by Japanese characters</a>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<hr/>

@@ -1,20 +1,17 @@
-		<div class="footer-copyright">
-			<table class="footer-link">
-				<tr>
-					<td style="width: 640px;">
-						<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>
-					</td>
-				</tr>
-			</table>
-			
-			<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/index.php" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver1.1/Rev.20060318)<br/>
-			English version provided by Blastomayo. Click to see <a href="/hymmnoserver/legal.html" class="footer-copyright">our stance on the legalities of fan-produced translations</a>.<br/>
-		</div>
-		<div style="text-align: right;">
-			<a href="http://validator.w3.org/check?uri=referer"><img src="/hymmnoserver/images/xhtml11-bar.png" alt="Valid XHTML 1.1" style="border-width: 0;"/></a>
-			<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://hamsterx.homelinux.org/hymmnoserver/resources/hymmnoserver.css"><img src="/hymmnoserver/images/css-bar.png" alt="Valid CSS" style="border-width: 0;"/></a>
-			<a href="http://bluefish.openoffice.nl"><img src="/hymmnoserver/images/bluefish-bar.png" alt="Made with Bluefish" style="border-width: 0;"/></a>
-			<a href="http://www.php.net"><img src="/hymmnoserver/images/php-power-micro2.png" alt="Powered by PHP" style="border-width: 0;"/></a>
-		</div>
-		
-		</div>
+<div class="footer-copyright">
+	<table class="footer-link">
+		<tr>
+			<td style="width: 640px;">
+				<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>
+			</td>
+		</tr>
+	</table>
+	<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver2.0/Rev.20080312)<br/>
+	English version provided by Neil Tallim. (<a href="/hymmnoserver/legal.html" class="footer-copyright">My stance on the legalities of fan-produced translations</a>)<br/>
+</div>
+<div style="text-align: right;">
+	<a href="http://validator.w3.org/check?uri=referer"><img src="/hymmnoserver/images/xhtml11-bar.png" alt="Valid XHTML 1.1" style="border-width: 0;"/></a>
+	<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://hamsterx.homelinux.org/hymmnoserver/resources/hymmnoserver.css"><img src="/hymmnoserver/images/css-bar.png" alt="Valid CSS" style="border-width: 0;"/></a>
+	<a href="http://bluefish.openoffice.nl"><img src="/hymmnoserver/images/bluefish-bar.png" alt="Made with Bluefish" style="border-width: 0;"/></a>
+	<a href="http://www.php.net"><img src="/hymmnoserver/images/php-power-micro2.png" alt="Powered by PHP" style="border-width: 0;"/></a>
+</div>

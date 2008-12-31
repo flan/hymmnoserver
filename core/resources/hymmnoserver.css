@@ -1,3 +1,8 @@
+/*Universal styles*/
+body{
+	style: width: 640;
+}
+
 /*Global styles*/
 a:link{
 	color:#D92F0E;
@@ -76,18 +81,19 @@ td.header-links{
 	font-size: 8pt;
 }
 
-td.infocell{
-	background: #CCCCFF;
-	color: #002244;
-	font-size: 10pt;
-}
-
 td.titlecell{
 	background: #001144;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 10pt;
 }
+
+td.infocell{
+	background: #CCCCFF;
+	color: #002244;
+	font-size: 10pt;
+}
+
 td.word-header{
 	background: #110066;
 	padding: 8px;
@@ -108,6 +114,17 @@ ul.basic-inline{
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding-left: 15px;
+}
+
+div.section-title{
+	background: #e0e0ff;
+	width: 100%;
+	border-bottom: 1px double #002244;
+}
+div.subsection-title{
+	background: #eeeeff;
+	width: 100%;
+	border: 1px solid #333333;
 }
 
 .text-basic{
