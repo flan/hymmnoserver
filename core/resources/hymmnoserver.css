@@ -1,6 +1,7 @@
 /*Universal styles*/
 body{
-	style: width: 640;
+	width: 640px;
+	background: white;
 }
 
 /*Global styles*/
@@ -54,7 +55,7 @@ table.footer-link{
 	border-width: 0px;
 }
 
-table.header{
+table#header{
 	border-spacing: 0px;
 	border-color: #000000;
 	border-width: 0px;
@@ -80,12 +81,25 @@ td.header-links{
 	font-weight: bold;
 	font-size: 8pt;
 }
+td.header-links:hover{
+	background: #CCDDEE;
+}
 
 td.titlecell{
 	background: #001144;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 10pt;
+}
+
+td.fontcell{
+	background: #001144;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+}
+td.fontcell:hover{
+	background: #334477;
 }
 
 td.infocell{

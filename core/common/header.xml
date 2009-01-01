@@ -1,26 +1,27 @@
-<table class="header">
+<table id="header">
 	<tr>
 		<td class="header" align="center">
-			<a href="/hymmnoserver/index.php"><img src="/hymmnoserver/images/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/></a>
+			<a href="/hymmnoserver/index.php">
+				<img src="/hymmnoserver/images/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/>
+			</a>
 		</td>
 	</tr>
 	<tr>
 		<td class="header">
-			<form method="post" action="/hymmnoserver/index.php">
-				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px;">
+			<form method="post" action="/hymmnoserver/browse.php">
+				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px; width: 100%;">
 					<tr>
-						<td class="header" style="width: 150px;">
+						<td class="header" style="width: 60px;">
 							Hymmnos search
-							<input type="hidden" name="mode" value="search"/>
 						</td>
-						<td class="header" style="width: 240px;">
-							<input type="text" name="s_word" value="" size="30"/>
+						<td class="header" style="width: 330px;">
+							<input type="text" name="word" value="" style="width: 96%;"/>
 						</td>
-						<td class="header" style="width: 122px;">
-							<input type="submit" name="s_type" value="Hymmnos to Harmony"/>
+						<td class="header" style="width: 125px;">
+							<input type="submit" name="type" value="Search for Hymmnos"/>
 						</td>
-						<td class="header" style="width: 122px;">
-							<input type="submit" name="s_type" value="Harmony to Hymmnos"/>
+						<td class="header" style="width: 125px;">
+							<input type="submit" name="type" value="Search for English"/>
 						</td>
 					</tr>
 				</table>
@@ -29,7 +30,7 @@
 	</tr>
 	<tr>
 		<td align="center" class="header-links">
-			<a href="/hymmnoserver/browse.php?page=a">Browse words in Roman order</a>
+			<a href="/hymmnoserver/browse.php?page=a" style="display: block; text-decoration: none; color: #D92F0E;">Browse words in Roman order</a>
 		</td>
 	</tr>
 </table>

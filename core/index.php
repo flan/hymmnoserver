@@ -9,68 +9,88 @@
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
-		<table style="width: 640px;" class="text-basic">
+		<table class="text-basic">
 			<tr>
 				<td align="left" valign="top" style="width: 450px;">
 					<p>
-						<span class="text-title">ヒュムノサーバーへようこそ。</span><br/>
-						ここは、アルトネリコの世界「ソル・シエール」で詩魔法発動用の呪文として使われている言語「ヒュムノスワード」の紹介と、日本語変換を行えるページです。
-						<br/>
-						<span style="color: #FF0000;">
-							尚、このページはアルトネリコ関連作品における、ヒュムノス開発者の為の業務用データベースサーバーを一般公開しているものです。今後もこのデータベースを業務で参照していきますので、取扱には十分ご注意ください。また、予期せぬ不具合等が発生した場合は、速やかにsupport@salburg.comまでご連絡ください。
-						</span>
+						<span class="text-title">Welcome to HYMMNOSERVER</span><br/>
+						The world of Ar_tonelico, "Sol Ciel", is home to a language of magical chants, known as "Hymmnos Words".
+					</p>
+					<p>
+						Here, you will be able to learn how this language works and you may look up words in English and Japanese.
+					</p>
+					<p style="color: #FF0000;">
+						Please be aware that this is an unofficial, fan-translated work and may, therefore, contain errors, and suffer
+						from synchronization issues with the Japanese version of this site. Some features were intentionally omitted
+						because of the sheer amount of work it would take to duplicate the functionality in English. If you note any
+						problems, please let the maintainer know by speaking to flan@synIRC.
 					</p>
 					<hr/>
 					<p>
-						<span class="text-title">■ヒュムノス・ワードの文法について</span><br/>
-						ヒュムノス・ワードには簡単な文法があります。単語を辞書で調べる前に、その構文を少し身につけておくだけで、より深いヒュムノスワードの世界へと入り込めるようになるでしょう。
-						文法の説明は、右のリンク「ヒュムノスワード文法」と「ヒュムノスワードの種類」をご覧ください。
+						<span class="text-title">⠕ The grammar of Hymmnos Words</span><br/>
+						Hymmnos Words are organized into a simple grammar. Before perusing the dictionary, you should consider
+						learning about its syntax to deepen your understanding. To the right, you will find links to articles
+						about the different types of Hymmnos and details about how the grammar works.
 					</p>
 					<p>
-						<span class="text-title">■ヒュムノス文字について</span><br/>
-						ヒュムノスワードには、独自の文字列が存在します。また、このページの単語検索機能を使用する場合、その文字のフォントを入れておくことで、更なるヒュムノスの世界をお楽しみ頂けるようになります。
-						ヒュムノス文字フォントは、TTF（Windows True Type Font）として無料でダウンロード可能です。右メニューの「フォントのダウンロード」からダウンロードし、フォントのインストールを用いてインストールを行ってください。
+						<span class="text-title">⠕ Hymmnos characters</span><br/>
+						Hymmnos Words are expressed as unique strings. Browsing this repository will be more enjoyable if you
+						are able to see these characters. A TrueType Font for Hymmnos script is available as a free download
+						to your right (courtesy of GUST; permission pending).
+						
+						<ul class="basic-inline text-small">
+							<li>
+								Users of modern Unix-like operating systems can usually just save the font file into ~/.fonts/
+								and make	use of it immediately.
+							</li>
+							<li>
+								Mac users may drag fonts from the Finder into the Fonts section under their Library.
+							</li>
+							<li>
+								Those using Microsoft Windows will need to do some weird dance that may or may not involve
+								right-clicking, finding a Fonts directory that may or may not be write-protected, and,
+								possibly, restarting their systems several times.
+							</li>
+						</ul>
 					</p>
 					<p>
-						<span class="text-title">■ヒュムノサーチの使い方</span><br/>
-						このサーバーの上部にある検索窓から、ヒュムノス語と日本語の相互変換が可能です。この検索機能は、以下のような使い方を行うことが可能です。
+						<span class="text-title">⠕ Searching for Hymmnos</span><br/>
+						The search bar at the top of every page allows you to look up Hymmnos by Roman script.
+						Using this feature, you can do the following:
 					</p>
 					<blockquote class="text-small">
 						<p>
-							<span class="text-title-small">１）ヒュムノス単語で検索</span><br/>
-							ヒュムノス単語をウインドウに入力し「ヒュ→和検索」ボタンを押せば、そのヒュムノス語の意味を調べることが出来ます。
+							<span class="text-title-small">1) Find a word in Hymmnos</span><br/>
+							Enter a word in Hymmnos script and click the Hymmnos search button.
+							You will see a list of all words beginning with the characters you entered.
 						</p>
-						
 						<p>
-							<span class="text-title-small">２）ヒュムノス文を一括で変換</span><br/>
-							ヒュムノス文章をそのまま入力し「ヒュ→和検索」ボタンを押せば、全部の単語を一気変換可能です。その際に、文法チェックも行えます。
+							<span class="text-title-small">2) Convert an entire Hymmnos statement</span><br/>
+							Enter a complete string of Hymmnos and click the Hymmnos search button.
+							Every word will be translated in sequence, and the grammar will be evaluated.
 						</p>
-						
 						<p>
-							<span class="text-title-small">３）日本語からヒュムノス語を検索</span><br/>
-							日本語の単語を入力し、「和→ヒュ検索」ボタンを押せば、その日本語に該当する全てのヒュムノス単語を表示できます。
+							<span class="text-title-small">3) Find the Hymmnos for an English word</span><br/>
+							Enter a word in English, then click the English search button.
+							All Hymmnos words that involve the word you provided will be displayed.
+							(Synonyms, however, will not be checked)
 						</p>
-						
 						<p>
-							<span class="text-title-small">４）ABC順で一覧リスト表示</span><br/>
-							検索窓の下側にある「アルファベット順リスト」をクリックすれば、ABC順でソートされたヒュムノス単語を一覧表示で閲覧できます。
-						</p>
-						
-						<p>
-							<span class="text-title-small">５）あいうえお順で一覧リスト表示</span><br/>
-							検索窓の下側にある「日本語順リスト」をクリックすれば、あいうえお順の意味でソートされたヒュムノス単語を一覧表示で閲覧できます。
+							<span class="text-title-small">4) List Hymmnos alphabetically</span><br/>
+								Click the "Browse words in Roman order" link below the search bar and you will be presented
+								with a full index of the dictionary.
 						</p>
 					</blockquote>
 				</td>
-				<td align="right" valign="top">
+				<td align="right" valign="top" style="width: 184px;">
 					<table style="width: 184px; border-color: #001144; border-width: 1px; border-style: outset;">
 						<tr>
-							<td class="titlecell" style="text-align: center; style=width: 184px;">
-								<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none;">
+							<td class="fontcell" style="text-align: center; style=width: 184px;">
+								<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none; display: block;">
 									<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
 									<span style="color: #FFFFFF; font-weight: bold; margin-top: -10px;">
-										<span style="font-size: 10pt;">Download the [Hymmnos]</span><br/>
-										<span style="font-size: 9pt;">TrueType Font (v1.1)</span>
+										<span style="font-size: 9pt;">Download the [Hymmnos]</span><br/>
+										<span style="font-size: 8pt;">TrueType Font (v1.1)</span>
 									</span>
 								</a>
 							</td>
@@ -80,28 +100,28 @@
 	
 					<table cellspacing="0">
 						<tr>
-							<td style="width: 184px;" class="titlecell">
+							<td class="titlecell">
 								⠕ Updates
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 184px;" class="infocell">
-								<ul class="basic-inline" style="font-weight: bold; font-size: 3.2mm; line-height: 3.5mm;">
+							<td class="infocell">
+								<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
 									<li>Server content updated to match Japanese v2.0 (31/12/2008)</li>
 								</ul>
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 184px;" class="titlecell">
+							<td class="titlecell">
 								⠕ Hymmnos Information
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 184px;" class="infocell">
-								<ul class="basic-inline" style="font-weight: bold; font-size: 3.2mm; line-height: 3.5mm;">
+							<td class="infocell">
+								<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
 									<li><a href="/hymmnoserver/introduction.php">Introduction</a></li>
 									<li><a href="/hymmnoserver/summary.php">Hymmnos Types</a></li>
-									<li><a href="/hymmnoserver/overview.php">起源とその流派</a></li>
+									<li><a href="/hymmnoserver/overview.php">Schools and Origins</a></li>
 									<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
 									<li><a href="/hymmnoserver/grammar.php">Grammar (Idioms)</a></li>
 									<li><a href="/hymmnoserver/grammar2.php">Grammar (New Testament)</a></li>
@@ -109,12 +129,12 @@
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 184px;" class="titlecell">
+							<td class="titlecell">
 								⠕ Link Banner
 							</td>
 						</tr>
 						<tr>
-							<td style="width: 184px; text-align: center;" class="infocell">
+							<td style="text-align: center;" class="infocell">
 								<a href="http://game.salburg.com/hymmnoserver/">
 									<img src="/hymmnoserver/images/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
 								</a>
