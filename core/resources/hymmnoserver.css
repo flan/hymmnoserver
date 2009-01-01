@@ -108,6 +108,18 @@ td.infocell{
 	font-size: 10pt;
 }
 
+td.data-header-blue{
+	font-size: 0.9em;
+	color: #001144;
+	background: #aaaadd;
+	font-weight: bold;
+}
+td.data-cell-blue{
+	font-size: 0.9em;
+	color: #001144;
+	background: #ccccff;
+}
+
 td.word-header{
 	background: #110066;
 	padding: 8px;

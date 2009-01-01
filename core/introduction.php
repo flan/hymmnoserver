@@ -31,8 +31,8 @@
 				<div class="subsection-title text-title-small">Stationary waves</div>
 				<p>
 					Stationary waves are a somewhat more difficult concept to grasp.
-					In essence, they form when enough Hymmnos force has been collected in one location to
-					maintain coherence by itself.
+					In essence, they form when enough wave-force has been collected in one location to
+					maintain coherence by itself. (This can be applied to anything based on waves)
 				</p>
 				<p>
 					Akira Tsuchiya, the expert on Hymmnos theory, offers this analogy for those with a
@@ -49,8 +49,8 @@
 					Matter-waves are referred to as &quot;<b>D</b>etail-waves&quot;.<br/>
 					All matter in this world is composed of waves. Take, for example, metals.
 					Differences can be observed as the frequencies acting on them vary anywhere between 0 and ∞Hz --
-					not so much in their fundamental shape, but through physical phenomena, such as melting as a
-					result of high temperatures.
+					not so much in their fundamental shape, but through physical phenomena, such as melting
+					because of high temperatures.
 				</p>
 				<p>
 					D-waves tend to influence the physical world because they affect the "sea" of waves that
@@ -63,8 +63,7 @@
 				<p>
 					Throught-waves are referred to as &quot;<b>H</b>ymmno-waves&quot;.<br/>
 					These waves cannot be explained using properties related to physical matter; they are,
-					in essence, waves that carry feelings.
-					Where D-waves reflect the willfulness of the spirit, H-waves are expressions of the soul.
+					in essence, waves that carry feelings and the intent of thoughts.
 				</p>
 			</div>
 			<p>

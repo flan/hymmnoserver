@@ -124,7 +124,7 @@
 									<li><a href="/hymmnoserver/summary.php">Hymmnos Types</a></li>
 									<li><a href="/hymmnoserver/overview.php">Schools and Origins</a></li>
 									<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
-									<li><a href="/hymmnoserver/grammar.php">Grammar (Idioms)</a></li>
+									<li><a href="/hymmnoserver/grammar.php">Grammar (First Era)</a></li>
 									<li><a href="/hymmnoserver/grammar2.php">Grammar (New Testament)</a></li>
 								</ul>
 							</td>
