@@ -133,7 +133,7 @@ ul.basic-inline{
 div.section-title{
 	background: #e0e0ff;
 	width: 100%;
-	border-bottom: 1px double #002244;
+	border-bottom: 2px solid #002244;
 }
 div.subsection-title{
 	background: #eeeeff;

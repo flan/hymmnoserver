@@ -10,52 +10,72 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■はじめに</div>
+			<div class="section-title text-title-small">⠕ Introduction</div>
 			<p>
-				このヒュムノス語文法、ヒュムノス概要書は、やや難解な言葉や概念が出てきます。それは主に、現実の科学（我々の常識）とは違う理論を前提とした設定を構築している為に発生する事です。
-				そこでまずは、ここで最低限の用語を説明します。ここに記していない用語に関しては、ゲームをプレイしていれば出てくる単語ですので、ゲームを再度参照してみてください。
+				The grammar of Hymmnos is based on a number of abstract, complex concepts.
+				To understand it, it is best to approach the language as though it were a science:
+				begin with a number of basic, observable ideas and build upon them incrementally.
+				In this section, some of those basic ideas will be outlined; this collection is
+				by no means comprehensive, and it may be outdated as new information is provided
+				through its interactive video game counterparts.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">導体波</div>
+				<div class="subsection-title text-title-small">Conducted waves</div>
 				<p>
-					導体波とは簡単にいえば「エネルギー」です。
-					全てが波動で構成された世界では、光も熱も、魔法の力も引力も全てエネルギーであり、導体波です。
+					As sound, the waves that carry Hymmnos Words often need to propagate to have any
+					effect on the world. Just like heat, light, and every other type of waveform,
+					the magic waves of Hymmnos typically need to be conducted through matter.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">定常波</div>
+				<div class="subsection-title text-title-small">Stationary waves</div>
 				<p>
-					定常波とは少し難しく「そこに在り続ける力」です。
-					例えば鉛筆が鉛筆で在り続ける為には、相当な「力」が必要です。
-					それは、この大きな世界の中で、鉛筆という存在を維持する為にそこに集まっている波動成分であります。
-					物理学をかじっている方なら、「原子の集合体」と言えば分かりやすいかもしれません。
-					この世界では原子もまた波動の集合体ですから、原子がここに留まっているということは、それだけの数の波動が留まっているという事です。
-					定常波とは即ち「存在」の事であり、それは「自我」でもあり「意志」でもあります。
+					Stationary waves are a somewhat more difficult concept to grasp.
+					In essence, they form when enough Hymmnos force has been collected in one location to
+					maintain coherence by itself.
+				</p>
+				<p>
+					Akira Tsuchiya, the expert on Hymmnos theory, offers this analogy for those with a
+					background in physics: it is like a collection of atoms. Normally, atoms would scatter
+					throughout their environment, but when enough start to bind to each other, stable
+					molecules form. Stationary waves are like molecules in that they do not disperse on
+					their own, remaining stable until acted on by an outside force.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Ｄ波</div>
+				<div class="subsection-title text-title-small">D-wave</div>
+				<!-- I really had to stretch to make sense of this one. Sorry, purists. -->
 				<p>
-					物質波（Detail wave）と呼ばれています。この世界では全ての物質は波動で構成されています。例えば「鉄」は、０〜∞Ｈｚまでの様々な周波数とベクトルを持った波動が、特定の状態を保っている為に出来ている物質です。
-					形がない、しかし物理的に作用する現象（例えば炎、熱など）もＤ波によるものです。
+					Matter-waves are referred to as &quot;<b>D</b>etail-waves&quot;.<br/>
+					All matter in this world is composed of waves. Take, for example, metals.
+					Differences can be observed as the frequencies acting on them vary anywhere between 0 and ∞Hz --
+					not so much in their fundamental shape, but through physical phenomena, such as melting as a
+					result of high temperatures.
 				</p>
 				<p>
-					このＤ波や後述のＨ波は「波の種類」であり、前述の定常波、導体波といった「波の状態」とは別の物です。
-					「波の種類」と「波の状態」はしばしば一緒に使われ、「導体Ｄ波」「定常Ｄ波」などと呼ばれます。
-					導体Ｄ波とはエネルギーのこと、定常Ｄ波とは物質のことだと思えばだいたい間違い有りません。
+					D-waves tend to influence the physical world because they affect the "sea" of waves that
+					define perceived reality. The concepts of a specific type of D-wave and the state of the
+					"sea" are often considered together.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Ｈ波</div>
+				<div class="subsection-title text-title-small">H-wave</div>
 				<p>
-					想いの波動（Hymmno wave）と呼ばれています。地球でもまだ解明されていない「想い」すなわち「魂」にあたる波動です。
-					定常Ｄ波はしばしば「魂、意志」と訳され、導体Ｄ波は「想い」と訳されます。
-				</p>
-				<p>
-					Ｈ波とＤ波は完全に違う次元に存在しており、お互いが直接干渉することはありません。
-					また現在のソル・シエールではこの２波しか解明できていませんが、宇宙空間には無限大とも言える種類の「波の種類」が存在しています。
+					Throught-waves are referred to as &quot;<b>H</b>ymmno-waves&quot;.<br/>
+					These waves cannot be explained using properties related to physical matter; they are,
+					in essence, waves that carry feelings.
+					Where D-waves reflect the willfulness of the spirit, H-waves are expressions of the soul.
 				</p>
 			</div>
+			<p>
+				D-waves and H-waves are transmitted via entirely different spectra, so they do not interfere
+				with each other.
+			</p>
+			<p>
+				At present, the researchers of Sol Ciel have not been able to prove that D-waves and H-waves
+				exist alone. With the infinite range of wave-spectra, an infinite number of wave-type
+				varieties may exist.
+			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>

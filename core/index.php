@@ -22,8 +22,9 @@
 					<p style="color: #FF0000;">
 						Please be aware that this is an unofficial, fan-translated work and may, therefore, contain errors, and suffer
 						from synchronization issues with the Japanese version of this site. Some features were intentionally omitted
-						because of the sheer amount of work it would take to duplicate the functionality in English. If you note any
-						problems, please let the maintainer know by speaking to flan@synIRC.
+						because of the sheer amount of work it would take to duplicate the functionality in English, and some details
+						were intentionally rewritten in a manner believed to make more sense to an English-speaking audience.
+						If you note any problems, please let the maintainer know by speaking to flan@synIRC.
 					</p>
 					<hr/>
 					<p>
