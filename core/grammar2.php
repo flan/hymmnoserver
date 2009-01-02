@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Grammar (New Testament)</title>
+		<title>HYMMNOSERVER - Grammar (Pastalia)</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>

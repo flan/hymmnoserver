@@ -1,0 +1,32 @@
+<?php
+	$SYNTAX_CLASS = array(
+		1 => 'E.v.',
+		2 => 'v.',
+		3 => 'adv.',
+		4 => 'n.',
+		5 => 'conj.',
+		6 => 'prep.',
+		7 => 'E.s. (II)',
+		8 => 'adj.',
+		9 => 'v., n.',
+		10 => 'adj., n.',
+		11 => 'v., adj.',
+		12 => 'prt.',
+		13 => 'E.s. (III)',
+		14 => 'E.s. (I)',
+		15 => 'pron.',
+		16 => 'intj.',
+		17 => 'E.s. (II), adj.',
+		18 => 'conj., v.'
+	);
+	
+	$SCHOOL = array(
+		1 => 'Central Pure Note',
+		2 => 'Cult Ciel Note',
+		3 => 'Cluster Note',
+		4 => 'Alpha Note',
+		5 => 'Meta Falss Note',
+		6 => 'New Testament of Pastalie',
+		7 => 'Alpha Note (EOLIA variant)'
+	);
+?>

@@ -2,6 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
+<?php include 'common/constants.xml'; ?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Main</title>
@@ -51,11 +53,11 @@
 				}
 				
 				if($page != '0'){
-					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
+					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
 					$page = $page.'%';
 					$stmt->bind_param("s", $page);
 				}else{
-					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school FROM hymmnos WHERE word RLIKE '[0-9].*'");
+					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
 				}
 				$stmt->execute();
 				$stmt->store_result();
@@ -71,46 +73,28 @@
 		<br/><br/>
 		<table>
 			<tr>
-				<th class="result-header" style="width: 100px;">Hymmnos</td>
-				<th class="result-header" style="width: 170px;">Meaning</td>
-				<th class="result-header" style="width: 150px;">Kana</td>
-				<th class="result-header" style="width: 240px;">School</td>
+				<th class="result-header" style="width: 100px;">Hymmnos</th>
+				<th class="result-header" style="width: 125px;">Meaning</th>
+				<th class="result-header" style="width: 75px;">Class</th>
+				<th class="result-header" style="width: 100px;">Kana</th>
+				<th class="result-header" style="width: 240px;">Dialect</th>
 			</tr>
 			<?php
 				if($stmt->num_rows > 0){
-					$stmt->bind_result($word, $meaning_english, $kana, $school);
+					$stmt->bind_result($word, $meaning_english, $kana, $school, $class);
 					
 					while($stmt->fetch()){
 						echo '<tr>';
-							echo "<td class=\"result-cell result-school-$school\" style=\"width: 100px;\">";
+							echo "<td class=\"result-cell result-school-$school\">";
 								echo "<a href=\"javascript:popUp('/hymmnoserver/word.php?word=$word')\">$word</a>";
 							echo '</td>';
-							echo "<td class=\"result-cell result-school-$school\" style=\"width: 200px;\">$meaning_english</td>";
-							echo "<td class=\"result-cell result-school-$school\" style=\"width: 140px;\">$kana</td>";
-							echo "<td class=\"result-cell result-school-$school\" style=\"width: 200px;\">";
-								switch($school){
-									case 1:
-										echo '中央正純律（共通語）';
-										break;
-									case 2:
-										echo 'クルトシエール律（Ⅰ紀前古代語）';
-										break;
-									case 3:
-										echo 'クラスタ律（クラスタ地方語）';
-										break;
-									case 4:
-										echo 'アルファ律（オリジンスペル）';
-										break;
-									case 5:
-										echo '古メタファルス律（Ⅰ紀神聖語）';
-										break;
-									case 6:
-										echo '新約パスタリエ（パスタリア成語）';
-										break;
-									case 7:
-										echo 'アルファ律（オリジンスペル：EOLIA属）';
-										break;
-								}
+							echo "<td class=\"result-cell result-school-$school\">$meaning_english</td>";
+							echo "<td class=\"result-cell result-school-$school\">";
+								echo $SYNTAX_CLASS[$class];
+							echo '</td>';
+							echo "<td class=\"result-cell result-school-$school\">$kana</td>";
+							echo "<td class=\"result-cell result-school-$school\">";
+								echo $SCHOOL[$school];
 							echo '</td>';
 						echo '</tr>';
 					}

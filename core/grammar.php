@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Grammar (First Era)</title>
+		<title>HYMMNOSERVER - Grammar (Standard)</title>
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			td.hymmn1{

@@ -4,84 +4,139 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - 起源とその流派</title>
+		<title>HYMMNOSERVER - </title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■ヒュムノスの起源と流派</div>
-			<p>
-				ヒュムノス、ヒュムノス文字の起源は古く、第一紀に音科学の父が「音魔法」を発見する前から存在していた。
-				その頃はまだ「ヒュムノス」とは呼ばれていなかったが、当時「月奏」と言われていた、いわゆる祈祷師が使っていた呪文列がヒュムノスの起源となる。
-				ヒュムノスはその後、塔のコントロール、塔の交信に最適化された言語としてフォーマット化されていくが、その文法と単語の語呂などは、この祈祷師の呪文列がベースとなっている。
-				そこから世界中に汎用的に広がっていったヒュムノスは、各地域、そして宗派などによって微妙にフォーマットを変え、また歴史によってどんどん単語などは変化していった。
-				その為、日本語などと同じく、ヒュムノスにも古文やら方言などというものが存在するのである。
+			<p style="color: red;">
+				Much of the content found on this page parallels that translated by
+				<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a> because
+				their work was used as a reference for accuracy.
+				They completed this part of HYMMNOSERVER first, and I see no reason to duplicate
+				their efforts; all I wish to do is present the content in a manner that offers
+				English-speaking audiences an experience similar to that provided to the Japanese
+				by GUST. Most differences between these sources are either cosmetic to maintain a
+				consistent writing style or because of minor differences in opinions on how certain
+				phrases should	be translated.
 			</p>
-			
+			<div class="section-title text-title-small">⠕ The history of Hymmnos and its dialects</div>
 			<p>
-				それらのヒュムノス派生は、第三紀現在において、以下に大分される。
+				The origins of Hymmnos and the Hymmnos script are ancient, and existed before the father of Sound Science
+				discovered Sound Magic in the First Era.
+				It was not, at that time, yet called Hymmnos, but the	chants common to the shamans of the period,
+				then called Tsukikanade (Moon Chanters), provided the foundations.
+				Hymmnos was later formalized as a language optimized for the control of, and communications with, Towers,
+				but its grammar and phoenetics are derived from the shamans' chants.
+				The original Hymmnos language that spread across the world underwent subtle changes depending on the
+				region and sect in which it was used, and the language's lexicon steadily evolved.
+				Because of this evolutionary process, Hymmnos features dialects and archaisms, just like English,
+				Japanese, and every other living language.
 			</p>
-			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-				<li>中央正純律（共通語）</li>
-				<li>クルトシエール律（Ⅰ紀前古代語）</li>
-				<li>クラスタ律（クラスタ地方語）</li>
-				<li>アルファ律（オリジンスペル）</li>
-				<li>古メタファルス律（Ⅰ紀神聖語）</li>
-				<li>新約パスタリエ（パスタリア成語）</li>
-			</ul>
-		</div>
-		<div class="text-basic">
-			<div class="section-title text-title-small">■中央正純律</div>
 			<p>
-				「中央」というのは、第一紀に詩魔法の中心と言われた第一塔「アルトネリコ」の事である。すなわち、この塔をコントロールするために最適化された呪文列を中央正純律と言う。
-				しかし、この中央正純律でないとコントロールできないわけではなく、実際はどの律を使ってもコントロールは可能である。即ち、中央正純律とは、ソル・シエールの首都「エル・エレミア」の
-				塔管理局が世界標準と決めたフォーマット（地球でいうISO規格）でしかないのである。<br/>
-				その結果、各「律」より標準化されたものは全て「中央正純律」となるため、この検索でも、認定されたものは全て中央正純律として書いている。その為、中央正純律と他の律が混じることは往々にして存在する。
-			</p>
-		</div>
-		<div class="text-basic">
-			<div class="section-title text-title-small">■クルトシエール律</div>
-			<p>
-				このクルトシエール律こそが、昔「月奏」が詠唱していた祈祷師の呪文であり、ヒュムノスの原点である。現在はかなり忘れ去られており、殆ど残っていないと言われる単語体系。
-			</p>
-		</div>
-		<div class="text-basic">
-			<div class="section-title text-title-small">■クラスタ律</div>
-			<p>
-				第一紀、ソル・シエール地方より遠く離れた地域（星の裏側）にあったソル・クラスタ地域に伝わり確立されたのが「クラスタ律」である。中央正純律から見たら、
-				俗に言う「方言」というものだが、実際の効果は殆ど変わらない。現在、アルトネリコの周囲でこの「クラスタ律」を使える者はいないと言われているが、世界のどこかには、クラスタ律が
-				主体のコロニーが現在も存在する可能性はある。
+				Hymmnos dialects found in the Third Era:
+				<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
+					<li>Central Pure Note (Standard)</li>
+					<li>Cult Ciel Note (Ancient language from before the First Era)</li>
+					<li>Cluster Note (Cluster Area Language)</li>
+					<li>Alpha Note (Origin Spell)</li>
+					<li>Ancient Meta Falss Note (Sacred language from the First Era)</li>
+					<li>New Testament of Pastalie (Pastalia Dialect) </li>
+				</ul><br/>
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■アルファ律</div>
+			<div class="section-title text-title-small">⠕ Central Pure Note</div>
 			<p>
-				世界に３体しかいないといわれている「レーヴァテイル・オリジン」は、自らの心の中で、最適化されたヒュムノス単語を紡ぎ出すことが出来る。こうして出来た単語のことを「アルファ律」と言う。
-				このアルファ律は少々厄介で、そのオリジンの管理する塔でないと、最大限の力を発揮することが出来ない。それは、他の「律」が、現存の塔のスペック内での単語を紡ぎ出している（厳密には、
-				有りモノの単語をレーヴァテイルが拾ってきているだけ）なのに対し、このアルファ律だけは、受け側である塔の機能を拡張し、それに相対するヒュムノス単語を作りだしているからである。
-				即ち、自らの塔にはその単語に対する機能が存在するが、他の塔には無い＝無効な単語である、という事になるため、当然汎用性は無いのである。
+				&quot;Central&quot; refers to the first Tower, Ar_tonelico, referred to as the core of magical chants
+				in the First Era.
+				Because of this, the chants optimized for controlling Towers are the domain of Central Pure Note.
+				However, this does not mean that control chants are limited to Central Pure Note; any dialect can
+				be home to chants that control Towers, but they are generally not optimal.
+				Central Pure Note is, effectively, a standardized, prescriptive form of Hymmnos, agreed upon by
+				the Tower administration in Sol Ciel's capital, El Elemia, not unlike the ISO standards in use
+				today.
+			</p>
+			<p>
+				The nature of this standardization is such that anything accepted from any dialect becomes part of
+				Central Pure Note, meaning that queries and access requests are expressed in a standardized manner.
+				Because of this evolutionary design, it is not uncommon to find Central Pure Note used in conjunction
+				with other dialects. 
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■古メタファルス律</div>
+			<div class="section-title text-title-small">⠕ Cult Ciel Note</div>
 			<p>
-				第一紀初期、まだ２０００年代の頃世界を席巻した聖教国「メタ・ファルス」によって生み出された独自の律。
-				１つの単語が持つパワーは中央正純律の平均的な数値を遙かに上回る。こういった高性能なヒュムノス言語を生み出した理由は、その土壌にあったと言われている。
-				この地では他の地域以上にスピリチュアルな思想が盛んであり、月奏による詩の修業と開発が盛んであった。そのため、他の地域が詩の力に限界を感じていたときにも
-				それを少しずつ乗り越え、己の身を磨き更に強い詩を紡げるようになり、そして洗練され磨いてきたのである。<br/>
-				幸か不幸か、そのスピリチュアル思想の影響で、他の地域が詩を科学するようになってもまだ尚、月奏による精神的な思想が息づき、３０００年代に入ってからは急速に文化は相対的に後進していった。
-				ソル・シエールとの国交により、メタファルス律は詩魔法サーバーに登録される事になった。
+				Cult Ciel Note is a more streamlined form of the chants of the Tsukikanade, the shamans that formed
+				the basis of Hymmnos. As a dialect, it is largely unused in modern communication, and it is,
+				essentially, dead.
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■新約パスタリエ</div>
+			<div class="section-title text-title-small">⠕ Cluster Note</div>
 			<p>
-				メタ・ファルスの地において３４００年頃に紡ぎ出された新成語。「インフェル・ピラ」という「アルトネリコ」とは別の詩魔法サーバーを持ち、
-				そのサーバーに接続しているレーヴァテイルであるI.P.D.（Infel-Phira Dependency）によってのみ使うことが出来る言語である。
-				その特性上他の言語との互換性は、文法から単語においてまでほぼ皆無。その為実行コマンドも「EXEC_XXXX/.」ではなく「METHOD_XXXX/.」という独自の表記に改訂されている。
-				しかし実際は、他の律も殆どがエミュレーションによって使用可能。インフェル・ピラ内部で新約パスタリエに翻訳されるが、表面上は例えば「中央正純律」をそのまま使用することが出来る。<br/>
-				文法は第一紀に作られた他のヒュムノスとは全く異なる為、<a href="?mode=help4">別に文法書を用意している。</a>そちらも参照されたい。
+				Originating in the First Era, in the Sol Cluster region -- an area far-removed from the Sol Ciel region, which
+				is on the other side of the planet -- Cluster Note evolved.
+				Relative to Central Pure Note, Cluster Note is like a dialect, but its effects are virtually identical.
+				At present, none in the lands of Ar_tonelico can make use of Cluster Note, but it is possible that,
+				somewhere in the world, a settlement exists, based around this dialect.
+			</p>
+		</div>
+		<div class="text-basic">
+			<div class="section-title text-title-small">⠕ Alpha Note</div>
+			<p>
+				Origin Reyvateils, only three of which are known to exist, can construct optimized Hymmnos by themselves.
+				The Hymmnos they generate belong to the Alpha Note dialect.
+				Alpha Note is somewhat limited in that it cannot yeild optimal results if it is not used in conjunction
+				with the Tower managed by the Origin that created it.
+				This is because, unlike how the other dialects are collections of Hymmnos derived from current language
+				specifications (Reyvateils speaking these dialects can construct novel phrases using pre-defined Hymmnos,
+				much like how humans form sentences), Alpha Note binds new Hymmnos to an extension of a Tower's functionality.
+				Summarized, this means that only the Origin's Tower can interpret the Alpha Note Hymmnos she has defined,
+				making it useless in the domain of other Towers; for this reason, Alpha Note is not a general-purpose dialect.
+			</p>
+		</div>
+		<div class="text-basic">
+			<div class="section-title text-title-small">⠕ Ancient Meta Falss Note</div>
+			<p>
+				A unique dialect originating in the early days of the First Era in the holy land of Meta Falss, which
+				held dominion over the world in the third millennium.
+				The power conveyed by a single Word of this dialect far exceeds that of the average Word found in
+				Central Pure Note.
+				The motivations behind the fabrication of such strong Hymmnos rests in the beliefs of the society of
+				Meta Falss: in their land, spiritual ideology flourished much more so than in any other region,
+				and, as praise for the Tsukikanade, extensive effort was invested in the research and development
+				of chants.
+				Because of this, even as other regions were reaching the limits of what they could accomplish through
+				magical chants, the people of Meta Falss slowly overcame these limits, learning how to craft
+				still-stronger chants, then refining and improving them.
+			</p>
+			<p>
+				Whether fortunate or not, because of their devotion to spiritual ideology, while other regions shifted the
+				focus of their studies to science and discovered the significance of intonation and emotions in chants, the
+				ways of the Tsukikanade continued to dominate the people of Meta Falss, and their civilization's power rapidly
+				declined in the fourth millenium.
+				Ultimately, because of their diplomatic relations with Sol Ciel, the Words of Meta Falss Note were registered
+				in the magical chant servers.
+			</p>
+		</div>
+		<div class="text-basic">
+			<div class="section-title text-title-small">⠕ New Testament of Pastaile</div>
+			<p>
+				This is a new dialect that was created in the lands of Meta Falss around 3400, specifically intended for
+				use with Infel-Phira, an entirely different magical chant server from Ar_tonelico; only the I.P.D.s
+				(Infel-Phira Dependencies), the Reyvateil connected to Infel-Phira, are able to use it.
+				Because of its unique characteristics, its compatibility with other dialects is virtually nil, in
+				terms of everything from its grammar through its lexicon.
+				The manner by which commands are invoked has also changed, from &quot;EXEC_XXXX/.&quot; to
+				&quot;METHOD_XXXX/.&quot;; in practice, however, emulation bridges allow for the support of other
+				access methods: they are internally translated into statements in the New Testament, but the user may
+				employ Hymmnos defined in, for example, Central Pure Note without modification.
+			</p>
+			<p>
+				The grammar of the New Testament is dramatically different from that of other Hymmnos originating from the
+				First Era, so you should review <a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

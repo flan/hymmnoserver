@@ -19,7 +19,7 @@
 					<p>
 						Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 					</p>
-					<p style="color: #FF0000;">
+					<p style="color: red;">
 						Please be aware that this is an unofficial, fan-translated work and may, therefore, contain errors, and suffer
 						from synchronization issues with the Japanese version of this site. Some features were intentionally omitted
 						because of the sheer amount of work it would take to duplicate the functionality in English, and some details
@@ -123,10 +123,10 @@
 								<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
 									<li><a href="/hymmnoserver/introduction.php">Introduction</a></li>
 									<li><a href="/hymmnoserver/summary.php">Hymmnos Types</a></li>
-									<li><a href="/hymmnoserver/overview.php">Schools and Origins</a></li>
+									<li><a href="/hymmnoserver/overview.php">Dialects</a></li>
 									<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
-									<li><a href="/hymmnoserver/grammar.php">Grammar (First Era)</a></li>
-									<li><a href="/hymmnoserver/grammar2.php">Grammar (New Testament)</a></li>
+									<li><a href="/hymmnoserver/grammar.php">Grammar (Standard)</a></li>
+									<li><a href="/hymmnoserver/grammar2.php">Grammar (Pastalia)</a></li>
 								</ul>
 							</td>
 						</tr>
