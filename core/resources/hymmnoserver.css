@@ -136,6 +136,12 @@ td.word-info-title{
 	width: 140px;
 }
 
+th.result-header{
+	color: white;
+	background: #110044;
+	font-weight: bold;
+}
+
 ul.basic-inline{
 	margin-top: 0px;
 	margin-bottom: 0px;

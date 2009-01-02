@@ -49,8 +49,9 @@
 							</li>
 							<li>
 								Those using Microsoft Windows will need to do some weird dance that may or may not involve
-								right-clicking, finding a Fonts directory that may or may not be write-protected, and,
-								possibly, restarting their systems several times.
+								a lot of right-clicking, finding a Fonts directory that may or may not be write-protected,
+								and, possibly, restarting their systems several times to get the font-indexer to notice the
+								addition. (If someone can offer a single-sentence explanation, please do)
 							</li>
 						</ul>
 					</p>
@@ -62,17 +63,17 @@
 					<blockquote class="text-small">
 						<p>
 							<span class="text-title-small">1) Find a word in Hymmnos</span><br/>
-							Enter a word in Hymmnos script and click the Hymmnos search button.
+							Enter a word in Hymmnos script and click the search button.
 							You will see a list of all words beginning with the characters you entered.
 						</p>
 						<p>
 							<span class="text-title-small">2) Convert an entire Hymmnos statement</span><br/>
-							Enter a complete string of Hymmnos and click the Hymmnos search button.
+							Enter a complete string of Hymmnos and click the search button.
 							Every word will be translated in sequence, and the grammar will be evaluated.
 						</p>
 						<p>
 							<span class="text-title-small">3) Find the Hymmnos for an English word</span><br/>
-							Enter a word in English, then click the English search button.
+							Enter a word in English, then click the search button.
 							All Hymmnos words that involve the word you provided will be displayed.
 							(Synonyms, however, will not be checked)
 						</p>

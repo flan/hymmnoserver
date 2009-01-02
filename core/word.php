@@ -8,6 +8,7 @@
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
+		<!-- PHP code to set variables from the database here -->
 		<?php include 'common/word.xml'; ?>
 		<?php include 'common/footer-word.xml'; ?> 
 	</body>
