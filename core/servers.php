@@ -10,86 +10,97 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■詩魔法サーバーとは</div>
+			<div class="section-title text-title-small">⠕ Song Magic Servers</div>
 			<p>
-				一作目で登場した塔「アルトネリコ」と、今作の「インフェル・ピラ」は両方とも「詩魔法サーバー」と言われるものである。<br/>
-				その定義は、以下のようなものによる。
+				The first game featured the tower of Ar_tonelico, and the second features Infel-Phira.<br/>
+				Both of these towers have the same basic fundamental features:
+				<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
+					<li>An H-wave receptor that can process instructions and produce D-waves</li>
+					<li>The ability to support connections from at least one Reyveteil (daughter)</li>
+					<li>Hymmnos language processing capabilities</li>
+				</ul>
 			</p>
-			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-				<li>想い（導体Ｈ波）を魔法の力（導体Ｄ波）に変換するシステムを持つ</li>
-				<li>レーヴァテイル（娘）が1人以上接続されている</li>
-				<li>ヒュムノス言語をサポートしている</li>
-			</ul>
 			<p>
-				アルトネリコは、第一紀と呼ばれる文明期に建てられた塔である。
-				全てのレーヴァテイルは、このアルトネリコの中に「心」があり、詩を謳えば塔が魔法にしてくれた。
-				塔は魔法を創り出す為のエネルギー（導体Ｄ波）を無限に保有してはいるが、
-				それを何かの形にしたり、実質的な力にする為の思考は持ち合わせていない。
-				それを行うのが、レーヴァテイルなのである。
+				Ar_tonelico was constructed during the First Era. 
+				Its basic functionality was much like a core that would produce magical effects upon
+				receiving a Reyvateil's song.
+				The magical effects are caused by the emission of conducted D-waves upon receiving
+				thoughts; the net effect of this process is that users, the Reyvateils, can unleash
+				powers far beyond their actual capabilities.
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">■アルトネリコとインフェル・ピラ</div>
+			<div class="section-title text-title-small">⠕ Ar_tonelico and Infel-Phira</div>
 			<p>
-				アルトネリコ（塔）とインフェル・ピラを分かりやすく例えれば、WindowsマシンとMacである。
+				The differences between Ar_tonelico and Infel-Phira are not unlike the differences
+				between an Intel-based system and a Sparc.
 			</p>
 			<table>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>サーバー名</b></font></td>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>例えるなら</b></font></td>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>設置場所</b></font></td>
+					<td class="server-header">Server Name</td>
+					<td class="server-header">Equivalent</td>
+					<td class="server-header">Location</td>
 				</tr>
 				<tr>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">アルトネリコ</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">Windowsパソコン</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">ソル・シエール（AT1の舞台）</font></td>
+					<td class="server-data">Ar_tonelico</td>
+					<td class="server-data">Intel</td>
+					<td class="server-data">Sol Ciel (A_t1)</td>
 				</tr>
 				<tr>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">インフェル・ピラ</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">Macintoshパソコン</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">メタ・ファルス（AT2の舞台）</font></td>
+					<td class="server-data">Infel-Phira</td>
+					<td class="server-data">Sparc</td>
+					<td class="server-data">Meta Falss (A_t2)</td>
 				</tr>
 			</table>
 			<p>
-				両者は、基本的な処理理論は同じである。
-				PCでいうなら、プログラム言語がCPU等を動かして結果をはじき出す、というプロセスは同じという事である。<br/>
-				しかしWindowsとMacでは、根本的にCPUが違い、それに対応する言語も違う。
-				それは、ヒュムノス言語の「新約パスタリエ（インフェル・ピラ用）」とそれ以外（アルトネリコ用）の差として説明できる。
-				また、レーヴァテイルはSDカードである事にかわりなく、厳密にハードウェアレベルでいえば、第三世代もI.P.D.も何の変わりもない。
-				何が違うのかと言えば、生まれたときに「Windows用にフォーマットされたか、Mac用にフォーマットされたか」でしかない。
+				For each system, the basic logic is the same: CPU receives instruction written in a language it
+				can understand -> CPU acts accordingly.
+			</p>
+			<p>
+				However, Intel processors, and the language they understand, store and transport data differently
+				from the machinations of a Sparc processor, so you could not simply send messages from one to the
+				other without some sort of translator.
+				The same problem arises when attempting to foster communication between Ar_tonelico and
+				Infel-Phira: both towers perform similar tasks, but their languages and means of encoding
+				messages (the Hymmnos they recognize) are very different.
+				Additionally, like the towers themselves, there are no fundamental differences between the
+				Reyvateils of one tower and the Reyvateils of the other: the only difference is which Hymmnos
+				dialect they natively speak; the relationship is much like different partition formats on hard
+				drives: they are accessed differently, but they can all store the same data.
 			</p>
 			<table>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>サーバー名</b></font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">アルトネリコ</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">インフェル・ピラ</font></td>
+					<td class="server-header">Server Name</td>
+					<td class="server-data">Ar_tonelico</td>
+					<td class="server-data">Infel-Phira</td>
 				</tr>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>PCに例えると</b></font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">PC/AT互換機(Windows)</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">Macintosh(PPC)</font></td>
+					<td class="server-header">Equivalent</td>
+					<td class="server-data">Intel (small-endian)</td>
+					<td class="server-data">Sparc (big-endian)</td>
 				</tr>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>使用言語</b></font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">中央正純律他数種（インテル系アセンブリ）</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">新約パスタリエのみ（モトローラ系アセンブリ）</font></td>
+					<td class="server-header">Languages</td>
+					<td class="server-data">Central Pure Note and dialects</td>
+					<td class="server-data">New Testament of Pastalie only</td>
 				</tr>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>対応拡張子</b></font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">EXEC_XXXXX/.</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">METHOD_XXXXX/.</font></td>
+					<td class="server-header">Invocation</td>
+					<td class="server-data">EXEC_XXXX/.</td>
+					<td class="server-data">METHOD_XXXX/.</td>
 				</tr>
 				<tr>
-					<td bgcolor="#aaddaa"><font class=fonts2 color="#001144"><b>レーヴァテイル</b></font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">Alphaフォーマットされたメモリカード</font></td>
-					<td bgcolor="#ccffcc"><font class=fonts2 color="#001144">I.P.D.フォーマットされたメモリカード</font></td>
+					<td class="server-header">Reyvateil</td>
+					<td class="server-data">Alpha-format memory</td>
+					<td class="server-data">I.P.D.-format memory</td>
 				</tr>
 			</table>
 			<p>
-				これら２つは、普通繋ぐことが出来ない。
-				繋ぐためには、物理結線を行った後に、互換プロトコルを用いてデータのやりとりを行う必要がある。
-				簡単に言えば、例えばLANで接続をする。
-				すると、データの閲覧やストレージ（コスモスフィア、バイナリ野）の更新は相互に出来るようになる。
+				As designed, neither system is inherently able to communicate with the other.
+				To get around this, they need to agree on a compatible protocol for exchanging
+				data, somewhat like how you used TCP/IP and HTTP to view this page. Once a protocol
+				has been agreed on, simple tasks like browsing databases and sending files to
+				complex ones like entering Cosmospheres and binary fields may be accomplished.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

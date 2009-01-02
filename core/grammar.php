@@ -31,44 +31,59 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
+			<p style="color: red;">
+				Some of the content found on this page parallels that translated by
+				<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a> because
+				their work was used as a reference for accuracy.
+				They have put extensive work into documenting how the Hymmnos language works, and
+				I neither wish to contradict their research, nor duplicate it unnecessarily; all
+				I wish to do is present the content in a manner that offers English-speaking
+				audiences an experience similar to that provided to the Japanese by GUST.
+			</p>
 			<div class="section-title text-title-small">⠕ Features of the Hymmnos grammar</div>
 			<p>
-				最も特徴的と思われることが、別名「感情言語」と言われる通り、
-				文章の中に必ず自分の感情を表現する言葉が入るという事である。
-				そしてそれはあくまで、歌い手（発言者）自身の感情であり、
-				二人称、三人称的な感情ではない。すなわち、自分自身がどう思っているのか？
-				という事が文章の中に水のようにとけ込んでいる言語なのである。
-				現在の日本語を始めとする「事象主体」言語では表現しづらい「感情主体」の
-				言語であるが、例を挙げる以下のようになる。
+				Hymmnos, described as the "language of emotions", has, as its most prominent feature, a
+				sentence structure that focuses on expressing the speaker's feelings.
+				Because it is focused on the speaker's feelings, statements nominally flow from a
+				first-person perspective. As with so many other things, perhaps it will be easiest to
+				understand how Hymmnos differs from other languages by looking at an example:
+				<table>
+					<tr style="font-size: 12pt;">
+						<td class="hymmn1">Was</td>
+						<td class="hymmn1">yea</td>
+						<td class="hymmn1">ra</td>
+						<td class="hymmn2">wael</td>
+						<td class="hymmn2">Herr</td>
+						<td class="hymmn2">hyma</td>
+						<td class="hymmn2">ar</td>
+						<td class="hymmn2">wart</td>
+					</tr>
+					<tr>
+						<td class="kanji1" colspan="3">Emotion Sound</td>
+						<td class="kanji2">verb</td>
+						<td class="kanji2">subject</td>
+						<td class="kanji2">auxiliary</td>
+						<td class="kanji2" colspan="2">noun…</td>
+					</tr>
+					<tr>
+						<td class="kanji1" colspan="3">great, enjoyable happiness<br/>(I am delighted)</td>
+						<td class="kanji2">joy, delight</td>
+						<td class="kanji2">he</td>
+						<td class="kanji2">listen (to words)</td>
+						<td class="kanji2">only, unique</td>
+						<td class="kanji2">word</td>
+					</tr>
+				</table>
 			</p>
-			<table>
-				<tr style="font-size: 12pt;">
-					<td class="hymmn1">Was</td>
-					<td class="hymmn1">yea</td>
-					<td class="hymmn1">ra</td>
-					<td class="hymmn2">wael</td>
-					<td class="hymmn2">Herr</td>
-					<td class="hymmn2">hyma</td>
-					<td class="hymmn2">ar</td>
-					<td class="hymmn2">wart</td>
-				</tr>
-				<tr>
-					<td class="kanji1" colspan="3">想音</td>
-					<td class="kanji2">動詞</td>
-					<td class="kanji2">主語</td>
-					<td class="kanji2">副動詞</td>
-					<td class="kanji2" colspan="2">名詞…</td>
-				</tr>
-			</table>
 			<p>
-				ワスイェァラァ（とても嬉しい）<br/>
-				「彼がその言葉を聞いた事を嬉しく思った」と私はそれが自分のことの様に嬉しい様を表現しながら語る。<br/>
-				<br/>
-				最初の「Was yea ra」で、上記訳の「」以外の部分全部を表しています。
+				
+				This sample sentence means &quot;I am delighted he listened to that word,&quot;
+				conveyed with an expression of genuine joy by the speaker; the statement may be said
+				to express happiness over having someone listen to what you had to say.
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Thought-sound (how it works[unsure about this one]) (■想音（そういん）)</div>
+			<div class="section-title text-title-small">⠕ Emotion Sounds</div>
 			<p>
 				先のサンプルで言う最初の3単語に当たる部分を「想音」といいます。<br/>
 				想音は、第一節〜第三節までの3単語で構成されています。<br/>
@@ -212,9 +227,10 @@
 					<td class="latin">harra</td>
 				</tr>
 			</table>
+			<br/>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ The syntax of thought-sound (■想音の保証定義構文)</div>
+			<div class="section-title text-title-small">⠕ The syntax of Emotion Sounds (■想音の保証定義構文)</div>
 			<p>
 				想音は、文章列の先頭に必ずつけなければならない。ただ、長文をヒュムノスで書く場合、感情もそれ程変わるわけでもないのに毎回付けるのはナンセンスである。
 				その為、長文を扱う場合は、最初に「想音の保証定義」という契約文を送る。
@@ -233,7 +249,7 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Converting to[from?] thought-sound (■想音の裏技)</div>
+			<div class="section-title text-title-small">⠕ Converting to[from?] Emotion Sounds (■想音の裏技)</div>
 			<p>
 				<span class="text-title-small">★想音を入れない使い方</span><br/>
 				想音とは、あくまで自らの感情を表現する部分である。しかし、想音が無いとヒュムノス呪文として塔は認識しない。

@@ -120,6 +120,18 @@ td.data-cell-blue{
 	background: #ccccff;
 }
 
+td.server-header{
+	background: #aaddaa;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #001144;
+}
+td.server-data{
+	background: #ccffcc;
+	font-size: 0.9em;
+	color: #001144;
+}
+
 td.word-header{
 	padding: 8px;
 }

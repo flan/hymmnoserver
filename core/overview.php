@@ -118,7 +118,7 @@
 				ways of the Tsukikanade continued to dominate the people of Meta Falss, and their civilization's power rapidly
 				declined in the fourth millenium.
 				Ultimately, because of their diplomatic relations with Sol Ciel, the Words of Meta Falss Note were registered
-				in the magical chant servers.
+				in the Song Magic servers.
 			</p>
 		</div>
 		<div class="text-basic">
