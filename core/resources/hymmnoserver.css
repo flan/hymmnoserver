@@ -121,17 +121,22 @@ td.data-cell-blue{
 }
 
 td.word-header{
-	background: #110066;
 	padding: 8px;
+}
+td.word-header-1{
+	background: #660011;
+}
+td.word-header-4{
+	background: #110066;
 }
 
 td.word-info{
-	background: #BBAAFF;
+	background: #ffbbcc;
 	color: #000044;
 }
 
 td.word-info-title{
-	background: #BBAAFF;
+	background: #ffbbcc;
 	color: #000044;
 	width: 140px;
 }
@@ -140,6 +145,20 @@ th.result-header{
 	color: white;
 	background: #110044;
 	font-weight: bold;
+	font-size: 0.9em;
+}
+td.result-cell{
+	color: #110044;
+	font-size: 0.8em;
+}
+td.result-school-1{
+	background: #ffcccc;
+}
+td.result-school-6{
+	background: #ffeecc;
+}
+td.result-school-7{
+	background: #ffccff;
 }
 
 ul.basic-inline{

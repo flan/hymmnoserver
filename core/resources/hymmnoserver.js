@@ -3,7 +3,7 @@ function popUp(url){
 	
 	popup_window = window.open(
 	 url, "popup_window",
-	 'toolbar=no,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=530,height=400'
+	 'toolbar=no,location=0,directories=0,status=0,menubar=0,scrollbars=yes,resizable=yes,width=515,height=320'
 	);
 	popup_window.focus();
 }

@@ -142,6 +142,18 @@
 								</a>
 							</td>
 						</tr>
+						<tr>
+							<td class="titlecell">
+								⠕ Related Resources
+							</td>
+						</tr>
+						<tr>
+							<td class="infocell">
+								<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
+									<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Hymmnos, Conlang</a></li>
+								</ul>
+							</td>
+						</tr>
 					</table>
 				</td>
 			</tr>
