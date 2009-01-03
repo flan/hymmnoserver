@@ -85,85 +85,154 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Emotion Sounds</div>
 			<p>
-				先のサンプルで言う最初の3単語に当たる部分を「想音」といいます。<br/>
-				想音は、第一節〜第三節までの3単語で構成されています。<br/>
-				<br/>
-				<span style="color: red;">[第一節：その度合]</span>-<span style="color: green;">[第二節：具体的な感情]</span>-<span style="color: blue;">[第三節：自分にとってこの感情は脱したいか、このままでいたいのか]</span><br/>
-				<br/>
-				<span class="text-title-small">★第一節</span><br/>
-				第一節では、感情起伏の度合を表現しています。
+				The first three words in a phrase comprise an Emotion Sound; the meaning of these
+				three words are described in this section.
+			</p>
+			<p>
+				<span style="color: red;">[first : degree]</span>-<span style="color: green;">[second : nature]</span>-<span style="color: blue;">[third : desirability]</span>
+			</p>
+			<p>
+				<b>▼ First word</b><br/>
+				The first word in an Emotion Sound describes the degree of the speaker's emotion.
 				<table style="margin-top: -10px;">
-					<tr class="text-basic-bold">
-						<td style="width: 100px;">
-							Rrha（ラ）<br/>
-							Was（ワス）<br/>
-							Wee（ウィ）<br/>
-							Fou（フォ）<br/>
-							Ma （マ）<br/>
-							Nn （ン）
-						</td>
-						<td>
-							トランス状態<br/>
-							とても強烈に<br/>
-							かなり<br/>
-							ちょっと<br/>
-							平常心<br/>
-							無気力状態
-						</td>
+					<tr>
+						<td class="kana text-basic-bold">Rrha</td>
+						<td class="latin">rapturous</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">Was</td>
+						<td class="latin">very much</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">Wee</td>
+						<td class="latin">reasonable</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">Fou</td>
+						<td class="latin">a little</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">Ma</td>
+						<td class="latin">discretionary</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">Nn</td>
+						<td class="latin">reluctant</td>
 					</tr>
 				</table>
 			</p>
 			<p>
-				<span class="text-title-small">★第二節</span><br/>
-				具体的な感情です。
+				<b>▼ Second word</b><br/>
+				The second word describes the emotion being conveyed.
 				<table style="margin-top: -10px;">
-					<tr class="text-basic-bold">
-						<td style="width: 100px;">
-							i<br/>
-							yea<br/>
-							paks<br/>
-							num<br/>
-							ki<br/>
-							wol
-						</td>
-						<td>
-							焦り<br/>
-							嬉しい<br/>
-							ドキドキ<br/>
-							無<br/>
-							真剣、集中<br/>
-							猛進、熱血
-						</td>
+					<tr>
+						<td class="kana text-basic-bold">i</td>
+						<td class="latin">impatience</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">yea</td>
+						<td class="latin">happiness</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">waa</td>
+						<td class="latin">happiness</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">paks</td>
+						<td class="latin">excitment, nervousness</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">num</td>
+						<td class="latin">nothing</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">ki</td>
+						<td class="latin">seriousness, concentration</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">wol</td>
+						<td class="latin">fervour</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">apea</td>
+						<td class="latin">blessing</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">au</td>
+						<td class="latin">sadness</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">granme</td>
+						<td class="latin">wanting to protect, bravery</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">touwaka</td>
+						<td class="latin">hope</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">quel</td>
+						<td class="latin">eagerness, desperation</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">yant</td>
+						<td class="latin">fear</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">guwo</td>
+						<td class="latin">anger, resentment</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">jyel</td>
+						<td class="latin">loneliness</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">zweie</td>
+						<td class="latin">determination, sincerity</td>
 					</tr>
 				</table>
 			</p>
 			<p>
-				<span class="text-title-small">★第三節</span><br/>
-				で、自分は今の状況をどうしたいのか？
+				<b>▼ Third word</b><br/>
+				The third word describes how desireable the Reyvateil finds the context of the emotion.
 				<table style="margin-top: -10px;">
-					<tr class="text-basic-bold">
-						<td style="width: 100px;">
-							ga<br/>
-							ra
-						</td>
-						<td>
-							はやく脱したい<br/>
-							このままでいたい
-						</td>
+					<tr>
+						<td class="kana text-basic-bold">ga</td>
+						<td class="latin">I want this to stop</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">ra</td>
+						<td class="latin">I want this to continue</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">erra</td>
+						<td class="latin">I want this to continue forever</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">wa</td>
+						<td class="latin">I can tolerate this</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">gaya</td>
+						<td class="latin">I never want this to happen again</td>
+					</tr>
+					<tr>
+						<td class="kana text-basic-bold">gagis</td>
+						<td class="latin">I am indifferent</td>
 					</tr>
 				</table>
 			</p>
 			<p>
-				<span class="text-title-small">＜即効性・確実性＞</span><br/>
-				同じ銃を撃つでも、平静な心で集中して撃つときから
-				今撃たなかったら撃たれるという時まで様々。
-				塔のコントロールとしてのヒュムノス語では、感情言語部分でこれらを解釈する際に
-				即効性を重視するか、確実性を重視するかで微妙に動作が変わる。
-				焦っているときは早くドアを開けてくれたり（そのかわりデリケートではない（うるさかったり））
-				確実な場合は紳士的なフィードバックをしたり。
-				こっちからの微妙な感情的意志を塔がくみ取ってくれるのである。
+				<span class="text-title-small">&lt;Effects of Emotion Words&gt;</span><br/>
+				Even when speaking the same sentence, the meaning conveyed by a speaker whose
+				emotional state is cool and collected may be different from the meaning
+				conveyed by one who indicates otherwise.
+				Some Hymmnos used to control Towers have different effects depending on the
+				Emotion Words with which they are spoken.
+				For example, a command used to open a door may receive a faster response if
+				the emotional context with which it is delivered indicates desperation rather
+				than calmness.
 			</p>
-			<div class="section-title text-title-small">⠕ The written language (■本文)</div>
+			<div class="section-title text-title-small">⠕ Prescriptive syntax</div>
 			<p>
 				上記例文は、本当に普通の文章であるため、「彼は〜」という主語が入っているが、実際に呪文として使う場合ヒュムノスの主語は殆ど一人称となる。
 				それは「自分がどうしたいか」という事を伝える言語の為である。

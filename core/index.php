@@ -78,7 +78,19 @@
 							(Synonyms, however, will not be checked)
 						</p>
 						<p>
-							<span class="text-title-small">4) List Hymmnos alphabetically</span><br/>
+							<span class="text-title-small">4) Find Hymmnos by kana</span><br/>
+							Enter the first few characters that represent the pronunciation of the Hymmnos
+							you are trying to find, then press the search button.
+							All Hymmnos words with Japanese pronunciation beginning with what you provided
+							will be displayed.
+						</p>
+						<p>
+							<span class="text-title-small">5) Find Hymmnos by romaji</span><br/>
+							This works in the same manner as searching by kana, but it uses the romaji
+							representation of words in Hymmnos, which may be easier for some users.
+						</p>
+						<p>
+							<span class="text-title-small">6) List Hymmnos alphabetically</span><br/>
 								Click the "Browse words in Roman order" link below the search bar and you will be presented
 								with a full index of the dictionary.
 						</p>

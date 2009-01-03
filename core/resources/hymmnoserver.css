@@ -141,6 +141,15 @@ td.word-header-1{
 td.word-header-4{
 	background: #110066;
 }
+td.word-header-7{
+	background: #110066;
+}
+td.word-header-13{
+	background: #110066;
+}
+td.word-header-14{
+	background: #110066;
+}
 
 td.word-info{
 	background: #ffbbcc;
@@ -165,6 +174,12 @@ td.result-cell{
 }
 td.result-school-1{
 	background: #ffcccc;
+}
+td.result-school-2{
+	background: #cceecc;
+}
+td.result-school-5{
+	background: #cceeff;
 }
 td.result-school-6{
 	background: #ffeecc;

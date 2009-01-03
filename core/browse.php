@@ -99,7 +99,7 @@
 						echo '</tr>';
 					}
 				}else{
-					echo "<tr><td colspan=\"4\" style=\"color: red; font-weight: bold; text-align: center;\">No matches found</td></tr>";
+					echo "<tr><td colspan=\"5\" style=\"color: red; font-weight: bold; text-align: center;\">No matches found</td></tr>";
 				}
 				$stmt->free_result();
 				$stmt->close();
