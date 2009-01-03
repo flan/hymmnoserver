@@ -10,10 +10,11 @@
 	<body style="width: 500px;">
 		<?php
 			$word = $_GET['word'];
-			if($word == NULL || $word == ''){
+			if($word == NULL || trim($word) == ''){
 				echo 'No word specified.';
 				exit();
 			}
+			$word = trim($word);
 			
 			include '/home/flan/public_html/hymmnoserver.gobbledygook';
 			if ($mysqli->connect_error) {

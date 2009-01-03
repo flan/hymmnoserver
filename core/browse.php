@@ -14,10 +14,10 @@
 		<span style="font-size: 0.95em;">
 			<?php
 				$page = $_GET['page'];
-				if($page == NULL || $page == ''){
+				if($page == NULL || trim($page) == ''){
 					$page = 'a';
 				}else{
-					$page = strtolower($page[0]);
+					$page = strtolower(trim($page)[0]);
 					$page_ord = ord($page);
 					if(($page_ord < 97 || $page_ord > 122) && $page_ord != 48){
 						$page = 'a';
@@ -74,10 +74,10 @@
 		<table>
 			<tr>
 				<th class="result-header" style="width: 100px;">Hymmnos</th>
-				<th class="result-header" style="width: 125px;">Meaning</th>
+				<th class="result-header" style="width: 155px;">Meaning</th>
 				<th class="result-header" style="width: 75px;">Class</th>
-				<th class="result-header" style="width: 100px;">Kana</th>
-				<th class="result-header" style="width: 240px;">Dialect</th>
+				<th class="result-header" style="width: 80px;">Kana</th>
+				<th class="result-header" style="width: 230px;">Dialect</th>
 			</tr>
 			<?php
 				if($stmt->num_rows > 0){
