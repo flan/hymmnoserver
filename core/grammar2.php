@@ -23,6 +23,13 @@
 				background: #ffbbbb;
 				text-align: center;
 			}
+			td.ev-5{
+				background: #aaccaa;
+				text-align: center;
+			}
+			td.ev-6{
+				background: #ffcccc;
+			}
 			td.ev-1b{
 				background: #ddffdd;
 			}
@@ -34,6 +41,12 @@
 			}
 			td.ev-4b{
 				background: #ffddff;
+			}
+			td.ev-5b{
+				background: #eebbff;
+			}
+			td.ev-6b{
+				background: #ffeeee;
 			}
 			td.dark-blue{
 				background: #000044;
@@ -88,7 +101,7 @@
 					</tr>
 				</table>
 				<p>
-					This complete sentence means &quot;I would be delighted to oblige&quot;.<br/>
+					This complete sentence means &quot;I would be delighted to sing&quot;.<br/>
 					As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
 					example from the standard grammar section, can be written in Pastalia as
 					&quot;cEzE hymmnos/.&quot;; both forms carry the same meaning:
@@ -139,7 +152,7 @@
 				<p>
 					This sentence is an extension of the one found in the previous example; it means
 					&quot;I would be delighted to sing a song&quot;.<br/>Notice how the intent has not
-					changed (the speaker still expresses eagerness at doing something); the only
+					changed (the speaker still expresses eagerness over doing something); the only
 					difference is that it is now clear what the speaker intends to do.
 				</p>
 				<p>
@@ -168,7 +181,7 @@
 				<tr>
 					<td class="ev-1" colspan="2" style="color: blue;">
 						h<span style="color: red;">E</span>mm<span style="color: red;">E</span>r<span style="color: red;">YE</span><br/>
-						<span class="text-basic">&quot;I would be delighted to oblige&quot;</span>
+						<span class="text-basic">&quot;I would be delighted to sing&quot;</span>
 					</td>
 				</tr>
 				<tr>
@@ -267,7 +280,7 @@
 				<span class="text-title" style="color: blue;">▼ Emotions directed towards another individual</span><br/>
 				<table>
 					<tr>
-						<td class="ev-2b" style="text-align: center; width: 50px;">A</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YA</td>
 						<td class="ev-2b" style="text-align: center; width: 50px;">や</td>
 						<td class="ev-2b" style="width: 505px;">(emotional sympathy)</td>
 					</tr>
@@ -334,298 +347,306 @@
 			</div>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 名詞</div><br/>
+			<div class="section-title text-title-small">⠕ Nouns</div><br/>
 			<p>
-				新約パスタリエは、「インフェル・ピラ」サーバーが現行ヒュムノスをエミュレーションする為、第一紀成語の名詞も使用可能である。
-				しかし、新約パスタリエ専用名詞を使うことで更に効率化を図れる。<br/>
-				新約パスタリエの名詞は、その語頭が効率化の特徴となる。例を挙げて説明する。
+				Infel-Phira, for which the New Testament of Pastalie was created, supports the
+				standard noun forms found in other dialects of Hymmnos. However, with Pastalia's
+				emphasis on succinct sentences, a noun syntax that couples ownership with emotional
+				attachment has been developed.<br/>
+				Once again, this language feature will be demonstrated with examples.
 				<table>
 					<tr>
-						<td bgcolor="ffff88" class=fonts2 align=center colspan=3>
-							<b>gasar（がさる）:ぬいぐるみ</b><br/>
-							<font class=fonts1>（新約パスタリエ名詞）</font>
+						<td style="background: #ffff88; text-align: center;" colspan="3">
+							<b>lyuma (star)</b><br/>
+							<font class=fonts1>(noun from the New Testament of Pastalie)</font>
 						</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=left>展開１</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>Agasar</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>私のぬいぐるみ</td>
+						<td class="ev-1b">Form 1</td>
+						<td class="ev-1b">Elyuma</td>
+						<td class="ev-1b">The speaker's star; it makes her happy</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=left>展開２</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>YAgasar</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>貴方（達）のぬいぐるみ</td>
+						<td class="ev-2b">Form 2</td>
+						<td class="ev-2b">YUlyuma</td>
+						<td class="ev-2b">Someone else's star; it worries them</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=left>展開３</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>LYAgasar</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>この場（公共）のぬいぐるみ</td>
+						<td class="ev-4b">Form 3</td>
+						<td class="ev-4b">LYNlyuma</td>
+						<td class="ev-4b">Everyone's star; it soothes them</td>
 					</tr>
 					<tr>
-						<td bgcolor="eebbff" class=fonts2 align=left>展開４</td>
-						<td bgcolor="eebbff" class=fonts2 align=left>Agasar_chroche</td>
-						<td bgcolor="eebbff" class=fonts2 align=left>クローシェのぬいぐるみ</td>
+						<td class="ev-5b">Form 4</td>
+						<td class="ev-5b">Olyuma_cloche</td>
+						<td class="ev-5b">Cloche's star; it infuriates her</td>
 					</tr>
 				</table>
 			</p>
 			<p>
-				上記のように、一単語で「〜の」という所まで包含する。
+				As seen above, an Emotion Vowel that prefixes a noun indicates to whom
+				it belongs, as well as the nature of their emotional connection to the
+				entity being described. This table formalizes the pattern, using the
+				Emotion Vowel family &quot;A&quot; as an example.
 				<table>
-					<tr>
-						<td bgcolor="aaccaa" class=fonts2 align=center width=90><b>目的</b></td>
-						<td bgcolor="aaccaa" class=fonts2 align=center width=200><b>用法</b></td>
+					<tr style="font-weight: bold;">
+						<td class="ev-5" style="width: 90px;">Owner</td>
+						<td class="ev-5" style="width: 200px;">Expression form</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=left>私の</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>A〜</td>
+						<td class="ev-1b">me</td>
+						<td class="ev-1b">A[object]</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=left>貴方(達)の</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>YA〜</td>
+						<td class="ev-1b">you</td>
+						<td class="ev-1b">YA[object]</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=left>この場の</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>LYA〜</td>
+						<td class="ev-1b">everyone,<br/>the land,<br/>the world</td>
+						<td class="ev-1b">LYA[object]</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=left>○○の</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>A〜_○○</td>
+						<td class="ev-1b">a person</td>
+						<td class="ev-1b">A[object]_[person's name]</td>
 					</tr>
-				</table>
-			</p>
-			<p>
-				※母音が続く場合は伸ばす。例えば名詞が「abb（あぶぶ）」の場合「Aabb（あーぶぶ）」になる。
-			</p>
-			<p>
-				<b>wYEsA Agasar_luca/.</b><br/>
-				（うぃえさ　あがさる　るか）<br/>
-				（私は）瑠珈所有のヌイグルミを貴方に嬉々としてプレゼントします。
+				</table><br/>
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 長文文法</div><br/>
+			<div class="section-title text-title-small">⠕ The structure of long sentences</div><br/>
 			<p>
-				長文の場合、だんだんと現行ヒュムノスと変わらなくなってくる。<br/>
-				具体的には、以下のような感じになる。
+				As sentences become longer, the differences between the New Testament of Pastalie and
+				standard Hymmnos become less pronounced. Indeed, the sentence structures are very much
+				the same: 
 			</p>
 			<p style="font-weight: bold;">
-				[想音動詞]-[目的語]-[目的語](VOO)<br/>
-				[想音動詞]-[目的語]-[装飾語](VOC)<br/>
-				[想音動詞]-[装飾語](VC)
+				[Emotion Verb]-[object]-[object] [VOO]<br/>
+				[Emotion Verb]-[object]-[compound] [VOC]<br/>
+				[Emotion Verb]-[compound] [VC]
 			</p>
 			<p>
-				基本的には英語と同じで、現行ヒュムノスとも同じである。
-				新約パスタリエは、「想音＋動詞＋目的語」の部分が１つになっている所が
-				最も効率化がとれて特徴的な部分であるが、装飾がつけばつくほど、そのうま味が薄れてくる。
-				その場合は「ファンクション」が有効的になる。ファンクションについては、最後の方で解説している。
+				As you can see, when long sentences are required, the advantages of Pastalia are
+				dramatically lessened.
+				(Compounds, of course, may be built in the same manner as in other Hymmnos dialects)
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 主語定義</div><br/>
+			<div class="section-title text-title-small">⠕ &quot;x.&quot;, the subject identifier</div><br/>
 			<p>
-				新約パスタリエの主語定義は、第一紀成語ヒュムノスと同じである。<br/>
-				ただし「その事を語ってる自分の、今の気持ち」部分が定義化されている。
+				Just as in standard variants of Hymmnos, the New Testament of Pastalie features a means of
+				explicitly specifying the subject of a sentence. However, the emotional expressiveness
+				permitted by this structure has been expanded.
 			</p>
 			<p style="color: green; font-role: italic;">
-				[x.]-[rre]-[主語]-[想音動詞']-[目的語]-…
+				[x.]-[rre]-[subject]-[Emotion Verb]-[OO/OC/C]
 			</p>
 			<p>
-				x.は、自分の想いを綴る部分。「.（バンクピリオド）」に想母音を１つ入れる。<br/>
-				rreは主語定義単語で、その１つ後ろに来る単語を主語として認定する。
+				&quot;x.&quot;, as you may have noticed, bears a Bank Slot.
+				It accepts an Emotion Vowel that may be used to describe the speaker's emotions regarding
+				the matter of the sentence.
 			</p>
 			<p>
-				<b>xE rre chroche cEzE hymmnos/.</b><br/>
-				（ぜ　[ﾙﾙ]れ　くろーしぇ　しぇぜ　ひゅむのす）<br/>
-				クローシェは謳になる（事に私は幸せを願っている）
+				<b>xE rre cloche cEzE hymmnos/.</b><br/>
+				&quot;Cloche is delighted to express herself through song, and this makes me happy.&quot;
 			</p>
 			<p>
-				ただし、「彼」「彼女」「あなた」「彼ら」「彼女ら」に関しては、
-				rreを含んだ主語定義用の単語があるので、rreを使わない。<br/>
-				「rre」を使わない（主語定義を含む）単語を以下に示す。
+				Just as with standard Hymmnos, the subject identifier &quot;rre&quot; and the subject it
+				identifies may be omitted in favour of a pronoun; there are no differences in how
+				pronouns are defined in the New Testament of Pastaile. An example follows:
 			</p>
-			<table>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2><b>人称</b></td>
-					<td bgcolor="#ffeeee" class=fonts2><b>通常（目的語）</b></td>
-					<td bgcolor="#ffeeee" class=fonts2><b>主語使用</b></td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>あなた</td>
-					<td bgcolor="#ffeeee" class=fonts2>yor</td>
-					<td bgcolor="#ffeeee" class=fonts2>yorr</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>あなたたち</td>
-					<td bgcolor="#ffeeee" class=fonts2>yora</td>
-					<td bgcolor="#ffeeee" class=fonts2>yorra</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>彼</td>
-					<td bgcolor="#ffeeee" class=fonts2>hes</td>
-					<td bgcolor="#ffeeee" class=fonts2>herr</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>彼ら</td>
-					<td bgcolor="#ffeeee" class=fonts2>hers</td>
-					<td bgcolor="#ffeeee" class=fonts2>herra</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>彼女</td>
-					<td bgcolor="#ffeeee" class=fonts2>has</td>
-					<td bgcolor="#ffeeee" class=fonts2>harr</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffcccc" class=fonts2>彼女ら</td>
-					<td bgcolor="#ffeeee" class=fonts2>hars</td>
-					<td bgcolor="#ffeeee" class=fonts2>harra</td>
-				</tr>
-			</table>
 			<p>
 				<b>xI harr cEzE hymmnos/.</b><br/>
-				（じ　はるる　しぇぜ　ひゅむのす）<br/>
-				彼女は謳になる（事を私は妬んでいる）
+				&quot;She is delighted to express herself through song, and this makes me jealous.&quot;
+			</p>
+			<p>
+				<span style="color: red;">
+					Lazy, a contributer to <a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a>,
+					made note of the following information. However, it does not seem to appear anywhere on
+					<a href="http://game.salburg.com/hymmnoserver/">HYMMNOSERVER</a>. But, because it seems
+					reasonable and significant, it has been included here.
+				</span><br/>
+				&quot;x.&quot; can accept only Category 1 Emotion Vowels, and they carry slightly different
+				meanings in this context:
+				<table>
+					<tr>
+						<td class="ev-1b" style="text-align: center; width: 50px;">A</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">あ</td>
+						<td class="ev-1b">I feel indifferent</td>
+					</tr>
+					<tr>
+						<td class="ev-1b" style="text-align: center;">I</td>
+						<td class="ev-1b" style="text-align: center;">い</td>
+						<td class="ev-1b">I feel jealous</td>
+					</tr>
+					<tr>
+						<td class="ev-1b" style="text-align: center;">U</td>
+						<td class="ev-1b" style="text-align: center;">う</td>
+						<td class="ev-1b">I feel concerned</td>
+					</tr>
+					<tr>
+						<td class="ev-1b" style="text-align: center;">E</td>
+						<td class="ev-1b" style="text-align: center;">え</td>
+						<td class="ev-1b">I feel happy</td>
+					</tr>
+					<tr>
+						<td class="ev-1b" style="text-align: center;">O</td>
+						<td class="ev-1b" style="text-align: center;">お</td>
+						<td class="ev-1b">I feel angry</td>
+					</tr>
+					<tr>
+						<td class="ev-1b" style="text-align: center;">N</td>
+						<td class="ev-1b" style="text-align: center;">ん</td>
+						<td class="ev-1b">I feel opposed</td>
+					</tr>
+				</table><br/>
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 様々な文法</div><br/>
+			<div class="section-title text-title-small">⠕ Grammatical flexibility</div>
 			<p>
-				新約パスタリエでは、様々な想いに対応できるよう、文法も様々な形に拡張され効率的に唱えられるように作られている。
-				ここではそれらの中でも特徴的な文法形態を紹介する。
+				The New Testament of Pastalie introduces additional rules that broaden the range
+				of feelings that may be communicated. This section provides a brief overview of
+				how they work.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">受動態</div>
+				<div class="subsection-title text-title-small">Passive voice</div>
 				<p>
-					想音動詞＋「eh」で受動態。
+					Appending a &quot;-eh&quot; suffix to an Emotion Verb will cause the sentence to be
+					interpreted in the passive voice.
 				</p>
 				<p>
-					<b>fEwErYEn</b><br/>
-					愛を持って貴方を包み込む（能動態）
+					<b>hEmmErYE</b><br/>
+					&quot;I would be delighted to sing&quot; (active voice)
 				</p>
 				<p>
-					<b>fEwErYEneh</b><br/>
-					貴方に包み込まれて愛を感じる（受動態）
+					<b>hEmmErYEeh</b><br/>
+					&quot;Obliging would delight me&quot; (passive voice)
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">強調</div>
+				<div class="subsection-title text-title-small">Emphasis</div>
 				<p>
-					主語定義用の目的語と汎用主語定義を同時に使うことで、主語の強調を行うことが出来る。
+					By placing &quot;rre&quot; before a pronoun, which normally does not
+					require a subject identifier, its significance will be emphasized,
+					which narrows the scope of the statement.
 				</p>
 				<p>
 					<b>xE rre yorra cEzE hymmnos/.</b><br/>
-					あのクローシェが歌になる（ので私はとても嬉しい）
+					&quot;Cloche and company are delighted to express themselves through song, and this makes me happy.&quot;
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">否定</div>
+				<div class="subsection-title text-title-small">Negation</div>
 				<p>
-					否定にはzzを使う。名詞でも想音動詞でも、その前に来る。
+					Placing &quot;zz&quot; before an Emotion Verb or noun (Emotion Sound optional) will cause it to
+					carry meaning opposite to its normal interpretation.
 				</p>
 				<p>
-					<b>zz rUfImeh/.</b><br/>
-					私にはまだ見えない
+					<b>zz hEmmErYE/.</b><br/>
+					&quot;I would <b>not</b> be delighted to sing&quot;
 				</p>
 				<p>
-					<b>zz Agasar</b><br/>
-					私のぬいぐるみではない
-				</p>
-			</div>
-			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">想音動詞の名詞的扱い</div>
-				<p>
-					想音動詞は、ピリオドを全てピリオドのままにしておくことで、不発動詞もしくは名詞的扱いとして使うことが可能である。
-				</p>
-				<p>
-					<b>aIuUkA zess pop v.a en d.z./.</b><br/>
-					生まれては消える泡のように
+					<b>zz arhou</b><br/>
+					&quot;despair&quot; (normally &quot;hope&quot;)
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">「」表記</div>
+				<div class="subsection-title text-title-small">Using Emotion Verbs as nouns</div>
 				<p>
-					新約パスタリエは :/   /:によって、言い伝え（「」表記）を行える。
+					If all Bank Slots in an Emotion Verb are left unused, then the template word
+					may be interpreted as a noun.
+				</p>
+				<p>
+					<b>fEwrEn h.m.m.r. eje/.</b><br/>
+					&quot;I am happy to embrace the singing of my heart&quot;
+				</p>
+			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Quotation</div>
+				<p>
+					In the New Testament of Pastalie, Hymmnos between :/ and /: are considered quoted,
+					just like encapsulating text in &quot;&quot; in English.
 				</p>
 			</div>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ ファンクション</div><br/>
+			<div class="section-title text-title-small">⠕ Macros</div>
 			<p>
-				新約パスタリエでは、ファンクションと言って、文章を１つの単語にすることが出来る。
-				簡単に言えば、この詩の中でのみ有効な、新造単語という位置づけになる。<br/>
-				使用する場合、
-			</p>
-			<p style="color: green; font-role: italic;">
-				[新造単語]->[文章]
+				Under the New Testament of Pastalie, it is possible to define a complete
+				Hymmnos passage and specify a name by which it may be invoked in the future.
+				The syntax for invoking this mechanism follows:
 			</p>
 			<p>
-				という定義構文を用いる。その詩の中では、その新造単語は１語で１文唱えたことと同じになる。
-				「->」は、「ぱす」と発音する。
+				<span style="color: green; font-role: italic;">[macro name]->[Hymmnos passage]</span><br/>
+				(&quot;->&quot; is pronounced as &quot;pass&quot;)
 			</p>
 			<p>
-				<b>ishikawa -> jYOzAt METHOD_HYMME_ISHIKAWA_JANNE/. !</b><br/>
-				いしかわ ぱす じょざっと めそっど　ひゅむ　いしかわ　じゃんぬ<br/>
-				<b>ishikawa! ishikawa! ishikawa! ishikawa!</b><br/>
-				イシカワァ！イシカワァ！イシカワァ！イシカワァ！
+				Upon completion, it is possible to invoke the complete stored passage with
+				the single word used as the name of its macro.
+				As always, an example follows.
 			</p>
 			<p>
-				上記サンプルで、相手にイシカワジャンヌを４回発動します（あくまでサンプルです。実際には発動しません）。
+				<b>ishikawa -> jYOzAt METHOD_HYMME_ISHIKAWA_JANNE/. !<br/>
+				ishikawa! ishikawa! ishikawa! ishikawa!</b>
+			</p>
+			<p>
+				In this example, the Hymmnos &quot;jYOzAt METHOD_HYMME_ISHIKAWA_JANNE/.&quot; was
+				stored in a macro named &quot;ishikawa&quot;. It was then invoked four times.<br/>
+				(Of course, because &quot;!&quot; was present at the end of every statement,
+				nothing would have really been invoked)
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 例文集</div><br/>
+			<div class="section-title text-title-small">⠕ Putting it all together</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">単語例</div>
+				<div class="subsection-title text-title-small">Example words</div>
 				<p>
-					h<u><b>YA</b></u>mmr<u><b>A</b></u>（ひゃんむら）<br/>
-					（相手を想い、一生懸命に謳う）
+					h<u><b>YA</b></u>mmr<u><b>A</b></u><br/>
+					&quot;I will sing my best for you&quot;
 				</p>
 				<p>
-					h<u><b>YI</b></u>m<u><b>O</b></u>m<u><b>O</b></u>r<u><b>O</b></u>（ひぇいももろ）<br/> 
-					（必ず呪い殺してやる！と怒りに満ちて謳う）
+					h<u><b>YI</b></u>m<u><b>O</b></u>m<u><b>O</b></u>r<u><b>O</b></u><br/> 
+					&quot;I will sing to ensure your death&quot;
 				</p>
 				<p>
-					h<u><b>YE</b></u>m<u><b>YE</b></u>m<u><b>A</b></u>r<u><b>A</b></u>（ひぇみぇまら）<br/>
-					（相手の幸せを願い、嬉々として謳ってる）
+					h<u><b>YE</b></u>m<u><b>YE</b></u>m<u><b>A</b></u>r<u><b>A</b></u><br/>
+					&quot;I will sing as best I can for your elation&quot;
 				</p>
 				<p>
-					h<u><b>E</b></u>m<u><b>E</b></u>m<u><b>A</b></u>r<u><b>A</b></u>（へめまら）<br/>
-					（自分が嬉しくて一生懸命謳ってる）
+					h<u><b>E</b></u>m<u><b>E</b></u>m<u><b>A</b></u>r<u><b>A</b></u><br/>
+					&quot;I will sing as best I can to express my elation&quot;
 				</p>
 				<p>
-					h<u><b>LYI</b></u>m<u><b>LYI</b></u>m<u><b>O</b></u>r<u><b>O</b></u>（ひりぇいむりぇいもろ）<br/>
-					（怒りに満ちて、この世界を滅ぼし呪う気持ちで謳う）
+					h<u><b>LYI</b></u>m<u><b>LYU</b></u>m<u><b>O</b></u>r<u><b>O</b></u><br/>
+					&quot;I will sing to bring ruin and misery upon this wretched world&quot;
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">文例</div>
+				<div class="subsection-title text-title-small">Example statements</div>
 				<p>
-					実際に名詞などを含んだ文章として成り立っているものに関して、以下に例文を示す。
-					名詞などは、現行ヒュムノスと互換性があるので使用可能。「想音動詞」が新約パスタリエの要となる。
+					Complete sentences including nouns are presented below.
+					Any noun present in modern Hymmnos may be used with Emotion Verbs
+					within the context of the New Testament of Pastalie.
 				</p>
 				<p>
 					<b>hYAmmrA chroche/.</b><br/>
-					（ひゃんむら　くろ−しぇ）<br/>
-					（私は）クローシェのために一生懸命謳う
+					&quot;I will sing my best for Cloche&quot;
 				</p>
 				<p>
 					<b>hYImOmOrO!</b><br/>
-					（ひぇいももろ！）<br/>
-					（私は）お前を呪い殺してやる。必ずな！
+					&quot;I will sing to ensure your death&quot; (not invoked)
 				</p>
 				<p>
 					<b>cEzE hymmnos/.</b><br/>
-					（しぇぜ　ひゅむのす）<br/>
-					（私は）謳になる　＞現行ヒュムノスだとWas yea ra chs hymmnos mea.
+					&quot;I am delighted to express myself through song&quot;
 				</p>
 				<p>
 					<b>cYEzYE hymmnos/.</b><br/>
-					（しいぇずぃえ　ひゅむのす）<br/>
-					（私は）貴方を謳にする
+					&quot;You are delighted I am expressing you through song&quot;
 				</p>
 				<p>
-					<b>jAzOtYI LIKAR an dius fwal fwal ,en wOsYI !</b><br/>
-					（じゃぞち　りかる　あん　でぃうす　ふわる　ふわる　えん　うぉしぇい！）<br/>
-					白き翼持つ清き乙女リカルちゃん、神を、裁きのいかづちを下さい！！
+					<b>xN rre harr hLYImLYUmOrO a.u.k. zess quesa/.</b><br/>
+					&quot;Her singing is like thunder upon the land&quot;
 				</p>
 			</div>
 		</div>

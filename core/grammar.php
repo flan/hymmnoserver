@@ -274,7 +274,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
 				<p>
-					Pronouns may be used in place of a &quot;rre-[object]&quot; component.
+					Pronouns may be used in place of a &quot;rre-[subject]&quot; component.
 					Hymmnos's pronouns extend those found in English by defining gender and quantity.
 				</p>
 				<table>
