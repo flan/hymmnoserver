@@ -38,7 +38,7 @@
 			$stmt->free_result();
 			$stmt->close();
 			
-			$stmt = $mysql->prepare("SELECT destination FROM hymmnos_mapping WHERE source = ?");
+			$stmt = $mysql->prepare("SELECT destination FROM hymmnos_mapping WHERE source = ? ORDER BY destination ASC");
 			$stmt->bind_param("s", $word);
 			$stmt->execute();
 			$stmt->store_result();

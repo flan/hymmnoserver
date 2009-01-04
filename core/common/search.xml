@@ -16,6 +16,20 @@
 				$stmt->bind_result($word, $meaning_english, $meaning_japanese, $kana, $school, $romaji, $description, $class);
 				
 				while($stmt->fetch()){
+					$stmt2 = $mysql->prepare("SELECT destination FROM hymmnos_mapping WHERE source = ? ORDER BY destination ASC");
+					$stmt2->bind_param("s", $word);
+					$stmt2->execute();
+					$stmt2->store_result();
+					
+					$links = array();
+					$stmt2->bind_result($link);
+					while($stmt2->fetch()){
+						array_push($links, $link);
+					}
+					
+					$stmt2->free_result();
+					$stmt2->close();
+					
 					include 'common/word.xml';
 				}
 			echo '</div><br/>';

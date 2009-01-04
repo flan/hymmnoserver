@@ -12,6 +12,21 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Those who made this site possible</div>
 			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">GUST and Banpresto</div>
+				<p>
+					<ul class="basic-inline">
+						<li>Producing Ar_tonelico</li>
+						<li>Attracting Akira Tsuchiya (Really. He's awesome!)</li>
+					</ul>
+				</p>
+				<p>
+					<ul class="basic-inline">
+						<li><a href="http://game.salburg.com/">GUST's game homepage</a></li>
+					</ul>
+				</p>
+			</div>
+			<br/>
+			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Neil Tallim (Red HamsterX)</div>
 				<p>
 					<ul class="basic-inline">

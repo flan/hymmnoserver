@@ -18,7 +18,8 @@
 		16 => 'intj.',
 		17 => 'E.S. (II), adj.',
 		18 => 'v., conj.',
-		19 => 'n., adv.'
+		19 => 'n., adv.',
+		20 => 'adj., adv.'
 	);
 	
 	$SYNTAX_CLASS_FULL = array(
@@ -40,7 +41,8 @@
 		16 => 'interjection',
 		17 => 'Emotion Sound (II), adjective',
 		18 => 'verb, conjunction',
-		19 => 'noun, adverb'
+		19 => 'noun, adverb',
+		20 => 'adjective, adverb'
 	);
 	
 	$SYNTAX_CLASS_REV = array(
@@ -48,8 +50,8 @@
 		2 => array(7, 17),
 		3 => array(13),
 		4 => array(1),
-		5 => array(8, 10, 11, 17),
-		6 => array(3, 19),
+		5 => array(8, 10, 11, 17, 20),
+		6 => array(3, 19, 20),
 		7 => array(5, 18),
 		8 => array(16),
 		9 => array(4, 9, 10, 19),
