@@ -597,7 +597,7 @@
 				</p>
 				<p>
 					h<u><b>YI</b></u>m<u><b>O</b></u>m<u><b>O</b></u>r<u><b>O</b></u><br/> 
-					&quot;I will sing to ensure your death&quot;
+					&quot;I will sing of how I want you dead&quot;
 				</p>
 				<p>
 					h<u><b>YE</b></u>m<u><b>YE</b></u>m<u><b>A</b></u>r<u><b>A</b></u><br/>
@@ -625,7 +625,7 @@
 				</p>
 				<p>
 					<b>hYImOmOrO!</b><br/>
-					&quot;I will sing to ensure your death&quot; (not invoked)
+					&quot;I will sing of how I want you dead&quot; (not invoked)
 				</p>
 				<p>
 					<b>cEzE hymmnos/.</b><br/>
