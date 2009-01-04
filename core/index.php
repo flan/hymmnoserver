@@ -38,7 +38,7 @@
 						<span class="text-title">⠕ Hymmnos characters</span><br/>
 						Hymmnos Words are expressed as unique strings. Browsing this repository will be more enjoyable if you
 						are able to see these characters. A TrueType Font for Hymmnos script is available as a free download
-						to your right (courtesy of GUST; permission pending).
+						to your right.
 						
 						<ul class="basic-inline text-small">
 							<li>
@@ -75,7 +75,7 @@
 						<p>
 							<span class="text-title-small">3) Find the Hymmnos for an English word</span><br/>
 							Enter a word in English, then click the search button.
-							All Hymmnos words that involve the word you provided will be displayed.
+							All Hymmnos words that involve the fragment you provided will be displayed.
 							(Synonyms, however, will not be checked)
 						</p>
 						<p>

@@ -41,6 +41,7 @@ while True:
 	print "16) interjection"
 	print "17) Emotion sound (II)/adjective"
 	print "18) conjunction/verb"
+	print "19) noun/adverb"
 	print "Syntax class: "
 	syntax = int(raw_input())
 	print "Comments: "
