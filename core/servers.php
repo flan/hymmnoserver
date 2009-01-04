@@ -100,7 +100,8 @@
 				To get around this, they need to agree on a compatible protocol for exchanging
 				data, somewhat like how you used TCP/IP and HTTP to view this page. Once a protocol
 				has been agreed on, simple tasks like browsing databases and sending files to
-				complex ones like entering Cosmospheres and binary fields may be accomplished.
+				complex ones like entering Cosmospheres and generating binary fields may be
+				accomplished.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

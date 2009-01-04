@@ -213,7 +213,7 @@
 			</p>
 			<p>
 				As ironic fortune, the fact that the third generation lacks Hymn Codes prevents them from
-				downloading Hymmnos Extracts.
+				using the more dangerous Hymmnos Extracts.
 			</p>
 			<p>
 				<b>▼ Reference: Hymmnos Extract specifications</b><br/>
@@ -229,7 +229,6 @@
 						<td class="data-cell-blue" style="text-align: right;">2,800 SHmag/s</td>
 						<td class="data-cell-blue" style="text-align: right;">2.4x10^5Hz</td>
 						<td class="data-cell-blue"/>
-					
 					</tr>
 					<tr>
 						<td class="data-cell-blue">EXEC_LINCA/.</td>

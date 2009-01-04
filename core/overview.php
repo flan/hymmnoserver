@@ -136,7 +136,7 @@
 			</p>
 			<p>
 				The grammar of the New Testament is dramatically different from that of other Hymmnos originating from the
-				First Era, so you should review <a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
+				First Era, so you should learn <a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

@@ -1,44 +1,60 @@
 <?php
 	$SYNTAX_CLASS = array(
-		1 => 'E.v.',
+		1 => 'E.V.',
 		2 => 'v.',
 		3 => 'adv.',
 		4 => 'n.',
 		5 => 'conj.',
 		6 => 'prep.',
-		7 => 'E.s. (II)',
+		7 => 'E.S. (II)',
 		8 => 'adj.',
 		9 => 'v., n.',
 		10 => 'adj., n.',
 		11 => 'v., adj.',
 		12 => 'prt.',
-		13 => 'E.s. (III)',
-		14 => 'E.s. (I)',
+		13 => 'E.S. (III)',
+		14 => 'E.S. (I)',
 		15 => 'pron.',
 		16 => 'intj.',
-		17 => 'E.s. (II), adj.',
+		17 => 'E.S. (II), adj.',
 		18 => 'v., conj.'
 	);
 	
 	$SYNTAX_CLASS_FULL = array(
-		1 => 'Emotion verb',
+		1 => 'Emotion Verb',
 		2 => 'verb',
 		3 => 'adverb',
 		4 => 'noun',
 		5 => 'conjunction',
 		6 => 'preposition',
-		7 => 'Emotion sound (II)',
+		7 => 'Emotion Sound (II)',
 		8 => 'adjective',
 		9 => 'verb, noun',
 		10 => 'adjective, noun',
 		11 => 'verb, adjective',
 		12 => 'particle',
-		13 => 'Emotion sound (III)',
-		14 => 'Emotion sound (I)',
+		13 => 'Emotion Sound (III)',
+		14 => 'Emotion Sound (I)',
 		15 => 'pronoun',
 		16 => 'interjection',
-		17 => 'Emotion sound (II), adjective',
+		17 => 'Emotion Sound (II), adjective',
 		18 => 'verb, conjunction'
+	);
+	
+	$SYNTAX_CLASS_REV = array(
+		1 => array(14),
+		2 => array(7, 17),
+		3 => array(13),
+		4 => array(1),
+		5 => array(8, 10, 11, 17),
+		6 => array(3),
+		7 => array(5, 18),
+		8 => array(16),
+		9 => array(4, 9, 10),
+		10 => array(6),
+		11 => array(15),
+		12 => array(12),
+		13 => array(2, 9, 11, 18)
 	);
 	
 	$SCHOOL = array(

@@ -1,0 +1,70 @@
+<table style="width: 100%; border-width: 0px;">
+	<?php
+		echo "<tr>";
+			echo "<td class=\"word-header word-header-$class\">";
+				echo "<span class=\"word-text-title\">$word</span>";
+				echo "<br/>";
+				echo "<span class=\"word-text-subtitle\">$word</span>";
+			echo "</td>";
+		echo "</tr>";
+		echo "<tr>";
+			echo "<td class=\"word-header word-header-$class\">";
+				echo "<span class=\"word-text-title-expanded\">$meaning_english [$romaji]";
+					echo "<br/>";
+				echo "$meaning_japanese [$kana]</span>";
+			echo "</td>";
+		echo "</tr>";
+	?>
+</table>
+<table style="width: 100%; border-width: 0px;">
+	<tr class="word-text-school-usage">
+		<td class="word-info-title">
+			Dialect
+		</td>
+		<td class="word-info">
+			<span style="font-weight: bold;">
+				<?php echo $SCHOOL[$school]; ?>
+			</span>
+		</td>
+	</tr>
+	<tr class="word-text-school-usage">
+		<td class="word-info-title">
+			Usage
+		</td>
+		<td class="word-info">
+			<span style="font-weight: bold;">
+				<?php echo $SYNTAX_CLASS_FULL[$class]; ?>
+			</span>
+		</td>
+	</tr>
+	<tr class="word-text-related-description">
+		<td class="word-info-title">
+			Related Hymmnos
+		</td>
+		<td class="word-info">
+			<?php
+				$links_size = count($links);
+				if($links_size > 0){
+					for($i = 0; $i < $links_size; $i++){
+						$link = $links[$i];
+						echo "<a href=\"/hymmnoserver/word.php?word=$link\">$link</a>"; 
+						
+						if($i + 1 < $links_size){
+							echo ", ";
+						}
+					}
+				}else{
+					echo 'No related Hymmnos';
+				}
+			?>
+		</td>
+	</tr>
+	<tr class="word-text-related-description">
+		<td class="word-info-title">
+			Comments
+		</td>
+		<td class="word-info">
+			<?php echo $description; ?>
+		</td>
+	</tr>
+</table>

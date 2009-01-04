@@ -1,13 +1,13 @@
 <table id="header">
 	<tr>
-		<td class="header" align="center">
+		<td class="header" align="center" colspan="2">
 			<a href="/hymmnoserver/index.php">
 				<img src="/hymmnoserver/images/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/>
 			</a>
 		</td>
 	</tr>
 	<tr>
-		<td class="header">
+		<td class="header" colspan="2">
 			<form method="get" action="/hymmnoserver/search.php">
 				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px; width: 100%;">
 					<tr>
@@ -26,8 +26,11 @@
 		</td>
 	</tr>
 	<tr>
-		<td align="center" class="header-links">
-			<a href="/hymmnoserver/browse.php" style="display: block; text-decoration: none; color: #D92F0E;">Browse words in Roman order</a>
+		<td class="header-links" style="text-align: center;">
+			<a href="/hymmnoserver/browse.php?page=a" style="display: block; text-decoration: none; color: #D92F0E;">Browse words in Roman order</a>
+		</td>
+		<td class="header-links" style="text-align: center;">
+			<a href="/hymmnoserver/browse.php?page=1" style="display: block; text-decoration: none; color: #D92F0E;">Browse words by syntax class</a>
 		</td>
 	</tr>
 </table>

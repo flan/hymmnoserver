@@ -10,6 +10,10 @@ while True:
 	english = "'%s'" % raw_input().replace("'", "\\'")
 	print "Japanese form: "
 	japanese = "'%s'" % raw_input().replace("'", "\\'")
+	print "Kana form: "
+	kana = "'%s'" % raw_input().replace("'", "\\'")
+	print "Romaji form: "
+	romaji = "'%s'" % raw_input().replace("'", "\\'")
 	print "1) 中央正純律（共通語)"
 	print "2) クルトシエール律（Ⅰ紀前古代語）"
 	print "3) クラスタ律（クラスタ地方語）"
@@ -39,10 +43,6 @@ while True:
 	print "18) conjunction/verb"
 	print "Syntax class: "
 	syntax = int(raw_input())
-	print "Kana form: "
-	kana = "'%s'" % raw_input().replace("'", "\\'")
-	print "Romaji form: "
-	romaji = "'%s'" % raw_input().replace("'", "\\'")
 	print "Comments: "
 	comments = "'%s'" % raw_input().replace("'", "\\'")
 	if comments == "''":
@@ -50,6 +50,5 @@ while True:
 		
 	db.query("insert into hymmnos values (%s, %s, %s, %i, %s, %s, %s, %i)" % \
 	 (word, english, japanese, school, kana, romaji, comments, syntax))
-	print
 	print
 	

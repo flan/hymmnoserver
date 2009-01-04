@@ -52,34 +52,30 @@
 						<td class="hymmn1">Was</td>
 						<td class="hymmn1">yea</td>
 						<td class="hymmn1">ra</td>
-						<td class="hymmn2">wael</td>
-						<td class="hymmn2">Herr</td>
-						<td class="hymmn2">hyma</td>
-						<td class="hymmn2">ar</td>
-						<td class="hymmn2">wart</td>
+						<td class="hymmn2">chs</td>
+						<td class="hymmn2">hymmnos</td>
+						<td class="hymmn2">mea</td>
 					</tr>
-					<tr>
+					<tr style="font-weight: bold;">
 						<td class="kanji1" colspan="3">Emotion Sound</td>
 						<td class="kanji2">verb</td>
-						<td class="kanji2">subject</td>
-						<td class="kanji2">auxiliary</td>
-						<td class="kanji2" colspan="2">noun…</td>
+						<td class="kanji2">object</td>
+						<td class="kanji2">object</td>
 					</tr>
 					<tr>
 						<td class="kanji1" colspan="3">great, enjoyable happiness<br/>(I am delighted)</td>
-						<td class="kanji2">joy, delight</td>
-						<td class="kanji2">he</td>
-						<td class="kanji2">listen (to words)</td>
-						<td class="kanji2">only, unique</td>
-						<td class="kanji2">word</td>
+						<td class="kanji2">will become</td>
+						<td class="kanji2">song</td>
+						<td class="kanji2">me</td>
 					</tr>
 				</table>
 			</p>
 			<p>
 				
-				This sample sentence means &quot;I am delighted he listened to that word,&quot;
-				conveyed with an expression of genuine joy by the speaker; the statement may be said
-				to express happiness over having someone listen to what you had to say.
+				This sample sentence means &quot;I am delighted to express myself through song,&quot;
+				conveyed with an expression of genuine joy by the speaker.
+				(<i>Example changed to something more meaningful to English speakers because the syntax
+				of Hymmnos is closer to our language than it is to Japanese. -ed</i>)
 			</p>
 		</div>
 		<div class="text-basic">
@@ -234,103 +230,148 @@
 			</p>
 			<div class="section-title text-title-small">⠕ Prescriptive syntax</div>
 			<p>
-				上記例文は、本当に普通の文章であるため、「彼は〜」という主語が入っているが、実際に呪文として使う場合ヒュムノスの主語は殆ど一人称となる。
-				それは「自分がどうしたいか」という事を伝える言語の為である。
-				それ故、ヒュムノスは二人称、三人称の文法は得意ではなく、普段は主語無しの文章となる。
+				In the example above, although the word for &quot;me&quot; was used as a noun,
+				it was not an indicator of narrative perspective. The nominal form of Hymmnos
+				is first-person, which is logical because it is a language primarily centred
+				around conveying the emotions of its speaker. However, structures do exist
+				that allow statements to be expressed in terms of second- and third-person
+				narrative perspectives, and these will be discussed shortly.
+			</p>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Nominal sentence structure</div>
+				<p>
+					<b>[Emotion Sound]-[verb]-[object]-[object or compound]</b><br/>
+					In our example sentence, &quot;Was yea ra chs hymmnos mea,&quot; the Emotion
+					Sound is &quot;Was yea ra,&quot; the verb is &quot;chs,&quot; the first object is
+					&quot;hymmnos,&quot; and the variable component is another object, &quot;mea&quot;.<br/>
+					Compounds may be any structure satisfying [VC/VOC/VOO], which means that sentences may
+					be infinitely long, provided they continue to make use of nested compounds.
+				</p>
+			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">External-perspective sentence structure</div>
+				<p>
+					<b>[Emotion Sound]-[verb]-rre-[subject]-[verb]-[object]-[object or compound]</b><br/>
+					In this case, compounds may be any structure satisfying [VSV'C/VCV'OC/VSV'OO].
+				</p>
+				<p>
+					The first verb, [V], indicates the speaker's action, and the second verb, [V'], indicates
+					the subject's action.
+				</p>
+			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">&quot;rre&quot;, the subject identifier</div>
+				<p>
+					Because Hymmnos does not nominally have an explicit subject, it has need of a special
+					subject identifier; this identifier is &quot;rre&quot;.
+				</p>
+				<p>
+					When &quot;rre&quot; appears before an object, that object becomes the subject of the
+					sentence. However, regardless of any shifts in subject, the sentence's Emotion Sound is
+					relative only to the speaker.
+				</p>
+			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
+				<p>
+					Pronouns may be used in place of a &quot;rre-[object]&quot; component.
+					Hymmnos's pronouns extend those found in English by defining gender and quantity.
+				</p>
+				<table>
+					<tr class="text-title-small">
+						<td class="kana">Pronoun</td>
+						<td class="latin">Object form</td>
+						<td class="latin">Subject form</td>
+					</tr>
+					<tr>
+						<td class="kana">you</td>
+						<td class="latin">yor</td>
+						<td class="latin">yorr</td>
+					</tr>
+					<tr>
+						<td class="kana">you (plural)</td>
+						<td class="latin">yora</td>
+						<td class="latin">yorra</td>
+					</tr>
+					<tr>
+						<td class="kana">he</td>
+						<td class="latin">hes</td>
+						<td class="latin">herr</td>
+					</tr>
+					<tr>
+						<td class="kana">they (masculine)</td>
+						<td class="latin">hers</td>
+						<td class="latin">herra</td>
+					</tr>
+					<tr>
+						<td class="kana">she</td>
+						<td class="latin">has</td>
+						<td class="latin">harr</td>
+					</tr>
+					<tr>
+						<td class="kana">they (feminine)</td>
+						<td class="latin">hars</td>
+						<td class="latin">harra</td>
+					</tr>
+				</table>
+			</div>
+			<p>
+				This may be obvious, but no sentence may contain more than one subject, so &quot;rre&quot;
+				or its equivalents may appear only once, precluding changes of focus in compounds.
 			</p>
 			<p>
-				<span class="text-title-small">★ヒュムノス構文基本形</span><br/>
-				想音-動詞-目的語-装飾語(VC/VOC/VOO)
+				Historically, non-first-person sentences were not part of standard Hymmnos; it was not
+				until the formation of Central Pure Note that &quot;rre&quot; formally became part of
+				the language to further its communicability.
 			</p>
-			<p>
-				<span class="text-title-small">★ヒュムノス構文二人称、三人称基本形</span><br/>
-				想音-動詞-[rre]-主語-副動詞-目的語-装飾語(VSV'C/VSV'OC/VSV'OO)
-			</p>
-			<p>
-				基本的には英語文法の「SVOC」などから「S」を抜き取った「VOC」という形になる（Sを想音のSとするならば「SVOC」となるが）。
-				そして、他人のことを話す、一人称以外の主語が付く場合、それは第一動詞のあとに着く形となり「VSV'OC」などという形となるのである。
-				この最初のVに来る動詞は、どのようなことがあってもまず「自分がどうしたいか（もしくは「どうしたか」）」という、自分に向けての動詞になり、
-				次のV'に「その人称の者が何をしたか」という動詞になる。
-			</p>
-			<p>
-				<span class="text-title-small">★主語定義rre</span><br/>
-				主語を普段持たず、例外として行うヒュムノスでは、主語を敢えて付ける場合に「主語定義」という構文を使う。<br/>
-				主語定義は、主語となる名詞の前に「rre」という単語を付けるだけ。ただし、この構文はヒュムノスを誰もが理解できるように規格化し始めた「中央正純律」制定時に作られたもので、
-				それ以前のヒュムノス文には存在しない。主語らしきモノが２つ続いた場合、それを察して主語と目的語を分けるような、曖昧な感覚（センス？）が求められていた。
-				通常「rre+名詞」で使うが、二人称、三人称である「あなた」「貴方達」「彼」「彼女「彼ら」「彼女ら」にはrreを付けない。その代わり、それ専用（主語専用）の単語が用意されている。
-			</p>
-			<table>
-				<tr class="text-title-small">
-					<td class="kana">人称</td>
-					<td class="latin">通常（目的語）</td>
-					<td class="latin">主語使用</td>
-				</tr>
-				<tr>
-					<td class="kana">あなた</td>
-					<td class="latin">yor</td>
-					<td class="latin">yorr</td>
-				</tr>
-				<tr>
-					<td class="kana">あなたたち</td>
-					<td class="latin">yora</td>
-					<td class="latin">yorra</td>
-				</tr>
-				<tr>
-					<td class="kana">彼</td>
-					<td class="latin">hes</td>
-					<td class="latin">herr</td>
-				</tr>
-				<tr>
-					<td class="kana">彼ら</td>
-					<td class="latin">hers</td>
-					<td class="latin">herra</td>
-				</tr>
-				<tr>
-					<td class="kana">彼女</td>
-					<td class="latin">has</td>
-					<td class="latin">harr</td>
-				</tr>
-				<tr>
-					<td class="kana">彼女ら</td>
-					<td class="latin">hars</td>
-					<td class="latin">harra</td>
-				</tr>
-			</table>
-			<br/>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ The syntax of Emotion Sounds (■想音の保証定義構文)</div>
+			<div class="section-title text-title-small">⠕ Persistant Emotion Sounds definition syntax</div>
 			<p>
-				想音は、文章列の先頭に必ずつけなければならない。ただ、長文をヒュムノスで書く場合、感情もそれ程変わるわけでもないのに毎回付けるのはナンセンスである。
-				その為、長文を扱う場合は、最初に「想音の保証定義」という契約文を送る。
+				This section describes a structure that allows an Emotion Sound to be applied to an arbitrarily
+				large collection of sentences. This is important because it prevents a speaker from having to
+				continually express their emotions before every sentence in a series of related statements,
+				such as a stanza in a hymm.
 			</p>
 <!-- Be very, very careful when editing this block. Do not adjust the alignment
      of these lines; they are offset by fake spaces, and writing inline CSS to
      duplicate the effect would be very tedious -->
 			<p>
-　Ma num ra 0x vvi.（確約定義開始）<br/>
-　　　・<br/>
-　　　・<br/>
-　　（本文）<br/>
-　　　・<br/>
-　　　・<br/>
-　1x AAs ixi.（確約定義終了）
+　<b>Ma num ra 0x vvi.</b> [Emotion sound (&quot;Ma num ra&quot;) BEGIN]<br/>
+　　　<b>・</b> [any number of sentences in Hymmnos]<br/>
+　　<b>(Hymmnos sentence)</b><br/>
+　　　<b>・</b> [any number of sentences in Hymmnos]<br/>
+　<b>1x AAs ixi.</b> [END]
+			</p>
+			<p>
+				This means that between the statements &quot;0x vvi.&quot; and &quot;1x AAs ixi.&quot;,
+				every sentence will bear the Emotion Sound &quot;Ma num ra&quot;.
+				0 and 1 are, of course, binary flags; as qualified numbers, &quot;0x&quot; is pronounced as
+				&quot;o ku&quot;, and, likewise, &quot;1x&quot; as &quot;i ku&quot;. 
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Converting to[from?] Emotion Sounds (■想音の裏技)</div>
-			<p>
-				<span class="text-title-small">★想音を入れない使い方</span><br/>
-				想音とは、あくまで自らの感情を表現する部分である。しかし、想音が無いとヒュムノス呪文として塔は認識しない。
-				しかし、それを逆手にとって、わざと想音を外して謳うという事もできる。そういった事例は殆どないが、その（想音を外した）歌詞部分を聴かせたい対象が「塔」ではなく、
-				塔以外の「誰か」の場合は、こうすることで「呪文」ではなく「言葉」として届けることが出来る。
-			</p>
-			<p>
-				<span class="text-title-small">★想音の二重登録</span><br/>
-				想音の保証定義構文を最初に定義し、その中でまた想音を含んだ文章を詠唱することも可能である。その場合、その部分だけがその文章に付けられた想音を優先される。
-				そもそも想音というものは、その時の術者の感情によって大きく変わっていくものであるから、これは特例というよりかは、ごく自然な機能とも言える。
-				長文を詠唱中に大きな感情の変化があった場合、省略していた各文章の先頭に、臨時記号の如く想音を発音していけば、その想音が優先されるのである。
-			</p>
+			<div class="section-title text-title-small">⠕ Variations on Emotion Sounds</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Emotionless sentences</div>
+				<p>
+					Emotion Sounds may be omitted from sentences, even when they are not part of a
+					persistent Emotion Sound sequence.
+					When Hymmnos is spoken in this manner, it will not be processed by Towers,
+					making it little more than a spoken, though highly melodious, language.
+				</p>
+			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Overriding Emotion Sounds</div>
+				<p>
+					Although sentences expressed within the context of a persistent Emotion Sound sequence
+					already bear Emotion Sounds by definition, it is possible to explicitly change the
+					Emotion Sound associated with a specific sentence by prefixing it with another;
+					explicitly specified Emotion Sounds always take priority.
+					Doing this saves the speaker the trouble of ending one persistent sequence for
+					a single sentence, only to have to begin another sequence immediately afterwards.
+				</p>
+			</div>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>

@@ -3,7 +3,6 @@
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
 <?php include 'common/constants.xml'; ?>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Main</title>
@@ -11,16 +10,27 @@
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
-		<span style="font-size: 0.95em;">
+		<div style="font-size: 0.95em; text-align: center;">
 			<?php
 				$page = $_GET['page'];
 				if($page == NULL || trim($page) == ''){
 					$page = 'a';
 				}else{
-					$page = strtolower(trim($page)[0]);
-					$page_ord = ord($page);
-					if(($page_ord < 97 || $page_ord > 122) && $page_ord != 48){
-						$page = 'a';
+					$page = trim($page);
+					
+					if(is_numeric($page)){
+						$page = intval($page);
+						if($page == 0){
+							$page = '0';
+						}elseif($page < 1 || $page > 13){
+							$page = 1;
+						}
+					}else{
+						$page = strtolower($page[0]);
+						$page_ord = ord($page);
+						if(($page_ord < 97 || $page_ord > 122)){
+							$page = 'a';
+						}
 					}
 				}
 				
@@ -30,7 +40,7 @@
 					echo "<a href=\"/hymmnoserver/browse.php?page=$character\">";
 					
 					if($character == $page){
-						echo "<span style=\"font-weight: bold; font-size: 1.5em;\">$character</span>";
+						echo "<span style=\"font-weight: bold; font-size: 1em;\">$character</span>";
 					}else{
 						echo $character;
 					}
@@ -41,10 +51,34 @@
 						echo " / ";
 					}
 				}
+				
+				echo '<br/>';
+				
+				$i = 0;
+				foreach(array(
+				 'E.s. (I)', 'E.s. (II)', 'E.s. (III)', 'E.v.',
+				 'adj.', 'adv.', 'conj.', 'intj.', 'n.', 'prep.',
+				 'pron.', 'prt.', 'v.'
+				) as $class){
+					$i++;
+					echo "<a href=\"/hymmnoserver/browse.php?page=$i\">";
+					
+					if($i == $page){
+						echo "<span style=\"font-weight: bold; font-size: 1em;\">$class</span>";
+					}else{
+						echo $class;
+					}
+					
+					echo '</a>';
+					
+					if($i != 13){
+						echo " / ";
+					}
+				}
 			?>
-		</span>
+		</div>
 		<hr/>
-		<span style="color: red;">
+		<span style="color: red; font-size: 0.8em;">
 			<?php
 				include '/home/flan/public_html/hymmnoserver.gobbledygook';
 				if ($mysqli->connect_error) {
@@ -53,9 +87,19 @@
 				}
 				
 				if($page != '0'){
-					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
-					$page = $page.'%';
-					$stmt->bind_param("s", $page);
+					if(is_numeric($page)){
+						$keys = $SYNTAX_CLASS_REV[$page];
+						$keys_count = count($keys);
+						$search_key = $keys[0];
+						for($i = 1; $i < $keys_count; $i++){
+							$search_key = $search_key.','.$keys[$i];
+						}
+						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
+					}else{
+						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
+						$page = $page.'%';
+						$stmt->bind_param("s", $page);
+					}
 				}else{
 					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
 				}
@@ -66,9 +110,9 @@
 				if($stmt->num_rows != 1){
 					$plural = 's';
 				}
-				printf('<b>%d record%s found</b><br/>', $stmt->num_rows, $plural);
+				printf('<b>%d record%s found</b>', $stmt->num_rows, $plural);
 			?>
-			<span style="font-size: 0.8em;">Hymmnos entries will open in a new window</span>
+			(Hymmnos entries will open in a new window)
 		</span>
 		<br/><br/>
 		<table>

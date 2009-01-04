@@ -6,6 +6,42 @@
 	<head>
 		<title>HYMMNOSERVER - Grammar (Pastalia)</title>
 		<?php include 'common/resources.xml'; ?>
+		<style type="text/css">
+			td.ev-1{
+				background: #bbffbb;
+				text-align: center;
+			}
+			td.ev-2{
+				background: #bbbbff;
+				text-align: center;
+			}
+			td.ev-3{
+				background: #bbbbbb;
+				text-align: center;
+			}
+			td.ev-4{
+				background: #ffbbbb;
+				text-align: center;
+			}
+			td.ev-1b{
+				background: #ddffdd;
+			}
+			td.ev-2b{
+				background: #ddddff;
+			}
+			td.ev-3b{
+				background: #dddddd;
+			}
+			td.ev-4b{
+				background: #ffddff;
+			}
+			td.dark-blue{
+				background: #000044;
+				color: white;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
@@ -19,264 +55,282 @@
 				I wish to do is present the content in a manner that offers English-speaking
 				audiences an experience similar to that provided to the Japanese by GUST.
 			</p>
-			<div class="section-title text-title-small">⠕ 新約パスタリエ文法を修得する前に</div>
+			<div class="section-title text-title-small">⠕ Before learning the Pastalie New Testament grammar...</div>
 			<p>
-				この「新約パスタリエ」は、他の第一紀成語文法をベースに開発された文法である。
-				故に、それらの文法の知識が有ることを前提に話が進んでいく。
-				もし第一紀成語文法を理解していない方は、<a href="?mode=help3">先にそちらを修得されたい。</a>
+				The grammar of Pastalia is based on the standard
+				<a href="/hymmnoserver/grammar.php">grammar of the First Era</a>.
+				Because of this, knowledge of that grammar is a prerequisite for understanding what will be
+				discussed here.
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 基礎文法</div><br/>
+			<div class="section-title text-title-small">⠕ Grammar principles</div>
 			<p>
-				新約パスタリエの文法は非常にシンプルである。それは、この言語がいかに高速に、少ない言葉で最大の効果を
-				発揮できるかを追求して作られた言語だからである。
-				その為、最短文法では１語から既に文章的な意味を持つことが出来るのである。
+				Pastalia is based on the idea of expressing as much meaning and emotion as possible with as few
+				words as possible.
+				This variant of Hymmnos is so streamlined that, in some cases, a single word, known as an
+				&quot;Emotion Verb&quot; is enough to form an entire sentence.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">1. 相手が見えている場合</div>
+				<div class="subsection-title text-title-small">1. Usage with implicit objects</div>
 				<p>
-					対象となる相手が見えている場合、新約パスタリエは１単語から文章として成立させることが可能。
+					When the subject of a sentence is implied by context, it is possible to form useful
+					Hymmnos using only one word. Like usual, we will explore this concept with an example.
 				</p>
 				<table>
 					<tr>
-						<td bgcolor="#bbffbb" align=center>fEwErYEn</td>
-						<td bgcolor="#bbbbbb" align=center>/.</td>
+						<td class="ev-1">hEmmErYE</td>
+						<td class="ev-3">/.</td>
 					</tr>
 					<tr>
-						<td bgcolor="#ddffdd" class=fonts2>想音動詞</td>
-						<td bgcolor="#dddddd" class=fonts2>発動子</td>
+						<td class="ev-1b">Emotion Verb</td>
+						<td class="ev-3b">invoke</td>
 					</tr>
 				</table>
 				<p>
-					フェウェリェン<br>
-					「貴方を包み込む」ことを、愛をもって行います。
+					This complete sentence means &quot;I would be delighted to oblige&quot;.<br/>
+					As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
+					example from the standard grammar section, can be written in Pastalia as
+					&quot;cEzE hymmnos/.&quot;; both forms carry the same meaning:
+					&quot;I am delighted to express myself through song&quot;.
 				</p>
 				<p>
-					想音動詞は、大文字を「想音」、小文字を「動詞」が担う形の複合単語である。
-					それ故に、こういった複雑な想いを秘めた文章も、たった１つの単語で作ることが出来るのである。
-					尚、「相手が見えている場合」とは、
-				</p>
-				<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-					<li>自分自身の問題である場合</li>
-					<li>「あなた！」と指をさせる場合</li>
-					<li>「この場全体」と全部巻き込む場合</li>
-				</ul>
-				<p>
-					の、いずれかのこと。
-					この条件を満たす場合、新約パスタリエは目的語すら省略できる。なぜなら、「想音動詞」の中に目的語も含まれているためである。想音動詞については後に解説する。
+					Emotion Verbs are written as a series of alternating lower-case and upper-case
+					letters; the exact details of this system will be described later. For now, the
+					most important detail is how they identify their objects, given the implicit
+					referencing nature of this sentence structure. The upper-case components indicate
+					one of three possible scopes:
+					<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
+						<li>The speaker herself</li>
+						<li>An individual, singled out by context</li>
+						<li>All of the speaker's surroundings</li>
+					</ul>
 				</p>
 				<p>
-					「発動子」とは「/.」の事で、新約パスタリエでは、ここで効果として発動していることを明示する。しかし実際は、単純に「バンクピリオド（後述）」との誤認識を防ぐための表記上の問題でしかない。
-					それゆえ「！」や「？」で終わる文章の場合、発動子は使用しない。
+					Intuitively, if the objects relevant to the Hymmnos can be identified by one of these
+					three scope limiters, then there is no need to explicitly identify them; the qualifiers
+					(upper-case components) packed into the Emotion Verb will convey all needed information.
+				</p>
+				<p>
+					Sentences in Pastalia are terminated with &quot;/.&quot;; fundamentally, this is the same
+					as how sentences are normally terminated with a period in English, but this also has the
+					effect of executing the spoken statement.
+					As an alternative, &quot;!&quot; and &quot;?&quot; may be used to indicate the end of a
+					statement without invoking anything. 
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">2. 相手が見えていない場合</div>
+				<div class="subsection-title text-title-small">2. Usage with explicit objects</div>
 				<p>
-					相手が見えていない場合、目的語を明確につける必要がある。以下にその例を記す。
+					If it is not clear what the objects are from context, they need to be qualified explicitly.
 				</p>
 				<table>
 					<tr>
-						<td bgcolor="#bbffbb" align=center>fEwErYEn</td>
-						<td bgcolor="#bbbbff" align=center>Luca</td>
+						<td bgcolor="#bbffbb" align=center>hEmmErYE</td>
+						<td bgcolor="#bbbbff" align=center>hymmnos</td>
 						<td bgcolor="#bbbbbb" align=center>/.</td>
 					</tr>
 					<tr>
-						<td bgcolor="#ddffdd" class=fonts2>想音動詞</td>
-						<td bgcolor="#ddddff" class=fonts2>目的語</td>
-						<td bgcolor="#dddddd" class=fonts2>発動子</td>
+						<td bgcolor="#ddffdd" class=fonts2>Emotion Verb</td>
+						<td bgcolor="#ddddff" class=fonts2>object</td>
+						<td bgcolor="#dddddd" class=fonts2>invoke</td>
 					</tr>
 				</table>
 				<p>
-					フェウェリェン　ルカ<br>
-					「ルカを包み込む」ことを、愛をもって行います。
+					This sentence is an extension of the one found in the previous example; it means
+					&quot;I would be delighted to sing a song&quot;.<br/>Notice how the intent has not
+					changed (the speaker still expresses eagerness at doing something); the only
+					difference is that it is now clear what the speaker intends to do.
 				</p>
 				<p>
-					固有名詞を使う場合、想音動詞の後ろに目的語を置く。これが一般的な使い方である。英語で言えば「V-O」となる。
+					The same structure may be used when identifying proper nouns; the syntax here
+					is like [VO] in English.
 				</p>
 			</div>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ 想音動詞</div><br/>
+			<div class="section-title text-title-small">⠕ Emotion Verbs</div><br/>
 			<p>
-				想音動詞とは、単語構築レベルで単語が変化する動詞のこと。
-				新約パスタリエでは、動詞はすべからず想音動詞となる為、想音動詞の修得が新約パスタリエ修得の鍵となる。
+				The meaning of Emotion Verbs is not fixed.
+				Depending on how they are constructed, they can convey very different things from
+				sentence to sentence.
+				This flexibility is the key to the power of Pastalia.
 			</p>
 			<p>
-				想音動詞は、分割すると「基礎単語」と「想母音」に別れる。
-				例えば、【hYAmmrA】という想音動詞の
-				基礎単語は【h.m.m.r】であり、想母音は【YA】と【A】である。
-				基本的に基礎単語は小文字で、想母音は大文字で記述する。
+				Emotion Verbs are formed of two types of elements: a template and Emotion Vowels.<br/>
+				Let's revisit our example word, &quot;hEmmErYE&quot;.
+				Its template is &quot;h.m.m.r.&quot; and it has three emotion vowels:
+				&quot;E&quot;, another &quot;E&quot;, and &quot;YE&quot;.
+				Notice that the template is written in lower-case letters, while the Emotion Vowels
+				are written in upper-case.
 			</p>
 			<table>
 				<tr>
-					<td bgcolor="#bbffbb" colspan=2 align=center>
-						<font color=blue>h</font><font color=red><b>YA</b></font><font color=blue>mmr</font><font color=red><b>A</b></font><br/>
-						<font class=fonts1>ヒャンムラ<br/>（私は貴方のために力いっぱい謳う）</font>
+					<td class="ev-1" colspan="2" style="color: blue;">
+						h<span style="color: red;">E</span>mm<span style="color: red;">E</span>r<span style="color: red;">YE</span><br/>
+						<span class="text-basic">&quot;I would be delighted to oblige&quot;</span>
 					</td>
 				</tr>
 				<tr>
-					<td bgcolor="#000044" colspan=2 align=center><font color=white class=font0><b>↓分解↓</font></td>
+					<td class="dark-blue" colspan="2">↓disassembly↓</td>
 				</tr>
 				<tr>
-					<td bgcolor="#bbbbff" align=center width=140>
-						<font color=blue class=fonts1>【基礎単語】</font><br/>
-						<font color=blue class=fonts3><b>h.m.m.r.</b></font>
+					<td class="ev-2">
+						[template]<br/><b>h.m.m.r.</b>
 					</td>
-				</tr>
-				<tr>
-					<td bgcolor="#ffbbbb" align=center width=250>
-						<font color=red class=fonts1>【想母音】</font><br/>
-						<font color=red class=fonts3>１：<b>YA</b>　２：なし　３：なし　４：<b>A</b></font>
+					<td class="ev-4">
+						[Emotion Vowels]<br/>1: <b>E</b> | 2: none | 3: <b>E</b> | 4: <b>YE</b>
 					</td>
 				</tr>
 			</table>
 			<p>
-				想音動詞の要素となる「基礎単語」と「想母音」について、以下に詳細を記す。
+				In the following sections, the exact meaning of these components will be described.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">基礎単語</div>
+				<div class="subsection-title text-title-small">Template words</div>
 				<p>
-					基礎単語は分かりやすいようにサンプルを使って説明する。
+					<b>[h<span style="color: red;">.</span>m<span style="color: red;">.</span>m<span style="color: red;">.</span>r<span style="color: red;">.</span>]</b> (express, state, insist)
 				</p>
 				<p>
-					<b>【h<font class=font4 color=red>.</font>m<font class=font4 color=red>.</font>m<font class=font4 color=red>.</font>r<font class=font4 class=font4 color=red></font>.</font>】意味：謳う</b>
+					The keys to template words are the dots (periods) that separate their component letters.
+					These dots, called "Bank Slots", may hold Emotion Vowels, and it is the combination of
+					these two elements that give them their meaning.
 				</p>
 				<p>
-					想音動詞の特徴として、単語の中に「.（ピリオド）」が入っている事が挙げられる。「.」は、バンクピリオドと言う。
-					単語の前側から、バンク１、２…と続く。
-					上のh.m.m.r.の場合、最大４つのバンクを持つ単語となる。
-					バンクはナンバーが若いほど効果が大きく、感情的な優先度も高い。
-				</p>
-				<p>
-					新約パスタリエの基礎単語は、基本的にこうやって、
-					アルファベットの文字間にピリオドが挿入されており、そこに「想母音」を挿入することで力を持った単語（＝文章）として成立するようになっている。
-					上記は全て子音で構成されているが、例えば【u.r.a.】のように、母音アルファベットが入っても良い。
+					&quot;h.m.m.r.&quot; has four Bank Slots, one after each letter.
+					The significance of Emotion Vowels is reduced as they appear closer to the end of an
+					Emotion Verb.
+					In other words, the first Emotion Vowel in an Emotion Verb has the most influence
+					over the meaning of the speaker's statement.
+					To provide more flexibility in expressing emotional significance, Bank Slots may be
+					left empty; Emotion Vowels appearing after an empty Bank Slot hold the same
+					significance that they would were that space filled.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">想母音（そうぼいん）</div>
+				<div class="subsection-title text-title-small">Emotion Vowels</div>
 				<p>
-					想母音とは、想音動詞の大文字部分のアルファベットの事である。<br/>
-					ここが、動詞（術者がしたいこと）のターゲットや感情を定義する。
-					これのいずれかを、上で説明した基礎単語のバンクピリオド「.」に代入していく。
-					この時、バンクピリオドにヌル（空白）を入れることも可能。
+					As mentioned previously, Emotion Vowels are the upper-case letters found in
+					Emotion Verbs.
+					They may be placed into any of a template word's Bank Slots, or these Bank
+					Slots may be left empty.
 				</p>
 				<p>
-					想母音には、３つの異なるターゲットを持つ「群」が存在する。<br>
-					想母音群には、それぞれ以下の意味がある。
+					There are three categories of Emotion Vowels; they may be used interchangably
+					to better reflect the emotions of the speaker, and members of one group
+					may be used together or reused to strengthen or elaborate the emotions behind
+					a statement.
 				</p>
 				<p style="font-weight: bold;">
-					レベル１：己の内面に向き合う（自分の感情を表現する）<br/>
-					レベル２：相手と向き合う（相手への想いを表現する）<br/>
-					レベル３：この場全体と向き合う（この場所に対しての想いを表現する)
+					Category 1: Emotions directed towards the speaker herself<br/>
+					Category 2: Emotions directed towards another individual<br/>
+					Category 3: Emotions directed towards the speaker's surroundings (or the world)
 				</p>
 				<p>
-					それぞれのレベルは、どこに対しての想いかを表現しているのみであり、レベル３の方がレベル１よりも強い、といったような事は無い。
-					以下に、それぞれのレベル毎に、各想母音の詳細の意味（想い）を解説していく。
+					No one category is any less significant than the others; significance is
+					determined based on how Emotion Vowels are ordered within an Emotion Verb.
 				</p>
-				<span class="text-title" style="color: green;">■レベル１想母音：己の内側の声</span><br/>
+				<span class="text-title" style="color: green;">▼ Emotions directed towards the speaker herself</span><br/>
 				<table>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center width=50>A</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center width=70>あ</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left width=250>力、懸命、集中</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">A</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">あ</td>
+						<td class="ev-1b" style="width: 505px;">strength, determination</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center>I</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center>い</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>苦痛、逃げたい、恐怖</td>
+						<td class="ev-1b" style="text-align: center;">I</td>
+						<td class="ev-1b" style="text-align: center;">い</td>
+						<td class="ev-1b">pain, fear, desire to escape</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center>U</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center>う</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>悲しみ、憂い、心配</td>
+						<td class="ev-1b" style="text-align: center;">U</td>
+						<td class="ev-1b" style="text-align: center;">う</td>
+						<td class="ev-1b">sadness, concern (sometimes positive)</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center>E</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center>え</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>喜び、幸せ、快楽</td>
+						<td class="ev-1b" style="text-align: center;">E</td>
+						<td class="ev-1b" style="text-align: center;">え</td>
+						<td class="ev-1b">happiness, pleasure</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center>O</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center>お</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>怒り、攻撃的、呪い</td>
+						<td class="ev-1b" style="text-align: center;">O</td>
+						<td class="ev-1b" style="text-align: center;">お</td>
+						<td class="ev-1b">anger, malice</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddffdd" class=fonts2 align=center>N</td>
-						<td bgcolor="ddffdd" class=fonts2 align=center>ん</td>
-						<td bgcolor="ddffdd" class=fonts2 align=left>無、放心、リラックス</td>
+						<td class="ev-1b" style="text-align: center;">N</td>
+						<td class="ev-1b" style="text-align: center;">ん</td>
+						<td class="ev-1b">aloofness, relaxation, neutrality</td>
 					</tr>
 				</table>
 				<br/>
-				<span class="text-title" style="color: blue;">■レベル２想母音：相手に対する願い</span><br/>
+				<span class="text-title" style="color: blue;">▼ Emotions directed towards another individual</span><br/>
 				<table>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center width=50>A</td>
-						<td bgcolor="ddddff" class=fonts2 align=center width=70>や</td>
-						<td bgcolor="ddddff" class=fonts2 align=left width=250>貢献の気持ち、相手を想って</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">A</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">や</td>
+						<td class="ev-2b" style="width: 505px;">(emotional sympathy)</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center>YI</td>
-						<td bgcolor="ddddff" class=fonts2 align=center>いぇい</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>死ね、倒れろ、苦しめ、恐れおののけ</td>
+						<td class="ev-2b" style="text-align: center;">YI</td>
+						<td class="ev-2b" style="text-align: center;">いぇい</td>
+						<td class="ev-2b">suffering, pain, death</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center>YU</td>
-						<td bgcolor="ddddff" class=fonts2 align=center>ゆ</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>悲しめ、不安になれ</td>
+						<td class="ev-2b" style="text-align: center;">YU</td>
+						<td class="ev-2b" style="text-align: center;">ゆ</td>
+						<td class="ev-2b">sadness, anxiety</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center>YE</td>
-						<td bgcolor="ddddff" class=fonts2 align=center>いぇ</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>喜んで、幸せになって、幸あれ</td>
+						<td class="ev-2b" style="text-align: center;">YE</td>
+						<td class="ev-2b" style="text-align: center;">いぇ</td>
+						<td class="ev-2b">happiness, fortune</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center>YO</td>
-						<td bgcolor="ddddff" class=fonts2 align=center>よ</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>怒れ、牙をむけ、盛れ、獰猛になれ</td>
+						<td class="ev-2b" style="text-align: center;">YO</td>
+						<td class="ev-2b" style="text-align: center;">よ</td>
+						<td class="ev-2b">anger, rage</td>
 					</tr>
 					<tr>
-						<td bgcolor="ddddff" class=fonts2 align=center>YN</td>
-						<td bgcolor="ddddff" class=fonts2 align=center>ぅん</td>
-						<td bgcolor="ddddff" class=fonts2 align=left>落ち着いて、楽になって、リラックスして</td>
+						<td class="ev-2b" style="text-align: center;">YN</td>
+						<td class="ev-2b" style="text-align: center;">ぅん</td>
+						<td class="ev-2b">calmness, comfort</td>
 					</tr>
 				</table>
 				<br/>
-				<span class="text-title" style="color: purple;">■レベル３想母音：場全体に対する願い</span><br/>
+				<span class="text-title" style="color: purple;">▼ Emotions directed towards the speaker's surroundings</span><br/>
 				<table>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center width=50>LYA</td>
-						<td bgcolor="ffddff" class=fonts2 align=center width=70>りゃ</td>
-						<td bgcolor="ffddff" class=fonts2 align=left width=250>この場全体を想って、自己を投げ出す気持ち</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYA</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りゃ</td>
+						<td class="ev-4b" style="width: 505px;">(emotional sympathy)</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center>LYI</td>
-						<td bgcolor="ffddff" class=fonts2 align=center>りぇい</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>滅びよ、破壊する、滅せよ</td>
+						<td class="ev-4b" style="text-align: center;">LYI</td>
+						<td class="ev-4b" style="text-align: center;">りぇい</td>
+						<td class="ev-4b">pain, destruction, ruin</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center>LYU</td>
-						<td bgcolor="ffddff" class=fonts2 align=center>りゅ</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>緊迫せよ、不安になれ</td>
+						<td class="ev-4b" style="text-align: center;">LYU</td>
+						<td class="ev-4b" style="text-align: center;">りゅ</td>
+						<td class="ev-4b">sadness, instability</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center>LYE</td>
-						<td bgcolor="ffddff" class=fonts2 align=center>りぇ</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>幸あれ、幸せであれ、豊かになれ</td>
+						<td class="ev-4b" style="text-align: center;">LYE</td>
+						<td class="ev-4b" style="text-align: center;">りぇ</td>
+						<td class="ev-4b">happiness, satisfaction</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center>LYO</td>
-						<td bgcolor="ffddff" class=fonts2 align=center>りょ</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>戦え、修羅場と化せ</td>
+						<td class="ev-4b" style="text-align: center;">LYO</td>
+						<td class="ev-4b" style="text-align: center;">りょ</td>
+						<td class="ev-4b">strife, chaos, war</td>
 					</tr>
 					<tr>
-						<td bgcolor="ffddff" class=fonts2 align=center>LYN</td>
-						<td bgcolor="ffddff" class=fonts2 align=center>りん</td>
-						<td bgcolor="ffddff" class=fonts2 align=left>静寂になって、和んで、落ち着いて</td>
+						<td class="ev-4b" style="text-align: center;">LYN</td>
+						<td class="ev-4b" style="text-align: center;">りん</td>
+						<td class="ev-4b">calmness, quietness</td>
 					</tr>
-				</table>
+				</table><br/>
 			</div>
 		</div>
 		<div class="text-basic">

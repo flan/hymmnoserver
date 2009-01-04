@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
+<?php include 'common/constants.xml'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Main</title>
@@ -10,28 +11,26 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<?php
-			/*
-			Tokenize the query list.
-			If only one word was specified, search for it (list Hymmnos matches first; English second.
-			If multiple words were specified, go into grammar mode.
-			*/
-		?>
-		<span style="color: red;">
-			<?php
-				/*
-				//Connect to the database and grab all needed records.
-				
-				echo '<b>$count records found</b><br/>';
-				*/
-			?>
-		</span>
-		<br/><br/>
-		<?php
-			/*
-			If in word mode, set word variables and include word.xml; repeat until results exhausted.
+			$query = $_GET['word'];
+			if($query == NULL || trim($query) == ''){
+				echo 'No search terms specified.';
+				exit();
+			}
+			$words = split(" ", trim($query));
 			
-			If in grammar mode, render a table and keep stacking <td/>s next to each other, inserting syntax as needed.
-			*/
+			include '/home/flan/public_html/hymmnoserver.gobbledygook';
+			if ($mysqli->connect_error) {
+				printf("Connect failed: %s\n", mysqli_connect_error());
+				exit();
+			}
+			
+			if(count($words) > 1){
+				include 'common/grammar.xml';
+			}else{
+				include 'common/search.xml';
+			}
+			
+			$mysql->close();
 		?>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
