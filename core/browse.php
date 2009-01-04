@@ -120,8 +120,8 @@
 				<th class="result-header" style="width: 100px;">Hymmnos</th>
 				<th class="result-header" style="width: 155px;">Meaning</th>
 				<th class="result-header" style="width: 75px;">Class</th>
-				<th class="result-header" style="width: 80px;">Kana</th>
-				<th class="result-header" style="width: 230px;">Dialect</th>
+				<th class="result-header" style="width: 90px;">Kana</th>
+				<th class="result-header" style="width: 220px;">Dialect</th>
 			</tr>
 			<?php
 				if($stmt->num_rows > 0){

@@ -59,15 +59,6 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<p style="color: red;">
-				Some of the content found on this page parallels that translated by
-				<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a> because
-				their work was used as a reference for accuracy.
-				They have put extensive work into documenting how the Hymmnos language works, and
-				I neither wish to contradict their research, nor duplicate it unnecessarily; all
-				I wish to do is present the content in a manner that offers English-speaking
-				audiences an experience similar to that provided to the Japanese by GUST.
-			</p>
 			<div class="section-title text-title-small">⠕ Before learning the Pastalie New Testament grammar...</div>
 			<p>
 				The grammar of Pastalia is based on the standard

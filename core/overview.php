@@ -10,17 +10,6 @@
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<p style="color: red;">
-				Much of the content found on this page parallels that translated by
-				<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a> because
-				their work was used as a reference for accuracy.
-				They completed this part of HYMMNOSERVER first, and I see no reason to duplicate
-				their efforts; all I wish to do is present the content in a manner that offers
-				English-speaking audiences an experience similar to that provided to the Japanese
-				by GUST. Most differences between these sources are either cosmetic to maintain a
-				consistent writing style or because of minor differences in opinions on how certain
-				phrases should	be translated.
-			</p>
 			<div class="section-title text-title-small">⠕ The history of Hymmnos and its dialects</div>
 			<p>
 				The origins of Hymmnos and the Hymmnos script are ancient, and existed before the father of Sound Science
