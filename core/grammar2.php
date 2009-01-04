@@ -570,19 +570,19 @@
 			</div>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Macros</div>
+			<div class="section-title text-title-small">⠕ Functions</div>
 			<p>
 				Under the New Testament of Pastalie, it is possible to define a complete
 				Hymmnos passage and specify a name by which it may be invoked in the future.
 				The syntax for invoking this mechanism follows:
 			</p>
 			<p>
-				<span style="color: green; font-role: italic;">[macro name]->[Hymmnos passage]</span><br/>
+				<span style="color: green; font-role: italic;">[function name]->[Hymmnos passage]</span><br/>
 				(&quot;->&quot; is pronounced as &quot;pass&quot;)
 			</p>
 			<p>
-				Upon completion, it is possible to invoke the complete stored passage with
-				the single word used as the name of its macro.
+				Upon completion, it is possible to invoke the complete, stored passage with
+				the single word provided as the name of the function.
 				As always, an example follows.
 			</p>
 			<p>
@@ -591,7 +591,7 @@
 			</p>
 			<p>
 				In this example, the Hymmnos &quot;jYOzAt METHOD_HYMME_ISHIKAWA_JANNE/.&quot; was
-				stored in a macro named &quot;ishikawa&quot;. It was then invoked four times.<br/>
+				stored in a function named &quot;ishikawa&quot;. It was then invoked four times.<br/>
 				(Of course, because &quot;!&quot; was present at the end of every statement,
 				nothing would have really been invoked)
 			</p>
