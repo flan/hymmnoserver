@@ -76,9 +76,9 @@ Then, lastly, render each component. -->
 		</td>
 	</tr>
 	<tr>
-		<td style="background: red; color: white;" colspan="2">
+		<td style="background: red; color: white; text-align: center;" colspan="2">
 			This sentence does not appear to be valid Hymmnos<br/>
-			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php">someone</a> know!)</small>
+			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php" style="color: white;">someone</a> know!)</small>
 		</td>
 	</tr>
 </table>
