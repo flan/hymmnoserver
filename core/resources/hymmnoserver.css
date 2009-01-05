@@ -302,16 +302,14 @@ div.subsection-title{
 }
 
 .word-text-subtitle{
-	font-size: 12pt;
+	font-size: 14pt;
 	color: #FFFFFF;
-	font-weight: bold;
 }
 
 .word-text-title{
-	font-size: 32pt;
-	font-family: "Hymmnos";
+	font-size: 34pt;
+	font-family: Hymmnos;
 	color: #FFFFFF;
-	font-weight: bold;
 }
 
 .word-text-title-expanded{
