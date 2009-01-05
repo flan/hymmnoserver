@@ -42,7 +42,10 @@ Then, lastly, render each component. -->
 	}
 ?>
 
-<p>NO GRAMMAR EVALUATOR FOR YOU! (It is coming, though.)</p>
+<p>
+	At present, all sentences will be reported as invalid.
+	This is because there is no validity-checking code yet.
+</p>
 <hr/>This section is under development<hr/>
 <table style="border-collapse: collapse; border: 1px solid black;">
 	<tr>
@@ -72,6 +75,11 @@ Then, lastly, render each component. -->
 			</table>
 		</td>
 	</tr>
+	<tr>
+		<td style="background: red; color: white;" colspan="2">
+			This sentence does not appear to be valid Hymmnos<br/>
+			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php">someone</a> know!)</small>
+		</td>
+	</tr>
 </table>
 <br/>
-Is this valid Hymmnos? The system doesn't know yet 'cause this is a work-in-progress!
