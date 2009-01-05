@@ -61,7 +61,7 @@
 	</tr>
 	<tr class="word-text-related-description">
 		<td class="word-info-title">
-			Comments
+			Notes
 		</td>
 		<td class="word-info">
 			<?php echo $description; ?>

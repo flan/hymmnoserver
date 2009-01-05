@@ -200,11 +200,12 @@
 			</p>
 			<p>
 				Unfortunately, these demands have the potential for tragedy: it should be apparent that
-				Hymmnos Extract places extreme demands upon the powers of a Reyvateil.
+				Hymmnos Extract places extreme demands upon the powers of a Reyvateil, much moreso than
+				any other form of invoked Hymmnos.
 				The second generation of Reyvateils had virtually no problems meeting the demands of these
-				chants: being clones of the Origin, their powers were all identical, allowing for the neat
-				separation of Hymmnos Extract into two categories: Origin-exclusive and general-purpose for
-				those of "pure beta blood".
+				chants: being, fundamentally, clones of the Origin, their powers all met identical minumum
+				standards, allowing for the neat separation of Hymmnos Extract into two categories:
+				Origin-exclusive and general-purpose for those of "pure beta blood".
 				(Note: Origins from successive eras are bred to have specifications virtually identical to
 				those of their predecessors, avoiding problems)
 				The problem arises with the third generation, which offers no minimum guarantees regarding

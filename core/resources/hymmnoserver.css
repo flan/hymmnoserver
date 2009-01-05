@@ -220,6 +220,9 @@ td.result-cell{
 	color: #110044;
 	font-size: 0.8em;
 }
+td.result-school-0{
+	background: #cccccc;
+}
 td.result-school-1{
 	background: #ffcccc;
 }

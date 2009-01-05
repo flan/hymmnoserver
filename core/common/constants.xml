@@ -62,12 +62,13 @@
 	);
 	
 	$SCHOOL = array(
+		0 => 'Unknown',
 		1 => 'Central Pure Note',
 		2 => 'Cult Ciel Note',
 		3 => 'Cluster Note',
 		4 => 'Alpha Note',
 		5 => 'Meta Falss Note',
 		6 => 'New Testament of Pastalie',
-		7 => 'Alpha Note (EOLIA variant)'
+		7 => 'Alpha Note (EOLIA)'
 	);
 ?>

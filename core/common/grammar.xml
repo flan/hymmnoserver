@@ -1,3 +1,13 @@
+<!-- Read all E.V.s from the database; use them to form a series of regular expressions and
+match them against every provided word. If there are any hits, disassemble the word into its
+components and replace it in the list with an array.
+
+Next, read every required word from the database and store its information in an array.
+
+Then analyse the word order to validate and parse the syntax of the sentence.
+Determine where component breaks occur.
+
+Then, lastly, render each component. -->
 <?php
 	$word_string = implode(" ", $words);
 	
@@ -33,7 +43,7 @@
 ?>
 
 <p>NO GRAMMAR EVALUATOR FOR YOU! (It is coming, though.)</p>
-<hr/>This section is a work in progress<hr/>
+<hr/>This section is under development<hr/>
 <table style="border-collapse: collapse; border: 1px solid black;">
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="2">
@@ -64,3 +74,4 @@
 	</tr>
 </table>
 <br/>
+Is this valid Hymmnos? The system doesn't know yet 'cause this is a work-in-progress!
