@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
 
 import _mysql
+import romaji
 db = _mysql.connect("localhost", "aurica", "misha", "hymmnoserver")
 
 while True:
@@ -12,8 +13,6 @@ while True:
 	japanese = "'%s'" % raw_input().replace("'", "\\'")
 	print "Kana form: "
 	kana = "'%s'" % raw_input().replace("'", "\\'")
-	print "Romaji form: "
-	romaji = "'%s'" % raw_input().replace("'", "\\'")
 	print "1) 中央正純律（共通語)"
 	print "2) クルトシエール律（Ⅰ紀前古代語）"
 	print "3) クラスタ律（クラスタ地方語）"
@@ -21,7 +20,7 @@ while True:
 	print "5) 古メタファルス律（Ⅰ紀神聖語）"
 	print "6) 新約パスタリエ（パスタリア成語）"
 	print "7) アルファ律（オリジンスペル：EOLIA属）"
-	print "Which school? "
+	print "Which dialect? "
 	school = int(raw_input())
 	print "1) Emotion verb"
 	print "2) verb"
@@ -50,7 +49,8 @@ while True:
 	if comments == "''":
 		comments = "NULL"
 		
+	rom = "'%s'" % romaji.getRomaji(kana.decode('utf-8')).replace("'", "\\'")
 	db.query("insert into hymmnos values (%s, %s, %s, %i, %s, %s, %s, %i)" % \
-	 (word, english, japanese, school, kana, romaji, comments, syntax))
+	 (word, english, japanese, school, kana, rom, comments, syntax))
 	print
 	
