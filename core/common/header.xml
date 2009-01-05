@@ -11,14 +11,14 @@
 			<form method="get" action="/hymmnoserver/search.php">
 				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px; width: 100%;">
 					<tr>
-						<td class="header" style="width: 60px;">
-							Hymmnos search
+						<td class="header" style="width: 70px;">
+							Hymmnos interface
 						</td>
-						<td class="header" style="width: 455px;">
-							<input type="text" name="word" value="" style="width: 96%;"/>
+						<td class="header">
+							<input type="text" name="word" value="" style="width: 100%;"/>
 						</td>
-						<td class="header" style="width: 125px;">
-							<input type="submit" value="Search for Hymmnos"/>
+						<td class="header" style="width: 125px">
+							<input type="submit" value="Process query"/>
 						</td>
 					</tr>
 				</table>

@@ -64,24 +64,24 @@
 					<blockquote class="text-small">
 						<p>
 							<span class="text-title-small">1) Find a word in Hymmnos</span><br/>
-							Enter a word in Hymmnos script and click the search button.
+							Enter a word in Hymmnos script and submit it.
 							You will see a list of all words beginning with the characters you entered.
 						</p>
 						<p>
 							<span class="text-title-small">2) Convert an entire Hymmnos statement</span><br/>
-							Enter a complete string of Hymmnos and click the search button.
+							Enter a complete string of Hymmnos and submit it.
 							Every word will be translated in sequence, and the grammar will be evaluated.
 						</p>
 						<p>
 							<span class="text-title-small">3) Find the Hymmnos for an English word</span><br/>
-							Enter a word in English, then click the search button.
+							Enter a word in English, then submit it.
 							All Hymmnos words that involve the fragment you provided will be displayed.
 							(Synonyms, however, will not be checked)
 						</p>
 						<p>
 							<span class="text-title-small">4) Find Hymmnos by kana</span><br/>
 							Enter the first few characters that represent the pronunciation of the Hymmnos
-							you are trying to find, then press the search button.
+							you are trying to find, then submit them.
 							All Hymmnos words with Japanese pronunciation beginning with what you provided
 							will be displayed.
 						</p>
@@ -92,8 +92,13 @@
 						</p>
 						<p>
 							<span class="text-title-small">6) List Hymmnos alphabetically</span><br/>
-								Click the "Browse words in Roman order" link below the search bar and you will be presented
-								with a full index of the dictionary.
+							Click the "Browse words in Roman order" link below the search bar and you will be presented
+							with a full index of the dictionary, split by Roman letter.
+						</p>
+						<p>
+							<span class="text-title-small">7) List Hymmnos by syntax class</span><br/>
+							Click the "Browse words by syntax class" link below the search bar and you will be presented
+							with a full index of the dictionary, split by syntax class.
 						</p>
 					</blockquote>
 				</td>

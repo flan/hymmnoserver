@@ -1,3 +1,66 @@
 <?php
-	echo "NO GRAMMAR EVALUATOR FOR YOU! (It is coming, though.)";
+	$word_string = implode(" ", $words);
+	
+	function renderWord($word){
+		global $mysql;
+		global $SCHOOL;
+		global $SYNTAX_CLASS;
+		
+		$stmt = $mysql->prepare("SELECT word, meaning_english, kana, class FROM hymmnos WHERE word = ? LIMIT 1");
+		$stmt->bind_param("s", $word);
+		$stmt->execute();
+		$stmt->store_result();
+		
+		echo "<tr>";
+			if($stmt->num_rows > 0){
+				$stmt->bind_result($r_word, $meaning_english, $kana, $class);
+				$stmt->fetch();
+				echo "<td class=\"word-header-$class\" style=\"width: 80px;\"><a href=\"javascript:popUp('/hymmnoserver/word.php?word=$r_word')\" style=\"color: white;\">$r_word</a></td>";
+				echo "<td class=\"word-header-$class\" style=\"width: 75px;\">$SYNTAX_CLASS[$class]</td>";
+				echo "<td class=\"word-header-$class\" style=\"width: 275px;\">$meaning_english</td>";
+				echo "<td class=\"word-header-$class\" style=\"width: 100px;\">$kana</td>";
+			}else{
+				echo "<td class=\"word-header-0\" style=\"width: 80px;\">$word</td>";
+				echo "<td class=\"word-header-0\" style=\"width: 75px;\">???</td>";
+				echo "<td class=\"word-header-0\" style=\"width: 275px;\">???</td>";
+				echo "<td class=\"word-header-0\" style=\"width: 100px;\">???</td>";
+			}
+		echo "</tr>";
+		
+		$stmt->free_result();
+		$stmt->close();
+	}
 ?>
+
+<p>NO GRAMMAR EVALUATOR FOR YOU! (It is coming, though.)</p>
+<hr/>This section is a work in progress<hr/>
+<table style="border-collapse: collapse; border: 1px solid black;">
+	<tr>
+		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="2">
+			<span style="font-family: hymmnos; font-size: 28pt;">
+				<?php echo $word_string; ?>
+			</span>
+			<br/>
+			<span style="font-size: 20pt;">
+				<?php echo $word_string; ?>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td style="width: 75px; background: yellow;">
+			Each identified section will appear in its own row.
+			This bar will indicate its grammatical type
+			(Emotion Sound, Emotion Verb...)
+		</td>
+		<td style="width: 530px; background: grey;">
+			<table style="width: 100%; color: white; font-size: 0.8em;">
+				<?php
+					foreach($words as $word){
+						renderWord($word);
+					}
+				?>
+			</table>
+		</td>
+	</tr>
+</table>
+<br/>

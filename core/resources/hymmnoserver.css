@@ -135,6 +135,9 @@ td.server-data{
 td.word-header{
 	padding: 8px;
 }
+td.word-header-0{
+	background: black;
+}
 td.word-header-1{
 	background: #660011;
 }
@@ -142,7 +145,7 @@ td.word-header-2{
 	background: #110066;
 }
 td.word-header-3{
-	background: #110066;
+	background: #000066;
 }
 td.word-header-4{
 	background: #110066;
@@ -154,7 +157,7 @@ td.word-header-6{
 	background: #110066;
 }
 td.word-header-7{
-	background: #110066;
+	background: #005500;
 }
 td.word-header-8{
 	background: #110066;
@@ -172,10 +175,10 @@ td.word-header-12{
 	background: #110066;
 }
 td.word-header-13{
-	background: #110066;
+	background: #004400;
 }
 td.word-header-14{
-	background: #110066;
+	background: #006600;
 }
 td.word-header-15{
 	background: #110066;
