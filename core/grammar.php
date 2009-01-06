@@ -134,7 +134,7 @@
 					</tr>
 					<tr>
 						<td class="kana text-basic-bold">ki</td>
-						<td class="latin">seriousness, concentration</td>
+						<td class="latin">focus, concentration</td>
 					</tr>
 					<tr>
 						<td class="kana text-basic-bold">wol</td>

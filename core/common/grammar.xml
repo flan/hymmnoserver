@@ -7,7 +7,9 @@ Next, read every required word from the database and store its information in an
 Then analyse the word order to validate and parse the syntax of the sentence.
 Determine where component breaks occur.
 
-Then, lastly, render each component. -->
+Then, lastly, render each component.
+
+A renderList(header, words) function should be created to render sections. -->
 <?php
 	$word_string = implode(" ", $words);
 	
@@ -78,7 +80,7 @@ Then, lastly, render each component. -->
 	<tr>
 		<td style="background: red; color: white; text-align: center;" colspan="2">
 			This sentence does not appear to be valid Hymmnos<br/>
-			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php" style="color: white;">someone</a> know!)</small>
+			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php" style="color: #cccccc;">someone</a> know!)</small>
 		</td>
 	</tr>
 </table>
