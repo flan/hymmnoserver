@@ -11,7 +11,11 @@
 		
 		$matched = $stmt->num_rows > 0;
 		if($matched){
-			echo "<span style=\"color: red; font-weight: bold;\">$type ($stmt->num_rows records)</span>";
+			$plural = '';
+			if($stmt->num_rows != 1){
+				$plural = 's';
+			}
+			echo "<span style=\"color: red; font-weight: bold;\">$type ($stmt->num_rows record$plural)</span>";
 			echo '<div style="padding-left: 13px;">';
 				$stmt->bind_result($word, $meaning_english, $meaning_japanese, $kana, $school, $romaji, $description, $class);
 				
