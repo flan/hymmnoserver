@@ -193,7 +193,7 @@
 				the H-wave flow required to establish the connection was pre-determined and, therefore,
 				beyond her control.
 				As seen in this example, Hymmnos Extract requires only capabilities of appropriate flow
-				and specturm from a Reyvateil.
+				and spectrum from a Reyvateil.
 			</p>
 			<p>
 				Unfortunately, these demands have the potential for tragedy: it should be apparent that

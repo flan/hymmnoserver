@@ -8,17 +8,17 @@
 		6 => 'prep.',
 		7 => 'E.S. (II)',
 		8 => 'adj.',
-		9 => 'v., n.',
+		9 => 'n., v.',
 		10 => 'adj., n.',
-		11 => 'v., adj.',
+		11 => 'adj., v.',
 		12 => 'prt.',
 		13 => 'E.S. (III)',
 		14 => 'E.S. (I)',
 		15 => 'pron.',
 		16 => 'intj.',
 		17 => 'E.S. (II), adj.',
-		18 => 'v., conj.',
-		19 => 'n., adv.',
+		18 => 'conj., v.',
+		19 => 'adv., n.',
 		20 => 'adj., adv.'
 	);
 	
@@ -31,17 +31,17 @@
 		6 => 'preposition',
 		7 => 'Emotion Sound (II)',
 		8 => 'adjective',
-		9 => 'verb, noun',
+		9 => 'noun, verb',
 		10 => 'adjective, noun',
-		11 => 'verb, adjective',
+		11 => 'adjective, verb',
 		12 => 'particle',
 		13 => 'Emotion Sound (III)',
 		14 => 'Emotion Sound (I)',
 		15 => 'pronoun',
 		16 => 'interjection',
 		17 => 'Emotion Sound (II), adjective',
-		18 => 'verb, conjunction',
-		19 => 'noun, adverb',
+		18 => 'conjunction, verb',
+		19 => 'adverb, noun',
 		20 => 'adjective, adverb'
 	);
 	
