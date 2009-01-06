@@ -49,7 +49,8 @@ A renderList(header, words) function should be created to render sections. -->
 <span style="color: grey;">
 	<small>
 		Note: There is no difference between singular and plural nouns, unless implied by context.
-		&quot;wart&quot; can mean either &quot;word&quot; or &quot;words&quot;, depending on which is more appropriate.
+		&quot;wart&quot;, for example, can mean either &quot;word&quot; or &quot;words&quot;,
+		depending on which is more appropriate.
 	</small>
 </span>
 <hr/>

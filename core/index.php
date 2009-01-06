@@ -156,8 +156,8 @@
 							<td class="infocell">
 								<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
 									<li><a href="/hymmnoserver/introduction.php">Introduction</a></li>
-									<li><a href="/hymmnoserver/summary.php">Hymmnos Types</a></li>
-									<li><a href="/hymmnoserver/overview.php">Dialects</a></li>
+									<li><a href="/hymmnoserver/types.php">Hymmnos Types</a></li>
+									<li><a href="/hymmnoserver/dialects.php">Dialects</a></li>
 									<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
 									<li><a href="/hymmnoserver/grammar.php">Grammar (Standard)</a></li>
 									<li><a href="/hymmnoserver/grammar2.php">Grammar (Pastalia)</a></li>
