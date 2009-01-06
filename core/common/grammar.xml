@@ -48,7 +48,13 @@ A renderList(header, words) function should be created to render sections. -->
 	At present, all sentences will be reported as invalid.
 	This is because there is no validity-checking code yet.
 </p>
-<hr/>This section is under development<hr/>
+<hr/><span>This section is under development</span><hr/>
+<span>
+	Note: There is no difference between singular and plural nouns, unless implied by context.
+	&quot;wart&quot; can mean either &quot;word&quot; or &quot;words&quot;,
+	depending on which is more appropriate.
+</span>
+<hr/>
 <table style="border-collapse: collapse; border: 1px solid black;">
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="2">
