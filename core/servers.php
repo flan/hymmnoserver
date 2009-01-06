@@ -14,19 +14,19 @@
 			<p>
 				The first game featured the tower of Ar_tonelico, and the second features Infel-Phira.<br/>
 				Both of these towers have the same basic fundamental features:
-				<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-					<li>An H-wave receptor that can process instructions and produce D-waves</li>
-					<li>The ability to support connections from at least one Reyveteil (daughter)</li>
-					<li>Hymmnos language processing capabilities</li>
-				</ul>
 			</p>
+			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
+				<li>An H-wave receptor that can interpret instructions and produce D-waves</li>
+				<li>The ability to support connections from at least one Reyveteil (daughter)</li>
+				<li>Hymmnos-language-processing capabilities</li>
+			</ul>
 			<p>
 				Ar_tonelico was constructed during the First Era. 
 				Its basic functionality was much like a core that would produce magical effects upon
 				receiving a Reyvateil's song.
 				The magical effects are caused by the emission of conducted D-waves upon receiving
-				thoughts; the net effect of this process is that users, the Reyvateils, can unleash
-				powers far beyond their actual capabilities.
+				thoughts; the net effect of this process is that its users, the Reyvateils, can
+				command powers far beyond their actual capabilities.
 			</p>
 		</div>
 		<div class="text-basic">
@@ -53,7 +53,7 @@
 				</tr>
 			</table>
 			<p>
-				For each system, the basic logic is the same: CPU receives instruction written in a language it
+				For each system, the basic logic is the same: CPU receives instructions written in a language it
 				can understand -> CPU acts accordingly.
 			</p>
 			<p>
@@ -64,9 +64,9 @@
 				Infel-Phira: both towers perform similar tasks, but their languages and means of encoding
 				messages (the Hymmnos they recognize) are very different.
 				Additionally, like the towers themselves, there are no fundamental differences between the
-				Reyvateils of one tower and the Reyvateils of the other: the only difference is which Hymmnos
-				dialect they natively speak; the relationship is much like different partition formats on hard
-				drives: they are accessed differently, but they can all store the same data.
+				roles of the Reyvateils of one tower and the Reyvateils of the other: the only difference is which
+				Hymmnos dialect they natively speak; the relationship is much like different partition formats on
+				hard drives: they are accessed differently, but they can all store the same data.
 			</p>
 			<table>
 				<tr>
@@ -91,7 +91,7 @@
 				</tr>
 				<tr>
 					<td class="server-header">Reyvateil</td>
-					<td class="server-data">Alpha-format memory</td>
+					<td class="server-data">Tower-Alpha-format memory</td>
 					<td class="server-data">I.P.D.-format memory</td>
 				</tr>
 			</table>
@@ -99,7 +99,7 @@
 				As designed, neither system is inherently able to communicate with the other.
 				To get around this, they need to agree on a compatible protocol for exchanging
 				data, somewhat like how you used TCP/IP and HTTP to view this page. Once a protocol
-				has been agreed on, simple tasks like browsing databases and sending files to
+				has been agreed on, simple tasks like querying databases and sending files to
 				complex ones like entering Cosmospheres and generating binary fields may be
 				accomplished.
 			</p>

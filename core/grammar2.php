@@ -61,8 +61,8 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Before learning the Pastalie New Testament grammar...</div>
 			<p>
-				The grammar of Pastalia is based on the standard
-				<a href="/hymmnoserver/grammar.php">grammar of the First Era</a>.
+				The grammar of Pastalia is based on the
+				<a href="/hymmnoserver/grammar.php">standard grammar of the First Era</a>.
 				Because of this, knowledge of that grammar is a prerequisite for understanding what will be
 				discussed here.
 			</p>
@@ -92,11 +92,13 @@
 					</tr>
 				</table>
 				<p>
-					This complete sentence means &quot;I would be delighted to sing&quot;.<br/>
-					As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
-					example from the standard grammar section, can be written in Pastalia as
-					&quot;cEzE hymmnos/.&quot;; both forms carry the same meaning:
-					&quot;I am delighted to express myself through song&quot;.
+					This complete sentence means &quot;I would be delighted to sing for your happiness&quot;.<br/>
+					<i>
+						As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
+						example from the standard grammar section, can be written in Pastalia as
+						&quot;cEzE hymmnos/.&quot;; both forms carry the same meaning:
+						&quot;I am delighted to express myself through song&quot;.
+					</i>
 				</p>
 				<p>
 					Emotion Verbs are written as a series of alternating lower-case and upper-case
@@ -104,12 +106,12 @@
 					most important detail is how they identify their objects, given the implicit
 					referencing nature of this sentence structure. The upper-case components indicate
 					one of three possible scopes:
-					<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-						<li>The speaker herself</li>
-						<li>An individual, singled out by context</li>
-						<li>All of the speaker's surroundings</li>
-					</ul>
 				</p>
+				<ul class="basic-inline" style="font-size: 9pt; margin-top: -10px;">
+					<li>The speaker herself</li>
+					<li>An individual, singled out by context</li>
+					<li>All of the speaker's surroundings</li>
+				</ul>
 				<p>
 					Intuitively, if the objects relevant to the Hymmnos can be identified by one of these
 					three scope limiters, then there is no need to explicitly identify them; the qualifiers
@@ -130,30 +132,31 @@
 				</p>
 				<table>
 					<tr>
-						<td bgcolor="#bbffbb" align=center>hEmmErYE</td>
-						<td bgcolor="#bbbbff" align=center>hymmnos</td>
-						<td bgcolor="#bbbbbb" align=center>/.</td>
+						<td class="ev-1">hEmmErYE</td>
+						<td class="ev-2">hymmnos</td>
+						<td class="ev-3">/.</td>
 					</tr>
 					<tr>
-						<td bgcolor="#ddffdd" class=fonts2>Emotion Verb</td>
-						<td bgcolor="#ddddff" class=fonts2>object</td>
-						<td bgcolor="#dddddd" class=fonts2>invoke</td>
+						<td class="ev-1b">Emotion Verb</td>
+						<td class="ev-2b">object</td>
+						<td class="ev-3b">invoke</td>
 					</tr>
 				</table>
 				<p>
 					This sentence is an extension of the one found in the previous example; it means
-					&quot;I would be delighted to sing a song&quot;.<br/>Notice how the intent has not
-					changed (the speaker still expresses eagerness over doing something); the only
-					difference is that it is now clear what the speaker intends to do.
+					&quot;I would be delighted to sing a song for your happiness&quot;.<br/>
+					Notice how the intent has not changed (the speaker still expresses eagerness over
+					doing something to make a second party happy); the only difference is that it is
+					now clear exactly what the speaker intends to do.
 				</p>
 				<p>
-					The same structure may be used when identifying proper nouns; the syntax here
-					is like [VO] in English.
+					The same structure may be used when identifying proper nouns; the syntax in that
+					case is like [VO] in English.
 				</p>
 			</div>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Emotion Verbs</div><br/>
+			<div class="section-title text-title-small">⠕ Emotion Verbs</div>
 			<p>
 				The meaning of Emotion Verbs is not fixed.
 				Depending on how they are constructed, they can convey very different things from
@@ -172,7 +175,7 @@
 				<tr>
 					<td class="ev-1" colspan="2" style="color: blue;">
 						h<span style="color: red;">E</span>mm<span style="color: red;">E</span>r<span style="color: red;">YE</span><br/>
-						<span class="text-basic">&quot;I would be delighted to sing&quot;</span>
+						<span class="text-basic">&quot;I would be delighted to sing for your happiness&quot;</span>
 					</td>
 				</tr>
 				<tr>
@@ -193,7 +196,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Template words</div>
 				<p>
-					<b>[h<span style="color: red;">.</span>m<span style="color: red;">.</span>m<span style="color: red;">.</span>r<span style="color: red;">.</span>]</b> (express, state, insist)
+					<b>[h<span style="color: red;">.</span>m<span style="color: red;">.</span>m<span style="color: red;">.</span>r<span style="color: red;">.</span>]</b> (sing, express through song)
 				</p>
 				<p>
 					The keys to template words are the dots (periods) that separate their component letters.
@@ -209,6 +212,10 @@
 					To provide more flexibility in expressing emotional significance, Bank Slots may be
 					left empty; Emotion Vowels appearing after an empty Bank Slot hold the same
 					significance that they would were that space filled.
+				</p>
+				<p>
+					If this confuses you, don't worry. An analysis of the example sentence's emotional
+					meaning is provided at the end of this section.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
@@ -334,86 +341,94 @@
 						<td class="ev-4b" style="text-align: center;">りん</td>
 						<td class="ev-4b">calmness, quietness</td>
 					</tr>
-				</table><br/>
+				</table>
 			</div>
+			<p>
+				In our example, &quot;hEmmErYE&quot;, the Bank Slot allocation
+				&quot;1: <b>E</b> | 2: none | 3: <b>E</b> | 4: <b>YE</b>&quot;
+				indicates that the speaker's happiness is by far the dominant sentiment,
+				although she could be happier, because the second slot is unused.
+				The second party's happiness is significant, but not as significant as the
+				happiness the action will provide the speaker.
+			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Nouns</div><br/>
+			<div class="section-title text-title-small">⠕ Nouns</div>
 			<p>
 				Infel-Phira, for which the New Testament of Pastalie was created, supports the
 				standard noun forms found in other dialects of Hymmnos. However, with Pastalia's
 				emphasis on succinct sentences, a noun syntax that couples ownership with emotional
 				attachment has been developed.<br/>
 				Once again, this language feature will be demonstrated with examples.
-				<table>
-					<tr>
-						<td style="background: #ffff88; text-align: center;" colspan="3">
-							<b>lyuma (star)</b><br/>
-							<font class=fonts1>(noun from the New Testament of Pastalie)</font>
-						</td>
-					</tr>
-					<tr>
-						<td class="ev-1b">Form 1</td>
-						<td class="ev-1b">Elyuma</td>
-						<td class="ev-1b">The speaker's star; it makes her happy</td>
-					</tr>
-					<tr>
-						<td class="ev-2b">Form 2</td>
-						<td class="ev-2b">YUlyuma</td>
-						<td class="ev-2b">Someone else's star; it worries them</td>
-					</tr>
-					<tr>
-						<td class="ev-4b">Form 3</td>
-						<td class="ev-4b">LYNlyuma</td>
-						<td class="ev-4b">Everyone's star; it soothes them</td>
-					</tr>
-					<tr>
-						<td class="ev-5b">Form 4</td>
-						<td class="ev-5b">Olyuma_cloche</td>
-						<td class="ev-5b">Cloche's star; it infuriates her</td>
-					</tr>
-				</table>
 			</p>
+			<table>
+				<tr>
+					<td style="background: #ffff88; text-align: center;" colspan="3">
+						<b>lyuma (star)</b><br/>
+						<small>(noun from the New Testament of Pastalie)</small>
+					</td>
+				</tr>
+				<tr>
+					<td class="ev-1b">Form 1</td>
+					<td class="ev-1b">Elyuma</td>
+					<td class="ev-1b">The speaker's star; it makes her happy</td>
+				</tr>
+				<tr>
+					<td class="ev-2b">Form 2</td>
+					<td class="ev-2b">YUlyuma</td>
+					<td class="ev-2b">Someone else's star; it worries them</td>
+				</tr>
+				<tr>
+					<td class="ev-4b">Form 3</td>
+					<td class="ev-4b">LYNlyuma</td>
+					<td class="ev-4b">Everyone's star; it soothes them</td>
+				</tr>
+				<tr>
+					<td class="ev-5b">Form 4</td>
+					<td class="ev-5b">Olyuma_cloche</td>
+					<td class="ev-5b">Cloche's star; it irritates her</td>
+				</tr>
+			</table>
 			<p>
 				As seen above, an Emotion Vowel that prefixes a noun indicates to whom
 				it belongs, as well as the nature of their emotional connection to the
 				entity being described. This table formalizes the pattern, using the
 				Emotion Vowel family &quot;A&quot; as an example.
-				<table>
-					<tr style="font-weight: bold;">
-						<td class="ev-5" style="width: 90px;">Owner</td>
-						<td class="ev-5" style="width: 200px;">Expression form</td>
-					</tr>
-					<tr>
-						<td class="ev-1b">me</td>
-						<td class="ev-1b">A[object]</td>
-					</tr>
-					<tr>
-						<td class="ev-1b">you</td>
-						<td class="ev-1b">YA[object]</td>
-					</tr>
-					<tr>
-						<td class="ev-1b">everyone,<br/>the land,<br/>the world</td>
-						<td class="ev-1b">LYA[object]</td>
-					</tr>
-					<tr>
-						<td class="ev-1b">a person</td>
-						<td class="ev-1b">A[object]_[person's name]</td>
-					</tr>
-				</table><br/>
 			</p>
+			<table>
+				<tr style="font-weight: bold;">
+					<td class="ev-5" style="width: 90px;">Owner</td>
+					<td class="ev-5" style="width: 200px;">Expression form</td>
+				</tr>
+				<tr>
+					<td class="ev-1b">me</td>
+					<td class="ev-1b">A[object]</td>
+				</tr>
+				<tr>
+					<td class="ev-1b">you</td>
+					<td class="ev-1b">YA[object]</td>
+				</tr>
+				<tr>
+					<td class="ev-1b">everyone,<br/>the land,<br/>the world</td>
+					<td class="ev-1b">LYA[object]</td>
+				</tr>
+				<tr>
+					<td class="ev-1b">a person</td>
+					<td class="ev-1b">A[object]_[person's name]</td>
+				</tr>
+			</table><br/>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ The structure of long sentences</div><br/>
+			<div class="section-title text-title-small">⠕ The structure of long sentences</div>
 			<p>
 				As sentences become longer, the differences between the New Testament of Pastalie and
-				standard Hymmnos become less pronounced. Indeed, the sentence structures are very much
-				the same: 
+				standard Hymmnos become less pronounced. Indeed, the sentence structures start to
+				appear very much the same: 
 			</p>
-			<p style="font-weight: bold;">
-				[Emotion Verb]-[object]-[object] [VOO]<br/>
-				[Emotion Verb]-[object]-[compound] [VOC]<br/>
-				[Emotion Verb]-[compound] [VC]
+			<p>
+				<b>[Emotion Verb]-[object]-[object]</b> [VOO]<br/>
+				<b>[Emotion Verb]-[object]-[compound]</b> [VOC]<br/>
+				<b>[Emotion Verb]-[compound]</b> [VC]
 			</p>
 			<p>
 				As you can see, when long sentences are required, the advantages of Pastalia are
@@ -422,7 +437,7 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ &quot;x.&quot;, the subject identifier</div><br/>
+			<div class="section-title text-title-small">⠕ &quot;x.&quot;, the subject identifier</div>
 			<p>
 				Just as in standard variants of Hymmnos, the New Testament of Pastalie features a means of
 				explicitly specifying the subject of a sentence. However, the emotional expressiveness
@@ -458,39 +473,39 @@
 				</span><br/>
 				&quot;x.&quot; can accept only Category 1 Emotion Vowels, and they carry slightly different
 				meanings in this context:
-				<table>
-					<tr>
-						<td class="ev-1b" style="text-align: center; width: 50px;">A</td>
-						<td class="ev-1b" style="text-align: center; width: 50px;">あ</td>
-						<td class="ev-1b">I feel indifferent</td>
-					</tr>
-					<tr>
-						<td class="ev-1b" style="text-align: center;">I</td>
-						<td class="ev-1b" style="text-align: center;">い</td>
-						<td class="ev-1b">I feel jealous</td>
-					</tr>
-					<tr>
-						<td class="ev-1b" style="text-align: center;">U</td>
-						<td class="ev-1b" style="text-align: center;">う</td>
-						<td class="ev-1b">I feel concerned</td>
-					</tr>
-					<tr>
-						<td class="ev-1b" style="text-align: center;">E</td>
-						<td class="ev-1b" style="text-align: center;">え</td>
-						<td class="ev-1b">I feel happy</td>
-					</tr>
-					<tr>
-						<td class="ev-1b" style="text-align: center;">O</td>
-						<td class="ev-1b" style="text-align: center;">お</td>
-						<td class="ev-1b">I feel angry</td>
-					</tr>
-					<tr>
-						<td class="ev-1b" style="text-align: center;">N</td>
-						<td class="ev-1b" style="text-align: center;">ん</td>
-						<td class="ev-1b">I feel opposed</td>
-					</tr>
-				</table><br/>
 			</p>
+			<table>
+				<tr>
+					<td class="ev-1b" style="text-align: center; width: 50px;">A</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">あ</td>
+					<td class="ev-1b">I feel indifferent</td>
+				</tr>
+				<tr>
+					<td class="ev-1b" style="text-align: center;">I</td>
+					<td class="ev-1b" style="text-align: center;">い</td>
+					<td class="ev-1b">I feel jealous</td>
+				</tr>
+				<tr>
+					<td class="ev-1b" style="text-align: center;">U</td>
+					<td class="ev-1b" style="text-align: center;">う</td>
+					<td class="ev-1b">I feel concerned</td>
+				</tr>
+				<tr>
+					<td class="ev-1b" style="text-align: center;">E</td>
+					<td class="ev-1b" style="text-align: center;">え</td>
+					<td class="ev-1b">I feel happy</td>
+				</tr>
+				<tr>
+					<td class="ev-1b" style="text-align: center;">O</td>
+					<td class="ev-1b" style="text-align: center;">お</td>
+					<td class="ev-1b">I feel angry</td>
+				</tr>
+				<tr>
+					<td class="ev-1b" style="text-align: center;">N</td>
+					<td class="ev-1b" style="text-align: center;">ん</td>
+					<td class="ev-1b">I feel opposed</td>
+				</tr>
+			</table><br/>
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Grammatical flexibility</div>
@@ -507,17 +522,17 @@
 				</p>
 				<p>
 					<b>hEmmErYE</b><br/>
-					&quot;I would be delighted to sing&quot; (active voice)
+					&quot;I would be delighted to sing for your happiness&quot; (active voice)
 				</p>
 				<p>
 					<b>hEmmErYEeh</b><br/>
-					&quot;Obliging would delight me&quot; (passive voice)
+					&quot;Singing for your happiness would delight me&quot; (passive voice)
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Emphasis</div>
 				<p>
-					By placing &quot;rre&quot; before a pronoun, which normally does not
+					By placing &quot;rre&quot; before a pronoun that does not normally
 					require a subject identifier, its significance will be emphasized,
 					which narrows the scope of the statement.
 				</p>
@@ -530,11 +545,11 @@
 				<div class="subsection-title text-title-small">Negation</div>
 				<p>
 					Placing &quot;zz&quot; before an Emotion Verb or noun (Emotion Sound optional) will cause it to
-					carry meaning opposite to its normal interpretation.
+					carry meaning opposite its normal interpretation.
 				</p>
 				<p>
 					<b>zz hEmmErYE/.</b><br/>
-					&quot;I would <b>not</b> be delighted to sing&quot;
+					&quot;I would <b>not</b> be delighted to sing for your happiness&quot;
 				</p>
 				<p>
 					<b>zz arhou</b><br/>
@@ -545,11 +560,11 @@
 				<div class="subsection-title text-title-small">Using Emotion Verbs as nouns</div>
 				<p>
 					If all Bank Slots in an Emotion Verb are left unused, then the template word
-					may be interpreted as a noun.
+					may be interpreted as a normal verb.
 				</p>
 				<p>
 					<b>fEwrEn h.m.m.r. eje/.</b><br/>
-					&quot;I am happy to embrace the singing of my heart&quot;
+					&quot;I am very happy to embrace the singing of my heart&quot;
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
@@ -589,27 +604,33 @@
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Putting it all together</div>
+			<p style="font-style: italic;">
+				Note that all of these statements are actually being expressed in the present tense.
+				However, they reflect an action being described as it occurs, and conveying that
+				while making the translation flow is difficult, so some of them have been written in
+				incorrect quasi-future-tense.
+			</p>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Example words</div>
 				<p>
-					h<u><b>YA</b></u>mmr<u><b>A</b></u><br/>
+					h<b>YA</b>mmr<b>A</b><br/>
 					&quot;I will sing my best for you&quot;
 				</p>
 				<p>
-					h<u><b>YI</b></u>m<u><b>O</b></u>m<u><b>O</b></u>r<u><b>O</b></u><br/> 
-					&quot;I will sing of how I want you dead&quot;
+					h<b>YI</b>m<b>O</b>m<b>O</b>r<b>O</b><br/> 
+					&quot;I will sing of how I want you to suffer&quot;
 				</p>
 				<p>
-					h<u><b>YE</b></u>m<u><b>YE</b></u>m<u><b>A</b></u>r<u><b>A</b></u><br/>
+					h<b>YE</b>m<b>YE</b>m<b>A</b>r<b>A</b><br/>
 					&quot;I will sing as best I can for your elation&quot;
 				</p>
 				<p>
-					h<u><b>E</b></u>m<u><b>E</b></u>m<u><b>A</b></u>r<u><b>A</b></u><br/>
+					h<b>E</b>m<b>E</b>m<b>A</b>r<b>A</b><br/>
 					&quot;I will sing as best I can to express my elation&quot;
 				</p>
 				<p>
-					h<u><b>LYI</b></u>m<u><b>LYU</b></u>m<u><b>O</b></u>r<u><b>O</b></u><br/>
-					&quot;I will sing to bring ruin and misery upon this wretched world&quot;
+					h<b>LYI</b>m<b>LYU</b>m<b>O</b>r<b>O</b><br/>
+					&quot;I will sing angrily of bringing ruin and chaos upon the world&quot;
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
@@ -625,7 +646,7 @@
 				</p>
 				<p>
 					<b>hYImOmOrO!</b><br/>
-					&quot;I will sing of how I want you dead&quot; (not invoked)
+					&quot;I will sing of how I want you to suffer&quot; (not invoked)
 				</p>
 				<p>
 					<b>cEzE hymmnos/.</b><br/>
@@ -637,7 +658,7 @@
 				</p>
 				<p>
 					<b>xN rre harr hLYImLYUmOrO a.u.k. zess quesa/.</b><br/>
-					&quot;Her singing is like thunder upon the land&quot;
+					&quot;Her singing is like a scorching lightning strike upon the land&quot;
 				</p>
 			</div>
 		</div>

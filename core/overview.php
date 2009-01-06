@@ -12,7 +12,7 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ The history of Hymmnos and its dialects</div>
 			<p>
-				The origins of Hymmnos and the Hymmnos script are ancient, and existed before the father of Sound Science
+				The origins of Hymmnos and the Hymmnos script are ancient, existing even before the father of Sound Science
 				discovered Sound Magic in the First Era.
 				It was not, at that time, yet called Hymmnos, but the	chants common to the shamans of the period,
 				then called Tsukikanade (Moon Chanters), provided the foundations.
@@ -23,17 +23,15 @@
 				Because of this evolutionary process, Hymmnos features dialects and archaisms, just like English,
 				Japanese, and every other living language.
 			</p>
-			<p>
-				Hymmnos dialects found in the Third Era:
-				<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
-					<li>Central Pure Note (Standard)</li>
-					<li>Cult Ciel Note (Ancient language from before the First Era)</li>
-					<li>Cluster Note (Cluster Area Language)</li>
-					<li>Alpha Note (Origin Spell)</li>
-					<li>Ancient Meta Falss Note (Sacred language from the First Era)</li>
-					<li>New Testament of Pastalie (Pastalia Dialect) </li>
-				</ul><br/>
-			</p>
+			Hymmnos dialects found in the Third Era:
+			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt;">
+				<li>Central Pure Note (Standard)</li>
+				<li>Cult Ciel Note (Ancient language from before the First Era)</li>
+				<li>Cluster Note (Cluster Area Language)</li>
+				<li>Alpha Note (Origin Spell)</li>
+				<li>Ancient Meta Falss Note (Sacred language from the First Era)</li>
+				<li>New Testament of Pastalie (Pastalia Dialect) </li>
+			</ul><br/>
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Central Pure Note</div>
@@ -45,7 +43,7 @@
 				be home to chants that control Towers, but they are generally not optimal.
 				Central Pure Note is, effectively, a standardized, prescriptive form of Hymmnos, agreed upon by
 				the Tower administration in Sol Ciel's capital, El Elemia, not unlike the ISO standards in use
-				today.
+				on Earth in the 20th and 21st centuries.
 			</p>
 			<p>
 				The nature of this standardization is such that anything accepted from any dialect becomes part of
@@ -67,7 +65,8 @@
 			<p>
 				Originating in the First Era, in the Sol Cluster region -- an area far-removed from the Sol Ciel region, which
 				is on the other side of the planet -- Cluster Note evolved.
-				Relative to Central Pure Note, Cluster Note is like a dialect, but its effects are virtually identical.
+				Relative to Central Pure Note, Cluster Note is like a dialect, but its effects
+				(<i>related to Tower control</i> -ed) are virtually identical.
 				At present, none in the lands of Ar_tonelico can make use of Cluster Note, but it is possible that,
 				somewhere in the world, a settlement exists, based around this dialect.
 			</p>
@@ -83,7 +82,8 @@
 				specifications (Reyvateils speaking these dialects can construct novel phrases using pre-defined Hymmnos,
 				much like how humans form sentences), Alpha Note binds new Hymmnos to an extension of a Tower's functionality.
 				Summarized, this means that only the Origin's Tower can interpret the Alpha Note Hymmnos she has defined,
-				making it useless in the domain of other Towers; for this reason, Alpha Note is not a general-purpose dialect.
+				making it useless in the domain of other Towers; for this reason, Alpha Note is not a general-purpose dialect,
+				but a class of dialects.
 			</p>
 		</div>
 		<div class="text-basic">
@@ -94,20 +94,20 @@
 				The power conveyed by a single Word of this dialect far exceeds that of the average Word found in
 				Central Pure Note.
 				The motivations behind the fabrication of such strong Hymmnos rests in the beliefs of the society of
-				Meta Falss: in their land, spiritual ideology flourished much more so than in any other region,
+				Meta Falss: in their land, spiritual ideology flourished much moreso than in any other region,
 				and, as praise for the Tsukikanade, extensive effort was invested in the research and development
 				of chants.
-				Because of this, even as other regions were reaching the limits of what they could accomplish through
-				magical chants, the people of Meta Falss slowly overcame these limits, learning how to craft
-				still-stronger chants, then refining and improving them.
+				Because of this, even as other regions were reaching the limits of what could be accomplished through
+				conventional magical chants, the people of Meta Falss slowly overcame these limits, learning how to
+				craft still-stronger chants, then refining and improving them.
 			</p>
 			<p>
 				Whether fortunate or not, because of their devotion to spiritual ideology, while other regions shifted the
 				focus of their studies to science and discovered the significance of intonation and emotions in chants, the
 				ways of the Tsukikanade continued to dominate the people of Meta Falss, and their civilization's power rapidly
 				declined in the fourth millenium.
-				Ultimately, because of their diplomatic relations with Sol Ciel, the Words of Meta Falss Note were registered
-				in the Song Magic servers.
+				Ultimately, because of their resulting political position with Sol Ciel, the Words of Meta Falss Note came to
+				be registered in the Song Magic servers.
 			</p>
 		</div>
 		<div class="text-basic">
@@ -125,7 +125,8 @@
 			</p>
 			<p>
 				The grammar of the New Testament is dramatically different from that of other Hymmnos originating from the
-				First Era, so you should learn <a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
+				First Era, so those interested in the Hymmnos language itself should learn
+				<a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

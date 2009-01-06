@@ -10,28 +10,30 @@
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
-		<?php
-			$query = $_GET['word'];
-			if($query == NULL || trim($query) == ''){
-				echo 'No search terms specified.';
-				exit();
-			}
-			$words = split(" ", trim($query));
-			
-			include '/home/flan/public_html/hymmnoserver.gobbledygook';
-			if ($mysqli->connect_error) {
-				printf("Connect failed: %s\n", mysqli_connect_error());
-				exit();
-			}
-			
-			if(count($words) > 1){
-				include 'common/grammar.xml';
-			}else{
-				include 'common/search.xml';
-			}
-			
-			$mysql->close();
-		?>
+		<div>
+			<?php
+				$query = $_GET['word'];
+				if($query == NULL || trim($query) == ''){
+					echo 'No search terms specified.';
+					exit();
+				}
+				$words = split(" ", trim($query));
+				
+				include '/home/flan/public_html/hymmnoserver.gobbledygook';
+				if ($mysqli->connect_error) {
+					printf("Connect failed: %s\n", mysqli_connect_error());
+					exit();
+				}
+				
+				if(count($words) > 1){
+					include 'common/grammar.xml';
+				}else{
+					include 'common/search.xml';
+				}
+				
+				$mysql->close();
+			?>
+		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>

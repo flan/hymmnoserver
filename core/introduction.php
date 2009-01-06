@@ -14,10 +14,10 @@
 			<p>
 				The grammar of Hymmnos is based on a number of abstract, complex concepts.
 				To understand it, it is best to approach the language as though it were a science:
-				begin with a number of basic, observable ideas and build upon them incrementally.
-				In this section, some of those basic ideas will be outlined; this collection is
-				by no means comprehensive, and it may be outdated as new information is provided
-				through its interactive video game counterparts.
+				begin with basic, observable ideas and build upon them incrementally.
+				In this section, some such basic ideas will be outlined.
+				Note that this collection is by no means comprehensive, and it may be outdated as
+				new information is provided through its interactive video game counterparts.
 			</p>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Conducted waves</div>
@@ -36,13 +36,14 @@
 					must maintain a certain balance; effectively, the forces of the universe have gathered
 					tiny components that have coalesced into something we recognize as a pencil.
 					These forces, and, indeed, the matter that they act upon, can be expressed as waves, and
-					it is all of these waves that form a stationary wave structure.
+					it is the interaction all of these waves that form the stationary wave structure we
+					perceive as a pencil.
 				</p>
 				<p>
 					Akira Tsuchiya, the expert on Hymmnos theory, offers this analogy for those with a
-					background in physics: it is like a collection of atoms. Normally, individual atoms
-					would scatter throughout their environment, but when enough start to bind to each
-					other, stable molecules form. Stationary waves are like molecules in that they do not
+					background in physics: stationary waves are like a collection of atoms. Normally,
+					individual atoms scatter throughout their environment, but when enough start to bind to
+					each other, stable molecules form. Stationary waves are like molecules in that they do not
 					disperse on their own, remaining stable until acted on by an outside force.
 				</p>
 			</div>
@@ -53,31 +54,31 @@
 						The <a href="http://en.wikipedia.org/wiki/De_Broglie_hypothesis">de Broglie hypothesis</a>
 						and <a href="http://en.wikipedia.org/wiki/Wave-particle_duality">wave-particle duality</a>
 						hold that all matter has a wave-like nature. The world of Ar_tonelico takes some liberties
-						with advancing and departing from the physics behind these articles, so just accept that
-						what will be presented is a reasonable translation of Akira Tsuchiya's transcribed
-						imaginings and <b>not</b> material that should go on your next term paper.
+						with advancing and departing from the physics behind these concepts, so just accept that
+						is presented is a reasonable translation of Akira Tsuchiya's transcribed imaginings and
+						<b>not</b> material that should go on your next term paper.
 					</span>
 				</p>
 				<p>
 					Matter-waves are referred to as &quot;<b>D</b>etail-waves&quot;.<br/>
 					Take, for example, metals.
-					Differences can be observed as the frequencies acting on them vary anywhere between 0Hz
-					and ∞Hz -- not so much in their fundamental shape, but through physical phenomena, such
-					as melting because of high temperatures.
+					Differences can be observed as the frequencies acting on them vary between 0Hz and ∞Hz --
+					these differences are not reflected directly in terms of their fundamental shape, but rather
+					through physical phenomena, such as melting because of high temperatures.
 				</p>
 				<p>
 					The terms &quot;wave-type&quot; and &quot;wave-state&quot; are often used to describe
 					D-waves, being expressed interchangably with &quot;conducted D-wave&quot; and
 					&quot;stationary D-wave&quot;. The rough relationship between them is that conducted
-					D-waves affect stationary D-waves, like exciting the particles in paper to cause it
-					to combust.
+					D-waves affect stationary D-waves, like exciting the particles in water to cause it
+					to boil.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">H-wave</div>
 				<p>
 					Throught-waves are referred to as &quot;<b>H</b>ymmno-waves&quot;.<br/>
-					These waves cannot be explained using properties related to physical matter; they are,
+					These waves cannot be explained through analogies related to physical matter; they are,
 					in essence, waves that carry feelings and the intent of thoughts.
 				</p>
 			</div>

@@ -33,40 +33,40 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Features of the Hymmnos grammar</div>
 			<p>
-				Hymmnos, described as the "language of emotions", has, as its most prominent feature, a
-				sentence structure that focuses on expressing the speaker's feelings.
+				Hymmnos, described as the &quot;language of emotions&quot;, has, as its most prominent
+				feature, a sentence structure that focuses on expressing the speaker's feelings.
 				Because it is focused on the speaker's feelings, statements nominally flow from a
 				first-person perspective. As with so many other things, perhaps it will be easiest to
 				understand how Hymmnos differs from other languages by looking at an example:
-				<table>
-					<tr style="font-size: 12pt;">
-						<td class="hymmn1">Was</td>
-						<td class="hymmn1">yea</td>
-						<td class="hymmn1">ra</td>
-						<td class="hymmn2">chs</td>
-						<td class="hymmn2">hymmnos</td>
-						<td class="hymmn2">mea</td>
-					</tr>
-					<tr style="font-weight: bold;">
-						<td class="kanji1" colspan="3">Emotion Sound</td>
-						<td class="kanji2">verb</td>
-						<td class="kanji2">object</td>
-						<td class="kanji2">object</td>
-					</tr>
-					<tr>
-						<td class="kanji1" colspan="3">great, enjoyable happiness<br/>(I am delighted)</td>
-						<td class="kanji2">will become</td>
-						<td class="kanji2">song</td>
-						<td class="kanji2">me</td>
-					</tr>
-				</table>
 			</p>
+			<table>
+				<tr style="font-size: 12pt;">
+					<td class="hymmn1">Was</td>
+					<td class="hymmn1">yea</td>
+					<td class="hymmn1">ra</td>
+					<td class="hymmn2">chs</td>
+					<td class="hymmn2">hymmnos</td>
+					<td class="hymmn2">mea</td>
+				</tr>
+				<tr style="font-weight: bold;">
+					<td class="kanji1" colspan="3">Emotion Sound</td>
+					<td class="kanji2">verb</td>
+					<td class="kanji2">object</td>
+					<td class="kanji2">object</td>
+				</tr>
+				<tr>
+					<td class="kanji1" colspan="3">great, enjoyable happiness<br/>(I am delighted)</td>
+					<td class="kanji2">will become</td>
+					<td class="kanji2">song</td>
+					<td class="kanji2">me</td>
+				</tr>
+			</table>
 			<p>
 				
 				This sample sentence means &quot;I am delighted to express myself through song,&quot;
 				conveyed with an expression of genuine joy by the speaker.
 				(<i>Example changed to something more meaningful to English speakers because the syntax
-				of Hymmnos is closer to our language than it is to Japanese. -ed</i>)
+				of Hymmnos is closer to our language than it is to Japanese.</i> -ed)
 			</p>
 		</div>
 		<div class="text-basic">
@@ -78,136 +78,130 @@
 			<p>
 				<span style="color: red;">[first : degree]</span>-<span style="color: green;">[second : nature]</span>-<span style="color: blue;">[third : desirability]</span>
 			</p>
-			<p>
-				<b>▼ First word</b><br/>
-				The first word in an Emotion Sound describes the degree of the speaker's emotion.
-				<table style="margin-top: -10px;">
-					<tr>
-						<td class="kana text-basic-bold">Rrha</td>
-						<td class="latin">rapturous</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">Was</td>
-						<td class="latin">very much</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">Wee</td>
-						<td class="latin">reasonable</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">Fou</td>
-						<td class="latin">a little</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">Ma</td>
-						<td class="latin">discretionary</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">Nn</td>
-						<td class="latin">reluctant</td>
-					</tr>
-				</table>
-			</p>
-			<p>
-				<b>▼ Second word</b><br/>
-				The second word describes the emotion being conveyed.
-				<table style="margin-top: -10px;">
-					<tr>
-						<td class="kana text-basic-bold">i</td>
-						<td class="latin">impatience</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">yea</td>
-						<td class="latin">happiness</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">waa</td>
-						<td class="latin">happiness</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">paks</td>
-						<td class="latin">excitment, nervousness</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">num</td>
-						<td class="latin">nothing</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">ki</td>
-						<td class="latin">focus, concentration</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">wol</td>
-						<td class="latin">fervour</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">apea</td>
-						<td class="latin">blessing</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">au</td>
-						<td class="latin">sadness</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">granme</td>
-						<td class="latin">wanting to protect, bravery</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">touwaka</td>
-						<td class="latin">hope</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">quel</td>
-						<td class="latin">eagerness, desperation</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">yant</td>
-						<td class="latin">fear</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">guwo</td>
-						<td class="latin">anger, resentment</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">jyel</td>
-						<td class="latin">loneliness</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">zweie</td>
-						<td class="latin">determination, sincerity</td>
-					</tr>
-				</table>
-			</p>
-			<p>
-				<b>▼ Third word</b><br/>
-				The third word describes how desireable the Reyvateil finds the context of the emotion.
-				<table style="margin-top: -10px;">
-					<tr>
-						<td class="kana text-basic-bold">ga</td>
-						<td class="latin">I want this to stop</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">ra</td>
-						<td class="latin">I want this to continue</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">erra</td>
-						<td class="latin">I want this to continue forever</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">wa</td>
-						<td class="latin">I can tolerate this</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">gaya</td>
-						<td class="latin">I never want this to happen again</td>
-					</tr>
-					<tr>
-						<td class="kana text-basic-bold">gagis</td>
-						<td class="latin">I am indifferent</td>
-					</tr>
-				</table>
-			</p>
+			<b>▼ First word</b><br/>
+			The first word in an Emotion Sound describes the degree of the speaker's emotion.
+			<table>
+				<tr>
+					<td class="kana text-basic-bold">Rrha</td>
+					<td class="latin">trance-like</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">Was</td>
+					<td class="latin">very much</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">Wee</td>
+					<td class="latin">reasonable</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">Fou</td>
+					<td class="latin">a little</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">Ma</td>
+					<td class="latin">discretionary</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">Nn</td>
+					<td class="latin">reluctant</td>
+				</tr>
+			</table><br/>
+			<b>▼ Second word</b><br/>
+			The second word describes the emotion being conveyed.
+			<table>
+				<tr>
+					<td class="kana text-basic-bold">i</td>
+					<td class="latin">impatience</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">yea</td>
+					<td class="latin">happiness</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">waa</td>
+					<td class="latin">happiness</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">paks</td>
+					<td class="latin">excitment, nervousness</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">num</td>
+					<td class="latin">nothing</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">ki</td>
+					<td class="latin">focus, concentration</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">wol</td>
+					<td class="latin">fervour</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">apea</td>
+					<td class="latin">blessing</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">au</td>
+					<td class="latin">sadness</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">granme</td>
+					<td class="latin">wanting to protect, bravery</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">touwaka</td>
+					<td class="latin">hope</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">quel</td>
+					<td class="latin">eagerness, desperation</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">yant</td>
+					<td class="latin">fear</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">guwo</td>
+					<td class="latin">anger, resentment</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">jyel</td>
+					<td class="latin">loneliness</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">zweie</td>
+					<td class="latin">determination, sincerity</td>
+				</tr>
+			</table><br/>
+			<b>▼ Third word</b><br/>
+			The third word describes how desireable the Reyvateil finds the context of the emotion.
+			<table>
+				<tr>
+					<td class="kana text-basic-bold">ga</td>
+					<td class="latin">I want this to stop</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">ra</td>
+					<td class="latin">I want this to continue</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">erra</td>
+					<td class="latin">I want this to continue forever</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">wa</td>
+					<td class="latin">I can tolerate this</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">gaya</td>
+					<td class="latin">I never want this to happen again</td>
+				</tr>
+				<tr>
+					<td class="kana text-basic-bold">gagis</td>
+					<td class="latin">I am indifferent</td>
+				</tr>
+			</table>
 			<p>
 				<span class="text-title-small">&lt;Effects of Emotion Words&gt;</span><br/>
 				Even when speaking the same sentence, the meaning conveyed by a speaker whose
@@ -265,7 +259,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
 				<p>
-					Pronouns may be used in place of a &quot;rre-[subject]&quot; component.
+					Subject-form pronouns may be used in place of a &quot;rre-[subject]&quot; component.
 					Hymmnos's pronouns extend those found in English by defining gender and quantity.
 				</p>
 				<table>
@@ -335,7 +329,7 @@
 　<b>1x AAs ixi.</b> [END]
 			</p>
 			<p>
-				This means that between the statements &quot;0x vvi.&quot; and &quot;1x AAs ixi.&quot;,
+				This means that, between the statements &quot;0x vvi.&quot; and &quot;1x AAs ixi.&quot;,
 				every sentence will bear the Emotion Sound &quot;Ma num ra&quot;.
 				0 and 1 are, of course, binary flags; as qualified numbers, &quot;0x&quot; is pronounced as
 				&quot;o ku&quot;, and, likewise, &quot;1x&quot; as &quot;i ku&quot;. 

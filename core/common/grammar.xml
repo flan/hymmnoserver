@@ -44,18 +44,16 @@ A renderList(header, words) function should be created to render sections. -->
 	}
 ?>
 
-<p>
-	At present, all sentences will be reported as invalid.
-	This is because there is no validity-checking code yet.
-</p>
-<hr/><span>This section is under development</span><hr/>
-<span>
-	Note: There is no difference between singular and plural nouns, unless implied by context.
-	&quot;wart&quot; can mean either &quot;word&quot; or &quot;words&quot;,
-	depending on which is more appropriate.
+<span>This section is under development</span>
+<hr/>
+<span style="color: grey;">
+	<small>
+		Note: There is no difference between singular and plural nouns, unless implied by context.
+		&quot;wart&quot; can mean either &quot;word&quot; or &quot;words&quot;, depending on which is more appropriate.
+	</small>
 </span>
 <hr/>
-<table style="border-collapse: collapse; border: 1px solid black;">
+<table style="border-collapse: collapse; border: 1px solid black; margin-bottom: 5px;">
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="2">
 			<span style="font-family: hymmnos; font-size: 28pt;">
@@ -85,9 +83,9 @@ A renderList(header, words) function should be created to render sections. -->
 	</tr>
 	<tr>
 		<td style="background: red; color: white; text-align: center;" colspan="2">
-			This sentence does not appear to be valid Hymmnos<br/>
+			<big>This sentence does not appear to be valid Hymmnos</big><br/>
+			Reason: No grammar validation logic has been implemented yet<br/>
 			<small>(Is this wrong? Let <a href="/hymmnoserver/credits.php" style="color: #cccccc;">someone</a> know!)</small>
 		</td>
 	</tr>
 </table>
-<br/>

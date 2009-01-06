@@ -78,43 +78,44 @@
 			?>
 		</div>
 		<hr/>
-		<span style="color: red; font-size: 0.8em;">
-			<?php
-				include '/home/flan/public_html/hymmnoserver.gobbledygook';
-				if ($mysqli->connect_error) {
-					printf("Connect failed: %s\n", mysqli_connect_error());
-					exit();
-				}
-				
-				if($page != '0'){
-					if(is_numeric($page)){
-						$keys = $SYNTAX_CLASS_REV[$page];
-						$keys_count = count($keys);
-						$search_key = $keys[0];
-						for($i = 1; $i < $keys_count; $i++){
-							$search_key = $search_key.','.$keys[$i];
-						}
-						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
-					}else{
-						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
-						$page = $page.'%';
-						$stmt->bind_param("s", $page);
+		<div>
+			<span style="color: red; font-size: 0.8em;">
+				<?php
+					include '/home/flan/public_html/hymmnoserver.gobbledygook';
+					if ($mysqli->connect_error) {
+						printf("Connect failed: %s\n", mysqli_connect_error());
+						exit();
 					}
-				}else{
-					$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
-				}
-				$stmt->execute();
-				$stmt->store_result();
-				
-				$plural = '';
-				if($stmt->num_rows != 1){
-					$plural = 's';
-				}
-				printf('<b>%d record%s found</b>', $stmt->num_rows, $plural);
-			?>
-			(Hymmnos entries will open in a new window)
-		</span>
-		<br/><br/>
+					
+					if($page != '0'){
+						if(is_numeric($page)){
+							$keys = $SYNTAX_CLASS_REV[$page];
+							$keys_count = count($keys);
+							$search_key = $keys[0];
+							for($i = 1; $i < $keys_count; $i++){
+								$search_key = $search_key.','.$keys[$i];
+							}
+							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
+						}else{
+							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
+							$page = $page.'%';
+							$stmt->bind_param("s", $page);
+						}
+					}else{
+						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
+					}
+					$stmt->execute();
+					$stmt->store_result();
+					
+					$plural = '';
+					if($stmt->num_rows != 1){
+						$plural = 's';
+					}
+					printf('<b>%d record%s found</b>', $stmt->num_rows, $plural);
+				?>
+				(Hymmnos entries will open in a new window)
+			</span>
+		</div>
 		<table>
 			<tr>
 				<th class="result-header" style="width: 100px;">Hymmnos</th>
