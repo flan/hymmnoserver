@@ -123,7 +123,7 @@
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">paks</td>
-					<td class="latin">excitment, nervousness</td>
+					<td class="latin">excitement, nervousness</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">num</td>
@@ -175,7 +175,7 @@
 				</tr>
 			</table><br/>
 			<b>▼ Third word</b><br/>
-			The third word describes how desireable the Reyvateil finds the context of the emotion.
+			The third word describes how desirable the Reyvateil finds the context of the emotion.
 			<table>
 				<tr>
 					<td class="kana text-basic-bold">ga</td>
@@ -311,12 +311,12 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Persistant Emotion Sounds definition syntax</div>
+			<div class="section-title text-title-small">⠕ Persistent Emotion Sounds definition syntax</div>
 			<p>
 				This section describes a structure that allows an Emotion Sound to be applied to an arbitrarily
 				large collection of sentences. This is important because it prevents a speaker from having to
 				continually express their emotions before every sentence in a series of related statements,
-				such as a stanza in a hymm.
+				such as a stanza in a hymn.
 			</p>
 <!-- Be very, very careful when editing this block. Do not adjust the alignment
      of these lines; they are offset by fake spaces, and writing inline CSS to

@@ -227,7 +227,7 @@
 					Slots may be left empty.
 				</p>
 				<p>
-					There are three categories of Emotion Vowels; they may be used interchangably
+					There are three categories of Emotion Vowels; they may be used interchangeably
 					to better reflect the emotions of the speaker, and members of one group
 					may be used together or reused to strengthen or elaborate the emotions behind
 					a statement.
@@ -466,7 +466,7 @@
 			</p>
 			<p>
 				<span style="color: red;">
-					Lazy, a contributer to <a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a>,
+					Lazy, a contributor to <a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a>,
 					made note of the following information. However, it does not seem to appear anywhere on
 					<a href="http://game.salburg.com/hymmnoserver/">HYMMNOSERVER</a>. But, because it seems
 					reasonable and significant, it has been included here.

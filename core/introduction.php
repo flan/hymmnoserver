@@ -12,19 +12,33 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Introduction</div>
 			<p>
-				The grammar of Hymmnos is based on a number of abstract, complex concepts.
-				To understand it, it is best to approach the language as though it were a science:
-				begin with basic, observable ideas and build upon them incrementally.
-				In this section, some such basic ideas will be outlined.
-				Note that this collection is by no means comprehensive, and it may be outdated as
-				new information is provided through its interactive video game counterparts.
+				<span style="color: red;">
+					The <a href="http://en.wikipedia.org/wiki/De_Broglie_hypothesis">de Broglie hypothesis</a>
+					and <a href="http://en.wikipedia.org/wiki/Wave-particle_duality">wave-particle duality</a>
+					hold that all matter has a wave-like nature. The world of Ar_tonelico takes some liberties
+					with advancing and departing from the physics behind these concepts, so just accept that
+					what is presented is a reasonable translation of Akira Tsuchiya's transcribed imaginings
+					and <b>not</b> material that should go on your next term paper.
+				</span>
+			</p>
+			<p>
+				Hymmnos is based on a number of abstract, complex concepts.
+				This page briefly explains the concepts needed to understand the terms used throughout
+				the rest of this site, although some of the science described here differs quite
+				significantly from what we understand to be the way the world works.
+				Considering the dissimilarities between the science behind Hymmnos and that of the real
+				world, only the gist of the concepts described here is required to understand the
+				nature of the language.<br/>
+				These terms all appear in the Ar_tonelico games, so you may find it easier to understand
+				their nature after you have played them.
 			</p>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Conducted waves</div>
 				<p>
-					As sound, the waves that carry Hymmnos Words often need to propagate to have any
-					effect on the world. Just like heat, light, and every other type of waveform,
-					the magic waves of Hymmnos typically need to be conducted through matter.
+					A conducted wave is any type of wave that propagates while maintaining its form. 
+					As sound, the waves that carry Hymmnos Words need to travel to have any
+					effect on the world; just like heat, light, and every other type of waveform,
+					the magic waves of Hymmnos are conducted through matter.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
@@ -50,25 +64,15 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">D-wave</div>
 				<p>
-					<span style="color: red;">
-						The <a href="http://en.wikipedia.org/wiki/De_Broglie_hypothesis">de Broglie hypothesis</a>
-						and <a href="http://en.wikipedia.org/wiki/Wave-particle_duality">wave-particle duality</a>
-						hold that all matter has a wave-like nature. The world of Ar_tonelico takes some liberties
-						with advancing and departing from the physics behind these concepts, so just accept that
-						is presented is a reasonable translation of Akira Tsuchiya's transcribed imaginings and
-						<b>not</b> material that should go on your next term paper.
-					</span>
-				</p>
-				<p>
 					Matter-waves are referred to as &quot;<b>D</b>etail-waves&quot;.<br/>
 					Take, for example, metals.
 					Differences can be observed as the frequencies acting on them vary between 0Hz and ∞Hz --
-					these differences are not reflected directly in terms of their fundamental shape, but rather
-					through physical phenomena, such as melting because of high temperatures.
+					these differences are not reflected directly in terms of their fundamental shape, but
+					rather through physical phenomena, such as melting because of high temperatures.
 				</p>
 				<p>
-					The terms &quot;wave-type&quot; and &quot;wave-state&quot; are often used to describe
-					D-waves, being expressed interchangably with &quot;conducted D-wave&quot; and
+					The terms &quot;variance-wave&quot; and &quot;state-wave&quot; are often used to describe
+					D-waves; these terms are typically interchangeable with &quot;conducted D-wave&quot; and
 					&quot;stationary D-wave&quot;. The rough relationship between them is that conducted
 					D-waves affect stationary D-waves, like exciting the particles in water to cause it
 					to boil.
@@ -77,7 +81,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">H-wave</div>
 				<p>
-					Throught-waves are referred to as &quot;<b>H</b>ymmno-waves&quot;.<br/>
+					Thought-waves are referred to as &quot;<b>H</b>ymmno-waves&quot;.<br/>
 					These waves cannot be explained through analogies related to physical matter; they are,
 					in essence, waves that carry feelings and the intent of thoughts.
 				</p>

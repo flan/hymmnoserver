@@ -13,16 +13,16 @@
 			<div class="section-title text-title-small">⠕ Song Magic Servers</div>
 			<p>
 				The first game featured the tower of Ar_tonelico, and the second features Infel-Phira.<br/>
-				Both of these towers have the same basic fundamental features:
+				Both of these towers are Song Magic Servers and have the same basic fundamental features:
 			</p>
 			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
 				<li>An H-wave receptor that can interpret instructions and produce D-waves</li>
-				<li>The ability to support connections from at least one Reyveteil (daughter)</li>
+				<li>The ability to support connections from at least one Reyvateil (daughter)</li>
 				<li>Hymmnos-language-processing capabilities</li>
 			</ul>
 			<p>
 				Ar_tonelico was constructed during the First Era. 
-				Its basic functionality was much like a core that would produce magical effects upon
+				Its basic functionality is much like a core that produces magical effects upon
 				receiving a Reyvateil's song.
 				The magical effects are caused by the emission of conducted D-waves upon receiving
 				thoughts; the net effect of this process is that its users, the Reyvateils, can
@@ -99,9 +99,8 @@
 				As designed, neither system is inherently able to communicate with the other.
 				To get around this, they need to agree on a compatible protocol for exchanging
 				data, somewhat like how you used TCP/IP and HTTP to view this page. Once a protocol
-				has been agreed on, simple tasks like querying databases and sending files to
-				complex ones like entering Cosmospheres and generating binary fields may be
-				accomplished.
+				has been agreed on, simple tasks like sharing files to complex ones like entering
+				Cosmospheres and generating binary fields may be accomplished.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

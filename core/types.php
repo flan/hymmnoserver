@@ -23,29 +23,31 @@
 				Hymmnos Extract is a name for the chants that control Towers.
 				It is this branch of Hymmnos that has the power to directly control Ar_tonelico.
 				However, this power generally requires authorization before a Reyvateil can make use of it;
-				this authorization is typically granted based on a Reyvateil's Hymn Code
+				this authorization is typically granted based on a Reyvateil's &quot;Hymn Code&quot;
 				(note: third-generation Reyvateils do not have Hymn Codes, though they are still connected
 				to towers).
-				For example, the Hymn Code &quot;EOLIA_ANSUL_ARTONELICO&quot;, which belongs to a β Reyvateil,
-				grants authorization for Hymmnos Extracts that range from gravity manipulation to weather control,
-				earthquakes to environmental orchestration, magical chant dampening and more.
+				An example Hymn Code is &quot;EOLIA_ANSUL_ARTONELICO&quot;; it uniquely identifies a specific β
+				Reyvateil.
+				Reyvateils with access to Hymmnos Extract may perform great feats ranging from gravity manipulation
+				to weather control, earthquakes to environmental orchestration, and much more.
 			</p>
 			<p>
-				Hymmnos Words, informally known as "magical chants", are mainly used for everyday tasks and combat.
+				Hymmnos Words, informally known in the Third Era as "magical chants", are mainly used for everyday
+				tasks and combat.
 				These are formed from the richness of a Reyvateil's heart, which makes them highly versatile.
 				As a Reyvateil allows more feelings and emotions to flow through her heart, the possible variations
 				of Hymmnos Words increase, making this a Hymmnos branch with limitless potential.
 			</p>
 			<p>
-				Hymmnos Spells are chants that, instead of drawing from a Reyvateil's heart, make use of pre-existing
-				Hymmnos strings, just like Hymmnos Extracts; these grant Reyvateil access to powers and abilities
-				normally beyond their own capabilities (in terms of their ability to form Hymmnos Words).
-				The majority of Hymmnos Spells are used for authentication and interaction with Towers.
+				Hymmnos Spells are chants that, instead of drawing form from a Reyvateil's heart, make use of
+				pre-defined Hymmnos strings, much like Hymmnos Extracts.
+				This fixed nature leads to one of the most significant features of this branch of Hymmnos: it can be
+				used by humans, not just Reyvateils.
+				Accordingly, the majority of Hymmnos Spells exist as a means of authentication and interaction with Towers.
 				<br/>
 				Grammatically, Hymmnos Spells are identical to Hymmnos Words. the difference is that Hymmnos Spells
 				are registered with a tower, so they have a pre-defined function. Intuitively, it follows that new
-				Hymmnos Spells cannot be created by individual Reyvateils on their own because the results of such
-				invention would be Hymmnos Words.
+				Hymmnos Spells cannot be created by individuals because they would not be connected to tower functions.
 			</p>
 		</div>
 		<div class="text-basic">
@@ -56,10 +58,13 @@
 			<p>
 				While it may seem as though all three branches of Hymmnos are fundamentally the same:
 				speak a chant -> something happens, there are significant differences
-				between them. For example, as noted above, the origin of each chant is different:
-				Hymmnos Words are entirely dependent on the Reyvateil's experiences, while the other
-				branches draw from prescriptive sources; because of this, the effects of non-Hymmnos
-				Word chants largely rely on inorganic constructs.
+				between them.
+			</p>
+			<p>
+				Hymmnos Spells are different because they are not limited to use by Reyvateils.
+				However, the difference between the other two branches is buried deeper in their natures:
+				Hymmnos Words are based entirely on an individual Reyvateil's heart and experiences, while
+				Hymmnos Extracts are highly structured, inorganic constructs.
 			</p>
 			<p>
 				<b>▼ Invoking Hymmnos Extract</b><br/>
@@ -68,8 +73,8 @@
 					A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower;
 					and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something.
 				</span><br/><br/>
-				Those familiar with Hymmnos theory may have realized that Hymmnos Extract does not always
-				reflect any emotional desires within the Reyveteil using it. Though it employs conducted
+				Those familiar with Hymmnos theory may have realized that Hymmnos Extract does not directly
+				reflect any emotional desires within the Reyvateil using it. Though it employs conducted
 				H-waves,	these	waves carry only a clear, plain message that tells the Tower to act.
 			</p>
 			<b>▼ The effects of different Hymmnos</b><br/>
@@ -83,7 +88,7 @@
 				<tr>
 					<td class="data-cell-blue">EXEC_PAJA/.</td>
 					<td class="data-cell-blue">Extract</td>
-					<td class="data-cell-blue">Closing a connection</td>
+					<td class="data-cell-blue">Interrupting a process</td>
 					<td class="data-cell-blue">Tower system</td>
 				</tr>
 				<tr>
@@ -101,13 +106,13 @@
 				<tr>
 					<td class="data-cell-blue">EXEC_HYMME_LIFE_A:W:S/.</td>
 					<td class="data-cell-blue">Word</td>
-					<td class="data-cell-blue">D-waves restore a stationary, organic wave-form</td>
+					<td class="data-cell-blue">Restoring the nominal D-wave state of an organism</td>
 					<td class="data-cell-blue">Local area</td>
 				</tr>
 				<tr>
 					<td class="data-cell-blue">EXEC_HYMME_LUMINOUS_DEF/.</td>
 					<td class="data-cell-blue">Word</td>
-					<td class="data-cell-blue">D-waves form a protective barrier</td>
+					<td class="data-cell-blue">Forming a protective barrier of stationary D-waves</td>
 					<td class="data-cell-blue">Local area</td>
 				</tr>
 				<tr>
@@ -119,17 +124,18 @@
 			</table>
 			<p>
 				In all cases, the H-waves of a Reyvateil should be able to reach their destination,
-				carrying the collected thoughts of the Reyvateil.<br/>
+				carrying her collected thoughts.<br/>
 				(However, this does not mean that the chant will always result in	exactly what the Reyvateil wants,
-				particularly if the Reyvateil does not feel confident in the chant she sang)
+				particularly if the Reyvateil made a mistake, omitted a sentiment, or does not feel confident in
+				the chant she sang)
 			</p>
 			<p>
 				The most difficult Hymmnos Extracts to use are also the most uncomfortable for the
 				Reyvateil to accept, as the feelings with which they were designed are conveyed
-				directly to the receipient. If the Reyvateil cannot handle the feelings, she may
+				directly to the recipient. If the Reyvateil cannot handle the feelings, she may
 				be entirely unable to use the Hymmnos Extract.<br/>
-				To overcome this, &quot;stories&quot; (<i>memories? feelings of love and trust?</i> -ed) are used
-				as a form of shock-absorber to allow a Reyvateil to download Hymmnos Extracts;
+				To overcome this, &quot;stories&quot; that alter the Reyvateil's emotional state may be
+				used as a form of shock-absorber to allow her to download Hymmnos Extracts;
 				this is often the fastest way to encourage compatibility between a Reyvateil and a foreign program.
 				When downloading, if there is still a conflict between the Reyvateil and the Hymmnos Extract,
 				the Reyvateil may refuse to allow the download to complete, or the downloaded program may be
@@ -176,13 +182,15 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ The relationship between conducted H-waves</div>
+			<div class="section-title text-title-small">⠕ The relationship of power and conducted H-waves</div>
 			<p>
-				The H-waves associated with Hymmnos Words, in some cases, can be effective even without
-				the assistance of a Tower -- the conscious and unconscious powers of a Reyvateil may be
-				sufficient to yeild results (<i>resonating with the H-waves to create D-waves</i> -ed).
-				In such cases, the powers of the Reyvateil herself limit the force of her Hymmnos Words.
-				However, Hymmnos Extracts always require the presence of a tower.
+				The H-waves associated with Hymmnos Words, in some cases, may be omitted without affecting the
+				results of a chant; because the sound of such Hymmnos may resonate with Sound Stones, the singing
+				itself may lead to the intended result without the intervention of a Tower. (And, given the
+				nature of Hymmnos Words, there is no reason why the related H-waves would necessarily be
+				meaningful).
+				Intuitively, given that humans can use them, Hymmnos Spells do not involve H-waves.
+				Hymmnos Extracts, however, offer the Reyvateil no freedom with regard to H-wave generation.
 			</p>
 			<p>
 				Hymmnos Extract relies on foreign feelings, which denies the singer the ability to use
@@ -192,19 +200,19 @@
 				of the H-waves she emits. However, when she sang the Hymmnos Extract EXEC_LINCA/.,
 				the H-wave flow required to establish the connection was pre-determined and, therefore,
 				beyond her control.
-				As seen in this example, Hymmnos Extract requires only capabilities of appropriate flow
-				and spectrum from a Reyvateil.
+				From this example, you should observe that singing Hymmnos Extract requires a Reyvateil
+				to be able to meet Extract-specific minimum levels of flow and spectrum.
 			</p>
 			<p>
 				Unfortunately, these demands have the potential for tragedy: it should be apparent that
 				Hymmnos Extract places extreme demands upon the powers of a Reyvateil, much moreso than
 				any other form of invoked Hymmnos.
-				The second generation of Reyvateils have virtually no problems meeting the demands of these
-				chants: being, fundamentally, clones of the Origin, their powers all met identical minumum
-				standards, allowing for the neat separation of Hymmnos Extract into two categories:
-				Origin-exclusive and general-purpose for those of "pure beta blood".
-				(Note: Origins from successive eras are bred to have specifications virtually identical to
-				those of their predecessors, avoiding problems)
+				Second-generation Reyvateils (β-Reyvateils) generally have no problems meeting the requirements
+				of these chants: being, fundamentally, clones of the Origin, their powers all satisfy identical
+				minimum standards, allowing for the neat separation of Hymmnos Extract into two categories:
+				Origin-exclusive and general-purpose for those of "pure β blood".
+				(Note: In the Second Era of Sol Ciel, β-Reyvateils were enhanced, providing some with powers
+				that rivaled, and possibly even surpassed, those of Origins)
 				The problem arises with the third generation, which offers no minimum guarantees regarding
 				abilities. Because of this, those of the third generation who would invoke Hymmnos Extract
 				place themselves at great risk of dying under the stress of the demands placed upon them.

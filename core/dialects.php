@@ -17,7 +17,7 @@
 				It was not, at that time, yet called Hymmnos, but the	chants common to the shamans of the period,
 				then called Tsukikanade (Moon Chanters), provided the foundations.
 				Hymmnos was later formalized as a language optimized for the control of, and communications with, Towers,
-				but its grammar and phoenetics are derived from the shamans' chants.
+				but its grammar and phonetics are derived from the shamans' chants.
 				The original Hymmnos language that spread across the world underwent subtle changes depending on the
 				region and sect in which it was used, and the language's lexicon steadily evolved.
 				Because of this evolutionary process, Hymmnos features dialects and archaisms, just like English,
@@ -76,7 +76,7 @@
 			<p>
 				Origin Reyvateils, only three of which are known to exist, can construct optimized Hymmnos by themselves.
 				The Hymmnos they generate belong to the Alpha Note dialect.
-				Alpha Note is somewhat limited in that it cannot yeild optimal results if it is not used in conjunction
+				Alpha Note is somewhat limited in that it cannot yield optimal results if it is not used in conjunction
 				with the Tower managed by the Origin that created it.
 				This is because, unlike how the other dialects are collections of Hymmnos derived from current language
 				specifications (Reyvateils speaking these dialects can construct novel phrases using pre-defined Hymmnos,
@@ -105,7 +105,7 @@
 				Whether fortunate or not, because of their devotion to spiritual ideology, while other regions shifted the
 				focus of their studies to science and discovered the significance of intonation and emotions in chants, the
 				ways of the Tsukikanade continued to dominate the people of Meta Falss, and their civilization's power rapidly
-				declined in the fourth millenium.
+				declined in the fourth millennium.
 				Ultimately, because of their resulting political position with Sol Ciel, the Words of Meta Falss Note came to
 				be registered in the Song Magic servers.
 			</p>
