@@ -236,7 +236,7 @@
 						$oo_possible = true;
 					}else{
 						$np_valid = false;
-						$reason = "Conjunction encountered, but noun phrase not found.";
+						$reason = "conjunction encountered, but noun phrase not found";
 						break;
 					}
 				}elseif(in_array($class, $PREPOSITIONS)){
@@ -257,7 +257,7 @@
 				}elseif(!((in_array($class, $ADJECTIVES)) || in_array($class, $PARTICLES))){#NP not complete.
 					if($required){
 						$valid = false;
-						$reason = "Noun phrase expected.";
+						$reason = "noun phrase expected";
 					}
 					break;
 				}
@@ -303,7 +303,7 @@
 						$i += count($conj_processed) + 1; #Account for the conjunction.
 					}else{
 						$vp_valid = false;
-						$reason = "Conjunction encountered, but verb phrase not found.";
+						$reason = "conjunction encountered, but verb phrase not found";
 						break;
 					}
 				}elseif(!(in_array($class, $ADVERBS))){#VP complete.
@@ -319,7 +319,7 @@
 				}elseif(!((in_array($class, $ADVERBS)) || in_array($class, $PARTICLES))){#VP not complete.
 					if($required){
 						$valid = false;
-						$reason = "Verb phrase expected.";
+						$reason = "verb phrase expected";
 					}
 					break;
 				}
@@ -365,7 +365,7 @@
 						if($modifier != '.' && $modifier != ''){
 							if($required){
 								$valid = false;
-								$reason = "Emotion Verb phrase excpected.";
+								$reason = "Emotion Verb phrase excpected";
 							}
 							return array($words, array());
 						}
@@ -374,7 +374,7 @@
 				}elseif(!((in_array($class, $ADVERBS)) || in_array($class, $PARTICLES))){#VP not complete.
 					if($required){
 						$valid = false;
-						$reason = "Emotion Verb phrase expected.";
+						$reason = "Emotion Verb phrase expected";
 					}
 					break;
 				}
@@ -442,7 +442,7 @@
 		if($words[0][3] == 14){
 			if($generation == 2){
 				$valid = false;
-				$reason = "Emotion Sounds cannot be used with Emotion Verbs.";
+				$reason = "Emotion Sounds cannot be used with Emotion Verbs";
 				return array($words, array());
 			}
 			if($words[1][3] == 7){
@@ -453,11 +453,11 @@
 					return array(array_slice($words, 3), $processed);
 				}else{
 					$valid = false;
-					$reason = "Missing Emotion Sound (III).";
+					$reason = "missing Emotion Sound (III)";
 				}
 			}else{
 				$valid = false;
-				$reason = "Missing Emotion Sound (II).";
+				$reason = "missing Emotion Sound (II)";
 			}
 		}
 		return array($words, array());
@@ -554,7 +554,7 @@
 							list($rest, $processed) = captureEmotionVerb($remainder);
 							if($rest == $remainder){#Not found.
 								$valid = false;
-								$reason = "Expected Emotion Verb.";
+								$reason = "expected Emotion Verb";
 							}
 							$remainder = $rest;
 						}
@@ -580,7 +580,7 @@
 		if(count($remainder) > 0){
 			if($valid){
 				$valid = false;
-				$reason = "Unexpected words at end of sentence.";
+				$reason = "unexpected words at end of sentence";
 			}
 			renderSection("Not evaluated", "black", $remainder);
 		}
@@ -610,7 +610,7 @@
 			}else{
 				echo '<td style="background: red; color: white; text-align: center;" colspan="2">';
 					echo '<big>This sentence does not appear to be valid Hymmnos</big><br/>';
-					echo "<small>Reason: $reason</small>";
+					echo "<small>Reason: $reason.</small>";
 				echo '</td>';
 			}
 		?>
