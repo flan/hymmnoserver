@@ -56,7 +56,7 @@
 				
 				$i = 0;
 				foreach(array(
-				 'E.s. (I)', 'E.s. (II)', 'E.s. (III)', 'E.v.',
+				 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
 				 'adj.', 'adv.', 'conj.', 'intj.', 'n.', 'prep.',
 				 'pron.', 'prt.', 'v.'
 				) as $class){

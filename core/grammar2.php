@@ -426,9 +426,8 @@
 				appear very much the same: 
 			</p>
 			<p>
-				<b>[Emotion Verb]-[object]-[object]</b> [VOO]<br/>
-				<b>[Emotion Verb]-[object]-[compound]</b> [VOC]<br/>
-				<b>[Emotion Verb]-[compound]</b> [VC]
+				<b>[Emotion Verb]-[compound]</b> [VC]<br/>
+				<b>[Emotion Verb]-[object]-[compound]</b> [VOC]
 			</p>
 			<p>
 				As you can see, when long sentences are required, the advantages of Pastalia are
@@ -444,7 +443,8 @@
 				permitted by this structure has been expanded.
 			</p>
 			<p style="color: green; font-role: italic;">
-				[x.]-[rre]-[subject]-[Emotion Verb]-[OO/OC/C]
+				[x.]-[rre]-[subject]-[Emotion Verb]-[compound]<br/>
+				[x.]-[rre]-[subject]-[Emotion Verb]-[object]-[compound]
 			</p>
 			<p>
 				&quot;x.&quot;, as you may have noticed, bears a Bank Slot.
@@ -466,7 +466,8 @@
 			</p>
 			<p>
 				<span style="color: red;">
-					Lazy, a contributor to <a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang</a>,
+					Lazy, a contributor to
+					<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">the wiki on Conlang</a>,
 					made note of the following information. However, it does not seem to appear anywhere on
 					<a href="http://game.salburg.com/hymmnoserver/">HYMMNOSERVER</a>. But, because it seems
 					reasonable and significant, it has been included here.
@@ -557,10 +558,10 @@
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Using Emotion Verbs as nouns</div>
+				<div class="subsection-title text-title-small">Using Emotion Verbs as objects</div>
 				<p>
 					If all Bank Slots in an Emotion Verb are left unused, then the template word
-					may be interpreted as a normal verb.
+					may be interpreted as part of an object as an action.
 				</p>
 				<p>
 					<b>fEwrEn h.m.m.r. eje/.</b><br/>
@@ -570,7 +571,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Quotation</div>
 				<p>
-					In the New Testament of Pastalie, Hymmnos between :/ and /: are considered quoted,
+					In the New Testament of Pastalie, Hymmnos between :/ and /: is considered quoted,
 					just like encapsulating text in &quot;&quot; in English.
 				</p>
 			</div>
@@ -658,7 +659,7 @@
 				</p>
 				<p>
 					<b>xN rre harr hLYImLYUmOrO a.u.k. zess quesa/.</b><br/>
-					&quot;Her singing is like a scorching lightning strike upon the land&quot;
+					&quot;Her singing is like a sharp lightning strike upon the land&quot;
 				</p>
 			</div>
 		</div>

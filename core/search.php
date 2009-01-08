@@ -17,7 +17,7 @@
 					echo 'No search terms specified.';
 					exit();
 				}
-				$words = split(" ", trim($query));
+				$words = split("[\t ,]+", trim($query));
 				
 				include '/home/flan/public_html/hymmnoserver.gobbledygook';
 				if ($mysqli->connect_error) {
