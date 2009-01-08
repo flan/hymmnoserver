@@ -468,12 +468,11 @@
 				<span style="color: red;">
 					Lazy, a contributor to
 					<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">the wiki on Conlang</a>,
-					made note of the following information. However, it does not seem to appear anywhere on
-					<a href="http://game.salburg.com/hymmnoserver/">HYMMNOSERVER</a>. But, because it seems
-					reasonable and significant, it has been included here.
+					made note of the following information. However, it is based on unconfirmed information.
+					But, because it seems reasonable and significant, it has been included here.
 				</span><br/>
-				&quot;x.&quot; can accept only Category 1 Emotion Vowels, and they carry slightly different
-				meanings in this context:
+				&quot;x.&quot; is used primarily with Category 1 Emotion Vowels, and they carry slightly
+				different meanings in this context:
 			</p>
 			<table>
 				<tr>
@@ -506,7 +505,11 @@
 					<td class="ev-1b" style="text-align: center;">ん</td>
 					<td class="ev-1b">I feel opposed</td>
 				</tr>
-			</table><br/>
+			</table>
+			<p>
+				&quot;x.&quot; has been used with Emotion Vowels from other categories, but their implications
+				are still unknown at this time.
+			</p>
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Grammatical flexibility</div>

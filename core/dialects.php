@@ -36,7 +36,7 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Central Pure Note</div>
 			<p>
-				&quot;Central&quot; refers to the first Tower, Ar_tonelico, referred to as the core of magical chants
+				&quot;Central&quot; refers to the first Tower, Ar_tonelico, referred to as the core of Song Magic
 				in the First Era.
 				Because of this, the chants optimized for controlling Towers are the domain of Central Pure Note.
 				However, this does not mean that control chants are limited to Central Pure Note; any dialect can
@@ -98,7 +98,7 @@
 				and, as praise for the Tsukikanade, extensive effort was invested in the research and development
 				of chants.
 				Because of this, even as other regions were reaching the limits of what could be accomplished through
-				conventional magical chants, the people of Meta Falss slowly overcame these limits, learning how to
+				conventional Song Magic, the people of Meta Falss slowly overcame these limits, learning how to
 				craft still-stronger chants, then refining and improving them.
 			</p>
 			<p>
@@ -111,10 +111,10 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ New Testament of Pastaile</div>
+			<div class="section-title text-title-small">⠕ New Testament of Pastalie</div>
 			<p>
 				This is a new dialect that was created in the lands of Meta Falss around 3400, specifically intended for
-				use with Infel-Phira, an entirely different magical chant server from Ar_tonelico; only the I.P.D.s
+				use with Infel-Phira, an entirely different Song Magic Server from Ar_tonelico; only the I.P.D.s
 				(Infel-Phira Dependencies), the Reyvateil connected to Infel-Phira, are able to use it.
 				Because of its unique characteristics, its compatibility with other dialects is virtually nil, in
 				terms of everything from its grammar through its lexicon.

@@ -33,31 +33,31 @@
 				their nature after you have played them.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Conducted waves</div>
+				<div class="subsection-title text-title-small">Dynamic waves</div>
 				<p>
-					A conducted wave is any type of wave that propagates while maintaining its form. 
+					A dynamic wave is any type of wave that propagates while maintaining its form. 
 					As sound, the waves that carry Hymmnos Words need to travel to have any
 					effect on the world; just like heat, light, and every other type of waveform,
 					the magic waves of Hymmnos are conducted through matter.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Stationary waves</div>
+				<div class="subsection-title text-title-small">Static waves</div>
 				<p>
-					Stationary waves are a somewhat more complicated concept.
+					Static waves are a somewhat more complicated concept.
 					Using an arbitrary example -- and, really, there can be no non-arbitrary examples here --
 					consider a pencil. For it to continue to be a pencil, the forces that keep it coherent
 					must maintain a certain balance; effectively, the forces of the universe have gathered
 					tiny components that have coalesced into something we recognize as a pencil.
 					These forces, and, indeed, the matter that they act upon, can be expressed as waves, and
-					it is the interaction all of these waves that form the stationary wave structure we
+					it is the interaction all of these waves that form the static wave structure we
 					perceive as a pencil.
 				</p>
 				<p>
 					Akira Tsuchiya, the expert on Hymmnos theory, offers this analogy for those with a
-					background in physics: stationary waves are like a collection of atoms. Normally,
+					background in physics: static waves are like a collection of atoms. Normally,
 					individual atoms scatter throughout their environment, but when enough start to bind to
-					each other, stable molecules form. Stationary waves are like molecules in that they do not
+					each other, stable molecules form. Static waves are like molecules in that they do not
 					disperse on their own, remaining stable until acted on by an outside force.
 				</p>
 			</div>
@@ -71,10 +71,10 @@
 					rather through physical phenomena, such as melting because of high temperatures.
 				</p>
 				<p>
-					The terms &quot;variance-wave&quot; and &quot;state-wave&quot; are often used to describe
-					D-waves; these terms are typically interchangeable with &quot;conducted D-wave&quot; and
-					&quot;stationary D-wave&quot;. The rough relationship between them is that conducted
-					D-waves affect stationary D-waves, like exciting the particles in water to cause it
+					The terms &quot;dynamic wave&quot; and &quot;static wave&quot; are often used to describe
+					D-waves; these terms are typically interchangeable with &quot;dynamic D-wave&quot; and
+					&quot;static D-wave&quot;. The rough relationship between them is that dynamic
+					D-waves affect static D-waves, like exciting the particles in water to cause it
 					to boil.
 				</p>
 			</div>

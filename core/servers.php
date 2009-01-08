@@ -24,7 +24,7 @@
 				Ar_tonelico was constructed during the First Era. 
 				Its basic functionality is much like a core that produces magical effects upon
 				receiving a Reyvateil's song.
-				The magical effects are caused by the emission of conducted D-waves upon receiving
+				The magical effects are caused by the emission of dynamic D-waves upon receiving
 				thoughts; the net effect of this process is that its users, the Reyvateils, can
 				command powers far beyond their actual capabilities.
 			</p>

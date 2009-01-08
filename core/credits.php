@@ -70,6 +70,17 @@
 					<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang's Hymmnos article on Wikia</a></li>
 				</ul>
 			</div>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">Platina</div>
+				<ul class="basic-inline">
+					<li>Terminology standarization</li>
+					<li>Wave-relation clarification</li>
+				</ul>
+				<br/>
+				<ul class="basic-inline">
+					<li><a href="http://artonelico.wikia.com/wiki/The_Ar_Tonelico_Wiki">Platina, Ar Tonelico on Wikia</a></li>
+				</ul>
+			</div>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>

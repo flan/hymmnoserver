@@ -32,7 +32,7 @@
 				to weather control, earthquakes to environmental orchestration, and much more.
 			</p>
 			<p>
-				Hymmnos Words, informally known in the Third Era as "magical chants", are mainly used for everyday
+				Hymmnos Words, informally known in the Third Era as &quot;Song Magic&quot;, are mainly used for everyday
 				tasks and combat.
 				These are formed from the richness of a Reyvateil's heart, which makes them highly versatile.
 				As a Reyvateil allows more feelings and emotions to flow through her heart, the possible variations
@@ -68,14 +68,10 @@
 			</p>
 			<p>
 				<b>▼ Invoking Hymmnos Extract</b><br/>
-				<img src="/hymmnoserver/images/shereing.jpg" alt="description provided below"/><br/>
-				<span style="font-size: 0.8em;">
-					A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower;
-					and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something.
-				</span><br/><br/>
+				<img src="/hymmnoserver/images/usage.png" alt="A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower; and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something"/><br/>
 				Those familiar with Hymmnos theory may have realized that Hymmnos Extract does not directly
-				reflect any emotional desires within the Reyvateil using it. Though it employs conducted
-				H-waves,	these	waves carry only a clear, plain message that tells the Tower to act.
+				reflect any emotional desires within the Reyvateil using it. Though it employs H-waves,
+				these	waves carry only a clear, plain message that tells the Tower to act.
 			</p>
 			<b>▼ The effects of different Hymmnos</b><br/>
 			<table>
@@ -112,7 +108,7 @@
 				<tr>
 					<td class="data-cell-blue">EXEC_HYMME_LUMINOUS_DEF/.</td>
 					<td class="data-cell-blue">Word</td>
-					<td class="data-cell-blue">Forming a protective barrier of stationary D-waves</td>
+					<td class="data-cell-blue">Forming a protective barrier of static D-waves</td>
 					<td class="data-cell-blue">Local area</td>
 				</tr>
 				<tr>
@@ -182,7 +178,7 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ The relationship of power and conducted H-waves</div>
+			<div class="section-title text-title-small">⠕ The relationship of power and H-wave emission</div>
 			<p>
 				The H-waves associated with Hymmnos Words, in some cases, may be omitted without affecting the
 				results of a chant; because the sound of such Hymmnos may resonate with Sound Stones, the singing
@@ -210,8 +206,8 @@
 				Second-generation Reyvateils (β-Reyvateils) generally have no problems meeting the requirements
 				of these chants: being, fundamentally, clones of the Origin, their powers all satisfy identical
 				minimum standards, allowing for the neat separation of Hymmnos Extract into two categories:
-				Origin-exclusive and general-purpose for those of "pure β blood".
-				(Note: In the Second Era of Sol Ciel, β-Reyvateils were enhanced, providing some with powers
+				Origin-exclusive and general-purpose for the &quot;pure-blooded β-types&quot;.
+				(Note: In the Second Era of Sol Ciel, pure-blooded β-types were enhanced, providing some with powers
 				that rivaled, and possibly even surpassed, those of Origins)
 				The problem arises with the third generation, which offers no minimum guarantees regarding
 				abilities. Because of this, those of the third generation who would invoke Hymmnos Extract

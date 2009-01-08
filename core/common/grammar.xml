@@ -6,7 +6,7 @@
 	$VERBS = array(2, 9, 11);
 	$ADVERBS = array(3, 19, 20);
 	$NOUNS = array(4, 9, 10, 15, 19);
-	$ADJECTIVES = array(8, 10, 11, 20);
+	$ADJECTIVES = array(8, 10, 11, 17, 20);
 	$PREPOSITIONS = array(6);
 	
 	$valid = true;
@@ -445,7 +445,7 @@
 				$reason = "Emotion Sounds cannot be used with Emotion Verbs";
 				return array($words, array());
 			}
-			if($words[1][3] == 7){
+			if($words[1][3] == 7 || $words[1][3] == 17){
 				if($words[2][3] == 13){
 					$generation = 1;
 					$processed = array_slice($words, 0, 3);
@@ -507,10 +507,9 @@
 						list($remainder, $processed) = captureCompound($remainder);
 						$processed_total = array_merge($processed_total, $processed);
 					}
-				}else{#[VC] fallback.
+				}else{#[VC] found.
 					list($remainder, $processed) = captureCompound($rest);
 					$processed_total = array_merge($processed_total, $processed);
-					return array($remainder, $processed_total);
 				}
 			}
 		}
@@ -523,6 +522,8 @@
 		global $valid;
 		global $reason;
 		
+		$emotionless_subject = false;
+		
 		#Check for Emotion words.
 		list($remainder, $processed) = captureEmotionSound($words);
 		if($valid){
@@ -530,6 +531,12 @@
 				list($remainder, $processed) = captureEmotionVerb($remainder);
 				if($remainder == $words){#No Emotion Verb, so this must be gen 1.
 					$generation = 1;
+					list($remainder, $processed) = captureSubject($remainder, true);
+					if($remainder != $words){#The first object is this sentence's subject.
+						$emotionless_subject = true;
+					}else{#Hacks are fun. The subject-catcher will need to be more flexible in v2.
+						$valid = true;
+					}
 				}
 			}
 			
@@ -540,7 +547,7 @@
 				}
 				
 				if($valid){#Check for subject changes.
-					if($generation == 1){#optional.
+					if($generation == 1 && !$emotionless_subject){#optional.
 						list($rest, $processed) = captureSubject($remainder, false);
 						if($valid){
 							if($rest != $remainder){#A verb is required.
