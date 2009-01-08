@@ -225,10 +225,13 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Nominal sentence structure</div>
 				<p>
-					<b>[Emotion Sound]-[verb]-[object]-[compound]</b><br/>
+					<b>[Emotion Sound]-[verb]-[compound]</b> [VC]<br/>
+					<b>[Emotion Sound]-[verb]-[object]-[compound]</b> [VOC]<br/>
 					In our example sentence, &quot;Was yea ra chs hymmnos mea,&quot; the Emotion
 					Sound is &quot;Was yea ra,&quot; the verb is &quot;chs,&quot; the first object is
-					&quot;hymmnos,&quot; and the variable component is another object, &quot;mea&quot;.<br/>
+					&quot;hymmnos,&quot; and the variable component is another object, &quot;mea&quot;.
+				</p>
+				<p>
 					Compounds may be any structure satisfying [nil/O/VC/VOC/VOO], which means that sentences
 					may be infinitely long, provided they continue to make use of nested compounds.
 				</p>
@@ -236,8 +239,9 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">External-perspective sentence structure</div>
 				<p>
+					<b>[Emotion Sound]-[verb]-rre-[subject]-[verb]-[compound]</b><br/>
 					<b>[Emotion Sound]-[verb]-rre-[subject]-[verb]-[object]-[compound]</b><br/>
-					In this case, the sentence structure is [VSV'OC].<br/>
+					In this case, the sentence structure is [VSV'C/VSV'OC].<br/>
 					The first verb, [V], indicates the speaker's action, and the second verb, [V'], indicates
 					the subject's action.
 				</p>

@@ -561,9 +561,10 @@
 					}
 					
 					if($valid){#Evaluate the rest of the sentence.
-						list($rest, $processed, $is_oo) = captureNounPhrase($remainder, $generation == 1, false); #Gen 1 requires an object.
+						#An object is allowed before a compound.
+						list($rest, $processed, $is_oo) = captureNounPhrase($remainder, false, false);
 						if($valid && !$is_oo){#If OO is encountered, the sentence is done.
-							if($remainder == $rest && $generation == 2){#Gen 2 permits an object, so check for EV if not O.
+							if($remainder == $rest && $generation == 2){#Gen 2 allows EV to stand in for O.
 								list($rest, $processed) = captureEmotionVerbPhrase($rest, false, false);
 							}
 							if($valid){
