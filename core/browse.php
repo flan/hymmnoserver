@@ -10,7 +10,7 @@
 	</head>
 	<body>
 		<?php include 'common/header.xml'; ?>
-		<div style="font-size: 0.95em; text-align: center;">
+		<div style="font-size: 0.90em; text-align: center;">
 			<?php
 				$page = $_GET['page'];
 				if($page == NULL || trim($page) == ''){

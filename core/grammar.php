@@ -203,7 +203,7 @@
 				</tr>
 			</table>
 			<p>
-				<span class="text-title-small">&lt;Effects of Emotion Words&gt;</span><br/>
+				<span class="text-title-small">&lt;Effects of Emotion Sounds&gt;</span><br/>
 				Even when speaking the same sentence, the meaning conveyed by a speaker whose
 				emotional state is cool and collected may be different from the meaning
 				conveyed by one who indicates otherwise.
@@ -346,6 +346,10 @@
 					persistent Emotion Sound sequence.
 					When Hymmnos is spoken in this manner, it will not be processed by Towers,
 					making it little more than a spoken, though highly melodious, language.
+				</p>
+				<p>
+					Emotionless sentences may adopt a subject other than the speaker if they are
+					presented in [SVC/SVOC] format.
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
