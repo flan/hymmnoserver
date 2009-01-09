@@ -17,6 +17,7 @@
 		15 => 'pron.',
 		16 => 'intj.',
 		17 => 'E.S. (II), adj.',
+		18 => 'cnstr.',
 		19 => 'adv., n.',
 		20 => 'adj., adv.'
 	);
@@ -39,6 +40,7 @@
 		15 => 'pronoun',
 		16 => 'interjection',
 		17 => 'Emotion Sound (II), adjective',
+		18 => 'language construct',
 		19 => 'adverb, noun',
 		20 => 'adjective, adverb'
 	);
@@ -51,12 +53,13 @@
 		5 => array(8, 10, 11, 17, 20),
 		6 => array(3, 19, 20),
 		7 => array(5),
-		8 => array(16),
-		9 => array(4, 9, 10, 19),
-		10 => array(6),
-		11 => array(15),
-		12 => array(12),
-		13 => array(2, 9, 11)
+		8 => array(18),
+		9 => array(16),
+		10 => array(4, 9, 10, 19),
+		11 => array(6),
+		12 => array(15),
+		13 => array(12),
+		14 => array(2, 9, 11)
 	);
 	
 	$SCHOOL = array(

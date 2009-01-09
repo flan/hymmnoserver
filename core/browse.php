@@ -57,8 +57,8 @@
 				$i = 0;
 				foreach(array(
 				 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
-				 'adj.', 'adv.', 'conj.', 'intj.', 'n.', 'prep.',
-				 'pron.', 'prt.', 'v.'
+				 'adj.', 'adv.', 'conj.', 'cnstr.', 'intj.', 'n.',
+				 'prep.', 'pron.', 'prt.', 'v.'
 				) as $class){
 					$i++;
 					echo "<a href=\"/hymmnoserver/browse.php?page=$i\">";
@@ -71,7 +71,7 @@
 					
 					echo '</a>';
 					
-					if($i != 13){
+					if($i != 14){
 						echo " / ";
 					}
 				}
