@@ -232,7 +232,7 @@
 					&quot;hymmnos,&quot; and the variable component is another object, &quot;mea&quot;.
 				</p>
 				<p>
-					Compounds may be any structure satisfying [nil/O/VC/VOC/VOO], which means that sentences
+					Compounds may be any structure satisfying [nil/O/VC/VOC], which means that sentences
 					may be infinitely long, provided they continue to make use of nested compounds.
 				</p>
 			</div>

@@ -2,11 +2,11 @@
 	$EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN';
 	$EMOTION_VOWELS_REGEXP = '('.$EMOTION_VOWELS.')';
 	$EMOTION_VOWELS_REGEXP_FULL = '('.$EMOTION_VOWELS.'|\.)?';
-	$PARTICLES = array(12, 16, 18);
-	$VERBS = array(2, 9, 11);
+	$PARTICLES = array(12, 16, 18, 21);
+	$VERBS = array(2, 9, 11, 21);
 	$ADVERBS = array(3, 19, 20);
 	$NOUNS = array(4, 9, 10, 15, 19);
-	$ADJECTIVES = array(8, 10, 11, 17, 20);
+	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
 	$PREPOSITIONS = array(6);
 	
 	$valid = true;
@@ -145,7 +145,10 @@
 				return $result.$decorations[count($decorations) - 1];
 			}
 		}
-		if($class == 4){#noun
+		
+		global $NOUNS;
+		global $ADJECTIVES;
+		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
 			if($colour){
 				return "<span style=\"color: yellow;\">".$decorations[0]."</span>".$word;
 			}else{
