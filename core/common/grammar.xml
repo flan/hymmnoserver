@@ -641,7 +641,9 @@
 		Only the more basic rules of the Hymmnos grammar are validated by this system at this time.
 		Additionally, you may find that problems arise when you attempt to use complex conjunctions;
 		this is likely not because you made a mistake, but rather because this system does not
-		currently employ syntax trees to map language elements (it uses a linear analyzer because
-		its author needs to learn more about PHP before implementing something complicated).
+		currently employ syntax trees to map language elements (it uses a linear analyzer because such
+		an approach seemed sufficient to match (and exceed) the Japanese site).
+		<a href="http://weezy.freeforums.org/hymmnoserver-english-translation-grammar-evaluator-thingy-t729.html">Planning for an improved version</a>
+		is underway.
 	</p>
 </div>
