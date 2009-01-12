@@ -21,7 +21,7 @@
 			</ul>
 			<p>
 				Hymmnos Extract is a name for the chants that control Towers.
-				It is this branch of Hymmnos that has the power to directly control Ar_tonelico.
+				It is this branch of Hymmnos that has the power to directly control Ar tonelico.
 				However, this power generally requires authorization before a Reyvateil can make use of it;
 				this authorization is typically granted based on a Reyvateil's &quot;Hymn Code&quot;
 				(note: third-generation Reyvateils do not have Hymn Codes, though they are still connected
@@ -167,7 +167,7 @@
 					<td class="data-cell-blue">Hardware</td>
 				</tr>
 				<tr>
-					<td class="data-header-blue">Ar_tonelico (Tower)</td>
+					<td class="data-header-blue">Ar tonelico (Tower)</td>
 					<td class="data-cell-blue">Computer, game console</td>
 					<td class="data-cell-blue">Hardware</td>
 				</tr>

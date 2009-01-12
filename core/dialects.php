@@ -36,7 +36,7 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Central Pure Note</div>
 			<p>
-				&quot;Central&quot; refers to the first Tower, Ar_tonelico, referred to as the core of Song Magic
+				&quot;Central&quot; refers to the first Tower, Ar tonelico, referred to as the core of Song Magic
 				in the First Era.
 				Because of this, the chants optimized for controlling Towers are the domain of Central Pure Note.
 				However, this does not mean that control chants are limited to Central Pure Note; any dialect can
@@ -67,7 +67,7 @@
 				is on the other side of the planet -- Cluster Note evolved.
 				Relative to Central Pure Note, Cluster Note is like a dialect, but its effects
 				(<i>related to Tower control</i> -ed) are virtually identical.
-				At present, none in the lands of Ar_tonelico can make use of Cluster Note, but it is possible that,
+				At present, none in the lands of Ar tonelico can make use of Cluster Note, but it is possible that,
 				somewhere in the world, a settlement exists, based around this dialect.
 			</p>
 		</div>
@@ -114,7 +114,7 @@
 			<div class="section-title text-title-small">⠕ New Testament of Pastalie</div>
 			<p>
 				This is a new dialect that was created in the lands of Meta Falss around 3400, specifically intended for
-				use with Infel-Phira, an entirely different Song Magic Server from Ar_tonelico; only the I.P.D.s
+				use with Infel-Phira, an entirely different Song Magic Server from Ar tonelico; only the I.P.D.s
 				(Infel-Phira Dependencies), the Reyvateil connected to Infel-Phira, are able to use it.
 				Because of its unique characteristics, its compatibility with other dialects is virtually nil, in
 				terms of everything from its grammar through its lexicon.

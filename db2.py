@@ -6,10 +6,14 @@ db = _mysql.connect("localhost", "aurica", "misha", "hymmnoserver")
 while True:
 	print "First word: "
 	word1 = "'%s'" % raw_input().replace("'", "\\'")
+	print "First school:"
+	school1 = int(raw_input())
 	print "Second word: "
 	word2 = "'%s'" % raw_input().replace("'", "\\'")
+	print "Second school:"
+	school2 = int(raw_input())
 	
-	db.query("insert into hymmnos_mapping values (%s, %s)" % (word1, word2))
-	db.query("insert into hymmnos_mapping values (%s, %s)" % (word2, word1))
+	db.query("insert into hymmnos_mapping values (%s, %s, %i, %i)" % (word1, word2, school1, school2))
+	db.query("insert into hymmnos_mapping values (%s, %s, %i, %i)" % (word2, word1, school2, school1))
 	print
 	

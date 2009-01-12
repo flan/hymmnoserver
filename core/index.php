@@ -14,7 +14,7 @@
 				<td align="left" valign="top" style="width: 450px;">
 					<p>
 						<span class="text-title">Welcome to HYMMNOSERVER</span><br/>
-						The world of Ar_tonelico, "Sol Ciel", is home to a language of Song Magic, known as "Hymmnos Words".
+						The world of Ar tonelico, "Sol Ciel", is home to a language of Song Magic, known as "Hymmnos Words".
 					</p>
 					<p>
 						Here, you will be able to learn how this language works and you may look up words in English and Japanese.

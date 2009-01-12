@@ -14,7 +14,7 @@
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">GUST and Banpresto</div>
 				<ul class="basic-inline">
-					<li>Producing Ar_tonelico</li>
+					<li>Producing Ar tonelico</li>
 					<li>Attracting Akira Tsuchiya (Really. He's awesome!)</li>
 				</ul>
 				<br/>

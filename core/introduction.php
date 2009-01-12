@@ -15,7 +15,7 @@
 				<span style="color: red;">
 					The <a href="http://en.wikipedia.org/wiki/De_Broglie_hypothesis">de Broglie hypothesis</a>
 					and <a href="http://en.wikipedia.org/wiki/Wave-particle_duality">wave-particle duality</a>
-					hold that all matter has a wave-like nature. The world of Ar_tonelico takes some liberties
+					hold that all matter has a wave-like nature. The world of Ar tonelico takes some liberties
 					with advancing and departing from the physics behind these concepts, so just accept that
 					what is presented is a reasonable translation of Akira Tsuchiya's transcribed imaginings
 					and <b>not</b> material that should go on your next term paper.
@@ -29,7 +29,7 @@
 				Considering the dissimilarities between the science behind Hymmnos and that of the real
 				world, only the gist of the concepts described here is required to understand the
 				nature of the language.<br/>
-				These terms all appear in the Ar_tonelico games, so you may find it easier to understand
+				These terms all appear in the Ar tonelico games, so you may find it easier to understand
 				their nature after you have played them.
 			</p>
 			<div style="padding-left: 10px;">
