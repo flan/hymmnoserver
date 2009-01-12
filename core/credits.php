@@ -64,6 +64,7 @@
 					<li>Grammar explanation reference</li>
 					<li>Practical examples and translations</li>
 					<li>Lexicon accuracy reference</li>
+					<li>Unofficial lexicon entries</li>
 				</ul>
 				<br/>
 				<ul class="basic-inline">

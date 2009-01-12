@@ -5,7 +5,7 @@
 <?php include 'common/constants.xml'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Main</title>
+		<title>HYMMNOSERVER - Search results</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>

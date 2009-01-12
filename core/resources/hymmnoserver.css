@@ -198,9 +198,6 @@ td.word-header-19{
 td.word-header-20{
 	background: #444444;
 }
-td.word-header-21{
-	background: #444444;
-}
 
 td.word-info{
 	background: #ffbbcc;
@@ -246,6 +243,30 @@ td.result-school-6{
 }
 td.result-school-7{
 	background: #ffccff;
+}
+td.result-school-50{
+	background: #aaaaaa;
+}
+td.result-school-51{
+	background: #ddaaaa;
+}
+td.result-school-52{
+	background: #aaccaa;
+}
+td.result-school-53{
+	background: #aaaadd;
+}
+td.result-school-54{
+	background: #ddaadd;
+}
+td.result-school-55{
+	background: #aaccdd;
+}
+td.result-school-56{
+	background: #ddccaa;
+}
+td.result-school-57{
+	background: #ddaadd;
 }
 
 ul.basic-inline{

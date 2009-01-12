@@ -4,7 +4,7 @@
 		global $SCHOOL;
 		global $SYNTAX_CLASS_FULL;
 		
-		$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE $qualifier LIKE ?");
+		$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE $qualifier LIKE ? ORDER BY school ASC");
 		$stmt->bind_param("s", $quality);
 		$stmt->execute();
 		$stmt->store_result();
@@ -21,15 +21,15 @@
 				$stmt->bind_result($word, $meaning_english, $meaning_japanese, $kana, $school, $romaji, $description, $class);
 				
 				while($stmt->fetch()){
-					$stmt2 = $mysql->prepare("SELECT destination FROM hymmnos_mapping WHERE source = ? ORDER BY destination ASC");
-					$stmt2->bind_param("s", $word);
+					$stmt2 = $mysql->prepare("SELECT destination, destination_school FROM hymmnos_mapping WHERE source = ? AND source_school = ? ORDER BY destination ASC");
+					$stmt2->bind_param("si", $word, $school);
 					$stmt2->execute();
 					$stmt2->store_result();
 					
 					$links = array();
-					$stmt2->bind_result($link);
+					$stmt2->bind_result($link, $l_school);
 					while($stmt2->fetch()){
-						array_push($links, $link);
+						array_push($links, array($link, $l_school));
 					}
 					
 					$stmt2->free_result();

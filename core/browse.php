@@ -131,7 +131,7 @@
 					while($stmt->fetch()){
 						echo '<tr>';
 							echo "<td class=\"result-cell result-school-$school\">";
-								echo "<a href=\"javascript:popUp('/hymmnoserver/word.php?word=$word')\">$word</a>";
+								echo "<a href=\"javascript:popUpWord('$word', $school)\">$word</a>";
 							echo '</td>';
 							echo "<td class=\"result-cell result-school-$school\">$meaning_english</td>";
 							echo "<td class=\"result-cell result-school-$school\">";

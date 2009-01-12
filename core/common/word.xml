@@ -46,8 +46,8 @@
 				$links_size = count($links);
 				if($links_size > 0){
 					for($i = 0; $i < $links_size; $i++){
-						$link = $links[$i];
-						echo "<a href=\"/hymmnoserver/word.php?word=$link\">$link</a>"; 
+						list($link, $l_school) = $links[$i];
+						echo "<a href=\"/hymmnoserver/word.php?word=$link&dialect=$l_school\">$link</a>"; 
 						
 						if($i + 1 < $links_size){
 							echo ", ";

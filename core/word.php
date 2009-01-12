@@ -15,7 +15,13 @@
 				echo 'No word specified.';
 				exit();
 			}
-			$word = trim($word);
+			$dialect = $_GET['dialect'];
+			if($dialect == NULL || trim($dialect) == '' || is_numeric(trim($dialect))){
+				echo 'No dialect specified.';
+				exit();
+			}
+			$word = intval(trim($word));
+			$dialect = trim($dialect);
 			
 			include '/home/flan/public_html/hymmnoserver.gobbledygook';
 			if ($mysqli->connect_error) {
@@ -23,8 +29,8 @@
 				exit();
 			}
 			
-			$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE word = ? LIMIT 1");
-			$stmt->bind_param("s", $word);
+			$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE word = ? AND school = ? LIMIT 1");
+			$stmt->bind_param("si", $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
 			
@@ -38,15 +44,15 @@
 			$stmt->free_result();
 			$stmt->close();
 			
-			$stmt = $mysql->prepare("SELECT destination FROM hymmnos_mapping WHERE source = ? ORDER BY destination ASC");
-			$stmt->bind_param("s", $word);
+			$stmt = $mysql->prepare("SELECT destination, destination_school FROM hymmnos_mapping WHERE source = ? AND source_school = ? ORDER BY destination ASC");
+			$stmt->bind_param("si", $word, $l_school);
 			$stmt->execute();
 			$stmt->store_result();
 			
 			$links = array();
 			$stmt->bind_result($link);
 			while($stmt->fetch()){
-				array_push($links, $link);
+				array_push($links, array($link, $l_school));
 			}
 			
 			$stmt->free_result();
