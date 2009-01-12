@@ -30,6 +30,7 @@
 			}
 			
 			$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE word = ? AND school = ? LIMIT 1");
+			echo $word.$dialect;
 			$stmt->bind_param("si", $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
