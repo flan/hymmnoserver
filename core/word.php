@@ -45,12 +45,12 @@
 			$stmt->close();
 			
 			$stmt = $mysql->prepare("SELECT destination, destination_school FROM hymmnos_mapping WHERE source = ? AND source_school = ? ORDER BY destination ASC");
-			$stmt->bind_param("si", $word, $l_school);
+			$stmt->bind_param("si", $word, $school);
 			$stmt->execute();
 			$stmt->store_result();
 			
 			$links = array();
-			$stmt->bind_result($link);
+			$stmt->bind_result($link, $l_school);
 			while($stmt->fetch()){
 				array_push($links, array($link, $l_school));
 			}
