@@ -16,7 +16,7 @@
 				exit();
 			}
 			$dialect = $_GET['dialect'];
-			if($dialect == NULL || trim($dialect) == '' || is_numeric(trim($dialect))){
+			if($dialect == NULL || trim($dialect) == '' || !is_numeric(trim($dialect))){
 				echo 'No dialect specified.';
 				exit();
 			}
