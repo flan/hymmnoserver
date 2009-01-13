@@ -111,67 +111,67 @@
 			<table>
 				<tr>
 					<td class="kana text-basic-bold">i</td>
-					<td class="latin">impatience</td>
+					<td class="latin">impatient</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">yea</td>
-					<td class="latin">happiness</td>
+					<td class="latin">happy</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">waa</td>
-					<td class="latin">happiness</td>
+					<td class="latin">happy</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">paks</td>
-					<td class="latin">excitement, nervousness</td>
+					<td class="latin">excited, nervous</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">num</td>
-					<td class="latin">nothing</td>
+					<td class="latin">nil</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">ki</td>
-					<td class="latin">focus, concentration</td>
+					<td class="latin">focused, concentrating</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">wol</td>
-					<td class="latin">fervour</td>
+					<td class="latin">fervourous</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">apea</td>
-					<td class="latin">blessing</td>
+					<td class="latin">blessed, bathed in happiness</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">au</td>
-					<td class="latin">sadness</td>
+					<td class="latin">sad</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">granme</td>
-					<td class="latin">wanting to protect, bravery</td>
+					<td class="latin">wanting to protect, brave</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">touwaka</td>
-					<td class="latin">hope</td>
+					<td class="latin">hopeful</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">quel</td>
-					<td class="latin">eagerness, desperation</td>
+					<td class="latin">eager, desperate</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">yant</td>
-					<td class="latin">fear</td>
+					<td class="latin">fearful</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">guwo</td>
-					<td class="latin">anger, resentment</td>
+					<td class="latin">angry, resentful</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">jyel</td>
-					<td class="latin">loneliness</td>
+					<td class="latin">lonely</td>
 				</tr>
 				<tr>
 					<td class="kana text-basic-bold">zweie</td>
-					<td class="latin">determination, sincerity</td>
+					<td class="latin">determined, sincere</td>
 				</tr>
 			</table><br/>
 			<b>▼ Third word</b><br/>
