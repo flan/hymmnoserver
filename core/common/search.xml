@@ -1,10 +1,10 @@
 <?php
-	$search_mode = true;
-	
 	function renderMatches($qualifier, $quality, $type){
 		global $mysql;
 		global $DIALECT;
 		global $SYNTAX_CLASS_FULL;
+		
+		$search_mode = true; #Used to make related words open in new windows.
 		
 		$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE $qualifier LIKE ? ORDER BY school ASC");
 		$stmt->bind_param("s", $quality);
