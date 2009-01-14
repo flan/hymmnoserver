@@ -637,7 +637,6 @@
 		return array($remainder, $processed_total);
 	}
 ?>
-<hr/>
 <table style="border-collapse: collapse; border: 1px solid black; width: 640px;">
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="2">
