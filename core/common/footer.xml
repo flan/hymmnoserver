@@ -8,6 +8,7 @@
 					}else{
 						echo '<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>';
 					}
+				?>
 			</td>
 		</tr>
 	</table>
