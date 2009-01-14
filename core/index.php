@@ -34,7 +34,9 @@
 						If you agree to the terms of this license (really, it just says
 						&quot;don't sell or limit this work, and please provide due credit&quot;),
 						you may grab all of its materials using Subversion:
-						&quot;svn co http://hamsterx.homelinux.org/svn/hymmnoserver/ hymmnoserver/&quot;.
+						&quot;svn co
+						<a href="http://hamsterx.homelinux.org/svn/hymmnoserver/>http://hamsterx.homelinux.org/svn/hymmnoserver/</a>
+						hymmnoserver/&quot;.
 						You may also browse the repository using a web browser or any DAV-capable
 						client.
 					</p>
