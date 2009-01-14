@@ -1,4 +1,6 @@
 <?php
+	$search_mode = true;
+	
 	function renderMatches($qualifier, $quality, $type){
 		global $mysql;
 		global $DIALECT;
