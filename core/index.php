@@ -213,7 +213,7 @@
 				Unfortunately, the origin server is on a data-transfer-monitored connection, and this connection
 				is prone to random periods of downtime that last between five minutes and an hour.
 				If you have PHP 5 and MySQL 5 and you want to help, please contact this site's maintainer to find
-				out more.
+				out more.<br/>
 				If you are a normal visitor and you want to help, consider using a non-origin mirror; these may
 				be found on the right side of this page.
 			</p>
