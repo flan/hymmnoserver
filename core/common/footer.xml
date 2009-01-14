@@ -1,17 +1,13 @@
 <div class="footer-copyright">
-	<table class="footer-link">
-		<tr>
-			<td style="width: 100%;">
-				<?php
-					if($footer_word){
-						echo '<a href="javascript:window.close();" class="footer-link">[Close window]</a>';
-					}else{
-						echo '<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>';
-					}
-				?>
-			</td>
-		</tr>
-	</table>
+	<div id="footer-bar">
+		<?php
+			if($footer_word){
+				echo '<a href="javascript:window.close();" class="footer-link">[Close window]</a>';
+			}else{
+				echo '<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>';
+			}
+		?>
+	</div>
 	<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver2.0/Rev.20080312)<br/>
 	English version provided by <a href="/hymmnoserver/credits.php" class="footer-copyright">Neil Tallim and others</a>. (This is a freely provided, fan-translated service)
 </div>

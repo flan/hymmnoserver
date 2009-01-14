@@ -46,6 +46,15 @@ td.fontcell:hover{
 	background: #334477;
 }
 
+div#footer-bar{
+	background: #001144;
+	color: #FFFFFF;
+	font-size: 9pt;
+	font-weight: bold;
+	border-width: 0px;
+	width: 100%;
+}
+
 a.footer-copyright:link{
 	color: #002244;
 }
@@ -71,13 +80,6 @@ a.footer-link:visited{
 }
 a.footer-link:hover{
 	color: #FFFFFF;
-}
-table.footer-link{
-	background: #001144;
-	color: #FFFFFF;
-	font-size: 9pt;
-	font-weight: bold;
-	border-width: 0px;
 }
 
 table#header{
