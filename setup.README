@@ -37,3 +37,14 @@ Just modify whatever content you feel needs to be changed, or update the
 database and overwrite the existing one using mysqldump, then run 'svn 
 diff' in the root directory of the working copy to produce a patch that 
 may be submitted to a maintainer.
+
+-Note-
+You will find two Python scripts in database/: db.py and db2.py.
+These are data-entry hack-scripts that are provided without warranty.
+They are what were used to populate the database initially, but they are
+crude and imperfect.
+
+db.py is used to add new words to the database; it makes use of romaji.py, an
+unauthorized script used to have romai.org convert kana.
+db2.py is used to link two related words in the database.
+
