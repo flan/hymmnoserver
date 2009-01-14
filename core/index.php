@@ -29,29 +29,6 @@
 					</p>
 					<hr/>
 					<p>
-						This site is an open source, community-friendly effort, released under
-						<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
-						If you agree to the terms of this license (really, it just says
-						&quot;don't sell or limit this work, and please provide due credit&quot;),
-						you may grab all of its materials using Subversion:
-						&quot;svn co
-						<a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a>
-						hymmnoserver/&quot;.
-						You may also browse the repository using a web browser or any DAV-capable
-						client.
-					</p>
-					<hr/>
-					<p>
-						<b>Mirrors wanted!</b><br/>
-						Unfortunately, the origin server is on a data-transfer-monitored connection, and this connection
-						is prone to random periods of downtime that last between five minutes and an hour.
-						If you have PHP 5 and MySQL 5 and you want to help, please contact this site's maintainer to find
-						out more.
-						If you are a normal visitor and you want to help, consider using a non-origin mirror; these may
-						be found on the right side of this page.
-					</p>
-					<hr/>
-					<p>
 						<span class="text-title">⠕ The grammar of Hymmnos Words</span><br/>
 						Hymmnos Words are organized into a simple grammar. Before perusing the dictionary, you should consider
 						learning about its syntax to deepen your understanding. To the right, you will find links to articles
@@ -216,6 +193,30 @@
 				</td>
 			</tr>
 		</table>
+		<div>
+			<p>
+				This site is an open source, community-friendly effort, released under
+				<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
+				If you agree to the terms of this license (really, it just says
+				&quot;don't sell or limit this work, and please provide due credit&quot;),
+				you may grab all of its materials using Subversion:
+				&quot;svn co
+				<a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a>
+				hymmnoserver/&quot;.
+				You may also browse the repository using a web browser or any DAV-capable
+				client.
+			</p>
+			<hr/>
+			<p>
+				<b>Mirrors wanted!</b><br/>
+				Unfortunately, the origin server is on a data-transfer-monitored connection, and this connection
+				is prone to random periods of downtime that last between five minutes and an hour.
+				If you have PHP 5 and MySQL 5 and you want to help, please contact this site's maintainer to find
+				out more.
+				If you are a normal visitor and you want to help, consider using a non-origin mirror; these may
+				be found on the right side of this page.
+			</p>
+		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>
