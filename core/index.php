@@ -194,6 +194,7 @@
 					</td>
 				</tr>
 			</table>
+			<hr/>
 			<p>
 				This site is an open source, community-friendly effort, released under
 				<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
