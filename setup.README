@@ -1,0 +1,39 @@
+If you are interested in running this site on your server, you will need 
+the following:
+- A webserver that supports PHP and mod_python
+- PHP 5 (or higher)
+- MySQL 5 (or higher)
+
+Setup should only take a few minutes after these requirements have been 
+met:
+- Create a new MySQL database; its name and the user that accesses it is 
+  up to you
+- Load the contents of 'database/hymmnoserver.mysql' into the newly 
+  created database
+- Edit 'database/php_db.xml', placing information relevant to the 
+  database you just created where appropriate; save the file somewhere 
+  your webserver can access, but outside of your docroot (for security)
+- Copy the contents of 'core/' to another location (to avoid providing 
+  patches that include information about your filesystem)
+- Update the local copy of 'core/':
+  - Point browse.php:84 at your database access file
+  - Point search.php:22 at your database access file
+  - Point word.php:26 at your database access file
+- Create a '/hymmnoserver' virtual path in your webserver and point it 
+  at the copy of what was previously 'core/'
+- Ensure that this virtual path is configured to handle PHP evaluation
+
+After that, you should have a fully functional HYMMNOSERVER ready to go.
+
+---
+
+If you want to provide patches or, if you have permission, commit 
+updates, *PLEASE* use a dedicated working copy of this repository. This 
+is the reason why you were asked to copy things in the preceding 
+section. (If you are not hosting this site, then the copying stuff is 
+not relevant to you)
+
+Just modify whatever content you feel needs to be changed, or update the 
+database and overwrite the existing one using mysqldump, then run 'svn 
+diff' in the root directory of the working copy to produce a patch that 
+may be submitted to a maintainer.

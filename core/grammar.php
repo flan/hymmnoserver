@@ -321,8 +321,8 @@
 				such as a stanza in a hymn.
 			</p>
 <!-- Be very, very careful when editing this block. Do not adjust the alignment
-     of these lines; they are offset by fake spaces, and writing inline CSS to
-     duplicate the effect would be very tedious -->
+of these lines; they are offset by fake spaces, and writing inline CSS to
+duplicate the effect would be very tedious -->
 			<p>
 　<b>Ma num ra 0x vvi.</b> [Emotion sound (&quot;Ma num ra&quot;) BEGIN]<br/>
 　　　<b>・</b> [any number of sentences in Hymmnos]<br/>

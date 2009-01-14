@@ -19,7 +19,6 @@
 		18 => 'cnstr.',
 		19 => 'adv., n.',
 		20 => 'adj., adv.',
-		21 => 'prt., v.'
 	);
 	
 	$SYNTAX_CLASS_FULL = array(
@@ -45,23 +44,23 @@
 	);
 	
 	$SYNTAX_CLASS_REV = array(
-		1 => array(14),
-		2 => array(7),
-		3 => array(13),
-		4 => array(1),
-		5 => array(8, 10, 11, 20),
-		6 => array(3, 19, 20),
-		7 => array(5),
-		8 => array(18),
-		9 => array(16),
-		10 => array(4, 9, 10, 19),
-		11 => array(6),
-		12 => array(15),
-		13 => array(12, 21),
-		14 => array(2, 9, 11, 21)
+		1 => array(14),#ES(I)
+		2 => array(7),#ES(II)
+		3 => array(13),#ES(III)
+		4 => array(1),#EV
+		5 => array(8, 10, 11, 20),#adj
+		6 => array(3, 19, 20),#adv
+		7 => array(5),#conj
+		8 => array(18),#cnstr
+		9 => array(16),#intj
+		10 => array(4, 9, 10, 19),#n
+		11 => array(6),#prep
+		12 => array(15),#pron
+		13 => array(12),#prt
+		14 => array(2, 9, 11)#v
 	);
 	
-	$SCHOOL = array(
+	$DIALECT = array(
 		0 => 'Unknown',
 		1 => 'Central Pure Note',
 		2 => 'Cult Ciel Note',

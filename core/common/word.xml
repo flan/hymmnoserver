@@ -17,17 +17,17 @@
 	?>
 </table>
 <table style="width: 100%; border-width: 0px;">
-	<tr class="word-text-school-usage">
+	<tr class="word-text-dialect-usage">
 		<td class="word-info-title">
 			Dialect
 		</td>
 		<td class="word-info">
 			<span style="font-weight: bold;">
-				<?php echo $SCHOOL[$school]; ?>
+				<?php echo $DIALECT[$dialect]; ?>
 			</span>
 		</td>
 	</tr>
-	<tr class="word-text-school-usage">
+	<tr class="word-text-dialect-usage">
 		<td class="word-info-title">
 			Usage
 		</td>
@@ -44,10 +44,10 @@
 		<td class="word-info">
 			<?php
 				$links_size = count($links);
-				if($links_size > 0){
+				if($links_size > 0){#Render all related hymmnos, delimited by commas.
 					for($i = 0; $i < $links_size; $i++){
-						list($link, $l_school) = $links[$i];
-						echo "<a href=\"/hymmnoserver/word.php?word=$link&dialect=$l_school\">$link</a>"; 
+						list($link, $l_dialect) = $links[$i];
+						echo "<a href=\"/hymmnoserver/word.php?word=$link&dialect=$l_dialect\">$link</a>"; 
 						
 						if($i + 1 < $links_size){
 							echo ", ";
@@ -64,7 +64,7 @@
 			Notes
 		</td>
 		<td class="word-info">
-			<?php echo $description; ?>
+			<?php echo $notes; ?>
 		</td>
 	</tr>
 </table>

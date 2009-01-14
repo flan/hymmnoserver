@@ -1,8 +1,13 @@
 <div class="footer-copyright">
 	<table class="footer-link">
 		<tr>
-			<td style="width: 640px;">
-				<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>
+			<td style="width: 100%;">
+				<?php
+					if($footer_word){
+						echo '<a href="javascript:window.close();" class="footer-link">[Close window]</a>';
+					}else{
+						echo '<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>';
+					}
 			</td>
 		</tr>
 	</table>
@@ -14,4 +19,5 @@
 	<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://hamsterx.homelinux.org/hymmnoserver/resources/hymmnoserver.css"><img src="/hymmnoserver/images/css-bar.png" alt="Valid CSS" style="border-width: 0;"/></a>
 	<a href="http://bluefish.openoffice.nl"><img src="/hymmnoserver/images/bluefish-bar.png" alt="Made with Bluefish" style="border-width: 0;"/></a>
 	<a href="http://www.php.net"><img src="/hymmnoserver/images/php-power-micro2.png" alt="Powered by PHP" style="border-width: 0;"/></a>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/"><img alt="Creative Commons License" style="border-width: 0;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ca/80x15.png"/></a>
 </div>

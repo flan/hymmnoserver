@@ -20,6 +20,7 @@
 				<br/>
 				<ul class="basic-inline">
 					<li><a href="http://game.salburg.com/">GUST's game homepage</a></li>
+					<li><a href="http://game.salburg.com/hymmnoserver/">Japanese HYMMNOSERVER</a></li>
 				</ul>
 			</div>
 			<br/>
@@ -44,6 +45,7 @@
 				<ul class="basic-inline">
 					<li>Additional reference material</li>
 					<li>Home of the main contributers to the Conlang article</li>
+					<li>Home of the main contributers to the Platina article</li>
 				</ul>
 				<br/>
 				<ul class="basic-inline">
@@ -68,7 +70,7 @@
 				</ul>
 				<br/>
 				<ul class="basic-inline">
-					<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Conlang's Hymmnos article on Wikia</a></li>
+					<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Hymmnos Conlang article on Wikia</a></li>
 				</ul>
 			</div>
 			<div style="padding-left: 10px;">

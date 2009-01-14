@@ -29,9 +29,14 @@
 					</p>
 					<hr/>
 					<p style="color: red;">
-						Like all non-contract Puukusoft initiatives, HYMMNOSERVER is an open source project.
-						Details on how you can get involved will be provided once the code has reached a release-worthy
-						state of maturity.
+						This site is an open source, community-friendly effort, released under
+						<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
+						If you agree to the terms of this license (really, it just says
+						&quot;don't sell or limit this work, and please provide due credit&quot;),
+						you may grab all of its materials using Subversion:
+						&quot;svn co http://hamsterx.homelinux.org/svn/hymmnoserver/&quot;.
+						You may also browse the repository using a web browser or any DAV-capable
+						client.
 					</p>
 					<hr/>
 					<p style="color: red;">

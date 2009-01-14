@@ -19,13 +19,13 @@
 				}
 				$words = split("[\t ,]+", trim($query));
 				
-				include '/home/flan/public_html/hymmnoserver.gobbledygook';
+				require '/your_database_file_here.xml';
 				if ($mysqli->connect_error) {
-					printf("Connect failed: %s\n", mysqli_connect_error());
+					printf("Connection failed: %s.", mysqli_connect_error());
 					exit();
 				}
 				
-				if(count($words) > 1){
+				if(count($words) > 1){#If more than one token is provided, parse instead of search.
 					include 'common/grammar.xml';
 				}else{
 					include 'common/search.xml';

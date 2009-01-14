@@ -12,6 +12,7 @@
 		<?php include 'common/header.xml'; ?>
 		<div style="font-size: 0.90em; text-align: center;">
 			<?php
+				#Determine the nature of the requested display; default if unintelligible.
 				$page = $_GET['page'];
 				if($page == NULL || trim($page) == ''){
 					$page = 'a';
@@ -34,26 +35,25 @@
 					}
 				}
 				
+				#Render the alphabetical bar.
 				$characters = range('a', 'z');
 				array_push($characters, '0');
 				foreach($characters as $character){
 					echo "<a href=\"/hymmnoserver/browse.php?page=$character\">";
-					
 					if($character == $page){
 						echo "<span style=\"font-weight: bold; font-size: 1em;\">$character</span>";
 					}else{
 						echo $character;
 					}
-					
 					echo '</a>';
 					
 					if($character != '0'){
 						echo " / ";
 					}
 				}
-				
 				echo '<br/>';
 				
+				#Render the syntax class bar.
 				$i = 0;
 				foreach(array(
 				 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
@@ -62,13 +62,11 @@
 				) as $class){
 					$i++;
 					echo "<a href=\"/hymmnoserver/browse.php?page=$i\">";
-					
 					if($i == $page){
 						echo "<span style=\"font-weight: bold; font-size: 1em;\">$class</span>";
 					}else{
 						echo $class;
 					}
-					
 					echo '</a>';
 					
 					if($i != 14){
@@ -81,14 +79,14 @@
 		<div>
 			<span style="color: red; font-size: 0.8em;">
 				<?php
-					include '/home/flan/public_html/hymmnoserver.gobbledygook';
+					require '/your_database_file_here.xml';
 					if ($mysqli->connect_error) {
-						printf("Connect failed: %s\n", mysqli_connect_error());
+						printf("Connection failed: %s.", mysqli_connect_error());
 						exit();
 					}
 					
-					if($page != '0'){
-						if(is_numeric($page)){
+					if($page != '0'){#0 means all non-alpha-started entries.
+						if(is_numeric($page)){#Looking up records by syntax class.
 							$keys = $SYNTAX_CLASS_REV[$page];
 							$keys_count = count($keys);
 							$search_key = $keys[0];
@@ -96,12 +94,12 @@
 								$search_key = $search_key.','.$keys[$i];
 							}
 							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
-						}else{
+						}else{#Looking up records by starting letter.
 							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
 							$page = $page.'%';
 							$stmt->bind_param("s", $page);
 						}
-					}else{
+					}else{#Get all non-alpha-started entries.
 						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
 					}
 					$stmt->execute();
@@ -125,26 +123,26 @@
 				<th class="result-header" style="width: 220px;">Dialect</th>
 			</tr>
 			<?php
-				if($stmt->num_rows > 0){
-					$stmt->bind_result($word, $meaning_english, $kana, $school, $class);
+				if($stmt->num_rows > 0){#Render results only if there are results.
+					$stmt->bind_result($word, $meaning_english, $kana, $dialect, $class);
 					
-					while($stmt->fetch()){
+					while($stmt->fetch()){#Render each result in its own row.
 						echo '<tr>';
-							echo "<td class=\"result-cell result-school-$school\">";
-								echo "<a href=\"javascript:popUpWord('$word', $school)\">$word</a>";
+							echo "<td class=\"result-cell result-school-$dialect\">";
+								echo "<a href=\"javascript:popUpWord('$word', $dialect)\">$word</a>";
 							echo '</td>';
-							echo "<td class=\"result-cell result-school-$school\">$meaning_english</td>";
-							echo "<td class=\"result-cell result-school-$school\">";
+							echo "<td class=\"result-cell result-school-$dialect\">$meaning_english</td>";
+							echo "<td class=\"result-cell result-school-$dialect\">";
 								echo $SYNTAX_CLASS[$class];
 							echo '</td>';
-							echo "<td class=\"result-cell result-school-$school\">$kana</td>";
-							echo "<td class=\"result-cell result-school-$school\">";
-								echo $SCHOOL[$school];
+							echo "<td class=\"result-cell result-school-$dialect\">$kana</td>";
+							echo "<td class=\"result-cell result-school-$dialect\">";
+								echo $DIALECT[$dialect];
 							echo '</td>';
 						echo '</tr>';
 					}
 				}else{
-					echo "<tr><td colspan=\"5\" style=\"color: red; font-weight: bold; text-align: center;\">No matches found</td></tr>";
+					echo "<tr><td colspan=\"5\" style=\"color: red; font-weight: bold; text-align: center;\">No records found</td></tr>";
 				}
 				$stmt->free_result();
 				$stmt->close();
