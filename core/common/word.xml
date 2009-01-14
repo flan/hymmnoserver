@@ -47,7 +47,7 @@
 				if($links_size > 0){#Render all related hymmnos, delimited by commas.
 					for($i = 0; $i < $links_size; $i++){
 						list($link, $l_dialect) = $links[$i];
-						echo "<a href=\"/hymmnoserver/word.php?word=$link&dialect=$l_dialect\">$link</a>"; 
+						echo "<a href=\"javascript:popUpWord('$link', $l_dialect)\">$link</a>"; 
 						
 						if($i + 1 < $links_size){
 							echo ", ";
