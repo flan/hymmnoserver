@@ -128,15 +128,15 @@
 					
 					while($stmt->fetch()){#Render each result in its own row.
 						echo '<tr>';
-							echo "<td class=\"result-cell result-school-$dialect\">";
+							echo "<td class=\"result-cell result-dialect-$dialect\">";
 								echo "<a href=\"javascript:popUpWord('$word', $dialect)\">$word</a>";
 							echo '</td>';
-							echo "<td class=\"result-cell result-school-$dialect\">$meaning_english</td>";
-							echo "<td class=\"result-cell result-school-$dialect\">";
+							echo "<td class=\"result-cell result-dialect-$dialect\">$meaning_english</td>";
+							echo "<td class=\"result-cell result-dialect-$dialect\">";
 								echo $SYNTAX_CLASS[$class];
 							echo '</td>';
-							echo "<td class=\"result-cell result-school-$dialect\">$kana</td>";
-							echo "<td class=\"result-cell result-school-$dialect\">";
+							echo "<td class=\"result-cell result-dialect-$dialect\">$kana</td>";
+							echo "<td class=\"result-cell result-dialect-$dialect\">";
 								echo $DIALECT[$dialect];
 							echo '</td>';
 						echo '</tr>';
