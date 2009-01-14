@@ -28,7 +28,7 @@
 						<a href="/hymmnoserver/credits.php">credits page</a> for details.
 					</p>
 					<hr/>
-					<p style="color: red;">
+					<p>
 						This site is an open source, community-friendly effort, released under
 						<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
 						If you agree to the terms of this license (really, it just says
@@ -41,7 +41,7 @@
 						client.
 					</p>
 					<hr/>
-					<p style="color: red;">
+					<p>
 						<b>Mirrors wanted!</b><br/>
 						Unfortunately, the origin server is on a data-transfer-monitored connection, and this connection
 						is prone to random periods of downtime that last between five minutes and an hour.
