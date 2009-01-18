@@ -1,10 +1,11 @@
 <table style="width: 100%; border-width: 0px;">
 	<?php
+		$html_word = htmlspecialchars($word);
 		echo "<tr>";
 			echo "<td class=\"word-header word-header-$class\">";
-				echo "<span class=\"word-text-title\">$word</span>";
+				echo "<span class=\"word-text-title\">$html_word</span>";
 				echo "<br/>";
-				echo "<span class=\"word-text-subtitle\">$word</span>";
+				echo "<span class=\"word-text-subtitle\">$html_word</span>";
 			echo "</td>";
 		echo "</tr>";
 		echo "<tr>";
@@ -47,10 +48,11 @@
 				if($links_size > 0){#Render all related hymmnos, delimited by commas.
 					for($i = 0; $i < $links_size; $i++){
 						list($link, $l_dialect) = $links[$i];
+						$html_link = htmlspecialchars($link);
 						if($search_mode){
-							echo "<a href=\"javascript:popUpWord('$link', $l_dialect)\">$link</a>";
+							echo "<a href=\"javascript:popUpWord('$html_link', $l_dialect)\">$html_link</a>";
 						}else{
-							echo "<a href=\"/hymmnoserver/word.php?word=$link&dialect=$l_dialect\">$link</a>";
+							echo "<a href=\"/hymmnoserver/word.php?word=$html_link&dialect=$l_dialect\">$html_link</a>";
 						} 
 						
 						if($i + 1 < $links_size){

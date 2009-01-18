@@ -127,9 +127,10 @@
 					$stmt->bind_result($word, $meaning_english, $kana, $dialect, $class);
 					
 					while($stmt->fetch()){#Render each result in its own row.
+						$html_word = htmlspecialchars($word);
 						echo '<tr>';
 							echo "<td class=\"result-cell result-dialect-$dialect\">";
-								echo "<a href=\"javascript:popUpWord('$word', $dialect)\">$word</a>";
+								echo "<a href=\"javascript:popUpWord('$html_word', $dialect)\">$html_word</a>";
 							echo '</td>';
 							echo "<td class=\"result-cell result-dialect-$dialect\">$meaning_english</td>";
 							echo "<td class=\"result-cell result-dialect-$dialect\">";

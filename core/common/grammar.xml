@@ -175,13 +175,13 @@
 		global $SYNTAX_CLASS;
 		
 		list($l_word, $english, $kana, $class, $dialect, $decorations) = $word;
-		$base_word = $l_word;
+		$base_word = htmlspecialchars($l_word);
 		if($class == 0){
 			$english = '???';
 			$kana = '???';
 		}else{
 			if($decorations != NULL){
-				$l_word = decorateWord($l_word, $class, $decorations, true);
+				$l_word = htmlspecialchars(decorateWord($l_word, $class, $decorations, true));
 			}
 			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".$l_word."</a>";
 		}
