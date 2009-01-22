@@ -104,7 +104,7 @@
 								Click the &quot;Advanced grammar resources&quot; link below the search bar and
 								you will be presented with an interface that supports the following:
 							</p>
-							<ul class="basic-inline" style="margin-top: -10px;">
+							<ul style="margin-top: -10px;">
 								<li>Syntactic validation and structural processing</li>
 								<li>Binasphere conversion</li>
 							</ul>
