@@ -24,8 +24,10 @@
 				/*]]>*/
 			</script>
 			<noscript>
-				JavaScript was supposed to hide the above warning, but your browser does
-				not support it, so just pretend that statement isn't there.
+				<div>
+					JavaScript was supposed to hide the above warning, but your browser does
+					not support it, so just pretend that statement isn't there.
+				</div>
 			</noscript>
 			<%@include file="common/header.xml" %>
 			
