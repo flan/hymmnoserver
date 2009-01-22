@@ -26,10 +26,10 @@
 		</td>
 	</tr>
 	<tr>
-		<td class="header-links" style="text-align: center;">
+		<td class="header-links" style="text-align: center; width: 50%;">
 			<a href="/hymmnoserver/browse.php" style="display: block; text-decoration: none; color: #D92F0E;">Full Hymmnos lexicon</a>
 		</td>
-		<td class="header-links" style="text-align: center;">
+		<td class="header-links" style="text-align: center; width: 50%;">
 			<a href="/hymmnoserver/grammar.pyp" style="display: block; text-decoration: none; color: #D92F0E;">Advanced grammar resources</a>
 		</td>
 	</tr>

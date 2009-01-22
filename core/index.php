@@ -27,7 +27,7 @@
 							If you note any problems, please let the appropriate maintainer know; see the
 							<a href="/hymmnoserver/credits.php">credits page</a> for details.
 						</p>
-						<p>
+						<p style="color: red;">
 							This site was designed with JavaScript, XHTML 1.1, and CSS 2.
 							It is accessible using &quot;primitive&quot; browsers (like lynx, elinks, and Microsoft's Internet Explorer),
 							but some features will be unavailable, and some presentation coding will be exposed.

@@ -30,7 +30,7 @@
 			</noscript>
 			<%@include file="common/header.xml"%>
 			
-			Whee!
+			Whee! Dynamic updates!
 			
 			<div class="footer-copyright">
 				<div id="footer-bar">
