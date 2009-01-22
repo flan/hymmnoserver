@@ -103,11 +103,11 @@
 								<span class="text-title-small">7) Automate advanced grammar processing</span><br/>
 								Click the &quot;Advanced grammar resources&quot; link below the search bar and
 								you will be presented with an interface that supports the following:
-								<ul class="basic-inline">
-									<li>Syntactic validation and structural processing</li>
-									<li>Binasphere conversion</li>
-								</ul>
 							</p>
+							<ul class="basic-inline" style="margin-top: -10px;">
+								<li>Syntactic validation and structural processing</li>
+								<li>Binasphere conversion</li>
+							</ul>
 						</blockquote>
 					</td>
 					<td align="right" valign="top" style="width: 184px;">

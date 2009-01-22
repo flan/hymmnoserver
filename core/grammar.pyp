@@ -19,7 +19,7 @@
 		<!-- <%="-->"%>
 		<div>
 			<script type="text/javascript">
-				/*<CDATA[[*/
+				/*<[CDATA[*/
 					document.getElementById("no-python").style.display = 'none';
 				/*]]>*/
 			</script>
