@@ -6,7 +6,7 @@
 	<head>
 		<title>HYMMNOSERVER - Grammar Evaluator</title>
 		<!-- <%="-->"%>
-			<%@include file="common/resources.xml"%>
+			<%@include file="common/resources.xml" %>
 		<%="<!--"%> -->
 	</head>
 	<body>
@@ -28,7 +28,7 @@
 					not support it, so just pretend that statement isn't there.
 				</span>
 			</noscript>
-			<%@include file="common/header.xml"%>
+			<%@include file="common/header.xml" %>
 			
 			Whee! Dynamic updates!
 			
