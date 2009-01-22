@@ -109,7 +109,7 @@
 									<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none; display: block;">
 										<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
 										<span style="color: #FFFFFF; font-weight: bold; margin-top: -10px;">
-											<span style="font-size: 9pt;">Download the [Hymmnos]</span><br/>
+											<span style="font-size: 9pt;">Download the Hymmnos</span><br/>
 											<span style="font-size: 8pt;">TrueType Font (v1.1)</span>
 										</span>
 									</a>
@@ -196,16 +196,13 @@
 			</table>
 			<hr/>
 			<p>
-				This site is an open source, community-friendly effort, released under
-				<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">the by-nc-sa/2.5 Creative Commons license</a>.
-				If you agree to the terms of this license (really, it just says
-				&quot;don't sell or limit this work, and please provide due credit&quot;),
-				you may grab all of its materials using Subversion:
-				&quot;svn co
-				<a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a>
-				hymmnoserver/&quot;.
-				You may also browse the repository using a web browser or any DAV-capable
-				client.
+				<b>Community-friendly</b><br/>
+				This site is an open source effort, released in its entirety under the
+				<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">by-nc-sa/2.5 Creative Commons license</a>.
+				If you agree to the rather lax terms of this license, you may grab all of its materials using
+				<a href="http://subversion.tigris.org/">Subversion</a>:
+				&quot;svn co <a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a> hymmnoserver/&quot;.
+				You may also browse the repository using a web browser or any DAV-capable client.
 			</p>
 			<hr/>
 			<p>

@@ -4,47 +4,58 @@ the following:
 - PHP 5 (or higher)
 - MySQL 5 (or higher)
 
-Setup should only take a few minutes after these requirements have been 
-met:
-- Create a new MySQL database; its name and the user that accesses it is 
-  up to you
-- Load the contents of 'database/hymmnoserver.mysql' into the newly 
-  created database
-- Edit 'database/php_db.xml', placing information relevant to the 
-  database you just created where appropriate; save the file somewhere 
-  your webserver can access, but outside of your docroot (for security)
-- Copy the contents of 'core/' to another location (to avoid providing 
-  patches that include information about your filesystem)
-- Update the local copy of 'core/':
+---
+
+Setup should only take a few minutes. A brief overview of the process follows:
+- Create a new MySQL database; its name and the user that accesses it is up to
+  you
+- Load the contents of 'database/hymmnoserver.mysql' into the newly created
+  database
+- Edit 'database/php_db.xml', placing information relevant to the database you
+  just created where appropriate; save the file somewhere your webserver can
+  access, but outside of your docroot (for security)
+- Edit the specified lines in the following files so that the site knows how to
+  access your database.
   - Point browse.php:84 at your database access file
   - Point search.php:22 at your database access file
   - Point word.php:26 at your database access file
-- Create a '/hymmnoserver' virtual path in your webserver and point it 
-  at the copy of what was previously 'core/'
+- Create a '/hymmnoserver' virtual path in your webserver and point it at
+  'core/'
 - Ensure that this virtual path is configured to handle PHP evaluation
 
 After that, you should have a fully functional HYMMNOSERVER ready to go.
 
+As updates are provided, you should only have to synchronize your working copy
+with the command 'svn up' in the root of your source tree. (Unless, of course,
+the update affects the database; in that case, simply reloading your database
+with the new content will bring your mirror up to speed)
+
 ---
 
-If you want to provide patches or, if you have permission, commit 
-updates, *PLEASE* use a dedicated working copy of this repository. This 
-is the reason why you were asked to copy things in the preceding 
-section. (If you are not hosting this site, then the copying stuff is 
-not relevant to you)
+If you want to provide patches or, if you have permission, commit updates,
+*PLEASE* use a dedicated working copy of this repository. If you are mirroring
+this site, this means you should check out another copy of the source tree;
+name it 'hymmnoserver-dev/' or something so it will be easy to tell which
+directory houses which version.
 
-Just modify whatever content you feel needs to be changed, or update the 
-database and overwrite the existing one using mysqldump, then run 'svn 
-diff' in the root directory of the working copy to produce a patch that 
-may be submitted to a maintainer.
+
+When you need to alter something, just modify whatever content you feel needs
+to be changed, or update the database and overwrite the existing one using
+mysqldump, then run 'svn diff > hymmnoserver.patch' in the root directory of
+the working copy to produce a patch that may be submitted to a maintainer.
+
+Once the patch has been applied to the repository, all mirrors will be able to
+display your enhancements at their convenience. 
+
 
 -Note-
-You will find two Python scripts in database/: db.py and db2.py.
-These are data-entry hack-scripts that are provided without warranty.
-They are what were used to populate the database initially, but they are
-crude and imperfect.
+You will find two Python scripts in 'database/': db.py and db2.py.
+These are very hackishly constructed data-entry scripts that are provided
+without documentation, warranty, or any guarantee of functionality. (They are
+also quite a bit uglier than any code that would normally be considered
+publishable by the author)
 
 db.py is used to add new words to the database; it makes use of romaji.py, an
-unauthorized script used to have romai.org convert kana.
-db2.py is used to link two related words in the database.
+unauthorized script used to have romaji.org convert kana.
 
+db2.py is used to link two related words in the database.
