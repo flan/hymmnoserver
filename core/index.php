@@ -15,18 +15,22 @@
 					<td align="left" valign="top" style="width: 450px;">
 						<p>
 							<span class="text-title">Welcome to HYMMNOSERVER</span><br/>
-							The world of Ar tonelico, "Sol Ciel", is home to a language of Song Magic, known as "Hymmnos Words".
-						</p>
-						<p>
+							The world of Ar tonelico, Sol Ciel, is home to a language of Song Magic, known as &quot;Hymmnos Words&quot;.
+							<br/>
 							Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 						</p>
 						<p style="color: red;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
 							errors, and suffer from synchronization issues with the original Japanese site.
-							Some features differ (for better or worse), and some details were intentionally rewritten in a manner
-							believed to make more sense to an English-speaking audience (because of our idioms).<br/>
+							Some features differ (for better or worse), and some details, such as examples, were intentionally rewritten
+							in a manner believed to make more sense to an English-speaking audience.<br/>
 							If you note any problems, please let the appropriate maintainer know; see the
 							<a href="/hymmnoserver/credits.php">credits page</a> for details.
+						</p>
+						<p>
+							This site was designed with JavaScript, XHTML 1.1, and CSS 2.
+							It is accessible using &quot;primitive&quot; browsers (like lynx, elinks, and Microsoft's Internet Explorer),
+							but some features will be unavailable, and some presentation coding will be exposed.
 						</p>
 						<hr/>
 						<p>
@@ -68,9 +72,9 @@
 								You will see a list of all words beginning with the characters you entered.
 							</p>
 							<p>
-								<span class="text-title-small">2) Process an entire Hymmnos statement</span><br/>
-								Enter a complete string of Hymmnos and submit it.
-								Every word will be translated in sequence, and the sentence's syntax will be evaluated.
+								<span class="text-title-small">2) Look up an entire Hymmnos sentence</span><br/>
+								Enter several words in Hymmnos, separated by spaces, and submit them.
+								A translation for each word will be presented.
 							</p>
 							<p>
 								<span class="text-title-small">3) Find the Hymmnos for an English word</span><br/>
@@ -91,14 +95,34 @@
 							</p>
 							<p>
 								<span class="text-title-small">6) List Hymmnos alphabetically</span><br/>
-								Click the &quot;Browse words in Roman order&quot; link below the search bar
+								Click the &quot;Full Hymmnos lexicon&quot; link below the search bar
 								and you will be presented with a full index of the dictionary, split by Roman
 								letter.
 							</p>
 							<p>
-								<span class="text-title-small">7) List Hymmnos by syntax class</span><br/>
-								Click the &quot;Browse words by syntax class&quot; link below the search bar and
-								you will be presented with a full index of the dictionary, split by syntax class.
+								<span class="text-title-small">7) Automate advanced grammar processing</span><br/>
+								Click the &quot;Advanced grammar resources&quot; link below the search bar and
+								you will be presented with an interface that supports the following:
+								<ul>
+									<li>
+										Syntactic validation and semantic processing
+										<ul>
+											<li>
+												Enter a complete sentence and it will be evaluated; a syntax tree
+												will be rendered, allowing you to study the structure of the statement,
+												which may help with translation efforts
+											</li>
+										</ul>
+									</li>
+									<li>
+										Binasphere conversion
+										<ul>
+											<li>Enter two sentences and a binasphere line will be generated</li>
+											<li>Enter a binasphere line and its component sentences will be reconstructed</li>
+										</ul>
+									</li>
+								</ul>
+								Note: This section is currently pre-alpha, and highly incomplete.
 							</p>
 						</blockquote>
 					</td>

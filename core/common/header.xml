@@ -27,10 +27,10 @@
 	</tr>
 	<tr>
 		<td class="header-links" style="text-align: center;">
-			<a href="/hymmnoserver/browse.php?page=a" style="display: block; text-decoration: none; color: #D92F0E;">Browse words in Roman order</a>
+			<a href="/hymmnoserver/browse.php" style="display: block; text-decoration: none; color: #D92F0E;">Full Hymmnos lexicon</a>
 		</td>
 		<td class="header-links" style="text-align: center;">
-			<a href="/hymmnoserver/browse.php?page=1" style="display: block; text-decoration: none; color: #D92F0E;">Browse words by syntax class</a>
+			<a href="/hymmnoserver/grammar.pyp" style="display: block; text-decoration: none; color: #D92F0E;">Advanced grammar resources</a>
 		</td>
 	</tr>
 </table>
