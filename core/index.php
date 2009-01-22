@@ -94,35 +94,19 @@
 								representation of words in Hymmnos, which may be easier for some users.
 							</p>
 							<p>
-								<span class="text-title-small">6) List Hymmnos alphabetically</span><br/>
-								Click the &quot;Full Hymmnos lexicon&quot; link below the search bar
-								and you will be presented with a full index of the dictionary, split by Roman
-								letter.
+								<span class="text-title-small">6) Browse Hymmnos by letter or category</span><br/>
+								Click the &quot;Full Hymmnos lexicon&quot; link below the search bar and you will
+								be presented with a full index of the dictionary, split based on the Roman alphabet
+								or syntax class.
 							</p>
 							<p>
 								<span class="text-title-small">7) Automate advanced grammar processing</span><br/>
 								Click the &quot;Advanced grammar resources&quot; link below the search bar and
 								you will be presented with an interface that supports the following:
-								<ul>
-									<li>
-										Syntactic validation and semantic processing
-										<ul>
-											<li>
-												Enter a complete sentence and it will be evaluated; a syntax tree
-												will be rendered, allowing you to study the structure of the statement,
-												which may help with translation efforts
-											</li>
-										</ul>
-									</li>
-									<li>
-										Binasphere conversion
-										<ul>
-											<li>Enter two sentences and a binasphere line will be generated</li>
-											<li>Enter a binasphere line and its component sentences will be reconstructed</li>
-										</ul>
-									</li>
+								<ul class="basic-inline">
+									<li>Syntactic validation and structural processing</li>
+									<li>Binasphere conversion</li>
 								</ul>
-								Note: This section is currently pre-alpha, and highly incomplete.
 							</p>
 						</blockquote>
 					</td>

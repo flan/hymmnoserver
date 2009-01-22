@@ -6,7 +6,7 @@
 	<head>
 		<title>HYMMNOSERVER - Grammar Evaluator</title>
 		<!-- <%="-->"%>
-			<%@include file="common/resources.xml" %>
+		<%@include file="common/resources.xml" %>
 		<%="<!--"%> -->
 	</head>
 	<body>
@@ -17,6 +17,7 @@
 			</p>
 		</div>
 		<!-- <%="-->"%>
+		<div>
 			<script type="text/javascript">
 				/*<CDATA[[*/
 					document.getElementById("no-python").style.display = 'none';
@@ -30,7 +31,27 @@
 			</noscript>
 			<%@include file="common/header.xml" %>
 			
-			Whee! Dynamic updates!
+			Features that will appear here:
+			<ul class="basic-inline">
+				<li>
+					Syntactic validation and structural processing
+					<ul>
+						<li>
+							Enter a complete sentence and it will be evaluated; a syntax tree
+							will be rendered, allowing you to study the structure of the statement,
+							which may help with translation efforts
+						</li>
+					</ul>
+				</li>
+				<li>
+					Binasphere conversion
+					<ul>
+						<li>Enter two sentences and a binasphere line will be generated</li>
+						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
+					</ul>
+				</li>
+			</ul>
+			Note: This section is currently pre-alpha, and highly incomplete.
 			
 			<div class="footer-copyright">
 				<div id="footer-bar">
@@ -46,6 +67,7 @@
 				<a href="http://www.modpython.org"><img src="/hymmnoserver/images/mod_python-bar.png" alt="Powered by Python" style="border-width: 0;"/></a>
 				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/"><img alt="Creative Commons License" style="border-width: 0;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ca/80x15.png"/></a>
 			</div>
+		</div>
 		<%="<!--"%> -->
 	</body>
 </html>
