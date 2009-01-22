@@ -19,15 +19,13 @@
 		<!-- <%="-->"%>
 		<div>
 			<script type="text/javascript">
-				/*<[CDATA[*/
+				/*<![CDATA[*/
 					document.getElementById("no-python").style.display = 'none';
 				/*]]>*/
 			</script>
 			<noscript>
-				<span>
-					JavaScript was supposed to hide the above warning, but your browser does
-					not support it, so just pretend that statement isn't there.
-				</span>
+				JavaScript was supposed to hide the above warning, but your browser does
+				not support it, so just pretend that statement isn't there.
 			</noscript>
 			<%@include file="common/header.xml" %>
 			
