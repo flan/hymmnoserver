@@ -65,8 +65,6 @@
 				
 				This sample sentence means &quot;I am delighted to express myself through song,&quot;
 				conveyed with an expression of genuine joy by the speaker.
-				(<i>Example changed to something more meaningful to English speakers because the syntax
-				of Hymmnos is closer to our language than it is to Japanese.</i> -ed)
 			</p>
 		</div>
 		<div class="text-basic">
