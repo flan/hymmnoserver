@@ -56,7 +56,7 @@
 				</tr>
 				<tr>
 					<td class="kanji1" colspan="3">great, enjoyable happiness<br/>(I am delighted)</td>
-					<td class="kanji2">will become</td>
+					<td class="kanji2">become</td>
 					<td class="kanji2">song</td>
 					<td class="kanji2">me</td>
 				</tr>
