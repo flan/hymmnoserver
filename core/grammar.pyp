@@ -38,7 +38,7 @@
 					<ul>
 						<li>
 							Enter a complete sentence and it will be evaluated; a syntax tree
-							will be rendered, allowing you to study the structure of the statement,
+							will be rendered, allowing you to study the structure of the phrase,
 							which may help with translation efforts
 						</li>
 					</ul>
@@ -51,7 +51,7 @@
 					</ul>
 				</li>
 			</ul>
-			Note: This section is currently pre-alpha, and highly incomplete.
+			Note: This section is currently pre-alpha and highly incomplete.
 			
 			<div class="footer-copyright">
 				<div id="footer-bar">
