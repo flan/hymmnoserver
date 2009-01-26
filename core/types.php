@@ -214,7 +214,7 @@
 				place themselves at great risk of dying under the stress of the demands placed upon them.
 			</p>
 			<p>
-				As ironic fortune, the fact that the third generation lacks Hymn Codes prevents them from
+				As ironic fortune, the fact that third-generation Reyvateils lack Hymn Codes prevents them from
 				using the more dangerous Hymmnos Extracts.
 			</p>
 			<b>▼ Reference: Hymmnos Extract specifications</b><br/>
