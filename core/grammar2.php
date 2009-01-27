@@ -355,7 +355,7 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Nouns</div>
 			<p>
-				Infel-Phira, for which the New Testament of Pastalie was created, supports the
+				Infel Phira, for which the New Testament of Pastalie was created, supports the
 				standard noun forms found in other dialects of Hymmnos. However, with Pastalia's
 				emphasis on succinct sentences, a noun syntax that couples ownership with emotional
 				attachment has been developed.<br/>
@@ -478,32 +478,32 @@
 				<tr>
 					<td class="ev-1b" style="text-align: center; width: 50px;">A</td>
 					<td class="ev-1b" style="text-align: center; width: 50px;">あ</td>
-					<td class="ev-1b">I feel indifferent</td>
+					<td class="ev-1b">indifferent</td>
 				</tr>
 				<tr>
 					<td class="ev-1b" style="text-align: center;">I</td>
 					<td class="ev-1b" style="text-align: center;">い</td>
-					<td class="ev-1b">I feel jealous</td>
+					<td class="ev-1b">jealous</td>
 				</tr>
 				<tr>
 					<td class="ev-1b" style="text-align: center;">U</td>
 					<td class="ev-1b" style="text-align: center;">う</td>
-					<td class="ev-1b">I feel concerned</td>
+					<td class="ev-1b">concerned</td>
 				</tr>
 				<tr>
 					<td class="ev-1b" style="text-align: center;">E</td>
 					<td class="ev-1b" style="text-align: center;">え</td>
-					<td class="ev-1b">I feel happy</td>
+					<td class="ev-1b">happy</td>
 				</tr>
 				<tr>
 					<td class="ev-1b" style="text-align: center;">O</td>
 					<td class="ev-1b" style="text-align: center;">お</td>
-					<td class="ev-1b">I feel angry</td>
+					<td class="ev-1b">angry</td>
 				</tr>
 				<tr>
 					<td class="ev-1b" style="text-align: center;">N</td>
 					<td class="ev-1b" style="text-align: center;">ん</td>
-					<td class="ev-1b">I feel opposed</td>
+					<td class="ev-1b">opposed</td>
 				</tr>
 			</table>
 			<p>
@@ -564,7 +564,7 @@
 				<div class="subsection-title text-title-small">Using Emotion Verbs as objects</div>
 				<p>
 					If all Bank Slots in an Emotion Verb are left unused, then the template word
-					may be interpreted as part of an object as an action.
+					may be interpreted as an action, like a gerund in English.
 				</p>
 				<p>
 					<b>fEwrEn h.m.m.r. eje/.</b><br/>

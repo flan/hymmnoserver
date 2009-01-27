@@ -12,7 +12,7 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Song Magic Servers</div>
 			<p>
-				The first game featured the tower of Ar tonelico, and the second features Infel-Phira.<br/>
+				The first game featured the tower of Ar tonelico, and the second features Infel Phira.<br/>
 				Both of these towers are Song Magic Servers and have the same basic fundamental features:
 			</p>
 			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
@@ -30,9 +30,9 @@
 			</p>
 		</div>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Ar tonelico and Infel-Phira</div>
+			<div class="section-title text-title-small">⠕ Ar tonelico and Infel Phira</div>
 			<p>
-				The differences between Ar tonelico and Infel-Phira are not unlike the differences
+				The differences between Ar tonelico and Infel Phira are not unlike the differences
 				between an Intel-based system and a Sparc.
 			</p>
 			<table>
@@ -47,7 +47,7 @@
 					<td class="server-data">Sol Ciel (A_t1)</td>
 				</tr>
 				<tr>
-					<td class="server-data">Infel-Phira</td>
+					<td class="server-data">Infel Phira</td>
 					<td class="server-data">Sparc</td>
 					<td class="server-data">Meta Falss (A_t2)</td>
 				</tr>
@@ -61,7 +61,7 @@
 				from the machinations of a Sparc processor, so you could not simply send messages from one to the
 				other without some sort of translator.
 				The same problem arises when attempting to foster communication between Ar tonelico and
-				Infel-Phira: both towers perform similar tasks, but their languages and means of encoding
+				Infel Phira: both towers perform similar tasks, but their languages and means of encoding
 				messages (the Hymmnos they recognize) are very different.
 				Additionally, like the towers themselves, there are no fundamental differences between the
 				roles of the Reyvateils of one tower and the Reyvateils of the other: the only difference is which
@@ -72,7 +72,7 @@
 				<tr>
 					<td class="server-header">Server Name</td>
 					<td class="server-data">Ar tonelico</td>
-					<td class="server-data">Infel-Phira</td>
+					<td class="server-data">Infel Phira</td>
 				</tr>
 				<tr>
 					<td class="server-header">Equivalent</td>
