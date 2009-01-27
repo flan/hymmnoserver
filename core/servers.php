@@ -65,7 +65,7 @@
 				messages (the Hymmnos they recognize) are very different.
 				Additionally, like the towers themselves, there are no fundamental differences between the
 				roles of the Reyvateils of one tower and the Reyvateils of the other: the only difference is which
-				Hymmnos dialect they natively speak; the relationship is much like different partition formats on
+				Hymmnos dialect they natively speak. The relationship is much like different partition formats on
 				hard drives: they are accessed differently, but they can all store the same data.
 			</p>
 			<table>

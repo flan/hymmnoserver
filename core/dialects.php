@@ -115,7 +115,7 @@
 			<p>
 				This is a new dialect that was created in the lands of Meta Falss around 3400, specifically intended for
 				use with Infel-Phira, an entirely different Song Magic Server from Ar tonelico; only the I.P.D.s
-				(Infel-Phira Dependencies), the Reyvateil connected to Infel-Phira, are able to use it.
+				(Infel-Phira Dependents), the Reyvateil connected to Infel-Phira, are able to use it.
 				Because of its unique characteristics, its compatibility with other dialects is virtually nil, in
 				terms of everything from its grammar through its lexicon.
 				The manner by which commands are invoked has also changed, from &quot;EXEC_XXXX/.&quot; to
