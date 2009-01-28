@@ -214,7 +214,8 @@
 		if($alternatives_pos > 0){
 			echo "<tr>";
 				echo "<td style=\"color: white; background: black;\">"
-					echo "Words with alternative meanings: ".implode(", ", $alternatives);
+					echo "Words with alternative meanings: ";
+					echo implode(", ", $alternatives);
 				echo "</td>"
 			echo "</tr>";
 		}
