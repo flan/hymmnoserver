@@ -113,7 +113,7 @@
 	#Insert Emotion Vowels or blanks into Emotion Verbs or prefix other words.
 	function decorateWord($word, $class, $decorations, $colour){
 		if($decorations == NULL){
-			return $word;
+			return htmlspecialchars($word);
 		}
 		
 		if($class == 1){#Emotion Verb
@@ -121,18 +121,22 @@
 			$chunks = split('\.', $word);
 			$i = 0;
 			foreach(array_slice($decorations, 0, -1) as $vowel){
-				$result = $result.$chunks[$i];
+				$result = $result.htmlspecialchars($chunks[$i]);
 				if($colour){
-					$result = $result."<span style=\"color: yellow;\">".$vowel."</span>";
+					$result = $result."<span style=\"color: yellow;\">".htmlspecialchars($vowel)."</span>";
 				}else{
-					$result = $result.$vowel;
+					$result = $result.htmlspecialchars($vowel);
 				}
 				$i++;
 			}
-			if($colour){
-				return $result."<span style=\"color: magenta;\">".$decorations[count($decorations) - 1]."</span>";
+			if(!empty($decorations[count($decorations) - 1])){
+				if($colour){
+					return $result."<span style=\"color: magenta;\">".htmlspecialchars($decorations[count($decorations) - 1])."</span>";
+				}else{
+					return $result.htmlspecialchars($decorations[count($decorations) - 1]);
+				}
 			}else{
-				return $result.$decorations[count($decorations) - 1];
+				return $result;
 			}
 		}
 		
@@ -140,7 +144,7 @@
 		global $ADJECTIVES;
 		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
 			if($colour){
-				return "<span style=\"color: yellow;\">".$decorations[0]."</span>".$word;
+				return "<span style=\"color: yellow;\">".$decorations[0]."</span>".htmlspecialchars($word);
 			}else{
 				return $decorations[0].$word;
 			}
@@ -158,10 +162,7 @@
 			$english = '???';
 			$kana = '???';
 		}else{
-			if($decorations != NULL){
-				$l_word = htmlspecialchars(decorateWord($l_word, $class, $decorations, true));
-			}
-			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".$l_word."</a>";
+			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".decorateWord($l_word, $class, $decorations, true)."</a>";
 		}
 		
 		echo "<tr>";
