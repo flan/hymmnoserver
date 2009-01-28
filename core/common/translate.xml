@@ -224,7 +224,7 @@
 		}
 	?>
 	<tr>
-		<td style="color: darkblue; text-align: center; background: lightgrey; font-size: 0.7em;">
+		<td style="color: darkblue; text-align: right; background: lightgrey; font-size: 0.7em;">
 			<?php
 				$query_encode = urlencode($query);
 				echo "If this is a sentence, you can <a href=\"/hymmnoserver/grammar.pyp?query=$query_encode\">inspect its structure</a>.";
