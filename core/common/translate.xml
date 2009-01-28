@@ -214,7 +214,7 @@
 		}
 		if($alternatives_pos > 0){
 			echo "<tr>";
-				echo "<td style=\"color: white; background: black;\">";
+				echo "<td style=\"color: white; background: black; font-size: 0.85em;\">";
 					echo "Words with alternative meanings: ".implode(", ", $alternatives);
 				echo "</td>";
 			echo "</tr>";
@@ -231,6 +231,11 @@
 </table>
 <hr/>
 <div style="color: grey; font-size: 0.6em;">
+	<?php
+		if($alternatives_pos > 0){
+			echo "<p style=\"color: black;\">Please note the words identified as having alternate meanings. In particular, consider that Pastalia typically takes precedence when other Pastalia words are present.</p>";
+		}
+	?>
 	<p>
 		There is no difference between singular and plural nouns, unless implied by context:
 		&quot;wart&quot;, for example, can mean either &quot;word&quot; or &quot;words&quot;,
