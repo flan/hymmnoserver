@@ -178,9 +178,9 @@
 		}
 	}
 ?>
-<table style="border-collapse: collapse; border: 1px solid black; width: 640px;">
+<table style="border-collapse: collapse; border: 1px solid black; width: 640px; color: white;">
 	<tr>
-		<td style="color: darkblue; text-align: center; background: lightgrey;">
+		<td style="color: darkblue; text-align: center; background: lightgrey;" colspan="4">
 			<div style="font-family: hymmnos; font-size: 24pt;">
 				<?php echo $word_string; ?>
 			</div>
@@ -191,7 +191,7 @@
 	</tr>
 	<?php renderWords($words); ?>
 	<tr>
-		<td style="color: darkblue; text-align: center; background: lightgrey;">
+		<td style="color: darkblue; text-align: center; background: lightgrey; font-size: 0.7em;"  colspan="4">
 			<?php
 				$query_encode = urlencode($query);
 				echo "If this is a sentence, you can <a href=\"/hymmnoserver/grammar.pyp?query=$query_encode\">inspect its structure</a>.";
