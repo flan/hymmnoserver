@@ -191,7 +191,7 @@
 	</tr>
 	<tr>
 		<td style="background: grey; color: white;">
-			<table>
+			<table style="width: 100%;">
 				<?php renderWords($words); ?>
 			</table>
 		</td>
