@@ -41,21 +41,21 @@
 	}
 	
 	#Read a word from the database.
-	#Return format: [word, english, kana, class, dialect, decorations]
+	#Return format: [word, english, kana, class, dialect, decorations, hits]
 	function queryWord($word){
 		$result = NULL;
 		
 		global $mysql;
-		$stmt = $mysql->prepare("SELECT word, meaning_english, kana, class, school FROM hymmnos WHERE word = ? ORDER BY school ASC LIMIT 1");
+		$stmt = $mysql->prepare("SELECT word, meaning_english, kana, class, school FROM hymmnos WHERE word = ? ORDER BY school ASC");
 		$stmt->bind_param("s", $word);
 		$stmt->execute();
 		$stmt->store_result();
 		if($stmt->num_rows > 0){
 			$stmt->bind_result($r_word, $english, $kana, $class, $dialect);
 			$stmt->fetch();
-			$result = array($r_word, $english, $kana, $class, $dialect, NULL);
+			$result = array($r_word, $english, $kana, $class, $dialect, NULL, $stmt->num_rows);
 		}else{
-			$result = array($word, NULL, NULL, 0, 0, NULL);
+			$result = array($word, NULL, NULL, 0, 0, NULL, 0);
 		}
 		$stmt->free_result();
 		$stmt->close();
@@ -64,7 +64,7 @@
 	}
 	
 	#Determine whether a word is an Emotion Verb; if so, read it from the database.
-	#Return format: [word, english, kana, class, dialect, decorations] | NULL
+	#Return format: [word, english, kana, class, dialect, decorations, hits] | NULL
 	function processEmotionVerb($word){
 		global $emotion_verbs;
 		
@@ -96,7 +96,7 @@
 	}
 	
 	#Determine whether a word is an Emotion Vowel-prefixed word; if so, read it from the database.
-	#Return format: [word, english, kana, class, dialect, decorations] | NULL
+	#Return format: [word, english, kana, class, dialect, decorations, hits] | NULL
 	function processEmotionWord($word){
 		global $EMOTION_VOWELS_REGEXP;
 		
@@ -148,12 +148,13 @@
 	}
 	
 	#Renders a single word in the output table.
+	#Return format: true if this word has alternative entries.
 	function renderWord($word){
 		global $SYNTAX_CLASS;
 		
-		list($l_word, $english, $kana, $class, $dialect, $decorations) = $word;
+		list($l_word, $english, $kana, $class, $dialect, $decorations, $hits) = $word;
 		$base_word = htmlspecialchars($l_word);
-		if($class == 0){
+		if($hits == 0){
 			$english = '???';
 			$kana = '???';
 		}else{
@@ -169,13 +170,20 @@
 			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$english</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
 		echo "</tr>";
+		
+		return $hits > 1;
 	}
 	
 	#Processes a list of words, rendering everything provided.
+	#Return format: A list of all words with alternative entries.
 	function renderWords($words){
+		$alternatives = array();
 		foreach($words as $word){
-			renderWord($word);
+			if(renderWord($word)){
+				array_push($alternatives, $word[0]);
+			}
 		}
+		return $alternatives;
 	}
 ?>
 <table style="border-collapse: collapse; border: 1px solid black; width: 640px;">
@@ -192,10 +200,25 @@
 	<tr>
 		<td style="background: grey; color: white;">
 			<table style="width: 100%;">
-				<?php renderWords($words); ?>
+				<?php
+					$alternatives = renderWords($words);
+				?>
 			</table>
 		</td>
 	</tr>
+	<?php
+		$alternatives_pos = 0;
+		foreach($alternatives as $alternative){
+			$alternatives[$alternatives_pos++] = "<a href=\"/hymmnoserver/search.php?word=".urlencode($alternative)."\">".htmlspecialchars($alternative)."</a>";
+		}
+		if($alternatives_pos > 0){
+			echo "<tr>";
+				echo "<td style=\"color: white; background: black;\">"
+					echo "Words with alternative meanings: ".implode(", ", $alternatives);
+				echo "</td>"
+			echo "</tr>";
+		}
+	?>
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey; font-size: 0.7em;">
 			<?php
