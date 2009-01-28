@@ -135,11 +135,11 @@
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
+										<li>Python elements added (28/1/2009)</li>
 										<li>Source released (14/1/2009)</li>
 										<li>Unofficial words (13/1/2009)</li>
 										<li>Grammar evaluator (7/1/2009)</li>
 										<li>Private beta (6/1/2009)</li>
-										<li>Japanese site's content archived (31/12/2008)</li>
 									</ul>
 								</td>
 							</tr>

@@ -25,8 +25,8 @@
 			</script>
 			<noscript>
 				<div>
-					JavaScript was supposed to hide the above warning, but your browser does
-					not support it, so just pretend that statement isn't there.
+					JavaScript was supposed to hide the statement above, but your browser does
+					not support it, so just pretend that nothing's there.
 				</div>
 			</noscript>
 			<%@include file="common/header.xml" %>
@@ -53,20 +53,7 @@
 			</ul>
 			Note: This section is currently pre-alpha and highly incomplete.
 			
-			<div class="footer-copyright">
-				<div id="footer-bar">
-					<a href="/hymmnoserver/index.php" class="footer-link">[Go to index]</a>
-				</div>
-				<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver2.0/Rev.20080312)<br/>
-				English version provided by <a href="/hymmnoserver/credits.php" class="footer-copyright">Neil Tallim and others</a>. (This is a freely provided, fan-translated service)
-			</div>
-			<div style="text-align: right;">
-				<a href="http://validator.w3.org/check?uri=referer"><img src="/hymmnoserver/images/xhtml11-bar.png" alt="Valid XHTML 1.1" style="border-width: 0;"/></a>
-				<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://hamsterx.homelinux.org/hymmnoserver/resources/hymmnoserver.css"><img src="/hymmnoserver/images/css-bar.png" alt="Valid CSS" style="border-width: 0;"/></a>
-				<a href="http://bluefish.openoffice.nl"><img src="/hymmnoserver/images/bluefish-bar.png" alt="Made with Bluefish" style="border-width: 0;"/></a>
-				<a href="http://www.modpython.org"><img src="/hymmnoserver/images/mod_python-bar.png" alt="Powered by Python" style="border-width: 0;"/></a>
-				<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/"><img alt="Creative Commons License" style="border-width: 0;" src="http://i.creativecommons.org/l/by-nc-sa/2.5/ca/80x15.png"/></a>
-			</div>
+			<%@include file="common/footer-py.xml" %>
 		</div>
 		<%="<!--"%> -->
 	</body>

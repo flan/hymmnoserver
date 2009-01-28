@@ -26,7 +26,7 @@
 				}
 				
 				if(count($words) > 1){#If more than one token is provided, parse instead of search.
-					include 'common/grammar.xml';
+					include 'common/translate.xml';
 				}else{
 					include 'common/search.xml';
 				}
