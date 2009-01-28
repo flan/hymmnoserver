@@ -181,7 +181,10 @@
 		$alternatives = array();
 		foreach($words as $word){
 			if(renderWord($word)){
-				array_push($alternatives, $word[0]);
+				$word_c = $word[0];
+				if(!in_array($word_c, $alternatives)){
+					array_push($alternatives, $word_c);
+				}
 			}
 		}
 		return $alternatives;
