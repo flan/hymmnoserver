@@ -202,7 +202,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="background: grey; color: white;">
+		<td style="background: grey; color: white; border-spacing: 1px;">
 			<table style="width: 100%;">
 				<?php
 					$alternatives = renderWords($words);
@@ -227,7 +227,7 @@
 		<td style="color: darkblue; text-align: right; background: lightgrey; font-size: 0.7em;">
 			<?php
 				$query_encode = urlencode($query);
-				echo "If this is a sentence, you can <a href=\"/hymmnoserver/grammar.pyp?query=$query_encode\">inspect its structure</a>.";
+				echo "If this is a sentence, you may <a href=\"/hymmnoserver/grammar.pyp?query=$query_encode\">inspect its structure</a>";
 			?>
 		</td>
 	</tr>
