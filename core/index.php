@@ -27,11 +27,13 @@
 							If you note any problems, please let the appropriate maintainer know; see the
 							<a href="/hymmnoserver/credits.php">credits page</a> for details.
 						</p>
-						<p style="color: red;">
-							This site was designed with JavaScript 1.5, XHTML 1.1, and CSS 2.0.
-							It is accessible using &quot;primitive&quot; browsers (like lynx, elinks, and Microsoft's Internet Explorer),
-							but some features will be unavailable.
-						</p>
+						<noscript>
+							<p style="color: red;">
+								This site was designed with JavaScript 1.5, XHTML 1.1, and CSS 2.0.
+								It is accessible using limited browsers (like lynx, elinks, and Microsoft's Internet Explorer),
+								but some features will be unavailable.
+							</p>
+						</noscript>
 						<hr/>
 						<p>
 							<span class="text-title">⠕ The grammar of Hymmnos Words</span><br/>
