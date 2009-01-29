@@ -213,7 +213,7 @@
 	<?php
 		$alternatives_pos = 0;
 		foreach($alternatives as $alternative){
-			$alternatives[$alternatives_pos++] = "<a href=\"/hymmnoserver/search.php?word=".urlencode($alternative)."\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
+			$alternatives[$alternatives_pos++] = "<a href=\"/hymmnoserver/search.php?word=".urlencode($alternative)."&exact=hymmnos\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
 		}
 		if($alternatives_pos > 0){
 			echo "<tr>";

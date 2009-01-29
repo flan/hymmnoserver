@@ -1,12 +1,16 @@
 <?php
-	function renderMatches($qualifier, $quality, $type){
+	function renderMatches($qualifier, $quality, $type, $exact){
 		global $mysql;
 		global $DIALECT;
 		global $SYNTAX_CLASS_FULL;
 		
 		$search_mode = true; #Used to make related words open in new windows.
+		$operator = "LIKE";
+		if($exact){
+			$operator = "=";
+		}
 		
-		$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE $qualifier LIKE ? ORDER BY school ASC");
+		$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE $qualifier $operator ? ORDER BY school ASC");
 		$stmt->bind_param("s", $quality);
 		$stmt->execute();
 		$stmt->store_result();
@@ -49,13 +53,18 @@
 	}
 	
 	$matches = false; #Assume failure by default.
-	$word = $words[0].'%'; #Match anything starting with the query by default.
 	
-	$matches = renderMatches("word", $word, "Hymmnos matches") || $matches;
-	$matches = renderMatches("meaning_english", '%'.$word, "English matches") || $matches;
-	$matches = renderMatches("romaji", $word, "Romaji matches") || $matches;
-	if(!$matches){#If none of the eecuted queries yeilded results, maybe the query is in kana.
-		$matches = renderMatches("kana", $word, "Kana matches");
+	if($_GET['word'] == "hymmnos"){#Look for exact Hymmnos matches.
+		$matches = renderMatches("word", $words[0], "Hymmnos matches", true);
+	}else{#Render any matches found using any normal method.
+		$word = $words[0].'%'; #Match anything starting with the query by default.
+		
+		$matches = renderMatches("word", $word, "Hymmnos matches", false) || $matches;
+		$matches = renderMatches("meaning_english", '%'.$word, "English matches", false) || $matches;
+		$matches = renderMatches("romaji", $word, "Romaji matches", false) || $matches;
+		if(!$matches){#If none of the executed queries yeilded results, maybe the query is in kana.
+			$matches = renderMatches("kana", $word, "Kana matches", false);
+		}
 	}
 	
 	if(!$matches){
