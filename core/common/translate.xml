@@ -202,8 +202,8 @@
 		</td>
 	</tr>
 	<tr>
-		<td style="background: grey; color: white; border-spacing: 1px;">
-			<table style="width: 100%;">
+		<td style="background: grey; color: white;">
+			<table style="width: 100%; border-spacing: 1px;">
 				<?php
 					$alternatives = renderWords($words);
 				?>
@@ -236,7 +236,7 @@
 <div style="color: grey; font-size: 0.6em;">
 	<?php
 		if($alternatives_pos > 0){
-			echo "<p style=\"color: black;\">Please note the words identified as having alternate meanings. In particular, consider that Pastalia typically takes precedence when other Pastalia words are present.</p>";
+			echo "<p style=\"color: black;\">Please make note of the words identified as having alternate meanings. In particular, consider that Pastalia forms typically take precedence when other Pastalia words are present.</p>";
 		}
 	?>
 	<p>

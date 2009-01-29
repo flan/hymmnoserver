@@ -54,7 +54,7 @@
 	
 	$matches = false; #Assume failure by default.
 	
-	if($_GET['word'] == "hymmnos"){#Look for exact Hymmnos matches.
+	if($_GET['exact'] == "hymmnos"){#Look for exact Hymmnos matches.
 		$matches = renderMatches("word", $words[0], "Hymmnos matches", true);
 	}else{#Render any matches found using any normal method.
 		$word = $words[0].'%'; #Match anything starting with the query by default.
