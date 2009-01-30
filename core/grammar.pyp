@@ -6,6 +6,22 @@
 	<head>
 		<title>HYMMNOSERVER - Grammar Evaluator</title>
 		<!-- <%="-->"%>
+<%
+import MySQLdb
+
+import os
+from mod_python import apache
+_WORKING_PATH = os.path.dirname(__file__) + "/common"
+
+binasphere = apache.import_module('binasphere', path=[_WORKING_PATH])
+
+_db_con = None
+_query = None
+if form.has_key('query'):
+	_query = form['query']
+	if _query:
+		include file="/your_database_file_here.xml';
+%>
 		<%@include file="common/resources.xml" %>
 		<%="<!--"%> -->
 	</head>
@@ -45,6 +61,7 @@
 				</li>
 				<li>
 					Binasphere conversion
+					
 					<ul>
 						<li>Enter two sentences and a binasphere line will be generated</li>
 						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
