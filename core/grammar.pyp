@@ -7,13 +7,11 @@
 		<title>HYMMNOSERVER - Grammar Evaluator</title>
 		<!-- <%="-->"%>
 <%
-#import MySQLdb
+import os
+from mod_python import apache
+_WORKING_PATH = os.path.dirname(__file__) + "/common"
 
-#import os
-#from mod_python import apache
-#_WORKING_PATH = os.path.dirname(__file__) + "/common"
-
-#binasphere = apache.import_module('binasphere', path=[_WORKING_PATH])
+binasphere = apache.import_module('binasphere', path=[_WORKING_PATH])
 
 _db_con = None
 _query = None
