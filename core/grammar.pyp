@@ -17,12 +17,6 @@ _db_con = None
 _query = None
 if form.has_key('query'):
 	_query = form['query'].strip()
-	if _query:
-%>
-		<%@include file="/your_database_file_here.xml" %>
-<%
-	else:
-		pass
 
 %>
 		<%@include file="common/resources.xml" %>
