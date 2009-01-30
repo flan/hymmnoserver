@@ -118,4 +118,3 @@ def divideAndCapitalise(words, db_con):
 	for token_string in words:
 		lines.append(_divideAndCapitalise(token_string, db_con))
 		
-print decodeBinasphere("=> RRHA RRHA GUWO Ax GAx PEx GIS A GAx TIE INNx GIS NA GRAN GAx PAUL NOx TYUNY INI SAASH AR YANJE CIEL EN INI LA ZAx AR HHA CIEL RRHA RRHA Ax GUWO GA PEx GAx A TYUNY RA HARx AR CIEL TES EN YORA INI CHYET WAx SOR GAx LAx TYUNx SYE LA FORx GANx ART SA DAL FAYx WASSA RA CIEL EXEC hymme 2x1/0>>01101010")
