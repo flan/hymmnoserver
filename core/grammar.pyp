@@ -17,7 +17,7 @@ _db_con = None
 _query = None
 if form.has_key('query'):
 	_query = form['query'].strip()
-	if not _query:
+	if _query:
 %>
 		<%@include file="/your_database_file_here.xml" %>
 <%
