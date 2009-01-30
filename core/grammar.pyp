@@ -18,9 +18,14 @@ binasphere = apache.import_module('binasphere', path=[_WORKING_PATH])
 _db_con = None
 _query = None
 if form.has_key('query'):
-	_query = form['query']
+	_query = form['query'].strip()
 	if _query:
-		include file="/your_database_file_here.xml';
+%>
+		<%@include file="/your_database_file_here.xml" %>
+<%
+	else:
+		pass
+
 %>
 		<%@include file="common/resources.xml" %>
 		<%="<!--"%> -->
@@ -40,13 +45,14 @@ if form.has_key('query'):
 				/*]]>*/
 			</script>
 			<noscript>
-				<div>
-					JavaScript was supposed to hide the statement above, but your browser does
-					not support it, so just pretend that nothing's there.
-				</div>
+				JavaScript was supposed to hide the statement above, but your browser does
+				not support it, so just pretend that nothing's there.
 			</noscript>
 			<%@include file="common/header.xml" %>
 			
+<%
+if not _query:
+%>
 			Features that will appear here:
 			<ul class="basic-inline">
 				<li>
@@ -60,8 +66,7 @@ if form.has_key('query'):
 					</ul>
 				</li>
 				<li>
-					Binasphere conversion
-					
+					Binasphere conversion				
 					<ul>
 						<li>Enter two sentences and a binasphere line will be generated</li>
 						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
@@ -69,7 +74,22 @@ if form.has_key('query'):
 				</li>
 			</ul>
 			Note: This section is currently pre-alpha and highly incomplete.
-			
+<%
+else:
+	try:
+		words = binasphere.decodeBinasphere(query)
+		for lines in binasphere.divideAndCapitalise(words, _db_con):
+			req.write(str(lines) + "<br/>")
+	except binasphere.FormatError:
+		pass #try syntax
+	except binasphere.ContentError, e:
+		req.write("Unable to decode Binasphere phrase: %s" % e)
+
+%>
+			<form method="get" action="/hymmnoserver/grammar.pyp">
+				<textarea name="query"></textarea><br/>
+				<input type="submit" value="Process"/>
+			</form>
 			<%@include file="common/footer-py.xml" %>
 		</div>
 		<%="<!--"%> -->

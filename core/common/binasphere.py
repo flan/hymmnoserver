@@ -111,6 +111,7 @@ def decodeBinasphere(line):
 def _divideAndCapitalise(words, db_con):
 	#Load every word from the database.
 	#every time ES(I) is reached, start a new word line.
+	return ' '.join(words)
 	
 def divideAndCapitalise(words, db_con):
 	lines = []
