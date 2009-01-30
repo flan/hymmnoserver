@@ -88,6 +88,7 @@ else:
 				<textarea name="query"></textarea><br/>
 				<input type="submit" value="Process"/>
 			</form>
+			<%if _db_con: _db_con.close() %>
 			<%@include file="common/footer-py.xml" %>
 		</div>
 		<%="<!--"%> -->
