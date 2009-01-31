@@ -66,7 +66,7 @@ if not _query:
 				<li>
 					Binasphere conversion				
 					<ul>
-						<li>Enter two sentences and a binasphere line will be generated</li>
+						<li>Enter multiple sentences and a binasphere line will be generated</li>
 						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
 					</ul>
 				</li>
