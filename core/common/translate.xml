@@ -190,7 +190,7 @@
 		return $alternatives;
 	}
 ?>
-<table style="border-collapse: collapse; border: 1px solid black; width: 640px;">
+<table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
 	<tr>
 		<td style="color: darkblue; text-align: center; background: lightgrey;">
 			<div style="font-family: hymmnos; font-size: 24pt;">

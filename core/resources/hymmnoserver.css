@@ -24,6 +24,20 @@ ul.basic-inline{
 	padding-left: 15px;
 }
 
+td.binasphere{
+	background: #CCCCCC;
+	text-align: left;
+	font-size: 14pt;
+}
+td.binasphere:hover{
+	background: #EEEEEE;
+}
+td.binasphere-id{
+	color: white;
+	background: black;
+	text-align: center;
+}
+
 td.data-cell-blue{
 	font-size: 0.9em;
 	color: #001144;
