@@ -77,8 +77,8 @@ else:
 		query_render = cgi.escape(_query, True)
 		req.write("""<table style="border-spacing: 1px; color: white; background: grey; border: 1px solid black; width: 100%;">""")
 		req.write("""<tr><td style="color: darkblue; background: lightgrey;" colspan="2">""")
-		req.write("""<div style="font-family: hymmnos; font-size: 20pt;">%s</div>""" % (query_render))
-		req.write("""<div style="font-size: 14pt;">%s</div>""" % (query_render))
+		req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (query_render))
+		req.write("""<div style="font-size: 12pt;">%s</div>""" % (query_render))
 		req.write("""</td></tr>""")
 		for (i, lines) in enumerate(binasphere.divideAndCapitalise(words, _db_con)):
 			req.write("""<tr><td class="binasphere-id">%i</td>""" % (i))
