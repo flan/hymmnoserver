@@ -80,7 +80,7 @@ else:
 		req.write("Unable to decode Binasphere phrase: %s" % e)
 
 %>
-			<form method="get" action="/hymmnoserver/grammar.pyp">
+			<form method="get" action="/hymmnoserver/grammar.psp">
 				<textarea name="query"></textarea><br/>
 				<input type="submit" value="process"/>
 			</form>
