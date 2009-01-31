@@ -114,7 +114,7 @@ def _divideAndCapitalise(words, db_con):
 	
 	cursor = db_con.cursor()
 	for word in words:
-		cursor.execute("SELECT word, class FROM hymmnos WHERE word = %s LIMIT 1")
+		cursor.execute("SELECT word, class FROM hymmnos WHERE word = %s LIMIT 1", (word,))
 		result = c.fetchone()
 		if result:
 			if result[1] == 14 and buffer: #ES(I)
