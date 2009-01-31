@@ -28,8 +28,9 @@ td.binasphere{
 	background: #DDDDDD;
 	text-align: left;
 	font-size: 12pt;
-	padding-left: 8px;
-	padding-top: 8px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 2px;
 }
 td.binasphere:hover{
 	background: #EEEEEE;
