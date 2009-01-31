@@ -18,11 +18,8 @@ _query = None
 if form.has_key('query'):
 	_query = form['query'].strip()
 	if _query:
-%>
-		<%@include file="/your_database_file_here.xml" %>
-<%
-	else:
-		pass
+		_db = apache.import_module('your_module_name', path=["/your_module_path/"])
+		_db_con = _db.getConnection()
 
 %>
 		<%@include file="common/resources.xml" %>
@@ -86,7 +83,7 @@ else:
 %>
 			<form method="get" action="/hymmnoserver/grammar.pyp">
 				<textarea name="query"></textarea><br/>
-				<input type="submit" value="Process"/>
+				<input type="submit" value="process"/>
 			</form>
 			<%if _db_con: _db_con.close() %>
 			<%@include file="common/footer-py.xml" %>
