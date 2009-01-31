@@ -103,7 +103,7 @@ else:
 %>
 			<hr/>
 			<form method="get" action="/hymmnoserver/grammar.psp">
-				</div>
+				<div>
 					<textarea name="query" rows="5" cols="80"></textarea><br/>
 					<input type="submit" value="process"/>
 				</div>
