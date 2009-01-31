@@ -113,7 +113,7 @@
 						</blockquote>
 					</td>
 					<td align="right" valign="top" style="width: 184px;">
-						<table style="width: 184px; border-color: #001144; border-width: 1px; border-style: outset;">
+						<table style="width: 100%; border-color: #001144; border-width: 1px; border-style: outset;">
 							<tr>
 								<td class="fontcell" style="text-align: center; style=width: 184px;">
 									<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none; display: block;">
@@ -128,7 +128,7 @@
 						</table>
 						<br/>
 		
-						<table cellspacing="0">
+						<table style="width: 100%; border-collapse: collapse;">
 							<tr>
 								<td class="titlecell">
 									⠕ Updates
