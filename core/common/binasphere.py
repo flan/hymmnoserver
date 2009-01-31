@@ -1,6 +1,6 @@
 import re
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme 2x1/0[ ]?>>[ ]?([01]+)$")
+_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>[ ]?([01]+)$")
 
 class Error(Exception):
 	"""
@@ -74,9 +74,9 @@ class FormatError(Error):
 		self.description = unicode(description)
 		
 		
-def _reconstructBinasphere(tokens, sequence):
-	buffers = [[], []]
-	words = ([], [])
+def _reconstructBinasphere(tokens, sequence, size):
+	buffers = [[] for i in range(size)]
+	words = tuple([[] for i in range(size)])
 	
 	while True:
 		for i in sequence:
@@ -94,7 +94,7 @@ def _reconstructBinasphere(tokens, sequence):
 			
 	for (i, buffer) in enumerate(buffers):
 		if buffer:
-			raise ContentError("String %i contains an unterminated word" % (i))
+			raise ContentError("String %i contains an unterminated word (fragment: '%s')" % (i, ''.join(buffer)))
 			
 	return words
 	
@@ -105,7 +105,8 @@ def decodeBinasphere(line):
 		
 	return _reconstructBinasphere(
 	 match.group(1).strip().split(),
-	 [int(i) for i in match.group(2)]
+	 [int(i) for i in match.group(3)],
+	 int(match.group(2))
 	)
 	
 def _divideAndCapitalise(words, db_con):

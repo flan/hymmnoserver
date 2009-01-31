@@ -4,10 +4,6 @@ body{
 	background: white;
 }
 
-a{
-	outline: none;
-}
-
 a:link{
 	color:#D92F0E;
 	text-decoration: none;
