@@ -41,8 +41,10 @@ if form.has_key('query'):
 				/*]]>*/
 			</script>
 			<noscript>
-				JavaScript was supposed to hide the statement above, but your browser does
-				not support it, so just pretend that nothing's there.
+				<p>
+					JavaScript was supposed to hide the statement above, but your browser does
+					not support it, so just pretend that nothing's there.
+				</p>
 			</noscript>
 			<%@include file="common/header.xml" %>
 			
@@ -87,10 +89,10 @@ else:
 				link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': line})
 				line = cgi.escape(line, True)
 				req.write("""<tr><td class="binasphere-id">%i</td>""" % (j))
-				req.write("""<td class="binasphere"><a href="%s" style="display: block; color: darkblue; text-decoration: none;">""" % (link))
-				req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (line))
-				req.write("""<div>%s</div>""" % (line))
-				req.write("</a></td></tr>")
+				req.write("""<td class="binasphere">""")
+				req.write("""<div style="font-family: hymmnos; font-size: 18pt;"><a href="%s" style="display: block; color: darkblue; text-decoration: none;">%s</a></div>""" % (link, line))
+				req.write("""<div><a href="%s" style="display: block; color: darkblue; text-decoration: none;">%s</a></div>""" % (link, line))
+				req.write("</td></tr>")
 			req.write("</table></td></tr>")
 		req.write("</table>")
 	except binasphere.FormatError:
