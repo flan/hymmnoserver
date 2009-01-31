@@ -102,13 +102,15 @@ else:
 
 %>
 			<hr/>
-			<div>
-				<form method="get" action="/hymmnoserver/grammar.psp">
+			<form method="get" action="/hymmnoserver/grammar.psp">
+				</div>
 					<textarea name="query" rows="5" cols="80"></textarea><br/>
 					<input type="submit" value="process"/>
-				</form>
-			</div>
-			<%if _db_con: _db_con.close() %>
+				</div>
+			</form>
+<%
+if _db_con: _db_con.close()
+%>
 			<%@include file="common/footer-py.xml" %>
 		</div>
 		<%="<!--"%> -->
