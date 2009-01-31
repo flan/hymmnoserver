@@ -73,7 +73,8 @@ else:
 	try:
 		words = binasphere.decodeBinasphere(query)
 		for lines in binasphere.divideAndCapitalise(words, _db_con):
-			req.write(str(lines) + "<br/>")
+			for line in lines:
+				req.write(str(lines) + "<br/>")
 	except binasphere.FormatError:
 		pass #try syntax
 	except binasphere.ContentError, e:

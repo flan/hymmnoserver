@@ -109,9 +109,23 @@ def decodeBinasphere(line):
 	)
 	
 def _divideAndCapitalise(words, db_con):
-	#Load every word from the database.
-	#every time ES(I) is reached, start a new word line.
-	return ' '.join(words)
+	lines = []
+	buffer = []
+	
+	cursor = db_con.cursor()
+	for word in words:
+		cursor.execute("SELECT word, class FROM hymmnos WHERE word = %s LIMIT 1")
+		result = c.fetchone()
+		if result:
+			if result[1] == 14 and buffer: #ES(I)
+				lines.append(' '.join(buffer))
+				buffer = []
+			buffer.append(result[0])
+		else:
+			buffer.append(word.lower())
+	cursor.close()
+	
+	return lines + [' '.join(buffer)]
 	
 def divideAndCapitalise(words, db_con):
 	lines = []
