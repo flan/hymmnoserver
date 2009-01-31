@@ -1,6 +1,6 @@
 import re
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme 2x1/0>>([01]+)$")
+_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme 2x1/0[ ]?>>[ ]?([01]+)$")
 
 class Error(Exception):
 	"""
