@@ -126,8 +126,8 @@
 								</td>
 							</tr>
 						</table>
-		
-						<table style="width: 100%; border-collapse: collapse; border-color: #001144; border-width: 1px; border-style: outset;">
+						<br/>
+						<table style="width: 100%; border-collapse: collapse;">
 							<tr>
 								<td class="titlecell">
 									⠕ Updates
