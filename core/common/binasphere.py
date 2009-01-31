@@ -117,4 +117,5 @@ def divideAndCapitalise(words, db_con):
 	lines = []
 	for token_string in words:
 		lines.append(_divideAndCapitalise(token_string, db_con))
-		
+	return lines
+	
