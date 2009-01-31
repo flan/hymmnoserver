@@ -25,9 +25,11 @@ ul.basic-inline{
 }
 
 td.binasphere{
-	background: #CCCCCC;
+	background: #DDDDDD;
 	text-align: left;
 	font-size: 14pt;
+	padding-left: 8px;
+	padding-top: 8px;
 }
 td.binasphere:hover{
 	background: #EEEEEE;
