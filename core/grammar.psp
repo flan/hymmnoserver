@@ -96,8 +96,11 @@ else:
 				req.write("</td></tr>")
 			req.write("</table></td></tr>")
 		if(unknown):
+			plural = ''
+			if len(unknown) > 1:
+				plural = 's'
 			req.write("""<tr><td style="color: white; background: black;" colspan="2">""")
-			req.write("""<div style="font-size: 10pt;">Unknown words: %s</div>""" % (cgi.escape(", ".join(unknown), True)))
+			req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown), True)))
 			req.write("""</td></tr>""")
 		req.write("</table>")
 	except binasphere.FormatError:
