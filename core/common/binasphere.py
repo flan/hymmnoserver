@@ -1,6 +1,9 @@
 import re
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>[ ]?([01]+)$")
+_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>[ ]?(\d+)$")
+#When generating Binasphere sequences, create a pool containing the minimum number of samples needed from each
+#line. Then hash the syllable data to produce a random seed, and use that to determine the order of syllables,
+#drawing from the pool. This will create Binasphere-unique, non-boring sequences.
 
 class Error(Exception):
 	"""
