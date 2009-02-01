@@ -112,6 +112,7 @@ def decodeBinasphere(line):
 def _divideAndCapitalise(words, db_con):
 	lines = []
 	buffer = []
+	unknown = set()
 	
 	cursor = db_con.cursor()
 	for word in words:
@@ -123,14 +124,19 @@ def _divideAndCapitalise(words, db_con):
 				buffer = []
 			buffer.append(result[0])
 		else:
-			buffer.append(word.lower())
+			word = word.lower()
+			buffer.append(word)
+			unknown.add(word)
 	cursor.close()
 	
-	return lines + [' '.join(buffer)]
+	return (lines + [' '.join(buffer)], unknown)
 	
 def divideAndCapitalise(words, db_con):
 	lines = []
+	unknown_set = set()
 	for token_string in words:
-		lines.append(_divideAndCapitalise(token_string, db_con))
-	return lines
+		(line_list, unknown) = _divideAndCapitalise(token_string, db_con)
+		lines.append(line_list)
+		unknown_set.update(unknown)
+	return (lines, sorted(unknown))
 	
