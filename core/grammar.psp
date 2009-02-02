@@ -21,6 +21,40 @@ if form.has_key('query'):
 	if _query:
 		_db = apache.import_module('your_module_name', path=["/your_module_path/"])
 		_db_con = _db.getConnection()
+		
+def _renderBinasphereComponent(component):
+	link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': component})
+	line = cgi.escape(component, True)
+	req.write("""<td class="binasphere">""")
+	req.write("""<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
+	req.write("""<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
+	req.write("</td>")
+	
+def _renderBinasphere(binasphere_phrase, binasphere_components, unknown_components):
+	req.write("""<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">""")
+	req.write("""<tr><td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">""")
+	req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (binasphere_phrase))
+	req.write("""<div style="font-size: 12pt;">%s</div>""" % (binasphere_phrase))
+	req.write("""</td></tr>""")
+	for (i, lines) in enumerate(binasphere_components):
+		req.write("""<tr><td class="binasphere-id">%i</td>""" % (i))
+		req.write("""<td style="background: #808080;"><table style="width: 100%; border-spacing: 1px;">""")
+		if len(lines) > 1:
+			for (j, line) in enumerate(lines):
+				req.write("""<tr><td class="binasphere-id">%i</td>""" % (j))
+				_renderBinasphereComponent(line)
+				req.write("</td></tr>")
+			req.write("</table></td></tr>")
+		else:
+			_renderBinasphereComponent(line)
+	if(unknown_components):
+		plural = ''
+		if len(unknown_components) > 1:
+			plural = 's'
+		req.write("""<tr><td style="color: white; background: black;" colspan="2">""")
+		req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown_components), True)))
+		req.write("""</td></tr>""")
+	req.write("</table>")
 
 %>
 		<%@include file="common/resources.xml" %>
@@ -75,36 +109,11 @@ if not _query:
 <%
 else:
 	try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
-		words = binasphere.decodeBinasphere(_query)
-		query_render = cgi.escape(_query, True)
-		req.write("""<table style="border-spacing: 1px; color: white; background: grey; border: 1px solid black; width: 100%;">""")
-		req.write("""<tr><td style="color: darkblue; background: lightgrey; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">""")
-		req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (query_render))
-		req.write("""<div style="font-size: 12pt;">%s</div>""" % (query_render))
-		req.write("""</td></tr>""")
+		words = binasphere.decodeBinasphere(' '.join([line for line in _query.splitlines() if line]).split())
 		(lines_list, unknown) = binasphere.divideAndCapitalise(words, _db_con)
-		for (i, lines) in enumerate(lines_list):
-			req.write("""<tr><td class="binasphere-id">%i</td>""" % (i))
-			req.write("""<td style="background: grey;"><table style="width: 100%; border-spacing: 1px;">""")
-			for (j, line) in enumerate(lines):
-				link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': line})
-				line = cgi.escape(line, True)
-				req.write("""<tr><td class="binasphere-id">%i</td>""" % (j))
-				req.write("""<td class="binasphere">""")
-				req.write("""<div style="font-family: hymmnos; font-size: 18pt;"><a href="%s" style="display: block; color: darkblue; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
-				req.write("""<div><a href="%s" style="display: block; color: darkblue; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
-				req.write("</td></tr>")
-			req.write("</table></td></tr>")
-		if(unknown):
-			plural = ''
-			if len(unknown) > 1:
-				plural = 's'
-			req.write("""<tr><td style="color: white; background: black;" colspan="2">""")
-			req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown), True)))
-			req.write("""</td></tr>""")
-		req.write("</table>")
+		_renderBinasphere(cgi.escape(_query, True), lines_list, unknown)
 	except binasphere.FormatError:
-		pass #try syntax
+		pass #try encoding binasphere, then try syntax
 	except binasphere.ContentError, e:
 		req.write("Unable to decode Binasphere phrase: %s" % e)
 

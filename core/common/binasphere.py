@@ -1,6 +1,6 @@
 import re
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>[ ]?(\d+)$")
+_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
 #When generating Binasphere sequences, create a pool containing the minimum number of samples needed from each
 #line. Then hash the syllable data to produce a random seed, and use that to determine the order of syllables,
 #drawing from the pool. This will create Binasphere-unique, non-boring sequences.
@@ -106,11 +106,17 @@ def decodeBinasphere(line):
 	if not match:
 		raise FormatError("Non-Binasphere input provided")
 		
-	return _reconstructBinasphere(
-	 match.group(1).strip().split(),
-	 [int(i) for i in match.group(3)],
-	 int(match.group(2))
-	)
+	tokens = match.group(1).strip().split()
+	size = int(match.group(2))
+	
+	sequence = match.group(3).strip().split()
+	if len(sequence) == 1:
+		if size > 9:
+			raise ContentError("For line-counts greater than 9, sequence entries must be space-delimited")
+		sequence = sequence[0]
+	sequence = [int(i) for i in sequence]
+	
+	return _reconstructBinasphere(tokens, sequence, size)
 	
 def _divideAndCapitalise(words, db_con):
 	lines = []

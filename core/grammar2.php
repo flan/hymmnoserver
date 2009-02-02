@@ -309,7 +309,7 @@
 					</tr>
 				</table>
 				<br/>
-				<span class="text-title" style="color: purple;">▼ Emotions directed towards the speaker's surroundings</span><br/>
+				<span class="text-title" style="color: #800080;">▼ Emotions directed towards the speaker's surroundings</span><br/>
 				<table>
 					<tr>
 						<td class="ev-4b" style="text-align: center; width: 50px;">LYA</td>

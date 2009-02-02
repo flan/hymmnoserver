@@ -118,7 +118,7 @@
 								<td class="fontcell" style="text-align: center; style=width: 184px;">
 									<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none; display: block;">
 										<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
-										<span style="color: #FFFFFF; font-weight: bold; margin-top: -10px;">
+										<span style="color: white; font-weight: bold; margin-top: -10px;">
 											<span style="font-size: 9pt;">Download the Hymmnos</span><br/>
 											<span style="font-size: 8pt;">TrueType Font (v1.1)</span>
 										</span>
@@ -168,7 +168,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="text-align: center;" class="infocell">
+								<td class="infocell" style="text-align: center;">
 									<a href="http://game.salburg.com/hymmnoserver/">
 										<img src="/hymmnoserver/images/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
 									</a>
