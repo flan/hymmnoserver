@@ -39,7 +39,7 @@ def _queryWord(word, db_con){
 	cursor.close()
 	
 	if records:
-		return tuple([[word, meaning_english, kana, class, dialect, None, syllables.split()] for (word, meaning_english, kana, class, school, syllables) in records])
+		return tuple([[word, meaning_english, kana, class, dialect, None, syllables.split('/')] for (word, meaning_english, kana, class, school, syllables) in records])
 	return ([word, None, None, 0, 0, None, 0, word])
 	
 def _queryEmotionVerb(word, db_con, inverse):
@@ -52,7 +52,7 @@ def _queryEmotionVerb(word, db_con, inverse):
 	for (ev_re, ev) in ev_list:
 		match = ev_re.match(word)
 		if match:
-			record = _queryWord(ev)
+			record = _queryWord(ev, db_con)
 			decorations = []
 			for group in match.groups()[:-1]:
 				if group:
@@ -62,13 +62,13 @@ def _queryEmotionVerb(word, db_con, inverse):
 			decorations.append(match.groups[-1])
 			record[0][5] = decorations
 			
-			syllables = record[0][6]
-			offset = 1
-			for i in range(ev.count('.')):
-				decoration = decorations[i]
-				if decoration:
-					syllables.insert(i + offset, decoration)
-					offset += 1
+			#syllables = record[0][6]
+			#offset = 1
+			#for i in range(ev.count('.')):
+			#	decoration = decorations[i]
+			#	if decoration:
+			#		syllables.insert(i + offset, decoration)
+			#		offset += 1
 			return record
 	return None
 	
@@ -80,9 +80,10 @@ def _queryEmotionWord(word, db_con, inverse):
 		match = _EMOTION_WORDS_REGEXP.match(word)
 		
 	if match:
-		record = _queryWord(ev)
+		record = _queryWord(ev, db_con)
 		if record[0][3] > 0: #Match found.
 			record[0][5] = [match.group(1)]
+			#record[0][6].insert(0, match.group(1))
 			return record
 	return None
 	
@@ -92,3 +93,6 @@ def readWord(word, db_con, inverse=False){
 	"""
 	return _queryEmotionVerb(word, db_con, inverse) or _queryEmotionWord(word, db_con, inverse) or _queryWord(word, db_con)
 	
+#Emotion Vowels will need to be introduced into syllabic output when
+#rendering the Binasphere phrase itself. It can't easily be done
+#while preparing the words due to case-inversion.
