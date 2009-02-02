@@ -13,6 +13,7 @@ from mod_python import apache
 _WORKING_PATH = "/your_core_path/"
 
 binasphere = apache.import_module('binasphere', path=[_WORKING_PATH + "common/"])
+lookup = apache.import_module('lookup', path=[_WORKING_PATH + "common/"])
 
 _db_con = None
 _query = None
@@ -21,6 +22,7 @@ if form.has_key('query'):
 	if _query:
 		_db = apache.import_module('your_module_name', path=["/your_module_path/"])
 		_db_con = _db.getConnection()
+		lookup.initialiseEmotionVerbRegexps(_db_con)
 		
 def _renderBinasphereComponent(component):
 	link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': component})
