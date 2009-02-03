@@ -132,12 +132,12 @@ def _divideAndCapitalise(words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, meaning_english, kana, word_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
-		if word_class > 0:
-			if word_class == 14 and buffer: #Non-first ES(I)
+		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con, True)[0]
+		if syntax_class > 0:
+			if syntax_class == 14 and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
 				buffer = []
-			buffer.append(word)
+			buffer.append(lookup.decorateWord(word, syntax_class, decorations, None))
 		else:
 			word = word.lower()
 			buffer.append(word)

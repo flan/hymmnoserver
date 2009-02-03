@@ -1,5 +1,6 @@
 import re
 import threading
+import cgi
 
 EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
 _EMOTION_VOWELS_REGEXP = r'(%s)' % (EMOTION_VOWELS)
@@ -10,6 +11,23 @@ _EMOTION_WORDS_INVERSE_REGEXP = re.compile(('^(%s)(\w+)$' % (EMOTION_VOWELS)).sw
 
 _INIT_LOCK = threading.Lock()
 _EMOTION_VERB_REGEXPS = None
+
+_SYNTAX_CLASS_REV = {
+ 1: (14,),#ES(I)
+ 2: (7,),#ES(II)
+ 3: (13,),#ES(III)
+ 4: (1,),#EV
+ 5: (8, 10, 11, 20),#adj
+ 6: (3, 19, 20),#adv
+ 7: (5,),#conj
+ 8: (18,),#cnstr
+ 9: (16,),#intj
+ 10: (4, 9, 10, 19),#n
+ 11: (6,),#prep
+ 12: (15,),#pron
+ 13: (12,),#prt
+ 14: (2, 9, 11)#v
+}
 
 def _getEmotionVerbs(db_con):
 	cursor = db_con.cursor()
@@ -27,7 +45,7 @@ def initialiseEmotionVerbRegexps(db_con):
 			emotion_verbs = _getEmotionVerbs(db_con)
 			_EMOTION_VERB_REGEXPS = [(
 			 re.compile(r"^%s(eh)?$" % (ev.replace(".", EMOTION_VOWELS_REGEXP_FULL))),
-			 re.compile((r"^%s(eh)?$" % (ev.replace(".", EMOTION_VOWELS_REGEXP_FULL)))).swapcase(),
+			 re.compile((r"^%s(EH)?$" % (ev.replace(".", EMOTION_VOWELS_REGEXP_FULL)))).swapcase(),
 			 ev) for ev in emotion_verbs]
 	finally:
 		_INIT_LOCK.release()
@@ -91,3 +109,27 @@ def readWord(word, db_con, inverse=False){
 	"""
 	return _queryEmotionVerb(word, db_con, inverse) or _queryEmotionWord(word, db_con, inverse) or _queryWord(word, db_con)
 	
+def decorateWord(word, syntax_class, decorations, colours):
+	if not decorations:
+		return cgi.escape(word)
+		
+	if syntax_class == 1: #Emotion Verb
+		result = []
+		for (chunk, vowel) in zip(word.split('.'), decorations[:-1]):
+			result.append(cgi.escape(chunk))
+			if colours:
+				result.append(("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(vowel) + "</span>")
+			else:
+				result.append(cgi.escape(vowel))
+		if decorations[-1]:
+			if colours:
+				result.append(("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[-1]) + "</span>")
+			else:
+				result.append(cgi.escape(decorations[-1]))
+		return ''.join(result)
+		
+	if syntax_class in SYNTAX_CLASS_REV[5] or syntax_class in SYNTAX_CLASS_REV[10]: #noun/adj
+		if colours:
+			return ("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>" + cgi.escape(word)
+		return decorations[0] + word
+		
