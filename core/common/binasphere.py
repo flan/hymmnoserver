@@ -130,13 +130,13 @@ def _divideAndCapitalise(words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
+		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word.lower(), db_con)[0]
 		if syntax_class > 0:
 			if dialect in (6, 56) or decorations:
-				reason = word
+				reason = "'%s'" % (word)
 				if decorations and dialect not in (6, 56):
-					reason += " (carried Emotion Vowels)"
-				raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (%s)" % (reason))
+					reason += " (carried markup)"
+				raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %s)" % (reason))
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
 				buffer = []
