@@ -46,7 +46,7 @@ def _renderBinasphere(binasphere_phrase, binasphere_components, unknown_componen
 				req.write("</td></tr>")
 			req.write("</table></td>")
 		else:
-			_renderBinasphereComponent(line)
+			_renderBinasphereComponent(lines[0])
 		req.write("</tr>")
 	if(unknown_components):
 		plural = ''
