@@ -4,6 +4,9 @@
 	$EMOTION_VOWELS_REGEXP = '('.$EMOTION_VOWELS.')';
 	$EMOTION_VOWELS_REGEXP_FULL = '('.$EMOTION_VOWELS.'|\.)?';
 	
+	$NOUNS = array(4, 9, 10, 15, 19);
+	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
+	
 	#Read all Emotion Verbs from the database.
 	$emotion_verbs = array();
 	$stmt = $mysql->prepare("SELECT word FROM hymmnos WHERE class = 1");
