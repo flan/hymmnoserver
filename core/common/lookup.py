@@ -31,8 +31,8 @@ _SYNTAX_CLASS_REV = {
 
 def _getEmotionVerbs(db_con):
 	cursor = db_con.cursor()
-	cursor.execute("SELECT word FROM hymmnos WHERE class = 1")
-	emotion_verbs = [word for (word,) in cursor.fetchall()]
+	cursor.execute("SELECT word, school FROM hymmnos WHERE class = 1")
+	emotion_verbs = cursor.fetchall()
 	cursor.close()
 	
 	return emotion_verbs
@@ -45,8 +45,8 @@ def initialiseEmotionVerbRegexps(db_con):
 			emotion_verbs = _getEmotionVerbs(db_con)
 			_EMOTION_VERB_REGEXPS = [(
 			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL))),
-			 re.compile(r"^%s(EH)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL.swapcase()))),
-			 ev) for ev in emotion_verbs]
+			 re.compile(r"^%s(EH)?$" % (ev.swapcase().replace(".", _EMOTION_VOWELS_REGEXP_FULL.swapcase()))),
+			 ev, d) for (ev, d) in emotion_verbs]
 	finally:
 		_INIT_LOCK.release()
 		
@@ -67,23 +67,26 @@ def _queryWord(word, dialect, db_con):
 def _queryEmotionVerb(word, dialect, db_con, inverse):
 	ev_list = None
 	if inverse:
-		ev_list = [(ev_re_i, ev) for (ev_re, ev_re_i, ev) in _EMOTION_VERB_REGEXPS]
+		ev_list = [(ev_re_i, ev, d) for (ev_re, ev_re_i, ev, d) in _EMOTION_VERB_REGEXPS if not dialect or d == dialect]
 	else:
-		ev_list = [(ev_re, ev) for (ev_re, ev_re_i, ev) in _EMOTION_VERB_REGEXPS]
+		ev_list = [(ev_re, ev, d) for (ev_re, ev_re_i, ev, d) in _EMOTION_VERB_REGEXPS if not dialect or d == dialect]
 		
-	for (ev_re, ev) in ev_list:
+	for (ev_re, ev, d) in ev_list:
 		match = ev_re.match(word)
 		if match:
-			record = _queryWord(ev, dialect, db_con)
+			record = _queryWord(ev, d, db_con)
 			decorations = record[0][5] = []
 			for group in match.groups()[:-1]:
 				if group:
 					decorations.append(group.upper())
 				else:
 					decorations.append('.')
-			decorations.append(match.groups()[-1].lower())
-			
-			syllables = record[0][6]
+			if match.groups()[-1]:
+				decorations.append(match.groups()[-1].lower())
+			else:
+				decorations.append('')
+				
+			syllables = record[0][0].split('.')
 			for i in range(ev.count('.')):
 				decoration = decorations[i]
 				if decoration:
@@ -102,11 +105,15 @@ def _queryEmotionWord(word, dialect, db_con, inverse):
 		match = _EMOTION_WORDS_REGEXP.match(word)
 		
 	if match:
-		record = _queryWord(match.group(2), dialect, db_con)
-		if record[0][3] > 0: #Match found.
-			record[0][5] = [match.group(1).upper()]
-			record[0][6].insert(0, match.group(1))
-			return record
+		records = _queryWord(match.group(2), dialect, db_con)
+		valid = False
+		for record in records:
+			if record[3] > 0: #Entry found.
+				record[5] = [match.group(1).upper()]
+				record[6].insert(0, match.group(1))
+				valid = True
+		if valid:
+			return records
 	return None
 	
 def readWord(word, db_con, inverse=False):
