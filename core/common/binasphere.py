@@ -3,7 +3,7 @@ import random
 
 import lookup
 
-_BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s)+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$" % lookup.EMOTION_VOWELS.swapcase())
+_BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s|\.)+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$" % lookup.EMOTION_VOWELS.swapcase())
 """Binasphere sequence generator.
 To build pool, count the number of syllables in each line, and divide by the greatest common factor.
 rnd = random.Random(647)

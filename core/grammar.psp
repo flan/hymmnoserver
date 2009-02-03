@@ -113,7 +113,8 @@ else:
 		(lines_list, unknown) = binasphere.divideAndCapitalise(line, _db_con)
 		_renderBinasphere(cgi.escape(_query, True), lines_list, unknown)
 	except binasphere.FormatError:
-		pass #try encoding binasphere, then try syntax
+		#try encoding binasphere, then try syntax
+		req.write("Unable to handle query at this time")
 	except binasphere.ContentError, e:
 		req.write("Unable to decode Binasphere phrase: %s" % e)
 
