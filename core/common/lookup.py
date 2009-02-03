@@ -7,26 +7,26 @@ _EMOTION_VOWELS_REGEXP = r'(%s)' % (EMOTION_VOWELS)
 _EMOTION_VOWELS_REGEXP_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
 
 _EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
-_EMOTION_WORDS_INVERSE_REGEXP = re.compile(('^(%s)(\w+)$' % (EMOTION_VOWELS)).swapcase())
+_EMOTION_WORDS_INVERSE_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS.swapcase()))
 
 _INIT_LOCK = threading.Lock()
 _EMOTION_VERB_REGEXPS = None
 
 _SYNTAX_CLASS_REV = {
- 1: (14,),#ES(I)
- 2: (7,),#ES(II)
- 3: (13,),#ES(III)
- 4: (1,),#EV
- 5: (8, 10, 11, 20),#adj
- 6: (3, 19, 20),#adv
- 7: (5,),#conj
- 8: (18,),#cnstr
- 9: (16,),#intj
- 10: (4, 9, 10, 19),#n
- 11: (6,),#prep
- 12: (15,),#pron
- 13: (12,),#prt
- 14: (2, 9, 11)#v
+ 'ES(I)': (14,),
+ 'ES(II)': (7,),
+ 'ES(III)': (13,),
+ 'EV': (1,),
+ 'adj': (8, 10, 11, 20),
+ 'adv': (3, 19, 20),
+ 'conj': (5,),
+ 'cnstr': (18,),
+ 'intj': (16,),
+ 'n': (4, 9, 10, 19),
+ 'prep': (6,),
+ 'pron': (15,),
+ 'prt': (12,),
+ 'v': (2, 9, 11)
 }
 
 def _getEmotionVerbs(db_con):
@@ -45,7 +45,7 @@ def initialiseEmotionVerbRegexps(db_con):
 			emotion_verbs = _getEmotionVerbs(db_con)
 			_EMOTION_VERB_REGEXPS = [(
 			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL))),
-			 re.compile((r"^%s(EH)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL))).swapcase()),
+			 re.compile(r"^%s(EH)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL.swapcase()))),
 			 ev) for ev in emotion_verbs]
 	finally:
 		_INIT_LOCK.release()
@@ -140,7 +140,7 @@ def decorateWord(word, syntax_class, decorations, colours):
 				result.append(cgi.escape(decorations[-1]))
 		return ''.join(result)
 		
-	if syntax_class in SYNTAX_CLASS_REV[5] or syntax_class in SYNTAX_CLASS_REV[10]: #noun/adj
+	if syntax_class in SYNTAX_CLASS_REV['n'] or syntax_class in SYNTAX_CLASS_REV['adj']: #noun/adj
 		if colours:
 			return ("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>" + cgi.escape(word)
 		return decorations[0] + word
