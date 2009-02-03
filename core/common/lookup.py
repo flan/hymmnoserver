@@ -57,7 +57,7 @@ def _queryWord(word, db_con):
 	cursor.close()
 	
 	if records:
-		return tuple([[word, meaning_english, kana, class, dialect, None, syllables.split('/')] for (word, meaning_english, kana, class, school, syllables) in records])
+		return tuple([[word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')] for (word, meaning_english, kana, syntax_class, school, syllables) in records])
 	return ([word, None, None, 0, 0, None, 0, word])
 	
 def _queryEmotionVerb(word, db_con, inverse):
