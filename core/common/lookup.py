@@ -99,7 +99,7 @@ def _queryEmotionWord(word, dialect, db_con, inverse):
 		match = _EMOTION_WORDS_REGEXP.match(word)
 		
 	if match:
-		record = _queryWord(ev, dialect, db_con)
+		record = _queryWord(match.group(2), dialect, db_con)
 		if record[0][3] > 0: #Match found.
 			record[0][5] = [match.group(1).upper()]
 			record[0][6].insert(0, match.group(1))
