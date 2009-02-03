@@ -173,7 +173,7 @@
 				</tr>
 			</table><br/>
 			<b>▼ Third word</b><br/>
-			The third word describes how desirable the Reyvateil finds the context of the emotion.
+			The third word describes how desirable the speaker finds the context of the emotion.
 			<table>
 				<tr>
 					<td class="kana text-basic-bold">ga</td>
@@ -202,9 +202,9 @@
 			</table>
 			<p>
 				<span class="text-title-small">&lt;Effects of Emotion Sounds&gt;</span><br/>
-				Even when speaking the same sentence, the meaning conveyed by a speaker whose
-				emotional state is cool and collected may be different from the meaning
-				conveyed by one who indicates otherwise.
+				Even when speaking the same core sentence, the meaning conveyed by a speaker
+				whose emotional state is cool and collected may be wildly different from the
+				meaning conveyed by a speaker who indicates seething anger.
 				Some Hymmnos used to control Towers have different effects depending on the
 				Emotion Words with which they are spoken.
 				For example, a command used to open a door may receive a faster response if
