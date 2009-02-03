@@ -109,8 +109,8 @@ if not _query:
 <%
 else:
 	try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
-		words = binasphere.decodeBinasphere(' '.join([line for line in _query.splitlines() if line]).split())
-		(lines_list, unknown) = binasphere.divideAndCapitalise(words, _db_con)
+		line = binasphere.decodeBinasphere(' '.join([line for line in _query.splitlines() if line]))
+		(lines_list, unknown) = binasphere.divideAndCapitalise(line, _db_con)
 		_renderBinasphere(cgi.escape(_query, True), lines_list, unknown)
 	except binasphere.FormatError:
 		pass #try encoding binasphere, then try syntax
