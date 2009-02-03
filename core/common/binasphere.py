@@ -3,8 +3,6 @@ import random
 
 import lookup
 
-lookup.initialiseEmotionVerbRegexps(_db_con)
-
 _BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s)+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$" % lookup.EMOTION_VOWELS.swapcase())
 """Binasphere sequence generator.
 To build pool, count the number of syllables in each line, and divide by the greatest common factor.
@@ -146,6 +144,8 @@ def _divideAndCapitalise(words, db_con):
 	return (lines + [' '.join(buffer)], unknown)
 	
 def divideAndCapitalise(words, db_con):
+	lookup.initialiseEmotionVerbRegexps(db_con)
+	
 	lines = []
 	unknown_set = set()
 	for token_string in words:
