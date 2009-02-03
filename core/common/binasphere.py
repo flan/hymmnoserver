@@ -9,16 +9,8 @@ _BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s)+)EXEC[ _]hymme (\d*[1-9])x1/
 """Binasphere sequence generator.
 To build pool, count the number of syllables in each line, and divide by the greatest common factor.
 rnd = random.Random(647)
-pool = [5, 4, 2] # [[0, 0, 0, 0, 0], [1, 1, 1, 1], [2, 2]]
-while max(pool):
-	count = float(sum(pool))
-	spread = [c/count for c in pool]
-	num = rnd.random()
-	for (i, s) in enumerate(spread):
-		if num < s + sum(spread[:i]):
-			print i
-			pool[i] -= 1
-			break
+pool = [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2]
+rnd.shuffle(pool)
 """
 
 class Error(Exception):
@@ -139,21 +131,18 @@ def _divideAndCapitalise(words, db_con):
 	buffer = []
 	unknown = set()
 	
-	cursor = db_con.cursor()
 	for word in words:
-		cursor.execute("SELECT word, class FROM hymmnos WHERE word = %s LIMIT 1", (word,))
-		result = cursor.fetchone()
-		if result:
-			if result[1] == 14 and buffer: #ES(I)
+		(word, meaning_english, kana, word_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
+		if word_class > 0:
+			if word_class == 14 and buffer: #Non-first ES(I)
 				lines.append(' '.join(buffer))
 				buffer = []
-			buffer.append(result[0])
+			buffer.append(word)
 		else:
 			word = word.lower()
 			buffer.append(word)
 			unknown.add(word)
-	cursor.close()
-	
+			
 	return (lines + [' '.join(buffer)], unknown)
 	
 def divideAndCapitalise(words, db_con):

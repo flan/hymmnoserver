@@ -248,3 +248,7 @@
 		The presented kana does not take Emotion Vowels into consideration.
 	</p>
 </div>
+
+#If alternative words in other dialects could have been used instead,
+#render all permutations at the bottom of the output.
+#Format: word$dialect, like "tie$6", to indicate which variant to use.
