@@ -38,15 +38,16 @@ def _renderBinasphere(binasphere_phrase, binasphere_components, unknown_componen
 	req.write("""</td></tr>""")
 	for (i, lines) in enumerate(binasphere_components):
 		req.write("""<tr><td class="binasphere-id">%i</td>""" % (i))
-		req.write("""<td style="background: #808080;"><table style="width: 100%; border-spacing: 1px;">""")
 		if len(lines) > 1:
+			req.write("""<td style="background: #808080;"><table style="width: 100%; border-spacing: 1px;">""")
 			for (j, line) in enumerate(lines):
 				req.write("""<tr><td class="binasphere-id">%i</td>""" % (j))
 				_renderBinasphereComponent(line)
 				req.write("</td></tr>")
-			req.write("</table></td></tr>")
+			req.write("</table></td>")
 		else:
 			_renderBinasphereComponent(line)
+		req.write("</tr>")
 	if(unknown_components):
 		plural = ''
 		if len(unknown_components) > 1:
