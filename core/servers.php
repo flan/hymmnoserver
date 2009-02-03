@@ -49,7 +49,7 @@
 				<tr>
 					<td class="server-data">Infel Phira</td>
 					<td class="server-data">Sparc</td>
-					<td class="server-data">Meta Falss (A_t2)</td>
+					<td class="server-data">Metafalss (A_t2)</td>
 				</tr>
 			</table>
 			<p>
@@ -81,7 +81,7 @@
 				</tr>
 				<tr>
 					<td class="server-header">Languages</td>
-					<td class="server-data">Central Pure Note and dialects</td>
+					<td class="server-data">Central Standard Note and dialects</td>
 					<td class="server-data">New Testament of Pastalie only</td>
 				</tr>
 				<tr>

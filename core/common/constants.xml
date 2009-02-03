@@ -62,19 +62,19 @@
 	
 	$DIALECT = array(
 		0 => 'Unknown',
-		1 => 'Central Pure Note',
+		1 => 'Central Standard Note',
 		2 => 'Cult Ciel Note',
 		3 => 'Cluster Note',
 		4 => 'Alpha Note',
-		5 => 'Meta Falss Note',
+		5 => 'Metafalss Note',
 		6 => 'New Testament of Pastalie',
 		7 => 'Alpha Note (EOLIA)',
 		50 => 'Unknown [Unofficial]',
-		51 => 'Central Pure [Unofficial]',
+		51 => 'Central Standard [Unofficial]',
 		52 => 'Cult Ciel [Unofficial]',
 		53 => 'Cluster [Unofficial]',
 		54 => 'Alpha [Unofficial]',
-		55 => 'Meta Falss [Unofficial]',
+		55 => 'Metafalss [Unofficial]',
 		56 => 'Pastalia [Unofficial]',
 		57 => '(EOLIA) [Unofficial]'
 	);

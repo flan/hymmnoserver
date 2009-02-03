@@ -306,7 +306,7 @@
 			</p>
 			<p>
 				Historically, non-first-person sentences were not part of standard Hymmnos; it was not
-				until the formation of Central Pure Note that &quot;rre&quot; formally became part of
+				until the formation of Central Standard Note that &quot;rre&quot; formally became part of
 				the language to further its communicability.
 			</p>
 		</div>
