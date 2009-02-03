@@ -125,7 +125,7 @@ def decorateWord(word, syntax_class, decorations, colours):
 	if not decorations:
 		return cgi.escape(word)
 		
-	if syntax_class == 1: #Emotion Verb
+	if syntax_class in _SYNTAX_CLASS_REV['EV']: #Emotion Verb
 		result = []
 		for (chunk, vowel) in zip(word.split('.'), decorations[:-1]):
 			result.append(cgi.escape(chunk))
@@ -140,7 +140,7 @@ def decorateWord(word, syntax_class, decorations, colours):
 				result.append(cgi.escape(decorations[-1]))
 		return ''.join(result)
 		
-	if syntax_class in SYNTAX_CLASS_REV['n'] or syntax_class in SYNTAX_CLASS_REV['adj']: #noun/adj
+	if syntax_class in _SYNTAX_CLASS_REV['n'] or syntax_class in _SYNTAX_CLASS_REV['adj']: #noun/adj
 		if colours:
 			return ("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>" + cgi.escape(word)
 		return decorations[0] + word
