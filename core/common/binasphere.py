@@ -3,7 +3,7 @@ import random
 
 import lookup
 
-_BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s|\.)+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$" % lookup.EMOTION_VOWELS.swapcase())
+_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
 """Binasphere sequence generator.
 To build pool, count the number of syllables in each line, and divide by the greatest common factor.
 rnd = random.Random(647)
@@ -90,7 +90,7 @@ def _reconstructBinasphere(tokens, sequence, size):
 	while True:
 		for i in sequence:
 			if not tokens:
-				raise ContentError("Fewer syllables than expected found in input")
+				raise ContentError("Syllable-count not a multiple of sequence length")
 			fragment = tokens.pop(0)
 			if fragment.endswith('x'):
 				buffers[i].append(fragment[:-1])
@@ -130,8 +130,13 @@ def _divideAndCapitalise(words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con, True)[0]
+		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
 		if syntax_class > 0:
+			if dialect in (6, 56) or decorations:
+				reason = word
+				if decorations and dialect not in (6, 56):
+					reason += " (carried Emotion Vowels)"
+				raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (%s)" % (reason))
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
 				buffer = []

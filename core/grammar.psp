@@ -118,6 +118,8 @@ else:
 		req.write("Unable to handle query at this time")
 	except binasphere.ContentError, e:
 		req.write("Unable to decode Binasphere phrase: %s" % e)
+#	except Exception, e:
+#		req.write("An unexpected error occurred: %s" % (e))
 
 %>
 			<hr/>

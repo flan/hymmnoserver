@@ -136,11 +136,11 @@
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
-										<li>Binasphere decoder (30/1/2009)</li>
-										<li>Python added (28/1/2009)</li>
-										<li>Source released (14/1/2009)</li>
-										<li>Unofficial words (13/1/2009)</li>
-										<li>Grammar evaluator (7/1/2009)</li>
+										<li>(3/2/2009) Revised terminology</li>
+										<li>(30/1/2009) Binasphere decoder</li>
+										<li>(28/1/2009) Python added</li>
+										<li>(14/1/2009) Source released</li>
+										<li>(13/1/2009) Unofficial words</li>
 									</ul>
 								</td>
 							</tr>
