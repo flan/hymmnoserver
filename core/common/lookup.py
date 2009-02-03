@@ -50,7 +50,7 @@ def initialiseEmotionVerbRegexps(db_con):
 	finally:
 		_INIT_LOCK.release()
 		
-def _queryWord(word, db_con){
+def _queryWord(word, db_con):
 	cursor = db_con.cursor()
 	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word = %s ORDER BY school ASC", (word,))
 	records = cursor.fetchall()
