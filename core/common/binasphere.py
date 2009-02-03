@@ -1,9 +1,25 @@
 import re
+import random
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
-#When generating Binasphere sequences, create a pool containing the minimum number of samples needed from each
-#line. Then hash the syllable data to produce a random seed, and use that to determine the order of syllables,
-#drawing from the pool. This will create Binasphere-unique, non-boring sequences.
+import lookup
+
+lookup.initialiseEmotionVerbRegexps(_db_con)
+
+_BINASPHERE_REGEXP = re.compile("^=>((?:[A-Zx ]|%s)+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$" % lookup.EMOTION_VOWELS.swapcase())
+"""Binasphere sequence generator.
+To build pool, count the number of syllables in each line, and divide by the greatest common factor.
+rnd = random.Random(647)
+pool = [5, 4, 2] # [[0, 0, 0, 0, 0], [1, 1, 1, 1], [2, 2]]
+while max(pool):
+	count = float(sum(pool))
+	spread = [c/count for c in pool]
+	num = rnd.random()
+	for (i, s) in enumerate(spread):
+		if num < s + sum(spread[:i]):
+			print i
+			pool[i] -= 1
+			break
+"""
 
 class Error(Exception):
 	"""

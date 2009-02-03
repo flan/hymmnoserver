@@ -1,12 +1,12 @@
 import re
 import threading
 
-_EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
-_EMOTION_VOWELS_REGEXP = '(%s)' % (_EMOTION_VOWELS)
-_EMOTION_VOWELS_REGEXP_FULL = r'(%s|\.)?' % (_EMOTION_VOWELS)
+EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
+_EMOTION_VOWELS_REGEXP = r'(%s)' % (EMOTION_VOWELS)
+_EMOTION_VOWELS_REGEXP_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
 
-_EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (_EMOTION_VOWELS))
-_EMOTION_WORDS_INVERSE_REGEXP = re.compile(('^(%s)(\w+)$' % (_EMOTION_VOWELS)).swapcase())
+_EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
+_EMOTION_WORDS_INVERSE_REGEXP = re.compile(('^(%s)(\w+)$' % (EMOTION_VOWELS)).swapcase())
 
 _INIT_LOCK = threading.Lock()
 _EMOTION_VERB_REGEXPS = None
@@ -26,8 +26,8 @@ def initialiseEmotionVerbRegexps(db_con):
 		if not _EMOTION_VERB_REGEXPS:
 			emotion_verbs = _getEmotionVerbs(db_con)
 			_EMOTION_VERB_REGEXPS = [(
-			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL))),
-			 re.compile((r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL)))).swapcase(),
+			 re.compile(r"^%s(eh)?$" % (ev.replace(".", EMOTION_VOWELS_REGEXP_FULL))),
+			 re.compile((r"^%s(eh)?$" % (ev.replace(".", EMOTION_VOWELS_REGEXP_FULL)))).swapcase(),
 			 ev) for ev in emotion_verbs]
 	finally:
 		_INIT_LOCK.release()
