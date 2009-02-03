@@ -103,7 +103,7 @@ def _queryEmotionWord(word, db_con, inverse):
 			return record
 	return None
 	
-def readWord(word, db_con, inverse=False){
+def readWord(word, db_con, inverse=False):
 	"""
 	[word, meaning_english, kana, class, dialect, decorations, syllables]
 	"""
