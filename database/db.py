@@ -15,7 +15,7 @@ while True:
 	print "Syllables in lower-case, separated by spaces:"
 	syllables = None
 	while True:
-		syllables = raw_input()
+		syllables = "'%s'" % raw_input().replace("'", "\\'")
 		if syllables.replace(' ', '').lower() == word.lower():
 			break
 		elif syllables.endswith(';'):
