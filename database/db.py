@@ -12,6 +12,18 @@ while True:
 	japanese = "'%s'" % raw_input().replace("'", "\\'")
 	print "Kana form: "
 	kana = "'%s'" % raw_input().replace("'", "\\'")
+	print "Syllables in lower-case, separated by spaces:"
+	syllables = None
+	while True:
+		syllables = raw_input()
+		if syllables.replace(' ', '').lower() == word.lower():
+			break
+		elif syllables.endswith(';'):
+			syllables = syllables[:-1]
+			break
+		else:
+			print "Entry does not match word structure"
+	print
 	print "1) 中央正純律（共通語)"
 	print "2) クルトシエール律（Ⅰ紀前古代語）"
 	print "3) クラスタ律（クラスタ地方語）"
@@ -49,7 +61,7 @@ while True:
 		comments = "NULL"
 		
 	rom = "'%s'" % romaji.getRomaji(kana.decode('utf-8')).replace("'", "\\'")
-	db.query("insert into hymmnos values (%s, %s, %s, %i, %s, %s, %s, %i)" % \
-	 (word, english, japanese, school, kana, rom, comments, syntax))
+	db.query("insert into hymmnos values (%s, %s, %s, %i, %s, %s, %s, %i, %s)" % \
+	 (word, english, japanese, school, kana, rom, comments, syntax, syllables.replace(' ', '/')))
 	print
 	
