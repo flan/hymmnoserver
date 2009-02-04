@@ -28,6 +28,25 @@ SYNTAX_CLASS_REV = {
  'v': (2, 9, 11)
 }
 
+DIALECT = {
+ 'Unknown': 0,
+ 'Central Standard Note': 1,
+ 'Cult Ciel Note': 2,
+ 'Cluster Note': 3,
+ 'Alpha Note': 4,
+ 'Metafalss Note': 5,
+ 'New Testament of Pastalie': 6,
+ 'Alpha Note (EOLIA)': 7,
+ 'Unknown [Unofficial]': 50,
+ 'Central Standard [Unofficial]': 51,
+ 'Cult Ciel [Unofficial]': 52,
+ 'Cluster [Unofficial]': 53,
+ 'Alpha [Unofficial]': 54,
+ 'Metafalss [Unofficial]': 55,
+ 'Pastalia [Unofficial]': 56,
+ '(EOLIA) [Unofficial]': 57
+}
+
 def _getEmotionVerbs(db_con):
 	cursor = db_con.cursor()
 	cursor.execute("SELECT word, school FROM hymmnos WHERE class = 1")

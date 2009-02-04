@@ -23,7 +23,6 @@ while True:
 			break
 		else:
 			print "Entry does not match word structure"
-	print
 	print "1) 中央正純律（共通語)"
 	print "2) クルトシエール律（Ⅰ紀前古代語）"
 	print "3) クラスタ律（クラスタ地方語）"

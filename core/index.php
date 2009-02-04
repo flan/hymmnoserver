@@ -108,7 +108,8 @@
 							</p>
 							<ul style="margin-top: -10px;">
 								<li>Syntactic validation and structural processing</li>
-								<li>Binasphere conversion</li>
+								<li>Binasphere encoding and decoding</li>
+								<li>Persistent Emotion Sounds</li>
 							</ul>
 						</blockquote>
 					</td>
@@ -227,3 +228,4 @@
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>
+

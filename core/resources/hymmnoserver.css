@@ -24,23 +24,6 @@ ul.basic-inline{
 	padding-left: 15px;
 }
 
-td.binasphere{
-	background: #DDDDDD;
-	text-align: left;
-	font-size: 12pt;
-	padding-left: 5px;
-	padding-top: 5px;
-	padding-right: 2px;
-}
-td.binasphere:hover{
-	background: #EEEEEE;
-}
-td.binasphere-id{
-	color: white;
-	background: black;
-	text-align: center;
-}
-
 td.data-cell-blue{
 	font-size: 0.9em;
 	color: #001144;
@@ -223,6 +206,23 @@ td.titlecell{
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 10pt;
+}
+
+td.transformation{
+	background: #DDDDDD;
+	text-align: left;
+	font-size: 12pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 2px;
+}
+td.transformation:hover{
+	background: #EEEEEE;
+}
+td.transformation-id{
+	color: white;
+	background: black;
+	text-align: center;
 }
 
 td.word-header{

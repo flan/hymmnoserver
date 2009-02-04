@@ -12,7 +12,7 @@ import urllib
 from mod_python import apache
 _WORKING_PATH = "/your_core_path/"
 
-binasphere = apache.import_module('binasphere', path=[_WORKING_PATH + "common/"])
+transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
 
 _db_con = None
 _query = None
@@ -22,27 +22,27 @@ if form.has_key('query'):
 		_db = apache.import_module('your_module_name', path=["/your_module_path/"])
 		_db_con = _db.getConnection()
 		
-def _renderMicro(component):
+def _renderMicroTransformation(component):
 	link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': component})
 	line = cgi.escape(component, True)
-	req.write("""<td class="binasphere">""")
+	req.write("""<td class="transformation">""")
 	req.write("""<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
 	req.write("""<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
 	req.write("</td>")
 	
-def _renderMacro(phrase, components, unknown):
+def _renderMacroTransformation(phrase, components, unknown):
 	req.write("""<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">""")
 	req.write("""<tr><td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">""")
 	req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (phrase))
 	req.write("""<div style="font-size: 12pt;">%s</div>""" % (phrase))
 	req.write("""</td></tr>""")
 	for (i, lines) in enumerate(components):
-		req.write("""<tr><td class="binasphere-id">%i</td>""" % (i))
+		req.write("""<tr><td class="transformation-id">%i</td>""" % (i))
 		if len(lines) > 1:
 			req.write("""<td style="background: #808080;"><table style="width: 100%; border-spacing: 1px;">""")
 			for (j, line) in enumerate(lines):
-				req.write("""<tr><td class="binasphere-id">%i</td>""" % (j))
-				_renderMicro(line)
+				req.write("""<tr><td class="transformation-id">%i</td>""" % (j))
+				_renderMicroTransformation(line)
 				req.write("</td></tr>")
 			req.write("</table></td>")
 		else:
@@ -105,18 +105,24 @@ if not _query:
 						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
 					</ul>
 				</li>
+				<li>
+					Persistent Emotion Sounds definition syntax
+					<ul>
+						<li>Enter a statement in this form, and the evaluated output will be rendered</li>
+					</ul>
+				</li>
 			</ul>
 			Note: This section is currently pre-alpha and highly incomplete.
 <%
 else:
 	try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
-		line = binasphere.decodeBinasphere(' '.join([line.strip() for line in _query.splitlines() if line]))
-		(lines_list, unknown) = binasphere.divideAndCapitalise(line, _db_con)
-		_renderMacro(cgi.escape(_query, True), lines_list, unknown)
-	except binasphere.FormatError:
+		line = transformations.decodeBinasphere(' '.join([line.strip() for line in _query.splitlines() if line]))
+		(lines_list, unknown) = transformations.divideAndCapitalise(line, _db_con)
+		_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
+	except transformations.FormatError:
 		#try applying emotion-preservation (renders like Binasphere), then encoding binasphere, and then try syntax
 		req.write("This system does not yet know how to handle your query")
-	except binasphere.ContentError, e:
+	except transformations.ContentError, e:
 		req.write("Unable to decode Binasphere phrase: %s" % e)
 #	except Exception, e:
 #		req.write("An unexpected error occurred: %s" % (e))

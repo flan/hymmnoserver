@@ -132,9 +132,9 @@ def _divideAndCapitalise(words, db_con):
 	for word in words:
 		(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word.lower(), db_con)[0]
 		if syntax_class > 0:
-			if dialect in (6, 56) or decorations:
+			if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or decorations:
 				reason = "'%s'" % (word)
-				if decorations and dialect not in (6, 56):
+				if decorations and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
 					reason += " (carried markup)"
 				raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %s)" % (reason))
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
