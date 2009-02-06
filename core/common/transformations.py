@@ -187,6 +187,7 @@ def _multiplexBinasphere(lines, hashable):
 	for i in range(min(syllable_count), 0, -1):
 		if not [None for s_c in syllable_count if s_c % i]:
 			greatest_factor = i
+			break
 			
 	pool = []
 	for (i, n) in enumerate([s_c / greatest_factor for s_c in syllable_count]):
