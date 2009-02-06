@@ -172,7 +172,7 @@ def _dissectSyllables(words, db_con):
 				lines.append(' '.join(buffer))
 				buffer = []
 			buffer.append(word)
-			line_syllables += [syllable.upper() + 'x' for syllable in syllables[:-1]] + syllables[-1].upper()
+			line_syllables += [syllable.upper() + 'x' for syllable in syllables[:-1]] + [syllables[-1].upper()]
 		else:
 			buffer.append(word.lower())
 			line_syllables.append(word.upper())
