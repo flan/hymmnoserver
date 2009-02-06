@@ -217,7 +217,7 @@ def encodeBinasphere(lines, db_con):
 		new_lines.append(lines)
 		syllable_lines.append(syllable_line)
 		unknown_set.update(unknown)
-	return (_multiplexBinasphere(syllable_lines, lines.join('').lower()), new_lines, sorted(unknown))
+	return (_multiplexBinasphere(syllable_lines, ''.join(lines).lower()), new_lines, sorted(unknown))
 	
 def _applyPersistentEmotionSounds(es_i, es_ii, es_iii, words, db_con):
 	lines = []
