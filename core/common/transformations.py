@@ -196,7 +196,7 @@ def _multiplexBinasphere(lines, hashable):
 	while True:
 		for i in pool:
 			output_sequence.append(lines[i].pop(0))
-		if not [None for p in pool if p]:
+		if not [None for l in lines if l]:
 			break
 			
 	sequence = None
