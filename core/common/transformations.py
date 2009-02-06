@@ -198,7 +198,8 @@ def _multiplexBinasphere(lines, hashable):
 			output_sequence.append(lines[i].pop(0))
 		if not [None for l in lines if l]:
 			break
-			
+	pool = map(str, pool)
+	
 	sequence = None
 	if len(lines) > 10:
 		sequence = ' '.join(pool)
