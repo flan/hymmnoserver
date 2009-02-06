@@ -46,7 +46,7 @@ def _renderMacroTransformation(phrase, components, unknown):
 				req.write("</td></tr>")
 			req.write("</table></td>")
 		else:
-			_renderMicro(lines[0])
+			_renderMicroTransformation(lines[0])
 		req.write("</tr>")
 	if(unknown):
 		plural = ''
