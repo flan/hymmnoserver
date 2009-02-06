@@ -136,7 +136,7 @@ def _divideAndCapitaliseLine(words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word.lower())
+		(word, syntax_class, dialect, syllables) = _readWord(word.lower(), db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
@@ -166,7 +166,7 @@ def _dissectSyllables(words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word)
+		(word, syntax_class, dialect, syllables) = _readWord(word, db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
@@ -226,7 +226,7 @@ def _applyPersistentEmotionSounds(es_i, es_ii, es_iii, words, db_con):
 	unknown = set()
 	
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word)
+		(word, syntax_class, dialect, syllables) = _readWord(word, db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
