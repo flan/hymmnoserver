@@ -3,9 +3,10 @@ import random
 
 import lookup
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Zx ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
+_BINASPHERE_REGEXP = re.compile("^=>([A-Z0-9x ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
 _PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x vvi.$")
 _PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi.$")
+_GENERAL_CONTENT_REGEXP = re.compile("^[A-Za-z09 ]+$")
 
 class Error(Exception):
 	"""
@@ -214,8 +215,10 @@ def encodeBinasphere(lines, db_con):
 	new_lines = []
 	syllable_lines = []
 	unknown_set = set()
-	for l in lines:
-		(lines, syllable_line, unknown) = _dissectSyllables(l.split(), db_con)
+	for line in lines:
+		if not _GENERAL_CONTENT_REGEXP.match(line):
+			raise ContentError("Non-Hymmnos content provided")
+		(lines, syllable_line, unknown) = _dissectSyllables(line.split(), db_con)
 		new_lines.append(lines)
 		syllable_lines.append(syllable_line)
 		unknown_set.update(unknown)
@@ -284,6 +287,8 @@ def applyPersistentEmotionSounds(lines, db_con):
 		unknown.add(es_iii)
 		
 	for line in lines[1:-1]:
+		if not _GENERAL_CONTENT_REGEXP.match(line):
+			raise ContentError("Non-Hymmnos content provided")
 		(line, processed_lines, unknown) = _applyPersistentEmotionSounds(es_i, es_ii, es_iii, line.split(), db_con)
 		new_lines.append(line)
 		processed.append(processed_lines)
