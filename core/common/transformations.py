@@ -289,5 +289,5 @@ def applyPersistentEmotionSounds(lines, db_con):
 		processed.append(processed_lines)
 		unknown_set.update(unknown)
 		
-	return (["%s %s %s 0x vvi." % (es_i, es_ii, es_iii)] + new_lines + line[-1], processed, sorted(unknown_set))
+	return (["%s %s %s 0x vvi." % (es_i, es_ii, es_iii)] + new_lines + line[-1:], processed, sorted(unknown_set))
 	
