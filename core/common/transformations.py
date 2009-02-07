@@ -249,8 +249,13 @@ def _applyPersistentEmotionSounds(es_i, es_ii, es_iii, words, db_con):
 	
 def applyPersistentEmotionSounds(lines, db_con):
 	m = _PERSISTANT_START_REGEXP.match(lines[0])
-	if not m or not _PERSISTANT_END_REGEXP.match(lines[-1]):
-		raise FormatError("Persistant syntax not detected")
+	if not _PERSISTANT_END_REGEXP.match(lines[-1]):
+		if not m:
+			raise FormatError("Persistant syntax not detected")
+		else:
+			raise ContentError("Persistent Emotion Sounds terminator not found")
+	elif not m:
+		raise ContentError("Persistent Emotion Sounds initiator not found")
 		
 	new_lines = []
 	processed = []
