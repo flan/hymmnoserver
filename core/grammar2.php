@@ -418,10 +418,9 @@
 				</tr>
 			</table>
 			<p>
-				This section will end with a practical example of how these noun-forms
-				may be used to convey vast amounts of information:<br/>
 				<b>wYEsA Agasar_luca/.</b><br/>
-				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;
+				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;<br/>
+				This simple sentence demonstrates just how expressive Pastalia forms can be.
 			</p>
 		</div>
 		<div class="text-basic">
