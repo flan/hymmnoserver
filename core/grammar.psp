@@ -116,19 +116,20 @@ if not _query:
 <%
 else:
 	lines = [line.strip() for line in _query.splitlines() if line]
-	try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
-		(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
-		_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
-	except transformations.FormatError:
-		if len(lines) > 1:
-			try:
-				(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)
-				_renderMacroTransformation('<br/>'.join([cgi.escape(line) for line in new_lines]), processed, unknown)
-			except transformations.FormatError:
-				(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, _db_con)
-				_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
-		else:
-			req.write("Syntax evaluation not yet implemented")
+	try:
+		try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
+			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
+			_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
+		except transformations.FormatError:
+			if len(lines) > 1:
+				try:
+					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)
+					_renderMacroTransformation('<br/>'.join([cgi.escape(line) for line in new_lines]), processed, unknown)
+				except transformations.FormatError:
+					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, _db_con)
+					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
+			else:
+				req.write("Syntax evaluation not yet implemented")
 	except transformations.ContentError, e:
 		req.write("Unable to process input: %s" % e)
 	except Exception, e:
