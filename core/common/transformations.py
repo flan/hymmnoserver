@@ -3,7 +3,8 @@ import random
 
 import lookup
 
-_BINASPHERE_REGEXP = re.compile("^=>([A-Z0-9x ]+)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
+_BINASPHERE_REGEXP = re.compile("^=>(.+?)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$")
+_BINASPHERE_CONTENT_REGEXP = re.compile("^[A-Z0-9x ]+$")
 _PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x vvi.$")
 _PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi.$")
 _GENERAL_CONTENT_REGEXP = re.compile("^[A-Za-z09 ]+$")
@@ -118,6 +119,8 @@ def decodeBinasphere(line, db_con):
 	match = _BINASPHERE_REGEXP.match(line)
 	if not match:
 		raise FormatError("Non-Binasphere input provided")
+	if not _BINASPHERE_CONTENT_REGEXP.match(match.group(1)):
+		raise ContentError("Invalid Binasphere content provided")
 		
 	tokens = match.group(1).strip().split()
 	size = int(match.group(2))
