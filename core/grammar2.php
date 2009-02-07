@@ -419,7 +419,7 @@
 			</table>
 			<p>
 				<b>wYEsA Agasar_luca/.</b><br/>
-				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;<br/>
+				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;<br/><br/>
 				This simple sentence demonstrates just how expressive Pastalia forms can be.
 			</p>
 		</div>
