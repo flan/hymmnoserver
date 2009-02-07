@@ -146,17 +146,17 @@
 		global $ADJECTIVES;
 		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
 			if($colour){
-				result = '';
-				if(!empty(decorations[0])){
-					result = "<span style=\"color: #FFD700;\">".$decorations[0]."</span>";
+				$result = '';
+				if(!empty($decorations[0])){
+					$result = "<span style=\"color: #FFD700;\">".$decorations[0]."</span>";
 				}
-				result = result.htmlspecialchars($word);
-				if(!empty(decorations[1])){
-					result = result."<span style=\"color: #FF00FF;\">".$decorations[1]."</span>";
+				$result = $result.htmlspecialchars($word);
+				if(!empty($decorations[1])){
+					$result = $result."<span style=\"color: #FF00FF;\">".$decorations[1]."</span>";
 				}
-				return result;
+				return $result;
 			}else{
-				return $decorations[0].$word.decorations[1];
+				return $decorations[0].$word.$decorations[1];
 			}
 		}
 	}
