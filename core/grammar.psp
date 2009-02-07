@@ -15,7 +15,7 @@ _WORKING_PATH = "/your_core_path/"
 transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
 
 _db_con = None
-_query = None
+_query = ''
 if form.has_key('query'):
 	_query = form['query'].strip()
 	if _query:
@@ -138,7 +138,7 @@ else:
 			<hr/>
 			<form method="get" action="/hymmnoserver/grammar.psp">
 				<div>
-					<textarea name="query" rows="5" cols="80"></textarea><br/>
+					<textarea name="query" rows="5" cols="80"><%=_query%></textarea><br/>
 					<input type="submit" value="process"/>
 				</div>
 			</form>

@@ -364,29 +364,29 @@
 			<table>
 				<tr>
 					<td style="background: #ffff88; text-align: center;" colspan="3">
-						<b>lyuma (star)</b><br/>
+						<b>gasar (stuffed animal)</b><br/>
 						<small>(noun from the New Testament of Pastalie)</small>
 					</td>
 				</tr>
 				<tr>
 					<td class="ev-1b">Form 1</td>
-					<td class="ev-1b">Elyuma</td>
-					<td class="ev-1b">The speaker's star; it makes her happy</td>
+					<td class="ev-1b">Egasar</td>
+					<td class="ev-1b">The speaker's stuffed animal; it makes her happy</td>
 				</tr>
 				<tr>
 					<td class="ev-2b">Form 2</td>
-					<td class="ev-2b">YUlyuma</td>
-					<td class="ev-2b">Someone else's star; it worries them</td>
+					<td class="ev-2b">YUgasar</td>
+					<td class="ev-2b">Someone else's stuffed animal; it worries them</td>
 				</tr>
 				<tr>
 					<td class="ev-4b">Form 3</td>
-					<td class="ev-4b">LYNlyuma</td>
-					<td class="ev-4b">Everyone's star; it soothes them</td>
+					<td class="ev-4b">LYNgasar</td>
+					<td class="ev-4b">Everyone's stuffed animal; it soothes them</td>
 				</tr>
 				<tr>
 					<td class="ev-5b">Form 4</td>
-					<td class="ev-5b">Olyuma_cloche</td>
-					<td class="ev-5b">Cloche's star; it irritates her</td>
+					<td class="ev-5b">Agasar_cloche</td>
+					<td class="ev-5b">Cloche's stuffed animal; it encourages her</td>
 				</tr>
 			</table>
 			<p>
@@ -416,7 +416,13 @@
 					<td class="ev-1b">a person</td>
 					<td class="ev-1b">A[object]_[person's name]</td>
 				</tr>
-			</table><br/>
+			</table>
+			<p>
+				This section will end with a practical example of how these noun-forms
+				may be used to convey vast amounts of information:<br/>
+				<b>wYEsA Agasar_luca/.</b><br/>
+				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;
+			</p>
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ The structure of long sentences</div>
@@ -468,8 +474,8 @@
 				<span style="color: red;">
 					Lazy, a contributor to
 					<a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">the wiki on Conlang</a>,
-					made note of the following information. However, it is based on unconfirmed information.
-					But, because it seems reasonable and significant, it has been included here.
+					made note of the following information. It is unconfirmed, but because it seems
+					reasonable and significant, it has been included here.
 				</span><br/>
 				&quot;x.&quot; is used primarily with Category 1 Emotion Vowels, and they carry slightly
 				different meanings in this context:
