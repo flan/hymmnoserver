@@ -139,7 +139,7 @@ else:
 			<hr/>
 			<form method="get" action="/hymmnoserver/grammar.psp">
 				<div>
-					<textarea name="query" rows="5" cols="80"><%=_query%></textarea><br/>
+					<textarea name="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea><br/>
 					<input type="submit" value="process"/>
 				</div>
 			</form>
