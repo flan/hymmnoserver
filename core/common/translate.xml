@@ -3,6 +3,7 @@
 	$EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN';
 	$EMOTION_VOWELS_REGEXP = '('.$EMOTION_VOWELS.')';
 	$EMOTION_VOWELS_REGEXP_FULL = '('.$EMOTION_VOWELS.'|\.)?';
+	$WORD_STRUCTURE = "^$EMOTION_VOWELS_REGEXP?(.+?)(_\w+)?";
 	
 	$NOUNS = array(4, 9, 10, 15, 19);
 	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
@@ -36,11 +37,7 @@
 		if($emotion_verb != NULL){
 			return $emotion_verb;
 		}
-		$emotion_word = processEmotionWord($word);
-		if($emotion_word != NULL){
-			return $emotion_word;
-		}
-		return queryWord($word);
+		return processWord($word);
 	}
 	
 	#Read a word from the database.
@@ -98,19 +95,21 @@
 		return NULL;
 	}
 	
-	#Determine whether a word is an Emotion Vowel-prefixed word; if so, read it from the database.
+	#Determine whether a word is enhanced while reading it from the database.
 	#Return format: [word, english, kana, class, dialect, decorations, hits] | NULL
-	function processEmotionWord($word){
-		global $EMOTION_VOWELS_REGEXP;
+	function processWord($word){
+		global $WORD_STRUCTURE;
 		
-		if(preg_match("/^$EMOTION_VOWELS_REGEXP(.+)$/", $word, $matches)){
-			$d_word = queryWord($matches[2]);
-			if($d_word[3] > 0){#Match found.
-				$d_word[5] = array($matches[1]);
-				return $d_word;
+		preg_match($WORD_STRUCTURE, $word, $matches);
+		$d_word = queryWord($matches[2]);
+		if(count($matches) >= 3){
+			if(count($matches) == 4){//Suffix present.
+				$d_word[5] = array($matches[1], $matches[3]);
+			}else{
+				$d_word[5] = array($matches[1], NULL);
 			}
 		}
-		return NULL;
+		return $d_word;
 	}
 	
 	#Insert Emotion Vowels or blanks into Emotion Verbs or prefix other words.
@@ -147,9 +146,17 @@
 		global $ADJECTIVES;
 		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
 			if($colour){
-				return "<span style=\"color: #FFD700;\">".$decorations[0]."</span>".htmlspecialchars($word);
+				result = '';
+				if(!empty(decorations[0])){
+					result = "<span style=\"color: #FFD700;\">".$decorations[0]."</span>";
+				}
+				result = result.htmlspecialchars($word);
+				if(!empty(decorations[1])){
+					result = result."<span style=\"color: #FF00FF;\">".$decorations[1]."</span>";
+				}
+				return result;
 			}else{
-				return $decorations[0].$word;
+				return $decorations[0].$word.decorations[1];
 			}
 		}
 	}

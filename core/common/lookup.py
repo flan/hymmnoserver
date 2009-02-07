@@ -5,6 +5,7 @@ import cgi
 EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
 _EMOTION_VOWELS_REGEXP = r'(%s)' % (EMOTION_VOWELS)
 _EMOTION_VOWELS_REGEXP_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
+_WORD_STRUCTURE = "^%s?(.+?)(_\w+)?" % (_EMOTION_VOWELS_REGEXP)
 
 _EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
 
@@ -108,19 +109,16 @@ def _queryEmotionVerb(word, dialect, db_con):
 			return record
 	return None
 	
-def _queryEmotionWord(word, dialect, db_con):
-	match = _EMOTION_WORDS_REGEXP.match(word)
-	if match:
-		records = _queryWord(match.group(2), dialect, db_con)
-		valid = False
-		for record in records:
-			if record[3] > 0: #Entry found.
-				record[5] = [match.group(1)]
-				record[6].insert(0, match.group(1))
-				valid = True
-		if valid:
-			return records
-	return None
+def _queryWord(word, dialect, db_con):
+	match = _WORD_STRUCTURE.match(word)
+	records = _queryWord(match.group(2), dialect, db_con)
+	valid = False
+	for record in records:
+		if record[3] > 0: #Entry found.
+			record[5] = [match.group(1), match.group(3)]
+			record[6].insert(0, match.group(1))
+			valid = True
+	return records
 	
 def readWord(word, db_con):
 	"""
@@ -135,12 +133,16 @@ def readWord(word, db_con):
 			pass
 		word = word[:position]
 		
-	return _queryEmotionVerb(word, dialect, db_con) or _queryEmotionWord(word, dialect, db_con) or _queryWord(word, dialect, db_con)
+	return _queryEmotionVerb(word, dialect, db_con) or _queryWord(word, dialect, db_con)
 	
 def decorateWord(word, syntax_class, decorations, colours):
 	if not decorations:
 		return cgi.escape(word)
 		
+	for (i, d) in enumerate(decorations):
+		if d is None:
+			decorations[i] = ''
+			
 	if syntax_class in SYNTAX_CLASS_REV['EV']: #Emotion Verb
 		result = []
 		for (chunk, vowel) in zip(word.split('.'), decorations[:-1]):
@@ -158,6 +160,12 @@ def decorateWord(word, syntax_class, decorations, colours):
 		
 	if syntax_class in SYNTAX_CLASS_REV['n'] or syntax_class in SYNTAX_CLASS_REV['adj']: #noun/adj
 		if colours:
-			return ("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>" + cgi.escape(word)
-		return decorations[0] + word
+			result = []
+			if decorations[0]:
+				result.append("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>")
+			result.append(cgi.escape(word))
+			if decorations[1]:
+				result.append("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[1]) + "</span>")
+			return ''.join(result)
+		return decorations[0] + word + decorations[1]
 		
