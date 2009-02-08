@@ -86,7 +86,7 @@ def _readWord(word, db_con):
 	if syntax_class > 0:
 		if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or decorations:
 			reason = "'%s'" % (word)
-			if decorations and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
+			if [d for d in decorations if d] and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
 				reason += " (carried markup)"
 			raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %s)" % (reason))
 	return (word, syntax_class, dialect, syllables)
