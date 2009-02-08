@@ -3,10 +3,10 @@ import threading
 import cgi
 
 EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
-_EMOTION_VOWELS_REGEXP = r'(%s)' % (EMOTION_VOWELS)
-_EMOTION_VOWELS_REGEXP_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
-_WORD_STRUCTURE = "^%s?(.+?)(_\w+)?$" % (_EMOTION_VOWELS_REGEXP)
+_EMOTION_VOWELS = r'(%s)' % (EMOTION_VOWELS)
+_EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
 
+_WORD_STRUCTURE_REGEXP = re.compile(r"^%s?(.+?)(_\w+)?$" % (_EMOTION_VOWELS))
 _EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
 
 _INIT_LOCK = threading.Lock()
@@ -63,7 +63,7 @@ def initialiseEmotionVerbRegexps(db_con):
 		if not _EMOTION_VERB_REGEXPS:
 			emotion_verbs = _getEmotionVerbs(db_con)
 			_EMOTION_VERB_REGEXPS = [(
-			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_REGEXP_FULL))),
+			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
 			 ev, d) for (ev, d) in emotion_verbs]
 	finally:
 		_INIT_LOCK.release()
@@ -110,7 +110,7 @@ def _queryEmotionVerb(word, dialect, db_con):
 	return None
 	
 def _queryWord(word, dialect, db_con):
-	match = _WORD_STRUCTURE.match(word)
+	match = _WORD_STRUCTURE_REGEXP.match(word)
 	records = _queryWord(match.group(2), dialect, db_con)
 	valid = False
 	for record in records:

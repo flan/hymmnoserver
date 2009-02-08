@@ -7,7 +7,7 @@ _BINASPHERE_REGEXP = re.compile("^=>(.+?)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[
 _BINASPHERE_CONTENT_REGEXP = re.compile("^[A-Z0-9x ]+$")
 _PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x vvi.$")
 _PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi.$")
-_GENERAL_CONTENT_REGEXP = re.compile("^[A-Za-z09 ]+$")
+_GENERAL_CONTENT_REGEXP = re.compile("^[\w ]+$")
 
 class Error(Exception):
 	"""
