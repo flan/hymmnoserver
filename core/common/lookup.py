@@ -162,10 +162,10 @@ def decorateWord(word, syntax_class, decorations, colours):
 		if colours:
 			result = []
 			if decorations[0]:
-				result.append("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>")
+				result.append(("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>")
 			result.append(cgi.escape(word))
 			if decorations[1]:
-				result.append("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[1]) + "</span>")
+				result.append(("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[1]) + "</span>")
 			return ''.join(result)
 		return decorations[0] + word + decorations[1]
 		
