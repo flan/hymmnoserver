@@ -84,9 +84,10 @@ class FormatError(Error):
 def _readWord(word, db_con):
 	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
 	if syntax_class > 0:
-		if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or decorations:
+		l_decorations = [d for d in decorations if d]
+		if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or l_decorations:
 			reason = "'%s'" % (word)
-			if [d for d in decorations if d] and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
+			if l_decorations and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
 				reason += " (carried markup)"
 			raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %s)" % (reason))
 	return (word, syntax_class, dialect, syllables)
