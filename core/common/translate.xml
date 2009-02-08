@@ -106,7 +106,7 @@
 			if(count($matches) == 4){//Suffix present.
 				$d_word[5] = array($matches[1], $matches[3]);
 			}else{
-				$d_word[5] = array($matches[1], NULL);
+				$d_word[5] = array($matches[1], '');
 			}
 		}
 		return $d_word;
