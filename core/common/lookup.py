@@ -68,7 +68,7 @@ def initialiseEmotionVerbRegexps(db_con):
 	finally:
 		_INIT_LOCK.release()
 		
-def _queryWord(word, dialect, db_con):
+def _readWord(word, dialect, db_con):
 	limiter = "ORDER BY school ASC"
 	if dialect:
 		limiter = "AND school = %i" % (dialect)
@@ -111,7 +111,7 @@ def _queryEmotionVerb(word, dialect, db_con):
 	
 def _queryWord(word, dialect, db_con):
 	match = _WORD_STRUCTURE_REGEXP.match(word)
-	records = _queryWord(match.group(2), dialect, db_con)
+	records = _readWord(match.group(2), dialect, db_con)
 	valid = False
 	for record in records:
 		if record[3] > 0: #Entry found.
