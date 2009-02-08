@@ -98,14 +98,6 @@ def _queryEmotionVerb(word, dialect, db_con):
 					decorations.append('.')
 			decorations.append(match.groups()[-1])
 			
-			syllables = record[0][0].split('.')
-			for i in range(ev.count('.')):
-				decoration = decorations[i]
-				if decoration:
-					syllables[i] += decoration
-			if decorations[-1]:
-				syllables.append(decorations[-1])
-				
 			return record
 	return None
 	
@@ -116,7 +108,6 @@ def _queryWord(word, dialect, db_con):
 	for record in records:
 		if record[3] > 0: #Entry found.
 			record[5] = [match.group(1), match.group(3)]
-			record[6].insert(0, match.group(1))
 			valid = True
 	return records
 	
