@@ -169,3 +169,5 @@ def decorateWord(word, syntax_class, decorations, colours):
 			return ''.join(result)
 		return decorations[0] + word + decorations[1]
 		
+	return cgi.escape(word)
+	

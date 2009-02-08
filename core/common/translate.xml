@@ -150,7 +150,7 @@
 				if(!empty($decorations[0])){
 					$result = "<span style=\"color: #FFD700;\">".$decorations[0]."</span>";
 				}
-				$result .= htmlspecialchars($word);
+				$result = $result.htmlspecialchars($word);
 				if(!empty($decorations[1])){
 					$result = $result."<span style=\"color: #FF00FF;\">".$decorations[1]."</span>";
 				}
@@ -159,6 +159,8 @@
 				return $decorations[0].$word.$decorations[1];
 			}
 		}
+		
+		return htmlspecialchars($word);
 	}
 	
 	#Renders a single word in the output table.
