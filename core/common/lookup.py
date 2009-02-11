@@ -137,7 +137,7 @@ def readWords(words, db_con):
 	cursor.close()
 	
 	r_words = {}
-	for (word, meaning_english, kana, syntax_class, dialect, syllabled) in records:
+	for (word, meaning_english, kana, syntax_class, dialect, syllables) in records:
 		l_word = word.lower()
 		w = r_words.get(l_word)
 		if not w:
