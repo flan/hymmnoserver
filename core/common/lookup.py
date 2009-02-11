@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+HymmnoServer module: lookup
+
+Purpose
+=======
+ Reads words from the database.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 2.5 Canada License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import re
 import threading
 import cgi
@@ -111,7 +127,30 @@ def _queryWord(word, dialect, db_con):
 			valid = True
 	return records
 	
-def readWord(word, db_con):
+def readWords(words, db_con):
+	"""
+	{word.lower(): [word, meaning_english, kana, class, dialect, decorations, syllables]}
+	"""
+	words = {}
+	
+	cursor = db_con.cursor()
+	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word in (" + ','.join(['%s' for w in words])  + ") ORDER BY school ASC", words)
+	records = cursor.fetchall()
+	cursor.close()
+	
+	for (word, meaning_english, kana, syntax_class, dialect, syllabled) in records:
+		l_word = word.lower()
+		w = words.get(l_word)
+		if not w:
+			w = []
+			words[l_word] = w
+		w.append([word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')])
+		
+	for word in words:
+		words[word] = tuple(words[word])
+	return words
+	
+def readWord(word, words, db_con):
 	"""
 	[word, meaning_english, kana, class, dialect, decorations, syllables]
 	"""
@@ -124,6 +163,10 @@ def readWord(word, db_con):
 			pass
 		word = word[:position]
 		
+	if words:
+		w = words.get(word.lower())
+		if w:
+			return tuple([[o, m_e, k, s_c, d, e, y] for (o, m_e, k, s_c, d, e, y) in w if not dialect or d == dialect])
 	return _queryEmotionVerb(word, dialect, db_con) or _queryWord(word, dialect, db_con)
 	
 def decorateWord(word, syntax_class, decorations, colours):

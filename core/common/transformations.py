@@ -1,3 +1,20 @@
+# -*- coding: utf-8 -*-
+"""
+HymmnoServer module: transformations
+
+Purpose
+=======
+ Provides library routines for Binasphere codec logic, and support for the
+ Persistant Emotion Sounds definition syntax.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 2.5 Canada License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import re
 import random
 
@@ -81,8 +98,8 @@ class FormatError(Error):
 		self.description = unicode(description)
 		
 		
-def _readWord(word, db_con):
-	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, db_con)[0]
+def _readWord(word, words, db_con):
+	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
 	if syntax_class > 0:
 		l_decorations = [d for d in decorations if d]
 		if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or l_decorations:
@@ -140,8 +157,9 @@ def _divideAndCapitaliseLine(words, db_con):
 	buffer = []
 	unknown = set()
 	
+	plain_words = lookup.readWords(tuple(set(words)), db_con)
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word.lower(), db_con)
+		(word, syntax_class, dialect, syllables) = _readWord(word.lower(), plain_words, db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
@@ -170,8 +188,9 @@ def _dissectSyllables(words, db_con):
 	line_syllables = []
 	unknown = set()
 	
+	plain_words = lookup.readWords(tuple(set(words)), db_con)
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word, db_con)
+		(word, syntax_class, dialect, syllables) = _readWord(word, plain_words, db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
@@ -234,8 +253,9 @@ def _applyPersistentEmotionSounds(es_i, es_ii, es_iii, words, db_con):
 	line = []
 	unknown = set()
 	
+	plain_words = lookup.readWords(tuple(set(words)), db_con)
 	for word in words:
-		(word, syntax_class, dialect, syllables) = _readWord(word, db_con)
+		(word, syntax_class, dialect, syllables) = _readWord(word, plain_words, db_con)
 		if syntax_class > 0:
 			if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)'] and buffer: #Trailing ES(I)
 				lines.append(' '.join(buffer))
