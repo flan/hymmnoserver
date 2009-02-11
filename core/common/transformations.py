@@ -101,7 +101,9 @@ class FormatError(Error):
 def _readWord(word, words, db_con):
 	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
 	if syntax_class > 0:
-		l_decorations = [d for d in decorations if d]
+		l_decorations = decorations
+		if l_decorations:
+			l_decorations = [d for d in decorations if d]
 		if dialect % 50 == lookup.DIALECT['New Testament of Pastalie'] or l_decorations:
 			reason = "'%s'" % (word)
 			if l_decorations and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
