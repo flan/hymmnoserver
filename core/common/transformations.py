@@ -152,6 +152,8 @@ def decodeBinasphere(line, db_con):
 		sequence = sequence[0]
 	sequence = [int(i) for i in sequence]
 	
+	lookup.initialiseEmotionVerbRegexps(db_con)
+	
 	return _divideAndCapitalise(_reconstructBinasphere(tokens, sequence, size), db_con)
 	
 def _divideAndCapitaliseLine(words, db_con):
@@ -174,8 +176,6 @@ def _divideAndCapitaliseLine(words, db_con):
 	return (lines + [' '.join(buffer)], unknown)
 	
 def _divideAndCapitalise(words, db_con):
-	lookup.initialiseEmotionVerbRegexps(db_con)
-	
 	lines = []
 	unknown_set = set()
 	for token_string in words:
@@ -283,6 +283,8 @@ def applyPersistentEmotionSounds(lines, db_con):
 	elif not m:
 		raise ContentError("Persistent Emotion Sounds initiator not found")
 		
+	lookup.initialiseEmotionVerbRegexps(db_con)
+	
 	new_lines = []
 	processed = []
 	unknown_set = set()

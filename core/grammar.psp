@@ -132,8 +132,8 @@ else:
 				req.write("Syntax evaluation not yet implemented")
 	except transformations.ContentError, e:
 		req.write("Unable to process input: %s" % e)
-#	except Exception, e:
-#		req.write("An unexpected error occurred: %s" % (e))
+	except Exception, e:
+		req.write("An unexpected error occurred: %s" % (e))
 
 %>
 			<hr/>
