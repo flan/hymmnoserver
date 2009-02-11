@@ -290,7 +290,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 	es_i = None
 	es_ii = None
 	es_iii = None
-	words = lookup.readWord(m.group(1).lower(), db_con)
+	words = lookup.readWord(m.group(1).lower(), None, db_con)
 	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in lookup.SYNTAX_CLASS_REV['ES(I)']:
 			 es_i = word
@@ -299,7 +299,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 		es_i = m.group(1).title()
 		unknown.add(es_i)
 		
-	words = lookup.readWord(m.group(2).lower(), db_con)
+	words = lookup.readWord(m.group(2).lower(), None, db_con)
 	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in lookup.SYNTAX_CLASS_REV['ES(II)']:
 			 es_ii = word
@@ -308,7 +308,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 		es_ii = m.group(2).lower()
 		unknown.add(es_ii)
 		
-	words = lookup.readWord(m.group(3).lower(), db_con)
+	words = lookup.readWord(m.group(3).lower(), None, db_con)
 	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in lookup.SYNTAX_CLASS_REV['ES(III)']:
 			 es_iii = word
