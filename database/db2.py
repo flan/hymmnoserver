@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 import _mysql
-db = _mysql.connect("localhost", "username", "password", "database")
+db = _mysql.connect("localhost", "aurica", "misha", "hymmnoserver")
 
 while True:
 	print "First word: "

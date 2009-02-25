@@ -10,7 +10,7 @@
 import cgi
 import urllib
 from mod_python import apache
-_WORKING_PATH = "/your_core_path/"
+_WORKING_PATH = "/home/flan/hymmnoserver/core/"
 
 transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
 
@@ -19,7 +19,7 @@ _query = ''
 if form.has_key('query'):
 	_query = form['query'].strip()
 	if _query:
-		_db = apache.import_module('your_module_name', path=["/your_module_path/"])
+		_db = apache.import_module('hymmnoserver', path=["/home/flan/public_html/"])
 		_db_con = _db.getConnection()
 		
 def _renderMicroTransformation(component):
@@ -82,7 +82,6 @@ def _renderMacroTransformation(phrase, components, unknown):
 				</p>
 			</noscript>
 			<%@include file="common/header.xml" %>
-			
 <%
 if not _query:
 %>

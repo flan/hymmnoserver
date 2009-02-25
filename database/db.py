@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 import _mysql
 import romaji
-db = _mysql.connect("localhost", "username", "password", "database")
+db = _mysql.connect("localhost", "aurica", "misha", "hymmnoserver")
 
 while True:
 	print "Word to be added: "
