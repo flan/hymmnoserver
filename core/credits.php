@@ -49,7 +49,7 @@
 				</ul>
 				<br/>
 				<ul class="basic-inline">
-					<li><a href="http://weezy.freeforums.org/">A Reyvateil's Melody forums</a>
+					<li><a href="http://artonelico.isisview.org/">A Reyvateil's Melody forums</a>
 						<ul class="basic-inline">
 							<li>aquagon</li>
 							<li>Lazy</li>
@@ -73,6 +73,7 @@
 					<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Hymmnos Conlang article on Wikia</a></li>
 				</ul>
 			</div>
+			<br/>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Platina</div>
 				<ul class="basic-inline">
