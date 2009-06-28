@@ -18,8 +18,8 @@ while True:
 		syllables = "'%s'" % raw_input().replace("'", "\\'")
 		if syllables.replace(' ', '').lower() == word.lower():
 			break
-		elif syllables.endswith(';'):
-			syllables = syllables[:-1]
+		elif syllables.endswith(";'"):
+			syllables = syllables[:-2] + "'"
 			break
 		else:
 			print "Entry does not match word structure"
