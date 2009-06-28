@@ -25,7 +25,7 @@
 			</div>
 			<br/>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Neil Tallim (Red HamsterX)</div>
+				<div class="subsection-title text-title-small">Neil Tallim (Red HamsterX, <a href="http://hamsterx.homelinux.org/wiki/">Puukusoft</a>)</div>
 				<ul class="basic-inline">
 					<li>Programming</li>
 					<li>Translation</li>
@@ -36,7 +36,7 @@
 				<br/>
 				<ul class="basic-inline">
 					<li>flan@synIRC</li>
-					<li>rredd&lt;dot]hhammsstterrxx[at&gt;ggmmaill(dot)ccomm (duplicate consonants without)</li>
+					<li>red.hamsterx [ta} gmail</li>
 				</ul>
 			</div>
 			<br/>
