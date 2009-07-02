@@ -23,7 +23,7 @@
 						$page = intval($page);
 						if($page == 0){
 							$page = '0';
-						}elseif($page < 1 || $page > 13){
+						}elseif($page < 1 || $page > 14){
 							$page = 1;
 						}
 					}else{
