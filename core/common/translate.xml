@@ -5,8 +5,8 @@
 	define('EMOTION_VOWELS_REGEXP_FULL', '('.$EMOTION_VOWELS.'|\.)?');
 	define('WORD_STRUCTURE', "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/");
 	
-	define('NOUNS', array(4, 9, 10, 15, 19));
-	define('ADJECTIVES', array(8, 10, 11, 17, 20, 7));
+	$NOUNS = array(4, 9, 10, 15, 19));
+	$ADJECTIVES = array(8, 10, 11, 17, 20, 7));
 	
 	#Read all Emotion Verbs from the database.
 	$emotion_verbs = array();
@@ -140,6 +140,8 @@
 			}
 		}
 		
+		global $NOUNS;
+		global $ADJECTIVES;
 		if(in_array($class, NOUNS) || in_array($class, ADJECTIVES)){#noun/adj, which can have Emotion Vowel prefixes.
 			if($colour){
 				$result = '';
@@ -162,8 +164,6 @@
 	#Renders a single word in the output table.
 	#Return format: true if this word has alternative entries.
 	function renderWord($word){
-		global $SYNTAX_CLASS;
-		
 		list($l_word, $english, $kana, $class, $dialect, $decorations, $hits) = $word;
 		$base_word = htmlspecialchars($l_word);
 		if($hits == 0){
@@ -175,7 +175,7 @@
 		
 		echo "<tr>";
 			echo "<td class=\"word-header-$class\" style=\"width: 17%;\">$l_word</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">$SYNTAX_CLASS[$class]</td>";
+			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">SYNTAX_CLASS[$class]</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$english</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
 		echo "</tr>";
