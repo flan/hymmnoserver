@@ -19,7 +19,7 @@
 				}
 				$words = split("[\t ,]+", trim($query));
 				
-				require '/home/flan/public_html/hymmnoserver.gobbledygook';
+				require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
 				if ($mysqli->connect_error) {
 					printf("Connection failed: %s.", mysqli_connect_error());
 					exit();

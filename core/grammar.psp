@@ -19,7 +19,7 @@ _query = ''
 if form.has_key('query'):
 	_query = form['query'].strip()
 	if _query:
-		_db = apache.import_module('hymmnoserver', path=["/home/flan/public_html/"])
+		_db = apache.import_module('hymmnoserver', path=["/home/flan/hymmnoserver/"])
 		_db_con = _db.getConnection()
 		
 def _renderMicroTransformation(component):
