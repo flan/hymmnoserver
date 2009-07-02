@@ -1,0 +1,49 @@
+<h2>Aktuelles</h2>
+
+<h3>2006-08-02 - phpSyntaxTree ist umgezogen</h3>
+<p>
+    Das phpSyntaxTree Projekt ist zu Google Code umgezogen.
+    Der Quellcode und Bug-Tracker ist jetzt under folgender
+    URL zu finden: <br />
+    <a href="http://code.google.com/p/phpsyntaxtree">http://code.google.com/p/phpsyntaxtree</a>
+</p>
+
+<h3>2005-08-25 - Wir sprechen Holl&auml;ndisch!</h3>
+<p>
+    phpSyntaxTree ist jetzt auch auf Holl&auml;ndisch verf&uuml;gbar.
+</p>
+
+<h3>2005-08-20 - Wir sprechen Deutsch!</h3>
+<p>
+    Ab sofort ist phpSyntaxTree auch in deutscher
+    Sprache erh&auml;ltlich. phpSyntaxTree erkennt
+    die in Ihrem Web-Browser eingestellte Sprache
+    und stellt automatische auf diese um (falls
+    eine &Uuml;bersetzung in der Sprache vorhanden
+    ist).
+</p>
+<p>
+    Falls Sie uns helfen wollen phpSyntaxTree in
+    andere Sprachen zu &uuml;bersetzen, senden Sie
+    bitte email and 
+    <a href="mailto:andre@ironcreek.net">andre@ironcreek.net</a>.
+</p>
+
+<h3>2005-06-07 - phpSyntaxTree 1.10</h3>
+<p>
+    phpSyntaxTree Version 1.10 ist nun verf&uuml;gbar.
+    Diese neue Version behebt ein paar kleinere Fehler
+    und macht die Installation von phpSyntaxTree auf
+    einem lokalen Rechner einfacher.<br />
+    Die im Archiv enhaltene README Datai (leider nur 
+    in english) enth&auml;lt mehr Informationen zur
+    Installation.
+</p>
+
+<h3>2005-04-06 - phpSyntaxTree 1.9</h3>
+<p>
+    Version 1.9 of phpSyntaxTree verbessert die automatische
+    Gr&ouml;ssenabpassung des Eingabefeldes und bietet
+    aufger&auml;umten HTML Quelltext.
+</p>
+

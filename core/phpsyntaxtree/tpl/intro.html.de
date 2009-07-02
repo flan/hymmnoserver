@@ -1,0 +1,78 @@
+{INCLUDE}header.html{/INCLUDE}
+
+<div id="content">
+
+<form id="phraseform" action="{FORM_ACTION}" method="post">
+
+<div id="form">
+    <fieldset>
+        <h4>Satz od. Satzteil (mit eckige Klammern gekennzeichnet):</h4>
+
+        <textarea id="data" name="data" cols="70" rows="4">{DATA_VAL}</textarea>
+    
+        <div id="actions">
+            <input type="hidden" name="color" value="on" />
+            <input type="hidden" name="antialias" value="on" />
+            <input type="hidden" name="autosub" value="on" />
+            <input type="hidden" name="triangles" value="on" />
+            <button name="drawbtn" type="submit"> Zeichnen </button> 
+            Offene Klammern: 
+            <input type="text" class="readonly" name="opencount" size="2" readonly="readonly" value="n/a" />
+            Geschlossene Klammern: 
+            <input type="text" class="readonly" name="closedcount" size="2" readonly="readonly" value="n/a" />
+        </div>
+    </fieldset>
+</div>
+
+</form>
+
+<div id="intro">
+
+<div id="about">
+
+<h2>&Uuml;ber phpSyntaxTree</h2>
+
+<p>
+    phpSyntaxTree erlaubt das einface Erstellen von Baumdiagrammen
+    f&uuml;r linguistische Hausarbeiten oder Publikationen.
+</p>
+<p>
+    Bitte senden Sie Fragen und Kommentare an 
+    <a href="mailto:andre@ironcreek.net">andre@ironcreek.net</a>.
+</p>
+
+</div>
+
+<div id="usage">
+
+<h2>Benutzung</h2>
+
+<p>
+    Einfach einen Satz oder ein Satzteil, das mit eckigen Klammern gekennzeichnet
+    ist im oberen Feld eingeben und auf &quot;Zeichnen&quot; klicken. <br />
+    Das danach erstellte Baumdiagramm kann dann mit einem Klick der linken Mausktaste
+    heruntergeladen werden. Ein Klick mit der rechten Maustaste auf das Diagramm
+    erlaubt u.a. das Kopieren und Einf&uuml;gen in ein Dokument.
+</p>
+<p>
+    Um ein Element mit tiefgestelltem text zu erstellen, trennen Sie den tifzustellenden
+    Teil mit einem '_' (Unterstrich) ab. Der Text &quot;NP_1&quot; wird zum Beispiel 
+    im Diagramm als NP<sub>1</sub> angezeigt. Optional k&ouml;nnen Sie auch
+    &quot;Automatisches Tiefstellen&quot; ausw&auml;hlen um alle gleichnamigen Knoten
+    automatisch zu Nummerieren (NP<sub>1</sub>, NP<sub>2</sub> usw.).
+</p>
+<p>
+    Schalten Sie die Farben und/oder die Linengl&auml;ttung ab um ein schwarz-weiss
+    Drucker freundliches Diagramm zu Erstellen.
+</p>
+</div>
+
+</div>
+
+<div id="news">
+    {INCLUDE}news.html.de{/INCLUDE}
+</div>
+
+</div>
+
+{INCLUDE}footer.html{/INCLUDE}

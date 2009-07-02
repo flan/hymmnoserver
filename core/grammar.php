@@ -221,7 +221,7 @@
 				narrative perspectives, and these will be discussed shortly.
 			</p>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Nominal sentence structure</div>
+				<div class="subsection-title text-title-small">General sentence structure</div>
 				<p>
 					<b>[Emotion Sound]-[verb]-[compound]</b> [VC]<br/>
 					<b>[Emotion Sound]-[verb]-[object]-[compound]</b> [VOC]<br/>
@@ -243,18 +243,18 @@
 					The first verb, [V], indicates the speaker's action, and the second verb, [V'], indicates
 					the subject's action.
 				</p>
-			</div>
-			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">&quot;rre&quot;, the subject identifier</div>
-				<p>
-					Because Hymmnos does not nominally have an explicit subject, it has need of a special
-					subject identifier; this identifier is &quot;rre&quot;.
-				</p>
-				<p>
-					When &quot;rre&quot; appears before an object, that object becomes the subject of the
-					sentence. However, regardless of any shifts in subject, the sentence's Emotion Sound is
-					relative only to the speaker.
-				</p>
+				<div style="padding-left: 10px;">
+					<div class="subsection-title text-title-small">&quot;rre&quot;, the subject identifier</div>
+					<p>
+						Because Hymmnos does not nominally have an explicit subject, it has need of a special
+						subject-identifier; this identifier is &quot;rre&quot;.
+					</p>
+					<p>
+						When &quot;rre&quot; appears before an object, that object becomes the subject of the
+						sentence. However, regardless of any shifts in subject, the sentence's Emotion Sound is
+						relative only to the speaker.
+					</p>
+				</div>
 			</div>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>

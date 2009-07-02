@@ -1,0 +1,63 @@
+
+phpSyntaxTree 1.10
+------------------
+
+2005-06-02  int2str  <andre@ironcreek.net>
+
+	* README: Added local installation instructions
+
+	* src/class.svggraph.php, src/class.treegraph.php, stgraph.png, stgraph.svg:
+	Fix PHP generated warning messages when allow_call_time_pass_reference is set to 'off'.
+
+	* src/counter.php:
+	Check if file exists before accessing it, to prevent warning messages.
+
+phpSyntaxTree 1.9
+-----------------
+
+2005-03-10  int2str  <andre@ironcreek.net>
+
+	* css/default.css, tpl/footer.html, tpl/intro.html, tpl/main.html:
+	Made content area and phrase entry field sizing more dynamic.
+
+2005-03-05  int2str  <andre@ironcreek.net>
+
+	* src/class.stringparser.php:
+	Fixed problem where TAB characters would cause empty tree element.
+
+2005-02-27  int2str  <andre@ironcreek.net>
+
+	* src/class.treegraph.php:
+	Use the font size as padding for tree elements to fix a bug where the text elements were drawn too close to each other at large font size settings.
+
+	* index.php: Started 1.9 development cycle.
+
+phpSyntaxTree 1.8
+-----------------
+
+2005-01-08  int2str  <andre@ironcreek.net>
+
+	* ChangeLog: Fixed email address in ChangeLog
+
+	* tpl/main.html:
+	Fixed bug where Konqueror would constantly reload the phrase form.
+
+	* css/default.css: Cleaned up column style.
+
+2005-01-07  int2str  <andre@ironcreek.net>
+
+	* tpl/intro.html: Fixed HTML syntax error.
+
+phpSyntaxTree 1.7
+-----------------
+
+2005-01-06  int2str  <sndre@ironcreek.net>
+
+	* tpl/footer.html, tpl/header.html, tpl/intro.html, tpl/main.html, css/default.css, index.php:
+	* Changed Version number handling (now a template variable)
+	* Broke out HTML header and footer into their own respective files to be included from main.html and intro.html
+	* New HTML/CSS layout
+
+	* lib/class.template.php:
+	Pass known values to included sub-templates before parsing them.
+

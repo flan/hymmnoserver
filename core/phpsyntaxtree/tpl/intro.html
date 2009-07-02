@@ -1,0 +1,77 @@
+{INCLUDE}header.html{/INCLUDE}
+
+<div id="content">
+
+<form id="phraseform" action="{FORM_ACTION}" method="post">
+
+<div id="form">
+    <fieldset>
+        <h4>Phrase (labelled bracket notation):</h4>
+
+        <textarea id="data" name="data" cols="70" rows="4">{DATA_VAL}</textarea>
+    
+        <div id="actions">
+            <input type="hidden" name="color" value="on" />
+            <input type="hidden" name="antialias" value="on" />
+            <input type="hidden" name="autosub" value="on" />
+            <input type="hidden" name="triangles" value="on" />
+            <button name="drawbtn" type="submit"> Draw </button> 
+            Open brackets: 
+            <input type="text" class="readonly" name="opencount" size="2" readonly="readonly" value="n/a" />
+            Closed brackets: 
+            <input type="text" class="readonly" name="closedcount" size="2" readonly="readonly" value="n/a" />
+        </div>
+    </fieldset>
+</div>
+
+</form>
+
+<div id="intro">
+
+<div id="about">
+
+<h2>About</h2>
+
+<p>
+    phpSyntaxTree allows you to generate graphical syntax trees from 
+    labelled bracket notation phrases. You can then include the graphics
+    into your homework or assignments.
+</p>
+<p>
+    Please send your comments and suggestions to 
+    <a href="mailto:andre@ironcreek.net">andre@ironcreek.net</a>.
+</p>
+
+</div>
+
+<div id="usage">
+
+<h2>Usage</h2>
+
+<p>
+    Enter a phrase above using labelled bracket notation. Click &quot;Draw&quot; to create a
+    syntax tree graph for the entered phrase. You can right-click on the generated tree 
+    image to copy-and-paste it into your documents, or left-click the tree image to download it.
+</p>
+<p>
+    To create a node with <b>subscript</b> parts, separate the subscript part
+    using the _ character. For example &quot;NP_1&quot; will show in the 
+    graph as NP<sub>1</sub>. Optionally, select <b>Auto subscript</b>, to
+    automatically number all equally named nodes (NP<sub>1</sub>, NP<sub>2</sub> etc.).
+</p>
+<p>
+    Disable color and/or smooth lines to create a more black &amp; white printer
+    friendly image.
+</p>
+
+</div>
+
+</div>
+
+<div id="news">
+    {INCLUDE}news.html{/INCLUDE}
+</div>
+
+</div>
+
+{INCLUDE}footer.html{/INCLUDE}

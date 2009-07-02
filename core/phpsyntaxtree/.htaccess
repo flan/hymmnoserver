@@ -1,0 +1,12 @@
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+
+<Files stgraph.png>
+    ForceType application/x-httpd-php
+</Files>
+
+<Files stgraph.svg>
+    ForceType application/x-httpd-php
+</Files>
