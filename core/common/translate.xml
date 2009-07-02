@@ -1,12 +1,12 @@
 <?php
 	#Set up constants required for processing.
-	$EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN';
-	$EMOTION_VOWELS_REGEXP = '('.$EMOTION_VOWELS.')';
-	$EMOTION_VOWELS_REGEXP_FULL = '('.$EMOTION_VOWELS.'|\.)?';
-	$WORD_STRUCTURE = "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/";
+	define('EMOTION_VOWELS', 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN');
+	define('EMOTION_VOWELS_REGEXP', '('.$EMOTION_VOWELS.')');
+	define('EMOTION_VOWELS_REGEXP_FULL', '('.$EMOTION_VOWELS.'|\.)?');
+	define('WORD_STRUCTURE', "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/");
 	
-	$NOUNS = array(4, 9, 10, 15, 19);
-	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
+	define('NOUNS', array(4, 9, 10, 15, 19));
+	define('ADJECTIVES', array(8, 10, 11, 17, 20, 7));
 	
 	#Read all Emotion Verbs from the database.
 	$emotion_verbs = array();
@@ -16,7 +16,7 @@
 	$stmt->bind_result($word);
 	while($stmt->fetch()){
 		#Store the Emotion Verb, the number of Emotion Vowels, and a regexp version.
-		array_push($emotion_verbs, array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh)?$/', substr_count($word, '.'), $word));
+		array_push($emotion_verbs, array('/^'.str_replace('.', EMOTION_VOWELS_REGEXP_FULL, $word).'(eh)?$/', substr_count($word, '.'), $word));
 	}
 	$stmt->free_result();
 	$stmt->close();
@@ -98,9 +98,7 @@
 	#Determine whether a word is enhanced while reading it from the database.
 	#Return format: [word, english, kana, class, dialect, decorations, hits] | NULL
 	function processWord($word){
-		global $WORD_STRUCTURE;
-		
-		preg_match($WORD_STRUCTURE, $word, $matches);
+		preg_match(WORD_STRUCTURE, $word, $matches);
 		$d_word = queryWord($matches[2]);
 		if(count($matches) >= 3){
 			if(count($matches) == 4){//Suffix present.
@@ -142,9 +140,7 @@
 			}
 		}
 		
-		global $NOUNS;
-		global $ADJECTIVES;
-		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
+		if(in_array($class, NOUNS) || in_array($class, ADJECTIVES)){#noun/adj, which can have Emotion Vowel prefixes.
 			if($colour){
 				$result = '';
 				if(!empty($decorations[0])){
