@@ -79,7 +79,7 @@
 		<div>
 			<span style="color: red; font-size: 0.8em;">
 				<?php
-					require '/home/hymmnoserver/hymmnoserver.gobbledygook';
+					require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
 					if ($mysqli->connect_error) {
 						printf("Connection failed: %s.", mysqli_connect_error());
 						exit();
