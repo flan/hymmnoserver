@@ -5,8 +5,8 @@
 	define('EMOTION_VOWELS_REGEXP_FULL', '('.$EMOTION_VOWELS.'|\.)?');
 	define('WORD_STRUCTURE', "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/");
 	
-	$NOUNS = array(4, 9, 10, 15, 19));
-	$ADJECTIVES = array(8, 10, 11, 17, 20, 7));
+	$NOUNS = array(4, 9, 10, 15, 19);
+	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
 	
 	#Read all Emotion Verbs from the database.
 	$emotion_verbs = array();
