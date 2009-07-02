@@ -3,7 +3,7 @@ import MySQLdb
 import sqlite3
 import sys
 
-mysql_db = MySQLdb.connect(host="localhost", user="aurica", passwd="misha", db="hymmnoserver")
+mysql_db = MySQLdb.connect(host="localhost", user="username", passwd="password", db="database")
 mysql_cur = mysql_db.cursor()
 sqlite_db = sqlite3.connect(sys.argv[1])
 sqlite_cur = sqlite_db.cursor()
