@@ -1,9 +1,9 @@
 <?php
 	#Set up constants required for processing.
-	define('EMOTION_VOWELS', 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN');
-	define('EMOTION_VOWELS_REGEXP', '('.$EMOTION_VOWELS.')');
-	define('EMOTION_VOWELS_REGEXP_FULL', '('.$EMOTION_VOWELS.'|\.)?');
-	define('WORD_STRUCTURE', "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/");
+	$EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN';
+	$EMOTION_VOWELS_REGEXP = '('.$EMOTION_VOWELS.')';
+	$EMOTION_VOWELS_REGEXP_FULL = '('.$EMOTION_VOWELS.'|\.)?';
+	$WORD_STRUCTURE = "/^".$EMOTION_VOWELS_REGEXP."?(.+?)(_\w+)?$/";
 	
 	$NOUNS = array(4, 9, 10, 15, 19);
 	$ADJECTIVES = array(8, 10, 11, 17, 20, 7);
@@ -16,7 +16,7 @@
 	$stmt->bind_result($word);
 	while($stmt->fetch()){
 		#Store the Emotion Verb, the number of Emotion Vowels, and a regexp version.
-		array_push($emotion_verbs, array('/^'.str_replace('.', EMOTION_VOWELS_REGEXP_FULL, $word).'(eh)?$/', substr_count($word, '.'), $word));
+		array_push($emotion_verbs, array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh)?$/', substr_count($word, '.'), $word));
 	}
 	$stmt->free_result();
 	$stmt->close();
@@ -98,7 +98,9 @@
 	#Determine whether a word is enhanced while reading it from the database.
 	#Return format: [word, english, kana, class, dialect, decorations, hits] | NULL
 	function processWord($word){
-		preg_match(WORD_STRUCTURE, $word, $matches);
+		global $WORD_STRUCTURE;
+		
+		preg_match($WORD_STRUCTURE, $word, $matches);
 		$d_word = queryWord($matches[2]);
 		if(count($matches) >= 3){
 			if(count($matches) == 4){//Suffix present.
@@ -142,7 +144,7 @@
 		
 		global $NOUNS;
 		global $ADJECTIVES;
-		if(in_array($class, NOUNS) || in_array($class, ADJECTIVES)){#noun/adj, which can have Emotion Vowel prefixes.
+		if(in_array($class, $NOUNS) || in_array($class, $ADJECTIVES)){#noun/adj
 			if($colour){
 				$result = '';
 				if(!empty($decorations[0])){
@@ -164,6 +166,8 @@
 	#Renders a single word in the output table.
 	#Return format: true if this word has alternative entries.
 	function renderWord($word){
+		global $SYNTAX_CLASS;
+		
 		list($l_word, $english, $kana, $class, $dialect, $decorations, $hits) = $word;
 		$base_word = htmlspecialchars($l_word);
 		if($hits == 0){
@@ -175,7 +179,7 @@
 		
 		echo "<tr>";
 			echo "<td class=\"word-header-$class\" style=\"width: 17%;\">$l_word</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">SYNTAX_CLASS[$class]</td>";
+			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">$SYNTAX_CLASS[$class]</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$english</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
 		echo "</tr>";
