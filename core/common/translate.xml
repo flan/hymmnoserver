@@ -230,7 +230,7 @@
 		if($alternatives_pos > 0){
 			echo "<tr>";
 				echo "<td style=\"color: white; background: black; font-size: 0.85em;\">";
-					echo "Words with alternative meanings: ".implode(", ", $alternatives);
+					echo "Words with alternate meanings: ".implode(", ", $alternatives);
 				echo "</td>";
 			echo "</tr>";
 		}
@@ -239,7 +239,7 @@
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
 			<?php
 				$query_encode = urlencode($query);
-				echo "If this is a sentence, you may <a href=\"/hymmnoserver/grammar.psp?query=$query_encode\">inspect its structure</a>";
+				echo "If this is a complete sentence, you may <a href=\"/hymmnoserver/grammar.psp?query=$query_encode\">inspect its structure</a>";
 			?>
 		</td>
 	</tr>
@@ -248,7 +248,7 @@
 <div style="color: #808080; font-size: 0.6em;">
 	<?php
 		if($alternatives_pos > 0){
-			echo "<p style=\"color: black;\">Please make note of the words identified as having alternate meanings. In particular, consider that Pastalia forms typically take precedence when other Pastalia words are present.</p>";
+			echo "<p style=\"color: black;\">Please make note of the words identified as having alternate meanings. In particular, consider that Pastalia forms should typically take precedence when other Pastalia words are present.</p>";
 		}
 	?>
 	<p>
