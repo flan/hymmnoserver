@@ -255,60 +255,60 @@
 						relative only to the speaker.
 					</p>
 				</div>
-			</div>
-			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
+				<div style="padding-left: 10px;">
+					<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
+					<p>
+						Subject-form pronouns may be used in place of a &quot;rre-[subject]&quot; component.
+						Hymmnos's pronouns extend those found in English by defining gender and quantity.
+					</p>
+					<table>
+						<tr class="text-title-small">
+							<td class="kana">Pronoun</td>
+							<td class="latin">Object form</td>
+							<td class="latin">Subject form</td>
+						</tr>
+						<tr>
+							<td class="kana">you</td>
+							<td class="latin">yor</td>
+							<td class="latin">yorr</td>
+						</tr>
+						<tr>
+							<td class="kana">you (plural)</td>
+							<td class="latin">yora</td>
+							<td class="latin">yorra</td>
+						</tr>
+						<tr>
+							<td class="kana">he</td>
+							<td class="latin">hes</td>
+							<td class="latin">herr</td>
+						</tr>
+						<tr>
+							<td class="kana">they (masculine)</td>
+							<td class="latin">hers</td>
+							<td class="latin">herra</td>
+						</tr>
+						<tr>
+							<td class="kana">she</td>
+							<td class="latin">has</td>
+							<td class="latin">harr</td>
+						</tr>
+						<tr>
+							<td class="kana">they (feminine)</td>
+							<td class="latin">hars</td>
+							<td class="latin">harra</td>
+						</tr>
+					</table>
+				</div>
 				<p>
-					Subject-form pronouns may be used in place of a &quot;rre-[subject]&quot; component.
-					Hymmnos's pronouns extend those found in English by defining gender and quantity.
+					This may be obvious, but no sentence may contain more than one subject, so &quot;rre&quot;
+					or its equivalents may appear only once, precluding changes of focus in compounds.
 				</p>
-				<table>
-					<tr class="text-title-small">
-						<td class="kana">Pronoun</td>
-						<td class="latin">Object form</td>
-						<td class="latin">Subject form</td>
-					</tr>
-					<tr>
-						<td class="kana">you</td>
-						<td class="latin">yor</td>
-						<td class="latin">yorr</td>
-					</tr>
-					<tr>
-						<td class="kana">you (plural)</td>
-						<td class="latin">yora</td>
-						<td class="latin">yorra</td>
-					</tr>
-					<tr>
-						<td class="kana">he</td>
-						<td class="latin">hes</td>
-						<td class="latin">herr</td>
-					</tr>
-					<tr>
-						<td class="kana">they (masculine)</td>
-						<td class="latin">hers</td>
-						<td class="latin">herra</td>
-					</tr>
-					<tr>
-						<td class="kana">she</td>
-						<td class="latin">has</td>
-						<td class="latin">harr</td>
-					</tr>
-					<tr>
-						<td class="kana">they (feminine)</td>
-						<td class="latin">hars</td>
-						<td class="latin">harra</td>
-					</tr>
-				</table>
+				<p>
+					Historically, non-first-person sentences were not part of standard Hymmnos; it was not
+					until the formation of Central Standard Note that &quot;rre&quot; formally became part of
+					the language to further its communicability.
+				</p>
 			</div>
-			<p>
-				This may be obvious, but no sentence may contain more than one subject, so &quot;rre&quot;
-				or its equivalents may appear only once, precluding changes of focus in compounds.
-			</p>
-			<p>
-				Historically, non-first-person sentences were not part of standard Hymmnos; it was not
-				until the formation of Central Standard Note that &quot;rre&quot; formally became part of
-				the language to further its communicability.
-			</p>
 		</div>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Persistent Emotion Sounds definition syntax</div>
