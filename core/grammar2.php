@@ -614,10 +614,9 @@
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Putting it all together</div>
 			<p style="font-style: italic;">
-				Note that all of these statements are actually being expressed in the present tense.
-				However, they reflect an action being described as it occurs, and conveying that
-				while making the translation flow is difficult, so some of them have been written in
-				incorrect quasi-future-tense.
+				Note that all of these statements are actually in the infinitive tense. However,
+				conveying that while making the translation flow is difficult, so some of them have
+				been written in incorrect quasi-future-tense.
 			</p>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Example words</div>
