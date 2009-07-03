@@ -79,7 +79,7 @@ def initialiseEmotionVerbRegexps(db_con):
 		if not EMOTION_VERB_REGEXPS:
 			emotion_verbs = _getEmotionVerbs(db_con)
 			EMOTION_VERB_REGEXPS = tuple([(
-			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
+			 re.compile(r"^%s(eh|aye|za)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
 			 ev, d) for (ev, d) in emotion_verbs])
 	finally:
 		_INIT_LOCK.release()

@@ -104,33 +104,44 @@ def _renderFailure(message):
 <%
 if not _query:
 %>
-			Features that will appear here:
-			<ul class="basic-inline">
-				<li>
-					Syntactic validation and structural processing
-					<ul>
-						<li>
-							Enter a complete sentence and it will be evaluated; a syntax tree
-							will be rendered, allowing you to study the structure of the phrase,
-							which may help with translation efforts
-						</li>
-					</ul>
-				</li>
-				<li>
-					Binasphere conversion				
-					<ul>
-						<li>Enter multiple sentences and a binasphere line will be generated</li>
-						<li>Enter a binasphere line and its component sentences will be reconstructed</li>
-					</ul>
-				</li>
-				<li>
-					Persistent Emotion Sounds definition syntax
-					<ul>
-						<li>Enter a statement in this form, and the evaluated output will be rendered</li>
-					</ul>
-				</li>
-			</ul>
-			Note: This section is currently pre-alpha and highly incomplete.
+		
+		<div class="text-basic">
+			<div class="section-title text-title-small">⠕ Advanced grammar resources</div>
+				<big>The following features are made available through this interface:</big>
+				<blockquote class="text-small">
+					<p>
+						<span class="text-title-small">1) Syntax validation and structural analysis</span><br/>
+						Enter a <b>complete sentence</b> in Hymmnos and submit it.
+						If the syntax processor is able to analyze your input, a syntax tree will be produced,
+						informing you of the structure of what you have provided. It is hoped that this will
+						help in translating sentences.
+						<br/><br/>
+						<small>
+							Please note that this feature is highly experimental and that it will not (and never
+							will, due to Hymmnos having some
+							<a href="http://en.wikipedia.org/wiki/NP-complete">NP-complete</a>-looking structures)
+							recognize all valid sentences, and it may also approve of some invalid sentences due to
+							flexibility encoded to handle more complex structures.
+							<br/><br/>
+							Note also that this is not a production-grade linguistics work. The syntax trees it
+							generates are amateurish in nature, and are intended solely to assist humans in
+							infering meaning.
+						</small>
+					</p>
+					<p>
+						<span class="text-title-small">2) Binasphere conversion</span><br/>
+						Enter multiple (two or more) phrases and Binasphere output will be generated.
+						<br/><br/>
+						Enter Binasphere text and its constituent phrases will be reconstructed.
+					</p>
+					<p>
+						<span class="text-title-small">3) Persistent Emotion Sounds application</span><br/>
+						Enter a Persistent Emotion Sounds passage and the effective full-sentence-form
+						equivalents will be produced.
+					</p>
+				</blockquote>
+			</div>
+			
 <%
 else:
 	lines = [line.strip() for line in _query.splitlines() if line]
@@ -164,8 +175,12 @@ else:
 			<hr/>
 			<form method="get" action="/hymmnoserver/grammar.psp">
 				<div>
-					<textarea name="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea><br/>
-					<input type="submit" value="process"/>
+					<div style="text-align: center;">
+						<textarea name="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
+					</div>
+					<div style="text-align: right;">
+						<input type="submit" value="Process query"/>
+					</div>
 				</div>
 			</form>
 <%

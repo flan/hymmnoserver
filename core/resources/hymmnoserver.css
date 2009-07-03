@@ -279,6 +279,9 @@ td.transformation-id{
 .word-header-16{
 	background: #002200;
 }
+.word-header-17{
+	background: #444444;
+}
 .word-header-18{
 	background: #111111;
 }
@@ -286,6 +289,9 @@ td.transformation-id{
 	background: #444444;
 }
 .word-header-20{
+	background: #444444;
+}
+.word-header-21{
 	background: #444444;
 }
 
@@ -313,6 +319,12 @@ td.word-info-title{
 }
 .phrase-4{
 	background: #003300;
+}
+.phrase-5{
+	background: #4C0000;
+}
+.phrase-5{
+	background: #001A00;
 }
 
 /*Generic styles*/

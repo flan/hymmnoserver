@@ -10,68 +10,107 @@ _PHRASE_EXPANSION = {
  'VP': "Verb Phrase",
  'NP': "Noun Phrase",
  'SgP': "Subject Phrase",
+ 'SpP': "Subject Phrase",
  'AP': "Complement Phrase",
  'CP': "Clause Phrase",
  'CgP': "Compound Phrase",
+ 'CpP': "Compound Phrase",
+ 'EVP': "Emotion Verb Phrase",
+ 'PP': "Preposition Phrase",
+ 'EVOP': "Emotion Verb Object Phrase",
 }
 _PHRASE_REDUCTION = {
  'ESP': 'ESP',
  'VP': 'VP',
  'NP': 'NP',
  'SgP': 'SP',
+ 'SpP': 'SP',
  'AP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
+ 'CpP': 'MP',
+ 'EVP': 'EVP',
+ 'PP': 'PP',
+ 'EVOP': 'EVOP',
 }
 _PHRASE_COLOURS = {
  'ESP': 4,
  'VP': 2,
  'NP': 1,
  'SgP': 1,
+ 'SpP': 1,
  'AP': 3,
  'CP': 0,
  'CgP': 0,
+ 'CpP': 0,
+ 'EVP': 5,
+ 'PP': 6,
+ 'EVOP': 1,
 }
 
-_L_CASE_REGEXP = re.compile("^[a-z]+\$\d+$")
+_L_CASE_REGEXP = re.compile("^[a-z.]+\$\d+$")
 
 _ANY = 0 #0-or-more (failure tolerated)
 _ALL = -1 #failure not tolerated
 _ONE = 1 #Failure not tolerated, one of the set
 
 _GENERAL_AST = (_ALL,
- (_ANY, (_ONE, (_ALL, 'ESP', 'VP'), 'VP'), (_ONE, 'SgP', 'NP')), #[([ESP] VP) | (SgP | NP)]
- 'VP',
- (_ANY, 'NP'),
+ (_ANY, (_ONE, (_ALL, 'ESP', 'VP'), 'VP'), (_ALL, (_ONE, 'SgP', 'NP'), 'VP')), #[([ESP] VP) | ((SgP | NP) VP)]
  'CgP',
 )
 
-_PASTALIA_AST = ()
+_PASTALIA_AST = (_ALL,
+ (_ANY, 'SpP'),
+ 'EVP',
+ 'CpP',
+)
 
 _AST_FRAGMENTS = {
  'ESP': (_ALL, 14, 7, 13), #<ES I, ES II, ES III>
  'VP': (_ALL,
+  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
   (_ANY, 'AP'),
   2,
-  (_ANY, (_ALL, (_ONE, 6, 12), 'NP', (_ANY, 'PP'))),
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), 'NP', (_ANY, 'PP'))),
   (_ANY, (_ALL, 5, 'VP'))
- ), #<[AvP] v. [[prep | prt] NP [PP]] [conj VP]>
+ ), #<[na | re | zz] [AP] v. [[prep | prt] NP [PP]] [conj VP]>
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
+ 'SpP': (_ALL,
+  'x.$6',
+  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP'))
+ ), #<x. <([rre] pron) | (rre NP)>>
  'CgP': (_ANY,
   (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CgP'))
- ), #[NP | (VP NP CgP) | (VP CgP)]
- 'NP': (_ONE,
-  (_ALL, 'AP', 'NP'),
-  (_ALL, 4, 'NP'),
-  4,
-  (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
- ), #<(AjP NP) | (n. NP) | n. [(conj | prep) NP]>
+ ), #[NP | (VP [NP] CgP)]
+ 'CpP': (_ANY,
+  (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CpP'))
+ ), #[NP | ((VP | EVP) [NP] CgP)]
+ 'NP': (_ALL,
+  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
+  (_ONE,
+   (_ALL, 'AP', 'NP'),
+   (_ALL, (_ONE, 4, 'EVP'), 'NP'),
+   (_ONE, 4, 'EVP'),
+   (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
+  )
+ ), #<[na | re | zz] (AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
  'AP': (_ONE,
   (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 3, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
  ), #[(prep | adj | adv) AP [conj AP]]
  'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
+ 'EVP': (_ALL,
+  (_ANY, 'zz$6'),
+  (_ANY, 'AP'),
+  1,
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'EVOP', 'NP'), (_ANY, 'PP'))),
+ ), #<[zz] E.V. [[prep | prt] NP [PP]]>
+ 'EVOP': (_ALL,
+  'x.$6',
+  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP')),
+  'EVP'
+ ), #<x. <([rre] pron) | (rre NP) EVP>>
 }
 
 _SYNTAX_CLASS = {
@@ -123,6 +162,7 @@ _SYNTAX_MAPPING = {
  14: (14,),
  15: (15,),
  16: (16,),
+ 17: (6, 12),
  18: (18,),
  19: (3, 4),
  20: (3, 8),
@@ -250,7 +290,7 @@ class _Word(_SyntaxTree):
 def processSyntax(line, db_con):
 	lookup.initialiseEmotionVerbRegexps(db_con)
 	
-	tokens = re.sub("/\.$", "", line, 1).split()
+	tokens = re.sub("(?:/\.)|(?:!|\?)$", "", line, 1).split()
 	
 	tree = _SyntaxTree()
 	(display_string, result) = _processInput(tree, tokens, db_con)
@@ -271,8 +311,9 @@ def _processInput(tree, tokens, db_con):
 		for node in result:
 			tree.addChild(node)
 			
-	result = result and tree.countLeaves() == len(tokens)
-	
+	if not tree.countLeaves() == len(tokens):
+		result = None 
+		
 	return (display_string, result)
 	
 def _processAST(words, ast, pastalia, phrase=None):
@@ -359,9 +400,9 @@ def _processWord_exact(words, target):
 		return None
 		
 	(details, prefix, suffix, slots) = words[0]
-	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in details:
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
 		if "%s$%i" % (word.lower(), dialect) == target:
-			return _Word(word, meaning, syntax_class, dialect, prefix, suffix, slots)
+			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
 def _sanitizePastalia(tokens, db_con):
@@ -515,7 +556,7 @@ def _renderBranches(tree):
 def _renderLeaf(leaf):
 	return """<span style="float: right;">(%s)</span>
 <div class="word-header-%i">%s: %s
-	<div style="margin-left: 15px;">%s</div>
+	<div style="margin-left: 10px;">%s</div>
 </div>
 	""" % (
 	 _DIALECT[leaf.getDialect() % 50],

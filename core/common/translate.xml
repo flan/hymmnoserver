@@ -16,7 +16,7 @@
 	$stmt->bind_result($word);
 	while($stmt->fetch()){
 		#Store the Emotion Verb, the number of Emotion Vowels, and a regexp version.
-		array_push($emotion_verbs, array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh)?$/', substr_count($word, '.'), $word));
+		array_push($emotion_verbs, array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh|aye|za)?$/', substr_count($word, '.'), $word));
 	}
 	$stmt->free_result();
 	$stmt->close();
