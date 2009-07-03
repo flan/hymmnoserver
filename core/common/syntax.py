@@ -513,21 +513,18 @@ def _renderBranches(tree):
 	""" % (_PHRASE_COLOURS[tree.getPhrase()], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
 	
 def _renderLeaf(leaf):
-	leaf_class = leaf.getClass()
-	return """
-<div class="word-header-%i">%s: %s</div>
-<div style="margin-left: 10px;">
-	<div class="word-header-%i">%s (%s)</div>
+	return """<span style="float: right;">(%s)</span>
+<div class="word-header-%i">%s: %s
+	<div style="margin-left: 10px;">%s</div>
 </div>
 	""" % (
-	 leaf_class,
-	 _SYNTAX_CLASS_FULL[leaf_class],
+	 _DIALECT[leaf.getDialect() % 50],
+	 leaf.getClass(),
+	 _SYNTAX_CLASS_FULL[leaf.getClass()],
 	 """<a href="javascript:popUpWord('%s', %i)" style="color: white;">%s</a>""" % (
 	  leaf.getBaseWord(), leaf.getDialect(), leaf.getWord(True)
 	 ),
-	 leaf_class,
-	 leaf.getMeaning(),
-	 _DIALECT[leaf.getDialect() % 50]
+	 leaf.getMeaning()
 	)
 	
 	
