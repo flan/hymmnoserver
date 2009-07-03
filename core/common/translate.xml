@@ -102,12 +102,16 @@
 		
 		preg_match($WORD_STRUCTURE, $word, $matches);
 		$d_word = queryWord($matches[2]);
-		if(count($matches) >= 3){
-			if(count($matches) == 4){//Suffix present.
-				$d_word[5] = array($matches[1], $matches[3]);
-			}else{
-				$d_word[5] = array($matches[1], NULL);
+		if($d_word[1] != NULL){//Make sure songs are hit.
+			if(count($matches) >= 3){
+				if(count($matches) == 4){//Suffix present.
+					$d_word[5] = array($matches[1], $matches[3]);
+				}else{
+					$d_word[5] = array($matches[1], NULL);
+				}
 			}
+		}else{
+			$d_word = queryWord($word);
 		}
 		return $d_word;
 	}

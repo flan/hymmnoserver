@@ -26,7 +26,7 @@ _WORD_STRUCTURE_REGEXP = re.compile(r"^%s?(.+?)(_\w+)?$" % (_EMOTION_VOWELS))
 _EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
 
 _INIT_LOCK = threading.Lock()
-_EMOTION_VERB_REGEXPS = None
+EMOTION_VERB_REGEXPS = None
 
 SYNTAX_CLASS_REV = {
  'ES(I)': (14,),
@@ -73,14 +73,14 @@ def _getEmotionVerbs(db_con):
 	return emotion_verbs
 	
 def initialiseEmotionVerbRegexps(db_con):
-	global _EMOTION_VERB_REGEXPS
+	global EMOTION_VERB_REGEXPS
 	_INIT_LOCK.acquire()
 	try:
-		if not _EMOTION_VERB_REGEXPS:
+		if not EMOTION_VERB_REGEXPS:
 			emotion_verbs = _getEmotionVerbs(db_con)
-			_EMOTION_VERB_REGEXPS = [(
+			EMOTION_VERB_REGEXPS = tuple([(
 			 re.compile(r"^%s(eh)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
-			 ev, d) for (ev, d) in emotion_verbs]
+			 ev, d) for (ev, d) in emotion_verbs])
 	finally:
 		_INIT_LOCK.release()
 		
@@ -99,7 +99,7 @@ def _readWord(word, dialect, db_con):
 	return ([word, None, None, 0, 0, None, [word.lower()]],)
 	
 def _queryEmotionVerb(word, dialect, db_con):
-	for (ev_re, ev, d) in _EMOTION_VERB_REGEXPS:
+	for (ev_re, ev, d) in EMOTION_VERB_REGEXPS:
 		if dialect and not d == dialect: #Support filtering.
 			continue
 			

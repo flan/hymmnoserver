@@ -26,78 +26,7 @@ _PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x v
 _PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi.$")
 _GENERAL_CONTENT_REGEXP = re.compile("^[\w ]+$")
 
-class Error(Exception):
-	"""
-	This class serves as the base from which all exceptions native to this
-	module are derived.
-	"""
-	description = None #: A description of the error.
-	
-	def __str__(self):
-		"""
-		This function returns an ASCII version of the description of this Error.
-		
-		When possible, the Unicode version should be used instead.		
-		
-		@rtype: str
-		@return: The description of this error. 
-		"""
-		return str(self.description)
-		
-	def __unicode__(self):
-		"""
-		This function returns the description of this Error.		
-		
-		@rtype: unicode
-		@return: The description of this error. 
-		"""
-		return self._description
-		
-	def __init__(self, description):
-		"""
-		This function is invoked when creating a new Error object.
-		
-		@type description: basestring
-		@param description: A description of the problem that this object
-		    represents.
-		
-		@return: Nothing.
-		"""
-		self.description = unicode(description)
-		
-class ContentError(Error):
-	"""
-	This class represents problems that might occur because of invalid data.
-	"""
-	def __init__(self, description):
-		"""
-		This function is invoked when creating a new ContentError object.
-		
-		@type description: basestring
-		@param description: A description of the problem that this object
-		    represents.
-		
-		@return: Nothing.
-		"""
-		self.description = unicode(description)
-		
-class FormatError(Error):
-	"""
-	This class represents problems that might occur because of ill-formed data.
-	"""
-	def __init__(self, description):
-		"""
-		This function is invoked when creating a new FormatError object.
-		
-		@type description: basestring
-		@param description: A description of the problem that this object
-		    represents.
-		
-		@return: Nothing.
-		"""
-		self.description = unicode(description)
-		
-		
+
 def _readWord(word, words, db_con):
 	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
 	if syntax_class > 0:
@@ -329,3 +258,75 @@ def applyPersistentEmotionSounds(lines, db_con):
 		
 	return (["%s %s %s 0x vvi." % (es_i, es_ii, es_iii)] + new_lines + lines[-1:], processed, sorted(unknown_set))
 	
+
+class Error(Exception):
+	"""
+	This class serves as the base from which all exceptions native to this
+	module are derived.
+	"""
+	description = None #: A description of the error.
+	
+	def __str__(self):
+		"""
+		This function returns an ASCII version of the description of this Error.
+		
+		When possible, the Unicode version should be used instead.		
+		
+		@rtype: str
+		@return: The description of this error. 
+		"""
+		return str(self.description)
+		
+	def __unicode__(self):
+		"""
+		This function returns the description of this Error.		
+		
+		@rtype: unicode
+		@return: The description of this error. 
+		"""
+		return self._description
+		
+	def __init__(self, description):
+		"""
+		This function is invoked when creating a new Error object.
+		
+		@type description: basestring
+		@param description: A description of the problem that this object
+		    represents.
+		
+		@return: Nothing.
+		"""
+		self.description = unicode(description)
+		
+class ContentError(Error):
+	"""
+	This class represents problems that might occur because of invalid data.
+	"""
+	def __init__(self, description):
+		"""
+		This function is invoked when creating a new ContentError object.
+		
+		@type description: basestring
+		@param description: A description of the problem that this object
+		    represents.
+		
+		@return: Nothing.
+		"""
+		self.description = unicode(description)
+		
+class FormatError(Error):
+	"""
+	This class represents problems that might occur because of ill-formed data.
+	"""
+	def __init__(self, description):
+		"""
+		This function is invoked when creating a new FormatError object.
+		
+		@type description: basestring
+		@param description: A description of the problem that this object
+		    represents.
+		
+		@return: Nothing.
+		"""
+		self.description = unicode(description)
+		

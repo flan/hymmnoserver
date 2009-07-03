@@ -16,6 +16,7 @@
 		14 => 'E.S. (I)',
 		15 => 'pron.',
 		16 => 'intj.',
+		17 => 'prep., prt.',
 		18 => 'cnstr.',
 		19 => 'adv., n.',
 		20 => 'adj., adv.',
@@ -38,6 +39,7 @@
 		14 => 'Emotion Sound (I)',
 		15 => 'pronoun',
 		16 => 'interjection',
+		17 => 'preposition, particle',
 		18 => 'language construct',
 		19 => 'adverb, noun',
 		20 => 'adjective, adverb'
@@ -54,9 +56,9 @@
 		8 => array(18),#cnstr
 		9 => array(16),#intj
 		10 => array(4, 9, 10, 19),#n
-		11 => array(6),#prep
+		11 => array(6, 17),#prep
 		12 => array(15),#pron
-		13 => array(12),#prt
+		13 => array(12, 17),#prt
 		14 => array(2, 9, 11)#v
 	);
 	

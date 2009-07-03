@@ -13,6 +13,7 @@ from mod_python import apache
 _WORKING_PATH = "/home/flan/hymmnoserver/core/"
 
 transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
+syntax = apache.import_module('syntax', path=[_WORKING_PATH + "common/"])
 
 _db_con = None
 _query = ''
@@ -128,11 +129,14 @@ else:
 					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, _db_con)
 					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
 			else:
-				req.write("Syntax evaluation not yet implemented")
+				try:
+					req.write(syntax.processSyntax(lines[0], _db_con)[0].toXML())
+				except syntax.ContentError, e:
+					req.write("Unable to process input: %s" % e)
 	except transformations.ContentError, e:
 		req.write("Unable to process input: %s" % e)
-	except Exception, e:
-		req.write("An unexpected error occurred: %s" % (e))
+	#except Exception, e:
+	#	req.write("An unexpected error occurred: %s" % (e))
 
 %>
 			<hr/>

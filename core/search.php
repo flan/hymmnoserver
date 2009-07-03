@@ -17,7 +17,7 @@
 					echo 'No search terms specified.';
 					exit();
 				}
-				$words = split("[\t ,]+", trim($query));
+				$words = split("[\t ,]+", preg_replace('/\/\.$/', '', trim($query), 1));
 				
 				require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
 				if ($mysqli->connect_error) {
