@@ -480,7 +480,7 @@ def renderResult_xhtml(tree, display_string):
 	</tr>
 	<tr>
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
-			You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a>
+			You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a> or <a href="/hymmnoserver/syntax-xml.psp?%s">view it as XML</a>
 		</td>
 	</tr>
 </table>
@@ -495,7 +495,7 @@ def renderResult_xhtml(tree, display_string):
 		The syntax tree does not take Emotion Vowels into consideration.
 	</p>
 </div>
-	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}))
+	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}), urllib.urlencode({'query': display_string}))
 	
 def _renderBranches(tree):
 	children_entries = []
@@ -508,22 +508,22 @@ def _renderBranches(tree):
 	return """
 <div class="phrase-%i">
 	<div>%s</div>
-	<div style="margin-left: 10px;">%s</div>
+	<div style="margin-left: 15px;">%s</div>
 </div>
 	""" % (_PHRASE_COLOURS[tree.getPhrase()], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
 	
 def _renderLeaf(leaf):
 	return """<span style="float: right;">(%s)</span>
 <div class="word-header-%i">%s: %s
-	<div style="margin-left: 10px;">%s</div>
+	<div style="margin-left: 15px;">%s</div>
 </div>
 	""" % (
 	 _DIALECT[leaf.getDialect() % 50],
 	 leaf.getClass(),
-	 _SYNTAX_CLASS_FULL[leaf.getClass()],
 	 """<a href="javascript:popUpWord('%s', %i)" style="color: white;">%s</a>""" % (
 	  leaf.getBaseWord(), leaf.getDialect(), leaf.getWord(True)
 	 ),
+	 _SYNTAX_CLASS_FULL[leaf.getClass()],
 	 leaf.getMeaning()
 	)
 	
