@@ -5,7 +5,7 @@
 <?php include 'common/constants.xml'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Word - ChronicleKey</title>
+		<title>HYMMNOSERVER - Word</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body style="width: 500px;">

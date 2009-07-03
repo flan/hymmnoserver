@@ -9,8 +9,6 @@ _PHRASE_EXPANSION = {
  'VP': "Verb Phrase",
  'NP': "Noun Phrase",
  'SgP': "Subject Phrase",
- 'AjP': "Complement Phrase",
- 'AvP': "Complement Phrase",
  'AP': "Complement Phrase",
  'CP': "Clause Phrase",
  'CgP': "Compound Phrase",
@@ -20,8 +18,6 @@ _PHRASE_REDUCTION = {
  'VP': 'VP',
  'NP': 'NP',
  'SgP': 'SP',
- 'AjP': 'AP',
- 'AvP': 'AP',
  'AP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
@@ -35,9 +31,9 @@ _ONE = 1 #Failure not tolerated, one of the set
 
 _GENERAL_AST = (_ALL,
  (_ANY, (_ONE, (_ALL, 'ESP', 'VP'), 'VP'), (_ONE, 'SgP', 'NP')), #[([ESP] VP) | (SgP | NP)]
- (_ALL, 'VP'),
+ 'VP',
  (_ANY, 'NP'),
- (_ALL, 'CgP'),
+ 'CgP',
 )
 
 _PASTALIA_AST = ()
@@ -45,17 +41,26 @@ _PASTALIA_AST = ()
 _AST_FRAGMENTS = {
  'ESP': (_ALL, 14, 7, 13), #<ES I, ES II, ES III>
  'VP': (_ALL,
-  (_ANY, 'AvP'),
+  (_ANY, 'AP'),
   2,
   (_ANY, (_ALL, (_ONE, 6, 12), 'NP', (_ANY, 'PP'))),
   (_ANY, (_ALL, 5, 'VP'))
  ), #<[AvP] v. [[prep | prt] NP [PP]] [conj VP]>
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
- 'CgP': (_ANY, (_ONE, 'NP', (_ALL, 'VP', 'NP', 'CgP'), (_ALL, 'VP', 'CgP'))), #[NP | (VP NP CgP) | (VP CgP)]
- 'NP': (_ONE, (_ALL, 'AjP', 'NP'), (_ALL, 4, 'NP'), 4, (_ANY, (_ALL, 5, 'NP'))), #<(AjP NP) | (n. NP) | n. [conj NP]>
- 'AjP': (_ALL, 8, 'AP'), #<adj AP>
- 'AvP': (_ALL, 3, 'AP'), #<adv AP>
- 'AP': (_ANY, 8, 3, 'AP', (_ANY, (_ALL, 5, 'AP'))), #[(8 AP) | (3 AP) [conj AP]]
+ 'CgP': (_ANY,
+  (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CgP'))
+ ), #[NP | (VP NP CgP) | (VP CgP)]
+ 'NP': (_ONE,
+  (_ALL, 'AP', 'NP'),
+  (_ALL, 4, 'NP'),
+  4,
+  (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
+ ), #<(AjP NP) | (n. NP) | n. [(conj | prep) NP]>
+ 'AP': (_ONE,
+  (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+  (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+  (_ALL, 3, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+ ), #[(prep | adj | adv) AP [conj AP]]
  'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
 }
 
@@ -95,6 +100,7 @@ _SYNTAX_MAPPING = {
  18: (18,),
  19: (3, 4),
  20: (3, 8),
+ 21: (5, 6),
 }
 _DIALECT = {
  0: 'Unknown',
@@ -200,9 +206,9 @@ def processSyntax(line, db_con):
 	tokens = re.sub("/\.$", "", line, 1).split()
 	
 	tree = _SyntaxTree()
-	(display_string, message) = _processInput(tree, tokens, db_con)
+	(display_string, result) = _processInput(tree, tokens, db_con)
 	
-	return (tree, display_string, message)
+	return (tree, display_string, result)
 	
 def _processInput(tree, tokens, db_con):
 	#Read the definition of every provided word and construct the displayable Hymmnos string.
@@ -210,98 +216,106 @@ def _processInput(tree, tokens, db_con):
 	
 	message = result = None
 	if not pastalia:
-		result = _processAST(words_details, _GENERAL_AST, 0, False)
+		result = _processAST(words_details, _GENERAL_AST, False)
 	else:
-		result = _processAST(words_details, _PASTALIA_AST, 0, True)
+		result = _processAST(words_details, _PASTALIA_AST, True)
 		
-	if not type(result) == str:
+	if result:
 		for node in result:
 			tree.addChild(node)
-		result = tree
-		
-	if tree.countLeaves() != len(tokens):
-		result = "Too much input, not enough abstract syntax."
-		
+			
+	result = result and tree.countLeaves() == len(tokens)
+	
 	return (display_string, result)
 	
-def _processAST(words, ast, depth, pastalia, phrase=None):
+def _processAST(words, ast, pastalia, phrase=None):
+	if not ast:
+		return None
+		
 	nodes = []
-	tuple_rules = ast[0]
+	tuple_rule = ast[0]
 	
 	for st_a in ast[1:]:
 		if type(st_a) == int:
 			result = _processWord_int(words, st_a, pastalia)
-			if type(result) == str:
-				if tuple_rules == _ALL:
-					return result
+			if result is None:
+				if tuple_rule == _ALL:
+					return None
 			else:
 				nodes.append(result)
 				words = words[result.countLeaves():]
+				if tuple_rule == _ONE:
+					break
 		elif type(st_a) == str:
 			if _L_CASE_REGEXP.match(st_a): #Exact word needed.
 				result = _processWord_exact(words, st_a)
-				if type(result) == str:
-					if tuple_rules == _ALL:
-						return result
+				if result is None:
+					if tuple_rule == _ALL:
+						return None
 				else:
 					nodes.append(result)
 					words = words[result.countLeaves():]
+					if tuple_rule == _ONE:
+						break
 			else:
-				result = _processAST(words, _AST_FRAGMENTS[st_a], depth + 1, pastalia, st_a)
-				if type(result) == str:
-					if tuple_rules == _ALL:
-						return result
+				result = _processAST(words, _AST_FRAGMENTS[st_a], pastalia, st_a)
+				if result is None:
+					if tuple_rule == _ALL:
+						return None
 				else:
 					offset = 0
 					for node in result:
 						nodes.append(node)
 						offset += node.countLeaves()
 					words = words[offset:]
+					if tuple_rule == _ONE:
+						break
 		else: #Tuple.
-			result = _processAST(words, st_a, depth + 1, pastalia)
-			if type(result) == str:
-				if tuple_rules == _ALL:
-					return result
+			result = _processAST(words, st_a, pastalia)
+			if result is None:
+				if tuple_rule == _ALL:
+					return None
 			else:
 				offset = 0
 				for node in result:
 					nodes.append(node)
 					offset += node.countLeaves()
 				words = words[offset:]
-				
-	if tuple_rules == _ONE and not nodes:
-		return "Failed to satisfy at-least-one requirement."
+				if tuple_rule == _ONE:
+					break
+					
+	if tuple_rule == _ONE and not nodes:
+		return None
 		
-	#Successfully validated subtree.
+	#Successfully validated tuple.
 	if phrase and nodes:
 		root = _Phrase(phrase)
 		for node in nodes:
 			root.addChild(node)
 		return [root]
-	else:
-		return nodes
+	return nodes
 		
 def _processWord_int(words, target, pastalia):
 	if not words:
-		return "Encountered EoL while looking for %s." % (_SYNTAX_CLASS[target])
+		return None
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
 		if not pastalia and dialect % 50 == 6: #Ignore Pastalia words.
 			continue
 		if target in _SYNTAX_MAPPING[syntax_class]:
-			return _Word(word, meaning, syntax_class, dialect, prefix, suffix, slots)
-	return "Expected %s." % (_SYNTAX_CLASS[target])
+			return _Word(word, meaning, target, dialect, prefix, suffix, slots)
+	return None
 	
 def _processWord_exact(words, target):
 	if not words:
-		return "Encountered EoL while looking for '%s'." % (target)
+		return None
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in details:
 		if "%s$%i" % (word.lower(), dialect) == target:
 			return _Word(word, meaning, syntax_class, dialect, prefix, suffix, slots)
-	return "Expected %s." % (target)
+	return None
 	
 def _sanitizePastalia(tokens, db_con):
 	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
