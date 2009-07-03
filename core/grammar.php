@@ -239,7 +239,7 @@
 				<p>
 					<b>[Emotion Sound]-[verb]-rre-[subject]-[verb]-[compound]</b><br/>
 					<b>[Emotion Sound]-[verb]-rre-[subject]-[verb]-[object]-[compound]</b><br/>
-					In this case, the sentence structure is [VSV'C/VSV'OC].<br/>
+					In this case, the sentence structure is [VSV'C/VSV'OC].<br/><br/>
 					The first verb, [V], indicates the speaker's action, and the second verb, [V'], indicates
 					the subject's action.
 				</p>
@@ -259,7 +259,7 @@
 					<div class="subsection-title text-title-small">Pronoun alternatives to &quot;rre&quot;</div>
 					<p>
 						Subject-form pronouns may be used in place of a &quot;rre-[subject]&quot; component.
-						Hymmnos's pronouns extend those found in English by defining gender and quantity.
+						Hymmnos's pronouns extend those found in English by accounting for gender and quantity.
 					</p>
 					<table>
 						<tr class="text-title-small">
@@ -340,14 +340,14 @@ duplicate the effect would be very tedious -->
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">Emotionless sentences</div>
 				<p>
-					Emotion Sounds may be omitted from sentences, even when they are not part of a
-					persistent Emotion Sound sequence.
+					Emotion Sounds, and, optionally, the initial verb, may be omitted from sentences, even
+					when they are not part of a persistent Emotion Sound sequence, leading to [VC/VOC].<br/>
 					When Hymmnos is spoken in this manner, it will not be processed by Towers,
 					making it little more than a spoken, though highly melodious, language.
 				</p>
 				<p>
 					Emotionless sentences may adopt a subject other than the speaker if they are
-					presented in [SVC/SVOC] format.
+					presented in [SVC/SVOC] format. (In this case, the &quot;rre&quot; is optional)
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
