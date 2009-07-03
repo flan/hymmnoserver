@@ -225,67 +225,67 @@ td.transformation-id{
 	text-align: center;
 }
 
-td.word-header{
+.word-header{
 	padding: 8px;
 }
-td.word-header-0{
+.word-header-0{
 	background: black;
 }
-td.word-header-1{
+.word-header-1{
 	background: #660000;
 }
-td.word-header-2{
+.word-header-2{
 	background: #440022;
 }
-td.word-header-3{
+.word-header-3{
 	background: #440044;
 }
-td.word-header-4{
+.word-header-4{
 	background: #000066;
 }
-td.word-header-5{
+.word-header-5{
 	background: #002200;
 }
-td.word-header-6{
+.word-header-6{
 	background: #002200;
 }
-td.word-header-7{
+.word-header-7{
 	background: #005500;
 }
-td.word-header-8{
+.word-header-8{
 	background: #440066;
 }
-td.word-header-9{
+.word-header-9{
 	background: #444444;
 }
-td.word-header-10{
+.word-header-10{
 	background: #444444;
 }
-td.word-header-11{
+.word-header-11{
 	background: #444444;
 }
-td.word-header-12{
+.word-header-12{
 	background: #002200;
 }
-td.word-header-13{
+.word-header-13{
 	background: #004400;
 }
-td.word-header-14{
+.word-header-14{
 	background: #006600;
 }
-td.word-header-15{
+.word-header-15{
 	background: #220066;
 }
-td.word-header-16{
+.word-header-16{
 	background: #002200;
 }
-td.word-header-18{
+.word-header-18{
 	background: #111111;
 }
-td.word-header-19{
+.word-header-19{
 	background: #444444;
 }
-td.word-header-20{
+.word-header-20{
 	background: #444444;
 }
 
@@ -297,6 +297,22 @@ td.word-info-title{
 	background: #ffbbcc;
 	color: #000044;
 	width: 120px;
+}
+
+.phrase-0{
+	background: black;
+}
+.phrase-1{
+	background: #000044;
+}
+.phrase-2{
+	background: #330022;
+}
+.phrase-3{
+	background: #440055;
+}
+.phrase-4{
+	background: #003300;
 }
 
 /*Generic styles*/

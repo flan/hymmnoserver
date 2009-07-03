@@ -57,6 +57,24 @@ def _renderMacroTransformation(phrase, components, unknown):
 		req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown), True)))
 		req.write("""</td></tr>""")
 	req.write("</table>")
+	
+def _renderFailure(message):
+	req.write("""
+<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
+	<tr>
+		<td style="color: #00008B; text-align: center; background: #D3D3D3;">
+			<div style="font-size: 18pt;">
+				an error occurred while processing your request
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td style="background: red; color: white; text-align: center;">
+			%s
+		</td>
+	</tr>
+</table>
+	""" % (message))
 
 %>
 		<%@include file="common/resources.xml" %>
@@ -130,13 +148,17 @@ else:
 					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
 			else:
 				try:
-					req.write(syntax.processSyntax(lines[0], _db_con)[0].toXML())
+					(tree, display_string, result) = syntax.processSyntax(lines[0], _db_con)
+					if result is None:
+						_renderFailure("unable to validate sentence; it may not be complete")
+					else:
+						req.write(syntax.renderResult_xhtml(tree, display_string))
 				except syntax.ContentError, e:
-					req.write("Unable to process input: %s" % e)
+					_renderFailure("unable to process input: %s" % (e))
 	except transformations.ContentError, e:
-		req.write("Unable to process input: %s" % e)
+		_renderFailure("unable to process input: %s" % (e))
 	#except Exception, e:
-	#	req.write("An unexpected error occurred: %s" % (e))
+	#	_renderFailure("an unexpected error occurred: %s" % (e))
 
 %>
 			<hr/>

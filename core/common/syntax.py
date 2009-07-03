@@ -1,5 +1,6 @@
 import cgi
 import re
+import urllib
 import xml.dom.minidom
 
 import lookup
@@ -21,6 +22,15 @@ _PHRASE_REDUCTION = {
  'AP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
+}
+_PHRASE_COLOURS = {
+ 'ESP': 4,
+ 'VP': 2,
+ 'NP': 1,
+ 'SgP': 1,
+ 'AP': 3,
+ 'CP': 0,
+ 'CgP': 0,
 }
 
 _L_CASE_REGEXP = re.compile("^[a-z]+\$\d+$")
@@ -79,6 +89,22 @@ _SYNTAX_CLASS = {
  15: 'pron.',
  16: 'intj.',
  18: 'cnstr.',
+}
+_SYNTAX_CLASS_FULL = {
+ 1: 'Emotion Verb',
+ 2: 'verb',
+ 3: 'adverb',
+ 4: 'noun',
+ 5: 'conjunction',
+ 6: 'preposition',
+ 7: 'Emotion Sound (II)',
+ 8: 'adjective',
+ 12: 'particle',
+ 13: 'Emotion Sound (III)',
+ 14: 'Emotion Sound (I)',
+ 15: 'pronoun',
+ 16: 'interjection',
+ 18: 'language construct',
 }
 _SYNTAX_MAPPING = {
  1: (1,),
@@ -151,6 +177,9 @@ class _SyntaxTree(object):
 	def countLeaves(self):
 		return sum([child.countLeaves() for child in self._children])
 		
+	def getPhrase(self):
+		return self._phrase
+		
 class _Phrase(_SyntaxTree):
 	def __init__(self, phrase):
 		self._phrase = phrase
@@ -174,6 +203,24 @@ class _Word(_SyntaxTree):
 		self._prefix = prefix
 		self._suffix = suffix
 		self._slots = slots
+		
+	def getWord(self, xhtml=False):
+		return _decorateWord(self._word, self._prefix, self._suffix, self._slots, xhtml)
+		
+	def getBaseWord(self):
+		return self._word
+		
+	def getMeaning(self):
+		return self._meaning
+		
+	def getClass(self):
+		return self._class
+		
+	def getDialect(self):
+		return self._dialect
+		
+	def getPhrase(self):
+		return None
 		
 	def _xml_attachNodes(self, document, parent):
 		node = document.createElement("word")
@@ -364,6 +411,31 @@ def _sanitizePastalia(tokens, db_con):
 			
 	return (pastalia, words, prefixes, suffixes, slots)
 	
+def _decorateWord(word, prefix, suffix, slots, xhtml):
+		if not slots is None:
+			slots = map(cgi.escape, slots)
+		else:
+			slots = ()
+		prefix = prefix or ''
+		suffix = suffix or ''
+		
+		if xhtml:
+			slots = ["<span style=\"color: #FFD700;\">%s</span>" % (slot) for slot in slots]
+			prefix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(prefix))
+			suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
+			word = cgi.escape(word)
+			
+		word_fragments = word.split('.')
+		word = ''
+		for (fragment, slot) in zip(word_fragments[:-1], slots):
+			word += fragment + slot
+		word = prefix + word + word_fragments[-1] + suffix
+		
+		if not xhtml:
+			word = cgi.escape(word)
+			
+		return word
+		
 def _digestTokens(tokens, db_con):
 	(pastalia, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens, db_con)
 	
@@ -376,7 +448,7 @@ def _digestTokens(tokens, db_con):
 			song_check = (p or '') + w
 			lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
-				raise ContentError("Unknown word in input: %s" % w)
+				raise ContentError("unknown word in input: %s" % w)
 				
 		decorated_words.append(_decorateWord(lexicon_entry[0][0].lower(), p, s, l, False))
 		
@@ -386,137 +458,79 @@ def _digestTokens(tokens, db_con):
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia)
 	
-def _decorateWord(word, prefix, suffix, slots, xhtml):
-	#Avoid Nones.
-	if not slots is None:
-		slots = map(cgi.escape, slots)
-	else:
-		slots = ()
-	prefix = prefix or ''
-	suffix = suffix or ''
-	
-	if xhtml:
-		slots = ["<span style=\"color: #FFD700;\">%s</span>" % (slot) for slot in slots]
-		prefix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(prefix))
-		suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
-		word = cgi.escape(word)
-		
-	word_fragments = word.split('.')
-	word = ''
-	for (fragment, slot) in zip(word_fragments[:-1], slots):
-		word += fragment + slot
-	word = prefix + word + word_fragments[-1] + suffix
-	
-	if not xhtml:
-		word = cgi.escape(word)
-		
-	return word
-	
-
-"""
-	#Renders a single word in the output table.
-	#Return format: true if this word has alternative entries.
-	function renderWord($word){
-		global $SYNTAX_CLASS;
-		
-		list($l_word, $english, $kana, $class, $dialect, $decorations, $hits) = $word;
-		$base_word = htmlspecialchars($l_word);
-		if($hits == 0){
-			$english = '???';
-			$kana = '???';
-		}else{
-			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".decorateWord($l_word, $class, $decorations, true)."</a>";
-		}
-		
-		echo "<tr>";
-			echo "<td class=\"word-header-$class\" style=\"width: 17%;\">$l_word</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">$SYNTAX_CLASS[$class]</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$english</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
-		echo "</tr>";
-		
-		return $hits > 1;
-	}
-	
-	#Processes a list of words, rendering everything provided.
-	#Return format: A list of all words with alternative entries.
-	function renderWords($words){
-		$alternatives = array();
-		foreach($words as $word){
-			if(renderWord($word)){
-				$word_c = $word[0];
-				if(!in_array($word_c, $alternatives)){
-					array_push($alternatives, $word_c);
-				}
-			}
-		}
-		return $alternatives;
-	}
-?>
-<table style="border-collapse: collapse; border: 1px solid black; width: 100%;">
+def renderResult_xhtml(tree, display_string):
+	return """
+<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
 	<tr>
 		<td style="color: #00008B; text-align: center; background: #D3D3D3;">
 			<div style="font-family: hymmnos; font-size: 24pt;">
-				<?php echo $word_string; ?>
+				%s
 			</div>
 			<div style="font-size: 18pt;">
-				<?php echo $word_string; ?>
+				%s
 			</div>
 		</td>
 	</tr>
 	<tr>
 		<td style="background: #808080; color: white;">
-			<table style="width: 100%; border-spacing: 1px;">
-				<?php
-					$alternatives = renderWords($words);
-				?>
-			</table>
+			<div style="width: 100%%;">
+				%s
+			</div>
 		</td>
 	</tr>
-	<?php
-		$alternatives_pos = 0;
-		foreach($alternatives as $alternative){
-			$alternatives[$alternatives_pos++] = "<a href=\"/hymmnoserver/search.php?word=".urlencode($alternative)."&exact=hymmnos\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
-		}
-		if($alternatives_pos > 0){
-			echo "<tr>";
-				echo "<td style=\"color: white; background: black; font-size: 0.85em;\">";
-					echo "Words with alternative meanings: ".implode(", ", $alternatives);
-				echo "</td>";
-			echo "</tr>";
-		}
-	?>
 	<tr>
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
-			<?php
-				$query_encode = urlencode($query);
-				echo "If this is a sentence, you may <a href=\"/hymmnoserver/grammar.psp?query=$query_encode\">inspect its structure</a>";
-			?>
+			You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a>
 		</td>
 	</tr>
 </table>
 <hr/>
 <div style="color: #808080; font-size: 0.6em;">
-	<?php
-		if($alternatives_pos > 0){
-			echo "<p style=\"color: black;\">Please make note of the words identified as having alternate meanings. In particular, consider that Pastalia forms typically take precedence when other Pastalia words are present.</p>";
-		}
-	?>
 	<p>
 		There is no difference between singular and plural nouns, unless implied by context:
 		&quot;wart&quot;, for example, can mean either &quot;word&quot; or &quot;words&quot;,
 		depending on which is more appropriate.<br/>
 	</p>
 	<p>
-		The presented kana does not take Emotion Vowels into consideration.
+		The syntax tree does not take Emotion Vowels into consideration.
 	</p>
 </div>
-
-#If alternative words in other dialects could have been used instead,
-#render all permutations at the bottom of the output.
-#Format: word$dialect, like "tie$6", to indicate which variant to use.
-"""
-
+	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}))
+	
+def _renderBranches(tree):
+	children_entries = []
+	for child in tree.getChildren():
+		if type(child) == _Word: #Leaf.
+			children_entries.append(_renderLeaf(child))
+		else:
+			children_entries.append(_renderBranches(child))
+			
+	return """
+<div class="phrase-%i">
+	<div>%s</div>
+	<div style="margin-left: 10px;">%s</div>
+</div>
+	""" % (_PHRASE_COLOURS[tree.getPhrase()], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
+	
+def _renderLeaf(leaf):
+	leaf_class = leaf.getClass()
+	return """
+<div class="word-header-%i">%s: %s</div>
+<div style="margin-left: 10px;">
+	<div class="word-header-%i">%s (%s)</div>
+</div>
+	""" % (
+	 leaf_class,
+	 _SYNTAX_CLASS_FULL[leaf_class],
+	 """<a href="javascript:popUpWord('%s', %i)" style="color: white;">%s</a>""" % (
+	  leaf.getBaseWord(), leaf.getDialect(), leaf.getWord(True)
+	 ),
+	 leaf_class,
+	 leaf.getMeaning(),
+	 _DIALECT[leaf.getDialect() % 50]
+	)
+	
+	
 class Error(Exception):
 	"""
 	This class serves as the base from which all exceptions native to this
