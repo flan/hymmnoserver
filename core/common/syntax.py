@@ -107,7 +107,8 @@ _AST_FRAGMENTS = {
   (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 3, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
- ), #[(prep | adj | adv) AP [conj AP]]
+  (_ALL, 7, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+ ), #[(prep | adj | adv | ESii) AP [conj AP]]
  'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
  'EVP': (_ALL,
   (_ANY, 'AP'),
@@ -180,6 +181,7 @@ _SYNTAX_MAPPING = {
  19: (3, 4),
  20: (3, 8),
  21: (5, 6),
+ 22: (2, 12),
 }
 _DIALECT = {
  0: 'Unknown',

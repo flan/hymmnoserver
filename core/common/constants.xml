@@ -21,6 +21,7 @@
 		19 => 'adv., n.',
 		20 => 'adj., adv.',
 		21 => 'conj., prep.',
+		22 => 'prt., v.',
 	);
 	
 	$SYNTAX_CLASS_FULL = array(
@@ -45,6 +46,7 @@
 		19 => 'adverb, noun',
 		20 => 'adjective, adverb',
 		21 => 'conjunction, preposition',
+		22 => 'particle, verb',
 	);
 	
 	$SYNTAX_CLASS_REV = array(
@@ -60,8 +62,8 @@
 		10 => array(4, 9, 10, 19),#n
 		11 => array(6, 17, 21),#prep
 		12 => array(15),#pron
-		13 => array(12, 17),#prt
-		14 => array(2, 9, 11)#v
+		13 => array(12, 17, 22),#prt
+		14 => array(2, 9, 11, 22)#v
 	);
 	
 	$DIALECT = array(
