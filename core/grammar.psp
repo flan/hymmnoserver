@@ -124,8 +124,8 @@ if not _query:
 							flexibility encoded to handle more complex structures.
 							<br/><br/>
 							Note also that this is not a production-grade linguistics work. The syntax trees it
-							generates are amateurish in nature, and are intended solely to assist humans in
-							infering meaning.
+							generates are amateurish in nature, occasionally lacking proper relationship structures,
+							and are, thus, intended solely to assist humans in infering meaning.
 						</small>
 					</p>
 					<p>
