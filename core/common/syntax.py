@@ -17,7 +17,9 @@ _PHRASE_EXPANSION = {
  'CpP': "Compound Phrase",
  'EVP': "Emotion Verb Phrase",
  'PP': "Preposition Phrase",
- 'EVOP': "Emotion Verb Object Phrase",
+ 'EVOP': "Noun Phrase",
+ 'EVNP': "Noun Phrase",
+ 'NvP': "Noun Phrase",
 }
 _PHRASE_REDUCTION = {
  'ESP': 'ESP',
@@ -31,7 +33,9 @@ _PHRASE_REDUCTION = {
  'CpP': 'MP',
  'EVP': 'EVP',
  'PP': 'PP',
- 'EVOP': 'EVOP',
+ 'EVOP': 'NP',
+ 'EVNP': 'NP',
+ 'NvP': 'NP',
 }
 _PHRASE_COLOURS = {
  'ESP': 4,
@@ -46,6 +50,8 @@ _PHRASE_COLOURS = {
  'EVP': 5,
  'PP': 6,
  'EVOP': 1,
+ 'EVNP': 1,
+ 'NvP': 1,
 }
 
 _L_CASE_REGEXP = re.compile("^[a-z.]+\$\d+$")
@@ -71,9 +77,11 @@ _AST_FRAGMENTS = {
   (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
   (_ANY, 'AP'),
   2,
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), 'NP', (_ANY, 'PP'))),
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)),
+   (_ONE, (_ALL, 'NvP', (_ONE, 'tes$1', 'ut$6'), 'NP'), 'NP'), (_ANY, 'PP'))
+  ),
   (_ANY, (_ALL, 5, 'VP'))
- ), #<[AP] v. [[prep | prt] NP [PP]] [conj VP]>
+ ), #<[AP] v. [[prep | prt] <(NvP (tes | ut) NP) | NP> [PP]] [conj VP]>
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
  'SpP': (_ALL,
   'x.$6',
@@ -87,10 +95,14 @@ _AST_FRAGMENTS = {
  ), #[NP | ((VP | EVP) [NP] CgP)]
  'NP': (_ONE,
   (_ALL, 'AP', 'NP'),
-  (_ALL, (_ONE, 4, 'EVP'), 'NP'),
+  (_ALL, (_ONE, 4, 'EVNP'), 'NP'),
   (_ONE, 4, 'EVP'),
   (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
  ), #<(AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
+ 'NvP': (_ALL,
+  (_ANY, 'AP'),
+  4
+ ), #<[AP] n>
  'AP': (_ONE,
   (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
@@ -100,8 +112,13 @@ _AST_FRAGMENTS = {
  'EVP': (_ALL,
   (_ANY, 'AP'),
   1,
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'EVOP', 'NP'), (_ANY, 'PP'))),
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), 'NP', (_ANY, 'PP'))),
  ), #<E.V. [[prep | prt] NP [PP]]>
+ 'EVNP': (_ALL,
+  (_ANY, 'AP'),
+  1,
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'EVOP', 'NP'), (_ANY, 'PP'))),
+ ), #<E.V. [[prep | prt] <EVOP | NP> [PP]]>
  'EVOP': (_ALL,
   'x.$6',
   (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP')),
@@ -317,6 +334,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 		return None
 		
 	nodes = []
+	success = False
 	tuple_rule = ast[0]
 	
 	for st_a in ast[1:]:
@@ -326,6 +344,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 				if tuple_rule == _ALL:
 					return None
 			else:
+				success = True
 				nodes.append(result)
 				words = words[result.countLeaves():]
 				if tuple_rule == _ONE:
@@ -337,6 +356,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 					if tuple_rule == _ALL:
 						return None
 				else:
+					success = True
 					nodes.append(result)
 					words = words[result.countLeaves():]
 					if tuple_rule == _ONE:
@@ -347,6 +367,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 					if tuple_rule == _ALL:
 						return None
 				else:
+					success = True
 					offset = 0
 					for node in result:
 						nodes.append(node)
@@ -360,6 +381,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 				if tuple_rule == _ALL:
 					return None
 			else:
+				success = True
 				offset = 0
 				for node in result:
 					nodes.append(node)
@@ -368,7 +390,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 				if tuple_rule == _ONE:
 					break
 					
-	if tuple_rule == _ONE and not nodes:
+	if tuple_rule == _ONE and not success:
 		return None
 		
 	#Successfully validated tuple.
