@@ -144,7 +144,8 @@ if not _query:
 			
 <%
 else:
-	lines = [line.strip() for line in _query.splitlines() if line]
+	lines = [line.strip() for line in _query.splitlines()]
+	lines = [line.replace(",", "") for line in lines if line]
 	try:
 		try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
@@ -176,9 +177,11 @@ else:
 			<form method="get" action="/hymmnoserver/grammar.psp">
 				<div>
 					<div style="text-align: center;">
-						<textarea name="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
+						<textarea name="query" id="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
 					</div>
 					<div style="text-align: right;">
+						<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
+						<input type="button" value="Remove linebreaks" onclick="document.getElementById('query').value = document.getElementById('query').value.replace(/\r?\n/g, ' ');"/>
 						<input type="submit" value="Process query"/>
 					</div>
 				</div>

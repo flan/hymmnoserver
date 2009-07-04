@@ -9,7 +9,7 @@
 	<tr>
 		<td class="header" colspan="2">
 			<form method="get" action="/hymmnoserver/search.php">
-				<table style="border-width: 0px; cell-spacing: 0px; cell-padding: 0px; width: 100%;">
+				<table style="border-width: 0px; width: 100%;">
 					<tr>
 						<td class="header" style="width: 70px;">
 							Hymmnos interface

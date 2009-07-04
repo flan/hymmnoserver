@@ -73,7 +73,7 @@ _AST_FRAGMENTS = {
   2,
   (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), 'NP', (_ANY, 'PP'))),
   (_ANY, (_ALL, 5, 'VP'))
- ), #<[na | re | zz] [AP] v. [[prep | prt] NP [PP]] [conj VP]>
+ ), #<[AP] v. [[prep | prt] NP [PP]] [conj VP]>
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
  'SpP': (_ALL,
   'x.$6',
@@ -85,15 +85,12 @@ _AST_FRAGMENTS = {
  'CpP': (_ANY,
   (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CpP'))
  ), #[NP | ((VP | EVP) [NP] CgP)]
- 'NP': (_ALL,
-  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
-  (_ONE,
-   (_ALL, 'AP', 'NP'),
-   (_ALL, (_ONE, 4, 'EVP'), 'NP'),
-   (_ONE, 4, 'EVP'),
-   (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
-  )
- ), #<[na | re | zz] (AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
+ 'NP': (_ONE,
+  (_ALL, 'AP', 'NP'),
+  (_ALL, (_ONE, 4, 'EVP'), 'NP'),
+  (_ONE, 4, 'EVP'),
+  (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
+ ), #<(AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
  'AP': (_ONE,
   (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
@@ -101,11 +98,10 @@ _AST_FRAGMENTS = {
  ), #[(prep | adj | adv) AP [conj AP]]
  'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
  'EVP': (_ALL,
-  (_ANY, 'zz$6'),
   (_ANY, 'AP'),
   1,
   (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'EVOP', 'NP'), (_ANY, 'PP'))),
- ), #<[zz] E.V. [[prep | prt] NP [PP]]>
+ ), #<E.V. [[prep | prt] NP [PP]]>
  'EVOP': (_ALL,
   'x.$6',
   (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP')),
@@ -290,7 +286,7 @@ class _Word(_SyntaxTree):
 def processSyntax(line, db_con):
 	lookup.initialiseEmotionVerbRegexps(db_con)
 	
-	tokens = re.sub("(?:/\.)|(?:!|\?)$", "", line, 1).split()
+	tokens = re.sub("(?:/\.)|(?:!|\?)|\.*$", "", line, 1).split()
 	
 	tree = _SyntaxTree()
 	(display_string, result) = _processInput(tree, tokens, db_con)
@@ -491,7 +487,7 @@ def _digestTokens(tokens, db_con):
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %s" % w)
 				
-		decorated_words.append(_decorateWord(lexicon_entry[0][0].lower(), p, s, l, False))
+		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
 		if len(lexicon_entry) == 1 and lexicon_entry[0][4] % 50 == 6: #Pastalia.
 			pastalia = True
