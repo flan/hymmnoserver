@@ -17,9 +17,10 @@ _PHRASE_EXPANSION = {
  'CpP': "Compound Phrase",
  'EVP': "Emotion Verb Phrase",
  'PP': "Preposition Phrase",
- 'EVOP': "Noun Phrase",
- 'EVNP': "Noun Phrase",
+ 'EVOP': "Emotion Object Phrase",
+ 'EVNP': "Emotion Object Phrase",
  'NvP': "Noun Phrase",
+ 'NsP': "Noun Phrase",
 }
 _PHRASE_REDUCTION = {
  'ESP': 'ESP',
@@ -33,25 +34,22 @@ _PHRASE_REDUCTION = {
  'CpP': 'MP',
  'EVP': 'EVP',
  'PP': 'PP',
- 'EVOP': 'NP',
- 'EVNP': 'NP',
+ 'EVOP': 'EOP',
+ 'EVNP': 'EOP',
  'NvP': 'NP',
+ 'NsP': 'NP',
 }
 _PHRASE_COLOURS = {
  'ESP': 4,
  'VP': 2,
  'NP': 1,
- 'SgP': 1,
- 'SpP': 1,
+ 'SP': 8,
  'AP': 3,
  'CP': 0,
- 'CgP': 0,
- 'CpP': 0,
+ 'MP': 7,
  'EVP': 5,
  'PP': 6,
- 'EVOP': 1,
- 'EVNP': 1,
- 'NvP': 1,
+ 'EOP': 9,
 }
 
 _L_CASE_REGEXP = re.compile("^[a-z.]+\$\d+$")
@@ -61,7 +59,7 @@ _ALL = -1 #failure not tolerated
 _ONE = 1 #Failure not tolerated, one of the set
 
 _GENERAL_AST = (_ALL,
- (_ANY, (_ONE, (_ALL, 'ESP', 'VP'), 'VP'), (_ALL, (_ONE, 'SgP', 'NP'), 'VP')), #[([ESP] VP) | ((SgP | NP) VP)]
+ (_ANY, (_ONE, (_ALL, (_ANY, 'ESP'), (_ANY, (_ONE, 'SgP', (_ANY, 'NP'))), 'VP'), (_ALL, 'ESP', 'SgP', 'VP'))), #[([ESP] VP) | ((SgP | NP) VP)]
  'CgP',
 )
 
@@ -72,20 +70,20 @@ _PASTALIA_AST = (_ALL,
 )
 
 _AST_FRAGMENTS = {
- 'ESP': (_ALL, 14, 7, 13), #<ES I, ES II, ES III>
+ 'ESP': (_ALL, 14, 7, 13),
  'VP': (_ALL,
   (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
   (_ANY, 'AP'),
   2,
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)),
-   (_ONE, (_ALL, 'NvP', (_ONE, 'tes$1', 'ut$6'), 'NP'), 'NP'), (_ANY, 'PP'))
+  (_ANY,
+   (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, (_ALL, 'NvP', (_ONE, 'tes$1', 'ut$6'), 'NP'), 'NP'), (_ANY, 'PP')),
+   (_ALL, 5, 'VP')
   ),
-  (_ANY, (_ALL, 5, 'VP'))
- ), #<[AP] v. [[prep | prt] <(NvP (tes | ut) NP) | NP> [PP]] [conj VP]>
+ ), #<[AP] v. [conj VP] [[prep | prt] <(NvP (tes | ut) NP) | NP> [PP]] [conj VP]>
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
  'SpP': (_ALL,
   'x.$6',
-  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP'))
+  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NsP'))
  ), #<x. <([rre] pron) | (rre NP)>>
  'CgP': (_ANY,
   (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CgP'))
@@ -95,10 +93,16 @@ _AST_FRAGMENTS = {
  ), #[NP | ((VP | EVP) [NP] CgP)]
  'NP': (_ONE,
   (_ALL, 'AP', 'NP'),
-  (_ALL, (_ONE, 4, 'EVNP'), 'NP'),
-  (_ONE, 4, 'EVP'),
-  (_ANY, (_ALL, (_ONE, 5, 6), 'NP'))
+  (_ALL, 4, 'NP'),
+  4,
+  (_ALL, (_ONE, 5, 6), 'NP')
  ), #<(AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
+ 'NsP': (_ONE,
+  (_ALL, 'AP', 'NsP'),
+  (_ALL, 4, 'NsP'),
+  4,
+  (_ALL, (_ONE, 5, 6), 'NsP')
+ ), #<(AP NsP) | (n. NsP) | n. [(conj | prep) NsP]>
  'NvP': (_ALL,
   (_ANY, 'AP'),
   4
@@ -107,13 +111,15 @@ _AST_FRAGMENTS = {
   (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
   (_ALL, 3, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
-  (_ALL, 7, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
- ), #[(prep | adj | adv | ESii) AP [conj AP]]
+  (_ALL, 12, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+  (_ALL, 15, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
+ ), #[(prep | adj | adv) AP [conj AP]]
  'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
  'EVP': (_ALL,
   (_ANY, 'AP'),
   1,
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), 'NP', (_ANY, 'PP'))),
+  (_ANY, 'SpP'),
+  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'NP', 'EVNP'), (_ANY, (_ONE, (_ALL, 5, 'EVP'), 'PP')))),
  ), #<E.V. [[prep | prt] NP [PP]]>
  'EVNP': (_ALL,
   (_ANY, 'AP'),
@@ -182,6 +188,7 @@ _SYNTAX_MAPPING = {
  20: (3, 8),
  21: (5, 6),
  22: (2, 12),
+ 90: (7, 8),
 }
 _DIALECT = {
  0: 'Unknown',
@@ -195,7 +202,7 @@ _DIALECT = {
 }
 
 _EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
-_EMOTION_WORDS_REGEXP = re.compile('^(%s)?(.+)(_\w+)?$' % _EMOTION_VOWELS)
+_EMOTION_WORDS_REGEXP = re.compile('^(%s)?(.+)(_\w+)?$' % (_EMOTION_VOWELS))
 
 class _SyntaxTree(object):
 	_children = None
@@ -425,7 +432,7 @@ def _processWord_exact(words, target):
 			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
-def _sanitizePastalia(tokens, db_con):
+def _sanitizePastalia(tokens):
 	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
 	pastalia = False
 	
@@ -450,26 +457,27 @@ def _sanitizePastalia(tokens, db_con):
 						word_slots.append(hit)
 				slots.append(tuple(word_slots))
 				
-				emotion_hit = True
 				pastalia = True
-				break
-		if not emotion_hit:
-			match = _EMOTION_WORDS_REGEXP.match(token)
-			if match and match.group(1) or match.group(3):
-				words.append(match.group(2))
-				prefixes.append(match.group(1))
-				suffixes.append(match.group(3))
-				slots.append(None)
-				
 				emotion_hit = True
-				pastalia = True
 				break
-		if not emotion_hit:
-			words.append(token)
-			prefixes.append(None)
-			suffixes.append(None)
+		if emotion_hit:
+			continue
+			
+		match = _EMOTION_WORDS_REGEXP.match(token)
+		if match and match.group(1) or match.group(3):
+			words.append(match.group(2))
+			prefixes.append(match.group(1))
+			suffixes.append(match.group(3))
 			slots.append(None)
 			
+			pastalia = True
+			continue
+			
+		words.append(token)
+		prefixes.append(None)
+		suffixes.append(None)
+		slots.append(None)
+		
 	return (pastalia, words, prefixes, suffixes, slots)
 	
 def _decorateWord(word, prefix, suffix, slots, xhtml):
@@ -498,7 +506,7 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		return word
 		
 def _digestTokens(tokens, db_con):
-	(pastalia, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens, db_con)
+	(pastalia, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens)
 	
 	word_list = lookup.readWords(words, db_con)
 	decorated_words = []
@@ -513,8 +521,9 @@ def _digestTokens(tokens, db_con):
 				
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
-		if len(lexicon_entry) == 1 and lexicon_entry[0][4] % 50 == 6: #Pastalia.
-			pastalia = True
+		if len(lexicon_entry) == 1 and lexicon_entry[0][3] == 7: #E.S. (II)
+			(word, meaning, kana, syntax_class, dialect, decorations, syllables) = lexicon_entry[0]
+			lexicon_entry = ((word, meaning, kana, 90, dialect, decorations, syllables),) #Dual-class as (E.S. (ii), adj.)
 			
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia)
@@ -547,14 +556,11 @@ def renderResult_xhtml(tree, display_string):
 </table>
 <hr/>
 <div style="color: #808080; font-size: 0.6em;">
-	<p>
-		There is no difference between singular and plural nouns, unless implied by context:
-		&quot;wart&quot;, for example, can mean either &quot;word&quot; or &quot;words&quot;,
-		depending on which is more appropriate.<br/>
-	</p>
-	<p>
+	<span>
+		Lexical classes reflect instance, not abstraction.
+		<br/>
 		The syntax tree does not take Emotion Vowels into consideration.
-	</p>
+	</span>
 </div>
 	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}), urllib.urlencode({'query': display_string}))
 	
@@ -567,16 +573,17 @@ def _renderBranches(tree):
 			children_entries.append(_renderBranches(child))
 			
 	return """
-<div class="phrase-%i">
-	<div>%s</div>
+<div class="phrase phrase-%i">
+	<span style="font-size: 0.9em;">%s</span>
 	<div style="margin-left: 15px;">%s</div>
 </div>
-	""" % (_PHRASE_COLOURS[tree.getPhrase()], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
+	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
 	
 def _renderLeaf(leaf):
-	return """<span style="float: right;">(%s)</span>
-<div class="word-header-%i">%s: %s
-	<div style="margin-left: 10px;">%s</div>
+	return """<span style="float: right; font-size: 0.675em;">(%s)</span>
+<div class="phrase-word phrase-word-%i">
+	<span>%s (%s)</span>
+	<div style="margin-left: 10px; font-size: 0.85em;">%s</div>
 </div>
 	""" % (
 	 _DIALECT[leaf.getDialect() % 50],

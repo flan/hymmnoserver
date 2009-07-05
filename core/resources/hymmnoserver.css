@@ -225,76 +225,76 @@ td.transformation-id{
 	text-align: center;
 }
 
-.word-header{
+td.word-header{
 	padding: 8px;
 }
-.word-header-0{
+td.word-header-0{
 	background: black;
 }
-.word-header-1{
-	background: #660000;
+td.word-header-1{
+	background: #224400;
 }
-.word-header-2{
+td.word-header-2{
 	background: #440022;
 }
-.word-header-3{
+td.word-header-3{
 	background: #440044;
 }
-.word-header-4{
+td.word-header-4{
 	background: #000066;
 }
-.word-header-5{
+td.word-header-5{
 	background: #002200;
 }
-.word-header-6{
+td.word-header-6{
 	background: #002200;
 }
-.word-header-7{
+td.word-header-7{
 	background: #005500;
 }
-.word-header-8{
+td.word-header-8{
 	background: #440066;
 }
-.word-header-9{
+td.word-header-9{
 	background: #444444;
 }
-.word-header-10{
+td.word-header-10{
 	background: #444444;
 }
-.word-header-11{
+td.word-header-11{
 	background: #444444;
 }
-.word-header-12{
+td.word-header-12{
 	background: #002200;
 }
-.word-header-13{
+td.word-header-13{
 	background: #004400;
 }
-.word-header-14{
+td.word-header-14{
 	background: #006600;
 }
-.word-header-15{
+td.word-header-15{
 	background: #220066;
 }
-.word-header-16{
+td.word-header-16{
 	background: #002200;
 }
-.word-header-17{
+td.word-header-17{
 	background: #444444;
 }
-.word-header-18{
+td.word-header-18{
 	background: #111111;
 }
-.word-header-19{
+td.word-header-19{
 	background: #444444;
 }
-.word-header-20{
+td.word-header-20{
 	background: #444444;
 }
-.word-header-21{
+td.word-header-21{
 	background: #444444;
 }
-.word-header-22{
+td.word-header-22{
 	background: #444444;
 }
 
@@ -308,26 +308,90 @@ td.word-info-title{
 	width: 120px;
 }
 
-.phrase-0{
-	background: black;
+div.phrase{
+	border: 1px solid black;
+	border-right: 0;
+	border-bottom: 0;
+	padding-left: 2px;
 }
-.phrase-1{
-	background: #000044;
+div.phrase-0{/*CP*/
+	background: #000000;
 }
-.phrase-2{
-	background: #330022;
+div.phrase-1{/*NP*/
+	background: #000030;
 }
-.phrase-3{
-	background: #440055;
+div.phrase-2{/*VP*/
+	background: #300030;
 }
-.phrase-4{
-	background: #003300;
+div.phrase-3{/*AP*/
+	background: #100020;
 }
-.phrase-5{
-	background: #4C0000;
+div.phrase-4{/*ESP*/
+	background: #003000;
 }
-.phrase-5{
-	background: #001A00;
+div.phrase-5{/*EVP*/
+	background: #102000;
+}
+div.phrase-6{/*PP*/
+	background: #200010;
+}
+div.phrase-7{/*MP*/
+	background: #101010;
+}
+div.phrase-8{/*SP*/
+	background: #000020;
+}
+div.phrase-9{/*EOP*/
+	background: #001020;
+}
+
+div.phrase-word{
+	border: 1px solid black;
+	border-right: 0;
+	border-bottom: 0;
+	padding-left: 2px;
+}
+div.phrase-word-1{/*E.V.*/
+	background: #203000;
+}
+div.phrase-word-2{/*v.*/
+	background: #400040;
+}
+div.phrase-word-3{/*adv.*/
+	background: #300027;
+}
+div.phrase-word-4{/*n.*/
+	background: #000040;
+}
+div.phrase-word-5{/*conj.*/
+	background: #202020;
+}
+div.phrase-word-6{/*prep.*/
+	background: #240033;
+}
+div.phrase-word-7{/*E.S. (II)*/
+	background: #004000;
+}
+div.phrase-word-8{/*adj.*/
+	background: #270030;
+}
+div.phrase-word-12{/*prt.*/
+	background: #330024;
+}
+div.phrase-word-13{/*E.S. (III)*/
+	background: #003700;
+}
+div.phrase-word-14{/*E.S. (I)*/
+	background: #004700;
+}
+div.phrase-word-15{/*pron.*/
+	background: #000037;
+}
+div.phrase-word-16{/*intj.*/
+	background: #000000;
+}
+div.phrase-word-18{/*cnstr.*/
+	background: #272727;
 }
 
 /*Generic styles*/
