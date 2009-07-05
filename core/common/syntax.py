@@ -490,7 +490,7 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		
 		if xhtml:
 			slots = ["<span style=\"color: #FFD700;\">%s</span>" % (slot) for slot in slots]
-			prefix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(prefix))
+			prefix = "<span style=\"color: #F0D000;\">%s</span>" % (cgi.escape(prefix))
 			suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
 			word = cgi.escape(word)
 			

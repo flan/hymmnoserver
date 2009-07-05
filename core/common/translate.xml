@@ -152,7 +152,7 @@
 			if($colour){
 				$result = '';
 				if(!empty($decorations[0])){
-					$result = "<span style=\"color: #FFD700;\">".$decorations[0]."</span>";
+					$result = "<span style=\"color: #F0D000;\">".$decorations[0]."</span>";
 				}
 				$result = $result.htmlspecialchars($word);
 				if(!empty($decorations[1])){
