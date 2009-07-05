@@ -344,6 +344,9 @@ div.phrase-8{/*SP*/
 div.phrase-9{/*EOP*/
 	background: #001020;
 }
+div.phrase-10{/*TP*/
+	background: #200030;
+}
 
 div.phrase-word{
 	border: 1px solid black;
@@ -364,7 +367,7 @@ div.phrase-word-4{/*n.*/
 	background: #000040;
 }
 div.phrase-word-5{/*conj.*/
-	background: #202020;
+	background: #171717;
 }
 div.phrase-word-6{/*prep.*/
 	background: #240033;
@@ -391,7 +394,7 @@ div.phrase-word-16{/*intj.*/
 	background: #000000;
 }
 div.phrase-word-18{/*cnstr.*/
-	background: #272727;
+	background: #202020;
 }
 
 /*Generic styles*/

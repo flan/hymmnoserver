@@ -139,23 +139,25 @@ _AST_FRAGMENTS = {
    (_ALL, 'rre$1', 'NsP')
   )
  ),
+ 'TP': (_ALL,
+  (_ANY, (_ONE, 12, 6)),
+  (_ONE,
+   (_ALL,
+    'NvP',
+    (_ONE, 'tes$1', 'ut$6'),
+    'NP'
+   ),
+   'NP'
+  ),
+  (_ANY, 'TP'),
+ ),
  'VP': (_ALL,
   (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
   (_ANY, 'AP'),
   2,
   (_ANY,
-   (_ALL,
-    (_ANY, (_ONE, 6, 12)),
-    (_ONE,
-     (_ALL,
-      'NvP',
-      (_ONE, 'tes$1', 'ut$6'),
-      'NP'
-     ),
-     'NP'
-    ),
-    (_ANY, 'PP')
-   ),
+   'TP',
+   'PP',
    (_ALL, 5, 'VP')
   ),
  ),
@@ -178,6 +180,7 @@ _PHRASE_EXPANSION = {
  'PP': "Preposition Phrase",
  'SgP': "Subject Phrase",
  'SpP': "Subject Phrase",
+ 'TP': "Transitive Phrase",
  'VP': "Verb Phrase",
 } #: Mappings from phrase-notation to human-readable descriptions.
 
@@ -196,6 +199,7 @@ _PHRASE_REDUCTION = {
  'PP': 'PP',
  'SgP': 'SP',
  'SpP': 'SP',
+ 'TP': 'TP',
  'VP': 'VP',
 } #: Mappings from phrase-notation to symbolic descriptions.
 
@@ -209,6 +213,7 @@ _PHRASE_COLOURS = {
  'NP': 1,
  'PP': 6,
  'SP': 8,
+ 'TP': 10,
  'VP': 2,
 } #: Mappings from symbolic descriptions to colour keys.
 
