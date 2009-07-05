@@ -1,14 +1,34 @@
 # -*- encoding: utf-8 -*-
+"""
+HymmnoServer support module: mysql2sqlite
+
+Purpose
+=======
+ Reads all data from the MySQL database and dumps it into an SQLite3 file,
+ making it possible to use the content without being tethered to a server.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import MySQLdb
+import os
 import sqlite3
 import sys
 
+#Kill the existing SQLite file, if any.
+if os.path.exists(sys.argv[1]):
+	os.remove(sys.argv[1])
+	
 mysql_db = MySQLdb.connect(host="localhost", user="username", passwd="password", db="database")
 mysql_cur = mysql_db.cursor()
 sqlite_db = sqlite3.connect(sys.argv[1])
 sqlite_cur = sqlite_db.cursor()
 
-#Assume the specified sqlite3 file doesn't exist.
 sqlite_cur.execute("""
  CREATE TABLE hymmnos (
   word TEXT,

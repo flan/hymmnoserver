@@ -1,4 +1,20 @@
 # -*- encoding: utf-8 -*-
+"""
+HymmnoServer support module: db2
+
+Purpose
+=======
+ Queries romaji.org for a transliteration of the given romaji; the result is
+ returned as UTF-8 data.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import urllib2
 import re
 

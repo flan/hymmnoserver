@@ -208,7 +208,7 @@
 			<p>
 				<b>Community-friendly</b><br/>
 				This site is an open source effort, released in its entirety under the
-				<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/ca/">by-nc-sa/2.5 Creative Commons license</a>.
+				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">by-nc-sa/3.0 Creative Commons license</a>.
 				If you agree to the rather lax terms of this license, you may grab all of its materials using
 				<a href="http://subversion.tigris.org/">Subversion</a>:
 				&quot;svn co <a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a> hymmnoserver/&quot;.
