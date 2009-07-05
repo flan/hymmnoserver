@@ -654,7 +654,7 @@ def _sanitizePastalia(tokens):
 			continue
 			
 		match = lookup.WORD_STRUCTURE_REGEXP.match(token)
-		if match and match.group(1) or match.group(3):
+		if match and (match.group(1) or match.group(3)):
 			words.append(match.group(2))
 			prefixes.append(match.group(1))
 			suffixes.append(match.group(3))

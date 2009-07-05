@@ -20,10 +20,9 @@ import re
 import threading
 
 EMOTION_VOWELS = r'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN' #: A regexp fragment containing all known Emotion Vowels.
-_EMOTION_VOWELS = r'(%s)' % (EMOTION_VOWELS) #: A regexp fragment containing all emotion vowels in a capture group.
 _EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS) #: A regexp fragment containing all emotion vowels and a bank-slot marker in a capture group.
 
-WORD_STRUCTURE_REGEXP = re.compile(r"^(%s)?(.+?)(_\w+)?$" % (_EMOTION_VOWELS)) #: A regular expression that matches Pastalia-ized nouns.
+WORD_STRUCTURE_REGEXP = re.compile(r"^(%s)?(.+?)(_\w+)?$" % (EMOTION_VOWELS)) #: A regular expression that matches Pastalia-ized nouns.
 _EMOTION_WORDS_REGEXP = re.compile(r'^(%s)(\w+)$' % (EMOTION_VOWELS)) #: A regular expression that matches any Pastalia-ized word.
 
 _INIT_LOCK = threading.Lock() #: A lock used to prevent multiple simultaneous accesses to the Emotion Verb regexps while initializing.
