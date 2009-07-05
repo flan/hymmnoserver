@@ -82,7 +82,7 @@ _AST_FRAGMENTS = {
  'CpP': (_ANY,
   (_ONE,
    'NP',
-   (_ALL, 'VP', (_ANY, 'NP'), 'CpP'))
+   (_ALL, 'VP', (_ANY, 'NP'), 'CpP')
   )
  ),
  'ESP': (_ALL, 14, 7, 13),
