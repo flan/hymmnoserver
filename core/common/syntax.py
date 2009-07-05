@@ -63,11 +63,6 @@ _AST_FRAGMENTS = {
    (_ANY, (_ALL, 5, 'AP'))
   ),
   (_ALL,
-   12,
-   (_ANY, 'AP'),
-   (_ANY, (_ALL, 5, 'AP'))
-  ),
-  (_ALL,
    15,
    (_ANY, 'AP'),
    (_ANY, (_ALL, 5, 'AP'))
