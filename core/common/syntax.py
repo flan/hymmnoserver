@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+Hymmnoserver module: common.syntax
+
+Purpose
+=======
+ Processes Hymmnos, producing syntax trees upon sucess.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import cgi
 import re
 import urllib
@@ -5,133 +21,201 @@ import xml.dom.minidom
 
 import lookup
 
-_PHRASE_EXPANSION = {
- 'ESP': "Emotion Sound Phrase",
- 'VP': "Verb Phrase",
- 'NP': "Noun Phrase",
- 'SgP': "Subject Phrase",
- 'SpP': "Subject Phrase",
- 'AP': "Complement Phrase",
- 'CP': "Clause Phrase",
- 'CgP': "Compound Phrase",
- 'CpP': "Compound Phrase",
- 'EVP': "Emotion Verb Phrase",
- 'PP': "Preposition Phrase",
- 'EVOP': "Emotion Object Phrase",
- 'EVNP': "Emotion Object Phrase",
- 'NvP': "Noun Phrase",
- 'NsP': "Noun Phrase",
-}
-_PHRASE_REDUCTION = {
- 'ESP': 'ESP',
- 'VP': 'VP',
- 'NP': 'NP',
- 'SgP': 'SP',
- 'SpP': 'SP',
- 'AP': 'AP',
- 'CP': 'CP',
- 'CgP': 'MP',
- 'CpP': 'MP',
- 'EVP': 'EVP',
- 'PP': 'PP',
- 'EVOP': 'EOP',
- 'EVNP': 'EOP',
- 'NvP': 'NP',
- 'NsP': 'NP',
-}
-_PHRASE_COLOURS = {
- 'ESP': 4,
- 'VP': 2,
- 'NP': 1,
- 'SP': 8,
- 'AP': 3,
- 'CP': 0,
- 'MP': 7,
- 'EVP': 5,
- 'PP': 6,
- 'EOP': 9,
-}
-
-_L_CASE_REGEXP = re.compile("^[a-z.]+\$\d+$")
-
-_ANY = 0 #0-or-more (failure tolerated)
-_ALL = -1 #failure not tolerated
-_ONE = 1 #Failure not tolerated, one of the set
+_ANY = 0 #: An AST classifier that requires 0-or-more matches from its set.
+_ALL = -1 #: An AST classifier that requires every set member to match.
+_ONE = 1 #: An AST classifier that requires at least one member to match. (Successive matches are ignored)
 
 _GENERAL_AST = (_ALL,
- (_ANY, (_ONE, (_ALL, (_ANY, 'ESP'), (_ANY, (_ONE, 'SgP', (_ANY, 'NP'))), 'VP'), (_ALL, 'ESP', 'SgP', 'VP'))), #[([ESP] VP) | ((SgP | NP) VP)]
+ (_ANY,
+  (_ONE,
+   (_ALL,
+    (_ANY, 'ESP'),
+    (_ANY, (_ONE, 'SgP', (_ANY, 'NP'))),
+    'VP'
+   ),
+   (_ALL, 'ESP', 'SgP', 'VP')
+  )
+ ),
  'CgP',
-)
+) #: The AST that describes standard Hymmnos.
 
 _PASTALIA_AST = (_ALL,
  (_ANY, 'SpP'),
  'EVP',
  'CpP',
-)
+) #: The AST that describes Pastalia Hymmnos.
 
 _AST_FRAGMENTS = {
- 'ESP': (_ALL, 14, 7, 13),
- 'VP': (_ALL,
-  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
-  (_ANY, 'AP'),
-  2,
-  (_ANY,
-   (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, (_ALL, 'NvP', (_ONE, 'tes$1', 'ut$6'), 'NP'), 'NP'), (_ANY, 'PP')),
-   (_ALL, 5, 'VP')
+ 'AP': (_ONE,
+  (_ALL,
+   6,
+   (_ANY, 'AP'),
+   (_ANY, (_ALL, 5, 'AP'))
   ),
- ), #<[AP] v. [conj VP] [[prep | prt] <(NvP (tes | ut) NP) | NP> [PP]] [conj VP]>
- 'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15), #<(rre NP) | pron.>
- 'SpP': (_ALL,
-  'x.$6',
-  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NsP'))
- ), #<x. <([rre] pron) | (rre NP)>>
+  (_ALL,
+   8,
+   (_ANY, 'AP'),
+   (_ANY, (_ALL, 5, 'AP'))
+  ),
+  (_ALL,
+   3,
+   (_ANY, 'AP'),
+   (_ANY, (_ALL, 5, 'AP'))
+  ),
+  (_ALL,
+   12,
+   (_ANY, 'AP'),
+   (_ANY, (_ALL, 5, 'AP'))
+  ),
+  (_ALL,
+   15,
+   (_ANY, 'AP'),
+   (_ANY, (_ALL, 5, 'AP'))
+  ),
+ ),
  'CgP': (_ANY,
-  (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CgP'))
- ), #[NP | (VP [NP] CgP)]
+  (_ONE,
+   'NP',
+   (_ALL, 'VP', (_ANY, 'NP'), 'CgP')
+  )
+ ),
  'CpP': (_ANY,
-  (_ONE, 'NP', (_ALL, 'VP', (_ANY, 'NP'), 'CpP'))
- ), #[NP | ((VP | EVP) [NP] CgP)]
+  (_ONE,
+   'NP',
+   (_ALL, 'VP', (_ANY, 'NP'), 'CpP'))
+  )
+ ),
+ 'ESP': (_ALL, 14, 7, 13),
+ 'EVNP': (_ALL,
+  (_ANY, 'AP'),
+  1,
+  (_ANY,
+   (_ALL,
+    (_ANY, (_ONE, 6, 12)),
+    (_ONE, 'EVOP', 'NP'),
+    (_ANY, 'PP')
+   )
+  ),
+ ),
+ 'EVOP': (_ALL,
+  'x.$6',
+  (_ONE,
+   (_ALL, (_ANY, 'rre$1'), 15),
+   (_ALL, 'rre$1', 'NP')
+  ),
+  'EVP'
+ ),
+ 'EVP': (_ALL,
+  (_ANY, 'AP'),
+  1,
+  (_ANY, 'SpP'),
+  (_ANY,
+   (_ALL,
+    (_ANY, (_ONE, 6, 12)),
+    (_ONE, 'NP', 'EVNP'),
+    (_ANY,
+     (_ONE, (_ALL, 5, 'EVP'), 'PP')
+    )
+   )
+  ),
+ ),
  'NP': (_ONE,
   (_ALL, 'AP', 'NP'),
   (_ALL, 4, 'NP'),
   4,
   (_ALL, (_ONE, 5, 6), 'NP')
- ), #<(AP NP) | ((n. | e.v.) NP) | (n. | e.v.) [(conj | prep) NP]>
+ ),
  'NsP': (_ONE,
   (_ALL, 'AP', 'NsP'),
   (_ALL, 4, 'NsP'),
   4,
   (_ALL, (_ONE, 5, 6), 'NsP')
- ), #<(AP NsP) | (n. NsP) | n. [(conj | prep) NsP]>
+ ),
  'NvP': (_ALL,
   (_ANY, 'AP'),
   4
- ), #<[AP] n>
- 'AP': (_ONE,
-  (_ALL, 6, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
-  (_ALL, 8, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
-  (_ALL, 3, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
-  (_ALL, 12, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
-  (_ALL, 15, (_ANY, 'AP'), (_ANY, (_ALL, 5, 'AP'))),
- ), #[(prep | adj | adv) AP [conj AP]]
- 'PP': (_ALL, (_ONE, 6, 12), 'NP'), #<<prep | prt> NP>
- 'EVP': (_ALL,
-  (_ANY, 'AP'),
-  1,
-  (_ANY, 'SpP'),
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'NP', 'EVNP'), (_ANY, (_ONE, (_ALL, 5, 'EVP'), 'PP')))),
- ), #<E.V. [[prep | prt] NP [PP]]>
- 'EVNP': (_ALL,
-  (_ANY, 'AP'),
-  1,
-  (_ANY, (_ALL, (_ANY, (_ONE, 6, 12)), (_ONE, 'EVOP', 'NP'), (_ANY, 'PP'))),
- ), #<E.V. [[prep | prt] <EVOP | NP> [PP]]>
- 'EVOP': (_ALL,
+ ),
+ 'PP': (_ALL, (_ONE, 6, 12), 'NP'),
+ 'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15),
+ 'SpP': (_ALL,
   'x.$6',
-  (_ONE, (_ALL, (_ANY, 'rre$1'), 15), (_ALL, 'rre$1', 'NP')),
-  'EVP'
- ), #<x. <([rre] pron) | (rre NP) EVP>>
-}
+  (_ONE,
+   (_ALL, (_ANY, 'rre$1'), 15),
+   (_ALL, 'rre$1', 'NsP')
+  )
+ ),
+ 'VP': (_ALL,
+  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
+  (_ANY, 'AP'),
+  2,
+  (_ANY,
+   (_ALL,
+    (_ANY, (_ONE, 6, 12)),
+    (_ONE,
+     (_ALL,
+      'NvP',
+      (_ONE, 'tes$1', 'ut$6'),
+      'NP'
+     ),
+     'NP'
+    ),
+    (_ANY, 'PP')
+   ),
+   (_ALL, 5, 'VP')
+  ),
+ ),
+} #: Symbolic AST mappings and descriptions.
+
+_EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used to determine whether an AST element is an exact-match specifier.
+
+_PHRASE_EXPANSION = {
+ 'AP': "Complement Phrase",
+ 'CP': "Clause Phrase",
+ 'CgP': "Compound Phrase",
+ 'CpP': "Compound Phrase",
+ 'ESP': "Emotion Sound Phrase",
+ 'EVNP': "Emotion Object Phrase",
+ 'EVOP': "Emotion Object Phrase",
+ 'EVP': "Emotion Verb Phrase",
+ 'NP': "Noun Phrase",
+ 'NsP': "Noun Phrase",
+ 'NvP': "Noun Phrase",
+ 'PP': "Preposition Phrase",
+ 'SgP': "Subject Phrase",
+ 'SpP': "Subject Phrase",
+ 'VP': "Verb Phrase",
+} #: Mappings from phrase-notation to human-readable descriptions.
+
+_PHRASE_REDUCTION = {
+ 'AP': 'AP',
+ 'CP': 'CP',
+ 'CgP': 'MP',
+ 'CpP': 'MP',
+ 'ESP': 'ESP',
+ 'EVNP': 'EOP',
+ 'EVOP': 'EOP',
+ 'EVP': 'EVP',
+ 'NP': 'NP',
+ 'NsP': 'NP',
+ 'NvP': 'NP',
+ 'PP': 'PP',
+ 'SgP': 'SP',
+ 'SpP': 'SP',
+ 'VP': 'VP',
+} #: Mappings from phrase-notation to symbolic descriptions.
+
+_PHRASE_COLOURS = {
+ 'AP': 3,
+ 'CP': 0,
+ 'EOP': 9,
+ 'ESP': 4,
+ 'EVP': 5,
+ 'MP': 7,
+ 'NP': 1,
+ 'PP': 6,
+ 'SP': 8,
+ 'VP': 2,
+} #: Mappings from symbolic descriptions to colour keys.
 
 _SYNTAX_CLASS = {
  1: 'E.V.',
@@ -148,7 +232,7 @@ _SYNTAX_CLASS = {
  15: 'pron.',
  16: 'intj.',
  18: 'cnstr.',
-}
+} #: Mappings from lexical class constants to human-readable names.
 _SYNTAX_CLASS_FULL = {
  1: 'Emotion Verb',
  2: 'verb',
@@ -164,7 +248,8 @@ _SYNTAX_CLASS_FULL = {
  15: 'pronoun',
  16: 'interjection',
  18: 'language construct',
-}
+} #: Mappings from lexical class constants to expanded human-readable names.
+
 _SYNTAX_MAPPING = {
  1: (1,),
  2: (2,),
@@ -189,7 +274,8 @@ _SYNTAX_MAPPING = {
  21: (5, 6),
  22: (2, 12),
  90: (7, 8),
-}
+} #: Mappings from lexical class constants to their constituent members.
+
 _DIALECT = {
  0: 'Unknown',
  1: 'Central Standard Note',
@@ -199,10 +285,8 @@ _DIALECT = {
  5: 'Metafalss Note',
  6: 'New Testament of Pastalie',
  7: 'Alpha Note (EOLIA)',
-}
+} #: Mappings from dialect constants to human-readable names.
 
-_EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
-_EMOTION_WORDS_REGEXP = re.compile('^(%s)?(.+)(_\w+)?$' % (_EMOTION_VOWELS))
 
 class _SyntaxTree(object):
 	_children = None
@@ -309,6 +393,7 @@ class _Word(_SyntaxTree):
 	def countLeaves(self):
 		return 1
 		
+		
 def processSyntax(line, db_con):
 	lookup.initialiseEmotionVerbRegexps(db_con)
 	
@@ -319,166 +404,41 @@ def processSyntax(line, db_con):
 	
 	return (tree, display_string, result)
 	
-def _processInput(tree, tokens, db_con):
-	#Read the definition of every provided word and construct the displayable Hymmnos string.
-	(words_details, display_string, pastalia) = _digestTokens(tokens, db_con)
-	
-	message = result = None
-	if not pastalia:
-		result = _processAST(words_details, _GENERAL_AST, False)
-	else:
-		result = _processAST(words_details, _PASTALIA_AST, True)
-		
-	if result:
-		for node in result:
-			tree.addChild(node)
-			
-	if not tree.countLeaves() == len(tokens):
-		result = None 
-		
-	return (display_string, result)
-	
-def _processAST(words, ast, pastalia, phrase=None):
-	if not ast:
-		return None
-		
-	nodes = []
-	success = False
-	tuple_rule = ast[0]
-	
-	for st_a in ast[1:]:
-		if type(st_a) == int:
-			result = _processWord_int(words, st_a, pastalia)
-			if result is None:
-				if tuple_rule == _ALL:
-					return None
-			else:
-				success = True
-				nodes.append(result)
-				words = words[result.countLeaves():]
-				if tuple_rule == _ONE:
-					break
-		elif type(st_a) == str:
-			if _L_CASE_REGEXP.match(st_a): #Exact word needed.
-				result = _processWord_exact(words, st_a)
-				if result is None:
-					if tuple_rule == _ALL:
-						return None
-				else:
-					success = True
-					nodes.append(result)
-					words = words[result.countLeaves():]
-					if tuple_rule == _ONE:
-						break
-			else:
-				result = _processAST(words, _AST_FRAGMENTS[st_a], pastalia, st_a)
-				if result is None:
-					if tuple_rule == _ALL:
-						return None
-				else:
-					success = True
-					offset = 0
-					for node in result:
-						nodes.append(node)
-						offset += node.countLeaves()
-					words = words[offset:]
-					if tuple_rule == _ONE:
-						break
-		else: #Tuple.
-			result = _processAST(words, st_a, pastalia)
-			if result is None:
-				if tuple_rule == _ALL:
-					return None
-			else:
-				success = True
-				offset = 0
-				for node in result:
-					nodes.append(node)
-					offset += node.countLeaves()
-				words = words[offset:]
-				if tuple_rule == _ONE:
-					break
-					
-	if tuple_rule == _ONE and not success:
-		return None
-		
-	#Successfully validated tuple.
-	if phrase and nodes:
-		root = _Phrase(phrase)
-		for node in nodes:
-			root.addChild(node)
-		return [root]
-	return nodes
-		
-def _processWord_int(words, target, pastalia):
-	if not words:
-		return None
-		
-	(details, prefix, suffix, slots) = words[0]
-	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if not pastalia and dialect % 50 == 6: #Ignore Pastalia words.
-			continue
-		if target in _SYNTAX_MAPPING[syntax_class]:
-			return _Word(word, meaning, target, dialect, prefix, suffix, slots)
-	return None
-	
-def _processWord_exact(words, target):
-	if not words:
-		return None
-		
-	(details, prefix, suffix, slots) = words[0]
-	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if "%s$%i" % (word.lower(), dialect) == target:
-			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
-	return None
-	
-def _sanitizePastalia(tokens):
-	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
-	pastalia = False
-	
-	words = []
-	prefixes = []
-	suffixes = []
-	slots = []
-	for token in tokens:
-		emotion_hit = False
-		for (regexp, emotion_verb, dialect) in emotion_verbs:
-			match = regexp.match(token)
-			if match:
-				words.append(emotion_verb)
-				
-				prefixes.append(None)
-				suffixes.append(match.groups()[-1])
-				word_slots = []
-				for hit in match.groups()[:-1]:
-					if hit is None:
-						word_slots.append('.')
-					else:
-						word_slots.append(hit)
-				slots.append(tuple(word_slots))
-				
-				pastalia = True
-				emotion_hit = True
-				break
-		if emotion_hit:
-			continue
-			
-		match = _EMOTION_WORDS_REGEXP.match(token)
-		if match and match.group(1) or match.group(3):
-			words.append(match.group(2))
-			prefixes.append(match.group(1))
-			suffixes.append(match.group(3))
-			slots.append(None)
-			
-			pastalia = True
-			continue
-			
-		words.append(token)
-		prefixes.append(None)
-		suffixes.append(None)
-		slots.append(None)
-		
-	return (pastalia, words, prefixes, suffixes, slots)
+def renderResult_xhtml(tree, display_string):
+	return """
+		<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
+			<tr>
+				<td style="color: #00008B; text-align: center; background: #D3D3D3;">
+					<div style="font-family: hymmnos; font-size: 24pt;">
+						%s
+					</div>
+					<div style="font-size: 18pt;">
+						%s
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="background: #808080; color: white;">
+					<div style="width: 100%%;">
+						%s
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
+					You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a> or <a href="/hymmnoserver/syntax-xml.psp?%s">view it as XML</a>
+				</td>
+			</tr>
+		</table>
+		<hr/>
+		<div style="color: #808080; font-size: 0.6em;">
+			<span>
+				Lexical classes reflect instance, not abstraction.
+				<br/>
+				The syntax tree does not take Emotion Vowels into consideration.
+			</span>
+		</div>
+	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}), urllib.urlencode({'query': display_string}))
 	
 def _decorateWord(word, prefix, suffix, slots, xhtml):
 		if not slots is None:
@@ -528,41 +488,108 @@ def _digestTokens(tokens, db_con):
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia)
 	
-def renderResult_xhtml(tree, display_string):
-	return """
-<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
-	<tr>
-		<td style="color: #00008B; text-align: center; background: #D3D3D3;">
-			<div style="font-family: hymmnos; font-size: 24pt;">
-				%s
-			</div>
-			<div style="font-size: 18pt;">
-				%s
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td style="background: #808080; color: white;">
-			<div style="width: 100%%;">
-				%s
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
-			You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a> or <a href="/hymmnoserver/syntax-xml.psp?%s">view it as XML</a>
-		</td>
-	</tr>
-</table>
-<hr/>
-<div style="color: #808080; font-size: 0.6em;">
-	<span>
-		Lexical classes reflect instance, not abstraction.
-		<br/>
-		The syntax tree does not take Emotion Vowels into consideration.
-	</span>
-</div>
-	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}), urllib.urlencode({'query': display_string}))
+def _processAST(words, ast, pastalia, phrase=None):
+	tuple_rule = ast[0]
+	nodes = []
+	success = False
+	for st_a in ast[1:]:
+		offset = 0
+		if type(st_a) == int: #Word from specific lexical class needed.
+			result = _processWord_int(words, st_a, pastalia)
+			if result is None:
+				if tuple_rule == _ALL:
+					return None
+			else:
+				success = True
+				nodes.append(result)
+				offset = result.countLeaves()
+		elif type(st_a) == str:
+			if _EXACT_MATCH_REGEXP.match(st_a): #Exact word needed.
+				result = _processWord_exact(words, st_a)
+				if result is None:
+					if tuple_rule == _ALL:
+						return None
+				else:
+					success = True
+					nodes.append(result)
+					offset = result.countLeaves()
+			else: #Symbolic AST identifier.
+				result = _processAST(words, _AST_FRAGMENTS[st_a], pastalia, st_a)
+				if result is None:
+					if tuple_rule == _ALL:
+						return None
+				else:
+					success = True
+					for node in result:
+						nodes.append(node)
+						offset += node.countLeaves()
+		else: #tuple, meaning nested AST.
+			result = _processAST(words, st_a, pastalia)
+			if result is None:
+				if tuple_rule == _ALL:
+					return None
+			else:
+				success = True
+				for node in result:
+					nodes.append(node)
+					offset += node.countLeaves()
+					
+		if success and tuple_rule == _ONE: #Abort lookup.
+			break
+		elif offset: #Consume tokens before next cycle.
+			words = words[offset:]
+			
+	if not success and tuple_rule == _ONE:
+		return None
+		
+	#Successfully validated tuple.
+	if phrase and nodes: #Construct a parent for the nodes.
+		root = _Phrase(phrase)
+		for node in nodes:
+			root.addChild(node)
+		return [root]
+	return nodes
+	
+def _processInput(tree, tokens, db_con):
+	#Read the definition of every provided word and construct the displayable Hymmnos string.
+	(words_details, display_string, pastalia) = _digestTokens(tokens, db_con)
+	
+	message = result = None
+	if not pastalia:
+		result = _processAST(words_details, _GENERAL_AST, False)
+	else:
+		result = _processAST(words_details, _PASTALIA_AST, True)
+		
+	if result:
+		for node in result:
+			tree.addChild(node)
+			
+	if not tree.countLeaves() == len(tokens):
+		result = None 
+		
+	return (display_string, result)
+	
+def _processWord_exact(words, target):
+	if not words:
+		return None
+		
+	(details, prefix, suffix, slots) = words[0]
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
+		if "%s$%i" % (word.lower(), dialect) == target:
+			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
+	return None
+	
+def _processWord_int(words, target, pastalia):
+	if not words:
+		return None
+		
+	(details, prefix, suffix, slots) = words[0]
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
+		if not pastalia and dialect % 50 == 6: #Ignore Pastalia words.
+			continue
+		if target in _SYNTAX_MAPPING[syntax_class]:
+			return _Word(word, meaning, target, dialect, prefix, suffix, slots)
+	return None
 	
 def _renderBranches(tree):
 	children_entries = []
@@ -573,18 +600,18 @@ def _renderBranches(tree):
 			children_entries.append(_renderBranches(child))
 			
 	return """
-<div class="phrase phrase-%i">
-	<span style="font-size: 0.9em;">%s</span>
-	<div style="margin-left: 15px;">%s</div>
-</div>
+		<div class="phrase phrase-%i">
+			<span style="font-size: 0.9em;">%s</span>
+			<div style="margin-left: 15px;">%s</div>
+		</div>
 	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
 	
 def _renderLeaf(leaf):
 	return """<span style="float: right; font-size: 0.675em;">(%s)</span>
-<div class="phrase-word phrase-word-%i">
-	<span>%s (%s)</span>
-	<div style="margin-left: 10px; font-size: 0.85em;">%s</div>
-</div>
+		<div class="phrase-word phrase-word-%i">
+			<span>%s (%s)</span>
+			<div style="margin-left: 10px; font-size: 0.85em;">%s</div>
+		</div>
 	""" % (
 	 _DIALECT[leaf.getDialect() % 50],
 	 leaf.getClass(),
@@ -594,6 +621,54 @@ def _renderLeaf(leaf):
 	 _SYNTAX_CLASS_FULL[leaf.getClass()],
 	 leaf.getMeaning()
 	)
+	
+def _sanitizePastalia(tokens):
+	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
+	pastalia = False
+	
+	words = []
+	prefixes = []
+	suffixes = []
+	slots = []
+	for token in tokens:
+		emotion_hit = False
+		for (regexp, emotion_verb, dialect) in emotion_verbs:
+			match = regexp.match(token)
+			if match:
+				words.append(emotion_verb)
+				
+				prefixes.append(None)
+				suffixes.append(match.groups()[-1])
+				word_slots = []
+				for hit in match.groups()[:-1]:
+					if hit is None:
+						word_slots.append('.')
+					else:
+						word_slots.append(hit)
+				slots.append(tuple(word_slots))
+				
+				pastalia = True
+				emotion_hit = True
+				break
+		if emotion_hit:
+			continue
+			
+		match = lookup.WORD_STRUCTURE_REGEXP.match(token)
+		if match and match.group(1) or match.group(3):
+			words.append(match.group(2))
+			prefixes.append(match.group(1))
+			suffixes.append(match.group(3))
+			slots.append(None)
+			
+			pastalia = True
+			continue
+			
+		words.append(token)
+		prefixes.append(None)
+		suffixes.append(None)
+		slots.append(None)
+		
+	return (pastalia, words, prefixes, suffixes, slots)
 	
 	
 class Error(Exception):

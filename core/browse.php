@@ -14,22 +14,22 @@
 			<?php
 				#Determine the nature of the requested display; default if unintelligible.
 				$page = $_GET['page'];
-				if($page == NULL || trim($page) == ''){
+				if($page == NULL || trim($page) == ''){//Assume 'a' by default.
 					$page = 'a';
 				}else{
 					$page = trim($page);
 					
 					if(is_numeric($page)){
 						$page = intval($page);
-						if($page == 0){
+						if($page == 0){//0 means any numeric/special entity.
 							$page = '0';
-						}elseif($page < 1 || $page > 14){
+						}elseif($page < 1 || $page > 14){//1-14 are lexical class identifiers.
 							$page = 1;
 						}
 					}else{
 						$page = strtolower($page[0]);
 						$page_ord = ord($page);
-						if(($page_ord < 97 || $page_ord > 122)){
+						if(($page_ord < 97 || $page_ord > 122)){//Detect alpha-range.
 							$page = 'a';
 						}
 					}
@@ -59,7 +59,7 @@
 				 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
 				 'adj.', 'adv.', 'conj.', 'cnstr.', 'intj.', 'n.',
 				 'prep.', 'pron.', 'prt.', 'v.'
-				) as $class){
+				) as $class){//Force an enumerable order from 1-14.
 					$i++;
 					echo "<a href=\"/hymmnoserver/browse.php?page=$i\">";
 					if($i == $page){

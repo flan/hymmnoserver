@@ -7,10 +7,25 @@
 		<title>HYMMNOSERVER - Grammar Processor</title>
 		<!-- <%="-->"%>
 <%
+"""
+Hymmnoserver script: grammar
+
+Purpose
+=======
+ Provides an interface for processing and displaying user input.
+ 
+Legal
+=====
+ All code, unless otherwise indicated, is original, and subject to the terms of
+ the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
+ which is provided in license.README.
+ 
+ (C) Neil Tallim, 2009
+"""
 import cgi
 import urllib
 from mod_python import apache
-_WORKING_PATH = "/home/flan/hymmnoserver/core/"
+_WORKING_PATH = "/home/flan/hymmnoserver/core/" #: The hymmnoserver root directory.
 
 transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
 syntax = apache.import_module('syntax', path=[_WORKING_PATH + "common/"])
@@ -24,14 +39,30 @@ if form.has_key('query'):
 		_db_con = _db.getConnection()
 		
 def _renderMicroTransformation(component):
+	"""
+	Renders a value-bar in a transformation-list.
+	
+	@type component: basestring
+	@param component: The Hymmnos data to display.
+	"""
 	link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': component})
 	line = cgi.escape(component, True)
 	req.write("""<td class="transformation">""")
 	req.write("""<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
 	req.write("""<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
-	req.write("</td>")
+	req.write("""</td>""")
 	
 def _renderMacroTransformation(phrase, components, unknown):
+	"""
+	Renders the result of a transformation.
+	
+	@type phrase: basestring
+	@param phrase: The Hymmnos phrase processed.
+	@type components: sequence
+	@param components: A collection of Hymmnos data to display.
+	@type unknown: sequence
+	@param unknown: A collection of all words not recognized in the input.
+	"""
 	req.write("""<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">""")
 	req.write("""<tr><td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">""")
 	req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (phrase))
@@ -44,11 +75,11 @@ def _renderMacroTransformation(phrase, components, unknown):
 			for (j, line) in enumerate(lines):
 				req.write("""<tr><td class="transformation-id">%i</td>""" % (j))
 				_renderMicroTransformation(line)
-				req.write("</td></tr>")
-			req.write("</table></td>")
+				req.write("""</td></tr>""")
+			req.write("""</table></td>""")
 		else:
 			_renderMicroTransformation(lines[0])
-		req.write("</tr>")
+		req.write("""</tr>""")
 	if(unknown):
 		plural = ''
 		if len(unknown) > 1:
@@ -56,24 +87,26 @@ def _renderMacroTransformation(phrase, components, unknown):
 		req.write("""<tr><td style="color: white; background: black;" colspan="2">""")
 		req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown), True)))
 		req.write("""</td></tr>""")
-	req.write("</table>")
+	req.write("""</table>""")
 	
 def _renderFailure(message):
+	"""
+	Renders a message indicating that processing failed.
+	
+	@type message: basestring
+	@param message: A description of the error that occurred.
+	"""
 	req.write("""
-<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
-	<tr>
-		<td style="color: #00008B; text-align: center; background: #D3D3D3;">
-			<div style="font-size: 18pt;">
-				an error occurred while processing your request
-			</div>
-		</td>
-	</tr>
-	<tr>
-		<td style="background: red; color: white; text-align: center;">
-			%s
-		</td>
-	</tr>
-</table>
+		<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
+			<tr>
+				<td style="color: #00008B; text-align: center; background: #D3D3D3;">
+					<div style="font-size: 18pt;">an error occurred while processing your request</div>
+				</td>
+			</tr>
+			<tr>
+				<td style="background: red; color: white; text-align: center;">%s</td>
+			</tr>
+		</table>
 	""" % (message))
 
 %>
@@ -121,7 +154,7 @@ if not _query:
 							will, due to Hymmnos having some
 							<a href="http://en.wikipedia.org/wiki/NP-complete">NP-complete</a>-looking structures)
 							recognize all valid sentences, and it may also approve of some invalid sentences due to
-							flexibility encoded to handle more complex structures.
+							flexibility encoded to handle more complex patterns.
 							<br/><br/>
 							Note also that this is not a production-grade linguistics work. The syntax trees it
 							generates are amateurish in nature, occasionally lacking proper relationship structures,
@@ -147,18 +180,18 @@ else:
 	lines = [line.strip() for line in _query.splitlines()]
 	lines = [line.replace(",", "") for line in lines if line]
 	try:
-		try: #Attempt to evaluate as a Binasphere phrase, since this is cheap.
+		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
 			_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
 		except transformations.FormatError:
 			if len(lines) > 1:
-				try:
+				try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
 					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)
 					_renderMacroTransformation('<br/>'.join([cgi.escape(line) for line in new_lines]), processed, unknown)
-				except transformations.FormatError:
+				except transformations.FormatError: #Try to encode as a Binasphere phrase.
 					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, _db_con)
 					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
-			else:
+			else: #Attempt syntax processing.
 				try:
 					(tree, display_string, result) = syntax.processSyntax(lines[0], _db_con)
 					if result is None:

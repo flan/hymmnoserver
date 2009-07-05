@@ -1,32 +1,33 @@
 # -*- coding: utf-8 -*-
 """
-HymmnoServer module: lookup
+Hymmnoserver module: common.lookup
 
 Purpose
 =======
- Reads words from the database.
+ Reads words from the database, applying class-inference and
+ structure-processing as required.
  
 Legal
 =====
  All code, unless otherwise indicated, is original, and subject to the terms of
- the Creative Commons Attribution-Noncommercial-Share Alike 2.5 Canada License,
+ the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
  which is provided in license.README.
  
  (C) Neil Tallim, 2009
 """
+import cgi
 import re
 import threading
-import cgi
 
-EMOTION_VOWELS = 'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN'
-_EMOTION_VOWELS = r'(%s)' % (EMOTION_VOWELS)
-_EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS)
+EMOTION_VOWELS = r'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN' #: A regexp fragment containing all known Emotion Vowels.
+_EMOTION_VOWELS = r'(%s)' % (EMOTION_VOWELS) #: A regexp fragment containing all emotion vowels in a capture group.
+_EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS) #: A regexp fragment containing all emotion vowels and a bank-slot marker in a capture group.
 
-_WORD_STRUCTURE_REGEXP = re.compile(r"^%s?(.+?)(_\w+)?$" % (_EMOTION_VOWELS))
-_EMOTION_WORDS_REGEXP = re.compile('^(%s)(\w+)$' % (EMOTION_VOWELS))
+WORD_STRUCTURE_REGEXP = re.compile(r"^(%s)?(.+?)(_\w+)?$" % (_EMOTION_VOWELS)) #: A regular expression that matches Pastalia-ized nouns.
+_EMOTION_WORDS_REGEXP = re.compile(r'^(%s)(\w+)$' % (EMOTION_VOWELS)) #: A regular expression that matches any Pastalia-ized word.
 
-_INIT_LOCK = threading.Lock()
-EMOTION_VERB_REGEXPS = None
+_INIT_LOCK = threading.Lock() #: A lock used to prevent multiple simultaneous accesses to the Emotion Verb regexps while initializing.
+EMOTION_VERB_REGEXPS = None #: A collection of regular expressions that match all Emotion Verbs known to exist, plus the pure word forms and dialects.
 
 SYNTAX_CLASS_REV = {
  'ES(I)': (14,),
@@ -43,7 +44,7 @@ SYNTAX_CLASS_REV = {
  'pron': (15,),
  'prt': (12,),
  'v': (2, 9, 11)
-}
+} #: A mapping from symbolic lexical class identifiers to numeric constants, used to make code more readable.
 
 DIALECT = {
  'Unknown': 0,
@@ -62,16 +63,8 @@ DIALECT = {
  'Metafalss [Unofficial]': 55,
  'Pastalia [Unofficial]': 56,
  '(EOLIA) [Unofficial]': 57
-}
+} #: A mapping from symbolic dialect identifiers to numeric constants, used to make code more readable.
 
-def _getEmotionVerbs(db_con):
-	cursor = db_con.cursor()
-	cursor.execute("SELECT word, school FROM hymmnos WHERE class = 1")
-	emotion_verbs = cursor.fetchall()
-	cursor.close()
-	
-	return emotion_verbs
-	
 def initialiseEmotionVerbRegexps(db_con):
 	global EMOTION_VERB_REGEXPS
 	_INIT_LOCK.acquire()
@@ -84,6 +77,55 @@ def initialiseEmotionVerbRegexps(db_con):
 	finally:
 		_INIT_LOCK.release()
 		
+def readWord(word, words, db_con):
+	"""
+	[word, meaning_english, kana, class, dialect, decorations, syllables]
+	"""
+	dialect = None #Limit returned records to a specific dialect.
+	position = word.find('$')
+	if position > -1:
+		try:
+			dialect = int(word[position + 1:])
+		except:
+			pass
+		word = word[:position]
+		
+	if words:
+		w = words.get(word.lower())
+		if w:
+			return tuple([[o, m_e, k, s_c, d, e, y] for (o, m_e, k, s_c, d, e, y) in w if not dialect or d == dialect])
+	return _queryEmotionVerb(word, dialect, db_con) or _queryWord(word, dialect, db_con)
+	
+def readWords(words, db_con):
+	"""
+	{word.lower(): [word, meaning_english, kana, class, dialect, decorations, syllables]}
+	"""
+	cursor = db_con.cursor()
+	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word IN (" + ','.join(['%s' for w in words])  + ") ORDER BY school ASC", words)
+	records = cursor.fetchall()
+	cursor.close()
+	
+	r_words = {}
+	for (word, meaning_english, kana, syntax_class, dialect, syllables) in records:
+		l_word = word.lower()
+		w = r_words.get(l_word)
+		if not w:
+			w = []
+			r_words[l_word] = w
+		w.append([word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')])
+		
+	for word in r_words:
+		r_words[word] = tuple(r_words[word])
+	return r_words
+	
+def _getEmotionVerbs(db_con):
+	cursor = db_con.cursor()
+	cursor.execute("SELECT word, school FROM hymmnos WHERE class = 1")
+	emotion_verbs = cursor.fetchall()
+	cursor.close()
+	
+	return emotion_verbs
+	
 def _readWord(word, dialect, db_con):
 	limiter = "ORDER BY school ASC"
 	if dialect:
@@ -118,7 +160,7 @@ def _queryEmotionVerb(word, dialect, db_con):
 	return None
 	
 def _queryWord(word, dialect, db_con):
-	match = _WORD_STRUCTURE_REGEXP.match(word)
+	match = WORD_STRUCTURE_REGEXP.match(word)
 	records = _readWord(match.group(2), dialect, db_con)
 	valid = False
 	for record in records:
@@ -126,81 +168,4 @@ def _queryWord(word, dialect, db_con):
 			record[5] = [match.group(1), match.group(3)]
 			valid = True
 	return records
-	
-def readWords(words, db_con):
-	"""
-	{word.lower(): [word, meaning_english, kana, class, dialect, decorations, syllables]}
-	"""
-	cursor = db_con.cursor()
-	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word IN (" + ','.join(['%s' for w in words])  + ") ORDER BY school ASC", words)
-	records = cursor.fetchall()
-	cursor.close()
-	
-	r_words = {}
-	for (word, meaning_english, kana, syntax_class, dialect, syllables) in records:
-		l_word = word.lower()
-		w = r_words.get(l_word)
-		if not w:
-			w = []
-			r_words[l_word] = w
-		w.append([word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')])
-		
-	for word in r_words:
-		r_words[word] = tuple(r_words[word])
-	return r_words
-	
-def readWord(word, words, db_con):
-	"""
-	[word, meaning_english, kana, class, dialect, decorations, syllables]
-	"""
-	dialect = None #Limit returned records to a specific dialect.
-	position = word.find('$')
-	if position > -1:
-		try:
-			dialect = int(word[position + 1:])
-		except:
-			pass
-		word = word[:position]
-		
-	if words:
-		w = words.get(word.lower())
-		if w:
-			return tuple([[o, m_e, k, s_c, d, e, y] for (o, m_e, k, s_c, d, e, y) in w if not dialect or d == dialect])
-	return _queryEmotionVerb(word, dialect, db_con) or _queryWord(word, dialect, db_con)
-	
-def decorateWord(word, syntax_class, decorations, colours):
-	if not decorations:
-		return cgi.escape(word)
-		
-	for (i, d) in enumerate(decorations):
-		if d is None:
-			decorations[i] = ''
-			
-	if syntax_class in SYNTAX_CLASS_REV['EV']: #Emotion Verb
-		result = []
-		for (chunk, vowel) in zip(word.split('.'), decorations[:-1]):
-			result.append(cgi.escape(chunk))
-			if colours:
-				result.append(("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(vowel) + "</span>")
-			else:
-				result.append(cgi.escape(vowel))
-		if decorations[-1]:
-			if colours:
-				result.append(("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[-1]) + "</span>")
-			else:
-				result.append(cgi.escape(decorations[-1]))
-		return ''.join(result)
-		
-	if syntax_class in SYNTAX_CLASS_REV['n'] or syntax_class in SYNTAX_CLASS_REV['adj']: #noun/adj
-		if colours:
-			result = []
-			if decorations[0]:
-				result.append(("<span style=\"color: %s;\">" % colours[0]) + cgi.escape(decorations[0]) + "</span>")
-			result.append(cgi.escape(word))
-			if decorations[1]:
-				result.append(("<span style=\"color: %s;\">" % colours[1]) + cgi.escape(decorations[1]) + "</span>")
-			return ''.join(result)
-		return decorations[0] + word + decorations[1]
-		
-	return cgi.escape(word)
 	
