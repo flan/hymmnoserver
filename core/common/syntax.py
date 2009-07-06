@@ -31,21 +31,28 @@ _GENERAL_AST = (_ALL,
   (_ONE,
    (_ALL,
     (_ANY, 'ESP'),
-    (_ANY, 'VP'),
-    (_ANY, (_ONE, 'SgP', (_ANY, 'NP'))),
+    (_ONE,
+     (_ALL,
+      'VsP',
+      (_ONE, 'SgP', (_ANY, 'NP'))
+     )
+    ),
+    (_ANY,
+     (_ONE, 'SgP', (_ANY, 'NP'))
+    ),
     'VP'
    ),
    (_ALL, 'ESP', 'SgP', 'VP')
   )
  ),
- 'CgP',
+ (_ANY, 'CgP'),
 ) #: The AST that describes standard Hymmnos.
 
 _PASTALIA_AST = (_ALL,
  (_ANY, 5),
  (_ANY, 'SpP'),
  'EVP',
- 'CpP',
+ (_ANY, 'CpP'),
 ) #: The AST that describes Pastalia Hymmnos.
 
 _AST_FRAGMENTS = {
@@ -66,7 +73,7 @@ _AST_FRAGMENTS = {
    (_ANY, (_ALL, 5, 'AP'))
   ),
   (_ALL,
-   15,
+   (_ONE, 'sor$1', 'her$1'),
    (_ANY, 'AP'),
    (_ANY, (_ALL, 5, 'AP'))
   ),
@@ -75,22 +82,28 @@ _AST_FRAGMENTS = {
   3,
   (_ANY, 'AaP')
  ),
- 'CgP': (_ANY,
-  (_ONE,
-   'NP',
-   (_ALL, 'VP', (_ANY, 'NP'), 'CgP')
+ 'CgP': (_ONE,
+  'NP',
+  (_ALL,
+   'VP',
+   (_ANY, 'NP'),
+   (_ANY, 'CgP')
   )
  ),
- 'CpP': (_ANY,
-  (_ONE,
-   'NP',
-   (_ALL, 'VP', (_ANY, 'NP'), 'CpP')
+ 'CpP': (_ONE,
+  'NP',
+  (_ALL,
+   'VP',
+   (_ANY, 'NP'),
+   (_ANY, 'CpP')
   )
  ),
  'ESP': (_ALL, 14, 7, 13),
  'EVNP': (_ALL,
-  (_ANY, 'AP'),
-  1,
+  (_ONE,
+   (_ALL, 'AP', 1),
+   1
+  ),
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
@@ -108,8 +121,10 @@ _AST_FRAGMENTS = {
   'EVP'
  ),
  'EVP': (_ALL,
-  (_ANY, 'AP'),
-  1,
+  (_ONE,
+   (_ALL, 'AP', 1),
+   1
+  ),
   (_ANY, 'SpP'),
   (_ANY,
    (_ALL,
@@ -134,8 +149,10 @@ _AST_FRAGMENTS = {
   (_ALL, 5, 'NsP')
  ),
  'NvP': (_ALL,
-  (_ANY, 'AP'),
-  4,
+  (_ONE,
+   (_ALL, (_ANY, 'AP'), 4),
+   4
+  ),
   (_ANY, 'AaP')
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
@@ -160,37 +177,25 @@ _AST_FRAGMENTS = {
   (_ANY, 'TP'),
  ),
  'VP': (_ALL,
-  (_ANY, 'AP'),
-  2,
+  (_ONE,
+   (_ALL, 'AP', 2),
+   2
+  ),
   (_ANY,
    'TP',
    'PP',
    (_ALL, 5, 'VP')
   ),
  ),
+ 'VsP': (_ALL,
+  (_ONE,
+   (_ALL, 'AP', 2),
+   2
+  ),
+ ),
 } #: Symbolic AST mappings and descriptions.
 
 _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used to determine whether an AST element is an exact-match specifier.
-
-_PHRASE_EXPANSION = {
- 'AP': "Complement Phrase",
- 'AaP': "Complement Phrase",
- 'CP': "Clause Phrase",
- 'CgP': "Compound Phrase",
- 'CpP': "Compound Phrase",
- 'ESP': "Emotion Sound Phrase",
- 'EVNP': "Emotion Object Phrase",
- 'EVOP': "Emotion Object Phrase",
- 'EVP': "Emotion Verb Phrase",
- 'NP': "Noun Phrase",
- 'NsP': "Noun Phrase",
- 'NvP': "Noun Phrase",
- 'PP': "Preposition Phrase",
- 'SgP': "Subject Phrase",
- 'SpP': "Subject Phrase",
- 'TP': "Transitive Phrase",
- 'VP': "Verb Phrase",
-} #: Mappings from phrase-notation to human-readable descriptions.
 
 _PHRASE_REDUCTION = {
  'AP': 'AP',
@@ -210,7 +215,22 @@ _PHRASE_REDUCTION = {
  'SpP': 'SP',
  'TP': 'TP',
  'VP': 'VP',
+ 'VsP': 'VP',
 } #: Mappings from phrase-notation to symbolic descriptions.
+
+_PHRASE_EXPANSION = {
+ 'AP': "Complement Phrase",
+ 'CP': "Clause Phrase",
+ 'ESP': "Emotion Sound Phrase",
+ 'EOP': "Emotion Object Phrase",
+ 'EVP': "Emotion Verb Phrase",
+ 'MP': "Compound Phrase",
+ 'NP': "Noun Phrase",
+ 'PP': "Preposition Phrase",
+ 'SP': "Subject Phrase",
+ 'TP': "Transitive Phrase",
+ 'VP': "Verb Phrase",
+} #: Mappings from phrase-notation to human-readable descriptions.
 
 _PHRASE_COLOURS = {
  'AP': 3,
@@ -326,7 +346,7 @@ class _SyntaxTree(object):
 		parent.appendChild(node)
 		
 		phrase_node = document.createElement("phrase")
-		phrase_node.appendChild(document.createTextNode(_PHRASE_EXPANSION[self._phrase]))
+		phrase_node.appendChild(document.createTextNode(_PHRASE_EXPANSION[_PHRASE_REDUCTION[self._phrase]]))
 		node.appendChild(phrase_node)
 		
 		for child in self._children:
@@ -518,67 +538,88 @@ def _digestTokens(tokens, db_con):
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia_prefix_valid or (pastalia and not pastalia_prefix_only))
 	
-def _processAST(words, ast, phrase=None):
+def _processAST(words, ast, resume_point=0, phrase=None):
 	tuple_rule = ast[0]
-	nodes = []
-	success = False
-	for st_a in ast[1:]:
-		offset = 0
-		if type(st_a) == int: #Word from specific lexical class needed.
-			result = _processWord_int(words, st_a)
-			if result is None:
-				if tuple_rule == _ALL:
-					return None
-			else:
-				success = True
-				nodes.append(result)
-				offset = result.countLeaves()
-		elif type(st_a) == str:
-			if _EXACT_MATCH_REGEXP.match(st_a): #Exact word needed.
-				result = _processWord_exact(words, st_a)
-				if result is None:
-					if tuple_rule == _ALL:
-						return None
-				else:
-					success = True
-					nodes.append(result)
-					offset = result.countLeaves()
-			else: #Symbolic AST identifier.
-				result = _processAST(words, _AST_FRAGMENTS[st_a], st_a)
-				if result is None:
-					if tuple_rule == _ALL:
-						return None
-				else:
-					success = True
-					for node in result:
-						nodes.append(node)
-						offset += node.countLeaves()
-		else: #tuple, meaning nested AST.
-			result = _processAST(words, st_a)
-			if result is None:
-				if tuple_rule == _ALL:
-					return None
-			else:
-				success = True
-				for node in result:
-					nodes.append(node)
-					offset += node.countLeaves()
-					
-		if success and tuple_rule == _ONE: #Abort lookup.
-			break
-		elif offset: #Consume tokens before next cycle.
-			words = words[offset:]
+	working_words = words[:]
+	successes = []
+	resume_points = []
+	exit_point = None
+	
+	ast_elements = ast[1:]
+	r_point = 0
+	while len(resume_points) < len(ast_elements):
+		for st_a in ast_elements[resume_point:]:
+			offset = result = exit_point = success = None
+			if type(st_a) == int: #Word from specific lexical class needed.
+				result = _processWord_int(working_words, st_a)
+				offset = (result and result.countLeaves()) or 0
+				successes.append(result and (result,))
+				exit_point = -1
+			elif type(st_a) == str:
+				if _EXACT_MATCH_REGEXP.match(st_a): #Exact word needed.
+					result = _processWord_exact(working_words, st_a)
+					offset = (result and result.countLeaves()) or 0
+					successes.append(result and (result,))
+					exit_point = -1
+				else: #Symbolic AST identifier.
+					(result, exit_point) = _processAST(working_words, _AST_FRAGMENTS[st_a], r_point, st_a)
+					offset = (result and sum([r.countLeaves() for r in result])) or 0
+					successes.append(result)
+			else: #tuple, meaning nested AST.
+				(result, exit_point) = _processAST(working_words, st_a, r_point)
+				offset = (result and sum([r.countLeaves() for r in result])) or 0
+				successes.append(result)
+			success = not result == None
+			resume_points.append((exit_point, offset))
 			
-	if not success and tuple_rule == _ONE:
-		return None
+			if not success and tuple_rule == _ALL: #Backtrack to the last incomplete _ONE sub-tuple and exhaust its remaining options; repeat for all in reverse order.
+				#Undo all operations back to the last incomplete AST.
+				cummulative_offset = 0
+				undo_length = 0
+				while successes:
+					undo_length += 1
+					successes.pop()
+					(e_point, offset) = resume_points.pop()
+					cummulative_offset += offset
+					if e_point > -1:
+						r_point = e_point
+						resume_point = len(ast_elements) - undo_length
+						working_words = words[len(words) - cummulative_offset:]
+						break
+				if e_point == -1: #Failed to backtrack.
+					return (None, -1)
+				break
+			elif success and tuple_rule == _ONE: #End lookup.
+				break
+			elif offset: #Consume tokens before next cycle.
+				working_words = working_words[offset:]
+			r_point = 0 #Treat all following ASTs as though they're being processed for the first time.
+		if not tuple_rule == _ALL: #Only _ALL needs to backtrack.
+			break
+			
+	if tuple_rule == _ONE:
+		if not len([None for s in successes if not s is None]) == 1: #Failed to satisfy == 1 condition.
+			return (None, -1)
+		if len(resume_points) == len(ast_elements): #: AST exhausted.
+			exit_point = -1
+		else:
+			exit_point = len(resume_points)
+	else: #Succeeded; no re-entry for non-_ONE tuples.
+		exit_point = -1
 		
-	#Successfully validated tuple.
+	#Successfully validated tuple. Aggregate results.
+	nodes = []
+	for success in successes:
+		if not success is None:
+			for node in success:
+				nodes.append(node)
+				
 	if phrase and nodes: #Construct a parent for the nodes.
 		root = _Phrase(phrase)
 		for node in nodes:
 			root.addChild(node)
-		return [root]
-	return nodes
+		return ([root], exit_point)
+	return (nodes, exit_point)
 	
 def _processInput(tree, tokens, db_con):
 	#Read the definition of every provided word and construct the displayable Hymmnos string.
@@ -586,9 +627,9 @@ def _processInput(tree, tokens, db_con):
 	
 	message = result = None
 	if not pastalia:
-		result = _processAST(words_details, _GENERAL_AST)
+		(result, exit_point) = _processAST(words_details, _GENERAL_AST)
 	else:
-		result = _processAST(words_details, _PASTALIA_AST)
+		(result, exit_point) = _processAST(words_details, _PASTALIA_AST)
 		
 	if result:
 		for node in result:
@@ -632,7 +673,7 @@ def _renderBranches(tree):
 			<span style="font-size: 0.9em;">%s</span>
 			<div style="margin-left: 15px;">%s</div>
 		</div>
-	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[tree.getPhrase()], '\n'.join(children_entries))
+	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[_PHRASE_REDUCTION[tree.getPhrase()]], '\n'.join(children_entries))
 	
 def _renderLeaf(leaf):
 	return """<span style="float: right; font-size: 0.675em;">(%s)</span>
