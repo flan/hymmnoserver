@@ -484,11 +484,23 @@ def _digestTokens(tokens, db_con):
 		elif pastalia and p:
 			pastalia_prefix_valid = True
 			
+			inject_noun = True
+			pastalia_entry = 0
+			for (i, l_e) in enumerate(lexicon_entry):
+				if 4 in _SYNTAX_MAPPING[l_e[3]]:
+					injext_noun = False
+					break
+				elif l_e[4] % 50 == 6: #Favour Pastalian forms.
+					pastalia_entry = i
+			if inject_noun: #Duplicate the best candidate, mark it as a noun, and add it to the beginning of the list.
+				new_entry = lexicon_entry[i][:]
+				new_entry[3] = 4
+				lexicon_entry = tuple(new_entry + list(lexicon_entry))
+				
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
 		if len(lexicon_entry) == 1 and lexicon_entry[0][3] == 7: #E.S. (II)
-			(word, meaning, kana, syntax_class, dialect, decorations, syllables) = lexicon_entry[0]
-			lexicon_entry = ((word, meaning, kana, 90, dialect, decorations, syllables),) #Dual-class as (E.S. (ii), adj.)
+			lexicon_entry[0][3] = 90 #Dual-class as (E.S. (ii), adj.)
 			
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia_prefix_valid or (pastalia and not pastalia_prefix_only))
