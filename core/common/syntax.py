@@ -70,6 +70,10 @@ _AST_FRAGMENTS = {
    (_ANY, (_ALL, 5, 'AP'))
   ),
  ),
+ 'AaP': (_ALL,
+  3,
+  (_ANY, 'AaP')
+ ),
  'CgP': (_ANY,
   (_ONE,
    'NP',
@@ -118,14 +122,14 @@ _AST_FRAGMENTS = {
  ),
  'NP': (_ONE,
   (_ALL, 'AP', 'NP'),
-  (_ALL, 4, (_ANY, 3), 'NP'),
-  (_ALL, 4, (_ANY, 3)),
+  (_ALL, 4, (_ANY, 'AaP'), 'NP'),
+  (_ALL, 4, (_ANY, 'AaP')),
   (_ALL, (_ONE, 5, 6), 'NP')
  ),
  'NvP': (_ALL,
   (_ANY, 'AP'),
   4,
-  (_ANY, 3)
+  (_ANY, 'AaP')
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15),
@@ -164,6 +168,7 @@ _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used
 
 _PHRASE_EXPANSION = {
  'AP': "Complement Phrase",
+ 'AaP': "Complement Phrase",
  'CP': "Clause Phrase",
  'CgP': "Compound Phrase",
  'CpP': "Compound Phrase",
@@ -182,6 +187,7 @@ _PHRASE_EXPANSION = {
 
 _PHRASE_REDUCTION = {
  'AP': 'AP',
+ 'AaP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
  'CpP': 'MP',
@@ -200,6 +206,7 @@ _PHRASE_REDUCTION = {
 
 _PHRASE_COLOURS = {
  'AP': 3,
+ 'AaP': 3,
  'CP': 0,
  'EOP': 9,
  'ESP': 4,
