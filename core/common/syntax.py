@@ -395,10 +395,8 @@ class _Word(_SyntaxTree):
 def processSyntax(line, db_con):
 	lookup.initialiseEmotionVerbRegexps(db_con)
 	
-	tokens = re.sub("(?:/\.)|(?:!|\?)|\.*$", "", line, 1).split()
-	
 	tree = _SyntaxTree()
-	(display_string, result) = _processInput(tree, tokens, db_con)
+	(display_string, result) = _processInput(tree, line.split(), db_con)
 	
 	return (tree, display_string, result)
 	

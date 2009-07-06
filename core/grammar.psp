@@ -23,6 +23,7 @@ Legal
  (C) Neil Tallim, 2009
 """
 import cgi
+import re
 import urllib
 from mod_python import apache
 _WORKING_PATH = "/home/flan/hymmnoserver/core/" #: The hymmnoserver root directory.
@@ -177,8 +178,8 @@ if not _query:
 			
 <%
 else:
-	lines = [line.strip() for line in _query.splitlines()]
-	lines = [line.replace(",", "") for line in lines if line]
+	lines = [re.sub("^\s*|[?!,:/]|\s*\.*$", "", line) for line in _query.splitlines()]
+	lines = [line for line in lines if line]
 	try:
 		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
