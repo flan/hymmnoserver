@@ -118,19 +118,14 @@ _AST_FRAGMENTS = {
  ),
  'NP': (_ONE,
   (_ALL, 'AP', 'NP'),
-  (_ALL, 4, 'NP'),
-  4,
+  (_ALL, 4, (_ANY, 3), 'NP'),
+  (_ALL, 4, (_ANY, 3)),
   (_ALL, (_ONE, 5, 6), 'NP')
- ),
- 'NsP': (_ONE,
-  (_ALL, 'AP', 'NsP'),
-  (_ALL, 4, 'NsP'),
-  4,
-  (_ALL, (_ONE, 5, 6), 'NsP')
  ),
  'NvP': (_ALL,
   (_ANY, 'AP'),
-  4
+  4,
+  (_ANY, 3)
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SgP': (_ONE, (_ALL, 'rre$1', 'NP'), 15),
@@ -138,7 +133,7 @@ _AST_FRAGMENTS = {
   'x.$6',
   (_ONE,
    (_ALL, (_ANY, 'rre$1'), 15),
-   (_ALL, 'rre$1', 'NsP')
+   (_ALL, 'rre$1', 'NP')
   )
  ),
  'TP': (_ALL,
@@ -177,7 +172,6 @@ _PHRASE_EXPANSION = {
  'EVOP': "Emotion Object Phrase",
  'EVP': "Emotion Verb Phrase",
  'NP': "Noun Phrase",
- 'NsP': "Noun Phrase",
  'NvP': "Noun Phrase",
  'PP': "Preposition Phrase",
  'SgP': "Subject Phrase",
@@ -196,7 +190,6 @@ _PHRASE_REDUCTION = {
  'EVOP': 'EOP',
  'EVP': 'EVP',
  'NP': 'NP',
- 'NsP': 'NP',
  'NvP': 'NP',
  'PP': 'PP',
  'SgP': 'SP',
