@@ -114,7 +114,7 @@ def encodeBinasphere(lines, db_con):
 	unknown_set = set()
 	for line in lines:
 		if not _GENERAL_CONTENT_REGEXP.match(line):
-			raise ContentError("Non-Hymmnos content provided")
+			raise ContentError("Non-Hymmnos content provided for Binasphere encoding")
 		(lines, syllable_line, unknown) = _dissectSyllables(line.split(), db_con)
 		new_lines.append(lines)
 		syllable_lines.append(syllable_line)

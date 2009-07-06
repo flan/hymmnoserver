@@ -235,6 +235,7 @@ _SYNTAX_CLASS = {
  16: 'intj.',
  18: 'cnstr.',
 } #: Mappings from lexical class constants to human-readable names.
+
 _SYNTAX_CLASS_FULL = {
  1: 'Emotion Verb',
  2: 'verb',
