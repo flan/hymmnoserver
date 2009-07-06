@@ -474,8 +474,11 @@ def _digestTokens(tokens, db_con):
 	for (w, p, s, l) in zip(words, prefixes, suffixes, slots):
 		lexicon_entry = word_list.get(w.lower())
 		if lexicon_entry is None:
-			song_check = (p or '') + w
-			lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check.lower())
+			song_check = ((p or '') + w).lower()
+			lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
+			x=open('/dev/pts/3', 'w')
+			x.write(str(lexicon_entry) + '\n')
+			x.close()
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %s" % w)
 				
