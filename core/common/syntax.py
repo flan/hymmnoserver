@@ -154,7 +154,6 @@ _AST_FRAGMENTS = {
   (_ANY, 'TP'),
  ),
  'VP': (_ALL,
-  (_ANY, (_ONE, 'na$1', 're$1', 'zz$6')),
   (_ANY, 'AP'),
   2,
   (_ANY,
