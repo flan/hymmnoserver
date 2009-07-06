@@ -26,6 +26,7 @@ _ALL = -1 #: An AST classifier that requires every set member to match.
 _ONE = 1 #: An AST classifier that requires at least one member to match. (Successive matches are ignored)
 
 _GENERAL_AST = (_ALL,
+ (_ANY, 5),
  (_ANY,
   (_ONE,
    (_ALL,
@@ -40,6 +41,7 @@ _GENERAL_AST = (_ALL,
 ) #: The AST that describes standard Hymmnos.
 
 _PASTALIA_AST = (_ALL,
+ (_ANY, 5),
  (_ANY, 'SpP'),
  'EVP',
  'CpP',
@@ -481,6 +483,11 @@ def _digestTokens(tokens, db_con):
 				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %s" % w)
+		#Handle exceptions where Emotion Words match basic words.
+		elif w == 'd.n.':
+			l_e = lookup.readWords(('dn',), db_con).get('dn')
+			if l_e: #Just in case this fails somehow.
+				lexicon_entry = tuple([l_e[0]] + list(lexicon_entry))
 		elif pastalia and p:
 			pastalia_prefix_valid = True
 			
@@ -488,14 +495,14 @@ def _digestTokens(tokens, db_con):
 			pastalia_entry = 0
 			for (i, l_e) in enumerate(lexicon_entry):
 				if 4 in _SYNTAX_MAPPING[l_e[3]]:
-					injext_noun = False
+					inject_noun = False
 					break
 				elif l_e[4] % 50 == 6: #Favour Pastalian forms.
 					pastalia_entry = i
 			if inject_noun: #Duplicate the best candidate, mark it as a noun, and add it to the beginning of the list.
 				new_entry = lexicon_entry[i][:]
 				new_entry[3] = 4
-				lexicon_entry = tuple(new_entry + list(lexicon_entry))
+				lexicon_entry = tuple([new_entry] + list(lexicon_entry))
 				
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
