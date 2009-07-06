@@ -260,11 +260,11 @@ _SYNTAX_MAPPING = {
  4: (4,),
  5: (5,),
  6: (6,),
- 7: (7,),
- 8: (8,),
+ 7: (7, 8), #Doubles as adjective.
+ 8: (8, 7), #Doubles as E.S.(II).
  9: (4, 2),
- 10: (8, 4),
- 11: (8, 2),
+ 10: (8, 4, 7), #Doubles as E.S.(II).
+ 11: (8, 2, 7), #Doubles as E.S.(II).
  12: (12,),
  13: (13,),
  14: (14,),
@@ -273,10 +273,9 @@ _SYNTAX_MAPPING = {
  17: (6, 12),
  18: (18,),
  19: (3, 4),
- 20: (3, 8),
+ 20: (3, 8, 7), #Doubles as E.S.(II).
  21: (5, 6),
  22: (2, 12),
- 90: (7, 8),
 } #: Mappings from lexical class constants to their constituent members.
 
 _DIALECT = {
@@ -504,17 +503,13 @@ def _digestTokens(tokens, db_con):
 				new_entry[3] = 4
 				lexicon_entry = tuple([new_entry] + list(lexicon_entry))
 		else:
-			if w in _COLLIDING_EMOTION_VERBS: #Handle exceptions where Emotion Verbs match basic words.
+			if not s and w in _COLLIDING_EMOTION_VERBS: #Handle exceptions where Emotion Verbs match basic words.
 				basic_form = w.replace('.', '')
 				l_e = lookup.readWords((basic_form,), db_con).get(basic_form)
 				if l_e: #Just in case this fails somehow.
 					lexicon_entry = tuple([l_e[0]] + list(lexicon_entry))
 					
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
-		
-		if len(lexicon_entry) == 1 and lexicon_entry[0][3] in (7, 8): #E.S. (II) or adj.
-			lexicon_entry[0][3] = 90 #Dual-class as (E.S. (ii), adj.)
-			
 		words_details.append((lexicon_entry, p, s, l))
 	return (words_details, ' '.join(decorated_words), pastalia_prefix_valid or (pastalia and not pastalia_prefix_only))
 	
