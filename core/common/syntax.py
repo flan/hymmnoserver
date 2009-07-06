@@ -31,6 +31,7 @@ _GENERAL_AST = (_ALL,
   (_ONE,
    (_ALL,
     (_ANY, 'ESP'),
+    (_ANY, 'VP'),
     (_ANY, (_ONE, 'SgP', (_ANY, 'NP'))),
     'VP'
    ),
