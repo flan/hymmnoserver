@@ -203,8 +203,8 @@ else:
 					_renderFailure("unable to process input: %s" % (e))
 	except transformations.ContentError, e:
 		_renderFailure("unable to process input: %s" % (e))
-	#except Exception, e:
-	#	_renderFailure("an unexpected error occurred: %s" % (e))
+	except Exception, e:
+		_renderFailure("an unexpected error occurred: %s" % (e))
 
 %>
 			<hr/>
