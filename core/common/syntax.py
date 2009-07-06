@@ -466,7 +466,8 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		return word
 		
 def _digestTokens(tokens, db_con):
-	(pastalia, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens)
+	(pastalia, pastalia_prefix_only, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens)
+	pastalia_prefix_valid = False #Enforces Pastalia when a Pastalian prefix is present.
 	
 	word_list = lookup.readWords(words, db_con)
 	decorated_words = []
@@ -474,14 +475,15 @@ def _digestTokens(tokens, db_con):
 	for (w, p, s, l) in zip(words, prefixes, suffixes, slots):
 		lexicon_entry = word_list.get(w.lower())
 		if lexicon_entry is None:
-			song_check = ((p or '') + w).lower()
-			lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
-			x=open('/dev/pts/3', 'w')
-			x.write(str(lexicon_entry) + '\n')
-			x.close()
+			if p: #Reattach the prefix, since it may be a song or a mistakenly capitalized word.
+				song_check = p.lower() + w
+				p = None
+				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %s" % w)
-				
+		elif pastalia and p:
+			pastalia_prefix_valid = True
+			
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
 		if len(lexicon_entry) == 1 and lexicon_entry[0][3] == 7: #E.S. (II)
@@ -489,16 +491,16 @@ def _digestTokens(tokens, db_con):
 			lexicon_entry = ((word, meaning, kana, 90, dialect, decorations, syllables),) #Dual-class as (E.S. (ii), adj.)
 			
 		words_details.append((lexicon_entry, p, s, l))
-	return (words_details, ' '.join(decorated_words), pastalia)
+	return (words_details, ' '.join(decorated_words), pastalia_prefix_valid or (pastalia and not pastalia_prefix_only))
 	
-def _processAST(words, ast, pastalia, phrase=None):
+def _processAST(words, ast, phrase=None):
 	tuple_rule = ast[0]
 	nodes = []
 	success = False
 	for st_a in ast[1:]:
 		offset = 0
 		if type(st_a) == int: #Word from specific lexical class needed.
-			result = _processWord_int(words, st_a, pastalia)
+			result = _processWord_int(words, st_a)
 			if result is None:
 				if tuple_rule == _ALL:
 					return None
@@ -517,7 +519,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 					nodes.append(result)
 					offset = result.countLeaves()
 			else: #Symbolic AST identifier.
-				result = _processAST(words, _AST_FRAGMENTS[st_a], pastalia, st_a)
+				result = _processAST(words, _AST_FRAGMENTS[st_a], st_a)
 				if result is None:
 					if tuple_rule == _ALL:
 						return None
@@ -527,7 +529,7 @@ def _processAST(words, ast, pastalia, phrase=None):
 						nodes.append(node)
 						offset += node.countLeaves()
 		else: #tuple, meaning nested AST.
-			result = _processAST(words, st_a, pastalia)
+			result = _processAST(words, st_a)
 			if result is None:
 				if tuple_rule == _ALL:
 					return None
@@ -559,9 +561,9 @@ def _processInput(tree, tokens, db_con):
 	
 	message = result = None
 	if not pastalia:
-		result = _processAST(words_details, _GENERAL_AST, False)
+		result = _processAST(words_details, _GENERAL_AST)
 	else:
-		result = _processAST(words_details, _PASTALIA_AST, True)
+		result = _processAST(words_details, _PASTALIA_AST)
 		
 	if result:
 		for node in result:
@@ -582,14 +584,12 @@ def _processWord_exact(words, target):
 			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
-def _processWord_int(words, target, pastalia):
+def _processWord_int(words, target):
 	if not words:
 		return None
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if not pastalia and dialect % 50 == 6: #Ignore Pastalia words.
-			continue
 		if target in _SYNTAX_MAPPING[syntax_class]:
 			return _Word(word, meaning, target, dialect, prefix, suffix, slots)
 	return None
@@ -628,6 +628,7 @@ def _renderLeaf(leaf):
 def _sanitizePastalia(tokens):
 	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
 	pastalia = False
+	pastalia_prefix_only = True
 	
 	words = []
 	prefixes = []
@@ -651,6 +652,7 @@ def _sanitizePastalia(tokens):
 				slots.append(tuple(word_slots))
 				
 				pastalia = True
+				pastalia_prefix_only = False
 				emotion_hit = True
 				break
 		if emotion_hit:
@@ -664,6 +666,8 @@ def _sanitizePastalia(tokens):
 			slots.append(None)
 			
 			pastalia = True
+			if match.group(3):
+				pastalia_prefix_only = False
 			continue
 			
 		words.append(token)
@@ -671,7 +675,7 @@ def _sanitizePastalia(tokens):
 		suffixes.append(None)
 		slots.append(None)
 		
-	return (pastalia, words, prefixes, suffixes, slots)
+	return (pastalia, pastalia_prefix_only, words, prefixes, suffixes, slots)
 	
 	
 class Error(Exception):
