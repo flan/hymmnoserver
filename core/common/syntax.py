@@ -289,6 +289,9 @@ _DIALECT = {
  7: 'Alpha Note (EOLIA)',
 } #: Mappings from dialect constants to human-readable names.
 
+_COLLIDING_EMOTION_VERBS = (
+ 'd.n.',
+) #: A collection of all Emotion Verbs that collide with basic words in the sanitization process.
 
 class _SyntaxTree(object):
 	_children = None
@@ -475,7 +478,8 @@ def _digestTokens(tokens, db_con):
 	decorated_words = []
 	words_details = []
 	for (w, p, s, l) in zip(words, prefixes, suffixes, slots):
-		lexicon_entry = word_list.get(w.lower())
+		w = w.lower()
+		lexicon_entry = word_list.get(w)
 		if lexicon_entry is None:
 			if p: #Reattach the prefix, since it may be a song or a mistakenly capitalized word.
 				song_check = p.lower() + w
@@ -483,11 +487,6 @@ def _digestTokens(tokens, db_con):
 				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %s" % w)
-		#Handle exceptions where Emotion Words match basic words.
-		elif w == 'd.n.':
-			l_e = lookup.readWords(('dn',), db_con).get('dn')
-			if l_e: #Just in case this fails somehow.
-				lexicon_entry = tuple([l_e[0]] + list(lexicon_entry))
 		elif pastalia and p:
 			pastalia_prefix_valid = True
 			
@@ -503,10 +502,16 @@ def _digestTokens(tokens, db_con):
 				new_entry = lexicon_entry[i][:]
 				new_entry[3] = 4
 				lexicon_entry = tuple([new_entry] + list(lexicon_entry))
-				
+		else:
+			if w in _COLLIDING_EMOTION_VERBS: #Handle exceptions where Emotion Verbs match basic words.
+				basic_form = w.replace('.', '')
+				l_e = lookup.readWords((basic_form,), db_con).get(basic_form)
+				if l_e: #Just in case this fails somehow.
+					lexicon_entry = tuple([l_e[0]] + list(lexicon_entry))
+					
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		
-		if len(lexicon_entry) == 1 and lexicon_entry[0][3] == 7: #E.S. (II)
+		if len(lexicon_entry) == 1 and lexicon_entry[0][3] in (7, 8): #E.S. (II) or adj.
 			lexicon_entry[0][3] = 90 #Dual-class as (E.S. (ii), adj.)
 			
 		words_details.append((lexicon_entry, p, s, l))
