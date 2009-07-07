@@ -221,7 +221,7 @@ _AST_FRAGMENTS = {
   )
  ),
  'TP': (_ALL,
-  (_ANY, (_ONE, 12, 6)),
+  (_ANY, (_ONE, 12, 6, 'en$1')),
   (_ONE,
    (_ALL,
     'NvP',
