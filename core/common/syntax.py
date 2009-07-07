@@ -569,13 +569,12 @@ def _digestTokens(tokens, db_con):
 	decorated_words = []
 	words_details = []
 	for (w, p, s, l) in zip(words, prefixes, suffixes, slots):
-		w = w.lower()
-		lexicon_entry = word_list.get(w)
+		lexicon_entry = word_list.get(w.lower())
 		if lexicon_entry is None:
 			if w.isdigit(): #It's a number.
 				lexicon_entry = ([w, w, w, 4, 1, None, ''],)
 			if p: #Reattach the prefix, since it may be a song or a mistakenly capitalized word.
-				song_check = p.lower() + w
+				song_check = p.lower() + w.lower()
 				p = None
 				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
