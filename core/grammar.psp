@@ -178,13 +178,14 @@ if not _query:
 			
 <%
 else:
-	lines = [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:/\\\'"]|\s*\.*\s*$', '', line)) for line in _query.splitlines()]
-	lines = [line for line in lines if line]
+	lines = [line.strip() for line in _query.splitlines() if line]
 	try:
 		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
 			_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
 		except transformations.FormatError:
+			lines = [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines]
+			lines = [line for line in lines if line]
 			if len(lines) > 1:
 				try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
 					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)

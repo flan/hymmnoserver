@@ -21,7 +21,7 @@
 		19 => 'adv., n.',
 		20 => 'adj., adv.',
 		21 => 'conj., prep.',
-		22 => 'prt., v.',
+		22 => 'prt., v.'
 	);
 	
 	$SYNTAX_CLASS_FULL = array(

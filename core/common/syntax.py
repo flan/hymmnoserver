@@ -21,7 +21,7 @@ import xml.dom.minidom
 
 import lookup
 
-_ANY = 0 #: An AST classifier that requires 0-or-more matches from its set.
+_ANY = 0 #: An AST classifier that requires 0-or-more matches from its set. DOES NOT SUPPORT BACKTRACKING. MAY LEAD TO ILLOGICAL AMBIGUITY.
 _ALL = -1 #: An AST classifier that requires every set member to match.
 _ONE = 1 #: An AST classifier that requires at least one member to match. (Successive matches are ignored)
 
@@ -33,11 +33,12 @@ _GENERAL_AST = (_ALL,
     (_ANY, 'ESP'),
     (_ANY,
      'VsP',
-     (_ONE, 'SgP', (_ANY, 'NP'))
+     'SgP',
     ),
     'VP'
    ),
-   (_ALL, 'ESP', 'SgP', 'VP')
+   (_ALL, 'ESP', 'SgP', 'VP'),
+   (_ALL, (_ANY, 'ESP'), 'SgP')
   )
  ),
  (_ANY, 'CgP'),
@@ -45,8 +46,24 @@ _GENERAL_AST = (_ALL,
 
 _PASTALIA_AST = (_ALL,
  (_ANY, 5),
- (_ANY, 'SpP'),
- 'EVP',
+ (_ONE,
+  (_ALL,
+   'x.$6',
+   'rre$1',
+   (_ONE,
+    (_ALL,
+     'SevcP',
+     'SevcP',
+     (_ANY, 'EVP')
+    ),
+    'EVP',
+   )
+  ),
+  (_ALL,
+   (_ANY, 'SpP'),
+   'EVP'
+  ),
+ ),
  (_ANY, 'CpP'),
 ) #: The AST that describes Pastalia Hymmnos.
 
@@ -102,7 +119,7 @@ _AST_FRAGMENTS = {
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
-    (_ONE, 'EVOP', 'NP'),
+    (_ONE, 'EVOP', 'EVNP', 'NP'),
     (_ANY, 'PP')
    )
   ),
@@ -110,7 +127,10 @@ _AST_FRAGMENTS = {
  'EVOP': (_ALL,
   'x.$6',
   (_ONE,
-   (_ALL, (_ANY, 'rre$1'), 15),
+   (_ALL,
+    (_ANY, 'rre$1'),
+    (_ONE, 15, 1)
+   ),
    (_ALL, 'rre$1', 'NP')
   ),
   'EVP'
@@ -123,25 +143,30 @@ _AST_FRAGMENTS = {
   (_ANY, 'SpP'),
   (_ANY,
    (_ALL,
-    (_ANY, (_ONE, 6, 12)),
-    (_ONE, 'NP', 'EVNP'),
     (_ANY,
      (_ONE, (_ALL, 5, 'EVP'), 'PP')
-    )
+    ),
+    (_ANY, (_ONE, 6, 12)),
+    (_ONE, (_ONE, 'TP', 'PP'), 'EVNP')
    )
   ),
  ),
- 'NP': (_ONE,
-  (_ALL, 'AP', 'NP'),
-  (_ALL, 4, (_ANY, 'AaP'), 'NP'),
-  (_ALL, 4, (_ANY, 'AaP')),
-  (_ALL, (_ONE, 5, 6), 'NP')
+ 'NP': (_ALL,
+  (_ONE,
+   (_ALL, 'AP', 'NP'),
+   (_ALL, 4, (_ANY, 'AaP'), 'NP'),
+   (_ALL, 4, (_ANY, 'AaP')),
+   'PP'
+  ),
+  (_ANY, (_ALL, 5, 'NP'))
  ),
- 'NsP': (_ONE,
-  (_ALL, 'AP', 'NsP'),
-  (_ALL, 4, 'NsP'),
-  4,
-  (_ALL, 5, 'NsP')
+ 'NsP': (_ALL,
+  (_ONE,
+   (_ALL, 'AP', 'NsP'),
+   (_ALL, 4, 'NsP'),
+   4
+  ),
+  (_ANY, (_ALL, 5, 'NsP'))
  ),
  'NvP': (_ALL,
   (_ONE,
@@ -151,11 +176,22 @@ _AST_FRAGMENTS = {
   (_ANY, 'AaP')
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
- 'SgP': (_ONE, (_ALL, 'rre$1', 'NsP'), 15),
+ 'SevcP': (_ALL,
+  1,
+  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1')),
+  'NsP'
+ ),
+ 'SgP': (_ALL,
+  (_ANY, 'rre$1'),
+  (_ONE, 'NsP', 15)
+ ),
  'SpP': (_ALL,
   'x.$6',
   (_ONE,
-   (_ALL, (_ANY, 'rre$1'), 15),
+   (_ALL,
+    (_ANY, 'rre$1'),
+    (_ONE, 15, 1)
+   ),
    (_ALL, 'rre$1', 'NsP')
   )
  ),
@@ -164,7 +200,7 @@ _AST_FRAGMENTS = {
   (_ONE,
    (_ALL,
     'NvP',
-    (_ONE, 'tes$1', 'ut$6'),
+    (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1'),
     'NP'
    ),
    'NP'
@@ -185,7 +221,10 @@ _AST_FRAGMENTS = {
  'VsP': (_ALL,
   (_ONE,
    (_ALL, 'AP', 2),
-   2
+   2,
+  ),
+  (_ANY,
+   (_ALL, 5, 'VsP')
   ),
  ),
 } #: Symbolic AST mappings and descriptions.
@@ -206,6 +245,7 @@ _PHRASE_REDUCTION = {
  'NsP': 'NP',
  'NvP': 'NP',
  'PP': 'PP',
+ 'SevcP': 'SP',
  'SgP': 'SP',
  'SpP': 'SP',
  'TP': 'TP',
@@ -577,7 +617,7 @@ def _processAST(words, ast, resume_point=0, phrase=None):
 					(e_point, offset) = resume_points.pop()
 					cummulative_offset += offset
 					if e_point > -1:
-						r_point = e_point
+						r_point = e_point + 1
 						resume_point = len(ast_elements) - undo_length
 						working_words = words[len(words) - cummulative_offset:]
 						break
@@ -641,7 +681,7 @@ def _processWord_exact(words, target):
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if "%s$%i" % (word.lower(), dialect) == target:
+		if "%s$%i" % (word.lower(), dialect % 50) == target:
 			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
