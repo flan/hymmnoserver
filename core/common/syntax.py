@@ -63,8 +63,10 @@ _PASTALIA_AST = (_ALL,
  (_ANY, 5, 16, 6),
  (_ONE,
   (_ALL,
-   'x.$6',
-   'rre$1',
+   (_ONE,
+    (_ALL, 1, 'TP', 'x.$6', 'rre$1'),
+    (_ALL, 'x.$6', 'rre$1')
+   ),
    (_ONE,
     (_ALL,
      'SevcP',
@@ -114,6 +116,23 @@ _AST_FRAGMENTS = {
   3,
   (_ANY, 'AaP')
  ),
+ 'AtP': (_ONE,
+  (_ALL,
+   8,
+   (_ANY, 'AtP'),
+   (_ANY, (_ALL, 5, 'AtP'))
+  ),
+  (_ALL,
+   3,
+   (_ANY, 'AtP'),
+   (_ANY, (_ALL, 5, 'AtP'))
+  ),
+  (_ALL,
+   (_ONE, 'sor$1', 'her$1'),
+   (_ANY, 'AtP'),
+   (_ANY, (_ALL, 5, 'AtP'))
+  ),
+ ),
  'CgP': (_ONE,
   'NP',
   (_ALL,
@@ -140,7 +159,14 @@ _AST_FRAGMENTS = {
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
-    (_ONE, 'EVOP', 'EVNP', 'NP'),
+    (_ONE,
+     (_ONE,
+      (_ALL, 'TP', 'TP'),
+      'TP'
+     ),
+     'EVOP',
+     'EVNP'
+    ),
     (_ANY, 'PP')
    )
   ),
@@ -165,7 +191,16 @@ _AST_FRAGMENTS = {
   (_ANY, 'SpP'),
   (_ANY,
    (_ALL,
-    (_ONE, (_ONE, 'TP', 'PP'), 'EVNP')
+    (_ONE,
+     (_ONE,
+      (_ONE,
+       (_ALL, 'TP', 'TP'),
+       'TP'
+      ),
+      'PP'
+     ),
+     'EVNP'
+    )
    )
   ),
   (_ANY,
@@ -193,12 +228,12 @@ _AST_FRAGMENTS = {
   ),
   (_ANY, (_ALL, 5, 'NsP'))
  ),
- 'NvP': (_ALL,
+ 'NtP': (_ALL,
   (_ONE,
    4,
-   (_ALL, (_ANY, 'AP'), 4)
+   (_ALL, (_ANY, 'AtP'), 4)
   ),
-  (_ANY, 'AaP')
+  (_ANY, 'NtP')
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SevcP': (_ALL,
@@ -222,15 +257,8 @@ _AST_FRAGMENTS = {
  ),
  'TP': (_ALL,
   (_ANY, (_ONE, 12, 6, 'en$1')),
-  (_ONE,
-   (_ALL,
-    'NvP',
-    (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1'),
-    'NP'
-   ),
-   'NP'
-  ),
-  (_ANY, 'TP'),
+  'NtP',
+  (_ANY, (_ALL, 5, 'NtP'))
  ),
  'VP': (_ALL,
   (_ANY, 15),
@@ -239,7 +267,10 @@ _AST_FRAGMENTS = {
    2
   ),
   (_ANY,
-   'TP',
+   (_ONE,
+    (_ALL, 'TP', 'TP'),
+    'TP'
+   ),
    'PP'
   ),
   (_ANY,
@@ -263,6 +294,7 @@ _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used
 _PHRASE_REDUCTION = {
  'AP': 'AP',
  'AaP': 'AP',
+ 'AtP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
  'CpP': 'MP',
@@ -272,7 +304,7 @@ _PHRASE_REDUCTION = {
  'EVP': 'EVP',
  'NP': 'NP',
  'NsP': 'NP',
- 'NvP': 'NP',
+ 'NtP': 'NP',
  'PP': 'PP',
  'SevcP': 'SVP',
  'SgP': 'SP',
