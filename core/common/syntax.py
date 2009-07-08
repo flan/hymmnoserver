@@ -39,20 +39,13 @@ _ONE = 1 #: An AST classifier that requires at least one member to match. (Succe
 _GENERAL_AST = (_ALL,
  (_ANY, 5, 16, 6),
  (_ANY,
+  'ESP',
   (_ONE,
-   (_ALL,
-    (_ANY, 'ESP'),
-    (_ALL,
-     (_ONE,
-      (_ALL, 'VsP', 'SgP', 'VP'),
-      (_ALL, 'SgP', 'VP'),
-      (_ALL, 'VsP', 'VP'),
-      (_ALL, 'VP')
-     )
-    )
-   ),
-   (_ALL, 'ESP', 'SgP', 'VP'),
-   (_ALL, (_ANY, 'ESP'), 'SgP')
+   (_ALL, 'VsP', 'SgP', 'VP'),
+   (_ALL, 'SgP', 'VP'),
+   (_ALL, 'VsP', 'VP'),
+   'VP',
+   'SgP',
   )
  ),
  (_ANY, 'CgP'),
@@ -62,11 +55,10 @@ _GENERAL_AST = (_ALL,
 _PASTALIA_AST = (_ALL,
  (_ANY, 5, 16, 6),
  (_ONE,
+  (_ALL, 'NsP', 5, 'SpP', 'EVP'),
   (_ALL,
-   (_ONE,
-    (_ALL, 1, 'TP', 'x.$6', 'rre$1'),
-    (_ALL, 'x.$6', 'rre$1')
-   ),
+   'x.$6',
+   'rre$1',
    (_ONE,
     (_ALL,
      'SevcP',
@@ -77,7 +69,21 @@ _PASTALIA_AST = (_ALL,
    )
   ),
   (_ALL,
-   (_ANY, 'SpP'),
+   (_ONE, 
+    (_ALL,
+     1,
+     (_ONE,
+      (_ALL,
+       (_ANY, 'TP'),
+       (_ANY, 5),
+       'x.$6',
+       'rre$1'
+      ),
+      (_ALL, 'rre$1', 'NsP')
+     )
+    ),
+    (_ANY, 'SpP')
+   ),
    'EVP'
   ),
   (_ALL,
@@ -90,48 +96,33 @@ _PASTALIA_AST = (_ALL,
 ) #: The AST that describes Pastalia Hymmnos.
 
 _AST_FRAGMENTS = {
- 'AP': (_ONE,
-  (_ALL,
-   6,
-   (_ANY, 'AP'),
-   (_ANY, (_ALL, 5, 'AP'))
-  ),
-  (_ALL,
-   8,
-   (_ANY, 'AP'),
-   (_ANY, (_ALL, 5, 'AP'))
-  ),
-  (_ALL,
-   3,
-   (_ANY, 'AP'),
-   (_ANY, (_ALL, 5, 'AP'))
-  ),
-  (_ALL,
-   (_ONE, 'sor$1', 'her$1'),
-   (_ANY, 'AP'),
-   (_ANY, (_ALL, 5, 'AP'))
-  ),
- ),
  'AaP': (_ALL,
-  3,
-  (_ANY, 'AaP')
+  (_ONE, 3, 8),
+  (_ANY, 'AalP')
  ),
- 'AtP': (_ONE,
-  (_ALL,
-   8,
-   (_ANY, 'AtP'),
-   (_ANY, (_ALL, 5, 'AtP'))
-  ),
-  (_ALL,
-   3,
-   (_ANY, 'AtP'),
-   (_ANY, (_ALL, 5, 'AtP'))
-  ),
-  (_ALL,
-   (_ONE, 'sor$1', 'her$1'),
-   (_ANY, 'AtP'),
-   (_ANY, (_ALL, 5, 'AtP'))
-  ),
+ 'AalP': (_ALL,
+  (_ONE, 3, 8),
+  (_ANY, 'AalP')
+ ),
+ 'AnP': (_ALL,
+  (_ONE, 8, 3, (_ONE, 'sor$1', 'her$1')),
+  (_ANY, 'AnlP'),
+  (_ANY, (_ALL, 5, 'AnP'))
+ ),
+ 'AnlP': (_ALL,
+  (_ONE, 8, 3),
+  (_ANY, 'AnlP'),
+  (_ANY, (_ALL, 5, 'AnP'))
+ ),
+ 'AvP': (_ALL,
+  (_ONE, 8, 3, (_ONE, 'sor$1', 'her$1')),
+  (_ANY, 'AvlP'),
+  (_ANY, (_ALL, 5, 'AvP'))
+ ),
+ 'AvlP': (_ALL,
+  (_ONE, 8, 3),
+  (_ANY, 'AvlP'),
+  (_ANY, (_ALL, 5, 'AvP'))
  ),
  'CgP': (_ONE,
   'NP',
@@ -152,10 +143,8 @@ _AST_FRAGMENTS = {
  'ESP': (_ALL, 14, 7, 13),
  'EVNP': (_ALL,
   (_ANY, 15),
-  (_ONE,
-   (_ALL, 'AP', 1),
-   1
-  ),
+  (_ANY, 'AvP'),
+  1,
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
@@ -184,10 +173,8 @@ _AST_FRAGMENTS = {
  ),
  'EVP': (_ALL,
   (_ANY, 15),
-  (_ONE,
-   (_ALL, 'AP', 1),
-   1
-  ),
+  (_ANY, 'AvP'),
+  1,
   (_ANY, 'SpP'),
   (_ANY,
    (_ALL,
@@ -212,26 +199,27 @@ _AST_FRAGMENTS = {
   ),
  ),
  'NP': (_ALL,
+  (_ANY, 'AnP'),
   (_ONE,
-   (_ALL, 'AP', 'NP'),
-   (_ALL, 4, (_ANY, 'AaP'), 'NP'),
+   (_ALL, 4, 'NP'),
    (_ALL, 4, (_ANY, 'AaP')),
    'PP'
   ),
   (_ANY, (_ALL, 5, 'NP'))
  ),
  'NsP': (_ALL,
+  (_ANY, 'AnP'),
   (_ONE,
-   (_ALL, 'AP', 'NsP'),
-   (_ALL, 4, (_ANY, 'AaP'), 'NsP'),
+   (_ALL, 4, 'NsP'),
    (_ALL, 4, (_ANY, 'AaP'))
   ),
   (_ANY, (_ALL, 5, 'NsP'))
  ),
  'NtP': (_ALL,
+  (_ANY, 'AnP'),
   (_ONE,
    4,
-   (_ALL, (_ANY, 'AtP'), 4)
+   (_ALL, (_ANY, 'AaP'), 4)
   ),
   (_ANY, 'NtP')
  ),
@@ -243,7 +231,10 @@ _AST_FRAGMENTS = {
  ),
  'SgP': (_ALL,
   (_ANY, 'rre$1'),
-  (_ONE, 'NsP', 15)
+  (_ONE,
+   'NsP',
+   (_ALL, (_ANY, 'AnP'), 15)
+  )
  ),
  'SpP': (_ALL,
   'x.$6',
@@ -262,10 +253,8 @@ _AST_FRAGMENTS = {
  ),
  'VP': (_ALL,
   (_ANY, 15),
-  (_ONE,
-   (_ALL, 'AP', 2),
-   2
-  ),
+  (_ANY, 'AvP'),
+  2,
   (_ANY,
    (_ONE,
     (_ALL, 'TP', 'TP'),
@@ -279,10 +268,8 @@ _AST_FRAGMENTS = {
   )
  ),
  'VsP': (_ALL,
-  (_ONE,
-   (_ALL, 'AP', 2),
-   2
-  ),
+  (_ANY, 'AvP'),
+  2,
   (_ANY,
    (_ALL, 5, 'VsP')
   )
@@ -292,9 +279,9 @@ _AST_FRAGMENTS = {
 _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used to determine whether an AST element is an exact-match specifier.
 
 _PHRASE_REDUCTION = {
- 'AP': 'AP',
  'AaP': 'AP',
- 'AtP': 'AP',
+ 'AnP': 'AP',
+ 'AvP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
  'CpP': 'MP',
@@ -639,9 +626,23 @@ def _digestTokens(tokens, db_con):
 	
 def _processAST(words, ast, phrase=None):
 	#Refuse to process requests that would invariably lead to failure.
-	if phrase == 'AP' and len(words) == 1:
-		return None
-		
+	if phrase in ('AnP', 'AvP', 'AnlP', 'AvlP'):
+		if len(words) == 1:
+			return None
+		elif len(words) > 1:
+			relevant_classes = None
+			if phrase in ('AnP', 'AnlP'):
+				relevant_classes = (4,)
+			else:
+				relevant_classes = (1, 2)
+			following_classes = [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[1][0]]
+			for classes in [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[0][0]]:
+				if len(classes) > 1 and [None for c in classes if c in (3, 6, 8)] and [None for c in classes if c in relevant_classes]: #Variable, stop-on-able item.
+					for f_classes in following_classes:
+						if not [None for c in f_classes if c in relevant_classes]: #Not AP-eligible.
+							return None
+							
+	#Process AST normally.
 	tuple_rule = ast[0]
 	working_words = words[:]
 	successes = []
@@ -689,7 +690,7 @@ def _processAST(words, ast, phrase=None):
 		for node in success:
 			nodes.append(node)
 			
-	if phrase and nodes: #Construct a parent for the nodes.
+	if phrase and nodes and not phrase in ('AalP', 'AnlP', 'AvlP'): #Construct a parent for the nodes.
 		root = _Phrase(phrase)
 		for node in nodes:
 			root.addChild(node)
