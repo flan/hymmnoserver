@@ -40,12 +40,15 @@ _GENERAL_AST = (_ALL,
  (_ANY, 5, 16, 6),
  (_ANY,
   'ESP',
-  (_ONE,
-   (_ALL, 'VsP', 'SgP', 'VP'),
-   (_ALL, 'SgP', 'VP'),
-   (_ALL, 'VsP', 'VP'),
-   'VP',
-   'SgP',
+  (_ALL,
+   (_ONE,
+    (_ALL, 'VsP', 'SgP', 'VP'),
+    (_ALL, 'SgP', 'VP'),
+    (_ALL, 'VsP', 'VP'),
+    'VP',
+    'SgP',
+   ),
+   (_ANY, (_ALL, 5, 'SgsP'))
   )
  ),
  (_ANY, 'CgP'),
@@ -84,7 +87,8 @@ _PASTALIA_AST = (_ALL,
     ),
     (_ANY, 'SpP')
    ),
-   'EVP'
+   (_ANY, (_ONE, 'EVP', 'VP')),
+   (_ANY, (_ALL, 5, 'SevP'))
   ),
   (_ALL,
    15,
@@ -105,7 +109,7 @@ _AST_FRAGMENTS = {
   (_ANY, 'AalP')
  ),
  'AnP': (_ALL,
-  (_ONE, 8, 3, (_ONE, 'sor$1', 'her$1')),
+  (_ONE, 8, 3, 'sor$1', 'her$1'),
   (_ANY, 'AnlP'),
   (_ANY, (_ALL, 5, 'AnP'))
  ),
@@ -114,8 +118,18 @@ _AST_FRAGMENTS = {
   (_ANY, 'AnlP'),
   (_ANY, (_ALL, 5, 'AnP'))
  ),
+ 'AnpP': (_ALL,
+  (_ONE, 8, 3),
+  (_ANY, 'AnplP'),
+  (_ANY, (_ALL, 5, 'AnpP'))
+ ),
+ 'AnplP': (_ALL,
+  (_ONE, 8, 3),
+  (_ANY, 'AnplP'),
+  (_ANY, (_ALL, 5, 'AnpP'))
+ ),
  'AvP': (_ALL,
-  (_ONE, 8, 3, (_ONE, 'sor$1', 'her$1')),
+  (_ONE, 8, 3, 'sor$1', 'her$1'),
   (_ANY, 'AvlP'),
   (_ANY, (_ALL, 5, 'AvP'))
  ),
@@ -175,7 +189,7 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   1,
-  (_ANY, 'SpP'),
+  (_ANY, 'SevP'),
   (_ANY,
    (_ALL,
     (_ONE,
@@ -224,6 +238,15 @@ _AST_FRAGMENTS = {
   (_ANY, 'NtP')
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
+ 'SevP': (_ALL,
+  (_ONE,
+   (_ALL,
+    (_ANY, 'rre$1'),
+    (_ONE, (_ALL, (_ANY, 'AnpP'), 15), 1)
+   ),
+   (_ALL, 'rre$1', 'NsP')
+  )
+ ),
  'SevcP': (_ALL,
   1,
   (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1')),
@@ -233,17 +256,24 @@ _AST_FRAGMENTS = {
   (_ANY, 'rre$1'),
   (_ONE,
    'NsP',
-   (_ALL, (_ANY, 'AnP'), 15)
+   (_ALL, (_ANY, 'AnpP'), 15)
+  )
+ ),
+ 'SgsP': (_ALL,
+  'rre$1',
+  (_ONE,
+   'NsP',
+   (_ALL, (_ANY, 'AnpP'), 15)
   )
  ),
  'SpP': (_ALL,
   'x.$6',
   (_ONE,
+   (_ALL, 'rre$1', 'NsP'),
    (_ALL,
     (_ANY, 'rre$1'),
-    (_ONE, 15, 1)
-   ),
-   (_ALL, 'rre$1', 'NsP')
+    (_ONE, 'NsP', 15, 1)
+   )
   )
  ),
  'TP': (_ALL,
@@ -270,6 +300,7 @@ _AST_FRAGMENTS = {
  'VsP': (_ALL,
   (_ANY, 'AvP'),
   2,
+  (_ANY, 'NsP'),
   (_ANY,
    (_ALL, 5, 'VsP')
   )
@@ -281,6 +312,7 @@ _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used
 _PHRASE_REDUCTION = {
  'AaP': 'AP',
  'AnP': 'AP',
+ 'AnpP': 'AP',
  'AvP': 'AP',
  'CP': 'CP',
  'CgP': 'MP',
@@ -293,8 +325,10 @@ _PHRASE_REDUCTION = {
  'NsP': 'NP',
  'NtP': 'NP',
  'PP': 'PP',
+ 'SevP': 'SVP',
  'SevcP': 'SVP',
  'SgP': 'SP',
+ 'SgsP': 'SP',
  'SpP': 'SP',
  'TP': 'TP',
  'VP': 'VP',
@@ -381,7 +415,7 @@ _SYNTAX_MAPPING = {
  13: (13,),
  14: (14,),
  15: (15,),
- 16: (16,),
+ 16: (3, 16),
  17: (6, 12),
  18: (18,),
  19: (3, 4),
@@ -690,7 +724,7 @@ def _processAST(words, ast, phrase=None):
 		for node in success:
 			nodes.append(node)
 			
-	if phrase and nodes and not phrase in ('AalP', 'AnlP', 'AvlP'): #Construct a parent for the nodes.
+	if phrase and nodes and not phrase in ('AalP', 'AnlP', 'AvlP', 'AnplP'): #Construct a parent for the nodes.
 		root = _Phrase(phrase)
 		for node in nodes:
 			root.addChild(node)
