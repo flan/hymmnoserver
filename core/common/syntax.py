@@ -52,6 +52,7 @@ _GENERAL_AST = (_ALL,
   )
  ),
  (_ANY, 'CgP'),
+ (_ANY, 'AaP'),
  (_ANY, 16)
 ) #: The AST that describes standard Hymmnos.
 
@@ -60,30 +61,22 @@ _PASTALIA_AST = (_ALL,
  (_ONE,
   (_ALL, 'NsP', 5, 'SpP', 'EVP'),
   (_ALL,
-   'x.$6',
-   'rre$1',
-   (_ONE,
-    (_ALL,
-     'SevcP',
-     'SevcP',
-     (_ANY, 'EVP')
-    ),
-    'EVP',
+   'SevmP',
+   (_ANY,
+    (_ONE,
+     (_ALL, 5, 'SevP'),
+     'VP',
+     'EVP'
+    )
    )
   ),
   (_ALL,
    (_ONE, 
     (_ALL,
-     1,
      (_ONE,
-      (_ALL,
-       (_ANY, 'TP'),
-       (_ANY, 5),
-       'x.$6',
-       'rre$1'
-      ),
-      (_ALL, 'rre$1', 'NsP')
-     )
+      'SevnP',
+      'EVhP'
+     ),
     ),
     (_ANY, 'SpP')
    ),
@@ -96,6 +89,7 @@ _PASTALIA_AST = (_ALL,
   )
  ),
  (_ANY, 'CpP'),
+ (_ANY, 'AaP'), 
  (_ANY, 16)
 ) #: The AST that describes Pastalia Hymmnos.
 
@@ -109,7 +103,7 @@ _AST_FRAGMENTS = {
   (_ANY, 'AalP')
  ),
  'AnP': (_ALL,
-  (_ONE, 8, 3, 'sor$1', 'her$1'),
+  (_ONE, 8, 3, 15),
   (_ANY, 'AnlP'),
   (_ANY, (_ALL, 5, 'AnP'))
  ),
@@ -129,7 +123,7 @@ _AST_FRAGMENTS = {
   (_ANY, (_ALL, 5, 'AnpP'))
  ),
  'AvP': (_ALL,
-  (_ONE, 8, 3, 'sor$1', 'her$1'),
+  (_ONE, 8, 3, 15),
   (_ANY, 'AvlP'),
   (_ANY, (_ALL, 5, 'AvP'))
  ),
@@ -149,7 +143,7 @@ _AST_FRAGMENTS = {
  'CpP': (_ONE,
   'NP',
   (_ALL,
-   'VP',
+   (_ONE, 'VP', 'EVP'),
    (_ANY, 'NP'),
    (_ANY, 'CpP')
   )
@@ -159,6 +153,7 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   1,
+  (_ANY, 3),
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
@@ -179,7 +174,10 @@ _AST_FRAGMENTS = {
   (_ONE,
    (_ALL,
     (_ANY, 'rre$1'),
-    (_ONE, 15, 1)
+    (_ONE,
+     15,
+     (_ALL, 1, (_ANY, 3))
+    )
    ),
    (_ALL, 'rre$1', 'NP')
   ),
@@ -189,19 +187,18 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   1,
+  (_ANY, 3),
   (_ANY, 'SevP'),
   (_ANY,
-   (_ALL,
+   (_ONE,
     (_ONE,
      (_ONE,
-      (_ONE,
-       (_ALL, 'TP', 'TP'),
-       'TP'
-      ),
-      'PP'
+      (_ALL, 'TP', 'TP'),
+      'TP'
      ),
-     'EVNP'
-    )
+     'PP'
+    ),
+    'EVNP'
    )
   ),
   (_ANY,
@@ -212,11 +209,29 @@ _AST_FRAGMENTS = {
    )
   ),
  ),
+ 'EVhP': (_ALL,
+  1,
+  'TP',
+  (_ANY, 'AaP')
+ ),
+ 'EVscP': (_ALL,
+  1,
+  (_ANY, 3),
+  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1')),
+  'NsP',
+  (_ANY,
+   (_ALL, 5, (_ONE, 'VP', 'EVP'))
+  )
+ ),
+ 'EVscmP': (_ALL,
+  'EVscP',
+  (_ANY, 'EVscmP')
+ ),
  'NP': (_ALL,
   (_ANY, 'AnP'),
   (_ONE,
    (_ALL, 4, 'NP'),
-   (_ALL, 4, (_ANY, 'AaP')),
+   4,
    'PP'
   ),
   (_ANY, (_ALL, 5, 'NP'))
@@ -225,45 +240,54 @@ _AST_FRAGMENTS = {
   (_ANY, 'AnP'),
   (_ONE,
    (_ALL, 4, 'NsP'),
-   (_ALL, 4, (_ANY, 'AaP'))
+   4
   ),
   (_ANY, (_ALL, 5, 'NsP'))
  ),
  'NtP': (_ALL,
   (_ANY, 'AnP'),
-  (_ONE,
-   4,
-   (_ALL, (_ANY, 'AaP'), 4)
-  ),
-  (_ANY, 'NtP')
+  4,
+  (_ANY, 'NtP'),
+  (_ANY, (_ALL, 5, 'NtP'))
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SevP': (_ALL,
   (_ONE,
    (_ALL,
-    (_ANY, 'rre$1'),
-    (_ONE, (_ALL, (_ANY, 'AnpP'), 15), 1)
+    (_ANY, (_ALL, (_ANY, 'x.$6'), 'rre$1')),
+    (_ONE,
+     (_ALL, (_ANY, 'AnpP'), 15),
+     (_ALL, 1, (_ANY, 3))
+    )
    ),
    (_ALL, 'rre$1', 'NsP')
   )
  ),
- 'SevcP': (_ALL,
-  1,
-  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1')),
-  'NsP'
+ 'SevnP': (_ALL, 'x.$6', 'rre$1', 'NsP'),
+ 'SevmP': (_ALL,
+  'x.$6',
+  'rre$1',
+  (_ONE,
+   (_ALL,
+    'EVscP',
+    'EVscP',
+    (_ANY, 'EVscmP')
+   ),
+   'EVP',
+  )
  ),
  'SgP': (_ALL,
   (_ANY, 'rre$1'),
   (_ONE,
-   'NsP',
-   (_ALL, (_ANY, 'AnpP'), 15)
+   (_ALL, (_ANY, 'AnpP'), 15),
+   'NsP'
   )
  ),
  'SgsP': (_ALL,
   'rre$1',
   (_ONE,
-   'NsP',
-   (_ALL, (_ANY, 'AnpP'), 15)
+   (_ALL, (_ANY, 'AnpP'), 15),
+   'NsP'
   )
  ),
  'SpP': (_ALL,
@@ -272,19 +296,23 @@ _AST_FRAGMENTS = {
    (_ALL, 'rre$1', 'NsP'),
    (_ALL,
     (_ANY, 'rre$1'),
-    (_ONE, 'NsP', 15, 1)
+    (_ONE,
+     'NsP',
+     15,
+     (_ALL, 1, (_ANY, 3))
+    )
    )
   )
  ),
  'TP': (_ALL,
   (_ANY, (_ONE, 12, 6, 'en$1')),
-  'NtP',
-  (_ANY, (_ALL, 5, 'NtP'))
+  'NtP'
  ),
  'VP': (_ALL,
   (_ANY, 15),
   (_ANY, 'AvP'),
   2,
+  (_ANY, 3),
   (_ANY,
    (_ONE,
     (_ALL, 'TP', 'TP'),
@@ -300,6 +328,7 @@ _AST_FRAGMENTS = {
  'VsP': (_ALL,
   (_ANY, 'AvP'),
   2,
+  (_ANY, 3),
   (_ANY, 'NsP'),
   (_ANY,
    (_ALL, 5, 'VsP')
@@ -321,12 +350,15 @@ _PHRASE_REDUCTION = {
  'EVNP': 'EOP',
  'EVOP': 'EOP',
  'EVP': 'EVP',
+ 'EVhP': 'EVP',
+ 'EVscP': 'EVP',
  'NP': 'NP',
  'NsP': 'NP',
  'NtP': 'NP',
  'PP': 'PP',
  'SevP': 'SVP',
- 'SevcP': 'SVP',
+ 'SevnP': 'SP',
+ 'SevmP': 'SP',
  'SgP': 'SP',
  'SgsP': 'SP',
  'SpP': 'SP',
@@ -414,7 +446,7 @@ _SYNTAX_MAPPING = {
  12: (12,),
  13: (13,),
  14: (14,),
- 15: (15,),
+ 15: (4, 15,),
  16: (3, 16),
  17: (6, 12),
  18: (18,),
@@ -422,6 +454,8 @@ _SYNTAX_MAPPING = {
  20: (3, 8, 7), #Doubles as E.S.(II).
  21: (5, 6),
  22: (2, 12),
+ 23: (3, 12),
+ 24: (4, 6),
 } #: Mappings from lexical class constants to their constituent members.
 
 _DIALECT = {
@@ -635,18 +669,14 @@ def _digestTokens(tokens, db_con):
 		elif pastalia and p:
 			pastalia_prefix_valid = True
 			
-			inject_noun = True
 			pastalia_entry = 0
 			for (i, l_e) in enumerate(lexicon_entry):
-				if 4 in _SYNTAX_MAPPING[l_e[3]]:
-					inject_noun = False
-					break
-				elif l_e[4] % 50 == 6: #Favour Pastalian forms.
+				if l_e[4] % 50 == 6: #Favour Pastalian forms.
 					pastalia_entry = i
-			if inject_noun: #Duplicate the best candidate, mark it as a noun, and add it to the beginning of the list.
-				new_entry = lexicon_entry[i][:]
-				new_entry[3] = 4
-				lexicon_entry = tuple([new_entry] + list(lexicon_entry))
+			#Duplicate the best candidate, mark it as a noun, and use it to replace the list.
+			new_entry = lexicon_entry[i][:]
+			new_entry[3] = 4
+			lexicon_entry = (new_entry,)
 		else:
 			if not s and w in _COLLIDING_EMOTION_VERBS: #Handle exceptions where Emotion Verbs match basic words.
 				basic_form = w.replace('.', '')
@@ -660,22 +690,27 @@ def _digestTokens(tokens, db_con):
 	
 def _processAST(words, ast, phrase=None):
 	#Refuse to process requests that would invariably lead to failure.
-	if phrase in ('AnP', 'AvP', 'AnlP', 'AvlP'):
-		if len(words) == 1:
-			return None
-		elif len(words) > 1:
-			relevant_classes = None
-			if phrase in ('AnP', 'AnlP'):
-				relevant_classes = (4,)
+	if words:
+		if phrase in ('AnP', 'AvP', 'AnlP', 'AvlP'):
+			if len(words) == 1:
+				return None
 			else:
-				relevant_classes = (1, 2)
-			following_classes = [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[1][0]]
-			for classes in [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[0][0]]:
-				if len(classes) > 1 and [None for c in classes if c in (3, 6, 8)] and [None for c in classes if c in relevant_classes]: #Variable, stop-on-able item.
-					for f_classes in following_classes:
-						if not [None for c in f_classes if c in relevant_classes]: #Not AP-eligible.
-							return None
-							
+				relevant_classes = None
+				if phrase in ('AnP', 'AnlP'):
+					relevant_classes = (4,)
+				else:
+					relevant_classes = (1, 2)
+				following_classes = [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[1][0]]
+				for classes in [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[0][0]]:
+					if len(classes) > 1 and [None for c in classes if c in (3, 6, 8)] and [None for c in classes if c in relevant_classes]: #Variable, stop-on-able item.
+						for f_classes in following_classes:
+							if not [None for c in f_classes if c in relevant_classes]: #Not AP-eligible.
+								return None
+		if phrase in ('AaP', 'AalP'):
+			word = words[0][0][0]
+			if "%s$%i" % (word[0], word[4]) in ('re$1', 'na$1', 'zz$6'): #These are prefixes only.
+				return None
+				
 	#Process AST normally.
 	tuple_rule = ast[0]
 	working_words = words[:]
@@ -724,7 +759,7 @@ def _processAST(words, ast, phrase=None):
 		for node in success:
 			nodes.append(node)
 			
-	if phrase and nodes and not phrase in ('AalP', 'AnlP', 'AvlP', 'AnplP'): #Construct a parent for the nodes.
+	if phrase and nodes and phrase in _PHRASE_REDUCTION: #Construct a parent for the nodes.
 		root = _Phrase(phrase)
 		for node in nodes:
 			root.addChild(node)
