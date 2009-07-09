@@ -369,7 +369,7 @@ _PHRASE_REDUCTION = {
 
 _PHRASE_EXPANSION = {
  'AP': "Complement Phrase",
- 'CP': "Clause Phrase",
+ 'CP': "Sentence",
  'ESP': "Emotion Sound Phrase",
  'EOP': "Emotion Object Phrase",
  'EVP': "Emotion Verb Phrase",
