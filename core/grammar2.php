@@ -144,7 +144,7 @@
 				</table>
 				<p>
 					This sentence is an extension of the one found in the previous example; it means
-					&quot;I would be delighted to sing a song for your happiness&quot;.<br/>
+					&quot;I would be delighted to sing a song for your happiness&quot;.
 					Notice how the intent has not changed (the speaker still expresses eagerness over
 					doing something to make a second party happy); the only difference is that it is
 					now clear exactly what the speaker intends to do.

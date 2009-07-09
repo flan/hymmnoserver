@@ -18,6 +18,7 @@
 				then called Tsukikanade (Moon Chanters), provided the foundations.
 				Hymmnos was later formalized as a language optimized for the control of, and communications with, Towers,
 				but its grammar and phonetics are derived from the shamans' chants.
+				<br/><br/>
 				The original Hymmnos language that spread across the world underwent subtle changes depending on the
 				region and sect in which it was used, and the language's lexicon steadily evolved.
 				Because of this evolutionary process, Hymmnos features dialects and archaisms, just like English,

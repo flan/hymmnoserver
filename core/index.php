@@ -21,9 +21,9 @@
 						</p>
 						<p style="color: red;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
-							errors, and suffer from synchronization issues with the original Japanese site.
+							errors, and suffer from synchronization issues with the original Japanese site.<br/>
 							Some features differ (for better or worse), and some details, such as examples, were intentionally rewritten
-							in a manner believed to make more sense to an English-speaking audience.<br/>
+							in a manner believed to make more sense to an English-speaking audience.<br/><br/>
 							If you note any problems, please let the appropriate maintainer know; see the
 							<a href="/hymmnoserver/credits.php">credits page</a> for details.
 						</p>
@@ -213,16 +213,6 @@
 				<a href="http://subversion.tigris.org/">Subversion</a>:
 				&quot;svn co <a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a> hymmnoserver/&quot;.
 				You may also browse the repository using a web browser or any DAV-capable client.
-			</p>
-			<hr/>
-			<p>
-				<b>Mirrors wanted!</b><br/>
-				Unfortunately, the origin server is on a data-transfer-monitored connection, and this connection
-				is prone to random periods of downtime that last between five minutes and an hour.
-				If you have PHP 5 and MySQL 5 and you want to help, please contact this site's maintainer to find
-				out more.<br/>
-				If you are a normal visitor and you want to help, consider using a non-origin mirror; these may
-				be found on the right side of this page.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
