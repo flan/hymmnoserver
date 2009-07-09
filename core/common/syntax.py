@@ -223,9 +223,9 @@ _AST_FRAGMENTS = {
    (_ALL, 5, (_ONE, 'VP', 'EVP'))
   )
  ),
- 'EVscmP': (_ALL,
+ 'EVsclP': (_ALL,
   'EVscP',
-  (_ANY, 'EVscmP')
+  (_ANY, 'EVsclP')
  ),
  'NP': (_ALL,
   (_ANY, 'AnP'),
@@ -271,7 +271,7 @@ _AST_FRAGMENTS = {
    (_ALL,
     'EVscP',
     'EVscP',
-    (_ANY, 'EVscmP')
+    (_ANY, 'EVsclP')
    ),
    'EVP',
   )
