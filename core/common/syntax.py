@@ -102,6 +102,14 @@ _AST_FRAGMENTS = {
   (_ONE, 3, 8),
   (_ANY, 'AalP')
  ),
+ 'AavP': (_ALL,
+  3,
+  (_ANY, 'AavlP')
+ ),
+ 'AavlP': (_ALL,
+  3,
+  (_ANY, 'AavlP')
+ ),
  'AnP': (_ALL,
   (_ONE, 8, 3, 15),
   (_ANY, 'AnlP'),
@@ -153,7 +161,7 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   1,
-  (_ANY, 3),
+  (_ANY, 'AavP'),
   (_ANY,
    (_ALL,
     (_ANY, (_ONE, 6, 12)),
@@ -176,7 +184,7 @@ _AST_FRAGMENTS = {
     (_ANY, 'rre$1'),
     (_ONE,
      15,
-     (_ALL, 1, (_ANY, 3))
+     (_ALL, 1, (_ANY, 'AavP'))
     )
    ),
    (_ALL, 'rre$1', 'NP')
@@ -187,8 +195,7 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   1,
-  (_ANY, 3),
-  (_ANY, 'SevP'),
+  (_ANY, (_ONE, 'AavP', 'SevP')),
   (_ANY,
    (_ONE,
     (_ONE,
@@ -202,7 +209,7 @@ _AST_FRAGMENTS = {
    )
   ),
   (_ANY,
-   'AaP',
+   'AavP',
    (_ONE,
     (_ALL, 5, (_ONE, 'VP', 'EVP')),
     'PP'
@@ -212,12 +219,12 @@ _AST_FRAGMENTS = {
  'EVhP': (_ALL,
   1,
   'TP',
-  (_ANY, 'AaP')
+  (_ANY, 'AavP')
  ),
  'EVscP': (_ALL,
   1,
-  (_ANY, 3),
-  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1')),
+  (_ANY, 'AavP'),
+  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1', 'elle$1')),
   'NsP',
   (_ANY,
    (_ALL, 5, (_ONE, 'VP', 'EVP'))
@@ -234,7 +241,7 @@ _AST_FRAGMENTS = {
    4,
    'PP'
   ),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NP'))
  ),
  'NsP': (_ALL,
   (_ANY, 'AnP'),
@@ -242,13 +249,13 @@ _AST_FRAGMENTS = {
    (_ALL, 4, 'NsP'),
    4
   ),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NsP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NsP'))
  ),
  'NtP': (_ALL,
   (_ANY, 'AnP'),
   4,
   (_ANY, 'NtP'),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NtP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NtP'))
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SevP': (_ALL,
@@ -257,7 +264,7 @@ _AST_FRAGMENTS = {
     (_ANY, (_ALL, (_ANY, 'x.$6'), 'rre$1')),
     (_ONE,
      (_ALL, (_ANY, 'AnpP'), 15),
-     (_ALL, 1, (_ANY, 3))
+     (_ALL, 1, (_ANY, 'AavP'))
     )
    ),
    (_ALL, 'rre$1', 'NsP')
@@ -299,7 +306,7 @@ _AST_FRAGMENTS = {
     (_ONE,
      'NsP',
      15,
-     (_ALL, 1, (_ANY, 3))
+     (_ALL, 1, (_ANY, 'AavP'))
     )
    )
   )
@@ -312,7 +319,7 @@ _AST_FRAGMENTS = {
   (_ANY, 15),
   (_ANY, 'AvP'),
   2,
-  (_ANY, 3),
+  (_ANY, 'AavP'),
   (_ANY,
    (_ONE,
     (_ALL, 'TP', 'TP'),
@@ -328,7 +335,7 @@ _AST_FRAGMENTS = {
  'VsP': (_ALL,
   (_ANY, 'AvP'),
   2,
-  (_ANY, 3),
+  (_ANY, 'AavP'),
   (_ANY, 'NsP'),
   (_ANY,
    (_ALL, 5, 'VsP')
@@ -340,6 +347,7 @@ _EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used
 
 _PHRASE_REDUCTION = {
  'AaP': 'AP',
+ 'AavP': 'AP',
  'AnP': 'AP',
  'AnpP': 'AP',
  'AvP': 'AP',
@@ -456,6 +464,7 @@ _SYNTAX_MAPPING = {
  22: (2, 12),
  23: (3, 12),
  24: (4, 6),
+ 25: (3, 6),
 } #: Mappings from lexical class constants to their constituent members.
 
 _DIALECT = {
