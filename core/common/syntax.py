@@ -642,8 +642,10 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		
 		if xhtml:
 			slots = ["<span style=\"color: #FFD700;\">%s</span>" % (slot) for slot in slots]
-			prefix = "<span style=\"color: #F0D000;\">%s</span>" % (cgi.escape(prefix))
-			suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
+			if prefix:
+				prefix = "<span style=\"color: #F0D000;\">%s</span>" % (cgi.escape(prefix))
+			if suffix:
+				suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
 			word = cgi.escape(word)
 			
 		word_fragments = word.split('.')
@@ -824,8 +826,8 @@ def _renderBranches(tree):
 			
 	return """
 		<div class="phrase phrase-%i">
-			<span style="font-size: 0.9em;">%s</span>
-			<div style="margin-left: 15px;">%s</div>
+			<span class="phrase-title">%s</span>
+			<div class="phrase-content">%s</div>
 		</div>
 	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[_PHRASE_REDUCTION[tree.getPhrase()]], '\n'.join(children_entries))
 	
@@ -834,10 +836,10 @@ def _renderLeaf(leaf):
 	if base_word.isdigit():
 		base_word = '1'
 		
-	return """<span style="float: right; font-size: 0.675em;">(%s)</span>
+	return """<span class="phrase-word-dialect">(%s)</span>
 		<div class="phrase-word phrase-word-%i">
-			<span>%s (%s)</span>
-			<div style="margin-left: 10px; font-size: 0.85em;">%s</div>
+			%s <span class="phrase-word-class">(%s)</span>
+			<div class="phrase-word-meaning">%s</div>
 		</div>
 	""" % (
 	 _DIALECT[leaf.getDialect() % 50],

@@ -322,6 +322,7 @@ div.phrase{
 	border-right: 0;
 	border-bottom: 0;
 	padding-left: 2px;
+	/*font-family: sans-serif;*/
 }
 div.phrase-0{/*CP*/
 	background: #000000;
@@ -362,6 +363,7 @@ div.phrase-word{
 	border-right: 0;
 	border-bottom: 0;
 	padding-left: 2px;
+	/*font-family: inherit;*/
 }
 div.phrase-word-1{/*E.V.*/
 	background: #203000;
@@ -404,6 +406,27 @@ div.phrase-word-16{/*intj.*/
 }
 div.phrase-word-18{/*cnstr.*/
 	background: #202020;
+}
+
+span.phrase-title{
+	font-size: 0.8em;
+	color: #AAA;
+}
+div.phrase-content{
+	margin-left: 15px;
+	color: #BBB;
+}
+span.phrase-word-dialect{
+	float: right;
+	font-size: 0.675em;
+}
+span.phrase-word-class{
+	margin-left: 3px;
+	font-size: 0.8em;
+}
+div.phrase-word-meaning{
+	margin-left: 15px;
+	font-size: 0.8em;
 }
 
 /*Generic styles*/
