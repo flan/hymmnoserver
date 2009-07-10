@@ -36,8 +36,36 @@ _ANY = 0 #: An AST classifier that requires 0-or-more matches from its set.
 _ALL = -1 #: An AST classifier that requires every set member to match.
 _ONE = 1 #: An AST classifier that requires at least one member to match. (Successive matches are ignored)
 
+_LEX_ADJ = 8 #: A symbolic constant identifying adjectives.
+_LEX_ADV = 3 #: A symbolic constant identifying adverbs.
+_LEX_CNSTR = 18 #: A symbolic constant identifying language constructs.
+_LEX_CONJ = 5 #: A symbolic constant identifying conjunctions.
+_LEX_ESi = 14 #: A symbolic constant identifying Emotion Sound Is.
+_LEX_ESii = 7 #: A symbolic constant identifying Emotion Sound IIs.
+_LEX_ESiii = 13 #: A symbolic constant identifying Emotion Sound IIIs.
+_LEX_EV = 1 #: A symbolic constant identifying Emotion Verbs.
+_LEX_INTJ = 16 #: A symbolic constant identifying interjections.
+_LEX_N = 4 #: A symbolic constant identifying nouns.
+_LEX_PREP = 6 #: A symbolic constant identifying prepositions.
+_LEX_PRON = 15 #: A symbolic constant identifying pronouns.
+_LEX_PRT = 12 #: A symbolic constant identifying particles.
+_LEX_V = 2 #: A symbolic constant identifying verbs.
+
+_DLCT_UNKNOWN = 0 #: A symbolic constant identifying unknown words.
+_DLCT_CENTRAL = 1 #: A symbolic constant identifying Central words.
+_DLCT_CULT_CIEL = 2 #: A symbolic constant identifying Cult Ciel words.
+_DLCT_CLUSTER = 3 #: A symbolic constant identifying Cluster words.
+_DLCT_ALPHA = 4 #: A symbolic constant identifying Alpha words.
+_DLCT_METAFALSS = 5 #: A symbolic constant identifying Metafalss words.
+_DLCT_PASTALIE = 6 #: A symbolic constant identifying Pastalie words.
+_DLCT_ALPHA_EOLIA = 7 #: A symbolic constant identifying EOLIA words.
+
+_DIALECT_SHIFT = 50 #: The constant value that determines the spacing between dialect variants.
+
+_EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used to determine whether an AST element is an exact-match specifier.
+
 _GENERAL_AST = (_ALL,
- (_ANY, 5, 16, 6),
+ (_ANY, _LEX_CONJ, _LEX_INTJ, _LEX_PREP),
  (_ANY,
   'ESP',
   (_ALL,
@@ -48,23 +76,23 @@ _GENERAL_AST = (_ALL,
     'VP',
     'SgP',
    ),
-   (_ANY, (_ALL, 5, 'SgsP'))
+   (_ANY, (_ALL, _LEX_CONJ, 'SgsP'))
   )
  ),
  (_ANY, 'CgP'),
  (_ANY, 'AaP'),
- (_ANY, 16)
+ (_ANY, _LEX_INTJ)
 ) #: The AST that describes standard Hymmnos.
 
 _PASTALIA_AST = (_ALL,
- (_ANY, 5, 16, 6),
+ (_ANY, _LEX_CONJ, _LEX_INTJ, _LEX_PREP),
  (_ONE,
-  (_ALL, 'NsP', 5, 'SpP', 'EVP'),
+  (_ALL, 'NsP', _LEX_CONJ, 'SpP', 'EVP'),
   (_ALL,
    'SevmP',
    (_ANY,
     (_ONE,
-     (_ALL, 5, 'SevP'),
+     (_ALL, _LEX_CONJ, 'SevP'),
      'VP',
      'EVP'
     )
@@ -81,64 +109,64 @@ _PASTALIA_AST = (_ALL,
     (_ANY, 'SpP')
    ),
    (_ANY, (_ONE, 'EVP', 'VP')),
-   (_ANY, (_ALL, 5, 'SevP'))
+   (_ANY, (_ALL, _LEX_CONJ, 'SevP'))
   ),
   (_ALL,
-   15,
+   _LEX_PRON,
    'EVP'
   )
  ),
  (_ANY, 'CpP'),
  (_ANY, 'AaP'), 
- (_ANY, 16)
+ (_ANY, _LEX_INTJ)
 ) #: The AST that describes Pastalia Hymmnos.
 
 _AST_FRAGMENTS = {
  'AaP': (_ALL,
-  (_ONE, 3, 8),
+  (_ONE, _LEX_ADV, _LEX_ADJ),
   (_ANY, 'AalP')
  ),
  'AalP': (_ALL,
-  (_ONE, 3, 8),
+  (_ONE, _LEX_ADV, _LEX_ADJ),
   (_ANY, 'AalP')
  ),
  'AavP': (_ALL,
-  3,
+  _LEX_ADV,
   (_ANY, 'AavlP')
  ),
  'AavlP': (_ALL,
-  3,
+  _LEX_ADV,
   (_ANY, 'AavlP')
  ),
  'AnP': (_ALL,
-  (_ONE, 8, 3, 15),
+  (_ONE, _LEX_ADJ, _LEX_ADV, _LEX_PRON),
   (_ANY, 'AnlP'),
-  (_ANY, (_ALL, 5, 'AnP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AnP'))
  ),
  'AnlP': (_ALL,
-  (_ONE, 8, 3),
+  (_ONE, _LEX_ADJ, _LEX_ADV),
   (_ANY, 'AnlP'),
-  (_ANY, (_ALL, 5, 'AnP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AnP'))
  ),
  'AnpP': (_ALL,
-  (_ONE, 8, 3),
+  (_ONE, _LEX_ADJ, _LEX_ADV),
   (_ANY, 'AnplP'),
-  (_ANY, (_ALL, 5, 'AnpP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AnpP'))
  ),
  'AnplP': (_ALL,
-  (_ONE, 8, 3),
+  (_ONE, _LEX_ADJ, _LEX_ADV),
   (_ANY, 'AnplP'),
-  (_ANY, (_ALL, 5, 'AnpP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AnpP'))
  ),
  'AvP': (_ALL,
-  (_ONE, 8, 3, 15),
+  (_ONE, _LEX_ADJ, _LEX_ADV, _LEX_PRON),
   (_ANY, 'AvlP'),
-  (_ANY, (_ALL, 5, 'AvP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AvP'))
  ),
  'AvlP': (_ALL,
-  (_ONE, 8, 3),
+  (_ONE, _LEX_ADJ, _LEX_ADV),
   (_ANY, 'AvlP'),
-  (_ANY, (_ALL, 5, 'AvP'))
+  (_ANY, (_ALL, _LEX_CONJ, 'AvP'))
  ),
  'CgP': (_ONE,
   'NP',
@@ -156,15 +184,15 @@ _AST_FRAGMENTS = {
    (_ANY, 'CpP')
   )
  ),
- 'ESP': (_ALL, 14, 7, 13),
+ 'ESP': (_ALL, _LEX_ESi, _LEX_ESii, _LEX_ESiii),
  'EVNP': (_ALL,
-  (_ANY, 15),
+  (_ANY, _LEX_PRON),
   (_ANY, 'AvP'),
-  1,
+  _LEX_EV,
   (_ANY, 'AavP'),
   (_ANY,
    (_ALL,
-    (_ANY, (_ONE, 6, 12)),
+    (_ANY, (_ONE, _LEX_PREP, _LEX_PRT)),
     (_ONE,
      (_ONE,
       (_ALL, 'TP', 'TP'),
@@ -178,23 +206,23 @@ _AST_FRAGMENTS = {
   ),
  ),
  'EVOP': (_ALL,
-  'x.$6',
+  'x.$%i' % (_DLCT_PASTALIE),
   (_ONE,
    (_ALL,
-    (_ANY, 'rre$1'),
+    (_ANY, 'rre$%i' % (_DLCT_CENTRAL)),
     (_ONE,
-     15,
-     (_ALL, 1, (_ANY, 'AavP'))
+     _LEX_PRON,
+     (_ALL, _LEX_EV, (_ANY, 'AavP'))
     )
    ),
-   (_ALL, 'rre$1', 'NP')
+   (_ALL, 'rre$%i' % (_DLCT_CENTRAL), 'NP')
   ),
   'EVP'
  ),
  'EVP': (_ALL,
-  (_ANY, 15),
+  (_ANY, _LEX_PRON),
   (_ANY, 'AvP'),
-  1,
+  _LEX_EV,
   (_ANY, (_ONE, 'AavP', 'SevP')),
   (_ANY,
    (_ONE,
@@ -211,23 +239,36 @@ _AST_FRAGMENTS = {
   (_ANY,
    'AavP',
    (_ONE,
-    (_ALL, 5, (_ONE, 'VP', 'EVP')),
+    (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP')),
     'PP'
    )
   ),
  ),
  'EVhP': (_ALL,
-  1,
+  _LEX_EV,
   'TP',
   (_ANY, 'AavP')
  ),
  'EVscP': (_ALL,
-  1,
+  _LEX_EV,
   (_ANY, 'AavP'),
-  (_ANY, (_ONE, 'tes$1', 'ut$6', 'anw$5', 'dn$6', 'du$6', 'tie$6', 'tou$1', 'ween$1', 'won$1', 'elle$1')),
+  (_ANY,
+   (_ONE,
+    'tes$%i' % (_DLCT_CENTRAL),
+    'ut$%i' % (_DLCT_CENTRAL),
+    'anw$%i' % (_DLCT_METAFALSS),
+    'dn$%i' % (_DLCT_PASTALIE),
+    'du$%i' % (_DLCT_PASTALIE),
+    'tie$%i' % (_DLCT_PASTALIE),
+    'tou$%i' % (_DLCT_CENTRAL),
+    'ween$%i' % (_DLCT_CENTRAL),
+    'won$%i' % (_DLCT_CENTRAL),
+    'elle$%i' % (_DLCT_CENTRAL)
+   )
+  ),
   'NsP',
   (_ANY,
-   (_ALL, 5, (_ONE, 'VP', 'EVP'))
+   (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP'))
   )
  ),
  'EVsclP': (_ALL,
@@ -237,43 +278,85 @@ _AST_FRAGMENTS = {
  'NP': (_ALL,
   (_ANY, 'AnP'),
   (_ONE,
-   (_ALL, 4, 'NP'),
-   4,
+   (_ALL, _LEX_N, 'NP'),
+   _LEX_N,
    'PP'
   ),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NP'))
+  (_ANY,
+   (_ALL,
+    (_ONE,
+     _LEX_CONJ,
+     'oz$%i' % (_DLCT_CENTRAL),
+     'ween$%i' % (_DLCT_CENTRAL),
+     'won$%i' % (_DLCT_CENTRAL),
+     'elle$%i' % (_DLCT_CENTRAL)
+    ),
+    'NP'
+   )
+  )
  ),
  'NsP': (_ALL,
   (_ANY, 'AnP'),
   (_ONE,
-   (_ALL, 4, 'NsP'),
-   4
+   (_ALL, _LEX_N, 'NsP'),
+   _LEX_N
   ),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NsP'))
+  (_ANY,
+   (_ALL,
+    (_ONE,
+     _LEX_CONJ,
+     'oz$%i' % (_DLCT_CENTRAL),
+     'ween$%i' % (_DLCT_CENTRAL),
+     'won$%i' % (_DLCT_CENTRAL),
+     'elle$%i' % (_DLCT_CENTRAL)
+    ),
+    'NsP'
+   )
+  )
  ),
  'NtP': (_ALL,
   (_ANY, 'AnP'),
-  4,
+  _LEX_N,
   (_ANY, 'NtP'),
-  (_ANY, (_ALL, (_ONE, 5, 'oz$1', 'ween$1', 'won$1', 'elle$1'), 'NtP'))
+  (_ANY,
+   (_ALL,
+    (_ONE,
+     _LEX_CONJ,
+     'oz$%i' % (_DLCT_CENTRAL),
+     'ween$%i' % (_DLCT_CENTRAL),
+     'won$%i' % (_DLCT_CENTRAL),
+     'elle$%i' % (_DLCT_CENTRAL)
+    ),
+    'NtP'
+   )
+  )
  ),
- 'PP': (_ALL, (_ONE, 6, 12), 'NP'),
+ 'PP': (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
  'SevP': (_ALL,
   (_ONE,
    (_ALL,
-    (_ANY, (_ALL, (_ANY, 'x.$6'), 'rre$1')),
+    (_ANY,
+     (_ALL,
+      (_ANY, 'x.$%i' % (_DLCT_PASTALIE)),
+      'rre$%i' % (_DLCT_CENTRAL)
+     )
+    ),
     (_ONE,
-     (_ALL, (_ANY, 'AnpP'), 15),
-     (_ALL, 1, (_ANY, 'AavP'))
+     (_ALL, (_ANY, 'AnpP'), _LEX_PRON),
+     (_ALL, _LEX_EV, (_ANY, 'AavP'))
     )
    ),
    (_ALL, 'rre$1', 'NsP')
   )
  ),
- 'SevnP': (_ALL, 'x.$6', 'rre$1', 'NsP'),
+ 'SevnP': (_ALL,
+  'x.$%i' % (_DLCT_PASTALIE),
+  'rre$%i' % (_DLCT_CENTRAL),
+  'NsP'
+ ),
  'SevmP': (_ALL,
-  'x.$6',
-  'rre$1',
+  'x.$%i' % (_DLCT_PASTALIE),
+  'rre$%i' % (_DLCT_CENTRAL),
   (_ONE,
    (_ALL,
     'EVscP',
@@ -284,41 +367,41 @@ _AST_FRAGMENTS = {
   )
  ),
  'SgP': (_ALL,
-  (_ANY, 'rre$1'),
+  (_ANY, 'rre$%i' % (_DLCT_CENTRAL)),
   (_ONE,
-   (_ALL, (_ANY, 'AnpP'), 15),
+   (_ALL, (_ANY, 'AnpP'), _LEX_PRON),
    'NsP'
   )
  ),
  'SgsP': (_ALL,
-  'rre$1',
+  'rre$%i' % (_DLCT_CENTRAL),
   (_ONE,
-   (_ALL, (_ANY, 'AnpP'), 15),
+   (_ALL, (_ANY, 'AnpP'), _LEX_PRON),
    'NsP'
   )
  ),
  'SpP': (_ALL,
-  'x.$6',
+  'x.$%i' % (_DLCT_PASTALIE),
   (_ONE,
-   (_ALL, 'rre$1', 'NsP'),
+   (_ALL, 'rre$%i' % (_DLCT_CENTRAL), 'NsP'),
    (_ALL,
-    (_ANY, 'rre$1'),
+    (_ANY, 'rre$%i' % (_DLCT_CENTRAL)),
     (_ONE,
      'NsP',
-     15,
-     (_ALL, 1, (_ANY, 'AavP'))
+     _LEX_PRON,
+     (_ALL, _LEX_EV, (_ANY, 'AavP'))
     )
    )
   )
  ),
  'TP': (_ALL,
-  (_ANY, (_ONE, 12, 6, 'en$1')),
+  (_ANY, (_ONE, _LEX_PRT, _LEX_PREP, 'en$1')),
   'NtP'
  ),
  'VP': (_ALL,
-  (_ANY, 15),
+  (_ANY, _LEX_PRON),
   (_ANY, 'AvP'),
-  2,
+  _LEX_V,
   (_ANY, 'AavP'),
   (_ANY,
    (_ONE,
@@ -329,21 +412,19 @@ _AST_FRAGMENTS = {
   ),
   (_ANY,
    'AaP',
-   (_ALL, 5, (_ONE, 'VP', 'EVP'))
+   (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP'))
   )
  ),
  'VsP': (_ALL,
   (_ANY, 'AvP'),
-  2,
+  _LEX_V,
   (_ANY, 'AavP'),
   (_ANY, 'NsP'),
   (_ANY,
-   (_ALL, 5, 'VsP')
+   (_ALL, _LEX_CONJ, 'VsP')
   )
  ),
 } #: Symbolic AST mappings and descriptions.
-
-_EXACT_MATCH_REGEXP = re.compile(r"^[a-z.]+\$\d+$") #: A regular expression used to determine whether an AST element is an exact-match specifier.
 
 _PHRASE_REDUCTION = {
  'AaP': 'AP',
@@ -406,76 +487,76 @@ _PHRASE_COLOURS = {
 } #: Mappings from symbolic descriptions to colour keys.
 
 _SYNTAX_CLASS = {
- 1: 'E.V.',
- 2: 'v.',
- 3: 'adv.',
- 4: 'n.',
- 5: 'conj.',
- 6: 'prep.',
- 7: 'E.S. (II)',
- 8: 'adj.',
- 12: 'prt.',
- 13: 'E.S. (III)',
- 14: 'E.S. (I)',
- 15: 'pron.',
- 16: 'intj.',
- 18: 'cnstr.',
+ _LEX_ADJ: 'adj.',
+ _LEX_ADV: 'adv.',
+ _LEX_CNSTR: 'cnstr.',
+ _LEX_CONJ: 'conj.',
+ _LEX_ESi: 'E.S. (I)',
+ _LEX_ESii: 'E.S. (II)',
+ _LEX_ESiii: 'E.S. (III)',
+ _LEX_EV: 'E.V.',
+ _LEX_INTJ: 'intj.',
+ _LEX_N: 'n.',
+ _LEX_PREP: 'prep.',
+ _LEX_PRON: 'pron.',
+ _LEX_PRT: 'prt.',
+ _LEX_V: 'v.',
 } #: Mappings from lexical class constants to human-readable names.
 
 _SYNTAX_CLASS_FULL = {
- 1: 'Emotion Verb',
- 2: 'verb',
- 3: 'adverb',
- 4: 'noun',
- 5: 'conjunction',
- 6: 'preposition',
- 7: 'Emotion Sound (II)',
- 8: 'adjective',
- 12: 'particle',
- 13: 'Emotion Sound (III)',
- 14: 'Emotion Sound (I)',
- 15: 'pronoun',
- 16: 'interjection',
- 18: 'language construct',
+ _LEX_ADJ: 'adjective',
+ _LEX_ADV: 'adverb',
+ _LEX_CNSTR: 'language construct',
+ _LEX_CONJ: 'conjunction',
+ _LEX_ESi: 'Emotion Sound (I)',
+ _LEX_ESii: 'Emotion Sound (II)',
+ _LEX_ESiii: 'Emotion Sound (III)',
+ _LEX_EV: 'Emotion Verb',
+ _LEX_INTJ: 'interjection',
+ _LEX_N: 'noun',
+ _LEX_PREP: 'preposition',
+ _LEX_PRON: 'pronoun',
+ _LEX_PRT: 'particle',
+ _LEX_V: 'verb',
 } #: Mappings from lexical class constants to expanded human-readable names.
 
 _SYNTAX_MAPPING = {
- 1: (1,),
- 2: (2,),
- 3: (3,),
- 4: (4,),
- 5: (5,),
- 6: (6,),
- 7: (7, 8), #Doubles as adjective.
- 8: (8, 7), #Doubles as E.S.(II).
- 9: (4, 2),
- 10: (8, 4, 7), #Doubles as E.S.(II).
- 11: (8, 2, 7), #Doubles as E.S.(II).
- 12: (12,),
- 13: (13,),
- 14: (14,),
- 15: (4, 15,),
- 16: (3, 16),
- 17: (6, 12),
- 18: (18,),
- 19: (3, 4),
- 20: (3, 8, 7), #Doubles as E.S.(II).
- 21: (5, 6),
- 22: (2, 12),
- 23: (3, 12),
- 24: (4, 6),
- 25: (3, 6),
-} #: Mappings from lexical class constants to their constituent members.
+ 1: (_LEX_EV,),
+ 2: (_LEX_V,),
+ 3: (_LEX_ADV,),
+ 4: (_LEX_N,),
+ 5: (_LEX_CONJ,),
+ 6: (_LEX_PREP,),
+ 7: (_LEX_ESii, _LEX_ADJ), #Doubles as adjective.
+ 8: (_LEX_ADJ, _LEX_ESii), #Doubles as E.S.(II).
+ 9: (_LEX_N, _LEX_V),
+ 10: (_LEX_ADJ, _LEX_N, _LEX_ESii), #Doubles as E.S.(II).
+ 11: (_LEX_ADJ, _LEX_V, _LEX_ESii), #Doubles as E.S.(II).
+ 12: (_LEX_PRT,),
+ 13: (_LEX_ESiii,),
+ 14: (_LEX_ESi,),
+ 15: (_LEX_PRON, _LEX_N,),
+ 16: (_LEX_ADV, _LEX_INTJ),
+ 17: (_LEX_PREP, _LEX_PRT),
+ 18: (_LEX_CNSTR,),
+ 19: (_LEX_ADV, _LEX_N),
+ 20: (_LEX_ADV, _LEX_ADJ, _LEX_ESii), #Doubles as E.S.(II).
+ 21: (_LEX_CONJ, _LEX_PREP),
+ 22: (_LEX_V, _LEX_PRT),
+ 23: (_LEX_ADV, _LEX_PRT),
+ 24: (_LEX_N, _LEX_PREP),
+ 25: (_LEX_ADV, _LEX_PREP),
+} #: Mappings from lexical class database values to their constituent lexical class constants.
 
 _DIALECT = {
- 0: 'Unknown',
- 1: 'Central Standard Note',
- 2: 'Cult Ciel Note',
- 3: 'Cluster Note',
- 4: 'Alpha Note',
- 5: 'Metafalss Note',
- 6: 'New Testament of Pastalie',
- 7: 'Alpha Note (EOLIA)',
+ _DLCT_UNKNOWN: 'Unknown',
+ _DLCT_CENTRAL: 'Central Standard Note',
+ _DLCT_CULT_CIEL: 'Cult Ciel Note',
+ _DLCT_CLUSTER: 'Cluster Note',
+ _DLCT_ALPHA: 'Alpha Note',
+ _DLCT_METAFALSS: 'Metafalss Note',
+ _DLCT_PASTALIE: 'New Testament of Pastalie',
+ _DLCT_ALPHA_EOLIA: 'Alpha Note (EOLIA)',
 } #: Mappings from dialect constants to human-readable names.
 
 _COLLIDING_EMOTION_VERBS = (
@@ -581,7 +662,7 @@ class _Word(_SyntaxTree):
 		node.appendChild(meaning_node)
 		
 		dialect_node = document.createElement("dialect")
-		dialect_node.appendChild(document.createTextNode(_DIALECT[self._dialect % 50]))
+		dialect_node.appendChild(document.createTextNode(_DIALECT[self._dialect % _DIALECT_SHIFT]))
 		node.appendChild(dialect_node)
 		
 	def countLeaves(self):
@@ -682,7 +763,7 @@ def _digestTokens(tokens, db_con):
 			
 			pastalia_entry = 0
 			for (i, l_e) in enumerate(lexicon_entry):
-				if l_e[4] % 50 == 6: #Favour Pastalian forms.
+				if l_e[4] % _DIALECT_SHIFT == _DLCT_PASTALIE: #Favour Pastalian forms.
 					pastalia_entry = i
 			#Duplicate the best candidate, mark it as a noun, and use it to replace the list.
 			new_entry = lexicon_entry[i][:]
@@ -708,18 +789,19 @@ def _processAST(words, ast, phrase=None):
 			else:
 				relevant_classes = None
 				if phrase in ('AnP', 'AnlP'):
-					relevant_classes = (4,)
+					relevant_classes = (_LEX_N,)
 				else:
-					relevant_classes = (1, 2)
+					relevant_classes = (_LEX_EV, _LEX_V)
+				filter_classes = (_LEX_ADV, _LEX_ADJ)
 				following_classes = [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[1][0]]
 				for classes in [_SYNTAX_MAPPING[c] for (w, m, k, c, d, e, s) in words[0][0]]:
-					if len(classes) > 1 and [None for c in classes if c in (3, 6, 8)] and [None for c in classes if c in relevant_classes]: #Variable, stop-on-able item.
+					if len(classes) > 1 and [None for c in classes if c in filter_classes] and [None for c in classes if c in relevant_classes]: #Variable, stop-on-able item.
 						for f_classes in following_classes:
 							if not [None for c in f_classes if c in relevant_classes]: #Not AP-eligible.
 								return None
 		if phrase in ('AaP', 'AalP'):
 			word = words[0][0][0]
-			if "%s$%i" % (word[0], word[4]) in ('re$1', 'na$1', 'zz$6'): #These are prefixes only.
+			if "%s$%i" % (word[0], word[4]) in ('re$%i' % (_DLCT_CENTRAL), 'na$%i' % (_DLCT_CENTRAL), 'zz$%i' % (_DLCT_PASTALIE)): #These are prefixes only.
 				return None
 				
 	#Process AST normally.
@@ -802,7 +884,7 @@ def _processWord_exact(words, target):
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if "%s$%i" % (word.lower(), dialect % 50) == target:
+		if "%s$%i" % (word.lower(), dialect % _DIALECT_SHIFT) == target:
 			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
@@ -842,7 +924,7 @@ def _renderLeaf(leaf):
 			<div class="phrase-word-meaning">%s</div>
 		</div>
 	""" % (
-	 _DIALECT[leaf.getDialect() % 50],
+	 _DIALECT[leaf.getDialect() % _DIALECT_SHIFT],
 	 leaf.getClass(),
 	 """<a href="javascript:popUpWord('%s', %i)" style="color: white;">%s</a>""" % (
 	  base_word, leaf.getDialect(), leaf.getWord(True)
