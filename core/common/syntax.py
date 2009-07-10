@@ -234,7 +234,7 @@ _AST_FRAGMENTS = {
    4,
    'PP'
   ),
-  (_ANY, (_ALL, 5, 'NP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NP'))
  ),
  'NsP': (_ALL,
   (_ANY, 'AnP'),
@@ -242,13 +242,13 @@ _AST_FRAGMENTS = {
    (_ALL, 4, 'NsP'),
    4
   ),
-  (_ANY, (_ALL, 5, 'NsP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NsP'))
  ),
  'NtP': (_ALL,
   (_ANY, 'AnP'),
   4,
   (_ANY, 'NtP'),
-  (_ANY, (_ALL, 5, 'NtP'))
+  (_ANY, (_ALL, (_ONE, 5, 'oz$1'), 'NtP'))
  ),
  'PP': (_ALL, (_ONE, 6, 12), 'NP'),
  'SevP': (_ALL,
