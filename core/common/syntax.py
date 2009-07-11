@@ -346,7 +346,7 @@ _AST_FRAGMENTS = {
      (_ALL, _LEX_EV, (_ANY, 'AavP'))
     )
    ),
-   (_ALL, 'rre$1', 'NsP')
+   (_ALL, 'rre$%i' % (_DLCT_CENTRAL), 'NsP')
   )
  ),
  'SevnP': (_ALL,
