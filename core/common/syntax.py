@@ -331,10 +331,7 @@ _AST_FRAGMENTS = {
    )
   )
  ),
- 'PP': (_ONE,
-  (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
-  'VpP'
- ),
+ 'PP': (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
  'SevP': (_ALL,
   (_ONE,
    (_ALL,
@@ -409,21 +406,13 @@ _AST_FRAGMENTS = {
   (_ANY,
    (_ONE,
     (_ALL, 'TP', 'TP'),
-    (_ONE, 'PP', 'TP')
-   )
+    'TP'
+   ),
+   'PP'
   ),
   (_ANY,
    'AaP',
    (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP'))
-  )
- ),
- 'VpP': (_ALL,
-  _LEX_PRON,
-  (_ANY, 'AvP'),
-  _LEX_V,
-  (_ANY, 'AavP'),
-  (_ANY,
-   (_ALL, _LEX_CONJ, 'VsP')
   )
  ),
  'VsP': (_ALL,
@@ -462,7 +451,6 @@ _PHRASE_REDUCTION = {
  'SpP': 'SP',
  'TP': 'TP',
  'VP': 'VP',
- 'VpP': 'VP',
  'VsP': 'VP',
 } #: Mappings from phrase-notation to symbolic descriptions.
 
