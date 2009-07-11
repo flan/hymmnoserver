@@ -332,8 +332,8 @@ _AST_FRAGMENTS = {
   )
  ),
  'PP': (_ONE,
-  'VpP',
-  (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP')
+  (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
+  'VpP'
  ),
  'SevP': (_ALL,
   (_ONE,
@@ -409,12 +409,11 @@ _AST_FRAGMENTS = {
   (_ANY,
    (_ONE,
     (_ALL, 'TP', 'TP'),
-    'TP'
+    (_ONE, 'PP', 'TP')
    )
   ),
   (_ANY,
    'AaP',
-   'PP',
    (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP'))
   )
  ),
