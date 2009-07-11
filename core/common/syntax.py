@@ -331,7 +331,10 @@ _AST_FRAGMENTS = {
    )
   )
  ),
- 'PP': (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
+ 'PP': (_ONE,
+  (_ALL, (_ONE, _LEX_PREP, _LEX_PRT), 'NP'),
+  (_ALL, 15, 'VpP')
+ ),
  'SevP': (_ALL,
   (_ONE,
    (_ALL,
@@ -407,12 +410,20 @@ _AST_FRAGMENTS = {
    (_ONE,
     (_ALL, 'TP', 'TP'),
     'TP'
-   ),
-   'PP'
+   )
   ),
   (_ANY,
    'AaP',
+   'PP',
    (_ALL, _LEX_CONJ, (_ONE, 'VP', 'EVP'))
+  )
+ ),
+ 'VpP': (_ALL,
+  (_ANY, 'AvP'),
+  _LEX_V,
+  (_ANY, 'AavP'),
+  (_ANY,
+   (_ALL, _LEX_CONJ, 'VsP')
   )
  ),
  'VsP': (_ALL,
