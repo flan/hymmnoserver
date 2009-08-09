@@ -54,7 +54,7 @@ while True:
 	print "5) 古メタファルス律（Ⅰ紀神聖語） | Metafalss"
 	print "6) 新約パスタリエ（パスタリア成語） | Pastalie"
 	print "7) アルファ律（オリジンスペル：EOLIA属） | Alpha (EOLIA)"
-	print "8) Unknown"
+	print "0) Unknown"
 	print "Dialect (add 50 to mark as unofficial):"
 	school = int(raw_input())
 	
