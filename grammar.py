@@ -32,10 +32,12 @@ def _renderMicroTransformation(component):
 	"""
 	link = "./search.php?" + urllib.urlencode({'word': component})
 	line = cgi.escape(component, True)
-	req.write("""<td class="transformation">""")
-	req.write("""<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
-	req.write("""<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))
-	req.write("""</td>""")
+	print """
+		<td class="transformation">
+			<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>
+			<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>
+		</td>
+	""" % (link, line, link, line)
 	
 def _renderMacroTransformation(phrase, components, unknown):
 	"""
@@ -48,31 +50,57 @@ def _renderMacroTransformation(phrase, components, unknown):
 	@type unknown: sequence
 	@param unknown: A collection of all words not recognized in the input.
 	"""
-	req.write("""<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">""")
-	req.write("""<tr><td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">""")
-	req.write("""<div style="font-family: hymmnos; font-size: 18pt;">%s</div>""" % (phrase))
-	req.write("""<div style="font-size: 12pt;">%s</div>""" % (phrase))
-	req.write("""</td></tr>""")
+	print """
+		<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">
+			<tr>
+				<td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">
+					<div style="font-family: hymmnos; font-size: 18pt;">%s</div>
+					<div style="font-size: 12pt;">%s</div>
+				</td>
+			</tr>
+	""" % (phrase, phrase)
 	for (i, lines) in enumerate(components):
-		req.write("""<tr><td class="transformation-id">%i</td>""" % (i))
+		print """
+			<tr>
+				<td class="transformation-id">%i</td>
+		""" % (i)
 		if len(lines) > 1:
-			req.write("""<td style="background: #808080;"><table style="width: 100%; border-spacing: 1px;">""")
+			print """
+				<td style="background: #808080;">
+					<table style="width: 100%; border-spacing: 1px;">
+			"""
 			for (j, line) in enumerate(lines):
-				req.write("""<tr><td class="transformation-id">%i</td>""" % (j))
+				print """
+						<tr>
+							<td class="transformation-id">%i</td>
+				""" % (j)
 				_renderMicroTransformation(line)
-				req.write("""</td></tr>""")
-			req.write("""</table></td>""")
+				print """
+						</tr>
+				"""
+			print """
+					</table>
+				</td>
+			"""
 		else:
 			_renderMicroTransformation(lines[0])
-		req.write("""</tr>""")
-	if(unknown):
+		print """
+			</tr>
+		"""
+	if unknown:
 		plural = ''
 		if len(unknown) > 1:
 			plural = 's'
-		req.write("""<tr><td style="color: white; background: black;" colspan="2">""")
-		req.write("""<div style="font-size: 10pt;">Unknown word%s: %s</div>""" % (plural, cgi.escape(", ".join(unknown), True)))
-		req.write("""</td></tr>""")
-	req.write("""</table>""")
+		print """
+			<tr>
+				<td style="color: white; background: black;" colspan="2">
+					<div style="font-size: 10pt;">Unknown word%s: %s</div>
+				</td>
+			</tr>
+		""" % (plural, cgi.escape(", ".join(unknown), True))
+	print """
+		</table>
+	"""
 	
 def _renderFailure(message):
 	"""
@@ -81,7 +109,7 @@ def _renderFailure(message):
 	@type message: basestring
 	@param message: A description of the error that occurred.
 	"""
-	req.write("""
+	print """
 		<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; text-align: center; background: #D3D3D3;">
