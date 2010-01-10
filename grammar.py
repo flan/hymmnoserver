@@ -195,20 +195,20 @@ else:
 	lines = [line for line in [l.strip() for l in query.splitlines()] if line]
 	try:
 		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
-			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
+			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), db_con)
 			_renderMacroTransformation(cgi.escape(query, True), lines_list, unknown)
 		except transformations.FormatError:
 			lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
 			if len(lines) > 1:
 				try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
-					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)
+					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, db_con)
 					_renderMacroTransformation('<br/>'.join([cgi.escape(line) for line in new_lines]), processed, unknown)
 				except transformations.FormatError: #Try to encode as a Binasphere phrase.
-					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, _db_con)
+					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, db_con)
 					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
 			else: #Attempt syntax processing.
 				try:
-					(tree, display_string, result) = syntax.processSyntax(lines[0], _db_con)
+					(tree, display_string, result) = syntax.processSyntax(lines[0], db_con)
 					if result is None:
 						_renderFailure("unable to validate sentence; it may not be complete")
 					else:
