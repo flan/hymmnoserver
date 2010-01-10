@@ -30,7 +30,7 @@
 			<a href="./browse.php" style="display: block; text-decoration: none; color: #D92F0E;">Full Hymmnos lexicon</a>
 		</td>
 		<td class="header-links" style="text-align: center; width: 50%;">
-			<a href="./grammar.psp" style="display: block; text-decoration: none; color: #D92F0E;">Advanced grammar resources</a>
+			<a href="./grammar.py" style="display: block; text-decoration: none; color: #D92F0E;">Advanced grammar resources</a>
 		</td>
 	</tr>
 </table>

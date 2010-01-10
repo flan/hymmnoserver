@@ -200,7 +200,7 @@ else:
 		
 print """
 <hr/>
-<form method="get" action="/hymmnoserver/grammar.psp">
+<form method="get" action="/hymmnoserver/grammar.py">
 	<div>
 		<div style="text-align: center;">
 			<textarea name="query" id="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
