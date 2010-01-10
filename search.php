@@ -13,7 +13,7 @@
 		<div>
 			<?php
 				$query = '';
-				if(isset($_GET['word']){
+				if(isset($_GET['word'])){
 					$query = trim($_GET['word']);
 				}
 				if($query == ''){

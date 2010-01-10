@@ -14,7 +14,7 @@
 			<?php
 				#Determine the nature of the requested display; default if unintelligible.
 				$page = '';
-				if(isset($_GET['page']){
+				if(isset($_GET['page'])){
 					$page = trim($_GET['page']);
 				}
 				if($page == ''){//Assume 'a' by default.

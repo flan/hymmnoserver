@@ -11,7 +11,7 @@
 	<body style="width: 500px;">
 		<?php
 			$word = '';
-			if(isset($_GET['word']){
+			if(isset($_GET['word'])){
 				$word = trim($_GET['word']);
 			}
 			if($word == ''){
@@ -19,7 +19,7 @@
 				exit();
 			}
 			$dialect = '';
-			if(isset($_GET['dialect']){
+			if(isset($_GET['dialect'])){
 				$dialect = trim($_GET['dialect']);
 			}
 			if($dialect == '' || !is_numeric($dialect)){
