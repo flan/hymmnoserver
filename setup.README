@@ -3,6 +3,7 @@ the following:
 - A webserver that understands .htaccess and supports PHP and Python via CGI
 - PHP 5 (or higher)
 - Python 2.4 (or higher)
+- MySQLdb for Python
 - MySQL 5 (or higher)
 - Subversion client 1.4 (or higher)
 
@@ -27,7 +28,9 @@ Setup should only take a few minutes. A brief overview of the process follows:
   - mysql <database_name> -u <writing_user> -p < database/hymmnoserver.mysql
 
 5 Ensure that the path to the Hymmnoserver code is configured, in the
-  webserver's global settings or .htaccess, to support PHP and Python-as-CGI
+  webserver's global settings, to allow .htaccess support
+  - Adding .htaccess support is a simple as specifying 'AllowOverride All'
+  - Restart your webserver after any changes
 
 That's it. You've got a fully functional Hymmnoserver ready to go.
 
