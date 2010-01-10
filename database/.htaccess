@@ -1,0 +1,5 @@
+<FilesMatch "">
+	Order Allow,Deny
+	Deny from All
+</FilesMatch>
+Options All -Indexes
