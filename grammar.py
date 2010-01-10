@@ -168,7 +168,7 @@ else:
 	try:
 		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
-			_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
+			_renderMacroTransformation(cgi.escape(query, True), lines_list, unknown)
 		except transformations.FormatError:
 			lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
 			if len(lines) > 1:
@@ -202,7 +202,7 @@ print """
 <form method="get" action="/hymmnoserver/grammar.py">
 	<div>
 		<div style="text-align: center;">
-			<textarea name="query" id="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
+			<textarea name="query" id="query" rows="5" cols="80">%s</textarea>
 		</div>
 		<div style="text-align: right;">
 			<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
@@ -211,7 +211,7 @@ print """
 		</div>
 	</div>
 </form>
-"""
+""" % (cgi.escape(query))
 
 footer = open("common/footer-py.xml", 'r')
 print footer.read()
