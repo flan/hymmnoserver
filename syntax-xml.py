@@ -1,4 +1,4 @@
-#!/bin/env python -OO
+#!/bin/env python
 # -*- coding: utf-8 -*-
 """
 Hymmnoserver script: syntax-xml
