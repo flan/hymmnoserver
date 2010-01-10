@@ -71,3 +71,4 @@
 		echo '<span style="color: red; font-weight: bold;">No matches found</span>';
 	}
 ?>
+

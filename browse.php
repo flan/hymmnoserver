@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<?php include 'common/constants.xml'; ?>
+<?php include 'common/constants.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Main</title>
@@ -13,12 +13,13 @@
 		<div style="font-size: 0.90em; text-align: center;">
 			<?php
 				#Determine the nature of the requested display; default if unintelligible.
-				$page = $_GET['page'];
-				if($page == NULL || trim($page) == ''){//Assume 'a' by default.
+				$page = '';
+				if(isset($_GET['page']){
+					$page = trim($_GET['page']);
+				}
+				if($page == ''){//Assume 'a' by default.
 					$page = 'a';
 				}else{
-					$page = trim($page);
-					
 					if(is_numeric($page)){
 						$page = intval($page);
 						if($page == 0){//0 means any numeric/special entity.
@@ -39,7 +40,7 @@
 				$characters = range('a', 'z');
 				array_push($characters, '0');
 				foreach($characters as $character){
-					echo "<a href=\"/hymmnoserver/browse.php?page=$character\">";
+					echo "<a href=\"./browse.php?page=$character\">";
 					if($character == $page){
 						echo "<span style=\"font-weight: bold; font-size: 1em;\">$character</span>";
 					}else{
@@ -61,7 +62,7 @@
 				 'prep.', 'pron.', 'prt.', 'v.'
 				) as $class){//Force an enumerable order from 1-14.
 					$i++;
-					echo "<a href=\"/hymmnoserver/browse.php?page=$i\">";
+					echo "<a href=\"./browse.php?page=$i\">";
 					if($i == $page){
 						echo "<span style=\"font-weight: bold; font-size: 1em;\">$class</span>";
 					}else{
@@ -79,7 +80,7 @@
 		<div>
 			<span style="color: red; font-size: 0.8em;">
 				<?php
-					require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
+					require 'secure/db.php';
 					if ($mysqli->connect_error) {
 						printf("Connection failed: %s.", mysqli_connect_error());
 						exit();

@@ -282,3 +282,4 @@
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>
+

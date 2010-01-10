@@ -25,7 +25,7 @@
 			</div>
 			<br/>
 			<div style="padding-left: 10px;">
-				<div class="subsection-title text-title-small">Neil Tallim (Red HamsterX, <a href="http://hamsterx.homelinux.org/wiki/">Puukusoft</a>)</div>
+				<div class="subsection-title text-title-small"><a href="http://uguu.ca/">Neil Tallim</a></div>
 				<ul class="basic-inline">
 					<li>Programming</li>
 					<li>Translation</li>
@@ -36,7 +36,7 @@
 				<br/>
 				<ul class="basic-inline">
 					<li>flan@synIRC</li>
-					<li>red.hamsterx [ta} gmail</li>
+					<li>red.hamsterx [{}] uguu.ca</li>
 				</ul>
 			</div>
 			<br/>

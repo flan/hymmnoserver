@@ -127,7 +127,7 @@
 			<p>
 				The grammar of the New Testament is dramatically different from that of other Hymmnos originating from the
 				First Era, so those interested in the Hymmnos language itself should learn
-				<a href="/hymmnoserver/grammar2.php">its specific grammar</a>, as well.
+				<a href="./grammar2.php">its specific grammar</a>, as well.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

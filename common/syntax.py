@@ -696,7 +696,7 @@ def renderResult_xhtml(tree, display_string):
 			</tr>
 			<tr>
 				<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
-					You may wish to <a href="/hymmnoserver/search.php?%s">translate this sentence word-for-word</a> or <a href="/hymmnoserver/syntax-xml.psp?%s">view it as XML</a>
+					You may wish to <a href="./search.php?%s">translate this sentence word-for-word</a> or <a href="./syntax-xml.py?%s">view it as XML</a>
 				</td>
 			</tr>
 		</table>

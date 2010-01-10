@@ -25,7 +25,6 @@ _EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS) #: A regexp fragment conta
 WORD_STRUCTURE_REGEXP = re.compile(r"^(%s)?(.+?)(_\w+)?$" % (EMOTION_VOWELS)) #: A regular expression that matches Pastalia-ized nouns.
 _EMOTION_WORDS_REGEXP = re.compile(r'^(%s)(\w+)$' % (EMOTION_VOWELS)) #: A regular expression that matches any Pastalia-ized word.
 
-_INIT_LOCK = threading.Lock() #: A lock used to prevent multiple simultaneous accesses to the Emotion Verb regexps while initializing.
 EMOTION_VERB_REGEXPS = None #: A collection of regular expressions that match all Emotion Verbs known to exist, plus the pure word forms and dialects.
 
 SYNTAX_CLASS_REV = {
@@ -66,15 +65,12 @@ DIALECT = {
 
 def initialiseEmotionVerbRegexps(db_con):
 	global EMOTION_VERB_REGEXPS
-	_INIT_LOCK.acquire()
-	try:
-		if not EMOTION_VERB_REGEXPS:
-			emotion_verbs = _getEmotionVerbs(db_con)
-			EMOTION_VERB_REGEXPS = tuple([(
-			 re.compile(r"^%s(eh|aye|za)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
-			 ev, d) for (ev, d) in emotion_verbs])
-	finally:
-		_INIT_LOCK.release()
+	
+	if not EMOTION_VERB_REGEXPS:
+		emotion_verbs = _getEmotionVerbs(db_con)
+		EMOTION_VERB_REGEXPS = tuple([(
+		 re.compile(r"^%s(eh|aye|za)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
+		 ev, d) for (ev, d) in emotion_verbs])
 		
 def readWord(word, words, db_con):
 	"""

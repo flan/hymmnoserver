@@ -12,14 +12,17 @@
 		<?php include 'common/header.xml'; ?>
 		<div>
 			<?php
-				$query = $_GET['word'];
-				if($query == NULL || trim($query) == ''){
+				$query = '';
+				if(isset($_GET['word']){
+					$query = trim($_GET['word']);
+				}
+				if($query == ''){
 					echo 'No search terms specified.';
 					exit();
 				}
 				$words = split("[\t ,]+", preg_replace('/,/', '', preg_replace('/\\s+\\.\\s+/', ' ', preg_replace('/^\\s*|[?!,:\'"\/\\\\]|\\.\\.+||\\s*\\.*\\s*$/', '', $query))));
 				
-				require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
+				require 'secure/db.php';
 				if ($mysqli->connect_error) {
 					printf("Connection failed: %s.", mysqli_connect_error());
 					exit();
@@ -37,3 +40,4 @@
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>
+

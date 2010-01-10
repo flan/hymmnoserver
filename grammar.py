@@ -1,4 +1,5 @@
 #!/bin/env python -OO
+# -*- coding: utf-8 -*-
 """
 Hymmnoserver script: grammar
 
@@ -29,7 +30,7 @@ def _renderMicroTransformation(component):
 	@type component: basestring
 	@param component: The Hymmnos data to display.
 	"""
-	link = "/hymmnoserver/search.php?" + urllib.urlencode({'word': component})
+	link = "./search.php?" + urllib.urlencode({'word': component})
 	line = cgi.escape(component, True)
 	req.write("""<td class="transformation">""")
 	req.write("""<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>""" % (link, line))

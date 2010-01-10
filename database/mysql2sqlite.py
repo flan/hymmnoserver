@@ -15,16 +15,17 @@ Legal
  
  (C) Neil Tallim, 2009
 """
-import MySQLdb
 import os
 import sqlite3
 import sys
+
+import _db
 
 #Kill the existing SQLite file, if any.
 if os.path.exists(sys.argv[1]):
 	os.remove(sys.argv[1])
 	
-mysql_db = MySQLdb.connect(host="localhost", user="username", passwd="password", db="database")
+mysql_db = _db.getConnection()
 mysql_cur = mysql_db.cursor()
 sqlite_db = sqlite3.connect(sys.argv[1])
 sqlite_cur = sqlite_db.cursor()
@@ -52,10 +53,10 @@ sqlite_cur.execute("""
 """)
 
 try:
-	mysql_cur.execute("SELECT * FROM hymmnos ORDER BY word ASC")
+	mysql_cur.execute("SELECT word, meaning_english, meaning_japanese, school, kana, romaji, description, class, syllables FROM hymmnos ORDER BY word ASC")
 	for (word, meaning_english, meaning_japanese, dialect, kana, romaji, description, syntax_class, syllables) in mysql_cur.fetchall():
 		sqlite_cur.execute(
-		 u"INSERT INTO hymmnos VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+		 u"INSERT INTO hymmnos (word, dialect, class, meaning_english, meaning_japanese, kana, romaji, description, syllables) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
 		 (word.decode('utf-8'), dialect, syntax_class, meaning_english.decode('utf-8'), meaning_japanese.decode('utf-8'), kana.decode('utf-8'), romaji.decode('utf-8'), description and description.decode('utf-8'), syllables.decode('utf-8'))
 		)
 except:
@@ -64,10 +65,10 @@ except:
 	exit()
 	
 try:
-	mysql_cur.execute("SELECT * FROM hymmnos_mapping ORDER BY source ASC, destination ASC")
+	mysql_cur.execute("SELECT source, destination, source_school, destination_school FROM hymmnos_mapping ORDER BY source ASC, destination ASC")
 	for (source, destination, source_dialect, destination_dialect) in mysql_cur.fetchall():
 		sqlite_cur.execute(
-		 u"INSERT INTO hymmnos_mapping VALUES (?, ?, ?, ?)",
+		 u"INSERT INTO hymmnos_mapping (source, destination, source_dialect, destination_dialect) VALUES (?, ?, ?, ?)",
 		 (source.decode('utf-8'), destination.decode('utf-8'), source_dialect, destination_dialect)
 		)
 except:
@@ -80,3 +81,4 @@ mysql_db.close()
 sqlite_cur.close()
 sqlite_db.commit()
 sqlite_db.close()
+

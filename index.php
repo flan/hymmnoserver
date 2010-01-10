@@ -25,7 +25,7 @@
 							Some features differ (for better or worse), and some details, such as examples, were intentionally rewritten
 							in a manner believed to make more sense to an English-speaking audience.<br/><br/>
 							If you note any problems, please let the appropriate maintainer know; see the
-							<a href="/hymmnoserver/credits.php">credits page</a> for details.
+							<a href="./credits.php">credits page</a> for details.
 						</p>
 						<noscript>
 							<p style="color: red;">
@@ -117,8 +117,8 @@
 						<table style="width: 100%; border-color: #001144; border-width: 1px; border-style: outset;">
 							<tr>
 								<td class="fontcell" style="text-align: center; style=width: 184px;">
-									<a href="/hymmnoserver/images/hymmnos.ttf" style="text-decoration: none; display: block;">
-										<img src="/hymmnoserver/images/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
+									<a href="./static/hymmnos.ttf" style="text-decoration: none; display: block;">
+										<img src="./static/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
 										<span style="color: white; font-weight: bold; margin-top: -10px;">
 											<span style="font-size: 9pt;">Download the Hymmnos</span><br/>
 											<span style="font-size: 8pt;">TrueType Font (v1.1)</span>
@@ -153,13 +153,13 @@
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
-										<li><a href="/hymmnoserver/introduction.php">Introduction</a></li>
-										<li><a href="/hymmnoserver/types.php">Hymmnos Types</a></li>
-										<li><a href="/hymmnoserver/dialects.php">Dialects</a></li>
-										<li><a href="/hymmnoserver/servers.php">Song Magic Servers</a></li>
-										<li><a href="/hymmnoserver/grammar.php">Grammar (Standard)</a></li>
-										<li><a href="/hymmnoserver/grammar2.php">Grammar (Pastalia)</a></li>
-										<li><a href="/hymmnoserver/credits.php">Credits</a></li>
+										<li><a href="./introduction.php">Introduction</a></li>
+										<li><a href="./types.php">Hymmnos Types</a></li>
+										<li><a href="./dialects.php">Dialects</a></li>
+										<li><a href="./servers.php">Song Magic Servers</a></li>
+										<li><a href="./grammar.php">Grammar (Standard)</a></li>
+										<li><a href="./grammar2.php">Grammar (Pastalia)</a></li>
+										<li><a href="./credits.php">Credits</a></li>
 									</ul>
 								</td>
 							</tr>
@@ -171,7 +171,7 @@
 							<tr>
 								<td class="infocell" style="text-align: center;">
 									<a href="http://game.salburg.com/hymmnoserver/">
-										<img src="/hymmnoserver/images/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
+										<img src="./static/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
 									</a>
 								</td>
 							</tr>
@@ -196,7 +196,8 @@
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
-										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">Origin</a></li>
+										<li><a href="http://hymmnoserver.uguu.ca/">Origin</a></li>
+										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">Primary mirror</a></li>
 									</ul>
 								</td>
 							</tr>
@@ -209,10 +210,8 @@
 				<b>Community-friendly</b><br/>
 				This site is an open source effort, released in its entirety under the
 				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">by-nc-sa/3.0 Creative Commons license</a>.
-				If you agree to the rather lax terms of this license, you may grab all of its materials using
-				<a href="http://subversion.tigris.org/">Subversion</a>:
-				&quot;svn co <a href="http://hamsterx.homelinux.org/svn/hymmnoserver/">http://hamsterx.homelinux.org/svn/hymmnoserver/</a> hymmnoserver/&quot;.
-				You may also browse the repository using a web browser or any DAV-capable client.
+				If you agree to the rather lax terms of this license, you may grab all of its materials from its
+				<a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 

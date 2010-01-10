@@ -52,7 +52,7 @@
 						if($search_mode){
 							echo "<a href=\"javascript:popUpWord('$html_link', $l_dialect)\">$html_link</a>";
 						}else{
-							echo "<a href=\"/hymmnoserver/word.php?word=$html_link&dialect=$l_dialect\">$html_link</a>";
+							echo "<a href=\"./word.php?word=$html_link&dialect=$l_dialect\">$html_link</a>";
 						} 
 						
 						if($i + 1 < $links_size){
@@ -74,3 +74,4 @@
 		</td>
 	</tr>
 </table>
+

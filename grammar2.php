@@ -62,7 +62,7 @@
 			<div class="section-title text-title-small">⠕ Before learning the Pastalie New Testament grammar...</div>
 			<p>
 				The grammar of Pastalia is based on the
-				<a href="/hymmnoserver/grammar.php">standard grammar of the First Era</a>.
+				<a href="./grammar.php">standard grammar of the First Era</a>.
 				Because of this, knowledge of that grammar is a prerequisite for understanding what will be
 				discussed here.
 			</p>

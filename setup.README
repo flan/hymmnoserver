@@ -1,6 +1,6 @@
 If you are interested in running this site on your server, you will need 
 the following:
-- A webserver that supports PHP and mod_python
+- A webserver that supports PHP and Python via CGI
 - PHP 5 (or higher)
 - MySQL 5 (or higher)
 

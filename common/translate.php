@@ -229,7 +229,7 @@
 	<?php
 		$alternatives_pos = 0;
 		foreach($alternatives as $alternative){
-			$alternatives[$alternatives_pos++] = "<a href=\"/hymmnoserver/search.php?word=".urlencode($alternative)."&exact=hymmnos\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
+			$alternatives[$alternatives_pos++] = "<a href=\"./search.php?word=".urlencode($alternative)."&exact=hymmnos\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
 		}
 		if($alternatives_pos > 0){
 			echo "<tr>";
@@ -243,7 +243,7 @@
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
 			<?php
 				$query_encode = urlencode($query);
-				echo "If this is a complete sentence, you may <a href=\"/hymmnoserver/grammar.psp?query=$query_encode\">inspect its structure</a>";
+				echo "If this is a complete sentence, you may <a href=\"./grammar.psp?query=$query_encode\">inspect its structure</a>";
 			?>
 		</td>
 	</tr>

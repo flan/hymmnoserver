@@ -10,20 +10,25 @@
 	</head>
 	<body style="width: 500px;">
 		<?php
-			$word = $_GET['word'];
-			if($word == NULL || trim($word) == ''){
+			$word = '';
+			if(isset($_GET['word']){
+				$word = trim($_GET['word']);
+			}
+			if($word == ''){
 				echo 'No word specified.';
 				exit();
 			}
-			$dialect = $_GET['dialect'];
-			if($dialect == NULL || trim($dialect) == '' || !is_numeric(trim($dialect))){
+			$dialect = '';
+			if(isset($_GET['dialect']){
+				$dialect = trim($_GET['dialect']);
+			}
+			if($dialect == '' || !is_numeric($dialect)){
 				echo 'No dialect specified.';
 				exit();
 			}
-			$word = trim($word);
-			$dialect = intval(trim($dialect));
+			$dialect = intval($dialect);
 			
-			require '/home/flan/hymmnoserver/hymmnoserver.gobbledygook';
+			require 'secure/db.php';
 			if ($mysqli->connect_error) {
 				printf("Connection failed: %s.", mysqli_connect_error());
 				exit();
@@ -60,10 +65,11 @@
 			
 			$mysql->close();
 		?>
-		<?php include 'common/word.xml'; ?>
+		<?php include 'common/word.php'; ?>
 		<?php
 			$footer_word = true;
 			include 'common/footer.xml';
 		?> 
 	</body>
 </html>
+
