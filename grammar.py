@@ -51,7 +51,7 @@ def _renderMacroTransformation(phrase, components, unknown):
 	@param unknown: A collection of all words not recognized in the input.
 	"""
 	print """
-		<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%;">
+		<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">
 					<div style="font-family: hymmnos; font-size: 18pt;">%s</div>
@@ -67,7 +67,7 @@ def _renderMacroTransformation(phrase, components, unknown):
 		if len(lines) > 1:
 			print """
 				<td style="background: #808080;">
-					<table style="width: 100%; border-spacing: 1px;">
+					<table style="width: 100%%; border-spacing: 1px;">
 			"""
 			for (j, line) in enumerate(lines):
 				print """

@@ -243,7 +243,7 @@
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
 			<?php
 				$query_encode = urlencode($query);
-				echo "If this is a complete sentence, you may <a href=\"./grammar.psp?query=$query_encode\">inspect its structure</a>";
+				echo "If this is a complete sentence, you may <a href=\"./grammar.py?query=$query_encode\">inspect its structure</a>";
 			?>
 		</td>
 	</tr>
