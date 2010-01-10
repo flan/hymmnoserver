@@ -218,7 +218,6 @@ print footer.read()
 footer.close()
 
 print """
-		</div>
 	</body>
 </html>
 """
