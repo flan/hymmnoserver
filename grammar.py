@@ -212,7 +212,7 @@ else:
 					if result is None:
 						_renderFailure("unable to validate sentence; it may not be complete")
 					else:
-						req.write(syntax.renderResult_xhtml(tree, display_string))
+						print syntax.renderResult_xhtml(tree, display_string)
 				except syntax.ContentError, e:
 					_renderFailure("unable to process input: %s" % (e))
 	except transformations.ContentError, e:
