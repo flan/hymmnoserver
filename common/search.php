@@ -42,7 +42,7 @@
 					$stmt2->free_result();
 					$stmt2->close();
 					
-					include 'common/word.xml'; #Render this word using the word template.
+					include 'common/word.php'; #Render this word using the word template.
 				}
 			echo '</div></div>';
 		}
