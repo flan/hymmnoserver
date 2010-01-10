@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-<?php include 'common/constants.xml'; ?>
+<?php include 'common/constants.php'; ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>HYMMNOSERVER - Search results</title>
@@ -29,9 +29,9 @@
 				}
 				
 				if(count($words) > 1){#If more than one token is provided, parse instead of search.
-					include 'common/translate.xml';
+					include 'common/translate.php';
 				}else{
-					include 'common/search.xml';
+					include 'common/search.php';
 				}
 				
 				$mysql->close();
