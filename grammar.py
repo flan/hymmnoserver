@@ -120,7 +120,7 @@ def _renderFailure(message):
 				<td style="background: red; color: white; text-align: center;">%s</td>
 			</tr>
 		</table>
-	""" % (message))
+	""" % (message)
 	
 	
 form = cgi.FieldStorage()
