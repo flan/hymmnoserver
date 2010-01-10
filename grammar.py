@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>HYMMNOSERVER - Grammar Processor</title>
-		<!-- <%="-->"%>
-<%
+#!/bin/env python -OO
 """
 Hymmnoserver script: grammar
 
@@ -25,20 +17,11 @@ Legal
 import cgi
 import re
 import urllib
-from mod_python import apache
-_WORKING_PATH = "/home/flan/hymmnoserver/core/" #: The hymmnoserver root directory.
 
-transformations = apache.import_module('transformations', path=[_WORKING_PATH + "common/"])
-syntax = apache.import_module('syntax', path=[_WORKING_PATH + "common/"])
+import common.syntax as syntax
+import common.transformations as transformations
+import secure.db as db
 
-_db_con = None
-_query = ''
-if form.has_key('query'):
-	_query = form['query'].strip()
-	if _query:
-		_db = apache.import_module('hymmnoserver', path=["/home/flan/hymmnoserver/"])
-		_db_con = _db.getConnection()
-		
 def _renderMicroTransformation(component):
 	"""
 	Renders a value-bar in a transformation-list.
@@ -109,83 +92,85 @@ def _renderFailure(message):
 			</tr>
 		</table>
 	""" % (message))
+	
+	
+form = cgi.FieldStorage()
 
-%>
-		<%@include file="common/resources.xml" %>
-		<%="<!--"%> -->
+print "Content-Type: application/xhtml+xml"
+print
+
+print """
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>HYMMNOSERVER - Grammar Processor</title>
+"""
+
+resources = open("common/resources.xml", 'r')
+print resources.read()
+resources.close()
+
+print """
 	</head>
 	<body>
-		<div id="no-python">
+"""
+
+header = open("common/header.xml", 'r')
+print header.read()
+header.close()
+
+query = form.getfirst("query")
+if not query or not query.strip():
+	print """
+	<div class="text-basic">
+		<div class="section-title text-title-small">⠕ Advanced grammar resources</div>
+		<big>The following features are made available through this interface:</big>
+		<blockquote class="text-small">
 			<p>
-				Unfortunately, this mirror does not have mod_python, so this
-				portion of the site is unavailable.
+				<span class="text-title-small">1) Syntax validation and structural analysis</span><br/>
+				Enter a <b>complete sentence</b> in Hymmnos and submit it.
+				If the syntax processor is able to analyze your input, a syntax tree will be produced,
+				informing you of the structure of what you have provided. It is hoped that this will
+				help in translating sentences.
+				<br/><br/>
+				<small>
+					Please note that this feature is highly experimental and that it will not (and never
+					will, due to Hymmnos having some
+					<a href="http://en.wikipedia.org/wiki/NP-complete">NP-complete</a>-looking structures)
+					recognize all valid sentences, and it may also approve of some invalid sentences due to
+					flexibility encoded to handle more complex patterns.
+					<br/><br/>
+					Note also that this is not a production-grade linguistics work. The syntax trees it
+					generates are amateurish in nature, occasionally lacking proper relationship structures,
+					and are, thus, intended solely to assist humans in infering meaning.
+				</small>
 			</p>
-		</div>
-		<!-- <%="-->"%>
-		<div>
-			<script type="text/javascript">
-				/*<![CDATA[*/
-					document.getElementById("no-python").style.display = 'none';
-				/*]]>*/
-			</script>
-			<noscript>
-				<p>
-					JavaScript was supposed to hide the statement above, but your browser does
-					not support it, so just pretend that nothing's there.
-				</p>
-			</noscript>
-			<%@include file="common/header.xml" %>
-<%
-if not _query:
-%>
-		
-		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Advanced grammar resources</div>
-				<big>The following features are made available through this interface:</big>
-				<blockquote class="text-small">
-					<p>
-						<span class="text-title-small">1) Syntax validation and structural analysis</span><br/>
-						Enter a <b>complete sentence</b> in Hymmnos and submit it.
-						If the syntax processor is able to analyze your input, a syntax tree will be produced,
-						informing you of the structure of what you have provided. It is hoped that this will
-						help in translating sentences.
-						<br/><br/>
-						<small>
-							Please note that this feature is highly experimental and that it will not (and never
-							will, due to Hymmnos having some
-							<a href="http://en.wikipedia.org/wiki/NP-complete">NP-complete</a>-looking structures)
-							recognize all valid sentences, and it may also approve of some invalid sentences due to
-							flexibility encoded to handle more complex patterns.
-							<br/><br/>
-							Note also that this is not a production-grade linguistics work. The syntax trees it
-							generates are amateurish in nature, occasionally lacking proper relationship structures,
-							and are, thus, intended solely to assist humans in infering meaning.
-						</small>
-					</p>
-					<p>
-						<span class="text-title-small">2) Binasphere conversion</span><br/>
-						Enter multiple (two or more) phrases and Binasphere output will be generated.
-						<br/><br/>
-						Enter Binasphere text and its constituent phrases will be reconstructed.
-					</p>
-					<p>
-						<span class="text-title-small">3) Persistent Emotion Sounds application</span><br/>
-						Enter a Persistent Emotion Sounds passage and the effective full-sentence-form
-						equivalents will be produced.
-					</p>
-				</blockquote>
-			</div>
-			
-<%
+			<p>
+				<span class="text-title-small">2) Binasphere conversion</span><br/>
+				Enter multiple (two or more) phrases and Binasphere output will be generated.
+				<br/><br/>
+				Enter Binasphere text and its constituent phrases will be reconstructed.
+			</p>
+			<p>
+				<span class="text-title-small">3) Persistent Emotion Sounds application</span><br/>
+				Enter a Persistent Emotion Sounds passage and the effective full-sentence-form
+				equivalents will be produced.
+			</p>
+		</blockquote>
+	</div>
+	"""
 else:
-	lines = [line.strip() for line in _query.splitlines() if line]
+	db_con = db.getConnection()
+	lines = [line for line in [l.strip() for l in query.splitlines()] if line]
 	try:
 		try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), _db_con)
 			_renderMacroTransformation(cgi.escape(_query, True), lines_list, unknown)
 		except transformations.FormatError:
-			lines = [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines]
-			lines = [line for line in lines if line]
+			lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
 			if len(lines) > 1:
 				try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
 					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, _db_con)
@@ -206,26 +191,35 @@ else:
 		_renderFailure("unable to process input: %s" % (e))
 	except Exception, e:
 		_renderFailure("an unexpected error occurred: %s" % (e))
-
-%>
-			<hr/>
-			<form method="get" action="/hymmnoserver/grammar.psp">
-				<div>
-					<div style="text-align: center;">
-						<textarea name="query" id="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
-					</div>
-					<div style="text-align: right;">
-						<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
-						<input type="button" value="Remove linebreaks" onclick="document.getElementById('query').value = document.getElementById('query').value.replace(/\r?\n/g, ' ');"/>
-						<input type="submit" value="Process query"/>
-					</div>
-				</div>
-			</form>
-<%
-if _db_con: _db_con.close()
-%>
-			<%@include file="common/footer-py.xml" %>
+		
+	try:
+		db_con.close()
+	except:
+		pass
+		
+print """
+<hr/>
+<form method="get" action="/hymmnoserver/grammar.psp">
+	<div>
+		<div style="text-align: center;">
+			<textarea name="query" id="query" rows="5" cols="80"><%=cgi.escape(_query)%></textarea>
 		</div>
-		<%="<!--"%> -->
+		<div style="text-align: right;">
+			<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
+			<input type="button" value="Remove linebreaks" onclick="document.getElementById('query').value = document.getElementById('query').value.replace(/\r?\n/g, ' ');"/>
+			<input type="submit" value="Process query"/>
+		</div>
+	</div>
+</form>
+"""
+
+footer = open("common/footer-py.xml", 'r')
+print footer.read()
+footer.close()
+
+print """
+		</div>
 	</body>
 </html>
+"""
+

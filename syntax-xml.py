@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python -OO
 """
 Hymmnoserver script: syntax-xml
 
@@ -24,18 +24,26 @@ form = cgi.FieldStorage()
 print "Content-Type: text/xml"
 print
 try:
-	if not _query or not _query.strip():
+	query = form.getfirst("query")
+	
+	if not query or not query.strip():
 		raise ValueError("nothing to process")
 		
-	lines = [line for line in [l.strip() for l in _query.splitlines()] if line]
+	lines = [line for line in [l.strip() for l in query.splitlines()] if line]
 	if not lines:
 		raise ValueError("nothing to process")
 		
-	(tree, display_string, result) = syntax.processSyntax(lines[0], db.getConnection())
+	db_con = db.getConnection()
+	(tree, display_string, result) = syntax.processSyntax(lines[0], db_con)
 	if result is None:
 		raise ValueError("incomplete sentence")
 		
 	print tree.toXML()
+	
+	try:
+		db_con.close()
+	except:
+		pass
 except Exception, e:
 	print """<?xml version="1.0" encoding="UTF-8"?>"""
 	print "<error><![CDATA[%(error)s]]></error>" % {'error': e,}

@@ -1,0 +1,4 @@
+<FilesMatch "\.svn">
+	Order Allow,Deny
+	Deny from All
+</FilesMatch>
