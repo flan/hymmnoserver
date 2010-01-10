@@ -1,4 +1,4 @@
-#!/bin/env python
+#!env python
 # -*- coding: utf-8 -*-
 """
 Hymmnoserver script: grammar
