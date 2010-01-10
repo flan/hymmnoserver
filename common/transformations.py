@@ -22,8 +22,8 @@ import lookup
 
 _BINASPHERE_REGEXP = re.compile("^=>(.+?)EXEC[ _]hymme (\d*[1-9])x1/0[ ]?>>((?:[ ]?\d+)+)$") #: A regular expression used to match encoded Binasphere content.
 _BINASPHERE_CONTENT_REGEXP = re.compile("^[A-Z0-9x= ]+$") #: A regular expression used to restrict Binasphere input to valid characters.
-_PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x vvi.$") #: A regular expression used to match the opening stanza of Persistent Emotion Sounds structures.
-_PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi.$") #: A regular expression used to match the closing stanza of Persistent Emotion Sounds structures.
+_PERSISTANT_START_REGEXP = re.compile("^([A-Za-z]+) ([A-Za-z]+) ([A-Za-z]+) 0x vvi\.$") #: A regular expression used to match the opening stanza of Persistent Emotion Sounds structures.
+_PERSISTANT_END_REGEXP = re.compile("^1x AAs ixi\.$") #: A regular expression used to match the closing stanza of Persistent Emotion Sounds structures.
 _GENERAL_CONTENT_REGEXP = re.compile("^[\w= ]+$") #: A regular expression used to catch characters that are always unwanted.
 
 def applyPersistentEmotionSounds(lines, db_con):

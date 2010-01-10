@@ -198,7 +198,6 @@ else:
 			(lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), db_con)
 			_renderMacroTransformation(cgi.escape(query, True), lines_list, unknown)
 		except transformations.FormatError:
-			lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
 			if len(lines) > 1:
 				try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
 					(new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, db_con)
@@ -207,6 +206,7 @@ else:
 					(phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, db_con)
 					_renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
 			else: #Attempt syntax processing.
+				lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
 				try:
 					(tree, display_string, result) = syntax.processSyntax(lines[0], db_con)
 					if result is None:

@@ -86,6 +86,7 @@
 					<li><a href="http://artonelico.wikia.com/wiki/The_Ar_Tonelico_Wiki">Platina, Ar Tonelico on Wikia</a></li>
 				</ul>
 			</div>
+			<br/>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
