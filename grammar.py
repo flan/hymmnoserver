@@ -211,7 +211,7 @@ print """
 		</div>
 	</div>
 </form>
-""" % (cgi.escape(query))
+""" % (cgi.escape(query or ''))
 
 footer = open("common/footer-py.xml", 'r')
 print footer.read()
