@@ -185,6 +185,7 @@
 									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
 										<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Hymmnos, Conlang</a></li>
 										<li><a href="http://artonelico.isisview.org/">A Reyvateil's Melody</a></li>
+										<li><a href="http://bitbucket.org/dervish_candela/hymmnodict/wiki/Home">Hymmnodict</a></li>
 									</ul>
 								</td>
 							</tr>
