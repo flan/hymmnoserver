@@ -10,8 +10,8 @@ Purpose
 Legal
 =====
  All code, unless otherwise indicated, is original, and subject to the terms of
- the Creative Commons Attribution-Noncommercial-Share Alike 3.0 License,
- which is provided in license.README.
+ the GNU GPLv3 or, at your option, any later version of the GPL; see
+ license.README for details.
  
  (C) Neil Tallim, 2009
 """

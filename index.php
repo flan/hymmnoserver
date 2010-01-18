@@ -105,7 +105,7 @@
 								or syntax class.
 							</p>
 							<p>
-								<span class="text-title-small">7) Automate advanced grammar processing</span><br/>
+								<span class="text-title-small">7) Advanced grammar processing</span><br/>
 								Click the &quot;Advanced grammar resources&quot; link below the search bar and
 								you will be presented with an interface that supports the following:
 							</p>
@@ -134,7 +134,7 @@
 						<table style="width: 100%; border-collapse: collapse;">
 							<tr>
 								<td class="titlecell">
-									⠕ Recent Updates
+									⠕ Recent updates
 								</td>
 							</tr>
 							<tr>
@@ -150,7 +150,7 @@
 							</tr>
 							<tr>
 								<td class="titlecell">
-									⠕ Hymmnos Information
+									⠕ Hymmnos information
 								</td>
 							</tr>
 							<tr>
@@ -168,7 +168,7 @@
 							</tr>
 							<tr>
 								<td class="titlecell">
-									⠕ Link Banner
+									⠕ Link banner
 								</td>
 							</tr>
 							<tr>
@@ -180,7 +180,7 @@
 							</tr>
 							<tr>
 								<td class="titlecell">
-									⠕ Related Resources
+									⠕ Related resources
 								</td>
 							</tr>
 							<tr>
@@ -213,8 +213,9 @@
 			<p>
 				<b>Community-friendly</b><br/>
 				This site is an open source effort, released in its entirety under the
+				<a href="http://gplv3.fsf.org/">GPLv3</a> and
 				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">by-nc-sa/3.0 Creative Commons license</a>.
-				If you agree to the rather lax terms of this license, you may grab all of its materials from its
+				If you agree to the open terms of these licenses, you may grab all of its materials from its
 				<a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
 			</p>
 		</div>
