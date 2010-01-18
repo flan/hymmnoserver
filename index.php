@@ -2,6 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
+<?php/*
+All code, unless otherwise indicated, is original, and subject to the terms of
+the GNU GPLv3 or, at your option, any later version of the GPL.
+
+All content is derived from public domain, promotional, or otherwise-compatible
+sources and published uniformly under the
+Creative Commons Attribution-Share Alike 3.0 license.
+
+See license.README for details.
+ 
+(C) Neil Tallim, 2009
+*/?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Hymmnoserver - Main</title>
@@ -19,7 +32,7 @@
 							<br/>
 							Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 						</p>
-						<p style="color: red;">
+						<p style="font-size: 0.9em;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
 							errors, and suffer from synchronization lag against the
 							<a href="http://game.salburg.com/hymmnoserver/">original Japanese site</a>.<br/>
@@ -214,7 +227,8 @@
 				<b>Community-friendly</b><br/>
 				This site is an open source effort, released in its entirety under the
 				<a href="http://gplv3.fsf.org/">GPLv3</a> and
-				<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">by-nc-sa/3.0 Creative Commons license</a>.
+				<a href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa/3.0 Creative Commons</a>
+				licenses.
 				If you agree to the open terms of these licenses, you may grab all of its materials from its
 				<a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
 			</p>

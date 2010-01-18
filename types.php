@@ -2,6 +2,19 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
+<?php/*
+All code, unless otherwise indicated, is original, and subject to the terms of
+the GNU GPLv3 or, at your option, any later version of the GPL.
+
+All content is derived from public domain, promotional, or otherwise-compatible
+sources and published uniformly under the
+Creative Commons Attribution-Share Alike 3.0 license.
+
+See license.README for details.
+ 
+(C) Neil Tallim, 2009
+*/?>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<title>Hymmnoserver - Summary</title>
