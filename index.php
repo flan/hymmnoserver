@@ -34,7 +34,7 @@ See license.README for details.
 						</p>
 						<p style="font-size: 0.9em;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
-							errors, and suffer from synchronization lag against the
+							errors and suffer from synchronization lag against the
 							<a href="http://game.salburg.com/hymmnoserver/">original Japanese site</a>.<br/>
 							Some features differ (for better or worse) and some details, such as examples, were intentionally rewritten
 							in a manner believed to make more sense to an English-speaking audience.<br/><br/>
