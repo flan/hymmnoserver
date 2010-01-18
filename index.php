@@ -32,6 +32,15 @@ See license.README for details.
 							<br/>
 							Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 						</p>
+						<noscript>
+							<hr/>
+							<p style="color: red;">
+								This site was designed with JavaScript 1.5, XHTML 1.1, and CSS 2.0.
+								It is accessible using limited browsers (like lynx, elinks, and Microsoft's Internet Explorer),
+								but some features will be unavailable.
+							</p>
+						</noscript>
+						<hr/>
 						<p style="font-size: 0.9em;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
 							errors and suffer from synchronization lag against the
@@ -42,13 +51,6 @@ See license.README for details.
 							<a href="http://code.google.com/p/hymmnoserver/issues/list">report the issue</a> and help to make this
 							service better.
 						</p>
-						<noscript>
-							<p style="color: red;">
-								This site was designed with JavaScript 1.5, XHTML 1.1, and CSS 2.0.
-								It is accessible using limited browsers (like lynx, elinks, and Microsoft's Internet Explorer),
-								but some features will be unavailable.
-							</p>
-						</noscript>
 						<hr/>
 						<p>
 							<span class="text-title">⠕ The grammar of Hymmnos Words</span><br/>
