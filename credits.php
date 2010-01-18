@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Credits</title>
+		<title>Hymmnoserver - Credits</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
@@ -20,7 +20,7 @@
 				<br/>
 				<ul class="basic-inline">
 					<li><a href="http://game.salburg.com/">GUST's game homepage</a></li>
-					<li><a href="http://game.salburg.com/hymmnoserver/">Japanese HYMMNOSERVER</a></li>
+					<li><a href="http://game.salburg.com/hymmnoserver/">Japanese Hymmnoserver</a></li>
 				</ul>
 			</div>
 			<br/>

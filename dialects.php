@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - </title>
+		<title>Hymmnoserver - Dialects</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>

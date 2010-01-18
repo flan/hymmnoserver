@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>HYMMNOSERVER - Main</title>
+		<title>Hymmnoserver - Main</title>
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
@@ -14,18 +14,20 @@
 				<tr>
 					<td align="left" valign="top" style="width: 450px;">
 						<p>
-							<span class="text-title">Welcome to HYMMNOSERVER</span><br/>
-							The world of Ar tonelico, Sol Ciel, is home to a language of Song Magic, known as &quot;Hymmnos Words&quot;.
+							<span class="text-title">Welcome to the Hymmnoserver</span><br/>
+							The world of Ar tonelico, Sol Ciel, is home to a language of song magic, known as &quot;Hymmnos Words&quot;.
 							<br/>
 							Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 						</p>
 						<p style="color: red;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
-							errors, and suffer from synchronization issues with the original Japanese site.<br/>
-							Some features differ (for better or worse), and some details, such as examples, were intentionally rewritten
+							errors, and suffer from synchronization lag against the
+							<a href="http://game.salburg.com/hymmnoserver/">original Japanese site</a>.<br/>
+							Some features differ (for better or worse) and some details, such as examples, were intentionally rewritten
 							in a manner believed to make more sense to an English-speaking audience.<br/><br/>
-							If you note any problems, please let the appropriate maintainer know; see the
-							<a href="./credits.php">credits page</a> for details.
+							If you note any problems, please
+							<a href="http://code.google.com/p/hymmnoserver/issues/list">report the issue</a> and help to make this
+							service better.
 						</p>
 						<noscript>
 							<p style="color: red;">
@@ -49,11 +51,12 @@
 						</p>
 						<ul class="basic-inline text-small">
 							<li>
-								Users of modern Unix-like operating systems can usually just save the font file into ~/.fonts/
-								and make	use of it immediately.
+								Users of modern Unix-like operating systems can usually just view the font and click 'Install' or
+								save the font file into ~/.fonts/ and make use of it immediately.
 							</li>
 							<li>
-								Mac users may drag fonts from the Finder into the Fonts section under their Library.
+								Mac users may view the font and click 'Install' or drag the font into Library/Fonts/ under their
+								home directory.
 							</li>
 							<li>
 								Those using Microsoft Windows will need to do some weird dance that may or may not involve
@@ -152,7 +155,7 @@
 							</tr>
 							<tr>
 								<td class="infocell">
-									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
+									<ul class="basic-inline" style="font-weight: bold; font-size: 8pt; line-height: 3.5mm;">
 										<li><a href="./introduction.php">Introduction</a></li>
 										<li><a href="./types.php">Hymmnos Types</a></li>
 										<li><a href="./dialects.php">Dialects</a></li>
@@ -171,7 +174,7 @@
 							<tr>
 								<td class="infocell" style="text-align: center;">
 									<a href="http://game.salburg.com/hymmnoserver/">
-										<img src="./static/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese HYMMNOSERVER website"/>
+										<img src="./static/hssupA_02.gif" style="border-width: 0px; margin-top: 2px;" alt="Japanese Hymmnoserver"/>
 									</a>
 								</td>
 							</tr>
@@ -182,7 +185,7 @@
 							</tr>
 							<tr>
 								<td class="infocell">
-									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
+									<ul class="basic-inline" style="font-weight: bold; font-size: 8pt; line-height: 3.5mm;">
 										<li><a href="http://conlang.wikia.com/wiki/Conlang:Hymmnos">Hymmnos, Conlang</a></li>
 										<li><a href="http://artonelico.isisview.org/">A Reyvateil's Melody</a></li>
 										<li><a href="http://bitbucket.org/dervish_candela/hymmnodict/wiki/Home">Hymmnodict</a></li>
@@ -196,7 +199,7 @@
 							</tr>
 							<tr>
 								<td class="infocell">
-									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
+									<ul class="basic-inline" style="font-weight: bold; font-size: 8pt; line-height: 3.5mm;">
 										<li><a href="http://hymmnoserver.uguu.ca/">uguu.ca</a></li>
 										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">hamsterx.homelinux.org</a></li>
 									</ul>
