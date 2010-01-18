@@ -197,8 +197,8 @@
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; line-height: 3.5mm;">
-										<li><a href="http://hymmnoserver.uguu.ca/">Origin</a></li>
-										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">Primary mirror</a></li>
+										<li><a href="http://hymmnoserver.uguu.ca/">uguu.ca</a></li>
+										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">hamsterx.homelinux.org</a></li>
 									</ul>
 								</td>
 							</tr>
