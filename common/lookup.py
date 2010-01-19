@@ -129,9 +129,9 @@ def _getEmotionVerbs(db_con):
 	return emotion_verbs
 	
 def _readWord(word, dialect, db_con):
-	limiter = "ORDER BY school ASC"
+	limiter = "ORDER BY dialect ASC"
 	if dialect:
-		limiter = "AND school = %i" % (dialect)
+		limiter = "AND dialect = %i" % (dialect)
 		
 	cursor = db_con.cursor()
 	cursor.execute("SELECT word, meaning, kana, class, dialect, syllables FROM hymmnos WHERE word = %s " + limiter, (word,))
