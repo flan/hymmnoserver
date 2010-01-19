@@ -1,0 +1,92 @@
+If you are interested in running Hymmnoserver on your server, you will need 
+the following:
+- A webserver that understands .htaccess and supports PHP and Python via CGI
+- PHP 5 (or higher)
+- Python 2.4 (or higher)
+- MySQLdb for Python
+- MySQL 5 (or higher)
+- Subversion client 1.4 (or higher)
+
+---
+
+Setup should only take a few minutes. A brief overview of the process follows:
+1 Check out a read-only copy of the Hymmnoserver source and put it where you
+  want your Hymmnoserver instance's files to live
+  - svn co http://hymmnoserver.googlecode.com/svn /var/www/hymmnoserver
+
+2 Create a new MySQL database; its name and the credentials of the user that
+  accesses it is up to you; for web access, you need only grant SELECT rights
+
+3 Edit secure/db.php and secure/db.py to reflect the permissions of the user
+  you've created
+  - These files are protected by .htaccess; if privileges beyond SELECT were
+    granted or you used a non-throwaway password, ensure that they cannot be
+    accessed by visitors
+
+4 Load the contents of 'database/hymmnoserver.mysql' into the newly created
+  database
+  - mysql <database_name> -u <writing_user> -p < database/hymmnoserver.mysql
+
+5 Ensure that the path to the Hymmnoserver code is configured, in the
+  webserver's global settings, to allow .htaccess support
+  - Adding .htaccess support is a simple as specifying 'AllowOverride All'
+  - Restart your webserver after any changes
+
+That's it. You've got a fully functional Hymmnoserver ready to go.
+
+As updates are published, you can automatically synchronize your code with the
+most recent version: svn up /var/www/hymmnoserver
+
+If the update involved adding new words to the Hymmnos lexicon, you'll also need
+to reload the contents of your database, which is done the same way as in step
+4.
+
+---
+
+If you want to provide patches or, if you have permission, commit updates,
+*PLEASE* use a dedicated working copy of this repository, rather than a
+production copy, which would contain your passwords.
+
+When you need to alter something, just modify whatever content you feel needs
+to be changed, or update the database and overwrite the existing one using
+mysqldump, then run 'svn diff > hymmnoserver.patch' in the root directory of
+the working copy to produce a patch that may be submitted to a maintainer.
+
+Once the patch has been applied to the repository, all mirrors will be able to
+display your enhancements at their convenience. 
+
+
+-Note-
+You will find some Python scripts in database/; the ones intended for use are
+add_words.py, link_words.py, mysql2sqlite.py, and sqlite2mysql.py.
+
+These are very hackishly constructed data-entry scripts that are provided
+without documentation, warranty, or any guarantee of functionality. (They are
+also quite a bit uglier than any code that would normally be considered
+publishable by the author)
+
+Before you can actually use these scripts, you'll need to edit database/_db.py
+to reflect the permissions of a user with write-access to the database.
+
+add_words.py is used to add new words to the database in a relatively fast
+manner, though it uses legacy terminology and is rough in its presentation.
+
+link_words.py is used to link two related words in the database; it requires
+familiarity with the dialect/school numbering system.
+
+mysql2sqlite.py dumps the current MySQL database to an SQLite3 database,
+allowing the Hymmnoserver's data to be used by standalone applications,
+like the Hymmnodict, or shared with localizers to reduce the amount of
+work they will need to do to keep their Hymmnoserver implementations in
+sync.
+
+sqlite2mysql.py is intended for use by localizers only. While it is capable of
+serving as a restore tool with mysql2sqlite.py, mysqldump is a much better
+choice for that operation, and a current mysqldump is always maintained in the
+project's Subversion repository.
+When using sqlite2mysql, every entry in the SQLite3 database will be read and
+checked against the MySQL database, with any updates requiring attention, such
+as a change in the Japanese makeup of a word or a new record, resulting in a
+prompt for user input. (Some webhosts may complain about the amount of load
+this operation will incur, so synchronize your database offline and use
+mysqldump to port the new version)

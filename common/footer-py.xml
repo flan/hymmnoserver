@@ -1,0 +1,27 @@
+<div class="footer-copyright">
+	<div id="footer-bar">
+		<a href="./index.php" class="footer-link">[Go to index]</a>
+	</div>
+	<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver2.0/Rev.20080312)<br/>
+	English version provided by <a href="./credits.php" class="footer-copyright">Neil Tallim and others</a>. (This is a freely provided, fan-translated service)
+</div>
+<div style="text-align: right;">
+	<a href="http://validator.w3.org/check?uri=referer"><img src="./static/xhtml11-bar.png" alt="Valid XHTML 1.1" style="border-width: 0;"/></a>
+	<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://hymmnoserver.uguu.ca/resources/hymmnoserver.css"><img src="./static/css-bar.png" alt="Valid CSS" style="border-width: 0;"/></a>
+	<a href="http://bluefish.openoffice.nl"><img src="./static/bluefish-bar.png" alt="Made with Bluefish" style="border-width: 0;"/></a>
+	<a href="http://www.python.org"><img src="./static/python-bar.png" alt="Powered by Python" style="border-width: 0;"/></a>
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width: 0;" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png"/></a>
+</div>
+
+<!--
+All code, unless otherwise indicated, is original, and subject to the terms of
+the GNU GPLv3 or, at your option, any later version of the GPL.
+
+All content is derived from public domain, promotional, or otherwise-compatible
+sources and published uniformly under the
+Creative Commons Attribution-Share Alike 3.0 license.
+
+See license.README for details.
+ 
+(C) Neil Tallim, 2009
+-->

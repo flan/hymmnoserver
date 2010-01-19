@@ -1,0 +1,498 @@
+/*
+All code, unless otherwise indicated, is original, and subject to the terms of
+the GNU GPLv3 or, at your option, any later version of the GPL.
+
+All content is derived from public domain, promotional, or otherwise-compatible
+sources and published uniformly under the
+Creative Commons Attribution-Share Alike 3.0 license.
+
+See license.README for details.
+ 
+(C) Neil Tallim, 2009
+*/
+
+/*Global styles*/
+body{
+	width: 640px;
+	background: white;
+}
+
+a:link{
+	color:#D92F0E;
+	text-decoration: none;
+}
+a:visited{
+	color:#971F08;
+	text-decoration: none;
+}
+a:hover{
+	color:#4A22DD;
+	text-decoration: underline;
+}
+
+/*Local styles*/
+ul.basic-inline{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 15px;
+}
+
+td.data-cell-blue{
+	font-size: 0.9em;
+	color: #001144;
+	background: #ccccff;
+}
+td.data-header-blue{
+	font-size: 0.9em;
+	color: #001144;
+	background: #aaaadd;
+	font-weight: bold;
+}
+
+td.fontcell{
+	background: #001144;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 10pt;
+}
+td.fontcell:hover{
+	background: #334477;
+}
+
+div#footer-bar{
+	background: #001144;
+	color: #FFFFFF;
+	font-size: 9pt;
+	font-weight: bold;
+	border-width: 0px;
+	width: 100%;
+}
+
+a.footer-copyright:link{
+	color: #002244;
+}
+a.footer-copyright:visited{
+	color: #002244;
+}
+a.footer-copyright:hover{
+	color: #002244;
+}
+div.footer-copyright{
+	color: #002244;
+	font-size: 7pt;
+}
+
+a.footer-link{
+	margin-left: 40px;
+}
+a.footer-link:link{
+	color: #FFFFFF;
+}
+a.footer-link:visited{
+	color: #FFFFFF;
+}
+a.footer-link:hover{
+	color: #FFFFFF;
+}
+
+table#header{
+	border-spacing: 0px;
+	border-color: #000000;
+	border-width: 0px;
+	border-spacing: 0px;
+}
+td.header{
+	background: #000000;
+	color: #FFFFFF;
+	text-align: center;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+table.header-links{
+	border-spacing: 2px;
+	border-color: #000000;
+}
+td.header-links{
+	background: #BBCCDD;
+	text-align: center;
+	font-weight: bold;
+	font-size: 8pt;
+}
+td.header-links:hover{
+	background: #CCDDEE;
+}
+
+td.infocell{
+	background: #CCCCFF;
+	color: #002244;
+	font-size: 10pt;
+}
+
+td.result-cell{
+	color: #110044;
+	font-size: 0.8em;
+}
+th.result-header{
+	color: white;
+	background: #110044;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+td.result-dialect-0{
+	background: #cccccc;
+}
+td.result-dialect-1{
+	background: #ffcccc;
+}
+td.result-dialect-2{
+	background: #cceecc;
+}
+td.result-dialect-3{
+	background: #ccccff;
+}
+td.result-dialect-4{
+	background: #ffddff;
+}
+td.result-dialect-5{
+	background: #cceeff;
+}
+td.result-dialect-6{
+	background: #ffeecc;
+}
+td.result-dialect-7{
+	background: #ffccff;
+}
+td.result-dialect-50{
+	background: #aaaaaa;
+}
+td.result-dialect-51{
+	background: #ddaaaa;
+}
+td.result-dialect-52{
+	background: #aaccaa;
+}
+td.result-dialect-53{
+	background: #aaaadd;
+}
+td.result-dialect-54{
+	background: #ddaadd;
+}
+td.result-dialect-55{
+	background: #aaccdd;
+}
+td.result-dialect-56{
+	background: #ddccaa;
+}
+td.result-dialect-57{
+	background: #ddaadd;
+}
+
+div.section-title{
+	background: #e0e0ff;
+	width: 100%;
+	border-bottom: 2px solid #002244;
+}
+
+td.server-header{
+	background: #aaddaa;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #001144;
+}
+td.server-data{
+	background: #ccffcc;
+	font-size: 0.9em;
+	color: #001144;
+}
+
+div.subsection-title{
+	background: #eeeeff;
+	width: 100%;
+	border-left: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+}
+
+td.titlecell{
+	background: #001144;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 9pt;
+}
+
+td.transformation{
+	background: #DDDDDD;
+	text-align: left;
+	font-size: 12pt;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-right: 2px;
+}
+td.transformation:hover{
+	background: #EEEEEE;
+}
+td.transformation-id{
+	color: white;
+	background: black;
+	text-align: center;
+}
+
+td.word-header{
+	padding: 8px;
+}
+td.word-header-0{
+	background: black;
+}
+td.word-header-1{
+	background: #224400;
+}
+td.word-header-2{
+	background: #440022;
+}
+td.word-header-3{
+	background: #440044;
+}
+td.word-header-4{
+	background: #000066;
+}
+td.word-header-5{
+	background: #002200;
+}
+td.word-header-6{
+	background: #002200;
+}
+td.word-header-7{
+	background: #005500;
+}
+td.word-header-8{
+	background: #440066;
+}
+td.word-header-9{
+	background: #444444;
+}
+td.word-header-10{
+	background: #444444;
+}
+td.word-header-11{
+	background: #444444;
+}
+td.word-header-12{
+	background: #002200;
+}
+td.word-header-13{
+	background: #004400;
+}
+td.word-header-14{
+	background: #006600;
+}
+td.word-header-15{
+	background: #220066;
+}
+td.word-header-16{
+	background: #002200;
+}
+td.word-header-17{
+	background: #444444;
+}
+td.word-header-18{
+	background: #111111;
+}
+td.word-header-19{
+	background: #444444;
+}
+td.word-header-20{
+	background: #444444;
+}
+td.word-header-21{
+	background: #444444;
+}
+td.word-header-22{
+	background: #444444;
+}
+td.word-header-23{
+	background: #444444;
+}
+td.word-header-24{
+	background: #444444;
+}
+td.word-header-25{
+	background: #444444;
+}
+
+td.word-info{
+	background: #ffbbcc;
+	color: #000044;
+}
+td.word-info-title{
+	background: #ffbbcc;
+	color: #000044;
+	width: 120px;
+}
+
+div.phrase{
+	border: 1px solid black;
+	border-right: 0;
+	border-bottom: 0;
+	padding-left: 2px;
+	/*font-family: sans-serif;*/
+}
+div.phrase-0{/*CP*/
+	background: #000000;
+}
+div.phrase-1{/*NP*/
+	background: #000030;
+}
+div.phrase-2{/*VP*/
+	background: #300030;
+}
+div.phrase-3{/*AP*/
+	background: #100020;
+}
+div.phrase-4{/*ESP*/
+	background: #003000;
+}
+div.phrase-5{/*EVP*/
+	background: #102000;
+}
+div.phrase-6{/*PP*/
+	background: #200010;
+}
+div.phrase-7{/*MP*/
+	background: #101010;
+}
+div.phrase-8{/*SP*/
+	background: #000020;
+}
+div.phrase-9{/*EOP*/
+	background: #001020;
+}
+div.phrase-10{/*TP*/
+	background: #200030;
+}
+
+div.phrase-word{
+	border: 1px solid black;
+	border-right: 0;
+	border-bottom: 0;
+	padding-left: 2px;
+	/*font-family: inherit;*/
+}
+div.phrase-word-1{/*E.V.*/
+	background: #203000;
+}
+div.phrase-word-2{/*v.*/
+	background: #400040;
+}
+div.phrase-word-3{/*adv.*/
+	background: #300027;
+}
+div.phrase-word-4{/*n.*/
+	background: #000040;
+}
+div.phrase-word-5{/*conj.*/
+	background: #171717;
+}
+div.phrase-word-6{/*prep.*/
+	background: #240033;
+}
+div.phrase-word-7{/*E.S. (II)*/
+	background: #004000;
+}
+div.phrase-word-8{/*adj.*/
+	background: #270030;
+}
+div.phrase-word-12{/*prt.*/
+	background: #330024;
+}
+div.phrase-word-13{/*E.S. (III)*/
+	background: #003700;
+}
+div.phrase-word-14{/*E.S. (I)*/
+	background: #004700;
+}
+div.phrase-word-15{/*pron.*/
+	background: #000037;
+}
+div.phrase-word-16{/*intj.*/
+	background: #000000;
+}
+div.phrase-word-18{/*cnstr.*/
+	background: #202020;
+}
+
+span.phrase-title{
+	font-size: 0.8em;
+	color: #AAA;
+}
+div.phrase-content{
+	margin-left: 15px;
+	color: #BBB;
+}
+span.phrase-word-dialect{
+	float: right;
+	font-size: 0.675em;
+}
+span.phrase-word-class{
+	margin-left: 3px;
+	font-size: 0.8em;
+}
+div.phrase-word-meaning{
+	margin-left: 15px;
+	font-size: 0.8em;
+}
+
+/*Generic styles*/
+.text-basic{
+	color: #002244;
+	font-size: 9pt;
+}
+.text-basic-bold{
+	color: #002244;
+	font-size: 9pt;
+	font-weight: bold;
+}
+.text-huge{
+	color: #002244;
+	font-size: 12pt;
+}
+.text-large{
+	color: #002244;
+	font-size: 11pt;
+}
+.text-small{
+	color: #002244;
+	font-size: 8pt;
+}
+.text-title{
+	color: #002244;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.text-title-small{
+	color: #002244;
+	font-weight: bold;
+	font-size: 10pt;
+}
+
+.word-text-dialect-usage{
+	font-size: 10pt;
+}
+.word-text-related-description{
+	font-size: 9pt;
+}
+.word-text-subtitle{
+	font-size: 14pt;
+	color: #FFFFFF;
+}
+.word-text-title{
+	font-size: 34pt;
+	font-family: Hymmnos;
+	color: #FFFFFF;
+}
+.word-text-title-expanded{
+	font-size: 10pt;
+	color: #FFFFFF;
+	font-weight: bold;
+}

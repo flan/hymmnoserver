@@ -1,0 +1,37 @@
+<table id="header">
+	<tr>
+		<td class="header" align="center" colspan="2">
+			<a href="./index.php">
+				<img src="./static/title.jpg" alt="HYMMNOSERVER" style="border-width: 0px;"/>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td class="header" colspan="2">
+			<form method="get" action="./search.php">
+				<table style="border-width: 0px; width: 100%;">
+					<tr>
+						<td class="header" style="width: 70px;">
+							Hymmnos interface
+						</td>
+						<td class="header">
+							<input type="text" name="word" value="" style="width: 100%;"/>
+						</td>
+						<td class="header" style="width: 125px">
+							<input type="submit" value="Process query"/>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</td>
+	</tr>
+	<tr>
+		<td class="header-links" style="text-align: center; width: 50%;">
+			<a href="./browse.php" style="display: block; text-decoration: none; color: #D92F0E;">Full Hymmnos lexicon</a>
+		</td>
+		<td class="header-links" style="text-align: center; width: 50%;">
+			<a href="./grammar.py" style="display: block; text-decoration: none; color: #D92F0E;">Advanced grammar resources</a>
+		</td>
+	</tr>
+</table>
+<hr/>
