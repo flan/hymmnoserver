@@ -234,6 +234,12 @@ See license.README for details.
 				If you agree to the open terms of these licenses, you may grab all of its materials from its
 				<a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
 			</p>
+			<p>
+				<b>Localizable</b><br/>
+				The Hymmnoserver's database, tools, and development repository make localization easy.
+				If you want to provide this service in your own language,
+				<a href="./credits.php">just ask</a> and we'll help you get started.
+			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
