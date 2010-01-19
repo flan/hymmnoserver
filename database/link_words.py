@@ -29,28 +29,27 @@ cursor = db_con.cursor()
 try:
 	while True:
 		print "First word:"
-		word1 = "'%s'" % raw_input().replace("'", "\\'")
+		word_1 = raw_input()
 		
 		print "First dialect:"
-		school1 = int(raw_input())
+		dialect_1 = int(raw_input())
 		
 		print "Second word:"
-		word2 = "'%s'" % raw_input().replace("'", "\\'")
+		word_2 = raw_input()
 		
 		print "Second dialect:"
-		school2 = int(raw_input())
+		dialect_2 = int(raw_input())
 		
 		
-		cursor.execute(' '.join((
-		 "INSERT INTO hymmnos_mapping",
-		 "(source, destination, source_school, destination_school)",
-		 "VALUES (%s, %s, %i, %i)",
-		)), (word1, word2, school1, school2,))
-		cursor.execute(' '.join((
-		 "INSERT INTO hymmnos_mapping",
-		 "(source, destination, source_school, destination_school)",
-		 "VALUES (%s, %s, %i, %i)",
-		)), (word2, word1, school2, school1,))
+		cursor.executemany(
+		 ' '.join((
+		  "INSERT INTO hymmnos_mapping",
+		  "(source, destination, source_dialect, destination_dialect)",
+		  "VALUES (%s, %s, %i, %i)",
+		 )),
+		 (word_1, word_2, dialect_1, dialect_2,),
+		 (word_2, word_1, dialect_2, dialect_1,)
+		)
 		print
 finally:
 	try:

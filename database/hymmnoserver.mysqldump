@@ -24,16 +24,16 @@ DROP TABLE IF EXISTS `hymmnos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hymmnos` (
   `word` varchar(25) NOT NULL,
-  `meaning_english` varchar(200) NOT NULL,
-  `meaning_japanese` varchar(200) NOT NULL,
-  `school` tinyint(3) unsigned NOT NULL,
+  `meaning` varchar(200) NOT NULL,
+  `japanese` varchar(200) NOT NULL,
+  `dialect` tinyint(3) unsigned NOT NULL,
   `kana` varchar(40) NOT NULL,
   `romaji` varchar(40) NOT NULL,
   `description` varchar(200) DEFAULT NULL,
   `class` tinyint(3) unsigned NOT NULL,
   `syllables` varchar(35) NOT NULL,
-  PRIMARY KEY (`word`,`school`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`word`,`dialect`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,14 +56,14 @@ DROP TABLE IF EXISTS `hymmnos_mapping`;
 CREATE TABLE `hymmnos_mapping` (
   `source` varchar(25) NOT NULL DEFAULT '',
   `destination` varchar(25) NOT NULL DEFAULT '',
-  `source_school` tinyint(3) unsigned NOT NULL,
-  `destination_school` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`source`,`destination`,`source_school`,`destination_school`),
-  KEY `destination` (`destination`,`destination_school`),
-  KEY `hymmnos_mapping_idx` (`source`,`source_school`),
-  CONSTRAINT `hymmnos_mapping_ibfk_1` FOREIGN KEY (`source`, `source_school`) REFERENCES `hymmnos` (`word`, `school`),
-  CONSTRAINT `hymmnos_mapping_ibfk_2` FOREIGN KEY (`destination`, `destination_school`) REFERENCES `hymmnos` (`word`, `school`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `source_dialect` tinyint(3) unsigned NOT NULL,
+  `destination_dialect` tinyint(3) unsigned NOT NULL,
+  PRIMARY KEY (`source`,`destination`,`source_dialect`,`destination_dialect`),
+  KEY `source_idx` (`source`,`source_dialect`),
+  KEY `destination_idx` (`destination`,`destination_dialect`),
+  CONSTRAINT `source_fk` FOREIGN KEY (`source`, `source_dialect`) REFERENCES `hymmnos` (`word`, `dialect`),
+  CONSTRAINT `destination_fk` FOREIGN KEY (`destination`, `destination_dialect`) REFERENCES `hymmnos` (`word`, `dialect`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

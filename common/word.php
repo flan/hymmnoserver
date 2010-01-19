@@ -23,9 +23,9 @@ See license.README for details.
 		echo "</tr>";
 		echo "<tr>";
 			echo "<td class=\"word-header word-header-$class\">";
-				echo "<span class=\"word-text-title-expanded\">$meaning_english [$romaji]";
+				echo "<span class=\"word-text-title-expanded\">$meaning [$romaji]";
 					echo "<br/>";
-				echo "$meaning_japanese [$kana]</span>";
+				echo "$japanese [$kana]</span>";
 			echo "</td>";
 		echo "</tr>";
 	?>
@@ -60,12 +60,12 @@ See license.README for details.
 				$links_size = count($links);
 				if($links_size > 0){#Render all related hymmnos, delimited by commas.
 					for($i = 0; $i < $links_size; $i++){
-						list($link, $l_dialect) = $links[$i];
+						list($link, $link_dialect) = $links[$i];
 						$html_link = htmlspecialchars($link);
 						if($search_mode){
-							echo "<a href=\"javascript:popUpWord('$html_link', $l_dialect)\">$html_link</a>";
+							echo "<a href=\"javascript:popUpWord('$html_link', $link_dialect)\">$html_link</a>";
 						}else{
-							echo "<a href=\"./word.php?word=$html_link&dialect=$l_dialect\">$html_link</a>";
+							echo "<a href=\"./word.php?word=$html_link&dialect=$link_dialect\">$html_link</a>";
 						} 
 						
 						if($i + 1 < $links_size){

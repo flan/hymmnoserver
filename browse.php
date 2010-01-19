@@ -51,7 +51,7 @@ See license.README for details.
 				
 				#Render the alphabetical bar.
 				$characters = range('a', 'z');
-				array_push($characters, '0');
+				$characters[] = '0';
 				foreach($characters as $character){
 					echo "<a href=\"./browse.php?page=$character\">";
 					if($character == $page){
@@ -107,14 +107,14 @@ See license.README for details.
 							for($i = 1; $i < $keys_count; $i++){
 								$search_key = $search_key.','.$keys[$i];
 							}
-							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
+							$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
 						}else{#Looking up records by starting letter.
-							$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
+							$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
 							$page = $page.'%';
 							$stmt->bind_param("s", $page);
 						}
 					}else{#Get all non-alpha-started entries.
-						$stmt = $mysql->prepare("SELECT word, meaning_english, kana, school, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
+						$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
 					}
 					$stmt->execute();
 					$stmt->store_result();
@@ -125,7 +125,7 @@ See license.README for details.
 					}
 					printf('<b>%d record%s found</b>', $stmt->num_rows, $plural);
 				?>
-				(Hymmnos entries will open in a new window)
+				(Hymmnos entries will open in a popup window)
 			</span>
 		</div>
 		<table>
@@ -138,7 +138,7 @@ See license.README for details.
 			</tr>
 			<?php
 				if($stmt->num_rows > 0){#Render results only if there are results.
-					$stmt->bind_result($word, $meaning_english, $kana, $dialect, $class);
+					$stmt->bind_result($word, $meaning, $kana, $dialect, $class);
 					
 					while($stmt->fetch()){#Render each result in its own row.
 						$html_word = htmlspecialchars($word);
@@ -146,7 +146,7 @@ See license.README for details.
 							echo "<td class=\"result-cell result-dialect-$dialect\">";
 								echo "<a href=\"javascript:popUpWord('$html_word', $dialect)\">$html_word</a>";
 							echo '</td>';
-							echo "<td class=\"result-cell result-dialect-$dialect\">$meaning_english</td>";
+							echo "<td class=\"result-cell result-dialect-$dialect\">$meaning</td>";
 							echo "<td class=\"result-cell result-dialect-$dialect\">";
 								echo $SYNTAX_CLASS[$class];
 							echo '</td>';

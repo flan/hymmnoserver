@@ -37,7 +37,7 @@ import xml.dom.minidom
 
 import lookup
 
-_ANY = 0 #: An AST classifier that requires 0-or-more matches from its set.
+_ANY = 0 #: An AST classifier that requires zero-or-more matches from its set.
 _ALL = -1 #: An AST classifier that requires every set member to match.
 _ONE = 1 #: An AST classifier that requires at least one member to match. (Successive matches are ignored)
 

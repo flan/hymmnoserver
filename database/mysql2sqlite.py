@@ -26,6 +26,7 @@ import sys
 
 import _db
 
+print "SQLite database expected as first argument...",
 #Kill the existing SQLite file, if any.
 if os.path.exists(sys.argv[1]):
 	os.remove(sys.argv[1])
@@ -34,14 +35,15 @@ mysql_db = _db.getConnection()
 mysql_cur = mysql_db.cursor()
 sqlite_db = sqlite3.connect(sys.argv[1])
 sqlite_cur = sqlite_db.cursor()
+print "found"
 
 sqlite_cur.execute("""
  CREATE TABLE hymmnos (
   word TEXT,
   dialect INTEGER,
   class INTEGER,
-  meaning_english TEXT,
-  meaning_japanese TEXT,
+  meaning TEXT,
+  japanese TEXT,
   kana TEXT,
   romaji TEXT,
   description TEXT,
@@ -58,11 +60,11 @@ sqlite_cur.execute("""
 """)
 
 try:
-	mysql_cur.execute("SELECT word, meaning_english, meaning_japanese, school, kana, romaji, description, class, syllables FROM hymmnos ORDER BY word ASC")
-	for (word, meaning_english, meaning_japanese, dialect, kana, romaji, description, syntax_class, syllables) in mysql_cur.fetchall():
+	mysql_cur.execute("SELECT word, meaning, japanese, dialect, kana, romaji, description, class, syllables FROM hymmnos ORDER BY word ASC")
+	for (word, meaning, japanese, dialect, kana, romaji, description, syntax_class, syllables) in mysql_cur.fetchall():
 		sqlite_cur.execute(
-		 u"INSERT INTO hymmnos (word, dialect, class, meaning_english, meaning_japanese, kana, romaji, description, syllables) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
-		 (word.decode('utf-8'), dialect, syntax_class, meaning_english.decode('utf-8'), meaning_japanese.decode('utf-8'), kana.decode('utf-8'), romaji.decode('utf-8'), description and description.decode('utf-8'), syllables.decode('utf-8'))
+		 u"INSERT INTO hymmnos (word, dialect, class, meaning, japanese, kana, romaji, description, syllables) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
+		 (word.decode('utf-8'), dialect, syntax_class, meaning.decode('utf-8'), japanese.decode('utf-8'), kana.decode('utf-8'), romaji.decode('utf-8'), description and description.decode('utf-8'), syllables.decode('utf-8'))
 		)
 except:
 	print "Error while populating SQLite database (hymmnos)"
@@ -70,7 +72,7 @@ except:
 	exit()
 	
 try:
-	mysql_cur.execute("SELECT source, destination, source_school, destination_school FROM hymmnos_mapping ORDER BY source ASC, destination ASC")
+	mysql_cur.execute("SELECT source, destination, source_dialect, destination_dialect FROM hymmnos_mapping ORDER BY source ASC, source_dialect ASC, destination ASC, destination_dialect ASC")
 	for (source, destination, source_dialect, destination_dialect) in mysql_cur.fetchall():
 		sqlite_cur.execute(
 		 u"INSERT INTO hymmnos_mapping (source, destination, source_dialect, destination_dialect) VALUES (?, ?, ?, ?)",
@@ -86,4 +88,3 @@ mysql_db.close()
 sqlite_cur.close()
 sqlite_db.commit()
 sqlite_db.close()
-

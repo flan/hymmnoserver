@@ -75,11 +75,13 @@ def initialiseEmotionVerbRegexps(db_con):
 		emotion_verbs = _getEmotionVerbs(db_con)
 		EMOTION_VERB_REGEXPS = tuple([(
 		 re.compile(r"^%s(eh|aye|za)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
-		 ev, d) for (ev, d) in emotion_verbs])
+		 ev,
+		 d,
+		) for (ev, d) in emotion_verbs])
 		
 def readWord(word, words, db_con):
 	"""
-	[word, meaning_english, kana, class, dialect, decorations, syllables]
+	[word, meaning, kana, class, dialect, decorations, syllables]
 	"""
 	dialect = None #Limit returned records to a specific dialect.
 	position = word.find('$')
@@ -93,26 +95,26 @@ def readWord(word, words, db_con):
 	if words:
 		w = words.get(word.lower())
 		if w:
-			return tuple([[o, m_e, k, s_c, d, e, y] for (o, m_e, k, s_c, d, e, y) in w if not dialect or d == dialect])
+			return tuple([list(elements) for elements in w if not dialect or elements[4] == dialect])
 	return _queryEmotionVerb(word, dialect, db_con) or _queryWord(word, dialect, db_con)
 	
 def readWords(words, db_con):
 	"""
-	{word.lower(): [word, meaning_english, kana, class, dialect, decorations, syllables]}
+	{word.lower(): [word, meaning, kana, class, dialect, decorations, syllables]}
 	"""
 	cursor = db_con.cursor()
-	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word IN (" + ','.join(['%s' for w in words])  + ") ORDER BY school ASC", words)
+	cursor.execute("SELECT word, meaning, kana, class, dialect, syllables FROM hymmnos WHERE word IN (" + ','.join(['%s' for w in words])  + ") ORDER BY dialect ASC", words)
 	records = cursor.fetchall()
 	cursor.close()
 	
 	r_words = {}
-	for (word, meaning_english, kana, syntax_class, dialect, syllables) in records:
+	for (word, meaning, kana, syntax_class, dialect, syllables) in records:
 		l_word = word.lower()
 		w = r_words.get(l_word)
 		if not w:
 			w = []
 			r_words[l_word] = w
-		w.append([word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')])
+		w.append([word, meaning, kana, syntax_class, dialect, None, syllables.split('/')])
 		
 	for word in r_words:
 		r_words[word] = tuple(r_words[word])
@@ -120,7 +122,7 @@ def readWords(words, db_con):
 	
 def _getEmotionVerbs(db_con):
 	cursor = db_con.cursor()
-	cursor.execute("SELECT word, school FROM hymmnos WHERE class = 1")
+	cursor.execute("SELECT word, dialect FROM hymmnos WHERE class = 1")
 	emotion_verbs = cursor.fetchall()
 	cursor.close()
 	
@@ -132,12 +134,12 @@ def _readWord(word, dialect, db_con):
 		limiter = "AND school = %i" % (dialect)
 		
 	cursor = db_con.cursor()
-	cursor.execute("SELECT word, meaning_english, kana, class, school, syllables FROM hymmnos WHERE word = %s " + limiter, (word,))
+	cursor.execute("SELECT word, meaning, kana, class, dialect, syllables FROM hymmnos WHERE word = %s " + limiter, (word,))
 	records = cursor.fetchall()
 	cursor.close()
 	
 	if records:
-		return tuple([[word, meaning_english, kana, syntax_class, dialect, None, syllables.split('/')] for (word, meaning_english, kana, syntax_class, dialect, syllables) in records])
+		return tuple([[word, meaning, kana, syntax_class, dialect, None, syllables.split('/')] for (word, meaning, kana, syntax_class, dialect, syllables) in records])
 	return ([word, None, None, 0, 0, None, [word.lower()]],)
 	
 def _queryEmotionVerb(word, dialect, db_con):

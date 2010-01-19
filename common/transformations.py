@@ -52,7 +52,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 	es_iii = None
 	es_i_values = lookup.SYNTAX_CLASS_REV['ES(I)']
 	words = lookup.readWord(m.group(1).lower(), None, db_con)
-	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in es_i_values:
 			 es_i = word
 			 break
@@ -62,7 +62,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 		
 	es_ii_values = lookup.SYNTAX_CLASS_REV['ES(II)']
 	words = lookup.readWord(m.group(2).lower(), None, db_con)
-	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in es_ii_values:
 			 es_ii = word
 			 break
@@ -72,7 +72,7 @@ def applyPersistentEmotionSounds(lines, db_con):
 		
 	es_iii_values = lookup.SYNTAX_CLASS_REV['ES(III)']
 	words = lookup.readWord(m.group(3).lower(), None, db_con)
-	for (word, meaning_english, kana, syntax_class, dialect, decorations, syllables) in words:
+	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in words:
 		if syntax_class in es_iii_values:
 			 es_iii = word
 			 break
@@ -232,7 +232,7 @@ def _multiplexBinasphere(lines, hashable):
 	return "=> %s EXEC hymme %ix1/0>>%s" % (' '.join(output_sequence), len(lines), sequence)
 	
 def _readWord(word, words, db_con):
-	(word, meaning_english, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
+	(word, meaning, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
 	if syntax_class > 0:
 		l_decorations = decorations
 		if l_decorations:

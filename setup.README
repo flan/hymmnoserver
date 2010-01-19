@@ -58,14 +58,14 @@ display your enhancements at their convenience.
 
 -Note-
 You will find some Python scripts in database/; the ones intended for use are
-add_words.py and link_words.py.
+add_words.py, link_words.py, mysql2sqlite.py, and sqlite2mysql.py.
 
 These are very hackishly constructed data-entry scripts that are provided
 without documentation, warranty, or any guarantee of functionality. (They are
 also quite a bit uglier than any code that would normally be considered
 publishable by the author)
 
-Before you can actually use either script, you'll need to edit database/_db.py
+Before you can actually use these scripts, you'll need to edit database/_db.py
 to reflect the permissions of a user with write-access to the database.
 
 add_words.py is used to add new words to the database in a relatively fast
@@ -74,3 +74,19 @@ manner, though it uses legacy terminology and is rough in its presentation.
 link_words.py is used to link two related words in the database; it requires
 familiarity with the dialect/school numbering system.
 
+mysql2sqlite.py dumps the current MySQL database to an SQLite3 database,
+allowing the Hymmnoserver's data to be used by standalone applications,
+like the Hymmnodict, or shared with localizers to reduce the amount of
+work they will need to do to keep their Hymmnoserver implementations in
+sync.
+
+sqlite2mysql.py is intended for use by localizers only. While it is capable of
+serving as a restore tool with mysql2sqlite.py, mysqldump is a much better
+choice for that operation, and a current mysqldump is always maintained in the
+project's Subversion repository.
+When using sqlite2mysql, every entry in the SQLite3 database will be read and
+checked against the MySQL database, with any updates requiring attention, such
+as a change in the Japanese makeup of a word or a new record, resulting in a
+prompt for user input. (Some webhosts may complain about the amount of load
+this operation will incur, so synchronize your database offline and use
+mysqldump to port the new version)

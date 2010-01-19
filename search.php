@@ -53,4 +53,3 @@ See license.README for details.
 		<?php include 'common/footer.xml'; ?> 
 	</body>
 </html>
-

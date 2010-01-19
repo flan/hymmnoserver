@@ -104,4 +104,3 @@ See license.README for details.
 		57 => '(EOLIA) [Unofficial]'
 	);
 ?>
-

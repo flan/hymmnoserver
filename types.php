@@ -21,6 +21,7 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
+
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Types of Hymmnos Words</div>
@@ -86,7 +87,7 @@ See license.README for details.
 				<img src="./static/usage.png" alt="A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower; and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something"/><br/>
 				Those familiar with Hymmnos theory may have realized that Hymmnos Extract does not directly
 				reflect any emotional desires within the Reyvateil using it. Though it employs H-waves,
-				these	waves carry only a clear, plain message that tells the Tower to act.
+				these waves carry only a clear, plain message that tells the Tower to act.
 			</p>
 			<b>▼ The effects of different Hymmnos</b><br/>
 			<table>
@@ -99,31 +100,31 @@ See license.README for details.
 				<tr>
 					<td class="data-cell-blue">EXEC_PAJA/.</td>
 					<td class="data-cell-blue">Extract</td>
-					<td class="data-cell-blue">Interrupting a process</td>
+					<td class="data-cell-blue">Interrupts a process</td>
 					<td class="data-cell-blue">Tower system</td>
 				</tr>
 				<tr>
 					<td class="data-cell-blue">EXEC_SUSPEND/.</td>
 					<td class="data-cell-blue">Extract</td>
-					<td class="data-cell-blue">Placing a tower on standby</td>
+					<td class="data-cell-blue">Places a tower on standby</td>
 					<td class="data-cell-blue">Tower system</td>
 				</tr>
 				<tr>
 					<td class="data-cell-blue">EXEC_LINCA/.</td>
 					<td class="data-cell-blue">Extract</td>
-					<td class="data-cell-blue">Establishing a connection</td>
+					<td class="data-cell-blue">Establishes a connection</td>
 					<td class="data-cell-blue">Tower system</td>
 				</tr>
 				<tr>
 					<td class="data-cell-blue">EXEC_HYMME_LIFE_A:W:S/.</td>
 					<td class="data-cell-blue">Word</td>
-					<td class="data-cell-blue">Restoring the nominal D-wave state of an organism</td>
+					<td class="data-cell-blue">Restores the nominal D-wave state of an organism</td>
 					<td class="data-cell-blue">Local area</td>
 				</tr>
 				<tr>
 					<td class="data-cell-blue">EXEC_HYMME_LUMINOUS_DEF/.</td>
 					<td class="data-cell-blue">Word</td>
-					<td class="data-cell-blue">Forming a protective barrier of static D-waves</td>
+					<td class="data-cell-blue">Forms a protective barrier of static D-waves</td>
 					<td class="data-cell-blue">Local area</td>
 				</tr>
 				<tr>
@@ -136,7 +137,7 @@ See license.README for details.
 			<p>
 				In all cases, the H-waves of a Reyvateil should be able to reach their destination,
 				carrying her collected thoughts. However, this does not mean that the chant will
-				always result in	exactly what the Reyvateil wants, particularly if the Reyvateil
+				always result in exactly what the Reyvateil wants, particularly if the Reyvateil
 				made a mistake, omitted a sentiment, or does not feel confident in the chant she
 				sang.
 			</p>
@@ -201,8 +202,8 @@ See license.README for details.
 				results of a chant; because the sound of such Hymmnos may resonate with Sound Stones, the singing
 				itself may lead to the intended result without the intervention of a Tower. (And, given the
 				nature of Hymmnos Words, there is no reason why the related H-waves would necessarily be
-				meaningful).
-				Intuitively, given that humans can use them, Hymmnos Spells do not involve H-waves.
+				meaningful)
+				It follows, given that humans can use them, that Hymmnos Spells do not involve H-waves.
 				Hymmnos Extracts, however, offer the Reyvateil no freedom with regard to H-wave generation.
 			</p>
 			<p>
@@ -232,7 +233,7 @@ See license.README for details.
 			</p>
 			<p>
 				As ironic fortune, the fact that third-generation Reyvateils lack Hymn Codes prevents them from
-				using the more dangerous Hymmnos Extracts.
+				being able, or forced, to use the more dangerous Hymmnos Extracts.
 			</p>
 			<b>▼ Reference: Hymmnos Extract specifications</b><br/>
 			<table>

@@ -29,7 +29,7 @@ See license.README for details.
 	$stmt->bind_result($word);
 	while($stmt->fetch()){
 		#Store the Emotion Verb, the number of Emotion Vowels, and a regexp version.
-		array_push($emotion_verbs, array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh|aye|za)?$/', substr_count($word, '.'), $word));
+		$emotion_verbs[] = array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh|aye|za)?$/', substr_count($word, '.'), $word);
 	}
 	$stmt->free_result();
 	$stmt->close();
@@ -39,7 +39,7 @@ See license.README for details.
 	for($i = 0; $i < count($words); $i++){
 		$word = readWord($words[$i]);
 		$words[$i] = $word;
-		array_push($word_list, decorateWord($word[0], $word[3], $word[5], false));
+		$word_list[] = decorateWord($word[0], $word[3], $word[5], false);
 	}
 	$word_string = implode(" ", $word_list);
 	$word_list = NULL;
@@ -59,14 +59,14 @@ See license.README for details.
 		$result = NULL;
 		
 		global $mysql;
-		$stmt = $mysql->prepare("SELECT word, meaning_english, kana, class, school FROM hymmnos WHERE word = ? ORDER BY school ASC");
+		$stmt = $mysql->prepare("SELECT word, meaning, kana, class, dialect FROM hymmnos WHERE word = ? ORDER BY dialect ASC");
 		$stmt->bind_param("s", $word);
 		$stmt->execute();
 		$stmt->store_result();
 		if($stmt->num_rows > 0){
-			$stmt->bind_result($r_word, $english, $kana, $class, $dialect);
+			$stmt->bind_result($r_word, $meaning, $kana, $class, $dialect);
 			$stmt->fetch();
-			$result = array($r_word, $english, $kana, $class, $dialect, NULL, $stmt->num_rows);
+			$result = array($r_word, $meaning, $kana, $class, $dialect, NULL, $stmt->num_rows);
 		}else{
 			$result = array($word, NULL, NULL, 0, 0, NULL, 0);
 		}
@@ -87,19 +87,19 @@ See license.README for details.
 				if($d_word[3] > 0){#Match found.
 					if(count($matches) - 1 <= $emotion_verb[1]){#Work around a permanent PHP bug.
 						for($i = $emotion_verb[1] - count($matches); $i > -1; $i--){
-							array_push($matches, '.');
+							$matches[] = '.';
 						}
-						array_push($matches, ''); 
+						$matches[] = '';
 					}
 					$decorations = array();
 					foreach(array_slice($matches, 1, -1) as $decoration){
-						if($decoration == NULL){
-							array_push($decorations, '.');
+						if(is_null($decoration)){
+							$decorations[] = '.';
 						}else{
-							array_push($decorations, $decoration);
+							$decorations[] = $decoration;
 						}
 					}
-					array_push($decorations, $matches[count($matches) - 1]);
+					$decorations[] = $matches[count($matches) - 1];
 					$d_word[5] = $decorations;
 					return $d_word;
 				}
@@ -131,7 +131,7 @@ See license.README for details.
 	
 	#Insert Emotion Vowels or blanks into Emotion Verbs or prefix other words.
 	function decorateWord($word, $class, $decorations, $colour){
-		if($decorations == NULL){
+		if(is_null($decorations)){
 			return htmlspecialchars($word);
 		}
 		
@@ -185,10 +185,10 @@ See license.README for details.
 	function renderWord($word){
 		global $SYNTAX_CLASS;
 		
-		list($l_word, $english, $kana, $class, $dialect, $decorations, $hits) = $word;
+		list($l_word, $meaning, $kana, $class, $dialect, $decorations, $hits) = $word;
 		$base_word = htmlspecialchars($l_word);
 		if($hits == 0){
-			$english = '???';
+			$meaning = '???';
 			$kana = '???';
 		}else{
 			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".decorateWord($l_word, $class, $decorations, true)."</a>";
@@ -197,7 +197,7 @@ See license.README for details.
 		echo "<tr>";
 			echo "<td class=\"word-header-$class\" style=\"width: 17%;\">$l_word</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">$SYNTAX_CLASS[$class]</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$english</td>";
+			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$meaning</td>";
 			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
 		echo "</tr>";
 		
@@ -212,7 +212,7 @@ See license.README for details.
 			if(renderWord($word)){
 				$word_c = $word[0];
 				if(!in_array($word_c, $alternatives)){
-					array_push($alternatives, $word_c);
+					$alternatives[] = $word_c;
 				}
 			}
 		}

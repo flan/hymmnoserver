@@ -30,21 +30,21 @@ cursor = db_con.cursor()
 try:
 	while True:
 		print "Word to be added:"
-		word = "'%s'" % raw_input().replace("'", "\\'")
-	
+		word = raw_input()
+		
 		print "English translation:"
-		english = "'%s'" % raw_input().replace("'", "\\'")
-	
+		meaning = raw_input()
+		
 		print "Japanese form:"
-		japanese = "'%s'" % raw_input().replace("'", "\\'")
-	
+		japanese = raw_input()
+		
 		print "Kana form:"
-		kana = "'%s'" % raw_input().replace("'", "\\'")
-	
+		kana = raw_input()
+		
 		print "Syllables in lower-case, separated by spaces (; for E.V.):"
 		syllables = None
 		while True:
-			syllables = "'%s'" % raw_input().replace("'", "\\'")
+			syllables = raw_input()
 			if syllables.replace(' ', '').lower() == word.lower():
 				break
 			elif syllables.endswith(";'"):
@@ -52,7 +52,8 @@ try:
 				break
 			else:
 				print "Entry does not match word structure"
-			
+		syllables = syllables.replace(' ', '/')
+		
 		print "1) 中央正純律（共通語） | Central"
 		print "2) クルトシエール律（Ⅰ紀前古代語） | Cult Ciel"
 		print "3) クラスタ律（クラスタ地方語） | Cluster"
@@ -62,8 +63,8 @@ try:
 		print "7) アルファ律（オリジンスペル：EOLIA属） | Alpha (EOLIA)"
 		print "0) Unknown"
 		print "Dialect (add 50 to mark as unofficial):"
-		school = int(raw_input())
-	
+		dialect = int(raw_input())
+		
 		print "1) Emotion verb"
 		print "2) verb"
 		print "3) adverb"
@@ -85,23 +86,23 @@ try:
 		print "19) noun/adverb"
 		print "20) adjective/adverb"
 		print "Syntax class:"
-		syntax = int(raw_input())
-	
-		print "Comments:"
-		comments = "'%s'" % raw_input().replace("'", "\\'")
-		if comments == "''":
-			comments = "NULL"
+		class = int(raw_input())
 		
+		print "Description:"
+		description = raw_input()
+		if not description.strip():
+			description = None
+			
 		if kana == '?':
-			romaji = "'?'"
+			romaji = "?"
 		else:
-			romaji = "'%s'" % _romaji.getRomaji(kana.decode('utf-8')).replace("'", "\\'")
-		
+			romaji = _romaji.getRomaji(kana.decode('utf-8'))
+			
 		cursor.execute(' '.join((
 		 "INSERT INTO hymmnos",
-		 "(word, meaning_english, meaning_japanese, school, kana, romaji, description, class, syllables)",
+		 "(word, meaning, japanese, dialect, kana, romaji, description, class, syllables)",
 		 "VALUES (%s, %s, %s, %i, %s, %s, %s, %i, %s)",
-		)), (word, english, japanese, school, kana, romaji, comments, syntax, syllables.replace(' ', '/'),))
+		)), (word, meaning, japanese, dialect, kana, romaji, description, class, syllables,))
 		print
 finally:
 	try:

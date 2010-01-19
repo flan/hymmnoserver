@@ -48,7 +48,7 @@ See license.README for details.
 			}
 			
 			#Read the requested word from the database.
-			$stmt = $mysql->prepare("SELECT word, meaning_english, meaning_japanese, kana, school, romaji, description, class FROM hymmnos WHERE word = ? AND school = ? LIMIT 1");
+			$stmt = $mysql->prepare("SELECT word, meaning, japanese, kana, dialect, romaji, description, class FROM hymmnos WHERE word = ? AND dialect = ? LIMIT 1");
 			$stmt->bind_param("si", $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
@@ -56,30 +56,30 @@ See license.README for details.
 				echo 'Unknown word specified.';
 				exit();
 			}
-			$stmt->bind_result($word, $meaning_english, $meaning_japanese, $kana, $dialect, $romaji, $notes, $class);
+			$stmt->bind_result($word, $meaning, $japanese, $kana, $dialect, $romaji, $notes, $class);
 			$stmt->fetch();
 			$stmt->free_result();
 			$stmt->close();
 			
 			#Read all related words from the database.
-			$stmt = $mysql->prepare("SELECT destination, destination_school FROM hymmnos_mapping WHERE source = ? AND source_school = ? ORDER BY destination ASC");
+			$stmt = $mysql->prepare("SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = ? AND source_dialect = ? ORDER BY destination ASC, destination_dialect ASC");
 			$stmt->bind_param("si", $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
 			
 			$links = array();
-			$stmt->bind_result($link, $l_dialect);
+			$stmt->bind_result($link, $link_dialect);
 			while($stmt->fetch()){
-				array_push($links, array($link, $l_dialect));
+				$links[] = array($link, $link_dialect);
 			}
 			
 			$stmt->free_result();
 			$stmt->close();
 			
 			$mysql->close();
-		?>
-		<?php include 'common/word.php'; ?>
-		<?php
+			
+			include 'common/word.php';
+			
 			$footer_word = true;
 			include 'common/footer.xml';
 		?> 
