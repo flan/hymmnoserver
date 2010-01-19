@@ -61,8 +61,8 @@ See license.README for details.
 						<p>
 							<span class="text-title">⠕ Hymmnos characters</span><br/>
 							Hymmnos Words are written in a special script. Browsing this archive will be more enjoyable if you
-							are able to see these characters. A TrueType Font for Hymmnos script is available as a free download
-							from the sidebar to the right.
+							are able to see these characters. A TrueType Font for Hymmnos is available as a free download from
+							the sidebar to the right.
 						</p>
 						<ul class="basic-inline text-small">
 							<li>
