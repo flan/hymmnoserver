@@ -21,12 +21,14 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
+
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Song Magic Servers</div>
 			<p>
-				The first game featured the tower of Ar tonelico, and the second features Infel Phira.<br/>
-				Both of these towers are Song Magic Servers and have the same basic fundamental features:
+				The first game featured the tower of Ar tonelico, and the second features a new system,
+				Infel Phira.<br/>
+				Both of these systems are Song Magic Servers and have the same basic fundamental features:
 			</p>
 			<ul class="basic-inline" style="font-weight: bold; font-size: 9pt; margin-top: -10px;">
 				<li>An H-wave receptor that can interpret instructions and produce D-waves</li>
@@ -66,20 +68,21 @@ See license.README for details.
 				</tr>
 			</table>
 			<p>
-				For each system, the basic logic is the same: CPU receives instructions written in a language it
+				For each system, the basic logic is the same: CPU receives instructions in a format it
 				can understand -> CPU acts accordingly.
 			</p>
 			<p>
-				However, Intel processors, and the language they understand, store and transport data differently
+				However, Intel processors, and the format they work with, store and transport data differently
 				from the machinations of a Sparc processor, so you could not simply send messages from one to the
 				other without some sort of translator.
-				The same problem arises when attempting to foster communication between Ar tonelico and
-				Infel Phira: both towers perform similar tasks, but their languages and means of encoding
+				The same problem arises when attempting to foster communication between different systems like
+				Ar tonelico and Infel Phira: both perform similar tasks, but their formats and means of encoding
 				messages (the Hymmnos they recognize) are very different.
-				Additionally, like the towers themselves, there are no fundamental differences between the
-				roles of the Reyvateils of one tower and the Reyvateils of the other: the only difference is which
+				Additionally, like the systems themselves, there are no fundamental differences between the
+				roles of the Reyvateils of one system and the Reyvateils of the other: the only difference is which
 				Hymmnos dialect they natively speak. The relationship is much like different partition formats on
-				hard drives: they are accessed differently, but they can all store the same data.
+				hard drives: they are accessed differently and have different, often incompatible designs,
+				but they can all store the same basic data.
 			</p>
 			<table>
 				<tr>
