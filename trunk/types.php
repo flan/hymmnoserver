@@ -72,15 +72,14 @@ See license.README for details.
 				This section attempts to explain the logical system of each type of Hymmnos.
 			</p>
 			<p>
-				While it may seem as though all three branches of Hymmnos are fundamentally the same:
-				speak a chant -> something happens, there are significant differences
-				between them.
+				While it may seem as though all three branches of Hymmnos are fundamentally the same --
+				speak a chant -> something happens -- there are significant differences between them.
 			</p>
 			<p>
 				Hymmnos Spells are different because they are not limited to use by Reyvateils.
 				However, the difference between the other two branches is buried deeper in their natures:
 				Hymmnos Words are based entirely on an individual Reyvateil's heart and experiences, while
-				Hymmnos Extracts are highly structured, inorganic constructs.
+				Hymmnos Extracts are highly structured, inorganic patterns.
 			</p>
 			<p>
 				<b>▼ Invoking Hymmnos Extract</b><br/>
@@ -151,7 +150,7 @@ See license.README for details.
 				used as a form of shock-absorber to allow her to download Hymmnos Extracts;
 				this is often the fastest way to encourage compatibility between a Reyvateil and a foreign program.
 				When downloading, if there is still a conflict between the Reyvateil and the Hymmnos Extract,
-				the Reyvateil may refuse to allow the download to complete, or the downloaded program may be
+				the Reyvateil may refuse to allow the download to complete or the downloaded program may be
 				unusable.
 			</p>
 		</div>
@@ -191,8 +190,8 @@ See license.README for details.
 				</tr>
 			</table>
 			<p>
-				Expressed in terms of real-world technology, H-waves are like program instructions, and
-				D-waves are used to show the results on a screen.
+				Expressed in terms of contemporary technology, H-waves are like program instructions
+				and D-waves are used to show the results on a screen.
 			</p>
 		</div>
 		<div class="text-basic">
@@ -232,8 +231,8 @@ See license.README for details.
 				place themselves at great risk of dying under the stress of the demands placed upon them.
 			</p>
 			<p>
-				As ironic fortune, the fact that third-generation Reyvateils lack Hymn Codes prevents them from
-				being able, or forced, to use the more dangerous Hymmnos Extracts.
+				It should be noted, however, that third-generation Reyvateils, lacking Hymn Codes, are not able
+				to use restricted Hymmnos Extracts.
 			</p>
 			<b>▼ Reference: Hymmnos Extract specifications</b><br/>
 			<table>

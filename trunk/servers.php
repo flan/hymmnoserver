@@ -26,7 +26,7 @@ See license.README for details.
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Song Magic Servers</div>
 			<p>
-				The first game featured the tower of Ar tonelico, and the second features a new system,
+				The first game featured the tower of Ar tonelico and the second features a new system:
 				Infel Phira.<br/>
 				Both of these systems are Song Magic Servers and have the same basic fundamental features:
 			</p>
@@ -73,8 +73,9 @@ See license.README for details.
 			</p>
 			<p>
 				However, Intel processors, and the format they work with, store and transport data differently
-				from the machinations of a Sparc processor, so you could not simply send messages from one to the
-				other without some sort of translator.
+				from the machinations of a Sparc processor, so you could not simply send messages intended for
+				one to the other without some sort of translator.
+				<br/><br/>
 				The same problem arises when attempting to foster communication between different systems like
 				Ar tonelico and Infel Phira: both perform similar tasks, but their formats and means of encoding
 				messages (the Hymmnos they recognize) are very different.
@@ -82,7 +83,7 @@ See license.README for details.
 				roles of the Reyvateils of one system and the Reyvateils of the other: the only difference is which
 				Hymmnos dialect they natively speak. The relationship is much like different partition formats on
 				hard drives: they are accessed differently and have varying, often incompatible designs,
-				but they can all store the same basic data.
+				but they can all handle the same basic data.
 			</p>
 			<table>
 				<tr>
@@ -114,9 +115,10 @@ See license.README for details.
 			<p>
 				As designed, neither system is inherently able to communicate with the other.
 				To get around this, they need to agree on a compatible protocol for exchanging
-				data, somewhat like how you used TCP/IP and HTTP to view this page. Once a protocol
-				has been agreed on, simple tasks like sharing files to complex ones like entering
-				Cosmospheres and establishing links in the Binary Field may be accomplished.
+				data, somewhat like how your Web browser used TCP/IP and HTTP to access this page.
+				Once a protocol has been agreed on, simple tasks like sharing files to complex
+				ones like entering Cosmospheres and establishing links in the Binary Field may be
+				accomplished.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
