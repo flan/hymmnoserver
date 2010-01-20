@@ -81,7 +81,7 @@ See license.README for details.
 				Additionally, like the systems themselves, there are no fundamental differences between the
 				roles of the Reyvateils of one system and the Reyvateils of the other: the only difference is which
 				Hymmnos dialect they natively speak. The relationship is much like different partition formats on
-				hard drives: they are accessed differently and have different, often incompatible designs,
+				hard drives: they are accessed differently and have varying, often incompatible designs,
 				but they can all store the same basic data.
 			</p>
 			<table>
