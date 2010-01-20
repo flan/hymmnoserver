@@ -66,7 +66,7 @@ See license.README for details.
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Before learning the Pastalie New Testament grammar...</div>
+			<div class="section-title text-title-small">⠕ Before learning the grammar of the New Testament of Pastalie...</div>
 			<p>
 				The grammar of Pastalia is based on the
 				<a href="./grammar.php">standard grammar of the First Era</a>.
