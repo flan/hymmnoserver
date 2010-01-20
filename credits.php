@@ -21,9 +21,11 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
+
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Those who made this site possible</div>
+			<br/>
 			<div style="padding-left: 10px;">
 				<div class="subsection-title text-title-small">GUST and Banpresto</div>
 				<ul class="basic-inline">

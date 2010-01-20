@@ -59,12 +59,12 @@ See license.README for details.
 				<tr>
 					<td class="server-data">Ar tonelico</td>
 					<td class="server-data">Intel</td>
-					<td class="server-data">Sol Ciel (A_t1)</td>
+					<td class="server-data">Sol Ciel (At1)</td>
 				</tr>
 				<tr>
 					<td class="server-data">Infel Phira</td>
 					<td class="server-data">Sparc</td>
-					<td class="server-data">Metafalss (A_t2)</td>
+					<td class="server-data">Metafalss (At2)</td>
 				</tr>
 			</table>
 			<p>
