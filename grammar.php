@@ -52,7 +52,7 @@ See license.README for details.
 				first-person perspective. As with so many other things, perhaps it will be easiest to
 				understand how Hymmnos differs from other languages by looking at an example:
 			</p>
-			<table>
+			<table style="text-align: center;">
 				<tr style="font-size: 12pt;">
 					<td class="hymmn1">Was</td>
 					<td class="hymmn1">yea</td>

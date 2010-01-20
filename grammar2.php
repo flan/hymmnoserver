@@ -105,7 +105,9 @@ See license.README for details.
 					</tr>
 				</table>
 				<p>
-					This complete sentence means &quot;I would be delighted to sing for your happiness&quot;.<br/>
+					This complete sentence, &quot;hEmmErYE/.&quot;, means
+					&quot;I would be delighted to sing for your happiness&quot;.
+					<br/>
 					<i>
 						As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
 						example from the standard grammar section, can be written in Pastalia as
@@ -134,7 +136,7 @@ See license.README for details.
 					Sentences in Pastalia are terminated with &quot;/.&quot;; fundamentally, this is the same
 					as how sentences are normally terminated with a period in English, but this also has the
 					effect of executing the spoken statement.
-					As an alternative, &quot;!&quot; and &quot;?&quot; may be used to indicate the end of a
+					As an alternative, &quot;!&quot; or &quot;?&quot; may be used to indicate the end of a
 					statement without invoking anything. 
 				</p>
 			</div>
@@ -174,7 +176,7 @@ See license.README for details.
 				The meaning of Emotion Verbs is not fixed.
 				Depending on how they are constructed, they can convey very different things from
 				sentence to sentence.
-				This flexibility is the key to the power of Pastalia.
+				This flexibility is the key to the expressive power of Pastalia.
 			</p>
 			<p>
 				Emotion Verbs are formed of two types of elements: a template and Emotion Vowels.<br/>
@@ -399,7 +401,7 @@ See license.README for details.
 				<tr>
 					<td class="ev-5b">Form 4</td>
 					<td class="ev-5b">Agasar_cloche</td>
-					<td class="ev-5b">Cloche's stuffed animal; it encourages her</td>
+					<td class="ev-5b">Cloche's stuffed animal; it gives her strength</td>
 				</tr>
 			</table>
 			<p>
@@ -426,7 +428,7 @@ See license.README for details.
 					<td class="ev-1b">LYA[object]</td>
 				</tr>
 				<tr>
-					<td class="ev-1b">a person</td>
+					<td class="ev-1b">a specific<br/>person</td>
 					<td class="ev-1b">A[object]_[person's name]</td>
 				</tr>
 			</table>
@@ -467,11 +469,11 @@ See license.README for details.
 			<p>
 				&quot;x.&quot;, as you may have noticed, bears a Bank Slot.
 				It accepts an Emotion Vowel that may be used to describe the speaker's emotions regarding
-				the matter of the sentence.
+				the subject of the sentence.
 			</p>
 			<p>
 				<b>xE rre cloche cEzE hymmnos/.</b><br/>
-				&quot;Cloche is delighted to express herself through song, and this makes me happy.&quot;
+				&quot;Cloche is delighted to express herself through song and this makes me happy.&quot;
 			</p>
 			<p>
 				Just as with standard Hymmnos, the subject identifier &quot;rre&quot; and the subject it
@@ -480,7 +482,7 @@ See license.README for details.
 			</p>
 			<p>
 				<b>xI harr cEzE hymmnos/.</b><br/>
-				&quot;She is delighted to express herself through song, and this makes me jealous.&quot;
+				&quot;She is delighted to express herself through song and this makes me jealous.&quot;
 			</p>
 			<p>
 				<span style="color: red;">
@@ -489,7 +491,7 @@ See license.README for details.
 					made note of the following information. It is unconfirmed, but because it seems
 					reasonable and significant, it has been included here.
 				</span><br/>
-				&quot;x.&quot; is used primarily with Category 1 Emotion Vowels, and they carry slightly
+				&quot;x.&quot; is used primarily with Category 1 Emotion Vowels and they carry slightly
 				different meanings in this context:
 			</p>
 			<table>
@@ -560,7 +562,7 @@ See license.README for details.
 				</p>
 				<p>
 					<b>xE rre yorra cEzE hymmnos/.</b><br/>
-					&quot;Cloche and company are delighted to express themselves through song, and this makes me happy.&quot;
+					&quot;Cloche and company are delighted to express themselves through song and this makes me happy.&quot;
 				</p>
 			</div>
 			<div style="padding-left: 10px;">
@@ -593,7 +595,7 @@ See license.README for details.
 				<div class="subsection-title text-title-small">Quotation</div>
 				<p>
 					In the New Testament of Pastalie, Hymmnos between :/ and /: is considered quoted,
-					just like encapsulating text in &quot;&quot; in English.
+					just like encapsulating text between &quot;&quot; in English.
 				</p>
 			</div>
 		</div>
@@ -601,7 +603,7 @@ See license.README for details.
 			<div class="section-title text-title-small">⠕ Functions</div>
 			<p>
 				Under the New Testament of Pastalie, it is possible to define a complete
-				Hymmnos passage and specify a name by which it may be invoked in the future.
+				Hymmnos passage and enumerate a name by which it may be invoked in the future.
 				The syntax for invoking this mechanism follows:
 			</p>
 			<p>
@@ -621,7 +623,7 @@ See license.README for details.
 				In this example, the Hymmnos &quot;jYOzAt METHOD_HYMME_ISHIKAWA_JANNE/.&quot; was
 				stored in a function named &quot;ishikawa&quot;. It was then invoked four times.<br/>
 				(Of course, because &quot;!&quot; was present at the end of every statement,
-				nothing would have really been invoked)
+				nothing would actually happened)
 			</p>
 		</div>
 		<div class="text-basic">
@@ -658,7 +660,7 @@ See license.README for details.
 				<div class="subsection-title text-title-small">Example statements</div>
 				<p>
 					Complete sentences including nouns are presented below.
-					Any noun present in modern Hymmnos may be used with Emotion Verbs
+					Any noun present in standard Hymmnos may be used with Emotion Verbs
 					within the context of the New Testament of Pastalie.
 				</p>
 				<p>

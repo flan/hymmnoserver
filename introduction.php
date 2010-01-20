@@ -60,7 +60,7 @@ See license.README for details.
 					Static waves are a somewhat more complicated concept.
 					Using an arbitrary example -- and, really, there can be no non-arbitrary examples here --
 					consider a pencil. For it to continue to be a pencil, the forces that keep it coherent
-					must maintain a certain balance; effectively, the forces of the universe have gathered
+					must maintain a certain balance. Effectively, the forces of the universe have gathered
 					tiny components that have coalesced into something we recognize as a pencil.
 					These forces, and, indeed, the matter that they act upon, can be expressed as waves, and
 					it is the interaction all of these waves that form the static wave structure we

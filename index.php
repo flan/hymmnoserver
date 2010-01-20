@@ -28,8 +28,8 @@ See license.README for details.
 					<td align="left" valign="top" style="width: 450px;">
 						<p>
 							<span class="text-title">Welcome to the Hymmnoserver</span><br/>
-							The world of Ar tonelico, Sol Ciel, is home to a language of song magic, known as &quot;Hymmnos Words&quot;.
-							<br/>
+							The world of Ar tonelico, Sol Ciel, is home to a language of song magic, known as &quot;Hymmnos&quot;.
+							<br/><br/>
 							Here, you will be able to learn how this language works and you may look up words in English and Japanese.
 						</p>
 						<noscript>
@@ -44,9 +44,11 @@ See license.README for details.
 						<p style="font-size: 0.9em;">
 							Please be aware that this English version is an unofficial, fan-translated work and may, therefore, contain
 							errors and suffer from synchronization lag against the
-							<a href="http://game.salburg.com/hymmnoserver/">original Japanese site</a>.<br/>
+							<a href="http://game.salburg.com/hymmnoserver/">original Japanese site</a>.
+							<br/><br/>
 							Some features differ (for better or worse) and some details, such as examples, were intentionally rewritten
-							in a manner believed to make more sense to an English-speaking audience.<br/><br/>
+							in a manner believed to make more sense to an English-speaking audience.
+							<br/><br/>
 							If you note any problems, please
 							<a href="http://code.google.com/p/hymmnoserver/issues/list">report the issue</a> and help to make this
 							service better.
@@ -66,12 +68,12 @@ See license.README for details.
 						</p>
 						<ul class="basic-inline text-small">
 							<li>
-								Users of modern Unix-like operating systems can usually just view the font and click 'Install' or
-								save the font file into ~/.fonts/ and make use of it immediately.
+								Users of modern Unix-like operating systems can usually just view the font with their platform's
+								font-viewer and click 'Install' or save the font file into ~/.fonts/ and make use of it immediately.
 							</li>
 							<li>
-								Mac users may view the font and click 'Install' or drag the font into Library/Fonts/ under their
-								home directory.
+								Mac OS X users may view the font and click 'Install' or drag the font into Library/Fonts/ under
+								their home directory.
 							</li>
 							<li>
 								Those using Microsoft Windows will need to do some weird dance that may or may not involve
@@ -127,7 +129,7 @@ See license.README for details.
 							<ul style="margin-top: -10px;">
 								<li>Syntactic validation and structural processing</li>
 								<li>Binasphere encoding and decoding</li>
-								<li>Persistent Emotion Sounds</li>
+								<li>Persistent Emotion Sounds evaluation</li>
 							</ul>
 						</blockquote>
 					</td>
@@ -231,12 +233,13 @@ See license.README for details.
 				<a href="http://gplv3.fsf.org/">GPLv3</a> and
 				<a href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa/3.0 Creative Commons</a>
 				licenses.
-				If you agree to the open terms of these licenses, you may grab all of its materials from its
-				<a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
+				If you agree to the open terms of these licenses, you may access all of its materials via
+				its <a href="http://projects.uguu.ca/hymmnoserver/">project site</a>.
 			</p>
 			<p>
 				<b>Localizable</b><br/>
-				The Hymmnoserver's database, tools, and development repository make localization easy.
+				The Hymmnoserver's database, tools, and development repository are evolving to make
+				localization -- and, more importantly, maintainability of localizations -- easy.
 				If you want to provide this service in your own language,
 				<a href="./credits.php">just ask</a> and we'll help you get started.
 			</p>
