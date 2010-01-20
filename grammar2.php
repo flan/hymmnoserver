@@ -22,23 +22,18 @@ See license.README for details.
 		<style type="text/css">
 			td.ev-1{
 				background: #bbffbb;
-				text-align: center;
 			}
 			td.ev-2{
 				background: #bbbbff;
-				text-align: center;
 			}
 			td.ev-3{
 				background: #bbbbbb;
-				text-align: center;
 			}
 			td.ev-4{
 				background: #ffbbbb;
-				text-align: center;
 			}
 			td.ev-5{
 				background: #aaccaa;
-				text-align: center;
 			}
 			td.ev-6{
 				background: #ffcccc;
@@ -65,7 +60,6 @@ See license.README for details.
 				background: #000044;
 				color: white;
 				font-weight: bold;
-				text-align: center;
 			}
 		</style>
 	</head>
@@ -94,7 +88,7 @@ See license.README for details.
 					When the subject of a sentence is implied by context, it is possible to form useful
 					Hymmnos using only one word. Like usual, we will explore this concept with an example.
 				</p>
-				<table>
+				<table style="text-align: center;">
 					<tr>
 						<td class="ev-1">hEmmErYE</td>
 						<td class="ev-3">/.</td>
@@ -145,7 +139,7 @@ See license.README for details.
 				<p>
 					If it is not clear what the objects are from context, they need to be qualified explicitly.
 				</p>
-				<table>
+				<table style="text-align: center;">
 					<tr>
 						<td class="ev-1">hEmmErYE</td>
 						<td class="ev-2">hymmnos</td>
@@ -186,7 +180,7 @@ See license.README for details.
 				Notice that the template is written in lower-case letters, while the Emotion Vowels
 				are written in upper-case.
 			</p>
-			<table>
+			<table style="text-align: center;">
 				<tr>
 					<td class="ev-1" colspan="2" style="color: blue;">
 						h<span style="color: red;">E</span>mm<span style="color: red;">E</span>r<span style="color: red;">YE</span><br/>
@@ -264,28 +258,28 @@ See license.README for details.
 						<td class="ev-1b" style="width: 505px;">strength, determination</td>
 					</tr>
 					<tr>
-						<td class="ev-1b" style="text-align: center;">I</td>
-						<td class="ev-1b" style="text-align: center;">い</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">I</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">い</td>
 						<td class="ev-1b">pain, fear, desire to escape</td>
 					</tr>
 					<tr>
-						<td class="ev-1b" style="text-align: center;">U</td>
-						<td class="ev-1b" style="text-align: center;">う</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">U</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">う</td>
 						<td class="ev-1b">sadness, concern (sometimes positive)</td>
 					</tr>
 					<tr>
-						<td class="ev-1b" style="text-align: center;">E</td>
-						<td class="ev-1b" style="text-align: center;">え</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">E</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">え</td>
 						<td class="ev-1b">happiness, pleasure</td>
 					</tr>
 					<tr>
-						<td class="ev-1b" style="text-align: center;">O</td>
-						<td class="ev-1b" style="text-align: center;">お</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">O</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">お</td>
 						<td class="ev-1b">anger, malice</td>
 					</tr>
 					<tr>
-						<td class="ev-1b" style="text-align: center;">N</td>
-						<td class="ev-1b" style="text-align: center;">ん</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">N</td>
+						<td class="ev-1b" style="text-align: center; width: 50px;">ん</td>
 						<td class="ev-1b">aloofness, relaxation, neutrality</td>
 					</tr>
 				</table>
@@ -298,28 +292,28 @@ See license.README for details.
 						<td class="ev-2b" style="width: 505px;">(emotional sympathy)</td>
 					</tr>
 					<tr>
-						<td class="ev-2b" style="text-align: center;">YI</td>
-						<td class="ev-2b" style="text-align: center;">いぇい</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YI</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">いぇい</td>
 						<td class="ev-2b">suffering, pain, death</td>
 					</tr>
 					<tr>
-						<td class="ev-2b" style="text-align: center;">YU</td>
-						<td class="ev-2b" style="text-align: center;">ゆ</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YU</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">ゆ</td>
 						<td class="ev-2b">sadness, anxiety</td>
 					</tr>
 					<tr>
-						<td class="ev-2b" style="text-align: center;">YE</td>
-						<td class="ev-2b" style="text-align: center;">いぇ</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YE</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">いぇ</td>
 						<td class="ev-2b">happiness, fortune</td>
 					</tr>
 					<tr>
-						<td class="ev-2b" style="text-align: center;">YO</td>
-						<td class="ev-2b" style="text-align: center;">よ</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YO</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">よ</td>
 						<td class="ev-2b">anger, rage</td>
 					</tr>
 					<tr>
-						<td class="ev-2b" style="text-align: center;">YN</td>
-						<td class="ev-2b" style="text-align: center;">ぅん</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">YN</td>
+						<td class="ev-2b" style="text-align: center; width: 50px;">ぅん</td>
 						<td class="ev-2b">calmness, comfort</td>
 					</tr>
 				</table>
@@ -332,28 +326,28 @@ See license.README for details.
 						<td class="ev-4b" style="width: 505px;">(emotional sympathy)</td>
 					</tr>
 					<tr>
-						<td class="ev-4b" style="text-align: center;">LYI</td>
-						<td class="ev-4b" style="text-align: center;">りぇい</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYI</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りぇい</td>
 						<td class="ev-4b">pain, destruction, ruin</td>
 					</tr>
 					<tr>
-						<td class="ev-4b" style="text-align: center;">LYU</td>
-						<td class="ev-4b" style="text-align: center;">りゅ</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYU</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りゅ</td>
 						<td class="ev-4b">sadness, instability</td>
 					</tr>
 					<tr>
-						<td class="ev-4b" style="text-align: center;">LYE</td>
-						<td class="ev-4b" style="text-align: center;">りぇ</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYE</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りぇ</td>
 						<td class="ev-4b">happiness, satisfaction</td>
 					</tr>
 					<tr>
-						<td class="ev-4b" style="text-align: center;">LYO</td>
-						<td class="ev-4b" style="text-align: center;">りょ</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYO</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りょ</td>
 						<td class="ev-4b">strife, chaos, war</td>
 					</tr>
 					<tr>
-						<td class="ev-4b" style="text-align: center;">LYN</td>
-						<td class="ev-4b" style="text-align: center;">りん</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">LYN</td>
+						<td class="ev-4b" style="text-align: center; width: 50px;">りん</td>
 						<td class="ev-4b">calmness, quietness</td>
 					</tr>
 				</table>
@@ -416,20 +410,20 @@ See license.README for details.
 					<td class="ev-5" style="width: 200px;">Expression form</td>
 				</tr>
 				<tr>
-					<td class="ev-1b">me</td>
-					<td class="ev-1b">A[object]</td>
+					<td class="ev-1b" style="width: 90px;">me</td>
+					<td class="ev-1b" style="width: 200px;">A[object]</td>
 				</tr>
 				<tr>
-					<td class="ev-1b">you</td>
-					<td class="ev-1b">YA[object]</td>
+					<td class="ev-1b" style="width: 90px;">you</td>
+					<td class="ev-1b" style="width: 200px;">YA[object]</td>
 				</tr>
 				<tr>
-					<td class="ev-1b">everyone,<br/>the land,<br/>the world</td>
-					<td class="ev-1b">LYA[object]</td>
+					<td class="ev-1b" style="width: 90px;">everyone,<br/>the land,<br/>the world</td>
+					<td class="ev-1b" style="width: 200px;">LYA[object]</td>
 				</tr>
 				<tr>
-					<td class="ev-1b">a specific<br/>person</td>
-					<td class="ev-1b">A[object]_[person's name]</td>
+					<td class="ev-1b" style="width: 90px;">a specific<br/>person</td>
+					<td class="ev-1b" style="width: 200px;">A[object]_[person's name]</td>
 				</tr>
 			</table>
 			<p>
@@ -501,28 +495,28 @@ See license.README for details.
 					<td class="ev-1b">indifferent</td>
 				</tr>
 				<tr>
-					<td class="ev-1b" style="text-align: center;">I</td>
-					<td class="ev-1b" style="text-align: center;">い</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">I</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">い</td>
 					<td class="ev-1b">jealous</td>
 				</tr>
 				<tr>
-					<td class="ev-1b" style="text-align: center;">U</td>
-					<td class="ev-1b" style="text-align: center;">う</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">U</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">う</td>
 					<td class="ev-1b">concerned</td>
 				</tr>
 				<tr>
-					<td class="ev-1b" style="text-align: center;">E</td>
-					<td class="ev-1b" style="text-align: center;">え</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">E</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">え</td>
 					<td class="ev-1b">happy</td>
 				</tr>
 				<tr>
-					<td class="ev-1b" style="text-align: center;">O</td>
-					<td class="ev-1b" style="text-align: center;">お</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">O</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">お</td>
 					<td class="ev-1b">angry</td>
 				</tr>
 				<tr>
-					<td class="ev-1b" style="text-align: center;">N</td>
-					<td class="ev-1b" style="text-align: center;">ん</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">N</td>
+					<td class="ev-1b" style="text-align: center; width: 50px;">ん</td>
 					<td class="ev-1b">opposed</td>
 				</tr>
 			</table>
