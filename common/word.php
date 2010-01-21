@@ -11,80 +11,77 @@ See license.README for details.
 (C) Neil Tallim, 2009
 */?>
 
-<table style="width: 100%; border-width: 0px;">
-	<?php
+<?php
+	include 'common/constants.php';
+	
+	function renderWord($word, $class, $meaning, $romaji, $japanese, $kana, $dialect, $notes, $links){
+		global $DIALECT;
+		global $SYNTAX_CLASS_FULL;
+		
 		$html_word = htmlspecialchars($word);
-		echo "<tr>";
-			echo "<td class=\"word-header word-header-$class\">";
-				echo "<span class=\"word-text-title\">$html_word</span>";
-				echo "<br/>";
-				echo "<span class=\"word-text-subtitle\">$html_word</span>";
-			echo "</td>";
-		echo "</tr>";
-		echo "<tr>";
-			echo "<td class=\"word-header word-header-$class\">";
-				echo "<span class=\"word-text-title-expanded\">$meaning [$romaji]";
+		echo '<table style="width: 100%; border-width: 0px;">';
+			echo "<tr>";
+				echo "<td class=\"word-header word-header-$class\">";
+					echo "<span class=\"word-text-title\">$html_word</span>";
 					echo "<br/>";
-				echo "$japanese [$kana]</span>";
-			echo "</td>";
-		echo "</tr>";
-	?>
-</table>
-<table style="width: 100%; border-width: 0px;">
-	<tr class="word-text-dialect-usage">
-		<td class="word-info-title">
-			Dialect
-		</td>
-		<td class="word-info">
-			<span style="font-weight: bold;">
-				<?php echo $DIALECT[$dialect]; ?>
-			</span>
-		</td>
-	</tr>
-	<tr class="word-text-dialect-usage">
-		<td class="word-info-title">
-			Usage
-		</td>
-		<td class="word-info">
-			<span style="font-weight: bold;">
-				<?php echo $SYNTAX_CLASS_FULL[$class]; ?>
-			</span>
-		</td>
-	</tr>
-	<tr class="word-text-related-description">
-		<td class="word-info-title">
-			Related Hymmnos
-		</td>
-		<td class="word-info">
-			<?php
-				$links_size = count($links);
-				if($links_size > 0){#Render all related hymmnos, delimited by commas.
-					for($i = 0; $i < $links_size; $i++){
-						list($link, $link_dialect) = $links[$i];
-						$html_link = htmlspecialchars($link);
-						if($search_mode){
-							echo "<a href=\"javascript:popUpWord('$html_link', $link_dialect)\">$html_link</a>";
-						}else{
-							echo "<a href=\"./word.php?word=$html_link&dialect=$link_dialect\">$html_link</a>";
-						} 
-						
-						if($i + 1 < $links_size){
-							echo ", ";
+					echo "<span class=\"word-text-subtitle\">$html_word</span>";
+				echo "</td>";
+			echo "</tr>";
+			echo "<tr>";
+				echo "<td class=\"word-header word-header-$class\">";
+					echo "<span class=\"word-text-title-expanded\">$meaning [$romaji]";
+						echo "<br/>";
+					echo "$japanese [$kana]</span>";
+				echo "</td>";
+			echo "</tr>";
+		echo '</table>';
+		echo '<table style="width: 100%; border-width: 0px;">';
+			echo '<tr class="word-text-dialect-usage">';
+				echo '<td class="word-info-title">Dialect</td>';
+				echo '<td class="word-info">';
+					echo '<span style="font-weight: bold;">';
+						echo $DIALECT[$dialect];
+					echo '</span>';
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr class="word-text-dialect-usage">';
+				echo '<td class="word-info-title">Usage</td>';
+				echo '<td class="word-info">';
+					echo '<span style="font-weight: bold;">';
+						echo $SYNTAX_CLASS_FULL[$class];
+					echo '</span>';
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr class="word-text-related-description">';
+				echo '<td class="word-info-title">Related Hymmnos</td>';
+				echo '<td class="word-info">';
+					$links_size = count($links);
+					if($links_size > 0){#Render all related hymmnos, delimited by commas.
+						for($i = 0; $i < $links_size; $i++){
+							list($link, $link_dialect) = $links[$i];
+							$html_link = htmlspecialchars($link);
+							if($search_mode){
+								echo "<a href=\"javascript:popUpWord('$html_link', $link_dialect)\">$html_link</a>";
+							}else{
+								echo "<a href=\"./word.php?word=$html_link&dialect=$link_dialect\">$html_link</a>";
+							} 
+							
+							if($i + 1 < $links_size){
+								echo ", ";
+							}
 						}
+					}else{
+						echo 'No related Hymmnos';
 					}
-				}else{
-					echo 'No related Hymmnos';
-				}
-			?>
-		</td>
-	</tr>
-	<tr class="word-text-related-description">
-		<td class="word-info-title">
-			Notes
-		</td>
-		<td class="word-info">
-			<?php echo $notes; ?>
-		</td>
-	</tr>
-</table>
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr class="word-text-related-description">';
+				echo '<td class="word-info-title">Notes</td>';
+				echo '<td class="word-info">';
+					echo htmlentities($notes);
+				echo '</td>';
+			echo '</tr>';
+		echo '</table>';
+	}
+?>
 

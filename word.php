@@ -79,6 +79,7 @@ See license.README for details.
 			$mysql->close();
 			
 			include 'common/word.php';
+			renderWord($word, $class, $meaning, $romaji, $japanese, $kana, $dialect, $notes, $links);
 			
 			$footer_word = true;
 			include 'common/footer.xml';
