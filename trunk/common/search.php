@@ -39,7 +39,7 @@ See license.README for details.
 				echo '<div style="padding-left: 13px;">';
 					$stmt->bind_result($word, $meaning, $japanese, $kana, $dialect, $romaji, $notes, $class);
 					
-					include 'common/word.php';
+					include_once 'common/word.php';
 					while($stmt->fetch()){#Display every result.
 						#Read all related words from the database.
 						$stmt2 = $mysql->prepare("SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = ? AND source_dialect = ? ORDER BY destination ASC, destination_dialect ASC");
