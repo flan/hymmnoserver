@@ -199,7 +199,7 @@ See license.README for details.
 		}
 		
 		echo '<tr>';
-			echo '<td class="word-header-'.$class.'" style="width: 17%;">'.$l_word'.</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 17%;">'.$l_word.'</td>';
 			echo '<td class="word-header-'.$class.'" style="width: 14%;">'.$SYNTAX_CLASS[$class].'</td>';
 			echo '<td class="word-header-'.$class.'" style="width: 50%;">'.htmlentities($meaning, ENT_COMPAT, "UTF-8").'</td>';
 			echo '<td class="word-header-'.$class.'" style="width: 19%;">'.htmlentities($kana, ENT_COMPAT, "UTF-8").'</td>';
