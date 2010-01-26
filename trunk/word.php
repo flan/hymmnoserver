@@ -52,7 +52,7 @@ See license.README for details.
 				die('Failed to connect to database: '.htmlentities($mysql->connect_error));
 			}
 			
-			#Read the requested word from the database.
+			//Read the requested word from the database.
 			$stmt = $mysql->prepare('SELECT word, meaning, japanese, kana, dialect, romaji, description, class FROM hymmnos WHERE word = ? AND dialect = ? LIMIT 1');
 			$stmt->bind_param('si', $word, $dialect);
 			$stmt->execute();
@@ -65,7 +65,7 @@ See license.README for details.
 			$stmt->free_result();
 			$stmt->close();
 			
-			#Read all related words from the database.
+			//Read all related words from the database.
 			$stmt = $mysql->prepare('SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = ? AND source_dialect = ? ORDER BY destination ASC, destination_dialect ASC');
 			$stmt->bind_param('si', $word, $dialect);
 			$stmt->execute();

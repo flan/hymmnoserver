@@ -136,7 +136,7 @@ See license.README for details.
 	#Insert Emotion Vowels or blanks into Emotion Verbs or prefix other words.
 	function decorateWord($word, $class, $decorations, $colour){
 		if(is_null($decorations)){
-			return htmlentities($word);
+			return htmlentities($word, ENT_COMPAT, "UTF-8");
 		}
 		
 		if($class == 1){#Emotion Verb
@@ -146,17 +146,17 @@ See license.README for details.
 			foreach(array_slice($decorations, 0, -1) as $vowel){
 				$result = $result.htmlspecialchars($chunks[$i]);
 				if($colour){
-					$result .= '<span style="color: #FFD700;">'.htmlentities($vowel).'</span>';
+					$result .= '<span style="color: #FFD700;">'.htmlentities($vowel, ENT_COMPAT, "UTF-8").'</span>';
 				}else{
-					$result .= htmlentities($vowel);
+					$result .= htmlentities($vowel, ENT_COMPAT, "UTF-8");
 				}
 				$i++;
 			}
 			if(!empty($decorations[count($decorations) - 1])){
 				if($colour){
-					return $result.'<span style="color: #FF00FF;">'.htmlentities($decorations[count($decorations) - 1]).'</span>';
+					return $result.'<span style="color: #FF00FF;">'.htmlentities($decorations[count($decorations) - 1], ENT_COMPAT, "UTF-8").'</span>';
 				}else{
-					return $result.htmlentities($decorations[count($decorations) - 1]);
+					return $result.htmlentities($decorations[count($decorations) - 1], ENT_COMPAT, "UTF-8");
 				}
 			}else{
 				return $result;
@@ -171,7 +171,7 @@ See license.README for details.
 				if(!empty($decorations[0])){
 					$result = '<span style="color: #F0D000;">'.$decorations[0].'</span>';
 				}
-				$result .= htmlentities($word);
+				$result .= htmlentities($word, ENT_COMPAT, "UTF-8");
 				if(!empty($decorations[1])){
 					$result .= '<span style="color: #FF00FF;">'.$decorations[1].'</span>';
 				}
@@ -181,7 +181,7 @@ See license.README for details.
 			}
 		}
 		
-		return htmlentities($word);
+		return htmlentities($word, ENT_COMPAT, "UTF-8");
 	}
 	
 	#Renders a single word in the output table.
@@ -190,7 +190,7 @@ See license.README for details.
 		global $SYNTAX_CLASS;
 		
 		list($l_word, $meaning, $kana, $class, $dialect, $decorations, $hits) = $word;
-		$base_word = htmlentities($l_word);
+		$base_word = htmlentities($l_word, ENT_COMPAT, "UTF-8");
 		if($hits == 0){
 			$meaning = '???';
 			$kana = '???';
@@ -201,8 +201,8 @@ See license.README for details.
 		echo '<tr>';
 			echo '<td class="word-header-'.$class.'" style="width: 17%;">'.$l_word'.</td>';
 			echo '<td class="word-header-'.$class.'" style="width: 14%;">'.$SYNTAX_CLASS[$class].'</td>';
-			echo '<td class="word-header-'.$class.'" style="width: 50%;">'.htmlentities($meaning).'</td>';
-			echo '<td class="word-header-'.$class.'" style="width: 19%;">'.htmlentities($kana).'</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 50%;">'.htmlentities($meaning, ENT_COMPAT, "UTF-8").'</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 19%;">'.htmlentities($kana, ENT_COMPAT, "UTF-8").'</td>';
 		echo '</tr>';
 		
 		return $hits > 1;
