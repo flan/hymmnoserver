@@ -18,22 +18,22 @@ See license.README for details.
 		global $DIALECT;
 		global $SYNTAX_CLASS_FULL;
 		
-		$html_word = htmlspecialchars($word);
+		$html_word = htmlentities($word);
 		echo '<table style="width: 100%; border-width: 0px;">';
-			echo "<tr>";
-				echo "<td class=\"word-header word-header-$class\">";
-					echo "<span class=\"word-text-title\">$html_word</span>";
-					echo "<br/>";
-					echo "<span class=\"word-text-subtitle\">$html_word</span>";
-				echo "</td>";
-			echo "</tr>";
-			echo "<tr>";
-				echo "<td class=\"word-header word-header-$class\">";
-					echo "<span class=\"word-text-title-expanded\">$meaning [$romaji]";
-						echo "<br/>";
-					echo "$japanese [$kana]</span>";
-				echo "</td>";
-			echo "</tr>";
+			echo '<tr>';
+				echo '<td class=\"word-header word-header-'.htmlentities($class).'\">';
+					echo '<span class=\"word-text-title\">'.$html_word.'</span>';
+					echo '<br/>';
+					echo '<span class=\"word-text-subtitle\">'.$html_word.'</span>';
+				echo '</td>';
+			echo '</tr>';
+			echo '<tr>';
+				echo '<td class=\"word-header word-header-'.htmlentities($class).'\">';
+					echo '<span class=\"word-text-title-expanded\">'.htmlentities($meaning).' ['.htmlentities($romaji).']';
+						echo '<br/>';
+					echo htmlentities($japanese).' ['.htmlentities($kana).']</span>';
+				echo '</td>';
+			echo '</tr>';
 		echo '</table>';
 		echo '<table style="width: 100%; border-width: 0px;">';
 			echo '<tr class="word-text-dialect-usage">';
@@ -57,19 +57,22 @@ See license.README for details.
 				echo '<td class="word-info">';
 					$links_size = count($links);
 					if($links_size > 0){#Render all related hymmnos, delimited by commas.
+						$links_rendered = array();
 						for($i = 0; $i < $links_size; $i++){
 							list($link, $link_dialect) = $links[$i];
-							$html_link = htmlspecialchars($link);
+							$html_link = htmlentities($link);
 							if($search_mode){
-								echo "<a href=\"javascript:popUpWord('$html_link', $link_dialect)\">$html_link</a>";
+								$links_rendered[] = '<a href="javascript:popUpWord(\''.$html_link.'\', '.$link_dialect.')">'.$html_link.'</a>';
 							}else{
-								echo "<a href=\"./word.php?word=$html_link&dialect=$link_dialect\">$html_link</a>";
-							} 
-							
-							if($i + 1 < $links_size){
-								echo ", ";
+								$links_rendered[] = '<a href="./word.php?'.
+									htmlentities(http_build_query({
+									 'word' => $link,
+									 'dialect' => $link_dialect
+									})).
+									'">'.$html_link.'</a>';
 							}
 						}
+						echo implode(', ', $links_rendered);
 					}else{
 						echo 'No related Hymmnos';
 					}
@@ -84,4 +87,3 @@ See license.README for details.
 		echo '</table>';
 	}
 ?>
-

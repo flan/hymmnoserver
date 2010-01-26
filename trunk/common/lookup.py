@@ -25,10 +25,16 @@ import re
 import threading
 
 EMOTION_VOWELS = r'A|I|U|E|O|N|YA|YI|YU|YE|YO|YN|LYA|LYI|LYU|LYE|LYO|LYN' #: A regexp fragment containing all known Emotion Vowels.
-_EMOTION_VOWELS_FULL = r'(%s|\.)?' % (EMOTION_VOWELS) #: A regexp fragment containing all emotion vowels and a bank-slot marker in a capture group.
+_EMOTION_VOWELS_FULL = r'(%(emotion_vowels)s|\.)?' % {
+ 'emotion_vowels': EMOTION_VOWELS,
+} #: A regexp fragment containing all emotion vowels and a bank-slot marker in a capture group.
 
-WORD_STRUCTURE_REGEXP = re.compile(r"^(%s)?(.+?)(_\w+)?$" % (EMOTION_VOWELS)) #: A regular expression that matches Pastalia-ized nouns.
-_EMOTION_WORDS_REGEXP = re.compile(r'^(%s)(\w+)$' % (EMOTION_VOWELS)) #: A regular expression that matches any Pastalia-ized word.
+WORD_STRUCTURE_REGEXP = re.compile(r"^(%(emotion_vowels)s)?(.+?)(_\w+)?$" % {
+ 'emotion_vowels': EMOTION_VOWELS,
+}) #: A regular expression that matches Pastalia-ized nouns.
+_EMOTION_WORDS_REGEXP = re.compile(r'^(%(emotion_vowels)s)(\w+)$' % {
+ 'emotion_vowels': EMOTION_VOWELS,
+}) #: A regular expression that matches any Pastalia-ized word.
 
 EMOTION_VERB_REGEXPS = None #: A collection of regular expressions that match all Emotion Verbs known to exist, plus the pure word forms and dialects.
 
@@ -74,7 +80,9 @@ def initialiseEmotionVerbRegexps(db_con):
 	if not EMOTION_VERB_REGEXPS:
 		emotion_verbs = _getEmotionVerbs(db_con)
 		EMOTION_VERB_REGEXPS = tuple([(
-		 re.compile(r"^%s(eh|aye|za)?$" % (ev.replace(".", _EMOTION_VOWELS_FULL))),
+		 re.compile(r"^%(emotion_vowels_full)s(eh|aye|za)?$" % {
+		  'emotion_vowels_full': (ev.replace(".", _EMOTION_VOWELS_FULL)),
+		 }),
 		 ev,
 		 d,
 		) for (ev, d) in emotion_verbs])
@@ -131,7 +139,9 @@ def _getEmotionVerbs(db_con):
 def _readWord(word, dialect, db_con):
 	limiter = "ORDER BY dialect ASC"
 	if dialect:
-		limiter = "AND dialect = %i" % (dialect)
+		limiter = "AND dialect = %(dialect)i" % {
+		 'dialect': dialect,
+		}
 		
 	cursor = db_con.cursor()
 	cursor.execute("SELECT word, meaning, kana, class, dialect, syllables FROM hymmnos WHERE word = %s " + limiter, (word,))

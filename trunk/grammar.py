@@ -39,10 +39,13 @@ def _renderMicroTransformation(component):
 	line = cgi.escape(component, True)
 	print """
 		<td class="transformation">
-			<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>
-			<div><a href="%s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%s</a></div>
+			<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%(link)s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%(line)s</a></div>
+			<div><a href="%(link)s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%(line)s</a></div>
 		</td>
-	""" % (link, line, link, line)
+	""" % {
+	 'link': link,
+	 'line': line,
+	}
 	
 def _renderMacroTransformation(phrase, components, unknown):
 	"""
@@ -59,16 +62,20 @@ def _renderMacroTransformation(phrase, components, unknown):
 		<table style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">
-					<div style="font-family: hymmnos; font-size: 18pt;">%s</div>
-					<div style="font-size: 12pt;">%s</div>
+					<div style="font-family: hymmnos; font-size: 18pt;">%(phrase)s</div>
+					<div style="font-size: 12pt;">%(phrase)s</div>
 				</td>
 			</tr>
-	""" % (phrase, phrase)
+	""" % {
+	 'phrase': phrase,
+	}
 	for (i, lines) in enumerate(components):
 		print """
 			<tr>
-				<td class="transformation-id">%i</td>
-		""" % (i)
+				<td class="transformation-id">%(id)i</td>
+		""" % {
+		 'id': i,
+		}
 		if len(lines) > 1:
 			print """
 				<td style="background: #808080;">
@@ -77,8 +84,10 @@ def _renderMacroTransformation(phrase, components, unknown):
 			for (j, line) in enumerate(lines):
 				print """
 						<tr>
-							<td class="transformation-id">%i</td>
-				""" % (j)
+							<td class="transformation-id">%(id)i</td>
+				""" % {
+				 'id': j,
+				}
 				_renderMicroTransformation(line)
 				print """
 						</tr>
@@ -99,10 +108,13 @@ def _renderMacroTransformation(phrase, components, unknown):
 		print """
 			<tr>
 				<td style="color: white; background: black;" colspan="2">
-					<div style="font-size: 10pt;">Unknown word%s: %s</div>
+					<div style="font-size: 10pt;">Unknown word%(plural)s: %(unknown)s</div>
 				</td>
 			</tr>
-		""" % (plural, cgi.escape(", ".join(unknown), True))
+		""" % {
+		 'plural': plural,
+		 'unknown': cgi.escape(", ".join(unknown), True),
+		}
 	print """
 		</table>
 	"""
@@ -122,10 +134,12 @@ def _renderFailure(message):
 				</td>
 			</tr>
 			<tr>
-				<td style="background: red; color: white; text-align: center;">%s</td>
+				<td style="background: red; color: white; text-align: center;">%(message)s</td>
 			</tr>
 		</table>
-	""" % (message)
+	""" % {
+	 'message': message,
+	}
 	
 	
 form = cgi.FieldStorage()
@@ -219,11 +233,17 @@ else:
 					else:
 						print syntax.renderResult_xhtml(tree, display_string)
 				except syntax.ContentError, e:
-					_renderFailure("unable to process input: %s" % (e))
+					_renderFailure("unable to process input: %(error)s" % {
+					 'error': e,
+					})
 	except transformations.ContentError, e:
-		_renderFailure("unable to process input: %s" % (e))
+		_renderFailure("unable to process input: %(error)s" % {
+		 'error': e,
+		})
 	except Exception, e:
-		_renderFailure("an unexpected error occurred: %s" % (e))
+		_renderFailure("an unexpected error occurred: %(error)s" % {
+		 'error': e,
+		})
 		
 	try:
 		db_con.close()
@@ -235,7 +255,7 @@ print """
 <form method="get" action="./grammar.py">
 	<div>
 		<div style="text-align: center;">
-			<textarea name="query" id="query" rows="5" cols="80">%s</textarea>
+			<textarea name="query" id="query" rows="5" cols="80">%(query)s</textarea>
 		</div>
 		<div style="text-align: right;">
 			<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
@@ -244,7 +264,9 @@ print """
 		</div>
 	</div>
 </form>
-""" % (cgi.escape(query or ''))
+""" % {
+ 'query': cgi.escape(query or ''),
+}
 
 footer = open("common/footer-py.xml", 'r')
 print footer.read()
@@ -254,4 +276,3 @@ print """
 	</body>
 </html>
 """
-
