@@ -633,7 +633,9 @@ class _Word(_SyntaxTree):
 	def getBaseWord(self):
 		return self._word
 		
-	def getMeaning(self):
+	def getMeaning(self, xhtml=False):
+		if xhtml:
+			return cgi.escape(self._meaning)
 		return self._meaning
 		
 	def getClass(self):
@@ -684,24 +686,24 @@ def renderResult_xhtml(tree, display_string):
 		<table style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; text-align: center; background: #D3D3D3;">
-					<div style="font-family: hymmnos; font-size: 24pt;">
-						%s
-					</div>
-					<div style="font-size: 18pt;">
-						%s
-					</div>
+					<div style="font-family: hymmnos; font-size: 24pt;">%(display_string)s</div>
+					<div style="font-size: 18pt;">%(display_string)s</div>
 				</td>
 			</tr>
 			<tr>
 				<td style="background: #808080; color: white;">
 					<div style="width: 100%%;">
-						%s
+						%(branches)s
 					</div>
 				</td>
 			</tr>
 			<tr>
 				<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
-					You may wish to <a href="./search.php?%s">translate this sentence word-for-word</a> or <a href="./syntax-xml.py?%s">view it as XML</a>
+					You may wish to <a href="./search.php?%(display_string_translate)s">
+						translate this sentence word-for-word
+					</a> or <a href="./syntax-xml.py?%(display_string_xml)s">
+						view it as XML
+					</a>
 				</td>
 			</tr>
 		</table>
@@ -713,7 +715,12 @@ def renderResult_xhtml(tree, display_string):
 				The syntax tree does not take Emotion Vowels into consideration.
 			</span>
 		</div>
-	""" % (display_string, display_string, _renderBranches(tree), urllib.urlencode({'word': display_string}), urllib.urlencode({'query': display_string}))
+	""" % {
+	 'display_string': display_string,
+	 'branches': _renderBranches(tree),
+	 'display_string_translate': urllib.urlencode({'word': display_string}),
+	 'display_string_xml': urllib.urlencode({'query': display_string}),
+	}
 	
 def _decorateWord(word, prefix, suffix, slots, xhtml):
 		if not slots is None:
@@ -724,11 +731,11 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		suffix = suffix or ''
 		
 		if xhtml:
-			slots = ["<span style=\"color: #FFD700;\">%s</span>" % (slot) for slot in slots]
+			slots = [''.join(('<span style="color: #FFD700;">', slot, '</span>',)) for slot in slots]
 			if prefix:
-				prefix = "<span style=\"color: #F0D000;\">%s</span>" % (cgi.escape(prefix))
+				prefix = ''.join(('<span style="color: #F0D000;">', cgi.escape(prefix), '</span>',))
 			if suffix:
-				suffix = "<span style=\"color: #FF00FF;\">%s</span>" % (cgi.escape(suffix))
+				suffix = ''.join(('<span style="color: #FF00FF;">', cgi.escape(suffix), '</span>',))
 			word = cgi.escape(word)
 			
 		word_fragments = word.split('.')
@@ -759,7 +766,9 @@ def _digestTokens(tokens, db_con):
 				p = None
 				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
-				raise ContentError("unknown word in input: %s" % w)
+				raise ContentError("unknown word in input: %(word)s" % {
+				 'word': word,
+				})
 		elif pastalia and p:
 			pastalia_prefix_valid = True
 			
@@ -803,7 +812,14 @@ def _processAST(words, ast, phrase=None):
 								return None
 		if phrase in ('AaP', 'AalP'):
 			word = words[0][0][0]
-			if "%s$%i" % (word[0], word[4]) in ('re$%i' % (_DLCT_CENTRAL), 'na$%i' % (_DLCT_CENTRAL), 'zz$%i' % (_DLCT_PASTALIE)): #These are prefixes only.
+			if "%(word)s$%(dialect)i" % {
+			 'word': word[0],
+			 'dialect': word[4],
+			} in (
+			 're$%(dialect)i' % {'dialect': _DLCT_CENTRAL,},
+			 'na$%(dialect)i' % {'dialect': _DLCT_CENTRAL,},
+			 'zz$%(dialect)i' % {'dialect': _DLCT_PASTALIE,},
+			): #These are prefixes only.
 				return None
 				
 	#Process AST normally.
@@ -886,7 +902,10 @@ def _processWord_exact(words, target):
 		
 	(details, prefix, suffix, slots) = words[0]
 	for (word, meaning, kana, syntax_class, dialect, decorations, syllables) in details:
-		if "%s$%i" % (word.lower(), dialect % _DIALECT_SHIFT) == target:
+		if "%(word)s$%(dialect)i" % {
+		 'word': word.lower(),
+		 'dialect': dialect % _DIALECT_SHIFT,
+		} == target:
 			return _Word(word, meaning, _SYNTAX_MAPPING[syntax_class][0], dialect, prefix, suffix, slots)
 	return None
 	
@@ -909,31 +928,38 @@ def _renderBranches(tree):
 			children_entries.append(_renderBranches(child))
 			
 	return """
-		<div class="phrase phrase-%i">
-			<span class="phrase-title">%s</span>
-			<div class="phrase-content">%s</div>
+		<div class="phrase phrase-%(colour)i">
+			<span class="phrase-title">%(type)s</span>
+			<div class="phrase-content">%(content)s</div>
 		</div>
-	""" % (_PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]], _PHRASE_EXPANSION[_PHRASE_REDUCTION[tree.getPhrase()]], '\n'.join(children_entries))
+	""" % {
+	 'colour': _PHRASE_COLOURS[_PHRASE_REDUCTION[tree.getPhrase()]],
+	 'type': _PHRASE_EXPANSION[_PHRASE_REDUCTION[tree.getPhrase()]],
+	 'content': '\n'.join(children_entries),
+	}
 	
 def _renderLeaf(leaf):
 	base_word = leaf.getBaseWord()
 	if base_word.isdigit():
 		base_word = '1'
 		
-	return """<span class="phrase-word-dialect">(%s)</span>
-		<div class="phrase-word phrase-word-%i">
-			%s <span class="phrase-word-class">(%s)</span>
-			<div class="phrase-word-meaning">%s</div>
+	return """<span class="phrase-word-dialect">(%(base_dialect)s)</span>
+		<div class="phrase-word phrase-word-%(class)i">
+			<a href="javascript:popUpWord('%(base_word)s', %(dialect)i)" style="color: white;">
+				%(word)s
+			</a>
+			<span class="phrase-word-class">(%(syntax_class)s)</span>
+			<div class="phrase-word-meaning">%(meaning)s</div>
 		</div>
-	""" % (
-	 _DIALECT[leaf.getDialect() % _DIALECT_SHIFT],
-	 leaf.getClass(),
-	 """<a href="javascript:popUpWord('%s', %i)" style="color: white;">%s</a>""" % (
-	  base_word, leaf.getDialect(), leaf.getWord(True)
-	 ),
-	 _SYNTAX_CLASS_FULL[leaf.getClass()],
-	 leaf.getMeaning()
-	)
+	""" % {
+	 'base_dialect': _DIALECT[leaf.getDialect() % _DIALECT_SHIFT],
+	 'class': leaf.getClass(),
+	 'base_word': base_word,
+	 'dialect': leaf.getDialect(),
+	 'word': leaf.getWord(True),
+	 'syntax_class': _SYNTAX_CLASS_FULL[leaf.getClass()],
+	 'meaning': leaf.getMeaning(True),
+	}
 	
 def _sanitizePastalia(tokens):
 	emotion_verbs = lookup.EMOTION_VERB_REGEXPS

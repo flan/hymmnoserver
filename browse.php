@@ -1,4 +1,10 @@
-<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
+<?php
+	header("Expires: Mon, 20 Dec 1998 01:00:00 GMT");
+	header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+	header("Cache-Control: no-cache, must-revalidate");
+	header("Pragma: no-cache");
+	echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
@@ -25,10 +31,10 @@ See license.README for details.
 		<?php include 'common/header.xml'; ?>
 		<div style="font-size: 0.90em; text-align: center;">
 			<?php
-				#Determine the nature of the requested display; default if unintelligible.
+				//Determine the nature of the requested display; default if unintelligible.
 				$page = '';
-				if(isset($_GET['page'])){
-					$page = trim($_GET['page']);
+				if(isset($_REQUEST['page'])){
+					$page = trim($_REQUEST['page']);
 				}
 				if($page == ''){//Assume 'a' by default.
 					$page = 'a';
@@ -52,22 +58,22 @@ See license.README for details.
 				#Render the alphabetical bar.
 				$characters = range('a', 'z');
 				$characters[] = '0';
+				$sections = array();
 				foreach($characters as $character){
-					echo "<a href=\"./browse.php?page=$character\">";
+					$section = '<a href="./browse.php?page='.$character.'">';
 					if($character == $page){
-						echo "<span style=\"font-weight: bold; font-size: 1em;\">$character</span>";
+						$section .= '<span style="font-weight: bold; font-size: 1em;">'.$character.'</span>';
 					}else{
-						echo $character;
+						$section .= $character;
 					}
-					echo '</a>';
-					
-					if($character != '0'){
-						echo " / ";
-					}
+					$sections[] = $section.'</a>';
 				}
+				echo implode(' / ', $sections);
+				
 				echo '<br/>';
 				
-				#Render the syntax class bar.
+				//Render the syntax class bar.
+				$sections = array();
 				$i = 0;
 				foreach(array(
 				 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
@@ -75,18 +81,15 @@ See license.README for details.
 				 'prep.', 'pron.', 'prt.', 'v.'
 				) as $class){//Force an enumerable order from 1-14.
 					$i++;
-					echo "<a href=\"./browse.php?page=$i\">";
+					$section = '<a href="./browse.php?page='.$i.'">';
 					if($i == $page){
-						echo "<span style=\"font-weight: bold; font-size: 1em;\">$class</span>";
+						$section .= '<span style="font-weight: bold; font-size: 1em;">'.$class.'</span>';
 					}else{
-						echo $class;
+						$section .= $class;
 					}
-					echo '</a>';
-					
-					if($i != 14){
-						echo " / ";
-					}
+					$sections[] = $section.'</a>';
 				}
+				echo implode(' / ', $sections);
 			?>
 		</div>
 		<hr/>
@@ -94,26 +97,19 @@ See license.README for details.
 			<span style="color: red; font-size: 0.8em;">
 				<?php
 					require 'secure/db.php';
-					if ($mysqli->connect_error) {
-						printf("Connection failed: %s.", mysqli_connect_error());
-						exit();
+					if($mysql->connect_error){
+						die('Failed to connect to database: '.htmlentities($mysql->connect_error));
 					}
 					
-					if($page != '0'){#0 means all non-alpha-started entries.
-						if(is_numeric($page)){#Looking up records by syntax class.
-							$keys = $SYNTAX_CLASS_REV[$page];
-							$keys_count = count($keys);
-							$search_key = $keys[0];
-							for($i = 1; $i < $keys_count; $i++){
-								$search_key = $search_key.','.$keys[$i];
-							}
-							$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE class IN ($search_key) ORDER BY word ASC");
+					if($page != '0'){//0 means all non-alpha-started entries.
+						if(is_numeric($page)){//Looking up records by syntax class.
+							$stmt = $mysql->prepare('SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE class IN ('.implode(',', $SYNTAX_CLASS_REV[$page]).') ORDER BY word ASC');
 						}else{#Looking up records by starting letter.
-							$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC");
+							$stmt = $mysql->prepare('SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE word LIKE ? ORDER BY word ASC');
 							$page = $page.'%';
-							$stmt->bind_param("s", $page);
+							$stmt->bind_param('s', $page);
 						}
-					}else{#Get all non-alpha-started entries.
+					}else{//Get all non-alpha-started entries.
 						$stmt = $mysql->prepare("SELECT word, meaning, kana, dialect, class FROM hymmnos WHERE word RLIKE '^[^[:alpha:]].*'");
 					}
 					$stmt->execute();
@@ -137,27 +133,27 @@ See license.README for details.
 				<th class="result-header" style="width: 220px;">Dialect</th>
 			</tr>
 			<?php
-				if($stmt->num_rows > 0){#Render results only if there are results.
+				if($stmt->num_rows > 0){//Render results only if there are results.
 					$stmt->bind_result($word, $meaning, $kana, $dialect, $class);
 					
-					while($stmt->fetch()){#Render each result in its own row.
-						$html_word = htmlspecialchars($word);
+					while($stmt->fetch()){//Render each result in its own row.
+						$html_word = htmlentities($word);
 						echo '<tr>';
-							echo "<td class=\"result-cell result-dialect-$dialect\">";
-								echo "<a href=\"javascript:popUpWord('$html_word', $dialect)\">$html_word</a>";
+							echo '<td class="result-cell result-dialect-'.$dialect.'">';
+								echo '<a href="javascript:popUpWord(\''.$html_word.'\', '.$dialect.')">'.$html_word.'</a>';
 							echo '</td>';
-							echo "<td class=\"result-cell result-dialect-$dialect\">$meaning</td>";
-							echo "<td class=\"result-cell result-dialect-$dialect\">";
+							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($meaning).'</td>';
+							echo '<td class="result-cell result-dialect-'.$dialect.'">';
 								echo $SYNTAX_CLASS[$class];
 							echo '</td>';
-							echo "<td class=\"result-cell result-dialect-$dialect\">$kana</td>";
-							echo "<td class=\"result-cell result-dialect-$dialect\">";
+							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($kana).'</td>';
+							echo '<td class="result-cell result-dialect-'.$dialect.'">';
 								echo $DIALECT[$dialect];
 							echo '</td>';
 						echo '</tr>';
 					}
 				}else{
-					echo "<tr><td colspan=\"5\" style=\"color: red; font-weight: bold; text-align: center;\">No records found</td></tr>";
+					echo '<tr><td colspan="5" style="color: red; font-weight: bold; text-align: center;">No records found</td></tr>';
 				}
 				$stmt->free_result();
 				$stmt->close();

@@ -88,7 +88,15 @@ def applyPersistentEmotionSounds(lines, db_con):
 		processed.append(processed_lines)
 		unknown_set.update(unknown)
 		
-	return (["%s %s %s 0x vvi." % (es_i, es_ii, es_iii)] + new_lines + lines[-1:], processed, sorted(unknown_set))
+	return (
+	 ["%(es_i)s %(es_ii)s %(es_iii)s 0x vvi." % {
+	  'es_i': es_i,
+	  'es_ii': es_ii,
+	  'es_iii': es_iii,
+	 }] + new_lines + lines[-1:],
+	 processed,
+	 sorted(unknown_set)
+	)
 	
 def decodeBinasphere(line, db_con):
 	match = _BINASPHERE_REGEXP.match(line)
@@ -229,7 +237,11 @@ def _multiplexBinasphere(lines, hashable):
 		sequence = ' '.join(pool)
 	else:
 		sequence = ''.join(pool)
-	return "=> %s EXEC hymme %ix1/0>>%s" % (' '.join(output_sequence), len(lines), sequence)
+	return "=> %(output)s EXEC hymme %(count)ix1/0>>%(sequence)s" % {
+	 'output': ' '.join(output_sequence),
+	 'count': len(lines),
+	 'sequence': sequence,
+	}
 	
 def _readWord(word, words, db_con):
 	(word, meaning, kana, syntax_class, dialect, decorations, syllables) = lookup.readWord(word, words, db_con)[0]
@@ -238,10 +250,12 @@ def _readWord(word, words, db_con):
 		if l_decorations:
 			l_decorations = [d for d in decorations if d]
 		if l_decorations or dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
-			reason = "'%s'" % (word)
+			reason = ["'", word, "'",]
 			if l_decorations and not dialect % 50 == lookup.DIALECT['New Testament of Pastalie']:
-				reason += " (carried markup: %s)" % (l_decorations)
-			raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %s)" % (reason))
+				reason += [" (carried markup: ", l_decorations, ")",]
+			raise ContentError("Only Central Standard Note and related dialects are Binasphere-supported (offending word: %(reason)s)" % {
+			 'reason': ''.join(reason)
+			})
 	return (word, syntax_class, dialect, syllables)
 	
 def _reconstructBinasphere(tokens, sequence, size):
@@ -264,7 +278,10 @@ def _reconstructBinasphere(tokens, sequence, size):
 			
 	for (i, buffer) in enumerate(buffers):
 		if buffer:
-			raise ContentError("String %i contains an unterminated word (fragment: '%s')" % (i, ''.join(buffer)))
+			raise ContentError("String %(string)i contains an unterminated word (fragment: '%(fragment)s')" % {
+			 'string': i,
+			 'fragment': ''.join(buffer)
+			})
 			
 	return words
 	

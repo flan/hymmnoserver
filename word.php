@@ -1,4 +1,10 @@
-<?php echo '<?xml version="1.0" encoding="UTF-8"?>'; ?>
+<?php
+	header("Expires: Mon, 20 Dec 1998 01:00:00 GMT");
+	header("Last-Modified: ".gmdate("D, d M Y H:i:s")." GMT");
+	header("Cache-Control: no-cache, must-revalidate");
+	header("Pragma: no-cache");
+	echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
 "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
@@ -24,16 +30,16 @@ See license.README for details.
 	<body style="width: 500px;">
 		<?php
 			$word = '';
-			if(isset($_GET['word'])){
-				$word = trim($_GET['word']);
+			if(isset($_REQUEST['word'])){
+				$word = trim($_REQUEST['word']);
 			}
 			if($word == ''){
 				echo 'No word specified.';
 				exit();
 			}
 			$dialect = '';
-			if(isset($_GET['dialect'])){
-				$dialect = trim($_GET['dialect']);
+			if(isset($_REQUEST['dialect'])){
+				$dialect = trim($_REQUEST['dialect']);
 			}
 			if($dialect == '' || !is_numeric($dialect)){
 				echo 'No dialect specified.';
@@ -42,19 +48,17 @@ See license.README for details.
 			$dialect = intval($dialect);
 			
 			require 'secure/db.php';
-			if ($mysqli->connect_error) {
-				printf("Connection failed: %s.", mysqli_connect_error());
-				exit();
+			if($mysql->connect_error){
+				die('Failed to connect to database: '.htmlentities($mysql->connect_error));
 			}
 			
 			#Read the requested word from the database.
-			$stmt = $mysql->prepare("SELECT word, meaning, japanese, kana, dialect, romaji, description, class FROM hymmnos WHERE word = ? AND dialect = ? LIMIT 1");
-			$stmt->bind_param("si", $word, $dialect);
+			$stmt = $mysql->prepare('SELECT word, meaning, japanese, kana, dialect, romaji, description, class FROM hymmnos WHERE word = ? AND dialect = ? LIMIT 1');
+			$stmt->bind_param('si', $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
 			if($stmt->num_rows != 1){
-				echo 'Unknown word specified.';
-				exit();
+				die('Unknown word specified');
 			}
 			$stmt->bind_result($word, $meaning, $japanese, $kana, $dialect, $romaji, $notes, $class);
 			$stmt->fetch();
@@ -62,8 +66,8 @@ See license.README for details.
 			$stmt->close();
 			
 			#Read all related words from the database.
-			$stmt = $mysql->prepare("SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = ? AND source_dialect = ? ORDER BY destination ASC, destination_dialect ASC");
-			$stmt->bind_param("si", $word, $dialect);
+			$stmt = $mysql->prepare('SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = ? AND source_dialect = ? ORDER BY destination ASC, destination_dialect ASC');
+			$stmt->bind_param('si', $word, $dialect);
 			$stmt->execute();
 			$stmt->store_result();
 			
@@ -86,4 +90,3 @@ See license.README for details.
 		?> 
 	</body>
 </html>
-

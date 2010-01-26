@@ -29,7 +29,11 @@ See license.README for details.
 	$stmt->bind_result($word);
 	while($stmt->fetch()){
 		#Store the Emotion Verb, the number of Emotion Vowels, and a regexp version.
-		$emotion_verbs[] = array('/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh|aye|za)?$/', substr_count($word, '.'), $word);
+		$emotion_verbs[] = array(
+		 '/^'.str_replace('.', $EMOTION_VOWELS_REGEXP_FULL, $word).'(eh|aye|za)?$/',
+		 substr_count($word, '.'),
+		 $word,
+		);
 	}
 	$stmt->free_result();
 	$stmt->close();
@@ -41,13 +45,13 @@ See license.README for details.
 		$words[$i] = $word;
 		$word_list[] = decorateWord($word[0], $word[3], $word[5], false);
 	}
-	$word_string = implode(" ", $word_list);
+	$word_string = implode(' ', $word_list);
 	$word_list = NULL;
 	
 	#Read a word from the database; Emotion Verbs and Emotion Vowel-prefixed words are detected.
 	function readWord($word){
 		$emotion_verb = processEmotionVerb($word);
-		if($emotion_verb != NULL){
+		if(!is_null($emotion_verb)){
 			return $emotion_verb;
 		}
 		return processWord($word);
@@ -59,8 +63,8 @@ See license.README for details.
 		$result = NULL;
 		
 		global $mysql;
-		$stmt = $mysql->prepare("SELECT word, meaning, kana, class, dialect FROM hymmnos WHERE word = ? ORDER BY dialect ASC");
-		$stmt->bind_param("s", $word);
+		$stmt = $mysql->prepare('SELECT word, meaning, kana, class, dialect FROM hymmnos WHERE word = ? ORDER BY dialect ASC');
+		$stmt->bind_param('s', $word);
 		$stmt->execute();
 		$stmt->store_result();
 		if($stmt->num_rows > 0){
@@ -115,7 +119,7 @@ See license.README for details.
 		
 		preg_match($WORD_STRUCTURE, $word, $matches);
 		$d_word = queryWord($matches[2]);
-		if($d_word[1] != NULL){//Make sure songs are hit.
+		if(!is_null($d_word[1])){//Make sure songs are hit.
 			if(count($matches) >= 3){
 				if(count($matches) == 4){//Suffix present.
 					$d_word[5] = array($matches[1], $matches[3]);
@@ -132,7 +136,7 @@ See license.README for details.
 	#Insert Emotion Vowels or blanks into Emotion Verbs or prefix other words.
 	function decorateWord($word, $class, $decorations, $colour){
 		if(is_null($decorations)){
-			return htmlspecialchars($word);
+			return htmlentities($word);
 		}
 		
 		if($class == 1){#Emotion Verb
@@ -142,17 +146,17 @@ See license.README for details.
 			foreach(array_slice($decorations, 0, -1) as $vowel){
 				$result = $result.htmlspecialchars($chunks[$i]);
 				if($colour){
-					$result = $result."<span style=\"color: #FFD700;\">".htmlspecialchars($vowel)."</span>";
+					$result .= '<span style="color: #FFD700;">'.htmlentities($vowel).'</span>';
 				}else{
-					$result = $result.htmlspecialchars($vowel);
+					$result .= htmlentities($vowel);
 				}
 				$i++;
 			}
 			if(!empty($decorations[count($decorations) - 1])){
 				if($colour){
-					return $result."<span style=\"color: #FF00FF;\">".htmlspecialchars($decorations[count($decorations) - 1])."</span>";
+					return $result.'<span style="color: #FF00FF;">'.htmlentities($decorations[count($decorations) - 1]).'</span>';
 				}else{
-					return $result.htmlspecialchars($decorations[count($decorations) - 1]);
+					return $result.htmlentities($decorations[count($decorations) - 1]);
 				}
 			}else{
 				return $result;
@@ -165,11 +169,11 @@ See license.README for details.
 			if($colour){
 				$result = '';
 				if(!empty($decorations[0])){
-					$result = "<span style=\"color: #F0D000;\">".$decorations[0]."</span>";
+					$result = '<span style="color: #F0D000;">'.$decorations[0].'</span>';
 				}
-				$result = $result.htmlspecialchars($word);
+				$result .= htmlentities($word);
 				if(!empty($decorations[1])){
-					$result = $result."<span style=\"color: #FF00FF;\">".$decorations[1]."</span>";
+					$result .= '<span style="color: #FF00FF;">'.$decorations[1].'</span>';
 				}
 				return $result;
 			}else{
@@ -177,7 +181,7 @@ See license.README for details.
 			}
 		}
 		
-		return htmlspecialchars($word);
+		return htmlentities($word);
 	}
 	
 	#Renders a single word in the output table.
@@ -186,20 +190,20 @@ See license.README for details.
 		global $SYNTAX_CLASS;
 		
 		list($l_word, $meaning, $kana, $class, $dialect, $decorations, $hits) = $word;
-		$base_word = htmlspecialchars($l_word);
+		$base_word = htmlentities($l_word);
 		if($hits == 0){
 			$meaning = '???';
 			$kana = '???';
 		}else{
-			$l_word = "<a href=\"javascript:popUpWord('$base_word', $dialect)\" style=\"color: white;\">".decorateWord($l_word, $class, $decorations, true)."</a>";
+			$l_word = '<a href="javascript:popUpWord(\''.$base_word.'\', '.$dialect.')" style="color: white;">'.decorateWord($l_word, $class, $decorations, true).'</a>';
 		}
 		
-		echo "<tr>";
-			echo "<td class=\"word-header-$class\" style=\"width: 17%;\">$l_word</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 14%;\">$SYNTAX_CLASS[$class]</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 50%;\">$meaning</td>";
-			echo "<td class=\"word-header-$class\" style=\"width: 19%;\">$kana</td>";
-		echo "</tr>";
+		echo '<tr>';
+			echo '<td class="word-header-'.$class.'" style="width: 17%;">'.$l_word'.</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 14%;">'.$SYNTAX_CLASS[$class].'</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 50%;">'.htmlentities($meaning).'</td>';
+			echo '<td class="word-header-'.$class.'" style="width: 19%;">'.htmlentities($kana).'</td>';
+		echo '</tr>';
 		
 		return $hits > 1;
 	}
@@ -242,21 +246,20 @@ See license.README for details.
 	<?php
 		$alternatives_pos = 0;
 		foreach($alternatives as $alternative){
-			$alternatives[$alternatives_pos++] = "<a href=\"./search.php?word=".urlencode($alternative)."&exact=hymmnos\" style=\"color: white;\">".htmlspecialchars($alternative)."</a>";
+			$alternatives[$alternatives_pos++] = '<a href="./search.php?word='.urlencode($alternative).'&exact=hymmnos" style="color: white;">'.htmlspecialchars($alternative).'</a>';
 		}
 		if($alternatives_pos > 0){
-			echo "<tr>";
-				echo "<td style=\"color: white; background: black; font-size: 0.85em;\">";
-					echo "Words with alternate meanings: ".implode(", ", $alternatives);
-				echo "</td>";
-			echo "</tr>";
+			echo '<tr>';
+				echo '<td style="color: white; background: black; font-size: 0.85em;">';
+					echo 'Words with alternate meanings: '.implode(', ', $alternatives);
+				echo '</td>';
+			echo '</tr>';
 		}
 	?>
 	<tr>
 		<td style="color: #00008B; text-align: right; background: #D3D3D3; font-size: 0.7em;">
 			<?php
-				$query_encode = urlencode($query);
-				echo "If this is a complete sentence, you may <a href=\"./grammar.py?query=$query_encode\">inspect its structure</a>";
+				echo 'If this is a complete sentence, you may <a href="./grammar.py?query='.urlencode($query).'">inspect its structure</a>';
 			?>
 		</td>
 	</tr>
@@ -265,7 +268,11 @@ See license.README for details.
 <div style="color: #808080; font-size: 0.6em;">
 	<?php
 		if($alternatives_pos > 0){
-			echo "<p style=\"color: black;\">Please make note of the words identified as having alternate meanings. In particular, consider that Pastalia forms should typically take precedence when other Pastalia words are present.</p>";
+			echo '<p style="color: black;">';
+				echo 'Please make note of the words identified as having alternate meanings.';
+				echo '<br/>';
+				echo 'In particular, consider that Pastalia forms should typically take precedence when other Pastalia words are present.';
+			echo '</p>';
 		}
 	?>
 	<p>
@@ -274,6 +281,6 @@ See license.README for details.
 		depending on which is more appropriate.<br/>
 	</p>
 	<p>
-		The presented kana and meaning do not take Emotion Vowels into consideration.
+		The presented kana and meaning do <strong>not</strong> take Emotion Vowels into consideration.
 	</p>
 </div>
