@@ -137,16 +137,16 @@ See license.README for details.
 					$stmt->bind_result($word, $meaning, $kana, $dialect, $class);
 					
 					while($stmt->fetch()){//Render each result in its own row.
-						$html_word = htmlentities($word);
+						$html_word = htmlentities($word, ENT_COMPAT, "UTF-8");
 						echo '<tr>';
 							echo '<td class="result-cell result-dialect-'.$dialect.'">';
 								echo '<a href="javascript:popUpWord(\''.$html_word.'\', '.$dialect.')">'.$html_word.'</a>';
 							echo '</td>';
-							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($meaning).'</td>';
+							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($meaning, ENT_COMPAT, "UTF-8").'</td>';
 							echo '<td class="result-cell result-dialect-'.$dialect.'">';
 								echo $SYNTAX_CLASS[$class];
 							echo '</td>';
-							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($kana).'</td>';
+							echo '<td class="result-cell result-dialect-'.$dialect.'">'.htmlentities($kana, ENT_COMPAT, "UTF-8").'</td>';
 							echo '<td class="result-cell result-dialect-'.$dialect.'">';
 								echo $DIALECT[$dialect];
 							echo '</td>';
