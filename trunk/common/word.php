@@ -65,10 +65,10 @@ See license.README for details.
 								$links_rendered[] = '<a href="javascript:popUpWord(\''.$html_link.'\', '.$link_dialect.')">'.$html_link.'</a>';
 							}else{
 								$links_rendered[] = '<a href="./word.php?'.
-									htmlentities(http_build_query({
+									htmlentities(http_build_query(array(
 									 'word' => $link,
 									 'dialect' => $link_dialect
-									}), ENT_COMPAT, "UTF-8").
+									)), ENT_COMPAT, "UTF-8").
 									'">'.$html_link.'</a>';
 							}
 						}
