@@ -1,6 +1,6 @@
 <div class="footer-copyright">
 	<div id="footer-bar">
-		<a href="./index.php" class="footer-link">[Go to index]</a>
+		<a href="./index.php" class="footer-link" style="font-family: serif;">[Go to index]</a>
 	</div>
 	<i>Hymmnos</i> and <i><a href="http://game.salburg.com/hymmnoserver/" class="footer-copyright">HYMMNOSERVER</a></i> were created by Akira Tsuchiya. (Ver2.0/Rev.20080312)<br/>
 	English version provided by <a href="./credits.php" class="footer-copyright">Neil Tallim and others</a>. (This is a freely provided, fan-translated service)
