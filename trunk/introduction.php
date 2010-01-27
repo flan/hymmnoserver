@@ -21,19 +21,10 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 	</head>
 	<body>
+
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Introduction</div>
-			<p>
-				<span style="color: red;">
-					The <a href="http://en.wikipedia.org/wiki/De_Broglie_hypothesis">de Broglie hypothesis</a>
-					and <a href="http://en.wikipedia.org/wiki/Wave-particle_duality">wave-particle duality</a>
-					hold that all matter has a wave-like nature. The world of Ar tonelico takes some liberties
-					with advancing and departing from the physics behind these concepts, so just accept that
-					what is presented is a reasonable translation of Akira Tsuchiya's transcribed imaginings
-					and <b>not</b> material that should go on your next term paper.
-				</span>
-			</p>
 			<p>
 				Hymmnos is based on a number of abstract, complex concepts.
 				This page briefly explains the concepts needed to understand the terms used throughout
