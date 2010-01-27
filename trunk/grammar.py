@@ -22,6 +22,7 @@ Legal
 """
 import cgi
 import re
+import time
 import urllib
 
 import common.syntax as syntax
