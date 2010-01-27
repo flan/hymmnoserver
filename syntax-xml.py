@@ -21,6 +21,7 @@ Legal
  (C) Neil Tallim, 2009
 """
 import cgi
+import time
 
 import common.syntax as syntax
 import secure.db as db
