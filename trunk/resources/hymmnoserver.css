@@ -339,12 +339,15 @@ td.word-info-title{
 	width: 120px;
 }
 
+table.result{
+	font-family: serif;
+}
+
 div.phrase{
 	border: 1px solid black;
 	border-right: 0;
 	border-bottom: 0;
 	padding-left: 2px;
-	font-family: serif;
 }
 div.phrase-0{/*CP*/
 	background: #000000;
@@ -385,7 +388,6 @@ div.phrase-word{
 	border-right: 0;
 	border-bottom: 0;
 	padding-left: 2px;
-	font-family: inherit;
 }
 div.phrase-word-1{/*E.V.*/
 	background: #203000;
