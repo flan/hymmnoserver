@@ -499,7 +499,7 @@ div.phrase-word-meaning{
 }
 .word-text-title{
 	font-size: 34pt;
-	font-family: hymmnos sans;
+	font-family: hymmnos, sans;
 	color: #FFFFFF;
 }
 .word-text-title-expanded{
