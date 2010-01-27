@@ -83,7 +83,7 @@ See license.README for details.
 			</p>
 			<p>
 				<b>▼ Invoking Hymmnos Extract</b><br/>
-				<img src="./static/usage.png" alt="A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower; and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something"/><br/>
+				<img src="./static/usage.jpg" alt="A Hymn Crystal seeding a Reyvateil's H-waves, which trigger a reaction in a Tower; and a Reyvateil using H-waves to cause a tower to emit D-waves to accomplish something"/><br/>
 				Those familiar with Hymmnos theory may have realized that Hymmnos Extract does not directly
 				reflect any emotional desires within the Reyvateil using it. Though it employs H-waves,
 				these waves carry only a clear, plain message that tells the Tower to act.
