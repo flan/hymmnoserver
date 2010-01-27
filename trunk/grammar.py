@@ -145,6 +145,10 @@ def _renderFailure(message):
 form = cgi.FieldStorage()
 
 print "Content-Type: application/xhtml+xml"
+print "Expires: Mon, 20 Dec 1998 01:00:00 GMT"
+print "Last-Modified:", time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime()), "GMT"
+print "Cache-Control: no-cache, must-revalidate"
+print "Pragma: no-cache"
 print
 
 print """<?xml version="1.0" encoding="UTF-8"?>
