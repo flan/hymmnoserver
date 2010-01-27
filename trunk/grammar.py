@@ -40,7 +40,7 @@ def _renderMicroTransformation(component):
 	line = cgi.escape(component, True)
 	print """
 		<td class="transformation">
-			<div style="font-family: hymmnos; font-size: 1.5em;"><a href="%(link)s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%(line)s</a></div>
+			<div style="font-family: hymmnos, sans; font-size: 1.5em;"><a href="%(link)s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%(line)s</a></div>
 			<div><a href="%(link)s" style="display: block; color: #00008B; text-decoration: none; outline: none;">%(line)s</a></div>
 		</td>
 	""" % {
@@ -63,7 +63,7 @@ def _renderMacroTransformation(phrase, components, unknown):
 		<table class="result" style="border-spacing: 1px; color: white; background: #808080; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; background: #D3D3D3; padding-left: 5px; padding-top: 5px; padding-right: 2px;" colspan="2">
-					<div style="font-family: hymmnos; font-size: 18pt;">%(phrase)s</div>
+					<div style="font-family: hymmnos, sans; font-size: 18pt;">%(phrase)s</div>
 					<div style="font-size: 12pt;">%(phrase)s</div>
 				</td>
 			</tr>

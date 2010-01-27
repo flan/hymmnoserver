@@ -686,7 +686,7 @@ def renderResult_xhtml(tree, display_string):
 		<table class="result" style="border-collapse: collapse; border: 1px solid black; width: 100%%;">
 			<tr>
 				<td style="color: #00008B; text-align: center; background: #D3D3D3;">
-					<div style="font-family: hymmnos; font-size: 24pt;">%(display_string)s</div>
+					<div style="font-family: hymmnos, sans; font-size: 24pt;">%(display_string)s</div>
 					<div style="font-size: 18pt;">%(display_string)s</div>
 				</td>
 			</tr>

@@ -4,7 +4,7 @@
 			if($footer_word){
 				echo '<a href="javascript:window.close();" class="footer-link">[Close window]</a>';
 			}else{
-				echo '<a href="./index.php" class="footer-link">[Go to index]</a>';
+				echo '<a href="./index.php" class="footer-link" style="font-family: serif;">[Go to index]</a>';
 			}
 		?>
 	</div>

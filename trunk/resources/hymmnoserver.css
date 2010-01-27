@@ -494,11 +494,12 @@ div.phrase-word-meaning{
 }
 .word-text-subtitle{
 	font-size: 14pt;
+	font-family: serif;
 	color: #FFFFFF;
 }
 .word-text-title{
 	font-size: 34pt;
-	font-family: Hymmnos;
+	font-family: hymmnos sans;
 	color: #FFFFFF;
 }
 .word-text-title-expanded{
