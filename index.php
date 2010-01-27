@@ -136,7 +136,7 @@ See license.README for details.
 					<td align="right" valign="top" style="width: 184px;">
 						<table style="width: 100%; border-color: #001144; border-width: 1px; border-style: outset;">
 							<tr>
-								<td class="fontcell" style="text-align: center; style=width: 184px;">
+								<td class="fontcell" style="text-align: center; width: 184px;">
 									<a href="./static/hymmnos.ttf" style="text-decoration: none; display: block;">
 										<img src="./static/hymgrp.gif" style="border-width: 0;" alt="Download the Hymmnos TrueType Font (v1.1)"/>
 										<span style="color: white; font-weight: bold; margin-top: -10px;">
