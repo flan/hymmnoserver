@@ -28,6 +28,10 @@ import secure.db as db
 form = cgi.FieldStorage()
 
 print "Content-Type: text/xml"
+print "Expires: Mon, 20 Dec 1998 01:00:00 GMT"
+print "Last-Modified:", time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime()), "GMT"
+print "Cache-Control: no-cache, must-revalidate"
+print "Pragma: no-cache"
 print
 try:
 	query = form.getfirst("query")
