@@ -64,6 +64,7 @@ See license.README for details.
 		</style>
 	</head>
 	<body>
+
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Before learning the grammar of the New Testament of Pastalie...</div>
@@ -456,7 +457,7 @@ See license.README for details.
 				explicitly specifying the subject of a sentence. However, the emotional expressiveness
 				permitted by this structure has been expanded.
 			</p>
-			<p style="color: green; font-role: italic;">
+			<p style="color: green; font-style: italic;">
 				[x.]-[rre]-[subject]-[Emotion Verb]-[compound]<br/>
 				[x.]-[rre]-[subject]-[Emotion Verb]-[object]-[compound]
 			</p>
@@ -601,7 +602,7 @@ See license.README for details.
 				The syntax for invoking this mechanism follows:
 			</p>
 			<p>
-				<span style="color: green; font-role: italic;">[function name]->[Hymmnos passage]</span><br/>
+				<span style="color: green; font-style: italic;">[function name]->[Hymmnos passage]</span><br/>
 				(&quot;->&quot; is pronounced as &quot;pass&quot;)
 			</p>
 			<p>

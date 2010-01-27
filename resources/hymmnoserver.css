@@ -15,20 +15,34 @@ See license.README for details.
 body{
 	width: 640px;
 	background: white;
+	font-family: sans-serif;
 }
 
+
 a:link{
+
 	color:#D92F0E;
+
 	text-decoration: none;
+
 }
+
 a:visited{
+
 	color:#971F08;
+
 	text-decoration: none;
+
 }
+
 a:hover{
+
 	color:#4A22DD;
+
 	text-decoration: underline;
+
 }
+
 
 /*Local styles*/
 ul.basic-inline{
@@ -60,67 +74,117 @@ td.fontcell:hover{
 }
 
 div#footer-bar{
+
 	background: #001144;
+
 	color: #FFFFFF;
+
 	font-size: 9pt;
+
 	font-weight: bold;
 	border-width: 0px;
 	width: 100%;
+
 }
 
+
 a.footer-copyright:link{
+
 	color: #002244;
+
 }
+
 a.footer-copyright:visited{
+
 	color: #002244;
+
 }
+
 a.footer-copyright:hover{
+
 	color: #002244;
+
 }
 div.footer-copyright{
+
 	color: #002244;
+
 	font-size: 7pt;
+
 }
+
 
 a.footer-link{
 	margin-left: 40px;
 }
+
 a.footer-link:link{
+
 	color: #FFFFFF;
+
 }
 a.footer-link:visited{
+
 	color: #FFFFFF;
+
 }
 a.footer-link:hover{
+
 	color: #FFFFFF;
+
 }
 
+
+
 table#header{
+
 	border-spacing: 0px;
+
 	border-color: #000000;
 	border-width: 0px;
 	border-spacing: 0px;
-}
-td.header{
-	background: #000000;
-	color: #FFFFFF;
-	text-align: center;
-	font-weight: bold;
-	font-size: 9pt;
+
 }
 
-table.header-links{
-	border-spacing: 2px;
-	border-color: #000000;
-}
-td.header-links{
-	background: #BBCCDD;
+
+td.header{
+
+	background: #000000;
+
+	color: #FFFFFF;
+
 	text-align: center;
+
 	font-weight: bold;
+
+	font-size: 9pt;
+
+}
+
+
+table.header-links{
+
+	border-spacing: 2px;
+
+	border-color: #000000;
+
+}
+
+td.header-links{
+
+	background: #BBCCDD;
+
+	text-align: center;
+
+	font-weight: bold;
+
 	font-size: 8pt;
+
 }
 td.header-links:hover{
+
 	background: #CCDDEE;
+
 }
 
 td.infocell{
@@ -222,21 +286,28 @@ td.titlecell{
 }
 
 td.transformation{
+
 	background: #DDDDDD;
+
 	text-align: left;
+
 	font-size: 12pt;
 	padding-left: 5px;
 	padding-top: 5px;
 	padding-right: 2px;
+
 }
 td.transformation:hover{
+
 	background: #EEEEEE;
+
 }
 td.transformation-id{
 	color: white;
 	background: black;
 	text-align: center;
 }
+
 
 td.word-header{
 	padding: 8px;
@@ -443,6 +514,7 @@ div.phrase-word-meaning{
 }
 
 /*Generic styles*/
+
 .text-basic{
 	color: #002244;
 	font-size: 9pt;
@@ -467,13 +539,17 @@ div.phrase-word-meaning{
 .text-title{
 	color: #002244;
 	font-weight: bold;
+
 	font-size: 12pt;
+
 }
 
 .text-title-small{
 	color: #002244;
 	font-weight: bold;
+
 	font-size: 10pt;
+
 }
 
 .word-text-dialect-usage{
