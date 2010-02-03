@@ -767,7 +767,7 @@ def _digestTokens(tokens, db_con):
 				lexicon_entry = lookup.readWords((song_check,), db_con).get(song_check)
 			if lexicon_entry is None:
 				raise ContentError("unknown word in input: %(word)s" % {
-				 'word': word,
+				 'word': w,
 				})
 		elif pastalia and p:
 			pastalia_prefix_valid = True
