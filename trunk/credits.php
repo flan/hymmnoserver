@@ -66,7 +66,7 @@ See license.README for details.
 				<ul class="basic-inline">
 					<li><a href="http://artonelico.isisview.org/">A Reyvateil's Melody forums</a>
 						<ul class="basic-inline">
-							<li>aquagon</li>
+							<li><a href="http://aquagon-drag.blogspot.com/">aquagon</a></li>
 							<li>Lazy</li>
 							<li>Deciare</li>
 						</ul>
