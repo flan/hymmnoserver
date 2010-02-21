@@ -106,9 +106,9 @@ try:
 		cursor.execute(' '.join((
 		 "INSERT INTO hymmnos",
 		 "(word, meaning, japanese, dialect, kana, romaji, description, class, syllables)",
-		 "VALUES (%s, %s, %d, %s, %s, %s, %s, %d, %s)",
+		 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
 		)), (word, meaning, japanese, dialect, kana, romaji, description, syntax, syllables,))
-		print
+		print cursor.info()
 finally:
 	try:
 		cursor.close()
