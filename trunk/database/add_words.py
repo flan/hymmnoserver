@@ -65,26 +65,31 @@ try:
 		print "Dialect (add 50 to mark as unofficial):"
 		dialect = int(raw_input())
 		
-		print "1) Emotion verb"
+		print "1) Emotion Verb"
 		print "2) verb"
 		print "3) adverb"
 		print "4) noun"
 		print "5) conjunction"
 		print "6) preposition"
-		print "7) Emotion sound (II)"
+		print "7) Emotion Sound (II)"
 		print "8) adjective"
-		print "9) verb/noun"
-		print "10) adjective/noun"
-		print "11) verb/adjective"
+		print "9) noun, verb"
+		print "10) adjective, noun"
+		print "11) adjective, verb"
 		print "12) particle"
-		print "13) Emotion sound (III)"
-		print "14) Emotion sound (I)"
+		print "13) Emotion Sound (III)"
+		print "14) Emotion Sound (I)"
 		print "15) pronoun"
 		print "16) interjection"
-		print "17) Emotion sound (II)/adjective"
-		print "18) conjunction/verb"
-		print "19) noun/adverb"
-		print "20) adjective/adverb"
+		print "17) preposition, particle"
+		print "18) language construct"
+		print "19) adverb, noun"
+		print "20) adjective, adverb"
+		print "21) conjunction, preposition"
+		print "22) particle, verb"
+		print "23) adverb, particle"
+		print "24) noun, prepositon"
+		print "25) adverb, preposition"
 		print "Syntax class:"
 		syntax = int(raw_input())
 		
@@ -101,7 +106,7 @@ try:
 		cursor.execute(' '.join((
 		 "INSERT INTO hymmnos",
 		 "(word, meaning, japanese, dialect, kana, romaji, description, class, syllables)",
-		 "VALUES (%s, %s, %s, %i, %s, %s, %s, %i, %s)",
+		 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
 		)), (word, meaning, japanese, dialect, kana, romaji, description, syntax, syllables,))
 		print
 finally:
