@@ -86,7 +86,7 @@ try:
 		print "19) noun/adverb"
 		print "20) adjective/adverb"
 		print "Syntax class:"
-		class = int(raw_input())
+		syntax = int(raw_input())
 		
 		print "Description:"
 		description = raw_input()
@@ -102,7 +102,7 @@ try:
 		 "INSERT INTO hymmnos",
 		 "(word, meaning, japanese, dialect, kana, romaji, description, class, syllables)",
 		 "VALUES (%s, %s, %s, %i, %s, %s, %s, %i, %s)",
-		)), (word, meaning, japanese, dialect, kana, romaji, description, class, syllables,))
+		)), (word, meaning, japanese, dialect, kana, romaji, description, syntax, syllables,))
 		print
 finally:
 	try:
