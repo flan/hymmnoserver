@@ -50,6 +50,7 @@ try:
 		 (word_1, word_2, dialect_1, dialect_2,),
 		 (word_2, word_1, dialect_2, dialect_1,)
 		)
+		db_con.commit()
 		print
 finally:
 	try:

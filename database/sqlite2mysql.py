@@ -127,7 +127,9 @@ except Exception, e:
 	exit()
 	
 mysql_cur.close()
+mysql_db.commit()
 mysql_db.close()
 sqlite_cur.close()
 sqlite_db.commit()
 sqlite_db.close()
+
