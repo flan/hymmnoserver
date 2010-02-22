@@ -108,7 +108,8 @@ try:
 		 "(word, meaning, japanese, dialect, kana, romaji, description, class, syllables)",
 		 "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)",
 		)), (word, meaning, japanese, dialect, kana, romaji, description, syntax, syllables,))
-		print cursor.info()
+		db_con.commit()
+		print
 finally:
 	try:
 		cursor.close()
