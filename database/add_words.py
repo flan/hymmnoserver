@@ -47,8 +47,8 @@ try:
 			syllables = raw_input()
 			if syllables.replace(' ', '').lower() == word.lower():
 				break
-			elif syllables.endswith(";'"):
-				syllables = syllables[:-2] + "'"
+			elif syllables.endswith(";"):
+				syllables = syllables[:-1]
 				break
 			else:
 				print "Entry does not match word structure"
