@@ -760,7 +760,7 @@ def _digestTokens(tokens, db_con):
 		lexicon_entry = word_list.get(w.lower())
 		if lexicon_entry is None:
 			if w.isdigit(): #It's a number.
-				lexicon_entry = ([w, w, w, 4, 1, None, ''],)
+				lexicon_entry = ([w, w, w, 8, 1, None, ''],)
 			if p: #Reattach the prefix, since it may be a song or a mistakenly capitalized word.
 				song_check = p.lower() + w.lower()
 				p = None
