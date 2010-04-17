@@ -70,8 +70,8 @@ try:
 		 u"INSERT INTO hymmnos (word, dialect, class, meaning, japanese, kana, romaji, description, syllables) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)",
 		 (word.decode('utf-8'), dialect, syntax_class, meaning.decode('utf-8'), japanese.decode('utf-8'), kana.decode('utf-8'), romaji.decode('utf-8'), description and description.decode('utf-8'), syllables.decode('utf-8'))
 		)
-except:
-	print "Error while populating SQLite database (hymmnos)"
+except Exception, e:
+	print "Error while populating SQLite database (hymmnos): %s" % (e)
 	print "Word responsible: %s:%i" % (word, dialect)
 	exit()
 	
@@ -82,8 +82,8 @@ try:
 		 u"INSERT INTO hymmnos_mapping (source, destination, source_dialect, destination_dialect) VALUES (?, ?, ?, ?)",
 		 (source.decode('utf-8'), destination.decode('utf-8'), source_dialect, destination_dialect)
 		)
-except:
-	print "Error while populating SQLite database (hymmnos_mapping)"
+except Exception, e:
+	print "Error while populating SQLite database (hymmnos_mapping): %s" % (e)
 	print "Mapping: %s:%i <-> %s:%i" % (source, source_dialect, destination, destination_dialect)
 	exit()
 	
