@@ -39,23 +39,27 @@ print "found"
 
 sqlite_cur.execute("""
  CREATE TABLE hymmnos (
-  word TEXT,
-  dialect INTEGER,
-  class INTEGER,
-  meaning TEXT,
-  japanese TEXT,
-  kana TEXT,
-  romaji TEXT,
-  description TEXT,
-  syllables TEXT
+  word TEXT NOT NULL,
+  dialect INTEGER NOT NULL,
+  class INTEGER NOT NULL,
+  meaning TEXT NOT NULL,
+  japanese TEXT NOT NULL,
+  kana TEXT NOT NULL,
+  romaji TEXT NOT NULL,
+  description TEXT NOT NULL,
+  syllables TEXT NOT NULL,
+  PRIMARY KEY (word, dialect)
  )
 """)
 sqlite_cur.execute("""
  CREATE TABLE hymmnos_mapping (
-  source TEXT,
-  destination TEXT,
-  source_dialect INTEGER,
-  destination_dialect INTEGER
+  source TEXT NOT NULL,
+  destination TEXT NOT NULL,
+  source_dialect INTEGER NOT NULL,
+  destination_dialect INTEGER NOT NULL,
+  PRIMARY KEY (source, destination, source_dialect, destination_dialect),
+  FOREIGN KEY (destination, destination_dialect) REFERENCES hymmnos (word, dialect),
+  FOREIGN KEY (source, source_dialect) REFERENCES hymmnos (word, dialect)
  )
 """)
 
