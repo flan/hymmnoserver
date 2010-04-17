@@ -46,7 +46,7 @@ sqlite_cur.execute("""
   japanese TEXT NOT NULL,
   kana TEXT NOT NULL,
   romaji TEXT NOT NULL,
-  description TEXT NOT NULL,
+  description TEXT,
   syllables TEXT NOT NULL,
   PRIMARY KEY (word, dialect)
  )
