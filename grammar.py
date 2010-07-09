@@ -260,7 +260,7 @@ print """
 <form method="get" action="./grammar.py">
 	<div>
 		<div style="text-align: center;">
-			<textarea name="query" id="query" rows="5" cols="80">%(query)s</textarea>
+			<textarea name="query" id="query" rows="5" style="width: 100%;">%(query)s</textarea>
 		</div>
 		<div style="text-align: right;">
 			<input type="button" value="Clear" onclick="document.getElementById('query').value='';"/>
