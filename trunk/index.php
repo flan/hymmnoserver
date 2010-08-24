@@ -218,7 +218,6 @@ See license.README for details.
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 8pt; line-height: 3.5mm;">
 										<li><a href="http://hymmnoserver.uguu.ca/">uguu.ca</a></li>
-										<li><a href="http://hamsterx.homelinux.org/hymmnoserver/">hamsterx.homelinux.org</a></li>
 									</ul>
 								</td>
 							</tr>
