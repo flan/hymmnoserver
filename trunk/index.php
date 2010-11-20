@@ -129,7 +129,7 @@ See license.README for details.
 							</p>
 							<ul style="margin-top: -10px;">
 								<li>Syntactic validation and structural processing</li>
-								<li>Binasphere encoding and decoding</li>
+								<li>Binasphere Chorus encoding and decoding</li>
 								<li>Persistent Emotion Sounds evaluation</li>
 							</ul>
 						</blockquote>
