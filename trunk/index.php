@@ -158,11 +158,11 @@ See license.README for details.
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
+									    <li>(20/10/2010) Housekeeping</li>
 										<li>(21/2/2010) At3 words added</li>
 										<li>(10/1/2010) Added new words</li>
 										<li>(10/1/2010) Migrated to uguu.ca</li>
 										<li>(3/7/2009) Syntax parser online</li>
-										<li>(6/2/2009) Binasphere encoder</li>
 									</ul>
 								</td>
 							</tr>
