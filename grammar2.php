@@ -17,7 +17,7 @@ See license.README for details.
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Hymmnoserver - Grammar (Pastalia)</title>
+		<title>Hymmnoserver - Grammar (Pastalie)</title>
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			td.ev-1{
@@ -69,7 +69,7 @@ See license.README for details.
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Before learning the grammar of the New Testament of Pastalie...</div>
 			<p>
-				The grammar of Pastalia is based on the
+				The grammar of Pastalie is based on the
 				<a href="./grammar.php">standard grammar of the First Era</a>.
 				Because of this, knowledge of that grammar is a prerequisite for understanding what will be
 				discussed here.
@@ -78,7 +78,7 @@ See license.README for details.
 		<div class="text-basic">
 			<div class="section-title text-title-small">⠕ Grammar principles</div>
 			<p>
-				Pastalia is based on the idea of expressing as much meaning and emotion as possible with as few
+				Pastalie is based on the idea of expressing as much meaning and emotion as possible with as few
 				words as possible.
 				This variant of Hymmnos is so streamlined that, in some cases, a single word, known as an
 				&quot;Emotion Verb&quot; is enough to form an entire sentence.
@@ -105,7 +105,7 @@ See license.README for details.
 					<br/>
 					<i>
 						As a tease of what is to come, &quot;Was yea ra chs hymmnos mea,&quot; the
-						example from the standard grammar section, can be written in Pastalia as
+						example from the standard grammar section, can be written in Pastalie as
 						&quot;cEzE hymmnos/.&quot;; both forms carry the same meaning:
 						&quot;I am delighted to express myself through song&quot;.
 					</i>
@@ -128,7 +128,7 @@ See license.README for details.
 					(upper-case components) packed into the Emotion Verb will convey all needed information.
 				</p>
 				<p>
-					Sentences in Pastalia are terminated with &quot;/.&quot;; fundamentally, this is the same
+					Sentences in Pastalie are terminated with &quot;/.&quot;; fundamentally, this is the same
 					as how sentences are normally terminated with a period in English, but this also has the
 					effect of executing the spoken statement.
 					As an alternative, &quot;!&quot; or &quot;?&quot; may be used to indicate the end of a
@@ -171,7 +171,7 @@ See license.README for details.
 				The meaning of Emotion Verbs is not fixed.
 				Depending on how they are constructed, they can convey very different things from
 				sentence to sentence.
-				This flexibility is the key to the expressive power of Pastalia.
+				This flexibility is the key to the expressive power of Pastalie.
 			</p>
 			<p>
 				Emotion Verbs are formed of two types of elements: a template and Emotion Vowels.<br/>
@@ -366,7 +366,7 @@ See license.README for details.
 			<div class="section-title text-title-small">⠕ Nouns</div>
 			<p>
 				Infel Phira, for which the New Testament of Pastalie was created, supports the
-				standard noun forms found in other dialects of Hymmnos. However, with Pastalia's
+				standard noun forms found in other dialects of Hymmnos. However, with Pastalie's
 				emphasis on succinct sentences, a noun syntax that couples ownership with emotional
 				attachment has been developed.<br/>
 				Once again, this language feature will be demonstrated with examples.
@@ -430,7 +430,7 @@ See license.README for details.
 			<p>
 				<b>wYEsA Agasar_luca/.</b><br/>
 				&quot;I will give you Luca's precious stuffed animal to make you happy.&quot;<br/>
-				(This simple sentence offers an idea of how expressive Pastalia forms can be)
+				(This simple sentence offers an idea of how expressive Pastalie forms can be)
 			</p>
 		</div>
 		<div class="text-basic">
@@ -445,7 +445,7 @@ See license.README for details.
 				<b>[Emotion Verb]-[object]-[compound]</b> [VOC]
 			</p>
 			<p>
-				As you can see, when long sentences are required, the advantages of Pastalia are
+				As you can see, when long sentences are required, the advantages of Pastalie are
 				dramatically lessened.
 				(Compounds, of course, may be built in the same manner as in other Hymmnos dialects)
 			</p>

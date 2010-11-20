@@ -45,7 +45,7 @@ See license.README for details.
 				<li><span style="font-weight: bold;">Cluster Note</span> (Cluster Area Language)</li>
 				<li><span style="font-weight: bold;">Alpha Note</span> (Origin Spell)</li>
 				<li><span style="font-weight: bold;">Ancient Metafalss Note</span> (Sacred language from the First Era)</li>
-				<li><span style="font-weight: bold;">New Testament of Pastalie</span> (Pastalia Dialect) </li>
+				<li><span style="font-weight: bold;">New Testament of Pastalie</span> (Pastalie Dialect) </li>
 			</ul><br/>
 		</div>
 		<div class="text-basic">

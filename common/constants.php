@@ -100,7 +100,7 @@ See license.README for details.
 		53 => 'Cluster [Unofficial]',
 		54 => 'Alpha [Unofficial]',
 		55 => 'Metafalss [Unofficial]',
-		56 => 'Pastalia [Unofficial]',
+		56 => 'Pastalie [Unofficial]',
 		57 => '(EOLIA) [Unofficial]'
 	);
 ?>

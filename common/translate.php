@@ -271,7 +271,7 @@ See license.README for details.
 			echo '<p style="color: black;">';
 				echo 'Please make note of the words identified as having alternate meanings.';
 				echo '<br/>';
-				echo 'In particular, consider that Pastalia forms should typically take precedence when other Pastalia words are present.';
+				echo 'In particular, consider that Pastalie forms should typically take precedence when other Pastalie words are present.';
 			echo '</p>';
 		}
 	?>

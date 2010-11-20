@@ -31,10 +31,10 @@ _EMOTION_VOWELS_FULL = r'(%(emotion_vowels)s|\.)?' % {
 
 WORD_STRUCTURE_REGEXP = re.compile(r"^(%(emotion_vowels)s)?(.+?)(_\w+)?$" % {
  'emotion_vowels': EMOTION_VOWELS,
-}) #: A regular expression that matches Pastalia-ized nouns.
+}) #: A regular expression that matches Pastalie-ized nouns.
 _EMOTION_WORDS_REGEXP = re.compile(r'^(%(emotion_vowels)s)(\w+)$' % {
  'emotion_vowels': EMOTION_VOWELS,
-}) #: A regular expression that matches any Pastalia-ized word.
+}) #: A regular expression that matches any Pastalie-ized word.
 
 EMOTION_VERB_REGEXPS = None #: A collection of regular expressions that match all Emotion Verbs known to exist, plus the pure word forms and dialects.
 
@@ -70,7 +70,7 @@ DIALECT = {
  'Cluster [Unofficial]': 53,
  'Alpha [Unofficial]': 54,
  'Metafalss [Unofficial]': 55,
- 'Pastalia [Unofficial]': 56,
+ 'Pastalie [Unofficial]': 56,
  '(EOLIA) [Unofficial]': 57
 } #: A mapping from symbolic dialect identifiers to numeric constants, used to make code more readable.
 
