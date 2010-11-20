@@ -89,7 +89,7 @@ _GENERAL_AST = (_ALL,
  (_ANY, _LEX_INTJ)
 ) #: The AST that describes standard Hymmnos.
 
-_PASTALIA_AST = (_ALL,
+_PASTALIE_AST = (_ALL,
  (_ANY, _LEX_CONJ, _LEX_INTJ, _LEX_PREP),
  (_ONE,
   (_ALL, 'NsP', _LEX_CONJ, 'SpP', 'EVP'),
@@ -124,7 +124,7 @@ _PASTALIA_AST = (_ALL,
  (_ANY, 'CpP'),
  (_ANY, 'AaP'), 
  (_ANY, _LEX_INTJ)
-) #: The AST that describes Pastalia Hymmnos.
+) #: The AST that describes Pastalie Hymmnos.
 
 _AST_FRAGMENTS = {
  'AaP': (_ALL,
@@ -750,8 +750,8 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
 		return word
 		
 def _digestTokens(tokens, db_con):
-	(pastalia, pastalia_prefix_only, words, prefixes, suffixes, slots) = _sanitizePastalia(tokens)
-	pastalia_prefix_valid = False #Enforces Pastalia when a Pastalian prefix is present.
+	(pastalie, pastalie_prefix_only, words, prefixes, suffixes, slots) = _sanitizePastalie(tokens)
+	pastalie_prefix_valid = False #Enforces Pastalie when a Pastalie prefix is present.
 	
 	word_list = lookup.readWords(words, db_con)
 	decorated_words = []
@@ -769,13 +769,13 @@ def _digestTokens(tokens, db_con):
 				raise ContentError("unknown word in input: %(word)s" % {
 				 'word': w,
 				})
-		elif pastalia and p:
-			pastalia_prefix_valid = True
+		elif pastalie and p:
+			pastalie_prefix_valid = True
 			
-			pastalia_entry = 0
+			pastalie_entry = 0
 			for (i, l_e) in enumerate(lexicon_entry):
-				if l_e[4] % _DIALECT_SHIFT == _DLCT_PASTALIE: #Favour Pastalian forms.
-					pastalia_entry = i
+				if l_e[4] % _DIALECT_SHIFT == _DLCT_PASTALIE: #Favour Pastalie forms.
+					pastalie_entry = i
 			#Duplicate the best candidate, mark it as a noun, and use it to replace the list.
 			new_entry = lexicon_entry[i][:]
 			new_entry[3] = 4
@@ -789,7 +789,7 @@ def _digestTokens(tokens, db_con):
 					
 		decorated_words.append(_decorateWord(lexicon_entry[0][0], p, s, l, False))
 		words_details.append((lexicon_entry, p, s, l))
-	return (words_details, ' '.join(decorated_words), pastalia_prefix_valid or (pastalia and not pastalia_prefix_only))
+	return (words_details, ' '.join(decorated_words), pastalie_prefix_valid or (pastalie and not pastalie_prefix_only))
 	
 def _processAST(words, ast, phrase=None):
 	#Refuse to process requests that would invariably lead to failure.
@@ -879,13 +879,13 @@ def _processAST(words, ast, phrase=None):
 	
 def _processInput(tree, tokens, db_con):
 	#Read the definition of every provided word and construct the displayable Hymmnos string.
-	(words_details, display_string, pastalia) = _digestTokens(tokens, db_con)
+	(words_details, display_string, pastalie) = _digestTokens(tokens, db_con)
 	
 	message = result = None
-	if not pastalia:
+	if not pastalie:
 		result = _processAST(words_details, _GENERAL_AST)
 	else:
-		result = _processAST(words_details, _PASTALIA_AST)
+		result = _processAST(words_details, _PASTALIE_AST)
 		
 	if result:
 		for node in result:
@@ -961,10 +961,10 @@ def _renderLeaf(leaf):
 	 'meaning': leaf.getMeaning(True),
 	}
 	
-def _sanitizePastalia(tokens):
+def _sanitizePastalie(tokens):
 	emotion_verbs = lookup.EMOTION_VERB_REGEXPS
-	pastalia = False
-	pastalia_prefix_only = True
+	pastalie = False
+	pastalie_prefix_only = True
 	
 	words = []
 	prefixes = []
@@ -987,8 +987,8 @@ def _sanitizePastalia(tokens):
 						word_slots.append(hit)
 				slots.append(tuple(word_slots))
 				
-				pastalia = True
-				pastalia_prefix_only = False
+				pastalie = True
+				pastalie_prefix_only = False
 				emotion_hit = True
 				break
 		if emotion_hit:
@@ -1001,9 +1001,9 @@ def _sanitizePastalia(tokens):
 			suffixes.append(match.group(3))
 			slots.append(None)
 			
-			pastalia = True
+			pastalie = True
 			if match.group(3):
-				pastalia_prefix_only = False
+				pastalie_prefix_only = False
 			continue
 			
 		words.append(token)
@@ -1011,7 +1011,7 @@ def _sanitizePastalia(tokens):
 		suffixes.append(None)
 		slots.append(None)
 		
-	return (pastalia, pastalia_prefix_only, words, prefixes, suffixes, slots)
+	return (pastalie, pastalie_prefix_only, words, prefixes, suffixes, slots)
 	
 	
 class Error(Exception):

@@ -69,7 +69,8 @@ See license.README for details.
 						<ul class="basic-inline text-small">
 							<li>
 								Users of modern Unix-like operating systems can usually just view the font with their platform's
-								font-viewer and click 'Install' or save the font file into ~/.fonts/ and make use of it immediately.
+								font-viewer and click 'Install' or save the font file into <tt>~/.fonts/</tt> and make use of it
+								immediately.
 							</li>
 							<li>
 								Mac OS X users may view the font and click 'Install' or drag the font into Library/Fonts/ under
@@ -178,7 +179,7 @@ See license.README for details.
 										<li><a href="./dialects.php">Dialects</a></li>
 										<li><a href="./servers.php">Song Magic Servers</a></li>
 										<li><a href="./grammar.php">Grammar (Standard)</a></li>
-										<li><a href="./grammar2.php">Grammar (Pastalia)</a></li>
+										<li><a href="./grammar2.php">Grammar (Pastalie)</a></li>
 										<li><a href="./credits.php">Credits</a></li>
 									</ul>
 								</td>
