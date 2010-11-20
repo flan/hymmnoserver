@@ -201,10 +201,10 @@ if not query or not query.strip():
 				</small>
 			</p>
 			<p>
-				<span class="text-title-small">2) Binasphere conversion</span><br/>
-				Enter multiple (two or more) phrases and Binasphere output will be generated.
+				<span class="text-title-small">2) Binasphere Chorus conversion</span><br/>
+				Enter multiple (two or more) phrases and Binasphere Chorus output will be generated.
 				<br/><br/>
-				Enter Binasphere text and its constituent phrases will be reconstructed.
+				Enter Binasphere Chorus text and its constituent phrases will be reconstructed.
 			</p>
 			<p>
 				<span class="text-title-small">3) Persistent Emotion Sounds application</span><br/>
