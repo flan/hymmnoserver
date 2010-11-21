@@ -100,7 +100,7 @@ See license.README for details.
 				<tr>
 					<td class="property mcl">Modifier</td>
 					
-					<td class="ciela mcl">&</td>
+					<td class="ciela mcl">&amp;</td>
 					<td class="ciela mcl">(</td>
 					<td class="mcl"/>
 					<td class="ciela mcl">)</td>
@@ -124,7 +124,7 @@ See license.README for details.
 				<tr>
 					<td class="property keyboard">Keystroke</td>
 					
-					<td class="keyboard">&</td>
+					<td class="keyboard">&amp;</td>
 					<td class="keyboard">(</td>
 					<td class="keyboard"/>
 					<td class="keyboard">)</td>
