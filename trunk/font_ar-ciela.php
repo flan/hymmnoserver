@@ -21,14 +21,11 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			table.coding{
-				border: 1px solid #000044;
 				border-collapse: separate;
-				
 				text-align: center;
 			}
 			table.coding > td{
-				background-color: #EEEEFF;
-				
+				background-color: #DADAFF;
 				vertical-align: middle;
 			}
 			td.property{
