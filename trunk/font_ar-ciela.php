@@ -22,7 +22,7 @@ See license.README for details.
 		<style type="text/css">
 			table.coding{
 				border: 1px solid #000044;
-				border-collapse: collapse;
+				border-collapse: separate;
 				border-spacing: 1px;
 				text-align: center;
 			}
@@ -37,7 +37,7 @@ See license.README for details.
 			}
 			td.ciela{
 				font-size: 3em;
-				font-family: ar-ciela, sans;
+				font-family: "Ar-Ciela(Compartment)", sans;
 				color: black;
 			}
 			td.keyboard{
