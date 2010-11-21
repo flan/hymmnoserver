@@ -78,9 +78,9 @@ See license.README for details.
 							</li>
 							<li>
 								Those using Microsoft Windows will need to do some weird dance that may or may not involve
-								a lot of right-clicking, finding a Fonts directory that may or may not be write-protected,
-								and, possibly, restarting their system several times to get the font-indexer to notice the
-								addition.
+								a lot of right-clicking, finding a <tt>Fonts</tt> directory that may or may not be
+								write-protected, and, possibly, restarting their system several times to get the font-indexer
+								to notice the addition.
 							</li>
 						</ul>
 						<p>
