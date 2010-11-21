@@ -37,7 +37,7 @@ See license.README for details.
 				color: black;
 			}
 			td.mcl{
-                background-color: #DADAFF;
+                background-color: #F0F0FF;
 			}
 			td.keyboard{
 				background-color: #FFCCCC;
@@ -57,31 +57,31 @@ See license.README for details.
 			<b>▼ FMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="property">Modifier</td>
+					<td class="property mcl">Modifier</td>
 					
 					<td class="mcl"/>
-					<td class="mcl ciela">!</td>
-					<td class="mcl ciela">#</td>
-					<td class="mcl ciela">$</td>
-					<td class="mcl ciela">%</td>
+					<td class="ciela mcl">!</td>
+					<td class="ciela mcl">#</td>
+					<td class="ciela mcl">$</td>
+					<td class="ciela mcl">%</td>
 				</tr>
 				<tr>
-					<td class="property">Category</td>
+					<td class="property mcl">Category</td>
 					
-					<td>session-0</td>
-					<td>session-1</td>
-					<td>session-2</td>
-					<td>session-3</td>
-					<td>session-4</td>
+					<td class="mcl">session-0</td>
+					<td class="mcl">session-1</td>
+					<td class="mcl">session-2</td>
+					<td class="mcl">session-3</td>
+					<td class="mcl">session-4</td>
 				</tr>
 				<tr>
-					<td class="property">Frequency range</td>
+					<td class="property mcl">Frequency range</td>
 					
-					<td>20000Hz</td>
-					<td>50000Hz</td>
-					<td>100000Hz</td>
-					<td>150000Hz</td>
-					<td>300000Hz</td>
+					<td class="mcl">20000Hz</td>
+					<td class="mcl">50000Hz</td>
+					<td class="mcl">100000Hz</td>
+					<td class="mcl">150000Hz</td>
+					<td class="mcl">300000Hz</td>
 				</tr>
 				<tr>
 					<td class="property keyboard">Keystroke</td>
@@ -96,28 +96,28 @@ See license.README for details.
 			<b>▼ AMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="property">Modifier</td>
+					<td class="property mcl">Modifier</td>
 					
-					<td class="ciela">&</td>
-					<td class="ciela">(</td>
-					<td/>
-					<td class="ciela">)</td>
+					<td class="ciela mcl">&</td>
+					<td class="ciela mcl">(</td>
+					<td class="mcl"/>
+					<td class="ciela mcl">)</td>
 				</tr>
 				<tr>
-					<td class="property">Category</td>
+					<td class="property mcl">Category</td>
 					
-					<td>quad</td>
-					<td>dual</td>
-					<td>single</td>
-					<td>half</td>
+					<td class="mcl">quad</td>
+					<td class="mcl">dual</td>
+					<td class="mcl">single</td>
+					<td class="mcl">half</td>
 				</tr>
 				<tr>
-					<td class="property">Amplitude signature</td>
+					<td class="property mcl">Amplitude signature</td>
 					
-					<td>＼＿＿＿</td>
-					<td>／￣＼＿</td>
-					<td>＿＿＿＿</td>
-					<td>/\&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td class="mcl">＼＿＿＿</td>
+					<td class="mcl">／￣＼＿</td>
+					<td class="mcl">＿＿＿＿</td>
+					<td class="mcl">/\&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 				<tr>
 					<td class="property keyboard">Keystroke</td>
