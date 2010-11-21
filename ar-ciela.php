@@ -195,7 +195,7 @@ See license.README for details.
                         Ec Tisia
     	            </td>
     	            <td class="ciela mcl">
-                        E%)c T$&amp;is%(ia
+                        E%)c $&amp;Ti%(sia
     	            </td>
 	            </tr>
 	            <tr>
@@ -274,7 +274,7 @@ See license.README for details.
                     <td>N</td>
                     <td colspan="9">【マンダラ】無ム、楽ラク、悟サト、博愛</td>
                 </tr>
-                <tr height=18 style='height:13.5pt'>
+                <tr>
                     <td>b</td>
                     <td>自身</td>
                     <td/>
@@ -394,7 +394,7 @@ See license.README for details.
                     <td/>
                     <td>愛</td>
                 </tr>
-                <tr height=18 style='height:13.5pt'>
+                <tr>
                     <td>p</td>
                     <td>P</td>
                     <td/>
