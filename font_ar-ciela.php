@@ -25,7 +25,6 @@ See license.README for details.
 				text-align: center;
 			}
 			table.coding > td{
-				background-color: #DADAFF;
 				vertical-align: middle;
 			}
 			td.property{
@@ -36,6 +35,9 @@ See license.README for details.
 				font-size: 4.5em;
 				font-family: "Ar-Ciela(Compartment)", sans;
 				color: black;
+			}
+			td.mcl{
+                background-color: #DADAFF;
 			}
 			td.keyboard{
 				background-color: #FFCCCC;
@@ -57,11 +59,11 @@ See license.README for details.
 				<tr>
 					<td class="property">Modifier</td>
 					
-					<td/>
-					<td class="ciela">!</td>
-					<td class="ciela">#</td>
-					<td class="ciela">$</td>
-					<td class="ciela">%</td>
+					<td class="mcl"/>
+					<td class="mcl ciela">!</td>
+					<td class="mcl ciela">#</td>
+					<td class="mcl ciela">$</td>
+					<td class="mcl ciela">%</td>
 				</tr>
 				<tr>
 					<td class="property">Category</td>
