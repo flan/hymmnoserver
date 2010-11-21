@@ -22,12 +22,12 @@ See license.README for details.
 		<style type="text/css">
 			table.coding{
 				border: 1px solid #000044;
+				border-collapse: separate;
 				
 				text-align: center;
 			}
 			table.coding > td{
-				border: 1px solid #000044;
-				padding: 1px;
+				background-color: #EEEEFF;
 				
 				vertical-align: middle;
 			}
