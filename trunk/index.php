@@ -159,7 +159,7 @@ See license.README for details.
 											<span style="font-size: 8pt;">TrueType Font (v0.9)</span>
 										</span>
 									</a>
-									<small><a href="./font_ar-ciela.php" style="color: #D0FFD9;">Usage notes</a></small>
+									<small><a href="./font_ar-ciela.php" style="color: #A0FFB9;">Usage notes</a></small>
 								</td>
 							</tr>
 						</table>
