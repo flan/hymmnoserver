@@ -37,7 +37,7 @@ See license.README for details.
 				color: black;
 			}
 			td.mcl{
-                background-color: #F0F0FF;
+                background-color: #E9E9FF;
 			}
 			td.keyboard{
 				background-color: #FFCCCC;
