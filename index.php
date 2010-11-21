@@ -195,7 +195,7 @@ See license.README for details.
 										<li><a href="./servers.php">Song Magic Servers</a></li>
 										<li><a href="./grammar.php">Grammar (Standard)</a></li>
 										<li><a href="./grammar2.php">Grammar (Pastalie)</a></li>
-										<li>Ar ciela (basics)</li>
+										<li><a href="./ar-ciela.php">Ar ciela (basics)</a></li>
 										<li><a href="./credits.php">Credits</a></li>
 									</ul>
 								</td>
