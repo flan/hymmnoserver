@@ -35,7 +35,7 @@ See license.README for details.
 				font-size: 4.5em;
 				font-family: "Ar-Ciela(Compartment)", sans;
 				text-align: left;
-				margin-left: 4px;
+				padding-left: 4px;
 				color: black;
 			}
 			td.mcl{
