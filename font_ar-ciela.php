@@ -22,19 +22,19 @@ See license.README for details.
 		<style type="text/css">
 			table.coding{
 				border: 1px solid #000044;
-				border-collapse: collapse;
+				border-collapse: separate;
 				border-spacing: 1px;
+				text-align: center;
 			}
 			table.coding > td{
 				vertical-align: middle;
-				text-align: center;
 			}
 			td.header{
 				font-weight: bold;
 			}
 			td.ciela{
 				font-size: 3em;
-				font-family: ar-ciela(compartment), sans;
+				font-family: ar-ciela, sans;
 				color: black;
 			}
 			td.keyboard{

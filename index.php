@@ -152,14 +152,14 @@ See license.README for details.
 						<table style="width: 100%; border-color: #001144; border-width: 1px; border-style: outset;">
 							<tr>
 								<td class="fontcell" style="text-align: center; width: 184px;">
-									<a href="./static/hymmnos.ttf" style="text-decoration: none; display: block;">
+									<a href="./static/ar-ciela_compartment.ttf" style="text-decoration: none; display: block;">
 										<img src="./static/arcgrp.gif" style="border-width: 0;" alt="Download the Ar ciela TrueType Font (v0.9)"/>
 										<span style="color: white; font-weight: bold; margin-top: -10px;">
 											<span style="font-size: 9pt;">Download the Ar ciela</span><br/>
 											<span style="font-size: 8pt;">TrueType Font (v0.9)</span>
 										</span>
 									</a>
-									<a href="./font_ar-ciela.php">Usage notes</a>
+									<small><a href="./font_ar-ciela.php">Usage notes</a></small>
 								</td>
 							</tr>
 						</table>
