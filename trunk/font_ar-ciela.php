@@ -22,11 +22,14 @@ See license.README for details.
 		<style type="text/css">
 			table.coding{
 				border: 1px solid #000044;
-				border-collapse: separate;
+				border-collapse: collapse;
 				border-spacing: 1px;
 				text-align: center;
 			}
 			table.coding > td{
+				border-width: 1px;
+				padding: 1px;
+				border-color: #000044;
 				vertical-align: middle;
 			}
 			td.header{
@@ -115,7 +118,7 @@ See license.README for details.
 					<td>＼＿＿＿</td>
 					<td>／￣＼＿</td>
 					<td>＿＿＿＿</td>
-					<td>／＼&nbsp;&nbsp;</td>
+					<td>／＼&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 				<tr>
 					<td class="header keyboard">Keystroke</td>
