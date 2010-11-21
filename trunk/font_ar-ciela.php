@@ -21,9 +21,9 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			table.coding{
-				border: 1px solid #000044;
+				border-style: none;
 				border-collapse: separate;
-				border-spacing: 1px;
+				
 				text-align: center;
 			}
 			table.coding > td{
@@ -31,6 +31,7 @@ See license.README for details.
 				border-style: inset;
 				padding: 1px;
 				border-color: #000044;
+				
 				vertical-align: middle;
 			}
 			td.property{
