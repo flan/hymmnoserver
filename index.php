@@ -62,8 +62,8 @@ See license.README for details.
 						</p>
 						<p>
 							<span class="text-title">⠕ Hymmnos characters</span><br/>
-							Hymmnos Words are written in a special script. Browsing this archive will be more enjoyable if you
-							are able to see these characters. A TrueType Font for Hymmnos is available as a free download from
+							Hymmnos Words are written in special scripts. Exploring this system will be more enjoyable if you
+							are able to see the characters as intended. TrueType fonts for are available as free downloads from
 							the sidebar to the right.
 						</p>
 						<ul class="basic-inline text-small">
@@ -145,6 +145,21 @@ See license.README for details.
 											<span style="font-size: 8pt;">TrueType Font (v1.1)</span>
 										</span>
 									</a>
+								</td>
+							</tr>
+						</table>
+						<br/>
+						<table style="width: 100%; border-color: #001144; border-width: 1px; border-style: outset;">
+							<tr>
+								<td class="fontcell" style="text-align: center; width: 184px;">
+									<a href="./static/hymmnos.ttf" style="text-decoration: none; display: block;">
+										<img src="./static/arcgrp.gif" style="border-width: 0;" alt="Download the Ar ciela TrueType Font (v0.9)"/>
+										<span style="color: white; font-weight: bold; margin-top: -10px;">
+											<span style="font-size: 9pt;">Download the Ar ciela</span><br/>
+											<span style="font-size: 8pt;">TrueType Font (v0.9)</span>
+										</span>
+									</a>
+									<a href="./font_ar-ciela.php">Usage notes</a>
 								</td>
 							</tr>
 						</table>
