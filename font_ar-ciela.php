@@ -21,24 +21,22 @@ See license.README for details.
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			table.coding{
-				border-style: none;
-				border-collapse: separate;
+				border: 1px solid #000044;
 				
 				text-align: center;
 			}
 			table.coding > td{
-				border-width: 1px;
-				border-style: inset;
+				border: 1px solid #000044;
 				padding: 1px;
-				border-color: #000044;
 				
 				vertical-align: middle;
 			}
 			td.property{
 				font-weight: bold;
+				text-align: left;
 			}
 			td.ciela{
-				font-size: 4em;
+				font-size: 4.5em;
 				font-family: "Ar-Ciela(Compartment)", sans;
 				color: black;
 			}
@@ -120,7 +118,7 @@ See license.README for details.
 					<td>＼＿＿＿</td>
 					<td>／￣＼＿</td>
 					<td>＿＿＿＿</td>
-					<td>／＼&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>/\&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 				<tr>
 					<td class="property keyboard">Keystroke</td>
