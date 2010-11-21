@@ -73,8 +73,8 @@ See license.README for details.
 								immediately.
 							</li>
 							<li>
-								Mac OS X users may view the font and click 'Install' or drag the font into Library/Fonts/ under
-								their home directory.
+								Mac OS X users may view the font and click 'Install' or drag the font into
+								<tt>Library/Fonts/</tt> under their home directory.
 							</li>
 							<li>
 								Those using Microsoft Windows will need to do some weird dance that may or may not involve
