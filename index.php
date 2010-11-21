@@ -159,7 +159,7 @@ See license.README for details.
 											<span style="font-size: 8pt;">TrueType Font (v0.9)</span>
 										</span>
 									</a>
-									<small><a href="./font_ar-ciela.php">Usage notes</a></small>
+									<small><a href="./font_ar-ciela.php" style="color: #E0E0FF;">Usage notes</a></small>
 								</td>
 							</tr>
 						</table>
@@ -173,11 +173,11 @@ See license.README for details.
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
+									    <li>(20/10/2010) Added Ar ciela font</li>
 									    <li>(20/10/2010) Housekeeping</li>
 										<li>(21/2/2010) At3 words added</li>
 										<li>(10/1/2010) Added new words</li>
 										<li>(10/1/2010) Migrated to uguu.ca</li>
-										<li>(3/7/2009) Syntax parser online</li>
 									</ul>
 								</td>
 							</tr>
@@ -195,6 +195,7 @@ See license.README for details.
 										<li><a href="./servers.php">Song Magic Servers</a></li>
 										<li><a href="./grammar.php">Grammar (Standard)</a></li>
 										<li><a href="./grammar2.php">Grammar (Pastalie)</a></li>
+										<li>Ar ciela (basics)</li>
 										<li><a href="./credits.php">Credits</a></li>
 									</ul>
 								</td>
