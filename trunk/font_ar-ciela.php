@@ -28,15 +28,16 @@ See license.README for details.
 			}
 			table.coding > td{
 				border-width: 1px;
+				border-style: inset;
 				padding: 1px;
 				border-color: #000044;
 				vertical-align: middle;
 			}
-			td.header{
+			td.property{
 				font-weight: bold;
 			}
 			td.ciela{
-				font-size: 3em;
+				font-size: 4em;
 				font-family: "Ar-Ciela(Compartment)", sans;
 				color: black;
 			}
@@ -58,7 +59,7 @@ See license.README for details.
 			<b>▼ FMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="header">Modifier</td>
+					<td class="property">Modifier</td>
 					
 					<td/>
 					<td class="ciela">!</td>
@@ -67,7 +68,7 @@ See license.README for details.
 					<td class="ciela">%</td>
 				</tr>
 				<tr>
-					<td class="header">Category</td>
+					<td class="property">Category</td>
 					
 					<td>session-0</td>
 					<td>session-1</td>
@@ -76,7 +77,7 @@ See license.README for details.
 					<td>session-4</td>
 				</tr>
 				<tr>
-					<td class="header">Frequency range</td>
+					<td class="property">Frequency range</td>
 					
 					<td>20000Hz</td>
 					<td>50000Hz</td>
@@ -85,7 +86,7 @@ See license.README for details.
 					<td>300000Hz</td>
 				</tr>
 				<tr>
-					<td class="header keyboard">Keystroke</td>
+					<td class="property keyboard">Keystroke</td>
 					
 					<td class="keyboard"/>
 					<td class="keyboard">!</td>
@@ -97,7 +98,7 @@ See license.README for details.
 			<b>▼ AMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="header">Modifier</td>
+					<td class="property">Modifier</td>
 					
 					<td class="ciela">&</td>
 					<td class="ciela">(</td>
@@ -105,7 +106,7 @@ See license.README for details.
 					<td class="ciela">)</td>
 				</tr>
 				<tr>
-					<td class="header">Category</td>
+					<td class="property">Category</td>
 					
 					<td>quad</td>
 					<td>dual</td>
@@ -113,7 +114,7 @@ See license.README for details.
 					<td>half</td>
 				</tr>
 				<tr>
-					<td class="header">Amplitude signature</td>
+					<td class="property">Amplitude signature</td>
 					
 					<td>＼＿＿＿</td>
 					<td>／￣＼＿</td>
@@ -121,7 +122,7 @@ See license.README for details.
 					<td>／＼&nbsp;&nbsp;&nbsp;&nbsp;</td>
 				</tr>
 				<tr>
-					<td class="header keyboard">Keystroke</td>
+					<td class="property keyboard">Keystroke</td>
 					
 					<td class="keyboard">&</td>
 					<td class="keyboard">(</td>
