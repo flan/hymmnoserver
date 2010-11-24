@@ -17,7 +17,7 @@ See license.README for details.
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Hymmnoserver - Grammar (Standard)</title>
+		<title>Hymmnoserver - Ar ciela (basics)</title>
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			table.coding{
@@ -46,39 +46,71 @@ See license.README for details.
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-            <h1 class="h04_1">アル・シエラとは</h1>
+		    <div class="section-title text-title-small">⠕ About Ar ciela</div>
             <p>
-                アル・シエラは、通称「星語」と呼ばれる言語であり、人間の言葉ではない。それは惑星が惑星の意志同士で会話をするときや、
-                惑星が何かを紡ぎ出すとき（＝この地球でいうのなら、惑星の活動の全て（気象、噴火、マントル対流、生命サイクルなど）を指す）に、このアル・シエラを用い、
-                自らの想いを具現化するのである。すなわちアル・シエラは惑星アルシエルの惑星活動の源とも言うべき言語なのである。
+                Ar Ciela, also referred to as the &quot;language of the planet&quot;, is not a language
+                conceived of for human use. Rather, it is a language that expresses the will of the
+                planet and serves to describe natural phenomena (in terms applicable to Earth,
+                examples would be weather systems, volcanic activity, tectonic shifts, and other
+                properties that govern the natural cycle of life). Taken in this context, Ar ciela
+                can be viewed as the language used by Ar ciel to manifest change.
             </p>
-            <h1 class="h04_1">アル・シエラ言語の特徴</h1>
+            <div class="section-title text-title-small">⠕ Features of the Ar ciela language</div>
             <p>
-                アルシエラ言語は、可聴範囲内での発音では完全な意味をとることが出来ない。
-                これは、この言語の発音自体が導体H波となり、そのまま世界に作用する事が出来る言語だからである。
-                通常の可聴範囲は２０〜２００００Hzと言われているが、アルシエラはゆうにその３０倍以上、
-                ２０〜６０００００Hzの導体H波で発音する。この帯域を（聴ける聴けないは別として）
-                サンプリング録音する為には、サンプリングレートは1200kHz必要になる（CDは44.1kHz）。
-            </p>
-            <p>
-                では、普段聞こえてくるアルシエラとはどのようなものなのか。
-                我々に置き換えて具体的に体験する方法が１つだけある。それは、我々の声や歌をPCで録音し、
-                波形編集ソフトで100Hz以上をカットオフするのである。
-                すると、恐ろしくこもった声になり、何を言っているのかサッパリわからなくなる。
-                これが、アルシエラを人間が聴いたときの状態そのものである。
-            </p>
-            <p>
-                たとえば、「おかあさん」と喋ったとしよう。
-                これを100Hzでカットオフすると「おほおほん」という感じに聞こえる。
-                ここから聞き取れるのは、5文字であること、アクセントが２，３文字目にあること、母音のニュアンス程度である。
-                実際「おかあさん」以外にも「のたあはう」と言っていたとしても、おなじように「おほおほん」になる。
-                この事から察することが出来ると思うが、例えば「Tisia」という１つの単語で、相当数の意味を持つのである。
-                もちろん、60万Hzまで聞くことが出来れば、その相当数の意味はそれぞれ１つずつ、違う発音の違う単語である事がわかる。
+                The full range of Al ciela phonology cannot be perceived by human ears. This does
+                not seem unreasonable when considering the scale on which the language, which
+                is conveyed as pure dynamic H-waves, operates, as a force that shapes the world.
+                The full spectrum of Ar ciela spans 20-600,000Hz; compared to the human-perceptible
+                domain of 20-20,000Hz, the upper bound of Ar ciela's frequency range is thirty times
+                higher. Were this range to be recorded, instruments capable of sampling at a rate of
+                1200kHz would be
+                <a href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">required</a>
+                (for reference, CD-quality audio is sampled at 44.1kHz).
             </p>
             <p>
-                日本人的に更にわかりやすい例えで言えば、英語の「草」と「ガラス」である。
-                日本人は英語発音で重要なの高域成分を聞き取る訓練をしていない為、
-                上記2つの発音「グラース」の聞き分けが困難である。これの更に絶望的なまでに聞き分けられないものと言えよう。
+                So, then, what does Ar ciela sound like when observed by human ears? One method of
+                approximating the difference between the full range of Ar ciela and what humans can
+                hear is as follows: take a recording of speech or song and load it into a
+                <a href="http://audacity.sourceforge.net/">waveform editor</a>, then resample it at
+                100Hz, one twentieth of what human ears can perceive. Play back the result and you
+                will find the audio muffled and hard to understand. Perceived by humans, Al ciela is
+                much like the 100Hz sample of the original audio.
+                <br/><br/>
+                <em>
+                    A 4000Hz example is available in <a href="http://www.vorbis.com/">Vorbis</a>
+                    format. 4000Hz was chosen since it's the smallest sampling rate known to work
+                    with most sound cards, though it only demonstrates 1/5 range-compression, rather
+                    than the target 1/30; just imagine that the quality would be much worse.
+                    Download:
+                    <a href="./static/goodbye_44100.ogg">44100Hz</a>,
+                    <a href="./static/goodbye_4000.ogg">4000Hz</a>.
+                </em>
+            </p>
+            <p>
+                Suppose the word recorded were &quot;<em>okaasan</em>&quot;
+                (<em>おかあさん : mother</em>). Had you resampled it at 100Hz, effectively cutting off
+                every frequency higher than that value, you would be left with something that
+                sounded like &quot;<em>ohoohon</em>&quot; (<em>おほおほん</em>), which has no meaning.
+                However, phonologically, the utterance still has significance: it still has five
+                morae (including the nasal), emphasis is placed over the second and third morae, and
+                the prosodical pattern holds. Despite the phonological similarities, though, what
+                was &quot;<em>okaasan</em>&quot; may be mentally represented as
+                &quot;<em>notaahau</em>&quot; (<em>のたあはう</em>), since
+                &quot;<em>ohoohon</em>&quot; isn't recognizable as a word.
+                <br/><br/>
+                Expanding on the presented idea, consider the Ar ciela utterance "Tisia": not
+                knowing what its full enunciation sounds like, it could be any one of a great
+                number of possible words. Were you able to hear it pronounced at 600,000Hz, however,
+                it would be possible to confidently indentify the true form of the word being
+                uttered.
+            </p>
+            <p>
+                An everyday example of the significance of frequency ranges is in how a Japanese
+                speaker deals with the English words &quot;grass&quot; and &quot;glass&quot;. Since
+                Japanese phonemes do not distinguish between the high frequencies that contrast
+                &quot;l&quot; and &quot;r&quot; in English, native speakers cannot mentally hear the
+                difference between the words: to them, both are &quot;<em>gurasu</em>&quot;
+                (<em>グラース</em>). 
             </p>
             <div style="text-align: center;">
                 <img src="./static/arciela_fft.jpg" alt="Human-observable frequency range versus Ar ciela frequency range"/>

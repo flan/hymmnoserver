@@ -49,7 +49,7 @@ See license.README for details.
 							Some features differ (for better or worse) and some details, such as examples, were intentionally rewritten
 							in a manner believed to make more sense to an English-speaking audience.
 							<br/><br/>
-							If you note any problems, please
+							If you notice any problems, please
 							<a href="http://code.google.com/p/hymmnoserver/issues/list">report the issue</a> and help to make this
 							service better.
 						</p>
