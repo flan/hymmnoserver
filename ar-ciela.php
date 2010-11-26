@@ -125,9 +125,9 @@ See license.README for details.
                 An everyday example of the significance of frequency ranges is in how a Japanese
                 speaker deals with the English words &quot;grass&quot; and &quot;glass&quot;. Since
                 Japanese phonemes do not distinguish between the high frequencies that contrast
-                &quot;l&quot; and &quot;r&quot; in English, native speakers cannot mentally hear the
-                difference between the words: to them, both are &quot;<em>gurasu</em>&quot;
-                (<em>グラース</em>). 
+                &quot;l&quot; and &quot;r&quot; in English, native speakers cannot, without great
+                effort, mentally hear the difference between the words: to them, both are
+                &quot;<em>gurasu</em>&quot; (<em>グラース</em>). 
             </p>
             <div style="text-align: center; font-size: 0.9em;">
                 <img src="./static/arciela_fft.png" alt="Human-observable frequency range versus Ar ciela frequency range"/>
