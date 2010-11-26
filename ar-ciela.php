@@ -290,7 +290,7 @@ See license.README for details.
             <table style="text-align: center;">
                 <tr>
                     <td/>
-                    <td class="content" style="font-weight: bold;" colspan="9">周波数帯域レベル（レベル毎の代表的な発音に対する想い）</td>
+                    <td style="font-weight: bold;" colspan="9">周波数帯域レベル（レベル毎の代表的な発音に対する想い）</td>
                 </tr>
                 <tr>
                     <td/>
