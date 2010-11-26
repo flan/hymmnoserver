@@ -41,6 +41,9 @@ See license.README for details.
 			td.mcl{
                 background-color: #E9E9FF;
 			}
+			td.content{
+			    background-color: #F0F0FF;
+			}
 		</style>
 	</head>
 	<body>
@@ -228,10 +231,10 @@ See license.README for details.
             <b>▼　A practical example</b><br/>
             <table style="text-align: center;">
                 <tr>
-    	            <td class="ciela mcl" style="padding-right: 20px;">
+    	            <td class="ciela content" style="padding-right: 20px;">
                         Ec Tisia
     	            </td>
-    	            <td class="ciela mcl" style="padding-right: 20px;">
+    	            <td class="ciela content" style="padding-right: 20px;">
                         E%)c $&amp;Ti%(sia
     	            </td>
 	            </tr>
@@ -273,7 +276,7 @@ See license.README for details.
             <table>
                 <tr>
                     <td/>
-                    <td colspan="9"><b>周波数帯域レベル（レベル毎の代表的な発音に対する想い）</b></td>
+                    <td class="content" colspan="9"><b>周波数帯域レベル（レベル毎の代表的な発音に対する想い）</b></td>
                 </tr>
                 <tr>
                     <td/>
@@ -289,267 +292,267 @@ See license.README for details.
                 </tr>
                 <tr>
                     <td>A</td>
-                    <td colspan="9">【スカラー】中立、平等、公平、エネルギー、想いの力、バランス、愛</td>
+                    <td class="content" colspan="9">【スカラー】中立、平等、公平、エネルギー、想いの力、バランス、愛</td>
                 </tr>
                 <tr>
                     <td>I</td>
-                    <td colspan="9">【プレイ】畏オソれ、不安フアン、敬ウヤマい、希望キボウ、精神セイシン、慈愛</td>
+                    <td class="content" colspan="9">【プレイ】畏オソれ、不安フアン、敬ウヤマい、希望キボウ、精神セイシン、慈愛</td>
                 </tr>
                 <tr>
                     <td>U</td>
-                    <td colspan="9">【イクスピアリ】憧アコガれ、羨望センボウ、好ヨシミ敵テキ、協力キョウリョク、友愛</td>
+                    <td class="content" colspan="9">【イクスピアリ】憧アコガれ、羨望センボウ、好ヨシミ敵テキ、協力キョウリョク、友愛</td>
                 </tr>
                 <tr>
                     <td>E</td>
-                    <td colspan="9">【ネイバー】憐アワれみ、遠慮エンリョ、理解リカイ、共感キョウカン、性愛</td>
+                    <td class="content" colspan="9">【ネイバー】憐アワれみ、遠慮エンリョ、理解リカイ、共感キョウカン、性愛</td>
                 </tr>
                 <tr>
                     <td>O</td>
-                    <td colspan="9">【カルマ】憎悪ゾウオ、怒イカり、悲カナしみ、諭サトし、自己愛</td>
+                    <td class="content" colspan="9">【カルマ】憎悪ゾウオ、怒イカり、悲カナしみ、諭サトし、自己愛</td>
                 </tr>
                 <tr>
                     <td>N</td>
-                    <td colspan="9">【マンダラ】無ム、楽ラク、悟サト、博愛</td>
+                    <td class="content" colspan="9">【マンダラ】無ム、楽ラク、悟サト、博愛</td>
                 </tr>
                 <tr>
                     <td>b</td>
-                    <td>自身</td>
-                    <td/>
-                    <td>隣人</td>
-                    <td/>
-                    <td>地域</td>
-                    <td/>
-                    <td>世界</td>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">自身</td>
+                    <td class="content"/>
+                    <td class="content">隣人</td>
+                    <td class="content"/>
+                    <td class="content">地域</td>
+                    <td class="content"/>
+                    <td class="content">世界</td>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>c</td>
-                    <td/>
-                    <td>変身</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>革命</td>
-                    <td/>
-                    <td>成長</td>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content">変身</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">革命</td>
+                    <td class="content"/>
+                    <td class="content">成長</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>d</td>
-                    <td>魔</td>
-                    <td/>
-                    <td>堕落</td>
-                    <td/>
-                    <td>闇</td>
-                    <td/>
-                    <td/>
-                    <td>光</td>
-                    <td>愛</td>
+                    <td class="content">魔</td>
+                    <td class="content"/>
+                    <td class="content">堕落</td>
+                    <td class="content"/>
+                    <td class="content">闇</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">光</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>f</td>
-                    <td>伝導</td>
-                    <td/>
-                    <td/>
-                    <td>波及</td>
-                    <td/>
-                    <td>浸透</td>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">伝導</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">波及</td>
+                    <td class="content"/>
+                    <td class="content">浸透</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>g</td>
-                    <td>地獄</td>
-                    <td/>
-                    <td>破壊</td>
-                    <td/>
-                    <td>変化</td>
-                    <td/>
-                    <td>再生</td>
-                    <td>育成</td>
-                    <td>愛</td>
+                    <td class="content">地獄</td>
+                    <td class="content"/>
+                    <td class="content">破壊</td>
+                    <td class="content"/>
+                    <td class="content">変化</td>
+                    <td class="content"/>
+                    <td class="content">再生</td>
+                    <td class="content">育成</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>h</td>
-                    <td>熱</td>
-                    <td/>
-                    <td>炎</td>
-                    <td/>
-                    <td/>
-                    <td>燃焼</td>
-                    <td/>
-                    <td>情熱</td>
-                    <td>愛</td>
+                    <td class="content">熱</td>
+                    <td class="content"/>
+                    <td class="content">炎</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">燃焼</td>
+                    <td class="content"/>
+                    <td class="content">情熱</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>j</td>
-                    <td>無知</td>
-                    <td>未知</td>
-                    <td/>
-                    <td>奇抜</td>
-                    <td/>
-                    <td/>
-                    <td>特異</td>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">無知</td>
+                    <td class="content">未知</td>
+                    <td class="content"/>
+                    <td class="content">奇抜</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">特異</td>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>k</td>
-                    <td>K</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">K</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>l</td>
-                    <td>他人</td>
-                    <td/>
-                    <td>隣人</td>
-                    <td/>
-                    <td>友人</td>
-                    <td/>
-                    <td>伴侶</td>
-                    <td>託生</td>
-                    <td>愛</td>
+                    <td class="content">他人</td>
+                    <td class="content"/>
+                    <td class="content">隣人</td>
+                    <td class="content"/>
+                    <td class="content">友人</td>
+                    <td class="content"/>
+                    <td class="content">伴侶</td>
+                    <td class="content">託生</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>m</td>
-                    <td>平静</td>
-                    <td/>
-                    <td/>
-                    <td>同情</td>
-                    <td/>
-                    <td>救</td>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">平静</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">同情</td>
+                    <td class="content"/>
+                    <td class="content">救</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>p</td>
-                    <td>P</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">P</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>q</td>
-                    <td/>
-                    <td>愚</td>
-                    <td/>
-                    <td/>
-                    <td>無知</td>
-                    <td/>
-                    <td>無心</td>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content">愚</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">無知</td>
+                    <td class="content"/>
+                    <td class="content">無心</td>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>r</td>
-                    <td>胎動</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>躍動</td>
-                    <td/>
-                    <td>生命</td>
-                    <td>愛</td>
+                    <td class="content">胎動</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">躍動</td>
+                    <td class="content"/>
+                    <td class="content">生命</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>s</td>
-                    <td>欲望</td>
-                    <td>すがり</td>
-                    <td/>
-                    <td>願</td>
-                    <td>祈り</td>
-                    <td/>
-                    <td>感謝</td>
-                    <td>赦し</td>
-                    <td>愛</td>
+                    <td class="content">欲望</td>
+                    <td class="content">すがり</td>
+                    <td class="content"/>
+                    <td class="content">願</td>
+                    <td class="content">祈り</td>
+                    <td class="content"/>
+                    <td class="content">感謝</td>
+                    <td class="content">赦し</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>t</td>
-                    <td/>
-                    <td/>
-                    <td>己</td>
-                    <td>我々</td>
-                    <td/>
-                    <td>皆</td>
-                    <td/>
-                    <td>世界</td>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">己</td>
+                    <td class="content">我々</td>
+                    <td class="content"/>
+                    <td class="content">皆</td>
+                    <td class="content"/>
+                    <td class="content">世界</td>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>v</td>
-                    <td/>
-                    <td>喜び</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>賞賛</td>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content">喜び</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">賞賛</td>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>w</td>
-                    <td/>
-                    <td/>
-                    <td>内面</td>
-                    <td/>
-                    <td>精神</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">内面</td>
+                    <td class="content"/>
+                    <td class="content">精神</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>x</td>
-                    <td>攻勢</td>
-                    <td>防御</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>守護</td>
-                    <td/>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">攻勢</td>
+                    <td class="content">防御</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">守護</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>y</td>
-                    <td>闇</td>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td/>
-                    <td>聖</td>
-                    <td/>
-                    <td>愛</td>
+                    <td class="content">闇</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">聖</td>
+                    <td class="content"/>
+                    <td class="content">愛</td>
                 </tr>
                 <tr>
                     <td>z</td>
-                    <td/>
-                    <td>神</td>
-                    <td>主</td>
-                    <td/>
-                    <td/>
-                    <td>内面</td>
-                    <td/>
-                    <td>己</td>
-                    <td>愛</td>
+                    <td class="content"/>
+                    <td class="content">神</td>
+                    <td class="content">主</td>
+                    <td class="content"/>
+                    <td class="content"/>
+                    <td class="content">内面</td>
+                    <td class="content"/>
+                    <td class="content">己</td>
+                    <td class="content">愛</td>
                 </tr>
             </table>
             <p>
