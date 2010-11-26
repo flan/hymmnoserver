@@ -44,6 +44,18 @@ See license.README for details.
 			td.content{
 			    background-color: #F0F0FF;
 			}
+			td.numeral{
+			    font-weight: bold;
+			}
+			td.letter{
+			    font-weight: bold;
+			}
+			td.vowel{
+			    background-color: #FFCCCC;
+			}
+			td.consonant{
+			    background-color: #CCCCFF;
+			}
 		</style>
 	</head>
 	<body>
@@ -231,10 +243,10 @@ See license.README for details.
             <b>▼　A practical example</b><br/>
             <table style="text-align: center;">
                 <tr>
-    	            <td class="ciela content" style="padding-right: 20px;">
+    	            <td class="ciela content" style="padding-right: 23px;">
                         Ec Tisia
     	            </td>
-    	            <td class="ciela content" style="padding-right: 20px;">
+    	            <td class="ciela content" style="padding-right: 23px;">
                         E%)c $&amp;Ti%(sia
     	            </td>
 	            </tr>
@@ -273,49 +285,49 @@ See license.README for details.
                 その時点でその単語は既に不純であり的を得ていない。
                 母音や子音の想いを言葉で表現するのは不可能なのである。
             </p>
-            <table>
+            <table style="text-align: center;">
                 <tr>
                     <td/>
-                    <td class="content" colspan="9"><b>周波数帯域レベル（レベル毎の代表的な発音に対する想い）</b></td>
+                    <td class="content" style="font-weight: bold;" colspan="9">周波数帯域レベル（レベル毎の代表的な発音に対する想い）</td>
                 </tr>
                 <tr>
                     <td/>
-                    <td>I</td>
-                    <td>II</td>
-                    <td>III</td>
-                    <td>IV</td>
-                    <td>V</td>
-                    <td>VI</td>
-                    <td>VII</td>
-                    <td>VIII</td>
-                    <td>IX</td>
+                    <td class="numeral" style="background-color: #FFCCCC;">I</td>
+                    <td class="numeral" style="background-color: #FFE0CC;">II</td>
+                    <td class="numeral" style="background-color: #FFFFCC;">III</td>
+                    <td class="numeral" style="background-color: #E0FFCC;">IV</td>
+                    <td class="numeral" style="background-color: #CCFFCC;">V</td>
+                    <td class="numeral" style="background-color: #CCFFE0;">VI</td>
+                    <td class="numeral" style="background-color: #CCFFFF;">VII</td>
+                    <td class="numeral" style="background-color: #CCE0FF;">VIII</td>
+                    <td class="numeral" style="background-color: #CCCCFF;">IX</td>
                 </tr>
                 <tr>
-                    <td>A</td>
+                    <td class="letter vowel">A</td>
                     <td class="content" colspan="9">【スカラー】中立、平等、公平、エネルギー、想いの力、バランス、愛</td>
                 </tr>
                 <tr>
-                    <td>I</td>
+                    <td class="letter vowel">I</td>
                     <td class="content" colspan="9">【プレイ】畏オソれ、不安フアン、敬ウヤマい、希望キボウ、精神セイシン、慈愛</td>
                 </tr>
                 <tr>
-                    <td>U</td>
+                    <td class="letter vowel">U</td>
                     <td class="content" colspan="9">【イクスピアリ】憧アコガれ、羨望センボウ、好ヨシミ敵テキ、協力キョウリョク、友愛</td>
                 </tr>
                 <tr>
-                    <td>E</td>
+                    <td class="letter vowel">E</td>
                     <td class="content" colspan="9">【ネイバー】憐アワれみ、遠慮エンリョ、理解リカイ、共感キョウカン、性愛</td>
                 </tr>
                 <tr>
-                    <td>O</td>
+                    <td class="letter vowel">O</td>
                     <td class="content" colspan="9">【カルマ】憎悪ゾウオ、怒イカり、悲カナしみ、諭サトし、自己愛</td>
                 </tr>
                 <tr>
-                    <td>N</td>
+                    <td class="letter vowel">N</td>
                     <td class="content" colspan="9">【マンダラ】無ム、楽ラク、悟サト、博愛</td>
                 </tr>
                 <tr>
-                    <td>b</td>
+                    <td class="letter consonant">b</td>
                     <td class="content">自身</td>
                     <td class="content"/>
                     <td class="content">隣人</td>
@@ -327,7 +339,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>c</td>
+                    <td class="letter consonant">c</td>
                     <td class="content"/>
                     <td class="content">変身</td>
                     <td class="content"/>
@@ -339,7 +351,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>d</td>
+                    <td class="letter consonant">d</td>
                     <td class="content">魔</td>
                     <td class="content"/>
                     <td class="content">堕落</td>
@@ -351,7 +363,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>f</td>
+                    <td class="letter consonant">f</td>
                     <td class="content">伝導</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -363,7 +375,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>g</td>
+                    <td class="letter consonant">g</td>
                     <td class="content">地獄</td>
                     <td class="content"/>
                     <td class="content">破壊</td>
@@ -375,7 +387,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>h</td>
+                    <td class="letter consonant">h</td>
                     <td class="content">熱</td>
                     <td class="content"/>
                     <td class="content">炎</td>
@@ -387,7 +399,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>j</td>
+                    <td class="letter consonant">j</td>
                     <td class="content">無知</td>
                     <td class="content">未知</td>
                     <td class="content"/>
@@ -399,7 +411,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>k</td>
+                    <td class="letter consonant">k</td>
                     <td class="content">K</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -411,7 +423,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>l</td>
+                    <td class="letter consonant">l</td>
                     <td class="content">他人</td>
                     <td class="content"/>
                     <td class="content">隣人</td>
@@ -423,7 +435,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>m</td>
+                    <td class="letter consonant">m</td>
                     <td class="content">平静</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -435,7 +447,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>p</td>
+                    <td class="letter consonant">p</td>
                     <td class="content">P</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -447,7 +459,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>q</td>
+                    <td class="letter consonant">q</td>
                     <td class="content"/>
                     <td class="content">愚</td>
                     <td class="content"/>
@@ -459,7 +471,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>r</td>
+                    <td class="letter consonant">r</td>
                     <td class="content">胎動</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -471,7 +483,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>s</td>
+                    <td class="letter consonant">s</td>
                     <td class="content">欲望</td>
                     <td class="content">すがり</td>
                     <td class="content"/>
@@ -483,7 +495,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>t</td>
+                    <td class="letter consonant">t</td>
                     <td class="content"/>
                     <td class="content"/>
                     <td class="content">己</td>
@@ -495,7 +507,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>v</td>
+                    <td class="letter consonant">v</td>
                     <td class="content"/>
                     <td class="content">喜び</td>
                     <td class="content"/>
@@ -507,7 +519,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>w</td>
+                    <td class="letter consonant">w</td>
                     <td class="content"/>
                     <td class="content"/>
                     <td class="content">内面</td>
@@ -519,7 +531,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>x</td>
+                    <td class="letter consonant">x</td>
                     <td class="content">攻勢</td>
                     <td class="content">防御</td>
                     <td class="content"/>
@@ -531,7 +543,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>y</td>
+                    <td class="letter consonant">y</td>
                     <td class="content">闇</td>
                     <td class="content"/>
                     <td class="content"/>
@@ -543,7 +555,7 @@ See license.README for details.
                     <td class="content">愛</td>
                 </tr>
                 <tr>
-                    <td>z</td>
+                    <td class="letter consonant">z</td>
                     <td class="content"/>
                     <td class="content">神</td>
                     <td class="content">主</td>
