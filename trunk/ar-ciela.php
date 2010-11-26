@@ -226,7 +226,7 @@ See license.README for details.
                 子音に多く存在する高周波成分の指標である為、母音に使うのは無意味な為である。<br/>
             </p>
             <b>▼　A practical example</b><br/>
-            <table>
+            <table style="text-align: center;">
                 <tr>
     	            <td class="ciela mcl">
                         Ec Tisia
@@ -236,11 +236,11 @@ See license.README for details.
     	            </td>
 	            </tr>
 	            <tr>
-	                <td class="mcl" style="padding-right: 15px;">
+	                <td class="mcl" style="margin-right: 15px;">
 	                    &quot;Ec Tisia&quot; in Public form<br/>
 	                    Ec Tisia
                     </td>
-                    <td class="mcl" style="padding-right: 15px;">
+                    <td class="mcl" style="margin-right: 15px;">
                         &quot;Ec Tisia&quot; in Compartment form<br/>
                         Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia
                     </td>
