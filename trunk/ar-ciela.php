@@ -113,7 +113,7 @@ See license.README for details.
                 (<em>グラース</em>). 
             </p>
             <div style="text-align: center;">
-                <img src="./static/arciela_fft.jpg" alt="Human-observable frequency range versus Ar ciela frequency range"/>
+                <img src="./static/arciela_fft.png" alt="Human-observable frequency range versus Ar ciela frequency range"/>
                 <br/>
                 ↑可聴範囲内で同じような波形でも、それより高周波にある音が全く異なれば<br/>
                 「聞こえていないから同じ言葉に聞こえる」という事に他ならない。
