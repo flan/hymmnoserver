@@ -46,9 +46,11 @@ See license.README for details.
 			}
 			td.numeral{
 			    font-weight: bold;
+			    width: 4em;
 			}
 			td.letter{
 			    font-weight: bold;
+			    width: 2em;
 			}
 			td.vowel{
 			    background-color: #FFCCCC;
