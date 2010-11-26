@@ -89,8 +89,8 @@ See license.README for details.
             <p>
                 Suppose the word recorded were &quot;<em>okaasan</em>&quot;
                 (<em>おかあさん : mother</em>). Had you resampled it at 100Hz, effectively cutting off
-                every frequency higher than that value, you would be left with something that
-                sounded like &quot;<em>ohoohon</em>&quot; (<em>おほおほん</em>), which has no meaning.
+                every frequency higher than that value, you would have been left with something that
+                sounds like &quot;<em>ohoohon</em>&quot; (<em>おほおほん</em>), which has no meaning.
                 However, phonologically, the utterance still has significance: it still has five
                 morae (including the nasal), emphasis is placed over the second and third morae, and
                 the prosodical pattern holds. Despite the phonological similarities, though, what
@@ -98,11 +98,11 @@ See license.README for details.
                 &quot;<em>notaahau</em>&quot; (<em>のたあはう</em>), since
                 &quot;<em>ohoohon</em>&quot; isn't recognizable as a word.
                 <br/><br/>
-                Expanding on the presented idea, consider the Ar ciela utterance "Tisia": not
-                knowing what its full enunciation sounds like, it could be any one of a great
-                number of possible words. Were you able to hear it pronounced at 600,000Hz, however,
-                it would be possible to confidently indentify the true form of the word being
-                uttered.
+                Expanding on the presented idea, consider the Ar ciela utterance transcribed as
+                &quot;<em>Tisia</em>&quot;: not knowing what its full enunciation sounds like, it is
+                impossible to know exactly what word it really is. Were you able to hear it
+                pronounced at 600,000Hz, however, it would be possible to indentify, with
+                confidence, the true form of the word being uttered.
             </p>
             <p>
                 An everyday example of the significance of frequency ranges is in how a Japanese
@@ -112,11 +112,14 @@ See license.README for details.
                 difference between the words: to them, both are &quot;<em>gurasu</em>&quot;
                 (<em>グラース</em>). 
             </p>
-            <div style="text-align: center;">
+            <div style="text-align: center; font-size: 0.9em;">
                 <img src="./static/arciela_fft.png" alt="Human-observable frequency range versus Ar ciela frequency range"/>
                 <br/>
-                ↑可聴範囲内で同じような波形でも、それより高周波にある音が全く異なれば<br/>
-                「聞こえていないから同じ言葉に聞こえる」という事に他ならない。
+                A visual look at the subset of human-audible sound relative to the full frequency
+                range of Ar ciela.
+                <br/>
+                It is impossible to observe the full range of sound because of limitations on what
+                can be heard.
             </div>
             <p>
                 このように、現在の人間にはアルシエラの真の意味を聞き分けることが出来ない為、
