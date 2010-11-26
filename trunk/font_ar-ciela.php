@@ -17,7 +17,7 @@ See license.README for details.
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>Hymmnoserver - Grammar (Standard)</title>
+		<title>Hymmnoserver - Ar ciela font usage</title>
 		<?php include 'common/resources.xml'; ?>
 		<style type="text/css">
 			table.coding{
@@ -49,17 +49,17 @@ See license.README for details.
 	<body>
 		<?php include 'common/header.xml'; ?>
 		<div class="text-basic">
-			<div class="section-title text-title-small">⠕ Coding Ar ciel modifiers</div>
+			<div class="section-title text-title-small">⠕ Ar ciel Compartment coding</div>
 			<p>
-				Transcribed Ar ciel makes use of modifieres to convey emphasis and categorization
-				of the frequency and amplitude its notes. While writing basic script is
-				straight-forward, indicating modification requires that you follow the coding
+				Transcribed Ar ciel makes use of Compartments to convey emphasis and categorization
+				of the frequency and amplitude its notes. While writing Public script is
+				straight-forward, indicating Compartments requires that you follow the coding
 				schemes described below.
 			</p>
 			<b>▼ FMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="property mcl">Modifier</td>
+					<td class="property mcl">Compartment</td>
 					
 					<td class="mcl"/>
 					<td class="ciela mcl">!</td>
@@ -98,7 +98,7 @@ See license.README for details.
 			<b>▼ AMCL</b><br/>
 			<table class="coding">
 				<tr>
-					<td class="property mcl">Modifier</td>
+					<td class="property mcl">Compartment</td>
 					
 					<td class="ciela mcl">&amp;</td>
 					<td class="ciela mcl">(</td>
@@ -132,7 +132,7 @@ See license.README for details.
 			</table><br/>
 			<p>
 				Note that these coding elements will not cause your cusror to advance. To use them
-				effectively, enter the modifiers before the note being described.
+				effectively, provide the Compartment(s) before the note being described.
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
