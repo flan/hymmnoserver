@@ -228,19 +228,19 @@ See license.README for details.
             <b>▼　A practical example</b><br/>
             <table style="text-align: center;">
                 <tr>
-    	            <td class="ciela mcl">
+    	            <td class="ciela mcl" style="margin-right: 15px;">
                         Ec Tisia
     	            </td>
-    	            <td class="ciela mcl">
+    	            <td class="ciela mcl" style="margin-right: 15px;">
                         E%)c $&amp;Ti%(sia
     	            </td>
 	            </tr>
 	            <tr>
-	                <td class="mcl" style="margin-right: 15px;">
+	                <td class="mcl">
 	                    &quot;Ec Tisia&quot; in Public form<br/>
 	                    Ec Tisia
                     </td>
-                    <td class="mcl" style="margin-right: 15px;">
+                    <td class="mcl">
                         &quot;Ec Tisia&quot; in Compartment form<br/>
                         Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia
                     </td>
