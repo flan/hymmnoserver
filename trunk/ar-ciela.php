@@ -174,11 +174,11 @@ See license.README for details.
 				<tr>
 					<td class="property mcl">Frequency range</td>
 					
-					<td class="mcl">20000Hz</td>
-					<td class="mcl">50000Hz</td>
-					<td class="mcl">100000Hz</td>
-					<td class="mcl">150000Hz</td>
-					<td class="mcl">300000Hz</td>
+					<td class="mcl">20,000Hz</td>
+					<td class="mcl">50,000Hz</td>
+					<td class="mcl">100,000Hz</td>
+					<td class="mcl">150,000Hz</td>
+					<td class="mcl">300,000Hz</td>
 				</tr>
 			</table><br/>
             <b>▼ AMCL</b><br/>
