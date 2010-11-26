@@ -228,10 +228,10 @@ See license.README for details.
             <b>▼　A practical example</b><br/>
             <table style="text-align: center;">
                 <tr>
-    	            <td class="ciela mcl" style="padding-right: 15px;">
+    	            <td class="ciela mcl" style="padding-right: 20px;">
                         Ec Tisia
     	            </td>
-    	            <td class="ciela mcl" style="padding-right: 15px;">
+    	            <td class="ciela mcl" style="padding-right: 20px;">
                         E%)c $&amp;Ti%(sia
     	            </td>
 	            </tr>
