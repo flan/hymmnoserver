@@ -129,14 +129,14 @@ See license.README for details.
             <p>
                 アルシエラを表記するには、以下に説明する2種類の表記方法が存在する。
             </p>
-            <div class="section-title text-title-small">⠕ 【表記法１】アルシエラ・パブリック</div>
+            <div class="section-title text-title-small">⠕ [Tier 1] Public Ar ciela</div>
             <p>
                 パブリック文字は、人間に聞こえる範囲で聞き分けられる音を26文字に落とし込んだものである。
                 通常人間は、この26文字で表現する単語以上の表情を、その単語から読み取ることが出来ない。
                 これはその「開き直った」、聞こえる限りの単語を文字化したものである。
                 CDの解説書に書かれているアルシエラフォントは、このパブリック文字である。
             </p>
-            <div class="section-title text-title-small">⠕ 【表記法２】アルシエラ・コンパートメント</div>
+            <div class="section-title text-title-small">⠕ [Tier 2] Compartment Ar ciela</div>
             <p>
                 コンパートメント文字は、パブリック文字に注釈を付けることで、人間には聞き取れない領域の周波数帯で
                 どのような波形が存在しているか、しいてはそれが聞き取れたときどんな文字になるか、を
@@ -236,11 +236,11 @@ See license.README for details.
     	            </td>
 	            </tr>
 	            <tr>
-	                <td class="mcl">
+	                <td class="mcl" style="padding-right: 15px;">
 	                    &quot;Ec Tisia&quot; in Public form<br/>
 	                    Ec Tisia
                     </td>
-                    <td class="mcl">
+                    <td class="mcl" style="padding-right: 15px;">
                         &quot;Ec Tisia&quot; in Compartment form<br/>
                         Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia
                     </td>
@@ -250,7 +250,7 @@ See license.README for details.
                 「Ec Tisia」は「共感＋成長」と「皆＋誠心＋赦し＋希望＋想いの力」という意味による綴りである為、コンパートメント表記では『Ec[s-4/harf] T[s-3/quad]is[s-4/dual]ia』となる。
                 それをコンパートメント文字で記すと、上記のような文字になるのである。
             </p>
-            <div class="section-title text-title-small">⠕ 発音の想いについて</div>
+            <div class="section-title text-title-small">⠕ Pronunciation in Ar ciela</div>
             <p>
                 アルシエラは律詩前月読の原型的存在であるが為に、律詩前月読と同様に、発音自体にある程度心的作用（＝想いの力＝導体H波）が入る。
                 それによって生成される単語の意味は、その単語ごとに意訳されてわかりやすくなるが、その単語の想いは発音ごとの集合体によって紡がれる。
