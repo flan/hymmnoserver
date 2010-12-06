@@ -139,21 +139,30 @@ See license.README for details.
                 can be heard.
             </div>
             <p>
-                このように、現在の人間にはアルシエラの真の意味を聞き分けることが出来ない為、
-                聞き分けられるレベルでカテゴリ化を行い、更にその中で三次元的（立体マトリックス的）に視覚的細分化を行った。
-                それがアルシエラである。
+                <!--
+                    If anyone has a better translation for this, please submit it. I'm afraid I
+                    don't know if I got it right. -Neil
+                    このように、現在の人間にはアルシエラの真の意味を聞き分けることが出来ない為、
+                    聞き分けられるレベルでカテゴリ化を行い、更にその中で三次元的（立体マトリックス的）に視覚的細分化を行った。
+                   それがアルシエラである。
+               -->
+                Because the true form of Ar ciela utterances cannot be aurally perceived by humans,
+                its depictions are presented in three-dimensional terms, as a logical matrix that
+                can be used to construct visual forms. All renditions describe the same Ar ciela
+                language.
             </p>
             <p>
-                アルシエラを表記するには、以下に説明する2種類の表記方法が存在する。
+                Transcribed Ar ciela is written using two different notation schemes, described
+                below.
             </p>
-            <div class="section-title text-title-small">⠕ [Tier 1] Public Ar ciela</div>
+            <div class="section-title text-title-small">⠕ [Scheme 1] Public Ar ciela</div>
             <p>
                 パブリック文字は、人間に聞こえる範囲で聞き分けられる音を26文字に落とし込んだものである。
                 通常人間は、この26文字で表現する単語以上の表情を、その単語から読み取ることが出来ない。
                 これはその「開き直った」、聞こえる限りの単語を文字化したものである。
                 CDの解説書に書かれているアルシエラフォントは、このパブリック文字である。
             </p>
-            <div class="section-title text-title-small">⠕ [Tier 2] Compartment Ar ciela</div>
+            <div class="section-title text-title-small">⠕ [Scheme 2] Compartment Ar ciela</div>
             <p>
                 コンパートメント文字は、パブリック文字に注釈を付けることで、人間には聞き取れない領域の周波数帯で
                 どのような波形が存在しているか、しいてはそれが聞き取れたときどんな文字になるか、を
