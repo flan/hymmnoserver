@@ -157,25 +157,42 @@ See license.README for details.
             </p>
             <div class="section-title text-title-small">⠕ [Scheme 1] Public Ar ciela</div>
             <p>
-                パブリック文字は、人間に聞こえる範囲で聞き分けられる音を26文字に落とし込んだものである。
-                通常人間は、この26文字で表現する単語以上の表情を、その単語から読み取ることが出来ない。
-                これはその「開き直った」、聞こえる限りの単語を文字化したものである。
-                CDの解説書に書かれているアルシエラフォントは、このパブリック文字である。
+                Public notation uses a set of 26 symbols, each representing a sound in the
+                human-audible domain. Because this notation is limited to the human-audible domain,
+                it cannot be used to fully model all of Ar ciela, providing a simple, though highly
+                lossy, encoding scheme.
+                <br/>
+                <em>
+                    The <a href="./font_ar-ciela.php">Ar ciela compartment font</a>'s standard form
+                    is that of Public Ar ciela.
+                </em>
             </p>
             <div class="section-title text-title-small">⠕ [Scheme 2] Compartment Ar ciela</div>
             <p>
-                コンパートメント文字は、パブリック文字に注釈を付けることで、人間には聞き取れない領域の周波数帯で
-                どのような波形が存在しているか、しいてはそれが聞き取れたときどんな文字になるか、を
-                マトリックス的に表現するものである。<br/>
-                通常、アルシエラでの会話を聞いて、それをコンパートメント文字で書くことは人間には出来ない。
-                また、人間がアルシエラを書くとき、コンパートメント文字を使ってしっかりとした一対一の意味を作れるほど
-                アルシエラに精通していない。
-                だが、より科学的にアルシエラを解析する為にはその基準を作る為の文字が必要である。
+                Compartment notation is an extension of Public notation, in which annotations
+                are added to the set of 26 symbols, describing properties of the sound that fall
+                outside of the human-audible domain. They provide additional dimensions to the
+                aforementioned logical matrix.
             </p>
             <p>
-                コンパートメントは、パブリック文字1文字を更に、周波数傾向５種類と振幅傾向４種類に分離する為に使われる。
-                これをコンパートメントコードと言い、パブリック文字に対しての部位的な扱いで表現される。<br/>
-            （漢字で言えば、鰯、溺、といった魚へんやさんずいに当たる部分がコンパートメントコード）
+                When casually observing Ar ciela, it is impossible for humans to determine which
+                Compartment notation elements to use for transcription, since they describe
+                inaudible properties of the sounds. Even if the full range of sound could be heard,
+                though, the listener would need to be trained to recognize the differences between
+                Compartment notation elements for each sound. However, despite these complications,
+                Compartment notation is necessary to properly analyse transcribed Ar ciela.
+            </p>
+            <p>
+                The extensions provided by Compartment notation are thus: markings that sub-divide
+                the Public symbols into five frequency categories and four amplitude categories.
+                These sub-divided categories are collectively referred to as Compartments.
+                <br/>
+                <em>
+                    The use of Compartment notation is not unlike that of
+                    <a href="http://en.wikipedia.org/wiki/Diacritic">diacritics</a>, where an umlaut
+                    (<em>¨</em>) can, in languages such as German, fundamentally change the
+                    pronunciation of a word.
+                </em>
             </p>
             <b>▼ FMCL</b><br/>
 			<table class="coding">
