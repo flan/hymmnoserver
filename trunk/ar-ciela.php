@@ -74,7 +74,7 @@ See license.README for details.
             </p>
             <div class="section-title text-title-small">⠕ Features of the Ar ciela language</div>
             <p>
-                The full range of Al ciela phonology cannot be perceived by human ears. This does
+                The full range of Ar ciela phonology cannot be perceived by human ears. This does
                 not seem unreasonable when considering the scale on which the language, which
                 is conveyed as pure dynamic H-waves, operates, as a force that shapes the world.
                 The full spectrum of Ar ciela spans 20-600,000Hz; compared to the human-perceptible
@@ -252,21 +252,37 @@ See license.README for details.
 				</tr>
 			</table><br/>
             <p>
-                コンパートメントコードは、２００００Hz〜６０００００Hzまでの間を対数的に等分し、それぞれに対して
-                コンパートメントレベルという形で表現する。
-                コンパートメントコードにはFMCLとAMCLという2種類が存在する。
-                FMCL（周波数帯域傾向）とは、２００００Hz以上の周波数帯において対数的に5分割した時、
-                その最も音圧が高い区画について、記号化したものになる。
-                例えば、１００Hzで聞いたときのくぐもった「あ」は「か」かもしれないし「さ」かもしれないが、
-                「か」よりも「さ」の方が高周波成分を多く含んでいる。それをザックリと定義している。
-                AMCL（振幅域傾向）とは、その文字を発音している際に、２００００Hz以上の発音音圧の変遷（エンベロープ）が
-                どのように変化するかによって決められている。例えば「か」と「さ」では、前者の方がより鋭利で短時間集中型であり、
-                後者の方がよりソフトにまんべんなく音圧が存在する。<br/>
+                Compartment notation provides approximately logarithmic sub-division of the
+                frequency range from 20,000Hz through 600,000Hz.
+                To effect this sub-division, notations describe two properties: FMCL (frequency) and
+                AMCL (amplitude).
             </p>
             <p>
-                通常、FMCLはパブリック文字の上側に、AMCLは下側に記述する。<br/>
-                尚、コンパートメントコードは母音には使わない。<br/>
-                子音に多く存在する高周波成分の指標である為、母音に使うのは無意味な為である。<br/>
+                FMCL notation applies to sounds with a frequency over 20,000Hz, providing five
+                distinct categories. For example, using the 100Hz example from before, what is heard
+                as <em>[a]</em> (<em>あ</em>) may have actually been <em>[ka]</em> (<em>か</em>) or
+                <em>[sa]</em> (<em>さ</em>); <em>[ka]</em> and <em>[sa]</em> are distinguishable only
+                at frequencies higher than 100Hz.
+            </p>
+            <p>
+                AMCL describes pronunciation properties within frequency categories. For example, in
+                the 20,000Hz range, with the sounds <em>[ka]</em> (<em>か</em>) and <em>[sa]</em>
+                (<em>さ</em>), the frequency-distribution is such that the former has a short, sharp
+                leading burst, while the latter is characterised by a softer, more rolling pattern.
+            </p>
+            <p>
+                Notes:
+                <ul style="margin-top: -10px;">
+                    <li>
+                        When written, FMCL annotation is placed in the upper section of an
+                        otherwise-Public character, with AMCL annotation appearing on the lower side.
+                    </li>
+                    <li>
+                        Compartment notation is not used with vowels, since morae are not subject to
+                        variances in enunciation: their formants remain steady throughout the duration
+                        of the sound.
+                    </li>
+                </ul>
             </p>
             <b>▼　A practical example</b><br/>
             <table style="text-align: center;">
@@ -290,8 +306,10 @@ See license.README for details.
                 </tr>
             </table>
             <p>
-                「Ec Tisia」は「共感＋成長」と「皆＋誠心＋赦し＋希望＋想いの力」という意味による綴りである為、コンパートメント表記では『Ec[s-4/harf] T[s-3/quad]is[s-4/dual]ia』となる。
-                それをコンパートメント文字で記すと、上記のような文字になるのである。
+                &quot;Ec Tisia&quot; means 「共感＋成長」と「皆＋誠心＋赦し＋希望＋想いの力」, the sum of
+                the symbols that comprise its words; its Compartment form is
+                &quot;Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia&quot;, which is rendered in glyphs
+                above.
             </p>
             <div class="section-title text-title-small">⠕ Pronunciation in Ar ciela</div>
             <p>
