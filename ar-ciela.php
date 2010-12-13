@@ -104,16 +104,16 @@ See license.README for details.
 				</em>
 			</p>
 			<p>
-				Suppose the word recorded were &quot;<em>okaasan</em>&quot;
+				Suppose the word recorded were <em>[okaasan]</em>
 				(<em>おかあさん : mother</em>). Had you resampled it at 100Hz, effectively cutting off
 				every frequency higher than that value, you would have been left with something that
-				sounds like &quot;<em>ohoohon</em>&quot; (<em>おほおほん</em>), which has no meaning.
+				sounds like <em>/ohoohon/</em> (<em>おほおほん</em>), which has no meaning.
 				However, phonologically, the utterance still has significance: it still has five
 				morae (including the nasal), emphasis is placed over the second and third morae, and
 				the prosodical pattern holds. Despite the phonological similarities, though, what
-				was &quot;<em>okaasan</em>&quot; may be mentally represented as
-				&quot;<em>notaahau</em>&quot; (<em>のたあはう</em>), since
-				&quot;<em>ohoohon</em>&quot; isn't recognizable as a word.
+				was <em>[okaasan]</em> may be mentally represented as
+				<em>/notaahau/</em> (<em>のたあはう</em>), since
+				<em>/ohoohon/</em> isn't recognizable as a word.
 				<br/><br/>
 				Expanding on the presented idea, consider the Ar ciela utterance transcribed as
 				&quot;<em>Tisia</em>&quot;: not knowing what its full enunciation sounds like, it is
@@ -125,9 +125,9 @@ See license.README for details.
 				An everyday example of the significance of frequency ranges is in how a Japanese
 				speaker deals with the English words &quot;grass&quot; and &quot;glass&quot;. Since
 				Japanese phonemes do not distinguish between the high frequencies that contrast
-				&quot;l&quot; and &quot;r&quot; in English, native speakers cannot, without great
+				&quot;/l/&quot; and &quot;/r/&quot; in English, native speakers cannot, without great
 				effort, mentally hear the difference between the words: to them, both are
-				&quot;<em>gurasu</em>&quot; (<em>グラース</em>). 
+				&quot;<em>/gurasu/</em>&quot; (<em>グラース</em>). 
 			</p>
 			<div style="text-align: center; font-size: 0.9em;">
 				<img src="./static/arciela_fft.png" alt="Human-observable frequency range versus Ar ciela frequency range"/>
@@ -305,7 +305,8 @@ See license.README for details.
 				</tr>
 			</table>
 			<p>
-				&quot;Ec Tisia&quot; means 「共感＋成長」と「皆＋誠心＋赦し＋希望＋想いの力」, the sum of
+				&quot;Ec Tisia&quot; means 「empathy + growth」 and
+				「everyone + sincerity + forgiveness + hope + belief」, the sum of
 				the symbols that comprise its words; its Compartment form is
 				&quot;Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia&quot;, which is rendered in glyphs
 				above.
@@ -320,7 +321,8 @@ See license.README for details.
 				its own associated meaning (expressible as feelings through H-waves). As each word
 				is a collection of sounds, each carrying its own meaning, the symbolism of a
 				complete word is that of the aggregated sum of its sounds: for example,
-				&quot;Ec Tisia&quot; literally means 「共感＋成長」と「皆＋誠心＋赦し＋希望＋想いの力」,
+				&quot;Ec Tisia&quot; literally means 「empathy + growth」 and
+				「everyone + sincerity + forgiveness + hope + belief」,
 				which is collectively transmitted via H-waves, as a unified message along the lines
 				of "everything is forgiven".
 			</p>
@@ -369,109 +371,127 @@ See license.README for details.
 				</tr>
 				<tr>
 					<td class="letter vowel">A</td>
-					<td class="content" colspan="9">【スカラー】中立、平等、公平、エネルギー、想いの力、バランス, love</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Scale]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						neutrality, equality, justice, energy, belief, balance, love
+					</td>
 				</tr>
 				<tr>
 					<td class="letter vowel">I</td>
-					<td class="content" colspan="9">【プレイ】畏オソれ、不安フアン、敬ウヤマい、希望キボウ、精神セイシン、慈愛</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Pray]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						fear, anxiety, reverence, hope, spiritual, love
+					</td>
 				</tr>
 				<tr>
 					<td class="letter vowel">U</td>
-					<td class="content" colspan="9">【イクスピアリ】憧アコガれ、羨望センボウ、好ヨシミ敵テキ、協力キョウリョク、友愛</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Experience]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						aspiration, envy, rivalry, co-operation, friendship
+					</td>
 				</tr>
 				<tr>
 					<td class="letter vowel">E</td>
-					<td class="content" colspan="9">【ネイバー】憐アワれみ、遠慮エンリョ、理解リカイ、共感キョウカン、性愛</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Neighbour]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						pity, reservation, understanding, empathy, intimate love
+					</td>
 				</tr>
 				<tr>
 					<td class="letter vowel">O</td>
-					<td class="content" colspan="9">【カルマ】憎悪ゾウオ、怒イカり、悲カナしみ、諭サトし、自己愛</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Karma]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						hatred, anger, sadness, guidance, self-esteem
+					</td>
 				</tr>
 				<tr>
 					<td class="letter vowel">N</td>
-					<td class="content" colspan="9">【マンダラ】無ム、楽ラク、悟サト、博愛</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Mandela]</td>
+					<td class="content" style="text-align: left;" colspan="8">
+						want, comfort, enlightnment, charity
+					</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">b</td>
-					<td class="content">自身</td>
+					<td class="content">individual</td>
 					<td class="content"/>
-					<td class="content">隣人</td>
+					<td class="content">surroundings</td>
 					<td class="content"/>
-					<td class="content">地域</td>
+					<td class="content">region</td>
 					<td class="content"/>
-					<td class="content">世界</td>
+					<td class="content">universe</td>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">c</td>
 					<td class="content"/>
-					<td class="content">変身</td>
+					<td class="content">transformation</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">革命</td>
+					<td class="content">revolution</td>
 					<td class="content"/>
-					<td class="content">成長</td>
+					<td class="content">growth</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">d</td>
-					<td class="content">魔</td>
+					<td class="content">evil</td>
 					<td class="content"/>
-					<td class="content">堕落</td>
+					<td class="content">corrupt</td>
 					<td class="content"/>
-					<td class="content">闇</td>
+					<td class="content">dark</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">光</td>
+					<td class="content">light</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">f</td>
-					<td class="content">伝導</td>
+					<td class="content">dissemination</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">波及</td>
+					<td class="content">influence</td>
 					<td class="content"/>
-					<td class="content">浸透</td>
+					<td class="content">permiation</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">g</td>
-					<td class="content">地獄</td>
+					<td class="content">chaos</td>
 					<td class="content"/>
-					<td class="content">破壊</td>
+					<td class="content">disrupting</td>
 					<td class="content"/>
-					<td class="content">変化</td>
+					<td class="content">transformating</td>
 					<td class="content"/>
-					<td class="content">再生</td>
-					<td class="content">育成</td>
+					<td class="content">regenerating</td>
+					<td class="content">nurturing</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">h</td>
-					<td class="content">熱</td>
+					<td class="content">fevered</td>
 					<td class="content"/>
-					<td class="content">炎</td>
+					<td class="content">blazing</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">燃焼</td>
+					<td class="content">burning</td>
 					<td class="content"/>
-					<td class="content">情熱</td>
+					<td class="content">empassioned</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">j</td>
-					<td class="content">無知</td>
-					<td class="content">未知</td>
+					<td class="content">stupid</td>
+					<td class="content">unknown</td>
 					<td class="content"/>
-					<td class="content">奇抜</td>
+					<td class="content">novel</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">特異</td>
+					<td class="content">unique</td>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
@@ -489,24 +509,24 @@ See license.README for details.
 				</tr>
 				<tr>
 					<td class="letter consonant">l</td>
-					<td class="content">他人</td>
+					<td class="content">stranger</td>
 					<td class="content"/>
-					<td class="content">隣人</td>
+					<td class="content">neighbour</td>
 					<td class="content"/>
-					<td class="content">友人</td>
+					<td class="content">friend</td>
 					<td class="content"/>
-					<td class="content">伴侶</td>
-					<td class="content">託生</td>
+					<td class="content">partner</td>
+					<td class="content">true friend</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">m</td>
-					<td class="content">平静</td>
+					<td class="content">tranquility</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">同情</td>
+					<td class="content">sympathy</td>
 					<td class="content"/>
-					<td class="content">救</td>
+					<td class="content">help</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content">love</td>
@@ -526,60 +546,60 @@ See license.README for details.
 				<tr>
 					<td class="letter consonant">q</td>
 					<td class="content"/>
-					<td class="content">愚</td>
+					<td class="content">foolishness</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">無知</td>
+					<td class="content">ignorance</td>
 					<td class="content"/>
-					<td class="content">無心</td>
+					<td class="content">innocence</td>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">r</td>
-					<td class="content">胎動</td>
+					<td class="content">movement</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">躍動</td>
+					<td class="content">pulse</td>
 					<td class="content"/>
-					<td class="content">生命</td>
+					<td class="content">life</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">s</td>
-					<td class="content">欲望</td>
-					<td class="content">すがり</td>
+					<td class="content">desire</td>
+					<td class="content">entrapment</td>
 					<td class="content"/>
-					<td class="content">願</td>
-					<td class="content">祈り</td>
+					<td class="content">prayer</td>
+					<td class="content">wish</td>
 					<td class="content"/>
-					<td class="content">感謝</td>
-					<td class="content">赦し</td>
+					<td class="content">thanks</td>
+					<td class="content">forgiveness</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">t</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">己</td>
-					<td class="content">我々</td>
+					<td class="content">oneself</td>
+					<td class="content">group</td>
 					<td class="content"/>
-					<td class="content">皆</td>
+					<td class="content">everyone</td>
 					<td class="content"/>
-					<td class="content">世界</td>
+					<td class="content">universe</td>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">v</td>
 					<td class="content"/>
-					<td class="content">喜び</td>
+					<td class="content">delight</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">賞賛</td>
+					<td class="content">praise</td>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
@@ -587,9 +607,9 @@ See license.README for details.
 					<td class="letter consonant">w</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">内面</td>
+					<td class="content">inner</td>
 					<td class="content"/>
-					<td class="content">精神</td>
+					<td class="content">spirit</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
@@ -597,46 +617,42 @@ See license.README for details.
 				</tr>
 				<tr>
 					<td class="letter consonant">x</td>
-					<td class="content">攻勢</td>
-					<td class="content">防御</td>
+					<td class="content">offense</td>
+					<td class="content">defense</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">守護</td>
+					<td class="content">protection</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">y</td>
-					<td class="content">闇</td>
+					<td class="content">dark</td>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">聖</td>
+					<td class="content">holy</td>
 					<td class="content"/>
 					<td class="content">love</td>
 				</tr>
 				<tr>
 					<td class="letter consonant">z</td>
 					<td class="content"/>
-					<td class="content">神</td>
-					<td class="content">主</td>
+					<td class="content">god</td>
+					<td class="content">master</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">内面</td>
+					<td class="content">inside</td>
 					<td class="content"/>
-					<td class="content">己</td>
+					<td class="content">oneself</td>
 					<td class="content">love</td>
 				</tr>
 			</table>
 			<p>
-				<!--
-					This will probably be rewritten once I've played the game, since the I-IX
-					stuff probably gets explained there. -Neil
-				-->
 				<em>Ar cia laboratory research</em>
 				<ul style="margin-top: -10px;">
 					<li>
@@ -652,6 +668,9 @@ See license.README for details.
 						ten new sections and still have more than enough feelings to fill the slots.
 					</li>
 				</ul>
+			</p>
+			<p style="font-style: italic;">
+				(Editor's note: No, it's not clear what the I-IX stuff actually means at this time)
 			</p>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
