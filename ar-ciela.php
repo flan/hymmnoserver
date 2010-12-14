@@ -67,7 +67,7 @@ See license.README for details.
 			<p>
 				Ar Ciela, also referred to as the &quot;language of the planet&quot;, is not a language
 				conceived of for human use. Rather, it is a language that expresses the will of the
-				planet and serves to describe natural phenomena (in terms applicable to Earth,
+				planet and describes things like natural phenomena (in terms applicable to Earth,
 				examples would be weather systems, volcanic activity, tectonic shifts, and other
 				properties that govern the natural cycle of life). Taken in this context, Ar ciela
 				can be viewed as the language used by Ar ciel to manifest change.
@@ -80,7 +80,7 @@ See license.README for details.
 				The full spectrum of Ar ciela spans 20-600,000Hz; compared to the human-perceptible
 				domain of 20-20,000Hz, the upper bound of Ar ciela's frequency range is thirty times
 				higher. Were this range to be recorded, instruments capable of sampling at a rate of
-				1200kHz would be
+				1,200kHz would be
 				<a href="http://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem">required</a>
 				(for reference, CD-quality audio is sampled at 44.1kHz).
 			</p>
@@ -90,14 +90,14 @@ See license.README for details.
 				hear is as follows: take a recording of speech or song and load it into a
 				<a href="http://audacity.sourceforge.net/">waveform editor</a>, then resample it at
 				100Hz, one twentieth of what human ears can perceive. Play back the result and you
-				will find the audio muffled and hard to understand. Perceived by humans, Al ciela is
+				will find the audio muffled and hard to understand. Perceived by humans, Ar ciela is
 				much like the 100Hz sample of the original audio.
 				<br/><br/>
 				<em>
 					A 4000Hz example is available in <a href="http://www.vorbis.com/">Vorbis</a>
-					format. 4000Hz was chosen since it's the smallest sampling rate known to work
-					with most sound cards, though it only demonstrates 1/5 range-compression, rather
-					than the target 1/30; just imagine that the quality would be much worse.
+					format. 4000Hz was chosen because it's the smallest sampling rate known to work
+					with most sound cards, though it only demonstrates 1/10 range-compression,
+					rather than the target 1/40; just imagine that the quality would be much worse.
 					Download:
 					<a href="./static/goodbye_44100.ogg">44100Hz</a>,
 					<a href="./static/goodbye_4000.ogg">4000Hz</a>.
@@ -108,12 +108,12 @@ See license.README for details.
 				(<em>おかあさん : mother</em>). Had you resampled it at 100Hz, effectively cutting off
 				every frequency higher than that value, you would have been left with something that
 				sounds like <em>/ohoohon/</em> (<em>おほおほん</em>), which has no meaning.
-				However, phonologically, the utterance still has significance: it still has five
+				However, phonologically, the utterance still has significance: it retains five
 				morae (including the nasal), emphasis is placed over the second and third morae, and
 				the prosodical pattern holds. Despite the phonological similarities, though, what
-				was <em>[okaasan]</em> may be mentally represented as
+				was <em>[okaasan]</em> may be mentally interpreted as the equally meaningless
 				<em>/notaahau/</em> (<em>のたあはう</em>), since
-				<em>/ohoohon/</em> isn't recognizable as a word.
+				<em>/ohoohon/</em> isn't any more recognizable as a word.
 				<br/><br/>
 				Expanding on the presented idea, consider the Ar ciela utterance transcribed as
 				&quot;<em>Tisia</em>&quot;: not knowing what its full enunciation sounds like, it is
@@ -125,9 +125,9 @@ See license.README for details.
 				An everyday example of the significance of frequency ranges is in how a Japanese
 				speaker deals with the English words &quot;grass&quot; and &quot;glass&quot;. Since
 				Japanese phonemes do not distinguish between the high frequencies that contrast
-				&quot;/l/&quot; and &quot;/r/&quot; in English, native speakers cannot, without great
+				<em>/l/</em> and <em>/r/</em> in English, native speakers cannot, without great
 				effort, mentally hear the difference between the words: to them, both are
-				&quot;<em>/gurasu/</em>&quot; (<em>グラース</em>). 
+				<em>/gurasu/</em> (<em>グラース</em>). 
 			</p>
 			<div style="text-align: center; font-size: 0.9em;">
 				<img src="./static/arciela_fft.png" alt="Human-observable frequency range versus Ar ciela frequency range"/>
@@ -138,60 +138,52 @@ See license.README for details.
 				It is impossible to observe the full range of sound because of limitations on what
 				can be heard.
 			</div>
-			<p>
-				<!--
-					If anyone has a better translation for this, please submit it. I'm afraid I
-					don't know if I got it right. -Neil
-					このように、現在の人間にはアルシエラの真の意味を聞き分けることが出来ない為、
-					聞き分けられるレベルでカテゴリ化を行い、更にその中で三次元的（立体マトリックス的）に視覚的細分化を行った。
-				   それがアルシエラである。
-			   -->
+			<p title="Alternate translations welcome; I'm not sure if I got this right">
 				Because the true form of Ar ciela utterances cannot be aurally perceived by humans,
 				its depictions are presented in three-dimensional terms, as a logical matrix that
 				can be used to construct visual forms. All renditions describe the same Ar ciela
 				language.
 			</p>
-			<p>
-				Transcribed Ar ciela is written using two notation layers, described below.
-			</p>
+			<div class="section-title text-title-small">
+				⠕ Ar ciela is transcribed using two notation layers
+			</div>
 			<div class="section-title text-title-small">⠕ [Layer 1] Public Ar ciela</div>
 			<p>
 				Public notation uses a set of 26 symbols, each representing a sound in the
 				human-audible domain. Because this notation is limited to the human-audible domain,
 				it cannot be used to fully model all of Ar ciela, providing a simple, though highly
 				lossy, encoding scheme.
-				<br/>
-				<em>
-					The <a href="./font_ar-ciela.php">Ar ciela compartment font</a>'s standard form
-					is that of Public Ar ciela.
-				</em>
+			</p>
+			<p style="font-style: italic;">
+				The <a href="./font_ar-ciela.php">Ar ciela compartment font</a>'s standard form
+				is that of Public Ar ciela.
 			</p>
 			<div class="section-title text-title-small">⠕ [Layer 2] Compartment Ar ciela</div>
 			<p>
 				Compartment notation is an extension of Public notation, in which annotations
 				are added to the set of 26 symbols, describing properties of the sound that fall
-				outside of the human-audible domain. They provide additional dimensions to the
-				aforementioned logical matrix.
+				outside of the human-audible domain. They provide additional dimensions to
+				complete the aforementioned logical matrix.
 			</p>
 			<p>
 				When casually observing Ar ciela, it is impossible for humans to determine which
 				Compartment notation elements to use for transcription, since they describe
 				inaudible properties of the sounds. Even if the full range of sound could be heard,
 				though, the listener would need to be trained to recognize the differences between
-				Compartment notation elements for each sound. However, despite these complications,
-				Compartment notation is necessary to properly analyse transcribed Ar ciela.
+				Compartment notation elements for each sound. However, despite the complications
+				associated with observation, Compartment notation is necessary to properly analyse
+				transcribed Ar ciela.
 			</p>
 			<p>
 				The extensions provided by Compartment notation are thus: markings that sub-divide
 				the Public symbols into five frequency categories and four amplitude categories.
 				These sub-divided categories are collectively referred to as Compartments.
-				<br/>
-				<em>
-					The use of Compartment notation is not unlike that of
-					<a href="http://en.wikipedia.org/wiki/Diacritic">diacritics</a>, where an umlaut
-					(<em>¨</em>) can, in languages such as German, fundamentally change the
-					pronunciation of a word.
-				</em>
+			</p>
+			<p style="font-style: italic;">
+				The use of Compartment notation is not unlike that of
+				<a href="http://en.wikipedia.org/wiki/Diacritic">diacritics</a>, where an umlaut
+				(<em>¨</em>) can, in languages such as German, fundamentally change the
+				pronunciation of a word.
 			</p>
 			<b>▼ FMCL</b><br/>
 			<table class="coding">
@@ -308,8 +300,8 @@ See license.README for details.
 				&quot;Ec Tisia&quot; means 「empathy + growth」 and
 				「everyone + sincerity + forgiveness + hope + belief」, the sum of
 				the symbols that comprise its words; its Compartment form is
-				&quot;Ec[s-4/half] T[s-3/quad]is[s-4/dual]ia&quot;, which is rendered in glyphs
-				above.
+				&quot;Ec<em>[s-4/half]</em> T<em>[s-3/quad]</em>is<em>[s-4/dual]</em>ia&quot;,
+				which is rendered in glyphs above.
 			</p>
 			<div class="section-title text-title-small">⠕ Structure of Ar ciela</div>
 			<p>
@@ -335,9 +327,9 @@ See license.README for details.
 			<p>
 				Vowels are not sub-divided by waveform category, for reasons described in
 				the preceding section; rather, they work with associated consonants to form
-				meaning. The vowels' meaning, of which there are many, is selected based on
-				its context. A generalised form is presented in square brackets, though it
-				is purely an arbitrary human choice.
+				meaning. The vowels' meaning, of which there are many possibilities, is selected
+				based on its context. A generalised category is presented in square brackets, though
+				it is purely an arbitrary human choice.
 			</p>
 			<p>
 				Specific references (such as to a planet's language (Ar ciela) as a concrete noun)
@@ -380,7 +372,7 @@ See license.README for details.
 					<td class="letter vowel">I</td>
 					<td class="content" style="text-align: right; font-weight: bold;">[Pray]</td>
 					<td class="content" style="text-align: left;" colspan="8">
-						fear, anxiety, reverence, hope, spiritual, love
+						fear, anxiety, reverence, hope, spirituality, love
 					</td>
 				</tr>
 				<tr>
@@ -463,11 +455,11 @@ See license.README for details.
 					<td class="letter consonant">g</td>
 					<td class="content">chaos</td>
 					<td class="content"/>
-					<td class="content">disrupting</td>
+					<td class="content">disruption</td>
 					<td class="content"/>
-					<td class="content">transformating</td>
+					<td class="content">transformation</td>
 					<td class="content"/>
-					<td class="content">regenerating</td>
+					<td class="content">regeneration</td>
 					<td class="content">nurturing</td>
 					<td class="content">love</td>
 				</tr>
@@ -570,7 +562,7 @@ See license.README for details.
 				<tr>
 					<td class="letter consonant">s</td>
 					<td class="content">desire</td>
-					<td class="content">entrapment</td>
+					<td class="content">control</td>
 					<td class="content"/>
 					<td class="content">prayer</td>
 					<td class="content">wish</td>
@@ -607,7 +599,7 @@ See license.README for details.
 					<td class="letter consonant">w</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">inner</td>
+					<td class="content">inner space</td>
 					<td class="content"/>
 					<td class="content">spirit</td>
 					<td class="content"/>
@@ -646,7 +638,7 @@ See license.README for details.
 					<td class="content">master</td>
 					<td class="content"/>
 					<td class="content"/>
-					<td class="content">inside</td>
+					<td class="content">household</td>
 					<td class="content"/>
 					<td class="content">oneself</td>
 					<td class="content">love</td>
@@ -656,7 +648,7 @@ See license.README for details.
 				<em>Ar cia laboratory research</em>
 				<ul style="margin-top: -10px;">
 					<li>
-						This table is incomplete: at this time, only identified feelings are
+						This table is incomplete: at this time, only identified feelings have been
 						recorded
 					</li>
 					<li>
