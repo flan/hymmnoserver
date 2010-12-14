@@ -144,9 +144,10 @@ See license.README for details.
 				can be used to construct visual forms. All renditions describe the same Ar ciela
 				language.
 			</p>
-			<div class="section-title text-title-small">
-				⠕ Ar ciela is transcribed using two notation layers
-			</div>
+			<hr/>
+			<p>
+    			Ar ciela is transcribed using two notation layers, described below.
+			</p>
 			<div class="section-title text-title-small">⠕ [Layer 1] Public Ar ciela</div>
 			<p>
 				Public notation uses a set of 26 symbols, each representing a sound in the
