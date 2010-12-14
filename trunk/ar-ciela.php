@@ -398,7 +398,7 @@ See license.README for details.
 				</tr>
 				<tr>
 					<td class="letter vowel">N</td>
-					<td class="content" style="text-align: right; font-weight: bold;">[Mandela]</td>
+					<td class="content" style="text-align: right; font-weight: bold;">[Mandala]</td>
 					<td class="content" style="text-align: left;" colspan="8">
 						want, comfort, enlightnment, charity
 					</td>
