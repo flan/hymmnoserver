@@ -102,6 +102,18 @@ See license.README for details.
 				</ul>
 			</div>
 			<br/>
+			<div style="padding-left: 10px;">
+				<div class="subsection-title text-title-small">General</div>
+				<ul class="basic-inline">
+					<li>
+					    maverynthia
+					    <ul>
+                            <li>Update-notification</li>
+					    </ul>
+				    </li>
+				</ul>
+			</div>
+			<br/>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
 	</body>
