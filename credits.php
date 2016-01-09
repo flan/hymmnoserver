@@ -50,8 +50,7 @@ See license.README for details.
 				</ul>
 				<br/>
 				<ul class="basic-inline">
-					<li>flan@synIRC</li>
-					<li>red.hamsterx [{}] uguu.ca</li>
+					<li>flan [{}] uguu.ca</li>
 				</ul>
 			</div>
 			<br/>
