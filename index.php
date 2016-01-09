@@ -173,11 +173,11 @@ See license.README for details.
 							<tr>
 								<td class="infocell">
 									<ul class="basic-inline" style="font-weight: bold; font-size: 7pt; line-height: 3.5mm;">
-										<li>(9/1/2016) Added new words</li>
-										<li>(13/12/2010) Ar ciela (basics)</li>
-										<li>(20/10/2010) Added Ar ciela font</li>
-										<li>(20/10/2010) Housekeeping</li>
-										<li>(21/2/2010) At3 words added</li>
+										<li>(2016/1/9) Housekeeping</li>
+										<li>(2010/12/13) Ar ciela (basics)</li>
+										<li>(2010/10/20) Added Ar ciela font</li>
+										<li>(2010/10/20) Housekeeping</li>
+										<li>(2010/2/21) At3 words added</li>
 									</ul>
 								</td>
 							</tr>
