@@ -250,7 +250,7 @@ See license.README for details.
 				<a href="http://creativecommons.org/licenses/by-sa/3.0/">by-sa/3.0 Creative Commons</a>
 				licenses.
 				If you agree to the open terms of these licenses, you may access all of its materials via
-				its <a href="http://uguu.ca/ar-sphaela/hymmnoserver/">project site</a>.
+				its <a href="https://github.com/flan/hymmnoserver">project site</a>.
 			</p>
 			<p>
 				<b>Localizable</b><br/>
