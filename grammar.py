@@ -21,6 +21,7 @@ Legal
  (C) Neil Tallim, 2009-2021
 """
 import cgi
+import html
 import re
 import time
 import urllib.parse
@@ -37,7 +38,7 @@ def _renderMicroTransformation(component):
     @param component: The Hymmnos data to display.
     """
     link = "./search.php?" + urllib.parse.urlencode({'word': component})
-    line = cgi.escape(component, True)
+    line = html.escape(component, True)
     print("""
         <td class="transformation">
             <div style="font-family: hymmnos, sans; font-size: 1.5em;"><a href="{link}" style="display: block; color: #00008B; text-decoration: none; outline: none;">{line}</a></div>
@@ -120,7 +121,7 @@ def _renderMacroTransformation(phrase, components, unknown):
             </tr>
         """.format(
             plural=plural,
-            unknown=cgi.escape(", ".join(unknown), True),
+            unknown=html.escape(", ".join(unknown), True),
         ))
     print("""
         </table>
@@ -172,10 +173,10 @@ resources = open("common/resources.xml", 'r')
 print(resources.read())
 resources.close()
 
-print """
+print("""
     </head>
     <body>
-"""
+""")
 
 header = open("common/header.xml", 'r')
 print(header.read())
@@ -227,15 +228,15 @@ else:
     try:
         try: #Attempt to decode as a Binasphere phrase, since this fails in constant time.
             (lines_list, unknown) = transformations.decodeBinasphere(' '.join(lines), db_con)
-            _renderMacroTransformation(cgi.escape(query, True), lines_list, unknown)
+            _renderMacroTransformation(html.escape(query, True), lines_list, unknown)
         except transformations.FormatError:
             if len(lines) > 1:
                 try: #Try to apply Persistent Emotion Sounds markup, since this is purely linear.
                     (new_lines, processed, unknown) = transformations.applyPersistentEmotionSounds(lines, db_con)
-                    _renderMacroTransformation('<br/>'.join([cgi.escape(line) for line in new_lines]), processed, unknown)
+                    _renderMacroTransformation('<br/>'.join([html.escape(line) for line in new_lines]), processed, unknown)
                 except transformations.FormatError: #Try to encode as a Binasphere phrase.
                     (phrase, lines_list, unknown) = transformations.encodeBinasphere(lines, db_con)
-                    _renderMacroTransformation(cgi.escape(phrase, True), lines_list, unknown)
+                    _renderMacroTransformation(html.escape(phrase, True), lines_list, unknown)
             else: #Attempt syntax processing.
                 lines = [l for l in [re.sub(r'\s+\.\s+', ' ', re.sub(r'^\s*|[?!,:\'"/\\]|\.\.+|\s*\.*\s*$', '', line)) for line in lines] if l]
                 try:
@@ -277,14 +278,14 @@ print("""
     </div>
 </form>
 """.format(
-    query=cgi.escape(query or ''),
+    query=html.escape(query or ''),
 ))
 
 footer = open("common/footer-py.xml", 'r')
 print(footer.read())
 footer.close()
 
-print """
+print("""
     </body>
 </html>
-"""
+""")

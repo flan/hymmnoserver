@@ -30,7 +30,7 @@ Legal
  
  (C) Neil Tallim, 2009
 """
-import cgi
+import html
 import re
 import urllib.parse
 import xml.dom.minidom
@@ -635,7 +635,7 @@ class _Word(_SyntaxTree):
         
     def getMeaning(self, xhtml=False):
         if xhtml:
-            return cgi.escape(self._meaning)
+            return html.escape(self._meaning)
         return self._meaning
         
     def getClass(self):
@@ -724,7 +724,7 @@ def renderResult_xhtml(tree, display_string):
     
 def _decorateWord(word, prefix, suffix, slots, xhtml):
         if not slots is None:
-            slots = map(cgi.escape, slots)
+            slots = map(html.escape, slots)
         else:
             slots = ()
         prefix = prefix or ''
@@ -733,10 +733,10 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
         if xhtml:
             slots = [''.join(('<span style="color: #FFD700;">', slot, '</span>',)) for slot in slots]
             if prefix:
-                prefix = ''.join(('<span style="color: #F0D000;">', cgi.escape(prefix), '</span>',))
+                prefix = ''.join(('<span style="color: #F0D000;">', html.escape(prefix), '</span>',))
             if suffix:
-                suffix = ''.join(('<span style="color: #FF00FF;">', cgi.escape(suffix), '</span>',))
-            word = cgi.escape(word)
+                suffix = ''.join(('<span style="color: #FF00FF;">', html.escape(suffix), '</span>',))
+            word = html.escape(word)
             
         word_fragments = word.split('.')
         word = ''
@@ -745,7 +745,7 @@ def _decorateWord(word, prefix, suffix, slots, xhtml):
         word = prefix + word + word_fragments[-1] + suffix
         
         if not xhtml:
-            word = cgi.escape(word)
+            word = html.escape(word)
             
         return word
         
@@ -944,7 +944,7 @@ def _renderLeaf(leaf):
         base_word = '1'
         
     return """<span class="phrase-word-dialect">({base_dialect})</span>
-        <div class="phrase-word phrase-word-{class}">
+        <div class="phrase-word phrase-word-{word_class}">
             <a href="javascript:popUpWord('{base_word}', {dialect})" style="color: white;">
                 {word}
             </a>
@@ -953,7 +953,7 @@ def _renderLeaf(leaf):
         </div>
     """.format(
         base_dialect=_DIALECT[leaf.getDialect() % _DIALECT_SHIFT],
-        class=leaf.getClass(),
+        word_class=leaf.getClass(),
         base_word=base_word,
         dialect=leaf.getDialect(),
         word=leaf.getWord(True),

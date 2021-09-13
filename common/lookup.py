@@ -114,7 +114,7 @@ def readWords(words, db_con):
             "SELECT word, meaning, kana, class, dialect, syllables FROM hymmnos WHERE word IN (",
             ','.join('?' for w in words),
             ") ORDER BY dialect ASC",
-        ))
+        )),
         words,
     )
     records = cursor.fetchall()
