@@ -17,6 +17,5 @@ Legal
  
  See license.README for details.
  
- (C) Neil Tallim, 2009
+ (C) Neil Tallim, 2021
 """
-

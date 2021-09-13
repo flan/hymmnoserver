@@ -20,45 +20,45 @@ Legal
  
  See license.README for details.
  
- (C) Neil Tallim, 2009
+ (C) Neil Tallim, 2009-2021
 """
-import _db
+from . import db
 
-db_con = _db.getConnection()
+db_con = db.getConnection()
 cursor = db_con.cursor()
 try:
-	while True:
-		print "First word:"
-		word_1 = raw_input()
-		
-		print "First dialect:"
-		dialect_1 = int(raw_input())
-		
-		print "Second word:"
-		word_2 = raw_input()
-		
-		print "Second dialect:"
-		dialect_2 = int(raw_input())
-		
-		
-		cursor.executemany(
-		 ' '.join((
-		  "INSERT INTO hymmnos_mapping",
-		  "(source, destination, source_dialect, destination_dialect)",
-		  "VALUES (%s, %s, %i, %i)",
-		 )),
-		 (word_1, word_2, dialect_1, dialect_2,),
-		 (word_2, word_1, dialect_2, dialect_1,)
-		)
-		db_con.commit()
-		print
+    while True:
+        print("First word:")
+        word_1 = input()
+        
+        print("First dialect:")
+        dialect_1 = int(input())
+        
+        print("Second word:")
+        word_2 = input()
+        
+        print ("Second dialect:")
+        dialect_2 = int(input())
+        
+        
+        cursor.executemany(
+            ' '.join((
+                "INSERT INTO hymmnos_mapping",
+                "(source, destination, source_dialect, destination_dialect)",
+                "VALUES (?, ?, ?, ?)",
+            )),
+            (word_1, word_2, dialect_1, dialect_2,),
+            (word_2, word_1, dialect_2, dialect_1,),
+        )
+        db_con.commit()
+        print()
 finally:
-	try:
-		cursor.close()
-	except:
-		pass
-	try:
-		db_con.close()
-	except:
-		pass
-		
+    try:
+        cursor.close()
+    except:
+        pass
+    try:
+        db_con.close()
+    except:
+        pass
+        
