@@ -295,23 +295,12 @@ class Error(Exception):
     
     def __str__(self):
         """
-        This function returns an ASCII version of the description of this Error.
-        
-        When possible, the Unicode version should be used instead.        
+        This function returns a description of this Error.
         
         @rtype: str
         @return: The description of this error. 
         """
         return str(self.description)
-        
-    def __unicode__(self):
-        """
-        This function returns the description of this Error.        
-        
-        @rtype: unicode
-        @return: The description of this error. 
-        """
-        return self._description
         
     def __init__(self, description):
         """
@@ -323,7 +312,7 @@ class Error(Exception):
         
         @return: Nothing.
         """
-        self.description = unicode(description)
+        self.description = str(description)
         
 class ContentError(Error):
     """
@@ -339,7 +328,7 @@ class ContentError(Error):
         
         @return: Nothing.
         """
-        self.description = unicode(description)
+        self.description = str(description)
         
 class FormatError(Error):
     """
@@ -355,5 +344,5 @@ class FormatError(Error):
         
         @return: Nothing.
         """
-        self.description = unicode(description)
+        self.description = str(description)
         
