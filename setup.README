@@ -48,3 +48,41 @@ manner, though it uses legacy terminology and is rough in its presentation.
 
 link_words.py is used to link two related words in the database; it requires
 familiarity with the dialect/school numbering system.
+
+
+---
+
+Sample nginx configuration file:
+
+server {
+     listen 80;
+     listen [::]:80;
+     server_name hymmnoserver.example.org;
+
+     root /var/www/hymmnoserver;
+
+     index index.php;
+
+     location / {
+          try_files $uri $uri/ =404;
+     }
+
+     location ~ \.php$ {
+          fastcgi_pass  unix:/run/php/php7.4-fpm.sock;
+          include       fastcgi_params;
+          fastcgi_param SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+          fastcgi_param SCRIPT_NAME        $fastcgi_script_name;
+     }
+     location /grammar.py {
+          fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+          include       fastcgi_params;
+          fastcgi_param SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+          fastcgi_param SCRIPT_NAME        $fastcgi_script_name;
+     }
+     location /syntax-xml.py {
+          fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+          include       fastcgi_params;
+          fastcgi_param SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+          fastcgi_param SCRIPT_NAME        $fastcgi_script_name;
+     }
+}
