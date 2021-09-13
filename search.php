@@ -18,7 +18,7 @@ Creative Commons Attribution-Share Alike 3.0 license.
 
 See license.README for details.
  
-(C) Neil Tallim, 2009
+(C) Neil Tallim, 2009-2021
 */?>
 
 <?php include 'common/constants.php'; ?>
@@ -50,10 +50,11 @@ See license.README for details.
 				 )
 				);
 				
-				require 'secure/db.php';
-				if($mysql->connect_error){
-					die('Failed to connect to database: '.htmlentities($mysql->connect_error));
-				}
+				try {
+                    require 'database/db.php';
+                } catch (Exception $e) {
+                    die('Failed to connect to database: '.htmlentities($e->getMessage()));
+                }
 				
 				if(count($words) > 1){#If more than one token is provided, translate; else, search.
 					include 'common/translate.php';
@@ -61,7 +62,7 @@ See license.README for details.
 					include 'common/search.php';
 				}
 				
-				$mysql->close();
+				$db->close();
 			?>
 		</div>
 		<?php include 'common/footer.xml'; ?> 
