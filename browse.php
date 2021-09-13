@@ -76,9 +76,9 @@ See license.README for details.
                 $sections = array();
                 $i = 0;
                 foreach(array(
-                 'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
-                 'adj.', 'adv.', 'conj.', 'cnstr.', 'intj.', 'n.',
-                 'prep.', 'pron.', 'prt.', 'v.'
+                    'E.S. (I)', 'E.S. (II)', 'E.S. (III)', 'E.V.',
+                    'adj.', 'adv.', 'conj.', 'cnstr.', 'intj.', 'n.',
+                    'prep.', 'pron.', 'prt.', 'v.'
                 ) as $class){//Force an enumerable order from 1-14.
                     $i++;
                     $section = '<a href="./browse.php?page='.$i.'">';

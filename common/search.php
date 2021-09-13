@@ -27,56 +27,59 @@ See license.README for details.
         $stmt->bindValue(':value', $quality, SQLITE3_TEXT);
         $stmt_result = $stmt->execute();
         
-        $matched = $stmt_result->numColumns() && $stmt_result->columnType(0) != SQLITE3_NULL;
-        if($matched){#There are results to display.
+        $results = array();
+        while(true){
+            $stmt_result_row = $stmt_result->fetchArray(SQLITE3_ASSOC);
+            if($stmt_result_row == false){
+                break;
+            }
+            $results[] = $stmt_result_row;
+        }
+        $stmt->close();
+        
+        if(count($results) > 0){#There are results to display.
             echo '<div style="padding-bottom: 10px;">';
-                echo '<span style="color: red; font-weight: bold;">'.$type.' ('.$stmt->num_rows.' records)</span>';
+                echo '<span style="color: red; font-weight: bold;">'.$type.' ('.count($results).' record'.(count($results != 1 ? 's' : '').')</span>';
                 echo '<div style="padding-left: 13px;">';
-                    $stmt->bind_result($word, $meaning, $japanese, $kana, $dialect, $romaji, $notes, $class);
-                    
                     include_once 'common/word.php';
-                    while(true){#Display every result.
-                        $stmt_result_row = $stmt_result->fetchArray(SQLITE3_ASSOC);
-                        if($stmt_result_row == false){
-                            break;
-                        }
-                        
+                    foreach($results as $result){
                         #Read all related words from the database.
-                        $stmt2 = $db->prepare('SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = :source AND source_dialect = :source_dialect ORDER BY destination ASC, destination_dialect ASC');
-                        $stmt2->bindValue(':source', $stmt_result_row['word'], SQLITE3_TEXT);
-                        $stmt2->bindValue(':source_dialect', $stmt_result_row['dialect'], SQLITE3_INTEGER);
-                        $stmt2_result = $stmt2->execute();
+                        $stmt = $db->prepare('SELECT destination, destination_dialect FROM hymmnos_mapping WHERE source = :source AND source_dialect = :source_dialect ORDER BY destination ASC, destination_dialect ASC');
+                        $stmt->bindValue(':source', $result['word'], SQLITE3_TEXT);
+                        $stmt->bindValue(':source_dialect', $result['dialect'], SQLITE3_INTEGER);
+                        $stmt_result = $stmt->execute();
                         
                         $links = array();
                         while(true){
-                            $stmt2_result_row = $stmt2_result->fetchArray(SQLITE3_ASSOC);
-                            if($stmt2_result_row == false){
+                            $stmt_result_row = $stmt_result->fetchArray(SQLITE3_ASSOC);
+                            if($stmt_result_row == false){
                                 break;
                             }
                             
-                            $links[] = array($stmt2_result_row['destination'], $stmt2_result_row['destination_dialect']);
+                            $links[] = array($stmt_result_row['destination'], $stmt_result_row['destination_dialect']);
                         }
                         
-                        $stmt2->close();
+                        $stmt->close();
                         
                         renderWord(
-                            $stmt_result_row['word'],
-                            $stmt_result_row['class'],
-                            $stmt_result_row['meaning'],
-                            $stmt_result_row['romaji'],
-                            $stmt_result_row['japanese'],
-                            $stmt_result_row['kana'],
-                            $stmt_result_row['dialect'],
-                            $stmt_result_row['notes'],
+                            $result['word'],
+                            $result['class'],
+                            $result['meaning'],
+                            $result['romaji'],
+                            $result['japanese'],
+                            $result['kana'],
+                            $result['dialect'],
+                            $result['notes'],
                             $links
                         );
                     }
                 echo '</div>';
             echo '</div>';
+            
+            return true;
         }
-        $stmt->close();
         
-        return $matched;
+        return false;
     }
     
     $matched = false; #Assume failure by default.
