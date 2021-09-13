@@ -39,7 +39,7 @@ See license.README for details.
         
         if(count($results) > 0){#There are results to display.
             echo '<div style="padding-bottom: 10px;">';
-                echo '<span style="color: red; font-weight: bold;">'.$type.' ('.count($results).' record'.(count($results != 1 ? 's' : '').')</span>';
+                echo '<span style="color: red; font-weight: bold;">'.$type.' ('.count($results).' record'.(count($results) != 1 ? 's' : '').')</span>';
                 echo '<div style="padding-left: 13px;">';
                     include_once 'common/word.php';
                     foreach($results as $result){
