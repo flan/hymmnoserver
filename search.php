@@ -39,7 +39,7 @@ See license.README for details.
 					echo 'No search terms specified.';
 					exit();
 				}
-				$words = split(
+				$words = preg_split(
 				 "[\t ,]+",
 				 preg_replace(
 				  '/,/', '', preg_replace(
