@@ -60,7 +60,7 @@ See license.README for details.
             $stmt_result = $stmt->execute();
             
             $matched = $stmt_result->numColumns() && $stmt_result->columnType(0) != SQLITE3_NULL;
-            if(matched){
+            if($matched){
                 $stmt_result_row = $stmt_result->fetchArray(SQLITE3_ASSOC);
                 $word = $stmt_result_row['word'];
                 $meaning = $stmt_result_row['meaning'];
@@ -72,7 +72,7 @@ See license.README for details.
                 $class = $stmt_result_row['class'];
             }
             $stmt->close();
-            if(!matched) {
+            if(!$matched) {
                 die('Unknown word specified');
             }
             
