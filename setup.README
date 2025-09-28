@@ -1,8 +1,9 @@
 If you are interested in running Hymmnoserver on your server, you will need 
 the following:
 - A webserver that understands .htaccess and supports PHP and Python via CGI
-- PHP 5 (or higher)
-- Python 2.4 (or higher)
+- PHP 8 (or higher)
+- Python 3.3 (or higher)
+  - `legacy-cgi` PyPi module if using Python 3.13 or newer
 - MySQLdb for Python
 - MySQL 5 (or higher)
 - Subversion client 1.4 (or higher)
